@@ -66,7 +66,7 @@ public:
 
     void changeToRectangle();
 
-    void rendering();
+    virtual void rendering();
 };
 
 #endif
