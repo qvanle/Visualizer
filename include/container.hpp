@@ -16,10 +16,10 @@ private:
 protected:
 
 public:
-    Container(SDL_Renderer* render);
+    Container(SDL_Renderer* r);
     ~Container();
 
-    void rendering() override{};
+    void rendering() override;
 };
 
 #endif 

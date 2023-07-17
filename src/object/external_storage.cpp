@@ -5,7 +5,6 @@ void Object::importFromFile(std::string dir)
 {
     SDL_Surface *surface = IMG_Load(dir.c_str());
 
-    texture = SDL_CreateTextureFromSurface(ren, surface);
-
+    texture = SDL_CreateTextureFromSurface(render, surface);
     SDL_FreeSurface(surface);
 }

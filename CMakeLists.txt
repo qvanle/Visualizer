@@ -26,10 +26,18 @@ set(
     src/object/coloring.cpp
     src/object/rendering.cpp 
     src/object/shape.cpp 
+    src/object/external_storage.cpp
+    src/object/visible.cpp
 )
 
+set( 
+    CONTAINER 
+    src/container/constructor.cpp
+    src/container/destructor.cpp
+    src/container/rendering.cpp
+)
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT})
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${CONTAINER})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

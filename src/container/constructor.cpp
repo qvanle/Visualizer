@@ -1,6 +1,6 @@
 #include <container.hpp>
 
-Container::Container(SDL_Renderer* render)
+Container::Container(SDL_Renderer* r) : Object(r) 
 {
-    this->render = render;
+    render = r;
 }
