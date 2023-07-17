@@ -17,4 +17,12 @@ MyWindow::~MyWindow()
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
+
+    for(auto &i : thread_pool)
+    {
+        if(i.joinable())
+        {
+            i.join();
+        }
+    }
 }

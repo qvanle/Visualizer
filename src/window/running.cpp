@@ -4,8 +4,10 @@ void MyWindow::rendering()
 {
     while(isOpen())
     {
+        if(!UImutex.try_lock()) continue;
         SDL_RenderClear(render);
         SDL_RenderPresent(render);
+        UImutex.unlock();
     }
 }
 void MyWindow::interacting()
@@ -14,10 +16,12 @@ void MyWindow::interacting()
     {
         while(SDL_PollEvent(&event))
         {
+            if(!EVmutex.try_lock()) continue;
             if(event.type == SDL_QUIT)
             {
                 status = WINDOW_STATUS::IS_CLOSED;
             }
+            EVmutex.unlock();
         }
     }
 }
