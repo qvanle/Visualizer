@@ -54,7 +54,7 @@ void Object::fillRectangleByColor()
     
     SDL_FillRect(surf, nullptr, SDL_MapRGBA(surf->format, color->r, color->g, color->b, color->a));
 
-    texture = SDL_CreateTextureFromSurface(ren, surf);
+    texture = SDL_CreateTextureFromSurface(render, surf);
     
     SDL_FreeSurface(surf);
 }
@@ -84,7 +84,7 @@ void Object::fillCircleByColor()
     SDL_Surface *surf = SDL_CreateRGBSurface(0, getW(), getH(), 32, rmask, gmask, bmask, amask);
     SDL_SetSurfaceBlendMode(surf, SDL_BLENDMODE_BLEND);
     
-    texture = SDL_CreateTextureFromSurface(ren, surf);
+    texture = SDL_CreateTextureFromSurface(render, surf);
     SDL_FreeSurface(surf);
     
     Uint32 *pixels = new Uint32[getW() * getH()];

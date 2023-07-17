@@ -10,7 +10,7 @@
 class Object 
 {
 private:
-    SDL_Renderer* ren;
+    SDL_Renderer* render;
     SDL_Rect* location;
     SDL_Rect* crop;
     

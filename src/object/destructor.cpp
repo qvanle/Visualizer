@@ -2,7 +2,7 @@
 
 Object::~Object()
 {
-    ren = nullptr;
+    render = nullptr;
     if(crop != nullptr) delete crop;
     if(location != nullptr) delete location;
     if(color != nullptr) delete color;

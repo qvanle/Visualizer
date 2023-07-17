@@ -2,7 +2,7 @@
 
 Object::Object(SDL_Renderer *& r)
 {
-    ren = r;
+    render = r;
     location = nullptr;
     crop = nullptr;
     color = nullptr;
