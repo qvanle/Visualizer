@@ -17,7 +17,18 @@ set(
     src/window/running.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW})
+set(
+    OBJECT 
+    src/object/constructor.cpp 
+    src/object/destructor.cpp
+    src/object/cropping.cpp
+    src/object/locating.cpp
+    src/object/coloring.cpp
+    src/object/rendering.cpp 
+)
+
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
