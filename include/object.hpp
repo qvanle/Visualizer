@@ -1,6 +1,8 @@
 #ifndef OBJECT 
 #define OBJECT
 
+#include <string> 
+
 #include <SDL2/SDL.h>
 
 class Object 
@@ -46,6 +48,8 @@ public:
     const SDL_Color* getColor();
     void coloring(int r, int g, int b, int a);
     void coloring(SDL_Color c);
+
+    void importFromFile(std::string dir);
     
     void rendering();
 };
