@@ -1,6 +1,6 @@
 #include <object.hpp>
 
-void Object::show()
+void Object::show() 
 {
     visible = true;
 }

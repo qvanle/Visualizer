@@ -20,7 +20,6 @@ private:
 
     int radius;
     SDL_Point center;
-    
     bool visible;
 protected:
     void fillWithColor();

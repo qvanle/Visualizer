@@ -9,6 +9,6 @@ Object::Object(SDL_Renderer *& r)
     texture = nullptr;
     locating(0, 0, 0, 0);
     shapeType = SHAPE::NONE;
-    visible = true;
+    visible = false;
 }
 
