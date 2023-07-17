@@ -21,6 +21,7 @@ private:
     int radius;
     SDL_Point center;
 
+    bool visible;
 protected:
     void fillWithColor();
     void fillCircleByColor();
@@ -67,6 +68,10 @@ public:
     void changeToRectangle();
 
     void rendering();
+
+    void show();
+    void hide();
+    bool isVisible();
 };
 
 #endif
