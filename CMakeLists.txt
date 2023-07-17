@@ -4,8 +4,20 @@ cmake_minimum_required(VERSION 3.12)
 
 project(CLM)
 
-aux_source_directory(src/ SRC_LIST)
-add_executable(${PROJECT_NAME} ${SRC_LIST})
+set(
+    MAIN 
+    src/main.cpp
+)
+
+set(
+    WINDOW 
+    src/window/constructor.cpp
+    src/window/destructor.cpp
+    src/window/status.cpp
+    src/window/running.cpp
+)
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
