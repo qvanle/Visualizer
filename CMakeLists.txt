@@ -25,6 +25,7 @@ set(
     src/object/locating.cpp
     src/object/coloring.cpp
     src/object/rendering.cpp 
+    src/object/shape.cpp 
 )
 
 

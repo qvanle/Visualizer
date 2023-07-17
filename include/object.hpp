@@ -5,6 +5,8 @@
 
 #include <SDL2/SDL.h>
 
+#include <GLOBAL.hpp>
+
 class Object 
 {
 private:
@@ -14,9 +16,15 @@ private:
     
     SDL_Color *color;
     SDL_Texture *texture;
+    SHAPE shapeType;
+
+    int radius;
+    SDL_Point center;
 
 protected:
     void fillWithColor();
+    void fillCircleByColor();
+    void fillRectangleByColor(); 
 public:
     Object(SDL_Renderer *& r);
     ~Object();
@@ -51,6 +59,13 @@ public:
 
     void importFromFile(std::string dir);
     
+    void changeToCircle();
+    void changeToCircle(SDL_Point c);
+    void changeToCircle(SDL_Point c, int r);   
+    void changeToCircle(int x, int y, int r);
+
+    void changeToRectangle();
+
     void rendering();
 };
 

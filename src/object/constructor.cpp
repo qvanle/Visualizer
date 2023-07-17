@@ -8,5 +8,6 @@ Object::Object(SDL_Renderer *& r)
     color = nullptr;
     texture = nullptr;
     locating(0, 0, 0, 0);
+    shapeType = SHAPE::NONE;
 }
 
