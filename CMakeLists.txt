@@ -37,7 +37,12 @@ set(
     src/container/rendering.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${CONTAINER})
+set( 
+    SERVICES
+    src/services/json.cpp
+)
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${CONTAINER} ${SERVICES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
