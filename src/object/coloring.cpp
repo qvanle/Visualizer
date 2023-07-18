@@ -27,6 +27,12 @@ void Object::coloring(SDL_Color c)
     fillWithColor();
 }
 
+void Object::coloring(const json& mem)
+{
+    if(mem.contains("r") && mem.contains("g") && mem.contains("b") && mem.contains("a"))
+        coloring(mem["r"], mem["g"], mem["b"], mem["a"]);
+}
+
 void Object::fillWithColor()
 {
     if(shapeType == SHAPE::NONE) return fillRectangleByColor();

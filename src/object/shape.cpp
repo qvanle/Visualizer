@@ -20,6 +20,11 @@ void Object::changeToCircle(SDL_Point c)
     fillCircleByColor();
 }
 
+void Object::changeToCircle(int x, int y)
+{
+    changeToCircle({x, y});
+}
+
 void Object::changeToCircle(SDL_Point c, int r)
 {
     shapeType = SHAPE::CIRCLE;
@@ -43,6 +48,23 @@ void Object::changeToRectangle()
     fillRectangleByColor();
 }
 
+void Object::setShape(const json& mem)
+{
+    if(mem.contains("shape"))
+    {
+        if(mem["shape"] == "circle") 
+        {
+            if(mem.contains("center") && mem["center"].contains("x") && mem["center"].contains("y"))
+            {
+                if(mem.contains("radius")) 
+                    changeToCircle(mem["center"]["x"], mem["center"]["y"], mem["radius"]);
+                else 
+                    changeToCircle(mem["center"]["x"], mem["center"]["y"]);
+            }else changeToCircle();
+        }else if(mem["shape"] == "rectangle") changeToRectangle();
+    }
+}
+
 void Object::fillRectangleByColor()
 {
     if(location == nullptr) locating(0, 0, 0, 0);
@@ -51,11 +73,11 @@ void Object::fillRectangleByColor()
 
     SDL_Surface* surf = SDL_CreateRGBSurfaceWithFormat(0, getW(), getH(), 32, SDL_PIXELFORMAT_RGBA32);                       
     SDL_SetSurfaceBlendMode(surf, SDL_BLENDMODE_BLEND);
-    
+
     SDL_FillRect(surf, nullptr, SDL_MapRGBA(surf->format, color->r, color->g, color->b, color->a));
 
     texture = SDL_CreateTextureFromSurface(render, surf);
-    
+
     SDL_FreeSurface(surf);
 }
 
@@ -64,7 +86,7 @@ void Object::fillCircleByColor()
     if(location == nullptr) locating(0, 0, 0, 0);
 
     if(texture != nullptr) SDL_DestroyTexture(texture);
-    
+
     Uint32 rmask, gmask, bmask, amask;
     Uint32 pixelColor;
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
@@ -83,13 +105,13 @@ void Object::fillCircleByColor()
 
     SDL_Surface *surf = SDL_CreateRGBSurface(0, getW(), getH(), 32, rmask, gmask, bmask, amask);
     SDL_SetSurfaceBlendMode(surf, SDL_BLENDMODE_BLEND);
-    
+
     texture = SDL_CreateTextureFromSurface(render, surf);
     SDL_FreeSurface(surf);
-    
+
     Uint32 *pixels = new Uint32[getW() * getH()];
     memset(pixels, 0, getW() * getH() * sizeof(Uint32));
-    
+
 
     for(int i = center.x - radius; i <= center.x + radius; i++)
     {

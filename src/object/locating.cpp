@@ -43,6 +43,12 @@ void Object::locating(SDL_Rect l)
     location->h = l.h;
 }
 
+void Object::locating(const json& mem)
+{
+    if(mem.contains("x") && mem.contains("y") && mem.contains("w") && mem.contains("h"))
+        locating(mem["x"], mem["y"], mem["w"], mem["h"]);
+}
+
 void Object::locatingX(int x)
 {
     if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});

@@ -1,12 +1,20 @@
 {
     "background": 
     {
+        "location":
+        {
+            "x": 0,
+            "y": 0,
+            "w": 1200,
+            "h": 800
+        },
         "color":
         {
             "r": 255,
             "g": 252,
             "b": 194
         },
-        "shape": "RECTANGLE"
+        "shape": "RECTANGLE",
+        "visible": true
     }
 }

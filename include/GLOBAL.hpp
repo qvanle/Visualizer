@@ -3,6 +3,11 @@
 
 #include <string>
 #include <random>
+#include <fstream>
+
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 enum class WINDOW_STATUS 
 {
@@ -22,7 +27,10 @@ enum class SHAPE
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   
-
+    namespace ASSETS 
+    {
+        const std::string GRAPHICS = "assets/graphics/";
+    }
     const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 
     {

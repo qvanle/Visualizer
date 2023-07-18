@@ -1,7 +1,9 @@
 #include <window.hpp>
+#include <container.hpp>
 
 void MyWindow::rendering()
 {
+    Container *c = new Container(render);
     while(isOpen())
     {
         if(!UImutex.try_lock()) continue;

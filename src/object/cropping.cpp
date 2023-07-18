@@ -23,6 +23,12 @@ void Object::cropping(SDL_Rect c)
     crop->h = c.h;
 }
 
+void Object::cropping(const json& mem)
+{
+    if(mem.contains("x") && mem.contains("y") && mem.contains("w") && mem.contains("h"))
+        cropping(mem["x"], mem["y"], mem["w"], mem["h"]);
+}
+
 void Object::noCropping()
 {
     if(crop != nullptr) delete crop;
