@@ -21,12 +21,12 @@ enum class SHAPE
 
 namespace PATH 
 {
-    const std::string ASSETS = "assets/";   
+    const std::string ASSETS_ = "assets/";   
 
-    const std::string ATTRIBUTE = "atb/";
+    const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 
     {
-        const std::string CONTAINER = "atb/container/";
+        const std::string CONTAINER_ = "atb/container/";
     }
 }
 

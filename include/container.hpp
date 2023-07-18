@@ -9,6 +9,8 @@
 
 #include <object.hpp>
 
+using json = nlohmann::json;
+
 class Container : public Object 
 {
 private: 
@@ -19,7 +21,9 @@ private:
 
     SDL_Renderer* render;
 protected:
-    void initFromJson(nlohmann::json j);
+    
+    void initBackground(const json &mem);
+    void initFromJson();
 public:
     Container(SDL_Renderer* r);
     ~Container();
