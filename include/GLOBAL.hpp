@@ -29,7 +29,7 @@ namespace PATH
     const std::string ASSETS_ = "assets/";   
     namespace ASSETS 
     {
-        const std::string GRAPHICS = "assets/graphics/";
+        const std::string GRAPHICS_ = "assets/graphics/";
     }
     const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 

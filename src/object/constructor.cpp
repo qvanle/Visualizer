@@ -34,6 +34,6 @@ void Object::importFromJson(const json& mem)
         visible = mem["visible"];
 
     if(mem.contains("image"))
-        textureFromFile(PATH::ASSETS::GRAPHICS + mem["image"].get<std::string>());
+        textureFromFile(PATH::ASSETS::GRAPHICS_ + mem["image"].get<std::string>());
     return ;
 }

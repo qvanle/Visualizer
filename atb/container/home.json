@@ -19,6 +19,7 @@
         {
             "type": "RECTANGLE"
         },
-        "visible": true
+        "visible": true,
+        "image": "home.png"
     }
 }
