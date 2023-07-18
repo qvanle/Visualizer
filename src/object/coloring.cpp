@@ -29,8 +29,11 @@ void Object::coloring(SDL_Color c)
 
 void Object::coloring(const json& mem)
 {
-    if(mem.contains("r") && mem.contains("g") && mem.contains("b") && mem.contains("a"))
-        coloring(mem["r"], mem["g"], mem["b"], mem["a"]);
+    if(mem.contains("r") && mem.contains("g") && mem.contains("b"))
+    {
+        if(mem.contains("a")) coloring(mem["r"], mem["g"], mem["b"], mem["a"]);
+        else coloring(mem["r"], mem["g"], mem["b"], 255);
+    }
 }
 
 void Object::fillWithColor()

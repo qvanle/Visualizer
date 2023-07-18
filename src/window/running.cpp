@@ -1,13 +1,19 @@
 #include <window.hpp>
 #include <container.hpp>
+#include <services.hpp>
 
 void MyWindow::rendering()
 {
     Container *c = new Container(render);
+    json* mem = JSON::readFile(PATH::ATB::CONTAINER_ + "home.json");
+    c->setName("home");
+    delete mem;
+
     while(isOpen())
     {
         if(!UImutex.try_lock()) continue;
         SDL_RenderClear(render);
+        c->rendering();
         SDL_RenderPresent(render);
         UImutex.unlock();
     }

@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include <object.hpp>
 #include <GLOBAL.hpp>
 
@@ -33,6 +35,5 @@ void Object::importFromJson(const json& mem)
 
     if(mem.contains("image"))
         textureFromFile(PATH::ASSETS::GRAPHICS + mem["image"].get<std::string>());
-
     return ;
 }

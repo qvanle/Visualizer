@@ -1,9 +1,10 @@
 #include <services.hpp>
 #include <fstream>
+#include <iostream>
 
 json* JSON::readFile(std::string path)
 {
-    json* mem;
+    json* mem = new json();
     std::ifstream fin(path);
 
     fin >> *mem;

@@ -6,15 +6,19 @@
             "x": 0,
             "y": 0,
             "w": 1200,
-            "h": 800
+            "h": 635
         },
         "color":
         {
             "r": 255,
             "g": 252,
-            "b": 194
+            "b": 194,
+            "a": 255
         },
-        "shape": "RECTANGLE",
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
         "visible": true
     }
 }

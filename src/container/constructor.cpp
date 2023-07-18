@@ -1,7 +1,9 @@
+#include <fstream>
+#include <iostream>
+
 #include <container.hpp>
 #include <GLOBAL.hpp>
-#include <fstream>
-
+#include <services.hpp>
 
 
 Container::Container(SDL_Renderer* r) : Object(r) 
@@ -17,18 +19,14 @@ void Container::setName(std::string n)
 
 void Container::initBackground(const json& mem)
 {
-
+    Object::importFromJson(mem);
 }
 
 void Container::initFromJson()
 {
-    std::string PATH = PATH::ATB::CONTAINER_ + name + ".json";
-    json mem; 
+    json* mem = JSON::readFile(PATH::ATB::CONTAINER_ + name + ".json");
 
-    std::ifstream fin(PATH);
-
-    fin >> mem;
+    initBackground((*mem)["background"]);
     
-    initBackground(mem["background"]);
-
+    delete mem;
 }

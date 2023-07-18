@@ -1,5 +1,6 @@
 #include <object.hpp>
 #include <algorithm>
+#include <iostream>
 
 void Object::changeToCircle()
 {
@@ -50,19 +51,24 @@ void Object::changeToRectangle()
 
 void Object::setShape(const json& mem)
 {
-    if(mem.contains("shape"))
+    if(mem["type"].get<std::string>() == "CIRCLE")
     {
-        if(mem["shape"] == "circle") 
+        if(mem.contains("center"))
         {
-            if(mem.contains("center") && mem["center"].contains("x") && mem["center"].contains("y"))
-            {
-                if(mem.contains("radius")) 
-                    changeToCircle(mem["center"]["x"], mem["center"]["y"], mem["radius"]);
-                else 
-                    changeToCircle(mem["center"]["x"], mem["center"]["y"]);
-            }else changeToCircle();
-        }else if(mem["shape"] == "rectangle") changeToRectangle();
+            if(mem.contains("radius"))
+                changeToCircle(mem["center"]["x"], mem["center"]["y"], mem["radius"]);
+            else changeToCircle(mem["center"]["x"], mem["center"]["y"]);
+        }else changeToCircle();
+        
+        return ;
     }
+    
+    if(mem["type"].get<std::string>() == "NONE" || mem["type"].get<std::string>() == "RECTANGLE")
+    {
+        changeToRectangle();
+        return ;
+    }
+
 }
 
 void Object::fillRectangleByColor()
