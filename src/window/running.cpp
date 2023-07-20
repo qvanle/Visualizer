@@ -4,16 +4,10 @@
 
 void MyWindow::rendering()
 {
-    Sprite *c = new Sprite(render);
-    json* mem = JSON::readFile(PATH::ATB::SPRITE_ + "home.json");
-    c->linking("home");
-    delete mem;
-
     while(isOpen())
     {
         if(!UImutex.try_lock()) continue;
         SDL_RenderClear(render);
-        c->rendering();
         SDL_RenderPresent(render);
         UImutex.unlock();
     }
