@@ -1,6 +1,6 @@
-#include <container.hpp>
+#include <sprite.hpp>
 
-void Container::rendering() 
+void Sprite::rendering() 
 {
     Object::rendering();
     for(auto& obj : objects)

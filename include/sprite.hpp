@@ -1,5 +1,5 @@
-#ifndef CONTAINER
-#define CONTAINER
+#ifndef SPRITE
+#define SPRITE
 
 #include <vector>
 
@@ -11,7 +11,7 @@
 
 using json = nlohmann::json;
 
-class Container : public Object 
+class Sprite : public Object 
 {
 private: 
     
@@ -25,8 +25,8 @@ protected:
     void initBackground(const json &mem);
     void initFromJson();
 public:
-    Container(SDL_Renderer* r);
-    ~Container();
+    Sprite(SDL_Renderer* r);
+    ~Sprite();
     
     void setName(std::string n);
 

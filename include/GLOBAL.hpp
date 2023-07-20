@@ -34,7 +34,7 @@ namespace PATH
     const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 
     {
-        const std::string CONTAINER_ = "atb/container/";
+        const std::string SPRITE_ = "atb/sprite/";
     }
 }
 

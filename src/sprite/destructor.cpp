@@ -1,6 +1,6 @@
-#include <container.hpp>
+#include <sprite.hpp>
 
-Container::~Container()
+Sprite::~Sprite()
 {
     for (auto& object : objects)
     {
