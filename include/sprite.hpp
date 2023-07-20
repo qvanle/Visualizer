@@ -23,6 +23,7 @@ private:
 protected:
     
     void initBackground(const json &mem);
+    void initObjects(const json &mem);
     void initFromJson();
 public:
     Sprite(SDL_Renderer* r);

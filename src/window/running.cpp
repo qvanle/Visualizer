@@ -6,7 +6,7 @@ void MyWindow::rendering()
 {
     Sprite *c = new Sprite(render);
     json* mem = JSON::readFile(PATH::ATB::SPRITE_ + "home.json");
-    c->setName("home");
+    c->linking("home");
     delete mem;
 
     while(isOpen())

@@ -35,6 +35,7 @@ namespace PATH
     namespace ATB 
     {
         const std::string SPRITE_ = "atb/sprite/";
+        const std::string OBJECT_ = "atb/object/";
     }
 }
 

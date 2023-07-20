@@ -25,6 +25,8 @@ private:
     int radius;
     SDL_Point center;
     bool visible;
+
+    std::string name;
 protected:
     void fillWithColor();
     void fillCircleByColor();
@@ -83,6 +85,8 @@ public:
     bool isVisible();  
     
     void importFromJson(const json& mem);
+
+    void linking(std::string n);
 };
 
 #endif
