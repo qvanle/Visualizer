@@ -2,6 +2,7 @@
 
 #include <object.hpp>
 #include <GLOBAL.hpp>
+#include <services.hpp>
 
 Object::Object(SDL_Renderer *& r)
 {
@@ -36,4 +37,14 @@ void Object::importFromJson(const json& mem)
     if(mem.contains("image"))
         textureFromFile(PATH::ASSETS::GRAPHICS_ + mem["image"].get<std::string>());
     return ;
+}
+
+void Object::linking(std::string n)
+{
+    name = n;
+    json* mem = JSON::readFile(PATH::ATB::OBJECT_ + name + ".json");
+
+    importFromJson(*mem);
+
+    delete mem;
 }

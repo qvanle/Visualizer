@@ -31,10 +31,10 @@ set(
 )
 
 set( 
-    CONTAINER 
-    src/container/constructor.cpp
-    src/container/destructor.cpp
-    src/container/rendering.cpp
+    SPRITE 
+    src/sprite/constructor.cpp
+    src/sprite/destructor.cpp
+    src/sprite/rendering.cpp
 )
 
 set( 
@@ -42,7 +42,7 @@ set(
     src/services/json.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${CONTAINER} ${SERVICES})
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

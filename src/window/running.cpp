@@ -1,12 +1,12 @@
 #include <window.hpp>
-#include <container.hpp>
+#include <sprite.hpp>
 #include <services.hpp>
 
 void MyWindow::rendering()
 {
-    Container *c = new Container(render);
-    json* mem = JSON::readFile(PATH::ATB::CONTAINER_ + "home.json");
-    c->setName("home");
+    Sprite *c = new Sprite(render);
+    json* mem = JSON::readFile(PATH::ATB::SPRITE_ + "home.json");
+    c->linking("home");
     delete mem;
 
     while(isOpen())
