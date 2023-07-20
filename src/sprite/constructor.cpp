@@ -11,7 +11,7 @@ Sprite::Sprite(SDL_Renderer* r) : Object(r)
     render = r;
 }
 
-void Sprite::setName(std::string n)
+void Sprite::linking(std::string n)
 {
     name = n;
     initFromJson();

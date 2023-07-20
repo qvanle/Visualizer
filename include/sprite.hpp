@@ -28,7 +28,7 @@ public:
     Sprite(SDL_Renderer* r);
     ~Sprite();
     
-    void setName(std::string n);
+    void linking(std::string n);
 
     void rendering() override;
 };
