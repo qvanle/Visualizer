@@ -14,7 +14,7 @@ Sprite::Sprite(SDL_Renderer* r) : Object(r)
 void Sprite::linking(std::string n)
 {
     name = n;
-    initFromJson();
+    importFromJson();
 }
 
 void Sprite::initBackground(const json& mem)
@@ -39,7 +39,7 @@ void Sprite::initObjects(const json &mem)
     }
 }
 
-void Sprite::initFromJson()
+void Sprite::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::SPRITE_ + name + ".json");
 

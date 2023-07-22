@@ -24,7 +24,7 @@ protected:
     
     void initBackground(const json &mem);
     void initObjects(const json &mem);
-    void initFromJson();
+    void importFromJson();
 public:
     Sprite(SDL_Renderer* r);
     ~Sprite();
