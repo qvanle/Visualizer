@@ -24,6 +24,7 @@ private:
 
     int radius;
     SDL_Point center;
+    SDL_Rect viewport;
     bool visible;
 
     std::string name;
@@ -32,7 +33,7 @@ protected:
     void fillCircleByColor();
     void fillRectangleByColor(); 
 public:
-    Object(SDL_Renderer *& r);
+    Object(SDL_Renderer *& r, SDL_Rect v);
     ~Object();
 
     const SDL_Rect* getCrop();

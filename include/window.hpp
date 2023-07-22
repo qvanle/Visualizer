@@ -23,6 +23,7 @@ private:
 
     SDL_Renderer* render;
     std::mutex UImutex;
+    SDL_Rect viewport;
 
     SDL_Event event;
     std::mutex EVmutex;

@@ -6,9 +6,10 @@
 #include <services.hpp>
 
 
-Sprite::Sprite(SDL_Renderer* r) : Object(r) 
+Sprite::Sprite(SDL_Renderer* r, SDL_Rect v) : Object(r, v) 
 {
     render = r;
+    viewport = v;
 }
 
 void Sprite::linking(std::string n)
@@ -27,7 +28,7 @@ void Sprite::initObjects(const json &mem)
     objects.clear();
     for(auto& i : mem)
     {
-        Object* obj = new Object(render);
+        Object* obj = new Object(render, viewport);
         if(i.contains("name")) obj->linking(i["name"]);
 
         obj->importFromJson(i);

@@ -2,6 +2,7 @@
 
 void Sprite::rendering() 
 {
+    SDL_RenderSetViewport(render, &viewport);
     Object::rendering();
     for(auto& obj : objects)
     {

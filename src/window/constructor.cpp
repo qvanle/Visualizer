@@ -23,13 +23,6 @@ void MyWindow::initSDL2()
 
     IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
     TTF_Init();
-
-    SDL_Rect rect;
-    rect.x = 0;
-    rect.y = 0;
-    rect.w = WIDTH;
-    rect.h = HEIGHT;
-    SDL_RenderSetViewport(render, &rect);
 }
 
 MyWindow::MyWindow()
@@ -38,6 +31,7 @@ MyWindow::MyWindow()
     WIDTH = 1200;
     status = WINDOW_STATUS::IS_CLOSED;
     FPS = 60;
+    viewport = SDL_Rect({0, 0, WIDTH, HEIGHT});
 
     window = nullptr;
     render = nullptr;
