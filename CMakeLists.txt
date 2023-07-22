@@ -42,7 +42,13 @@ set(
     src/services/json.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES})
+set( 
+    DISPLAY 
+    src/display/constructor.cpp 
+    src/display/destructor.cpp
+    src/display/rendering.cpp
+)
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
