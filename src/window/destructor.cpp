@@ -25,4 +25,9 @@ MyWindow::~MyWindow()
             i.join();
         }
     }
+
+    for(auto &i : display_pool)
+    {
+        delete i.second;
+    }
 }

@@ -4,10 +4,12 @@
 #include <vector> 
 #include <thread>
 #include <mutex>
+#include <map>
 
 #include <SDL2/SDL.h>
 
 #include <GLOBAL.hpp>
+#include <display.hpp>
 
 class MyWindow 
 {
@@ -29,7 +31,10 @@ private:
     std::mutex EVmutex;
 
     std::vector<std::thread> thread_pool;
-    
+   
+    std::map<std::string, Display*> display_pool;
+    std::string current_display;
+
 protected:
     void initSDL2();
     void rendering();

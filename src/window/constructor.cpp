@@ -37,6 +37,9 @@ MyWindow::MyWindow()
     render = nullptr;
 
     initSDL2();
-
+    
+    display_pool["home"] = new Display(render, viewport);
+    display_pool["home"]->linking("home");
+    current_display = "home";
 }
 
