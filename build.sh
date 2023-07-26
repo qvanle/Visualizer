@@ -18,9 +18,23 @@ LightCyan='\033[1;36m'
 White='\033[1;37m'
 NC='\033[0m'
 
+clear
+printf "${LightPurple}do you want to run cmake ?${NC}\n"
+read -p "[Y/n] " cmake_status
 
 clear 
-cmake -B build/
+
+if [ "$cmake_status" = "Y" ] || [ "$cmake_status" = "y" ];
+then 
+    printf "${LightPurple}running cmake${NC}\n}"
+    cmake -B build/
+
+    printf "${Yellow}Press any key to continue${NC}"
+    read -n 1 -s -r 
+    clear 
+fi
+
+printf "${LightPurple}running make${NC}\n"
 make -C build 
 
 build_status="$?"

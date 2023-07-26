@@ -48,7 +48,15 @@ set(
     src/display/destructor.cpp
     src/display/rendering.cpp
 )
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY})
+
+set (
+    BUTTON 
+    src/button/constructor.cpp 
+    src/button/destructor.cpp 
+    src/button/rendering.cpp
+)
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
