@@ -11,21 +11,24 @@
 
 using json = nlohmann::json;
 
-class Object 
+struct Position 
 {
-private:
-    SDL_Renderer* render;
     SDL_Rect* location;
     SDL_Rect* crop;
-    
-    SDL_Color *color;
-    SDL_Texture *texture;
-    SHAPE shapeType;
-
     int radius;
     SDL_Point center;
     SDL_Rect viewport;
     bool visible;
+};
+
+class Object : private Position
+{
+private:
+    SDL_Renderer* render;
+    
+    SDL_Color *color;
+    SDL_Texture *texture;
+    SHAPE shapeType;
 
     std::string name;
 protected:
