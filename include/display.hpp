@@ -9,6 +9,7 @@
 #include <services.hpp>
 #include <GLOBAL.hpp>
 #include <object.hpp>
+#include <button.hpp>
 
 class Display : protected Object 
 {
@@ -18,8 +19,10 @@ private:
     std::string name;
     
     SDL_Rect viewPort;
+    std::vector<Button*> buts;
 protected:
     void initBackground(const json& mem);
+    void initButtons(const json& mem);
     void importFromJson();
 public:
     Display(SDL_Renderer* r, SDL_Rect v);

@@ -2,5 +2,5 @@
 
 void Button::rendering()
 {
-    
+    Object::rendering();   
 }

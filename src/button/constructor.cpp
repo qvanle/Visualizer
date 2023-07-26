@@ -12,7 +12,7 @@ void Button::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::BUTTON_ + name + ".json");
     if(mem->contains("background")) 
-        initBackground((*mem)["background"].get<std::string>());
+        initBackground((*mem)["background"]);
     if(mem->contains("sprites")) 
         importSprites((*mem)["sprites"]);
 }

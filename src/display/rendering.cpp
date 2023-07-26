@@ -5,4 +5,6 @@ void Display::rendering()
 {
     SDL_RenderSetViewport(render, &viewPort);
     Object::rendering();
+    for(auto& i : buts)
+        i->rendering();
 }
