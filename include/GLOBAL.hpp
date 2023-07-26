@@ -24,6 +24,13 @@ enum class SHAPE
     POLYGON
 };
 
+enum class BUTTON_STATUS 
+{
+    NONE,
+    HOVER,
+    RELEASED,
+};
+
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   
