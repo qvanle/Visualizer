@@ -8,10 +8,11 @@
 #include <sprite.hpp>
 #include <GLOBAL.hpp>
 
-class Button : Object
+class Button : protected Object
 {
 private: 
     SDL_Renderer* render;
+    SDL_Rect viewport;
 
     std::string name;
 
@@ -19,7 +20,8 @@ private:
     BUTTON_STATUS status;
 
 protected: 
-    void importSprites();
+    void importSprites(const json& mem);
+    void initBackground(const json& mem);
     void importFromJson();
 public: 
     Button(SDL_Renderer* render, SDL_Rect view);
