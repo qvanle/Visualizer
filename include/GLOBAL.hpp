@@ -29,6 +29,7 @@ enum class BUTTON_STATUS
     NONE,
     HOVER,
     RELEASED,
+    CLICKED
 };
 
 namespace PATH 

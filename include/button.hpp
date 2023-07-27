@@ -20,12 +20,17 @@ private:
     BUTTON_STATUS status;
 
 protected: 
-    void importSprites(const json& mem);
+    void initSprites(const json& mem);
     void initBackground(const json& mem);
     void importFromJson();
+
+    bool isChoosed(int x, int y);
 public: 
     Button(SDL_Renderer* render, SDL_Rect view);
     ~Button();
+    
+    bool isHover(int x, int y);
+    bool isClicked(int x, int y);
 
     void rendering();
 

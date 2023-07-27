@@ -1,3 +1,4 @@
+#include <iostream>
 #include <button.hpp>
 #include <GLOBAL.hpp>
 #include <services.hpp>
@@ -14,7 +15,7 @@ void Button::importFromJson()
     if(mem->contains("background")) 
         initBackground((*mem)["background"]);
     if(mem->contains("sprites")) 
-        importSprites((*mem)["sprites"]);
+        initSprites((*mem)["sprites"]);
 }
 
 void Button::initBackground(const json& mem)
@@ -22,14 +23,15 @@ void Button::initBackground(const json& mem)
     Object::importFromJson(mem);
 }
 
-void Button::importSprites(const json& mem)
+void Button::initSprites(const json& mem)
 {
     for(auto& sprite : mem) 
     {
         sprites.push_back(new Sprite(render, viewport));
-        sprites.back()->linking(sprite.get<std::string>());
+        sprites.back()->linking(sprite["name"].get<std::string>());
     }
 }
+
 
 void Button::linking(std::string n)
 {

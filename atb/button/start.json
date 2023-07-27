@@ -20,5 +20,14 @@
         {
             "type": "NONE"
         }
-    }
+    },
+    "sprites": 
+    [
+        {
+            "name": "start/released"
+        },
+        {
+            "name": "start/hover"
+        }
+    ]
 }
