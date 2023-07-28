@@ -32,6 +32,12 @@ enum class BUTTON_STATUS
     CLICKED
 };
 
+enum class BUTTON_ACTION 
+{
+    CHANGE_SCREEN,
+    NONE, 
+};
+
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   

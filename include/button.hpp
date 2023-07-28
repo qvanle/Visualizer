@@ -18,6 +18,7 @@ private:
 
     std::vector<Sprite*> sprites;
     BUTTON_STATUS status;
+    BUTTON_ACTION action;
 
 protected: 
     void initSprites(const json& mem);
@@ -31,6 +32,8 @@ public:
     
     bool isHover(int x, int y);
     bool isClicked(int x, int y);
+
+    BUTTON_ACTION getAction();
 
     void rendering();
 
