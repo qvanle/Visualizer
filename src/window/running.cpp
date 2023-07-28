@@ -15,15 +15,41 @@ void MyWindow::rendering()
 }
 void MyWindow::interacting()
 {
+    SDL_Event event;
+    std::unique_lock<std::mutex> ul(EVmutex);
+    while(isOpen())
+    {
+        EVcond.wait(ul, [&](){return !event_pool.empty();});
+        event = event_pool.front();
+        event_pool.pop();
+
+        switch(event.type)
+        {
+            case SDL_QUIT:
+                status = WINDOW_STATUS::IS_CLOSED;
+                break;
+            default:
+                break;
+        }
+    }
+}
+void MyWindow::getEvent()
+{
+    SDL_Event event;
     while(isOpen())
     {
         while(SDL_PollEvent(&event))
         {
             if(!EVmutex.try_lock()) continue;
-            if(event.type == SDL_QUIT)
+            switch(event.type) 
             {
-                status = WINDOW_STATUS::IS_CLOSED;
+                case SDL_QUIT: 
+                    event_pool.push(event);
+                    break;
+                default:
+                    break;
             }
+            EVcond.notify_one();
             EVmutex.unlock();
         }
     }
@@ -32,7 +58,10 @@ void MyWindow::run()
 {
     status = WINDOW_STATUS::IS_OPEN;
     thread_pool.push_back(std::thread(&MyWindow::rendering, this));
-    thread_pool.push_back(std::thread(&MyWindow::interacting, this));
+    thread_pool.push_back(std::thread(&MyWindow::getEvent, this));
+    //thread_pool.push_back(std::thread(&MyWindow::interacting, this));
+
+    interacting();
 
     for(auto& thread : thread_pool)
     {

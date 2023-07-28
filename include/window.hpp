@@ -4,7 +4,10 @@
 #include <vector> 
 #include <thread>
 #include <mutex>
+#include <condition_variable>
 #include <map>
+#include <queue>
+
 
 #include <SDL2/SDL.h>
 
@@ -27,8 +30,9 @@ private:
     std::mutex UImutex;
     SDL_Rect viewport;
 
-    SDL_Event event;
+    std::queue<SDL_Event> event_pool;
     std::mutex EVmutex;
+    std::condition_variable EVcond;
 
     std::vector<std::thread> thread_pool;
    
@@ -39,6 +43,7 @@ protected:
     void initSDL2();
     void rendering();
     void interacting();
+    void getEvent();
 public:
     MyWindow();
     ~MyWindow();
