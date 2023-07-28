@@ -47,6 +47,7 @@ set(
     src/display/constructor.cpp 
     src/display/destructor.cpp
     src/display/rendering.cpp
+    src/display/event.cpp
 )
 
 set (

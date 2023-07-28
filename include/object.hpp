@@ -82,6 +82,11 @@ public:
     void setShape(const json& mem);
 
 
+    bool isLieInside(int x, int y);
+    bool isLieInside(SDL_Point p);
+    bool isLieInside(SDL_Rect r);
+    bool isLieInside(int x, int y, int w, int h);
+
     virtual void rendering();
 
     void show();

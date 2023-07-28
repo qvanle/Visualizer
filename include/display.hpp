@@ -24,11 +24,15 @@ protected:
     void initBackground(const json& mem);
     void initButtons(const json& mem);
     void importFromJson();
+
+    bool mouseMotion(SDL_Event& e);
 public:
     Display(SDL_Renderer* r, SDL_Rect v);
     ~Display();
     
     void linking(std::string n);
+    
+    bool isReceiveEvent(SDL_Event& e);
 
     void rendering();
 };

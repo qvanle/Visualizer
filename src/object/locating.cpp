@@ -1,5 +1,29 @@
 #include <object.hpp>
 
+bool Object::isLieInside(int x, int y)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    return (x >= location->x && x < location->x + location->w && y >= location->y && y < location->y + location->h);
+}
+
+bool Object::isLieInside(SDL_Point p)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    return (p.x >= location->x && p.x < location->x + location->w && p.y >= location->y && p.y < location->y + location->h);
+}
+
+bool Object::isLieInside(SDL_Rect r)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    return (r.x >= location->x && r.x + r.w <= location->x + location->w && r.y >= location->y && r.y + r.h <= location->y + location->h);
+}
+
+bool Object::isLieInside(int x, int y, int w, int h)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    return (x >= location->x && x + w <= location->x + location->w && y >= location->y && y + h <= location->y + location->h);
+}
+
 const SDL_Rect* Object::getLocation()
 {
     return location;
