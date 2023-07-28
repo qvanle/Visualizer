@@ -40,6 +40,6 @@ MyWindow::MyWindow()
     
     display_pool["home"] = new Display(render, viewport);
     display_pool["home"]->linking("home");
-    current_display = "home";
+    current_display = display_pool["home"];
 }
 

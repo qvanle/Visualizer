@@ -8,7 +8,7 @@ void MyWindow::rendering()
     {
         if(!UImutex.try_lock()) continue;
         SDL_RenderClear(render);
-        display_pool[current_display]->rendering();
+        current_display->rendering();
         SDL_RenderPresent(render);
         UImutex.unlock();
     }

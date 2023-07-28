@@ -37,7 +37,7 @@ private:
     std::vector<std::thread> thread_pool;
    
     std::map<std::string, Display*> display_pool;
-    std::string current_display;
+    Display* current_display;
 
 protected:
     void initSDL2();
