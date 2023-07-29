@@ -29,6 +29,7 @@ void MyWindow::interacting()
                 status = WINDOW_STATUS::IS_CLOSED;
                 break;
             default:
+                if(current_display->isReceiveEvent(event)){};
                 break;
         }
     }
@@ -47,6 +48,8 @@ void MyWindow::getEvent()
                     event_pool.push(event);
                     break;
                 default:
+                    if(current_display->isReceiveEvent(event)) 
+                        event_pool.push(event);
                     break;
             }
             EVcond.notify_one();

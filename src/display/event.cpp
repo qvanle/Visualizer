@@ -2,6 +2,13 @@
 
 bool Display::mouseMotion(SDL_Event& e) 
 {
+    for(auto& i : buts) 
+    {
+        if(i->isHover(e.motion.x, e.motion.y)) 
+        {
+            return true;
+        }
+    }
     return false;
 }
 

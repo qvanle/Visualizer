@@ -19,7 +19,7 @@
         {
             "type": "RECTANGLE"
         },
-        "visible": false,
+        "visible": true,
         "image": "button/start/released.png"
     }
 }
