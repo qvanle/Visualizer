@@ -127,6 +127,16 @@ void Object::zoom(double delta)
     location->h *= delta;
 }
 
+void Object::zoomInMiddle(double delta)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    SDL_Point center = {location->x + location->w / 2, location->y + location->h / 2};
+    location->w *= delta;
+    location->h *= delta;
+    location->x = center.x - location->w / 2;
+    location->y = center.y - location->h / 2;
+}
+
 void Object::fitTheTexture() 
 {
     SDL_QueryTexture(texture, nullptr, nullptr, &location->w, &location->h);
