@@ -68,6 +68,7 @@ public:
     virtual void moveY(int delta);
     virtual void zoomW(int delta);
     virtual void zoomH(int delta);
+    virtual void zoom(double delta);
     
     void fitTheTexture();
     const SDL_Color* getColor();

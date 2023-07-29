@@ -120,6 +120,12 @@ void Object::zoomH(int delta)
     if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
     location->h += delta;
 }
+void Object::zoom(double delta)
+{
+    if(location == nullptr) location = new SDL_Rect({0, 0, 0, 0});
+    location->w *= delta;
+    location->h *= delta;
+}
 
 void Object::fitTheTexture() 
 {
