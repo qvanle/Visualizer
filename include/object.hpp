@@ -4,7 +4,7 @@
 #include <string> 
 
 #include <SDL2/SDL.h>
-
+#include <SDL2/SDL_ttf.h>
 #include <nlohmann/json.hpp>
 
 #include <GLOBAL.hpp>
@@ -51,19 +51,19 @@ public:
     int getW();
     int getH();
 
-    void locating(int x, int y, int w, int h);
-    void locating(SDL_Rect l);
-    void locating(const json& mem);
+    virtual void locating(int x, int y, int w, int h);
+    virtual void locating(SDL_Rect l);
+    virtual void locating(const json& mem);
 
-    void locatingX(int x);
-    void locatingY(int y);
-    void locatingW(int w);
-    void locatingH(int h);
+    virtual void locatingX(int x);
+    virtual void locatingY(int y);
+    virtual void locatingW(int w);
+    virtual void locatingH(int h);
 
-    void moveX(int delta);
-    void moveY(int delta);
-    void zoomW(int delta);
-    void zoomH(int delta);
+    virtual void moveX(int delta);
+    virtual void moveY(int delta);
+    virtual void zoomW(int delta);
+    virtual void zoomH(int delta);
 
     const SDL_Color* getColor();
     void coloring(int r, int g, int b, int a);
