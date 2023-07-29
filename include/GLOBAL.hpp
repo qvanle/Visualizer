@@ -44,6 +44,7 @@ namespace PATH
     namespace ASSETS 
     {
         const std::string GRAPHICS_ = "assets/graphics/";
+        const std::string FONTS_ = "assets/fonts/";
     }
     const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 
