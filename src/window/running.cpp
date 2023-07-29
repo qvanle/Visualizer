@@ -1,5 +1,4 @@
 #include <window.hpp>
-#include <sprite.hpp>
 #include <services.hpp>
 
 void MyWindow::rendering()

@@ -21,12 +21,6 @@
         },
         "visible": true,
         "image": "home.png"
-    },
-    "buttons": 
-    [
-        {
-            "name": "start"
-        }
-    ]
+    }
 }
 

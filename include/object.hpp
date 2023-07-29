@@ -25,7 +25,9 @@ class Object : private Position
 {
 private:
     SDL_Renderer* render;
-    
+    TTF_Font* font;
+    std::string text;
+
     SDL_Color *color;
     SDL_Texture *texture;
     SHAPE shapeType;
@@ -35,6 +37,8 @@ protected:
     void fillWithColor();
     void fillCircleByColor();
     void fillRectangleByColor(); 
+
+    void textToTexture();
 public:
     Object(SDL_Renderer *& r, SDL_Rect v);
     ~Object();
@@ -64,7 +68,8 @@ public:
     virtual void moveY(int delta);
     virtual void zoomW(int delta);
     virtual void zoomH(int delta);
-
+    
+    void fitTheTexture();
     const SDL_Color* getColor();
     void coloring(int r, int g, int b, int a);
     void coloring(SDL_Color c);
@@ -96,6 +101,14 @@ public:
     void importFromJson(const json& mem);
 
     void linking(std::string n);
+
+    void setFont(TTF_Font* f);
+    void setText(std::string t);
+    void addText(std::string t);
+    void addCharacter(char c);
+    void removeCharacter();
+    void removeCharacter(int n);
+
 };
 
 #endif

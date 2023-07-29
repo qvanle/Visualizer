@@ -11,6 +11,7 @@ Object::Object(SDL_Renderer *& r, SDL_Rect v)
     crop = nullptr;
     color = nullptr;
     texture = nullptr;
+    font = nullptr;
     locating(0, 0, 0, 0);
     shapeType = SHAPE::NONE;
     visible = false;

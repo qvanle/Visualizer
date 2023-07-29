@@ -28,6 +28,7 @@ set(
     src/object/shape.cpp 
     src/object/external_storage.cpp
     src/object/visible.cpp
+    src/object/font.cpp
 )
 
 set( 

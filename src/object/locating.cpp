@@ -121,4 +121,7 @@ void Object::zoomH(int delta)
     location->h += delta;
 }
 
-
+void Object::fitTheTexture() 
+{
+    SDL_QueryTexture(texture, nullptr, nullptr, &location->w, &location->h);
+}
