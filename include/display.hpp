@@ -25,7 +25,7 @@ protected:
     void initButtons(const json& mem);
     void importFromJson();
 
-    bool mouseMotion(SDL_Event& e);
+    bool isButtonReceiveEvent(SDL_Event& e);
 public:
     Display(SDL_Renderer* r, SDL_Rect v);
     ~Display();
@@ -33,6 +33,7 @@ public:
     void linking(std::string n);
     
     bool isReceiveEvent(SDL_Event& e);
+    void react(SDL_Event& e);
 
     void rendering();
 };

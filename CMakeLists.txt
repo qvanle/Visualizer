@@ -58,6 +58,7 @@ set (
     src/button/rendering.cpp
     src/button/action.cpp
     src/button/mouse_action.cpp
+    src/button/event.cpp
 )
 
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON})

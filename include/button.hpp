@@ -35,6 +35,8 @@ public:
 
     BUTTON_ACTION getAction();
 
+    bool isReceiveEvent(SDL_Event& e);
+
     void rendering();
 
     void linking(std::string n);

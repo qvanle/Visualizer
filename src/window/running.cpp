@@ -28,7 +28,8 @@ void MyWindow::interacting()
                 status = WINDOW_STATUS::IS_CLOSED;
                 break;
             default:
-                if(current_display->isReceiveEvent(event)){};
+                if(current_display->isReceiveEvent(event))
+                    current_display->react(event);
                 break;
         }
     }
