@@ -17,6 +17,16 @@ void Button::importFromJson()
         initBackground((*mem)["background"]);
     if(mem->contains("sprites")) 
         initSprites((*mem)["sprites"]);
+    if(mem->contains("action")) 
+        initAction((*mem)["action"]);
+}
+
+void Button::initAction(const json& mem)
+{
+    if(mem.contains("type") && mem["type"].get<std::string>() == "CHANGE_SCREEN")
+        action = BUTTON_ACTION::CHANGE_SCREEN;
+    if(mem.contains("args"))
+        args = mem["args"];
 }
 
 void Button::initBackground(const json& mem)

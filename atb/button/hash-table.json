@@ -29,7 +29,16 @@
         {
             "name": "hash-table/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "HASH_TABLE"
+        }
+    }
 }
 
 

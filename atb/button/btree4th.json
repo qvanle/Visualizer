@@ -29,7 +29,17 @@
         {
             "name": "btree4th/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "BTREE_4TH"
+        }
+    }
+
 }
 
 

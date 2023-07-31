@@ -29,6 +29,15 @@
         {
             "name": "graph/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "GRAPH"
+        }
+    }
 }
 

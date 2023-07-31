@@ -29,5 +29,14 @@
         {
             "name": "AVL/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "AVL"
+        }
+    }
 }

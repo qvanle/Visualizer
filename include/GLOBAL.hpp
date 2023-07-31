@@ -38,6 +38,16 @@ enum class BUTTON_ACTION
     NONE, 
 };
 
+enum class DATA_STRUCTURES_TYPE 
+{
+    NONE,
+    AVL, 
+    HASH_TABLE,
+    GRAPH, 
+    TRIE,
+    BTREE_4TH
+};
+
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   

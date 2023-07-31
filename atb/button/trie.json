@@ -29,7 +29,16 @@
         {
             "name": "trie/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "TRIE"
+        }
+    }
 }
 
 

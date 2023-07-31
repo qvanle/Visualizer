@@ -19,10 +19,12 @@ private:
     std::vector<Sprite*> sprites;
     BUTTON_STATUS status;
     BUTTON_ACTION action;
+    json args;
 
 protected: 
     void initSprites(const json& mem);
     void initBackground(const json& mem);
+    void initAction(const json& mem);
     void importFromJson();
 
     bool isChoosed(int x, int y);
@@ -34,6 +36,8 @@ public:
     bool isClicked(int x, int y);
 
     BUTTON_ACTION getAction();
+    std::string getNextScreen();
+    DATA_STRUCTURES_TYPE getDataType();
 
     bool isReceiveEvent(SDL_Event& e);
 
