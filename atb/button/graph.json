@@ -1,0 +1,34 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 400,
+            "y": 216,
+            "w": 180,
+            "h": 50
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 0
+        },
+        "visible": true,
+        "SHAPE": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "sprites": 
+    [
+        {
+            "name": "graph/released"
+        },
+        {
+            "name": "graph/pressed"
+        }
+    ]
+}
+

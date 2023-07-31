@@ -1,0 +1,26 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 180,
+            "h": 50
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 255
+        },
+        "shape": 
+        {
+            "type": "RECTANGLE"
+            
+        },
+        "image": "graph/released.png",
+        "visible": true
+    }
+}

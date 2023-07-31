@@ -21,6 +21,24 @@
         },
         "visible": true,
         "image": "home.png"
-    }
+    },
+    "buttons":
+    [
+        {
+            "name": "AVL"
+        },
+        {
+            "name": "graph"
+        },
+        {
+            "name": "btree4th"
+        },
+        {
+            "name": "hash-table"
+        },
+        {
+            "name": "trie"
+        }
+    ]
 }
 

@@ -7,6 +7,7 @@ Button::Button(SDL_Renderer* render, SDL_Rect view) : Object(render, view)
 {
     this->render = render;
     viewport = view;
+    status = BUTTON_STATUS::RELEASED;
 }
 
 void Button::importFromJson() 
@@ -29,6 +30,8 @@ void Button::initSprites(const json& mem)
     {
         sprites.push_back(new Sprite(render, viewport));
         sprites.back()->linking(sprite["name"].get<std::string>());
+        sprites.back()->moveX(getX());
+        sprites.back()->moveY(getY());
     }
 }
 

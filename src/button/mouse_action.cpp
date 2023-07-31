@@ -33,7 +33,7 @@ bool Button::isClicked(int x, int y)
     if (isChoosed(x, y))
     {
         sprites[0]->hide();
-        sprites[1]->hide();
+        sprites[1]->show();
         status = BUTTON_STATUS::HOVER;
         return true;
     }
