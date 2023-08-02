@@ -3,7 +3,7 @@
 
 void Display::rendering()
 {
-    SDL_RenderSetViewport(render, &viewPort);
+    SDL_RenderSetViewport(render, &viewport);
     Object::rendering();
     for(auto& i : buts)
         i->rendering();

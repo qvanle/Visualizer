@@ -4,7 +4,7 @@
 Display::Display(SDL_Renderer* r, SDL_Rect v) : Object(r)
 {
     render = r;
-    viewPort = v;
+    viewport = v;
 }
 
 void Display::initBackground(const json& mem)

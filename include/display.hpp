@@ -18,7 +18,7 @@ private:
     
     std::string name;
     
-    SDL_Rect viewPort;
+    SDL_Rect viewport;
     std::vector<Button*> buts;
 protected:
     void initBackground(const json& mem);
