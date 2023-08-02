@@ -48,6 +48,12 @@ enum class DATA_STRUCTURES_TYPE
     BTREE_4TH
 };
 
+namespace DISPLAY 
+{
+    const std::string HOME_ = "home";
+    const std::string WORKING_ = "working";
+}
+
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   

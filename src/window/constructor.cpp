@@ -38,8 +38,8 @@ MyWindow::MyWindow()
 
     initSDL2();
     
-    display_pool["home"] = new Display(render, viewport);
-    display_pool["home"]->linking("home");
-    current_display = display_pool["home"];
+    display_pool[DISPLAY::HOME_] = new Display(render, viewport);
+    display_pool[DISPLAY::HOME_]->linking(DISPLAY::HOME_);
+    current_display = display_pool[DISPLAY::HOME_];
 }
 
