@@ -4,7 +4,7 @@
 #include <GLOBAL.hpp>
 #include <services.hpp>
 
-Object::Object(SDL_Renderer *& r, SDL_Rect v)
+Object::Object(SDL_Renderer *& r)
 {
     render = r;
     location = nullptr;
@@ -15,7 +15,6 @@ Object::Object(SDL_Renderer *& r, SDL_Rect v)
     locating(0, 0, 0, 0);
     shapeType = SHAPE::NONE;
     visible = false;
-    viewport = v;
 }
 
 

@@ -3,7 +3,7 @@
 #include <GLOBAL.hpp>
 #include <services.hpp>
 
-Button::Button(SDL_Renderer* render, SDL_Rect view) : Object(render, view)
+Button::Button(SDL_Renderer* render, SDL_Rect view) : Object(render)
 {
     this->render = render;
     viewport = view;

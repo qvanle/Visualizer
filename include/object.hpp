@@ -17,7 +17,6 @@ struct Position
     SDL_Rect* crop;
     int radius;
     SDL_Point center;
-    SDL_Rect viewport;
     bool visible;
 };
 
@@ -40,7 +39,7 @@ protected:
 
     void textToTexture();
 public:
-    Object(SDL_Renderer *& r, SDL_Rect v);
+    Object(SDL_Renderer *& r);
     ~Object();
 
     const SDL_Rect* getCrop();

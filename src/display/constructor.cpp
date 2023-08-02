@@ -1,7 +1,7 @@
 #include <display.hpp>
 #include <iostream>
 
-Display::Display(SDL_Renderer* r, SDL_Rect v) : Object(r, v)
+Display::Display(SDL_Renderer* r, SDL_Rect v) : Object(r)
 {
     render = r;
     viewPort = v;
