@@ -15,6 +15,7 @@ set(
     src/window/destructor.cpp
     src/window/status.cpp
     src/window/running.cpp
+    src/window/updating.cpp
 )
 
 set(

@@ -44,6 +44,8 @@ protected:
     void rendering();
     void interacting();
     void getEvent();
+    void react(Button* but);
+    void setDisplay(std::string name);
 public:
     MyWindow();
     ~MyWindow();

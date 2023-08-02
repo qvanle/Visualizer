@@ -28,8 +28,10 @@ void MyWindow::interacting()
                 status = WINDOW_STATUS::IS_CLOSED;
                 break;
             default:
+                Button* but = nullptr;
                 if(current_display->isReceiveEvent(event))
-                    current_display->react(event);
+                    but = current_display->react(event);
+                react(but);
                 break;
         }
     }
@@ -41,7 +43,7 @@ void MyWindow::getEvent()
     {
         while(SDL_PollEvent(&event))
         {
-            if(!EVmutex.try_lock()) continue;
+            EVmutex.lock();
             switch(event.type) 
             {
                 case SDL_QUIT: 

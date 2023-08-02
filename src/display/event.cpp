@@ -30,11 +30,14 @@ Button* Display::react(SDL_Event& e)
             for(auto& but : buts)
                 but->isHover(e.motion.x, e.motion.y);
             return nullptr;
+            break;
         case SDL_MOUSEBUTTONDOWN: 
             for(auto& but :buts) 
                 if(but->isClicked(e.motion.x, e.motion.y)) return but;
             return nullptr;
+            break;
         default: 
             return nullptr;
+            break;
     }
 }
