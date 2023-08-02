@@ -6,10 +6,9 @@
 #include <services.hpp>
 
 
-Sprite::Sprite(SDL_Renderer* r, SDL_Rect v) : Object(r) 
+Sprite::Sprite(SDL_Renderer* r) : Object(r) 
 {
     render = r;
-    viewport = v;
 }
 
 void Sprite::linking(std::string n)

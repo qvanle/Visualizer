@@ -38,7 +38,7 @@ void Button::initSprites(const json& mem)
 {
     for(auto& sprite : mem) 
     {
-        sprites.push_back(new Sprite(render, viewport));
+        sprites.push_back(new Sprite(render));
         sprites.back()->linking(sprite["name"].get<std::string>());
         sprites.back()->moveX(getX());
         sprites.back()->moveY(getY());
