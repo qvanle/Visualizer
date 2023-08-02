@@ -33,7 +33,7 @@ public:
     void linking(std::string n);
     
     bool isReceiveEvent(SDL_Event& e);
-    void react(SDL_Event& e);
+    Button* react(SDL_Event& e);
 
     void rendering();
 };

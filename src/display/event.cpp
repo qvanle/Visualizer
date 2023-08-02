@@ -22,15 +22,19 @@ bool Display::isReceiveEvent(SDL_Event& e)
     }
 }
 
-void Display::react(SDL_Event& e)
+Button* Display::react(SDL_Event& e)
 {
     switch(e.type) 
     {
         case SDL_MOUSEMOTION: 
             for(auto& but : buts)
                 but->isHover(e.motion.x, e.motion.y);
+            return nullptr;
         case SDL_MOUSEBUTTONDOWN: 
             for(auto& but :buts) 
-                but->isClicked(e.motion.x, e.motion.y);
+                if(but->isClicked(e.motion.x, e.motion.y)) return but;
+            return nullptr;
+        default: 
+            return nullptr;
     }
 }
