@@ -33,6 +33,8 @@ DATA_STRUCTURES_TYPE Button::getDataType()
 
     if(type == "BTREE_4TH")
         return DATA_STRUCTURES_TYPE::BTREE_4TH;
+    if(type == "HEAP")
+        return DATA_STRUCTURES_TYPE::HEAP;
 
     return DATA_STRUCTURES_TYPE::NONE;
 }

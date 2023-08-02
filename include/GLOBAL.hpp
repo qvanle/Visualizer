@@ -45,6 +45,7 @@ enum class DATA_STRUCTURES_TYPE
     HASH_TABLE,
     GRAPH, 
     TRIE,
+    HEAP,
     BTREE_4TH
 };
 

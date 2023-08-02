@@ -3,7 +3,7 @@
     {
         "location": 
         {
-            "x": 400,
+            "x": 620,
             "y": 334,
             "w": 180,
             "h": 50
@@ -24,10 +24,10 @@
     "sprites": 
     [
         {
-            "name": "hash-table/released"
+            "name": "heap/released"
         },
         {
-            "name": "hash-table/pressed"
+            "name": "heap/pressed"
         }
     ],
     "action": 
@@ -36,9 +36,11 @@
         "args": 
         {
             "next-screen": "working",
-            "data-type": "HASH_TABLE"
+            "data-type": "HEAP"
         }
     }
 }
+
+
 
 
