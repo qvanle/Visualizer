@@ -16,7 +16,7 @@ void Display::initButtons(const json& mem)
 {
     for(auto& i : mem)
     {
-        Button* b = new Button(render, viewPort);
+        Button* b = new Button(render);
         b->linking(i["name"].get<std::string>());
         buts.push_back(b);
     }

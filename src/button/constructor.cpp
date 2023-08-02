@@ -3,10 +3,9 @@
 #include <GLOBAL.hpp>
 #include <services.hpp>
 
-Button::Button(SDL_Renderer* render, SDL_Rect view) : Object(render)
+Button::Button(SDL_Renderer* render) : Object(render)
 {
     this->render = render;
-    viewport = view;
     status = BUTTON_STATUS::RELEASED;
 }
 

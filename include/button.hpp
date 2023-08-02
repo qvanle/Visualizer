@@ -12,7 +12,6 @@ class Button : protected Object
 {
 private: 
     SDL_Renderer* render;
-    SDL_Rect viewport;
 
     std::string name;
 
@@ -29,7 +28,7 @@ protected:
 
     bool isChoosed(int x, int y);
 public: 
-    Button(SDL_Renderer* render, SDL_Rect view);
+    Button(SDL_Renderer* render);
     ~Button();
     
     bool isHover(int x, int y);
