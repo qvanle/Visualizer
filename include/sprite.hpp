@@ -33,7 +33,7 @@ public:
     void linking(std::string n);
 
     void setTextBox(TTF_Font* f);
-    
+    void setText(std::string s);
     void typing(char c);
     void typing(std::string s);
     void backspace();
