@@ -42,6 +42,7 @@ set(
 set( 
     SERVICES
     src/services/json.cpp
+    src/services/number.cpp
 )
 
 set( 
