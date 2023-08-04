@@ -37,6 +37,7 @@ set(
     src/sprite/constructor.cpp
     src/sprite/destructor.cpp
     src/sprite/rendering.cpp
+    src/sprite/textbox.cpp
 )
 
 set( 

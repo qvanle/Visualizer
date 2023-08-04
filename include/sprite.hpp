@@ -18,6 +18,7 @@ private:
     std::string name;
 
     std::vector<Object*> objects;
+    Object* textBox;
 
     SDL_Renderer* render;
 protected:
@@ -30,6 +31,13 @@ public:
     ~Sprite();
     
     void linking(std::string n);
+
+    void setTextBox(TTF_Font* f);
+    
+    void typing(char c);
+    void typing(std::string s);
+    void backspace();
+    void backspace(int n);
 
     void rendering() override;
 };

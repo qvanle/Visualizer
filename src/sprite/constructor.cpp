@@ -9,12 +9,22 @@
 Sprite::Sprite(SDL_Renderer* r) : Object(r) 
 {
     render = r;
+    textBox = nullptr;
 }
 
 void Sprite::linking(std::string n)
 {
     name = n;
     importFromJson();
+}
+void Sprite::setTextBox(TTF_Font* f)
+{
+    if(textBox == nullptr)
+    {
+        objects.push_back(new Object(render));
+        textBox = objects.back();
+    }
+    textBox->setFont(f);
 }
 
 void Sprite::initBackground(const json& mem)
@@ -44,7 +54,7 @@ void Sprite::importFromJson()
     json* mem = JSON::readFile(PATH::ATB::SPRITE_ + name + ".json");
 
     initBackground((*mem)["background"]);
-    
+
     if(mem->contains("objects")) initObjects((*mem)["objects"]);
     delete mem;
 }
