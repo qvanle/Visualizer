@@ -61,8 +61,14 @@ set (
     src/button/mouse_action.cpp
     src/button/event.cpp
 )
+set ( 
+    DATA_STRUCTURES 
+    src/data_structures/constructor.cpp 
+    src/data_structures/destructor.cpp
+    src/data_structures/rendering.cpp
+)
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON})
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

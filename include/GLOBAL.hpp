@@ -70,6 +70,7 @@ namespace PATH
         const std::string OBJECT_ = "atb/object/";
         const std::string DISPLAY_ = "atb/display/";
         const std::string BUTTON_ = "atb/button/";
+        const std::string DATA_STRUCTURES_ = "atb/data_structures/";
     }
 }
 
