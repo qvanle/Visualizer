@@ -1,5 +1,5 @@
-#ifndef WINDOW 
-#define WINDOW 
+#ifndef WINDOW_HPP
+#define WINDOW_HPP
 
 #include <vector> 
 #include <thread>
@@ -13,6 +13,7 @@
 
 #include <GLOBAL.hpp>
 #include <display.hpp>
+#include <data_structures.hpp>
 
 class MyWindow 
 {
@@ -38,6 +39,7 @@ private:
    
     std::map<std::string, Display*> display_pool;
     Display* current_display;
+    DataStructures *ds;
 
 protected:
     void initSDL2();

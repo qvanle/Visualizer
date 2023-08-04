@@ -21,7 +21,13 @@
         },
         "visible": true,
         "image": "working.png"
-    }
+    },
+    "buttons": 
+    [
+        {
+            "name": "home"
+        }
+    ]
 }
 
 

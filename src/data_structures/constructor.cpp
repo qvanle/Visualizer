@@ -36,4 +36,27 @@ void DataStructures::importFromJson()
 void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
 {
     type = t;
+    switch(type) 
+    {
+        case DATA_STRUCTURES_TYPE::AVL: 
+            linking("AVL");
+            break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            linking("trie");
+            break;
+        case DATA_STRUCTURES_TYPE::HEAP: 
+            linking("HEAP");
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            linking("hash_table");
+            break;
+        case DATA_STRUCTURES_TYPE::GRAPH: 
+            linking("graph");
+            break;
+        case DATA_STRUCTURES_TYPE::BTREE_4TH:
+            linking("btree4th");
+            break;
+        case DATA_STRUCTURES_TYPE::NONE:
+            break;
+    }
 }

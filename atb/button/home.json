@@ -3,10 +3,10 @@
     {
         "location": 
         {
-            "x": 370,
-            "y": 334,
-            "w": 180,
-            "h": 50
+            "x": 1130,
+            "y": 575,
+            "w": 60,
+            "h": 60
         },
         "color": 
         {
@@ -24,10 +24,10 @@
     "sprites": 
     [
         {
-            "name": "hash-table/released"
+            "name": "home/released"
         },
         {
-            "name": "hash-table/pressed"
+            "name": "home/pressed"
         }
     ],
     "action": 
@@ -35,10 +35,11 @@
         "type": "CHANGE_SCREEN",
         "args": 
         {
-            "next-screen": "working",
-            "data-type": "HASH_TABLE"
+            "next-screen": "home"
         }
     }
 }
+
+
 
 
