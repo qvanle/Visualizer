@@ -67,6 +67,13 @@ set (
     src/data_structures/constructor.cpp 
     src/data_structures/destructor.cpp
     src/data_structures/rendering.cpp
+    src/data_structures/operator.cpp
+    src/data_structures/hash_table.cpp
+    src/data_structures/heap.cpp 
+    src/data_structures/AVL.cpp
+    src/data_structures/btree4th.cpp 
+    src/data_structures/trie.cpp
+    src/data_structures/graph.cpp
 )
 
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES})
