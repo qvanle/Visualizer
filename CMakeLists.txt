@@ -44,6 +44,7 @@ set(
     SERVICES
     src/services/json.cpp
     src/services/number.cpp
+    src/services/random.cpp
 )
 
 set( 
