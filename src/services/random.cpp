@@ -1,5 +1,7 @@
 #include <services.hpp>
 
+std::mt19937 RANDOM::rng = std::mt19937(std::chrono::steady_clock::now().time_since_epoch().count());
+
 int RANDOM::getInt(int a, int b)
 {
     return std::uniform_int_distribution<int> (a, b)(rng);

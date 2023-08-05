@@ -1,6 +1,7 @@
 #ifndef SERVICES
 #define SERVICES 
 
+#include <atomic>
 #include <string>
 #include <math.h>
 #include <climits>
@@ -31,20 +32,44 @@ namespace NUMBER
 
 namespace RANDOM 
 {
-    const std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+    extern std::mt19937 rng;
     int getInt(int a, int b);
     long long getLongLong(long long a, long long b);
-    
+
     float getFloat(float a, float b);
     double getDouble(double a, double b);
-    
+
     char getChar(char a, char b);
     char getChar();
-    
+
     std::string getString(int length);
     std::string getString(int length, char a, char b);
 
     bool flipCoin();
 }
+namespace IMPLICIT_TREAP 
+{
+    template <typename T> class Node 
+    {
+        private:
+            T NodeData;
+            int priority;
+            int treeSize;
+            Node<T>* lson;
+            Node<T>* rson;
+        protected: 
+            void updating();
+            void lazyPushDown();
+        public: 
+            Node(T data);
+            ~Node();
 
+            T getData();
+/**
+            friend int size(Node<T>* node);
+            friend void split(Node<T>* node, Node<T>*& lson, Node<T>*& rson, int sizeOfLeftTree);
+            friend Node<T>* merge(Node<T>* lson, Node<T>* rson);
+**/
+    };
+}
 #endif 
