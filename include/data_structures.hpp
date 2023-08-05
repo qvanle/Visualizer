@@ -12,6 +12,7 @@
 #include <object.hpp>
 #include <sprite.hpp>
 #include <services.hpp>
+#include <display.hpp>
 
 class DataStructures : protected Object
 {
@@ -21,10 +22,11 @@ private:
     std::vector<Sprite*> node;
     std::string spriteLinker;
     DATA_STRUCTURES_TYPE type;
-
+    std::vector<Display*> displays;
 protected:
     void initBackground(const json& mem);
     void initLinker(const json& mem);
+    void initDisplay(const json& mem);
     void importFromJson();
 
     void hashTableInit(std::vector<std::string> v);

@@ -23,6 +23,25 @@ void DataStructures::initLinker(const json& mem)
     spriteLinker = mem["name"];
 }
 
+void DataStructures::initDisplay(const json& mem)
+{
+
+    for(auto& i : mem)
+    {
+        SDL_Rect viewport = {0, 0, 0, 0};
+        if(i.contains("viewport"))
+        {
+            viewport.x = i["viewport"]["x"];
+            viewport.y = i["viewport"]["y"];
+            viewport.w = i["viewport"]["w"];
+            viewport.h = i["viewport"]["h"];
+        }
+        displays.push_back(new Display(render, viewport));
+        if(i.contains("name")) 
+            displays.back()->linking(i["name"].get<std::string>());
+    }
+}
+
 void DataStructures::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::DATA_STRUCTURES_+ name + ".json");
@@ -31,6 +50,8 @@ void DataStructures::importFromJson()
         initBackground((*mem)["background"]);
     if(mem->contains(("sprite-structure")))
         initLinker((*mem)["sprite-structure"]);
+    if(mem->contains("display"))
+        initDisplay((*mem)["display"]);
 }
 
 void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)

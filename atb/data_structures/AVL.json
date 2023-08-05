@@ -10,16 +10,29 @@
         },
         "color": 
         {
-           "r": 149,
-           "g": 157,
-           "b": 215,
-           "a": 100
+            "r": 149,
+            "g": 157,
+            "b": 215,
+            "a": 100
         },
         "shape": 
         {
             "type": "RECTANGLE"
         },
         "visible": true
-    }
+    },
+    "display":
+    [
+        {
+            "viewport": 
+            {
+                "x": 890,
+                "y": 20,
+                "w": 280,
+                "h": 500
+            },
+            "name": "toolbox/AVL"
+        }
+    ]
 }
 
