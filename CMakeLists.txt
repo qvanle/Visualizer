@@ -38,6 +38,7 @@ set(
     src/sprite/destructor.cpp
     src/sprite/rendering.cpp
     src/sprite/textbox.cpp
+    src/sprite/locating.cpp
 )
 
 set( 

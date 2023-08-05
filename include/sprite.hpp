@@ -39,6 +39,13 @@ public:
     void backspace();
     void backspace(int n);
 
+    void locating(int x, int y, int w, int h) override;
+    void locating(SDL_Rect r) override;
+    void locatingX(int x) override;
+    void locatingY(int y) override;
+    void moveX(int x) override;
+    void moveY(int y) override;
+
     void rendering() override;
 };
 
