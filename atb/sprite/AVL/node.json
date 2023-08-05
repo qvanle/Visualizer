@@ -1,0 +1,26 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 55,
+            "h": 55
+        },
+        "color": 
+        {
+            "r": 225,
+            "g": 225,
+            "b": 255,
+            "a": 255
+        },
+        "shape": 
+        {
+            "type": "CIRCLE"
+            
+        },
+        "visible": true
+    }
+}
+
