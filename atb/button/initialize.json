@@ -1,0 +1,46 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 910,
+            "y": 45,
+            "w": 240,
+            "h": 70
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 0
+        },
+        "visible": true,
+        "SHAPE": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "sprites": 
+    [
+        {
+            "name": "initialize/released"
+        },
+        {
+            "name": "initialize/pressed"
+        }
+    ],
+    "action": 
+    {
+        "type": "CHANGE_SCREEN",
+        "args": 
+        {
+            "next-screen": "working",
+            "data-type": "TRIE"
+        }
+    }
+}
+
+
+
+

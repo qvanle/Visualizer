@@ -3,10 +3,10 @@
     {
         "location":
         {
-            "x": 0,
-            "y": 0,
-            "w": 1200,
-            "h": 635
+            "x": 890,
+            "y": 20,
+            "w": 280,
+            "h": 500
         },
         "color":
         {
@@ -20,7 +20,23 @@
             "type": "RECTANGLE"
         },
         "visible": true
-    }
+    },
+    "buttons": 
+    [
+        {
+            "name": "initialize"
+        },
+        {
+            "name": "insert"
+        },
+        {
+            "name": "delete"
+        },
+        {
+            "name": "search"
+        }
+
+    ]
 }
 
 
