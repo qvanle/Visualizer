@@ -22,8 +22,23 @@ void Button::importFromJson()
 
 void Button::initAction(const json& mem)
 {
-    if(mem.contains("type") && mem["type"].get<std::string>() == "CHANGE_SCREEN")
-        action = BUTTON_ACTION::CHANGE_SCREEN;
+    if(mem.contains("type"))
+    {
+        if(mem["type"].get<std::string>() == "CHANGE_SCREEN")
+            action = BUTTON_ACTION::CHANGE_SCREEN;
+        else if(mem["type"].get<std::string>() == "INSERT")
+            action = BUTTON_ACTION::INSERT;
+        else if(mem["type"].get<std::string>() == "DELETE")
+            action = BUTTON_ACTION::DELETE;
+        else if(mem["type"].get<std::string>() == "INIT")
+            action = BUTTON_ACTION::INIT;
+        else if(mem["type"].get<std::string>() == "SEARCH")
+            action = BUTTON_ACTION::SEARCH;
+        else if(mem["type"].get<std::string>() == "SETTING")
+            action = BUTTON_ACTION::SETTING;
+        else
+            action = BUTTON_ACTION::NONE;
+    }
     if(mem.contains("args"))
         args = mem["args"];
 }

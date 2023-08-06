@@ -32,10 +32,9 @@
     ],
     "action": 
     {
-        "type": "CHANGE_SCREEN",
+        "type": "SETTING",
         "args": 
         {
-            "next-screen": "home"
         }
     }
 }

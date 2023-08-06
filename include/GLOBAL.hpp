@@ -35,6 +35,11 @@ enum class BUTTON_STATUS
 enum class BUTTON_ACTION 
 {
     CHANGE_SCREEN,
+    INSERT,
+    DELETE,
+    INIT,
+    SEARCH,
+    SETTING,
     NONE, 
 };
 
