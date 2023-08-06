@@ -77,6 +77,7 @@ set (
     src/data_structures/btree4th.cpp 
     src/data_structures/trie.cpp
     src/data_structures/graph.cpp
+    src/data_structures/event.cpp
 )
 
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES})

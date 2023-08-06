@@ -19,7 +19,7 @@
         {
             "type": "RECTANGLE"
         },
-        "image": "delete/pressed.png"
+        "image": "delete/hover.png"
     }
 }
 

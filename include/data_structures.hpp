@@ -74,6 +74,9 @@ public:
     void insert(std::string v);
     void remove(std::string v);
     void search(std::string v);
+
+    bool isReceiveEvent(SDL_Event& e);
+    Button* react(SDL_Event& e);
 };
 
 #endif 

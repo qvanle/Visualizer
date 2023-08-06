@@ -30,7 +30,9 @@ void MyWindow::interacting()
                 break;
             default:
                 Button* but = nullptr;
-                if(current_display->isReceiveEvent(event))
+                if(ds != nullptr && ds->isReceiveEvent(event))
+                    but = ds->react(event);
+                if(but == nullptr && current_display->isReceiveEvent(event))
                     but = current_display->react(event);
                 react(but);
                 break;
@@ -51,6 +53,9 @@ void MyWindow::getEvent()
                     event_pool.push(event);
                     break;
                 default:
+                    if(ds != nullptr && ds->isReceiveEvent(event))
+                        event_pool.push(event);
+                    else
                     if(current_display->isReceiveEvent(event)) 
                         event_pool.push(event);
                     break;
