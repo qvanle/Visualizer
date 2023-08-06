@@ -80,7 +80,15 @@ set (
     src/data_structures/event.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES})
+set ( 
+    INPUTBOX 
+    src/inputbox/constructor.cpp
+    src/inputbox/destructor.cpp
+    src/inputbox/rendering.cpp
+    src/inputbox/event.cpp
+)
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

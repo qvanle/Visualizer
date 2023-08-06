@@ -71,6 +71,7 @@ namespace PATH
         const std::string DISPLAY_ = "atb/display/";
         const std::string BUTTON_ = "atb/button/";
         const std::string DATA_STRUCTURES_ = "atb/data_structures/";
+        const std::string INPUTBOX_ = "atb/inputbox/";
     }
 }
 
