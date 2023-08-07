@@ -30,4 +30,14 @@ MyWindow::~MyWindow()
     {
         delete i.second;
     }
+    
+    for(auto &i : ds_pool)
+    {
+        delete i.second;
+    }
+
+    for(auto &i : inputbox_pool)
+    {
+        delete i.second;
+    }
 }

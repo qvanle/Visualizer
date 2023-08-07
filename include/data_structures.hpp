@@ -66,6 +66,9 @@ public:
 
     void linking(std::string n);
     void setDataType(DATA_STRUCTURES_TYPE t);
+    DATA_STRUCTURES_TYPE getDataType();
+
+    std::string getName();
 
     void rendering();
 

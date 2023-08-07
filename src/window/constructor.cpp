@@ -36,6 +36,7 @@ MyWindow::MyWindow()
     window = nullptr;
     render = nullptr;
     ds = nullptr;
+    inputbox = nullptr;
 
     initSDL2();
     

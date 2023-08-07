@@ -14,6 +14,7 @@
 #include <GLOBAL.hpp>
 #include <display.hpp>
 #include <data_structures.hpp>
+#include <inputbox.hpp>
 
 class MyWindow 
 {
@@ -39,8 +40,12 @@ private:
    
     std::map<std::string, Display*> display_pool;
     Display* current_display;
-    DataStructures *ds;
 
+    std::map<DATA_STRUCTURES_TYPE, DataStructures*> ds_pool;
+    DataStructures *ds;
+    
+    InputBox* inputbox;
+    std::map<std::string, InputBox*> inputbox_pool;
 protected:
     void initSDL2();
     void rendering();
@@ -48,6 +53,8 @@ protected:
     void getEvent();
     void react(Button* but);
     void setDisplay(std::string name);
+    void setInputBox(std::string name);
+    void setDataType(DATA_STRUCTURES_TYPE type);
 public:
     MyWindow();
     ~MyWindow();

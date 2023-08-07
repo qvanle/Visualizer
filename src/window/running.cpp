@@ -9,6 +9,7 @@ void MyWindow::rendering()
         SDL_RenderClear(render);
         current_display->rendering();
         if(ds != nullptr) ds->rendering();
+        if(inputbox != nullptr) inputbox->rendering();
         SDL_RenderPresent(render);
         UImutex.unlock();
     }
