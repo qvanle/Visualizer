@@ -1,3 +1,4 @@
+#include "GLOBAL.hpp"
 #include <iostream>
 
 #include <SDL2/SDL.h>
@@ -17,6 +18,22 @@ void InputBox::linking(std::string n)
     importFromJson();
 }
 
+void InputBox::initOperator(const json& mem)
+{
+    std::string type = mem.get<std::string>();
+
+    if(type == "INIT") op = DATA_STRUCTURES_OPERATOR::INIT;
+    else if (type == "INSERT") op = DATA_STRUCTURES_OPERATOR::INSERT;
+    else if (type == "DELETE") op = DATA_STRUCTURES_OPERATOR::DELETE;
+    else if (type == "SEARCH") op = DATA_STRUCTURES_OPERATOR::SEARCH;
+    else if (type == "GET_MIN") op = DATA_STRUCTURES_OPERATOR::GET_MIN;
+    else if (type == "GET_MAX") op = DATA_STRUCTURES_OPERATOR::GET_MAX;
+    else if (type == "GET_SIZE") op = DATA_STRUCTURES_OPERATOR::GET_SIZE;
+    else if (type == "FIND_COMPONENTS") op = DATA_STRUCTURES_OPERATOR::FIND_COMPONENTS;
+    else if (type == "DIJKSTRA") op = DATA_STRUCTURES_OPERATOR::DIJKSTRA_SHORTEST_PATH;
+    else if (type == "MINIMUM_SPANNING_TREE") op = DATA_STRUCTURES_OPERATOR::FIND_MINIMUM_SPANNING_TREE;
+}
+
 void InputBox::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::INPUTBOX_ + name + ".json");
@@ -29,7 +46,8 @@ void InputBox::importFromJson()
 
     if(mem->contains("sprites"))
         initSprites((*mem)["sprites"]);
-    
+    if(mem->contains("operator"))
+        initOperator((*mem)["operator"]);
     delete mem;
 }
 

@@ -87,6 +87,8 @@ set (
     src/inputbox/destructor.cpp
     src/inputbox/rendering.cpp
     src/inputbox/event.cpp
+    src/inputbox/typing.cpp
+    src/inputbox/operator.cpp
 )
 
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX})

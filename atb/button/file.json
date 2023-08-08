@@ -29,7 +29,11 @@
         {
             "name": "file/pressed"
         }
-    ]
+    ],
+    "action": 
+    {
+        "type": "FILE"
+    }
 }
 
 

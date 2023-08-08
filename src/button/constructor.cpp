@@ -7,6 +7,7 @@ Button::Button(SDL_Renderer* render) : Object(render)
 {
     this->render = render;
     status = BUTTON_STATUS::RELEASED;
+    action = BUTTON_ACTION::NONE;
 }
 
 void Button::importFromJson() 
