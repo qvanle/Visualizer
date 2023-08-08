@@ -63,9 +63,13 @@ Button* InputBox::react(SDL_Event& e)
             if(typingIndex == -1)
                 return nullptr;
             if(e.key.keysym.sym == SDLK_BACKSPACE)
+            {
                 inputs[typingIndex]->removeCharacter();
+            }
             if(SDLK_SPACE <= e.key.keysym.sym && e.key.keysym.sym <= SDLK_z)
+            {
                 inputs[typingIndex]->addCharacter(e.key.keysym.sym);
+            }
             return nullptr;
             break;
         }

@@ -12,6 +12,7 @@ class InputBox : private Object
 private:
     SDL_Renderer* render;
     std::string name;
+    TTF_Font* font;
 
     std::vector<Button*> buts;
     std::vector<Sprite*> inputs;
@@ -24,7 +25,7 @@ protected:
     bool isButtonReceiveEvent(SDL_Event& event);
     bool isInputReceiveEvent(SDL_Event& event);
 public:        
-    InputBox(SDL_Renderer* render);
+    InputBox(SDL_Renderer* render, TTF_Font* font);
     ~InputBox();
 
     void linking(std::string n);

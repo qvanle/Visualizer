@@ -13,7 +13,7 @@ void MyWindow::setDisplay(std::string name)
 void MyWindow::setInputBox(std::string name)
 {
     if(inputbox_pool.find(name) == inputbox_pool.end())
-        inputbox_pool[name] = new InputBox(render);
+        inputbox_pool[name] = new InputBox(render, myfont);
     inputbox_pool[name]->linking(name);
     inputbox = inputbox_pool[name];
 }

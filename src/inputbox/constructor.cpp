@@ -5,8 +5,9 @@
 #include <inputbox.hpp> 
 #include <services.hpp>
 
-InputBox::InputBox(SDL_Renderer* render) : Object(render)
+InputBox::InputBox(SDL_Renderer* render, TTF_Font* font) : Object(render)
 {
+    this->font = font;
     this->render = render;
 }
 
@@ -51,6 +52,7 @@ void InputBox::initSprites(const json& mem)
     for(auto& i : mem)
     {
         inputs.push_back(new Sprite(render));
-        if(i.contains("name")) inputs.back()->linking(i["name"]);
+        inputs.back()->setFont(font);
+        if(i.contains("name")) inputs.back()->linking(i["name"].get<std::string>());
     }
 }

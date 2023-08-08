@@ -33,6 +33,8 @@ void MyWindow::interacting()
                 Button* but = nullptr;
                 if(ds != nullptr && ds->isReceiveEvent(event))
                     but = ds->react(event);
+                if(inputbox != nullptr && inputbox->isReceiveEvent(event))
+                    but = inputbox->react(event);
                 if(but == nullptr && current_display->isReceiveEvent(event))
                     but = current_display->react(event);
                 react(but);
@@ -58,6 +60,8 @@ void MyWindow::getEvent()
                         event_pool.push(event);
                     else
                     if(current_display->isReceiveEvent(event)) 
+                        event_pool.push(event);
+                    else if (inputbox != nullptr && inputbox->isReceiveEvent(event))
                         event_pool.push(event);
                     break;
             }

@@ -14,6 +14,7 @@ MyWindow::~MyWindow()
         SDL_DestroyWindow(window);
         window = nullptr;
     }
+    if(myfont != nullptr) TTF_CloseFont(myfont);
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
@@ -40,4 +41,5 @@ MyWindow::~MyWindow()
     {
         delete i.second;
     }
+
 }

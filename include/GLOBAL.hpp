@@ -55,6 +55,18 @@ enum class DATA_STRUCTURES_TYPE
     HEAP,
     BTREE_4TH
 };
+enum class HORIZONTAL_ALIGN
+{
+    LEFT,
+    CENTER,
+    RIGHT
+};
+enum class VERTICAL_ALIGN
+{
+    TOP,
+    CENTER,
+    BOTTOM
+};
 
 namespace DISPLAY 
 {

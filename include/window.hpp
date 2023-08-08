@@ -26,6 +26,7 @@ private:
     int FPS;
 
     SDL_Window* window;
+    TTF_Font* myfont;
     
 
     SDL_Renderer* render;

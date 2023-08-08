@@ -1,8 +1,10 @@
 #include <object.hpp>
+#include <iostream>
 
 void Object::setFont(TTF_Font* f)
 {
     font = f;
+    textToTexture();
 }
 
 void Object::setText(std::string t)
@@ -46,4 +48,5 @@ void Object::textToTexture()
     SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), *color);
     texture = SDL_CreateTextureFromSurface(render, surface);
     SDL_FreeSurface(surface);
+    fitTheTexture();
 }

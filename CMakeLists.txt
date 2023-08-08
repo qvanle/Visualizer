@@ -39,6 +39,7 @@ set(
     src/sprite/rendering.cpp
     src/sprite/textbox.cpp
     src/sprite/locating.cpp
+    src/sprite/aligning.cpp
 )
 
 set( 
