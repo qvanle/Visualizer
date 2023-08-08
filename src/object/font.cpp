@@ -50,3 +50,8 @@ void Object::textToTexture()
     SDL_FreeSurface(surface);
     fitTheTexture();
 }
+
+std::string Object::getText()
+{
+    return text;
+}

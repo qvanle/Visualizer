@@ -34,6 +34,12 @@ void Sprite::setTextBox(TTF_Font* f)
     textBox->setFont(f);
 }
 
+std::string Sprite::getText()
+{
+    if(textBox == nullptr) return "";
+    return textBox->getText();
+}
+
 void Sprite::initBackground(const json& mem)
 {
     Object::importFromJson(mem);

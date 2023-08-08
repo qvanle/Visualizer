@@ -47,6 +47,7 @@ public:
     void typing(std::string s);
     void backspace();
     void backspace(int n);
+    std::string getText();
 
     void locating(int x, int y, int w, int h) override;
     void locating(SDL_Rect r) override;

@@ -109,6 +109,7 @@ public:
     void addCharacter(char c);
     void removeCharacter();
     void removeCharacter(int n);
+    std::string getText();
 
 };
 

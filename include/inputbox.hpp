@@ -32,6 +32,6 @@ public:
 
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
-
+    std::string getText(int index);
     void rendering();
 };

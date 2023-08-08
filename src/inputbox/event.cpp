@@ -103,3 +103,8 @@ Button* InputBox::react(SDL_Event& e)
             return nullptr;
     }
 }
+
+std::string InputBox::getText(int index)
+{
+    return inputs[index]->getText();
+}
