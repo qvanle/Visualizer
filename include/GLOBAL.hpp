@@ -54,6 +54,8 @@ enum class DATA_STRUCTURES_TYPE
     GRAPH, 
     TRIE,
     HEAP,
+    MIN_HEAP,
+    MAX_HEAP,
     BTREE_4TH
 };
 enum class DATA_STRUCTURES_OPERATOR 
@@ -82,6 +84,15 @@ enum class VERTICAL_ALIGN
     BOTTOM
 };
 
+enum class INPUT_TYPE
+{
+    NONE,
+    INT,
+    ARRAY,
+    STRING,
+    STRINGS
+};
+
 namespace DISPLAY 
 {
     const std::string HOME_ = "home";
@@ -105,6 +116,18 @@ namespace PATH
         const std::string BUTTON_ = "atb/button/";
         const std::string DATA_STRUCTURES_ = "atb/data_structures/";
         const std::string INPUTBOX_ = "atb/input/";
+    }
+
+    const std::string SAVING_ = "saving/";
+    namespace SAVING 
+    {
+        const std::string AVL_ = "saving/AVL.txt";
+        const std::string HASH_TABLE_ = "saving/HASH_TABLE.txt";
+        const std::string GRAPH_ = "saving/GRAPH.txt";
+        const std::string TRIE_ = "saving/TRIE.txt";
+        const std::string MIN_HEAP_ = "saving/MIN_HEAP.txt";
+        const std::string MAX_HEAP_ = "saving/MAX_HEAP.txt";
+        const std::string BTREE_4TH_ = "saving/BTREE_4TH.txt";
     }
 }
 

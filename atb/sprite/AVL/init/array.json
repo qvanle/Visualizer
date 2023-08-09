@@ -49,7 +49,7 @@
         "digit": true,
         "letter": false,
         "symbol": true,
-        "maxsize": 34
+        "maxsize": 200
     }
 }
 

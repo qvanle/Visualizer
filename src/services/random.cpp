@@ -7,6 +7,15 @@ int RANDOM::getInt(int a, int b)
     return std::uniform_int_distribution<int> (a, b)(rng);
 }
 
+std::string RANDOM::getInt(int length, int a, int b)
+{
+    if(length == 0) return "";
+    std::string result = NUMBER::intToString(RANDOM::getInt(a, b));
+
+    while(--length) result = result + " " + NUMBER::intToString(RANDOM::getInt(a, b));
+    return result;
+}
+
 long long RANDOM::getLongLong(long long a, long long b)
 {
     return std::uniform_int_distribution<long long> (a, b)(rng);

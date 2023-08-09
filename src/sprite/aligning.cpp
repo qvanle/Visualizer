@@ -4,8 +4,12 @@
 void Sprite::aligning()
 {
     if(textBox == nullptr) return ;
-    int w = textBox->getW();
-    int h = textBox->getH();
+    int w = std::min(textBox->getW(), getW());
+    int h = std::min(textBox->getH(), getH());
+
+    textBox->cropping(textBox->getW() - w, textBox->getH() - h, w, h);
+    textBox->locatingW(w);
+    textBox->locatingH(h);
 
     switch(alignH)
     {

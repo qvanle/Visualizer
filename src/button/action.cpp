@@ -38,3 +38,16 @@ DATA_STRUCTURES_TYPE Button::getDataType()
 
     return DATA_STRUCTURES_TYPE::NONE;
 }
+
+INPUT_TYPE Button::getInputType()
+{
+    if(!args.contains("input-type")) 
+        return INPUT_TYPE::NONE;
+    std::string type = args["input-type"].get<std::string>();
+
+    if(type == "INT") return INPUT_TYPE::INT;
+    if(type == "ARRAY") return INPUT_TYPE::ARRAY;
+    if(type == "STRING") return INPUT_TYPE::STRING;
+    if(type == "STRINGS") return INPUT_TYPE::STRINGS;
+    return INPUT_TYPE::NONE;
+}

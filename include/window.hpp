@@ -57,6 +57,8 @@ protected:
     void setInputBox(std::string name);
     void setDataType(DATA_STRUCTURES_TYPE type);
     void runOperator();
+    void getDataFromFile(DATA_STRUCTURES_TYPE type);
+    void getDataFromRandom(DATA_STRUCTURES_TYPE type);
 public:
     MyWindow();
     ~MyWindow();

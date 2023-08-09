@@ -37,6 +37,7 @@ public:
     BUTTON_ACTION getAction();
     std::string getNextScreen();
     DATA_STRUCTURES_TYPE getDataType();
+    INPUT_TYPE getInputType();
 
     bool isReceiveEvent(SDL_Event& e);
 

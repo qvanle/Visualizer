@@ -1,4 +1,5 @@
 #include <inputbox.hpp>
+#include <iostream>
 
 bool InputBox::isReceiveEvent(SDL_Event& e)
 {

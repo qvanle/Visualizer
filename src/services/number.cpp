@@ -1,5 +1,23 @@
 #include <services.hpp>
 
+std::string NUMBER::intToString(int64_t n)
+{
+    std::string result = "";
+    bool negative = false;
+    if(n < 0)
+    {
+        negative = true;
+        n *= -1;
+    }
+
+    while(n)
+    {
+        result = (char) (n % 10 + '0') + result;
+        n /= 10;
+    }
+
+    return result;
+}
 int64_t NUMBER::stringToInt(std::string s) 
 {
     if(!NUMBER::isNumber(s)) return NUMBER::INF;

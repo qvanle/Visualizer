@@ -18,10 +18,16 @@ namespace JSON
     void saveFile(std::string path, json* data);
 }
 
+namespace FILEE
+{
+    std::vector<std::string> readFile(std::string path);
+}
+
 namespace NUMBER 
 {
     const int64_t INF = LLONG_MAX;
     int64_t stringToInt(std::string s);
+    std::string intToString(int64_t n);
     bool isDigit(char c);
     bool isLetter(char c);
     bool isSymbol(char c);
@@ -36,6 +42,7 @@ namespace RANDOM
 {
     extern std::mt19937 rng;
     int getInt(int a, int b);
+    std::string getInt(int length, int a, int b);
     long long getLongLong(long long a, long long b);
 
     float getFloat(float a, float b);
