@@ -23,6 +23,8 @@ namespace NUMBER
     const int64_t INF = LLONG_MAX;
     int64_t stringToInt(std::string s);
     bool isDigit(char c);
+    bool isLetter(char c);
+    bool isSymbol(char c);
     bool isSign(char c);
     bool isOperator(char c);
     std::string removeLeadingZero(std::string s);

@@ -16,6 +16,8 @@ set(
     src/window/status.cpp
     src/window/running.cpp
     src/window/updating.cpp
+    src/window/rendering.cpp
+    src/window/event.cpp
 )
 
 set(

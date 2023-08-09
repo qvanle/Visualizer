@@ -31,6 +31,15 @@ bool NUMBER::isDigit(char c)
     return (c >= '0' && c <= '9');
 }
 
+bool NUMBER::isLetter(char c)
+{
+    return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+}
+bool NUMBER::isSymbol(char c)
+{
+    return (c == '.' || c == ',' || c == '!' || c == '?' || c == ':' || c == ';' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '"' || c == '\'');
+}
+
 bool NUMBER::isOperator(char c)
 {
     return (c == '+' || c == '-' || c == '*' || c == '/');

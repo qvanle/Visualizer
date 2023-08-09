@@ -12,6 +12,10 @@ Sprite::Sprite(SDL_Renderer* r) : Object(r)
     textBox = nullptr;
     alignH = HORIZONTAL_ALIGN::CENTER;
     alignV = VERTICAL_ALIGN::CENTER;
+    receiveDigit = true;
+    receiveLetter = true;
+    receiveSymbol = true;
+    maxSize = 50;
 }
 
 void Sprite::linking(std::string n)
@@ -77,6 +81,17 @@ void Sprite::initTextBox(const json& mem)
     aligning();
 }
 
+void Sprite::initInput(const json& mem)
+{
+    if(textBox == nullptr) return;
+    if(mem.contains("digit")) receiveDigit = mem["digit"].get<bool>();
+    if(mem.contains("letter")) receiveLetter = mem["letter"].get<bool>();
+    if(mem.contains("symbol")) receiveSymbol = mem["symbol"].get<bool>();
+    if(mem.contains("lower")) numberLower = mem["lower"].get<std::string>();
+    if(mem.contains("upper")) numberUpper = mem["upper"].get<std::string>();
+    if(mem.contains("maxsize")) maxSize = mem["maxsize"].get<int>();
+}
+
 void Sprite::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::SPRITE_ + name + ".json");
@@ -85,5 +100,6 @@ void Sprite::importFromJson()
 
     if(mem->contains("objects")) initObjects((*mem)["objects"]);
     if(mem->contains("text-box")) initTextBox((*mem)["text-box"]);
+    if(mem->contains("input")) initInput((*mem)["input"]);
     delete mem;
 }

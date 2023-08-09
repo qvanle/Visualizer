@@ -64,11 +64,11 @@ Button* InputBox::react(SDL_Event& e)
                 return nullptr;
             if(e.key.keysym.sym == SDLK_BACKSPACE)
             {
-                inputs[typingIndex]->removeCharacter();
+                inputs[typingIndex]->backspace();
             }
             if(SDLK_SPACE <= e.key.keysym.sym && e.key.keysym.sym <= SDLK_z)
             {
-                inputs[typingIndex]->addCharacter(e.key.keysym.sym);
+                inputs[typingIndex]->typing(e.key.keysym.sym);
             }
             return nullptr;
             break;
@@ -92,7 +92,7 @@ Button* InputBox::react(SDL_Event& e)
                 }
                 i++;
             }
-            typingIndex = -1;
+            typingIndex = 0;
             for(auto& but : buts)
                 if(but->isClicked(e.motion.x, e.motion.y))
                     return but;

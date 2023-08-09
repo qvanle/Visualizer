@@ -37,7 +37,13 @@ void Button::initAction(const json& mem)
             action = BUTTON_ACTION::SEARCH;
         else if(mem["type"].get<std::string>() == "SETTING")
             action = BUTTON_ACTION::SETTING;
-        else
+        else if(mem["type"].get<std::string>() == "DONE")
+            action = BUTTON_ACTION::DONE;
+        else if(mem["type"].get<std::string>() == "RANDOM") 
+            action = BUTTON_ACTION::RANDOM;
+        else if(mem["type"].get<std::string>() == "FILE") 
+            action = BUTTON_ACTION::FILE;
+        else 
             action = BUTTON_ACTION::NONE;
     }
     if(mem.contains("args"))

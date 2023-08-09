@@ -56,6 +56,7 @@ protected:
     void setDisplay(std::string name);
     void setInputBox(std::string name);
     void setDataType(DATA_STRUCTURES_TYPE type);
+    void runOperator();
 public:
     MyWindow();
     ~MyWindow();

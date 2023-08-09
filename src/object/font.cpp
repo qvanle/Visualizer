@@ -55,3 +55,8 @@ std::string Object::getText()
 {
     return text;
 }
+
+int Object::getSize()
+{
+    return text.size();
+}

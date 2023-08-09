@@ -42,6 +42,7 @@ enum class BUTTON_ACTION
     SETTING,
     DONE,
     RANDOM,
+    FILE,
     NONE, 
 };
 

@@ -26,43 +26,43 @@ void MyWindow::setDataType(DATA_STRUCTURES_TYPE type)
     ds = ds_pool[type];
 }
 
+void MyWindow::runOperator()
+{
+}
+
 void MyWindow::react(Button* but)
 {
     if(but == nullptr) return ;
     switch (but->getAction())
     {
         case BUTTON_ACTION::CHANGE_SCREEN:{
-            UImutex.lock();
             setDisplay(but->getNextScreen());
             if(but->getDataType() != DATA_STRUCTURES_TYPE::NONE) 
                 setDataType(but->getDataType());
-            UImutex.unlock();
             break;
         }
         case BUTTON_ACTION::INIT: {
-            UImutex.lock();
             setInputBox(ds->getName() + "/init");
-            UImutex.unlock();
             break;
         }
         case BUTTON_ACTION::INSERT:{
-            UImutex.lock();
             setInputBox(ds->getName() + "/insert");
-            UImutex.unlock();
             break;
         }
         case BUTTON_ACTION::DELETE:{
-            UImutex.lock();
             setInputBox(ds->getName() + "/remove");
-            UImutex.unlock();
             break;
         }
         case BUTTON_ACTION::SEARCH:{
-            UImutex.lock();
             setInputBox(ds->getName() + "/search");
-            UImutex.unlock();
             break;
         }
+        case BUTTON_ACTION::DONE:{
+            runOperator();
+            inputbox = nullptr;
+            break;
+        }
+
         default: 
             break;
     }

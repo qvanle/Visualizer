@@ -110,6 +110,7 @@ public:
     void removeCharacter();
     void removeCharacter(int n);
     std::string getText();
+    int getSize();
 
 };
 

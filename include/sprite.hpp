@@ -26,12 +26,20 @@ private:
     HORIZONTAL_ALIGN alignH;
     VERTICAL_ALIGN alignV;
 
+    bool receiveDigit;
+    bool receiveLetter;
+    bool receiveSymbol;
+    std::string numberLower;
+    std::string numberUpper;
+    int maxSize;
+
     SDL_Renderer* render;
 protected:
     
     void initBackground(const json &mem);
     void initObjects(const json &mem);
     void initTextBox(const json& mem);
+    void initInput(const json& mem);
     void importFromJson();
     void aligning();
 public:

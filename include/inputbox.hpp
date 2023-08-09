@@ -18,7 +18,7 @@ private:
 
     std::vector<Button*> buts;
     std::vector<Sprite*> inputs;
-    int typingIndex = -1;
+    int typingIndex = 0;
 protected:
     void initBackground(const json& mem);
     void initButtons(const json& mem);
