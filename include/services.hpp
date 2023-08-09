@@ -56,29 +56,4 @@ namespace RANDOM
 
     bool flipCoin();
 }
-namespace IMPLICIT_TREAP 
-{
-    template <typename T> class Node 
-    {
-        private:
-            T NodeData;
-            int priority;
-            int treeSize;
-            Node<T>* lson;
-            Node<T>* rson;
-        protected: 
-            void updating();
-            void lazyPushDown();
-        public: 
-            Node(T data);
-            ~Node();
-
-            T getData();
-/**
-            friend int size(Node<T>* node);
-            friend void split(Node<T>* node, Node<T>*& lson, Node<T>*& rson, int sizeOfLeftTree);
-            friend Node<T>* merge(Node<T>* lson, Node<T>* rson);
-**/
-    };
-}
 #endif 
