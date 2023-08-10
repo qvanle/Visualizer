@@ -28,9 +28,17 @@ void AVL::init(std::vector<int> values)
     if(root != nullptr)
         delete root;
     root = nullptr;
+    animation = false;
+    
+
     for(int i = 0; i < values.size() && sizeOfTree < capacity; i++)
     {
-        insert(values[i]);
+        Sprite* sprite = new Sprite(render);
+        sprite->setFont(font);
+        sprite->linking("AVL/node");
+        sprite->setText(NUMBER::intToString(values[i]));
+
+        root = insert(root, new Node(values[i], sprite));
     }
     maxHigh = maxDepth(root);
     locating(root, 0, 0);
@@ -42,16 +50,18 @@ bool AVL::insert(int key)
     {
         return false;
     }
-
+    
+    cache = nullptr;
 
     Sprite* sprite = new Sprite(render);
     sprite->setFont(font);
     sprite->linking("AVL/node");
     sprite->setText(NUMBER::intToString(key));
+    cache = new Node(key, sprite);
 
-    Node* node = new Node(key, sprite);
-    root = insert(root, node);
-    
+    animation = true;
+    root = insert(root, cache);
+
     int step = 0;
     Node* current;
 

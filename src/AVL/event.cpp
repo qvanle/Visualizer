@@ -49,6 +49,11 @@ void AVL::react(SDL_Event& e)
             shiftX += dx;
             shiftY += dy;
             locating(root, 0, 0);
+            if(cache != nullptr) 
+            {
+                cache->sprite->moveX(dx);
+                cache->sprite->moveY(dy);
+            }
             break;
         }
         defaut:

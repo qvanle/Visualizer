@@ -25,12 +25,19 @@
     [
         {
             "name": "done"
+        },
+        {
+            "name": "random"
         }
     ],
     "sprites": 
     [
         {
             "name": "AVL/insert/title"
+        },
+        {
+            "name": "AVL/insert/value"
         }
-    ]
+    ],
+    "operator": "INSERT"
 }

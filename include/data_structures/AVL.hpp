@@ -47,6 +47,7 @@ private:
     int distanceY;
 
     bool animation;
+    Node* cache;
 protected:
     Node* rotateLeft(Node * node);
     Node* rotateRight(Node * node);
@@ -73,8 +74,6 @@ public:
     void setEdgesColor(SDL_Color c);
     void setNodeColor(SDL_Color bg, SDL_Color fg);
     
-    void animated();
-    void noAnimated();
     void goOff();
     void goOn();
     void goNext();

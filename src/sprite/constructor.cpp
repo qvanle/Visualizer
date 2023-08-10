@@ -47,6 +47,8 @@ std::string Sprite::getText()
 void Sprite::initBackground(const json& mem)
 {
     Object::importFromJson(mem);
+    if(Object::getColor() == nullptr) return ;
+    cacheColor = *Object::getColor();
 }
 
 void Sprite::initObjects(const json &mem)

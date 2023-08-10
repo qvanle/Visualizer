@@ -32,6 +32,8 @@ private:
     std::string numberLower;
     std::string numberUpper;
     int maxSize;
+    
+    SDL_Color cacheColor;
 
     SDL_Renderer* render;
 protected:
@@ -69,6 +71,8 @@ public:
     void aligning(VERTICAL_ALIGN v);
 
     void rendering() override;
+    void highlight();
+    void unhighlight();
 };
 
 #endif 

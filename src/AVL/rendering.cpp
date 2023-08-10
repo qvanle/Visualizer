@@ -37,4 +37,8 @@ void AVL::rendering()
         }
         u->sprite->rendering();
     }
+    if(cache != nullptr) 
+    {
+        cache->sprite->rendering();
+    }
 }
