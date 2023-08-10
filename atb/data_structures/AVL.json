@@ -32,6 +32,16 @@
                 "h": 635
             },
             "name": "toolbox/AVL"
+        },
+        {
+            "viewport": 
+            {
+                "x": 0,
+                "y": 0,
+                "w": 1200,
+                "h": 635
+            },
+            "name": "toolbox/step"
         }
     ]
 }

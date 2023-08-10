@@ -1,0 +1,29 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 50,
+            "h": 50
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 255
+        },
+        "visible": false,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "image": "play/1.png"
+    }
+}
+
+
+
+
