@@ -94,7 +94,18 @@ set (
     src/inputbox/operator.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX})
+set ( 
+    AVL
+    src/AVL/constructor.cpp 
+    src/AVL/destructor.cpp
+    src/AVL/rotate.cpp
+    src/AVL/rendering.cpp
+    src/AVL/operator.cpp
+    src/AVL/step.cpp
+    src/AVL/event.cpp
+)
+
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

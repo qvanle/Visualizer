@@ -1,7 +1,8 @@
 #include <data_structures.hpp>
 
-DataStructures::DataStructures(SDL_Renderer* r) : Object(r)
+DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f) : Object(r)
 {
+    font = f;
     render = r;
 }
 
@@ -61,6 +62,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
     {
         case DATA_STRUCTURES_TYPE::AVL: 
             linking("AVL");
+            avl = new AVL(render, font, {10, 10, 800, 600}, 32);
             break;
         case DATA_STRUCTURES_TYPE::TRIE:
             linking("trie");

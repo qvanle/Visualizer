@@ -19,11 +19,11 @@ void MyWindow::interacting()
                 break;
             default:
                 Button* but = nullptr;
-                if(ds != nullptr && ds->isReceiveEvent(event))
-                    but = ds->react(event);
-                if(inputbox != nullptr && inputbox->isReceiveEvent(event))
+                if(but == nullptr && inputbox != nullptr && inputbox->isReceiveEvent(event))
                     but = inputbox->react(event);
-                if(but == nullptr && current_display->isReceiveEvent(event))
+                if(ds != nullptr && ds->isReceiveEvent(event) && but == nullptr)
+                    but = ds->react(event);
+                if(but == nullptr && but == nullptr && current_display->isReceiveEvent(event))
                     but = current_display->react(event);
                 react(but);
                 break;

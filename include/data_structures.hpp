@@ -14,6 +14,8 @@
 #include <services.hpp>
 #include <display.hpp>
 
+#include <data_structures/AVL.hpp>
+
 class DataStructures : protected Object
 {
 private:
@@ -23,6 +25,9 @@ private:
     std::string spriteLinker;
     DATA_STRUCTURES_TYPE type;
     std::vector<Display*> displays;
+    TTF_Font* font;
+    AVL* avl;
+
 protected:
     void initBackground(const json& mem);
     void initLinker(const json& mem);
@@ -61,7 +66,7 @@ protected:
     void heapGetMin();
     void heapGetSize();
 public:
-    DataStructures(SDL_Renderer* r);
+    DataStructures(SDL_Renderer* r, TTF_Font* f);
     ~DataStructures();
 
     void linking(std::string n);
@@ -73,6 +78,7 @@ public:
     void rendering();
 
     void init(std::vector<std::string> v);
+    void init(std::vector<int> v);
     void initFromFile(std::string f);
     void insert(std::string v);
     void remove(std::string v);

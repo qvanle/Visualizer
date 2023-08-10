@@ -28,6 +28,7 @@ namespace NUMBER
     const int64_t INF = LLONG_MAX;
     int64_t stringToInt(std::string s);
     std::string intToString(int64_t n);
+    std::vector<int> stringToArray(std::string s);
     bool isDigit(char c);
     bool isLetter(char c);
     bool isSymbol(char c);

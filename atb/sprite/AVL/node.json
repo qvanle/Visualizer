@@ -10,17 +10,41 @@
         },
         "color": 
         {
-            "r": 225,
-            "g": 225,
-            "b": 255,
+            "r": 25,
+            "g": 80,
+            "b": 185,
             "a": 255
         },
+        "visible": true,
         "shape": 
         {
             "type": "CIRCLE"
-            
+        }
+    },
+    "text-box":
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 55,
+            "h": 55
         },
-        "visible": true
+        "color": 
+        {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "text": "INITIALIZE"
     }
 }
+
+
 

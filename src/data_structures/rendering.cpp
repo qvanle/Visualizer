@@ -7,4 +7,6 @@ void DataStructures::rendering()
         i->rendering();
     for(auto& i : displays)
         i->rendering();
+    if(avl != nullptr) 
+        avl->rendering();
 }

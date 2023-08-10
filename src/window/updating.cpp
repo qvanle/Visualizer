@@ -26,7 +26,7 @@ void MyWindow::setDataType(DATA_STRUCTURES_TYPE type)
 {
     if(ds_pool.find(type) == ds_pool.end())
     {
-        ds_pool[type] = new DataStructures(render);
+        ds_pool[type] = new DataStructures(render, myfont);
         ds_pool[type]->setDataType(type);
     }
     ds = ds_pool[type];
@@ -34,6 +34,17 @@ void MyWindow::setDataType(DATA_STRUCTURES_TYPE type)
 
 void MyWindow::runOperator()
 {
+    switch(inputbox->getOperator())
+    {
+        case DATA_STRUCTURES_OPERATOR::INIT:
+        {
+            std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
+            ds->init(value);
+            break;
+        }
+        default :
+            break;
+    }
 }
 
 void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)

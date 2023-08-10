@@ -1,5 +1,17 @@
 #include <data_structures.hpp>
 
+void DataStructures::init(std::vector<int> v)
+{
+    switch (type)
+    {
+        case DATA_STRUCTURES_TYPE::AVL:
+            avl->init(v);
+            break;
+        default:
+            break;
+    }
+}
+
 void DataStructures::init(std::vector<std::string> v)
 {
 }

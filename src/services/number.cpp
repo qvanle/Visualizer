@@ -18,6 +18,24 @@ std::string NUMBER::intToString(int64_t n)
 
     return result;
 }
+
+std::vector<int> NUMBER::stringToArray(std::string s)
+{
+    std::vector<int> result;
+    int i = 0;
+
+    while(i != (int) s.size())
+    {
+        while(i != (int) s.size() && !NUMBER::isDigit(s[i])) i++;
+        if(i == (int) s.size()) break;
+        
+        int n = 0;
+        while(i != (int) s.size() && NUMBER::isDigit(s[i])) n = n * 10 + s[i++] - '0';
+        result.push_back(n);
+    }
+    return result;
+}
+
 int64_t NUMBER::stringToInt(std::string s) 
 {
     if(!NUMBER::isNumber(s)) return NUMBER::INF;

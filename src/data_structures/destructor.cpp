@@ -8,4 +8,5 @@ DataStructures::~DataStructures()
     for(auto& i : displays)
         delete i;
     node.clear();
+    if(avl != nullptr) delete avl;
 }

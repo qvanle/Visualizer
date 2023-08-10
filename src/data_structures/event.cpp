@@ -11,6 +11,8 @@ bool DataStructures::isReceiveEvent(SDL_Event& e)
             return false;
             break;
         default: 
+            if(avl != nullptr && avl->isReceiveEvent(e))
+                return true;
             for(auto &i : displays)
                 if(i->isReceiveEvent(e))
                     return true;
@@ -23,6 +25,8 @@ bool DataStructures::isReceiveEvent(SDL_Event& e)
 Button* DataStructures::react(SDL_Event& e)
 {
     Button* but = nullptr;
+    if(avl != nullptr && avl->isReceiveEvent(e))
+         avl->react(e);
     for(auto &i : displays)
         if(i->isReceiveEvent(e))
             but = i->react(e);

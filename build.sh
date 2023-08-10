@@ -46,7 +46,8 @@ clear
 if [ $build_status -eq 0 ];
 then 
     printf "${LightGreen}Build successful${NC}\n"
-    gdb -ex run build/CLM 
+    #gdb -ex run build/CLM 
+    ./build/CLM
 else 
     printf "${Red}Build failed\n"
     printf "return value: $build_status\n${NC}"
