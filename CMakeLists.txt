@@ -42,6 +42,7 @@ set(
     src/sprite/textbox.cpp
     src/sprite/locating.cpp
     src/sprite/aligning.cpp
+    src/sprite/coloring.cpp
 )
 
 set( 
@@ -100,9 +101,12 @@ set (
     src/AVL/destructor.cpp
     src/AVL/rotate.cpp
     src/AVL/rendering.cpp
-    src/AVL/operator.cpp
     src/AVL/step.cpp
     src/AVL/event.cpp
+    src/AVL/operator/init.cpp
+    src/AVL/operator/insert.cpp
+    src/AVL/operator/delete.cpp
+    src/AVL/operator/search.cpp
 )
 
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL})

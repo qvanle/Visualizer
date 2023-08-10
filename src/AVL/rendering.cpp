@@ -7,9 +7,10 @@ void AVL::renderLine(Node* src, Node* dst)
     SDL_Point pdst = {dst->sprite->getX() + dst->sprite->getW() / 2, dst->sprite->getY() + dst->sprite->getH() / 2};
     
     SDL_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);
-    for(int i = -5; i <= 5; i++)
+    for(int i = -1; i <= 1; i++)
     {
-        SDL_RenderDrawLine(render, psrc.x + i, psrc.y, pdst.x + i, pdst.y);
+        for(int j = -1; j <= 1; j++)
+            SDL_RenderDrawLine(render, psrc.x + i, psrc.y + j, pdst.x + i, pdst.y + j);
     }
 }
 

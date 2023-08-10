@@ -27,12 +27,13 @@ AVL::AVL(SDL_Renderer* rend, TTF_Font* f, SDL_Rect vp, int cap)
     viewport = vp;
     capacity = cap;
     sizeOfTree = 0;
-    animation = false;
+    isQueue = false;
+    isPause = false;
     edgesColor = {255, 255, 255, 255};
     shiftX = 20;
     shiftY = 20;
-    distanceX = 75;
-    distanceY = 90;
+    distanceX = 40;
+    distanceY = 100;
     isMoving = false;
 }
 int AVL::maxDepth()

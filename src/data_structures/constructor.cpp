@@ -62,7 +62,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
     {
         case DATA_STRUCTURES_TYPE::AVL: 
             linking("AVL");
-            avl = new AVL(render, font, {10, 10, 800, 600}, 32);
+            avl = new AVL(render, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::TRIE:
             linking("trie");

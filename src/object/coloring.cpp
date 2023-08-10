@@ -40,4 +40,5 @@ void Object::fillWithColor()
 {
     if(shapeType == SHAPE::NONE) return fillRectangleByColor();
     if(shapeType == SHAPE::RECTANGLE) return fillRectangleByColor();
+    if(shapeType == SHAPE::CIRCLE) return fillCircleByColor();
 }

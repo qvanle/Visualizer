@@ -42,6 +42,16 @@ void MyWindow::runOperator()
             ds->init(value);
             break;
         }
+        case DATA_STRUCTURES_OPERATOR::INSERT:
+            
+            ds->insert(inputbox->getText(1));
+            break;
+        case DATA_STRUCTURES_OPERATOR::DELETE:
+            ds->remove(inputbox->getText(1));
+            break;
+        case DATA_STRUCTURES_OPERATOR::SEARCH:
+            ds->search(inputbox->getText(1));
+            break;
         default :
             break;
     }
@@ -96,7 +106,7 @@ void MyWindow::getDataFromRandom(DATA_STRUCTURES_TYPE type)
     switch(type)
     {
         case DATA_STRUCTURES_TYPE::AVL:{
-            int n = RANDOM::getInt(1, 20);
+            int n = RANDOM::getInt(1, 32);
             std::string mem = RANDOM::getInt(n, 1, 999);
             inputbox->setText(1, mem);
             break;
@@ -169,6 +179,11 @@ void MyWindow::react(Button* but)
         }
         case BUTTON_ACTION::RANDOM:{
             getDataFromRandom(ds->getDataType());
+            break;
+        }
+        case BUTTON_ACTION::RANDOM2: 
+        {
+            inputbox->setText(1, RANDOM::getInt(1, 1, 999));
             break;
         }
         case BUTTON_ACTION::FILE :{

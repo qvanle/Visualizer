@@ -118,6 +118,8 @@ void Object::fillCircleByColor()
     Uint32 *pixels = new Uint32[getW() * getH()];
     memset(pixels, 0, getW() * getH() * sizeof(Uint32));
 
+    center.x = getX() + getW() / 2;
+    center.y = getY() + getH() / 2;
 
     for(int i = center.x - radius; i <= center.x + radius; i++)
     {
@@ -125,7 +127,9 @@ void Object::fillCircleByColor()
         {
             if((i - center.x) * (i - center.x) + (j - center.y) * (j - center.y) <= radius * radius)
             {
-                pixels[(j - getY()) * getW() + (i - getX())] = pixelColor;
+                int index = (j - getY()) * getW() + (i - getX());
+                if(index < 0 || index >= getW() * getH()) continue;
+                pixels[index] = pixelColor;
             }
         }
     }

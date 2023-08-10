@@ -46,7 +46,8 @@ private:
     int distanceX;
     int distanceY;
 
-    bool animation;
+    bool isQueue;
+    bool isPause;
     Node* cache;
 protected:
     Node* rotateLeft(Node * node);
@@ -59,6 +60,10 @@ protected:
     int maxDepth(Node* node);
 
     Node* insert(Node* node, Node* newNode);
+    Node* unplugSmallest(Node* Node, struct Node*& n2); 
+    Node* remove(Node* node, int key);
+    void search(Node* node, int key);
+
     int locating(Node* node, int shiftDown, int shiftRight);
     void renderLine(Node* src, Node* dst);
 public:

@@ -1,4 +1,5 @@
 #include <sprite.hpp>
+#include <iostream>
 
 void Sprite::highlight()
 {
@@ -6,13 +7,13 @@ void Sprite::highlight()
 
     if(c == nullptr) return ;
 
-    cacheColor = *c;
+    cacheColor = {c->r, c->g, c->b, c->a};
 
     int maxChannel = std::max(std::max(c->r, c->g), c->b);
-    Object::coloring(maxChannel * 0.5, maxChannel * 0.5, maxChannel * 0.5, c->a);
+    Object::coloring(maxChannel * 0.4, maxChannel * 0.4, maxChannel * 0.4, c->a);
 }
 
 void Sprite::unhighlight()
 {
-    Object::coloring(cacheColor.r, cacheColor.g, cacheColor.b, cacheColor.a);
+    Object::coloring(cacheColor);
 }

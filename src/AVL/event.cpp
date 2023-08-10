@@ -7,6 +7,7 @@ bool AVL::isReceiveEvent(SDL_Event& e)
         case SDL_MOUSEBUTTONDOWN:
             if(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) return false;
             if(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) return false;
+            if(e.button.button == SDL_BUTTON_LEFT) return false;
             if(root == nullptr) return false;
             return true;
             break;

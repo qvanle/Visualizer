@@ -1,4 +1,5 @@
 #include <services.hpp>
+#include <iostream>
 
 std::string NUMBER::intToString(int64_t n)
 {
@@ -64,7 +65,8 @@ int64_t NUMBER::stringToInt(std::string s)
 
 bool NUMBER::isDigit(char c)
 {
-    return (c >= '0' && c <= '9');
+    if((int) c < 48 || (int) c > 57) return false;
+    return true;
 }
 
 bool NUMBER::isLetter(char c)
