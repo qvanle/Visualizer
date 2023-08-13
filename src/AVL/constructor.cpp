@@ -2,7 +2,7 @@
 
 #include <data_structures/AVL.hpp>
 
-int compare(Node* a, Node* b)
+int AVL::compare(Node* a, Node* b)
 {
     if(a == nullptr && b == nullptr) return 0;
     if(a == nullptr) return -1;
@@ -11,7 +11,7 @@ int compare(Node* a, Node* b)
     if(a->key > b->key) return 1;
     return 0;
 }
-Node::Node(int k, Sprite* spr)
+AVL::Node::Node(int k, Sprite* spr)
 {
     key = k;
     sprite = spr;
@@ -58,9 +58,12 @@ int AVL::locating(Node* node, int shiftDown, int shiftRight)
     }
     int left = locating(node->lson, shiftDown + 1, shiftRight);
 
-    node->sprite->locatingX(shiftX + shiftRight * distanceX + left * distanceX);
-    node->sprite->locatingY(shiftY + shiftDown * distanceY);
-    node->sprite->aligning(HORIZONTAL_ALIGN::CENTER, VERTICAL_ALIGN::CENTER);
+    if(node->sprite != nullptr)
+    {
+        node->sprite->locatingX(shiftX + shiftRight * distanceX + left * distanceX);
+        node->sprite->locatingY(shiftY + shiftDown * distanceY);
+        node->sprite->aligning(HORIZONTAL_ALIGN::CENTER, VERTICAL_ALIGN::CENTER);
+    }
     locating(node->rson, shiftDown + 1, shiftRight + left + 1);
 
     return (1 << (maxHigh - shiftDown)) - 1;

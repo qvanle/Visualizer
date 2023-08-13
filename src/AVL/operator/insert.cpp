@@ -2,7 +2,7 @@
 #include <services.hpp>
 
 
-Node* AVL::insert(Node* node, Node* newNode)
+AVL::Node* AVL::insert(Node* node, Node* newNode)
 {
     if(node == nullptr) 
     {

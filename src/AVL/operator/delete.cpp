@@ -1,7 +1,7 @@
 #include <data_structures/AVL.hpp>
 #include <services.hpp>
 
-Node* unplugSmalest(Node* node, struct Node*& n2)
+AVL::Node* AVL::unplugSmallest(Node* node, struct Node*& n2)
 {
     if(node == nullptr) return nullptr;
     if(node->lson == nullptr)
@@ -9,10 +9,10 @@ Node* unplugSmalest(Node* node, struct Node*& n2)
         n2 = node;
         return node->rson;
     }
-    node->lson = unplugSmalest(node->lson, n2);
+    node->lson = unplugSmallest(node->lson, n2);
     return node;
 }
-Node* AVL::remove(Node* node, int key)
+AVL::Node* AVL::remove(Node* node, int key)
 {
     if(node == nullptr) return node;
     if(node->key < key)
@@ -38,13 +38,18 @@ Node* AVL::remove(Node* node, int key)
             return temp;
         }else 
         {
-            node->rson = unplugSmalest(node->rson, cache);
+            Node* temp = unplugSmallest(node->rson, cache);
+
             cache->lson = node->lson;
-            cache->rson = node->rson;
+            node->lson = nullptr;
+
+            cache->rson = temp;
+            node->rson = nullptr;
 
             delete node;
+            node = cache;
 
-            node = balancing(cache);
+            node = balancing(node);
             return node;
         }
     }

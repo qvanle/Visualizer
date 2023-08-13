@@ -12,7 +12,7 @@ int AVL::balanceFactor(Node* node)
     return getHigh(node->lson) - getHigh(node->rson);
 }
 
-Node* AVL::rotateLeft(Node* node)
+AVL::Node* AVL::rotateLeft(Node* node)
 {
     if(node == nullptr) return nullptr;
     if(node->rson == nullptr) return node;
@@ -24,7 +24,7 @@ Node* AVL::rotateLeft(Node* node)
     return tmp;
 }
 
-Node* AVL::rotateRight(Node* node)
+AVL::Node* AVL::rotateRight(Node* node)
 {
     if(node == nullptr) return nullptr;
     if(node->lson == nullptr) return node;
@@ -37,14 +37,14 @@ Node* AVL::rotateRight(Node* node)
     return tmp;
 }
 
-void Node::repair()
+void AVL::Node::repair()
 {
     high = 1;
     if(lson != nullptr) high = std::max(high, lson->high + 1);
     if(rson != nullptr) high = std::max(high, rson->high + 1);
 }
 
-Node* AVL::balancing(Node* node)
+AVL::Node* AVL::balancing(Node* node)
 {
     if(node == nullptr) 
     {

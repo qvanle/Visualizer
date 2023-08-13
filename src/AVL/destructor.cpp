@@ -1,6 +1,6 @@
 #include <data_structures/AVL.hpp>
 
-Node::~Node()
+AVL::Node::~Node()
 {
     if(lson != nullptr) delete lson;
     if(rson != nullptr) delete rson;
