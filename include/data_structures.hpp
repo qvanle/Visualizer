@@ -15,6 +15,7 @@
 #include <display.hpp>
 
 #include <data_structures/AVL.hpp>
+#include <data_structures/trie.hpp>
 
 class DataStructures : protected Object
 {
@@ -26,7 +27,9 @@ private:
     DATA_STRUCTURES_TYPE type;
     std::vector<Display*> displays;
     TTF_Font* font;
+
     AVL* avl;
+    Trie* trie;
 
 protected:
     void initBackground(const json& mem);
@@ -34,37 +37,6 @@ protected:
     void initDisplay(const json& mem);
     void importFromJson();
 
-    void hashTableInit(std::vector<std::string> v);
-    void hashTableInsert(std::string v);
-    void hashTableRemove(std::string v);
-    void hashTableSearch(std::string v);
-    
-    void graphInit(std::vector<std::string> v);
-    void graphConnectedComponents();
-    void graphFindMinimumSpanningTree();
-    void graphDijkstra(int u, int v);
-
-    void trieInit(std::vector<std::string> v);
-    void trieInsert(std::string v);
-    void trieRemove(std::string v);
-    void trieSearch(std::string v);
-
-    void AVLInit(std::vector<std::string> v);
-    void AVLInsert(std::string v);
-    void AVLRemove(std::string v);
-    void AVLSearch(std::string v);
-
-    void BTree4thInit(std::vector<std::string> v);
-    void BTree4thInsert(std::string v);
-    void BTree4thRemove(std::string v);
-    void BTree4thSearch(std::string v);
-
-    void heapInit(std::vector<std::string> v, bool isFindMax);
-    void heapInsert(std::string v);
-    void heapRemove(std::string v);
-    void heapGetMax();
-    void heapGetMin();
-    void heapGetSize();
 public:
     DataStructures(SDL_Renderer* r, TTF_Font* f);
     ~DataStructures();

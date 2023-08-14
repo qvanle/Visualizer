@@ -4,6 +4,8 @@ DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f) : Object(r)
 {
     font = f;
     render = r;
+    avl = nullptr;
+    trie = nullptr;
 }
 
 void DataStructures::initBackground(const json& mem) 
@@ -66,6 +68,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::TRIE:
             linking("trie");
+            trie = new Trie(render, font, {10, 10, 800, 600}, 3000);
             break;
         case DATA_STRUCTURES_TYPE::HEAP: 
             linking("HEAP");

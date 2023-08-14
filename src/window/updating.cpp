@@ -38,7 +38,8 @@ void MyWindow::runOperator()
     {
         case DATA_STRUCTURES_OPERATOR::INIT:
         {
-            std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
+            //std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
+            std::vector<std::string> value = SIUSTRING::split(inputbox->getText(1));
             ds->init(value);
             break;
         }
@@ -69,6 +70,14 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
         }
         case DATA_STRUCTURES_TYPE::TRIE:{
             std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::TRIE_);
+            if(mem.empty()) return ;
+            std::string total = "";
+            for(int i = 0; i < mem.size(); i++)
+            {
+                total += mem[i];
+                if(i != mem.size() - 1) total += " ";
+            }
+            inputbox->setText(1, total);
             break;
         }
         case DATA_STRUCTURES_TYPE::GRAPH:{
@@ -184,6 +193,25 @@ void MyWindow::react(Button* but)
         case BUTTON_ACTION::RANDOM2: 
         {
             inputbox->setText(1, RANDOM::getInt(1, 1, 999));
+            break;
+        }
+        case BUTTON_ACTION::RANDOM3: 
+        {
+            int n = RANDOM::getInt(1, 16);
+            int m = RANDOM::getInt(1, 16);
+            char upperbound = RANDOM::getInt(97 + 5, 97 + 25);
+            std::string mem;
+            mem = RANDOM::getString(m, 'a', upperbound);
+
+            for(int i = 1; i < n; i++)
+                mem += " " + RANDOM::getString(m, 'a', upperbound);
+            inputbox->setText(1, mem);
+            break;
+        }
+        case BUTTON_ACTION::RANDOM4: 
+        {
+            int m = RANDOM::getInt(1, 16);
+            inputbox->setText(1, RANDOM::getString(m, 'a', 'z'));
             break;
         }
         case BUTTON_ACTION::FILE :{

@@ -9,4 +9,6 @@ void DataStructures::rendering()
         i->rendering();
     if(avl != nullptr) 
         avl->rendering();
+    if(trie != nullptr)
+        trie->rendering();
 }

@@ -51,6 +51,7 @@ set(
     src/services/number.cpp
     src/services/random.cpp
     src/services/file.cpp
+    src/services/string.cpp
 )
 
 set( 
@@ -108,8 +109,20 @@ set (
     src/AVL/operator/delete.cpp
     src/AVL/operator/search.cpp
 )
+set ( 
+    TRIE 
+    src/trie/constructor.cpp
+    src/trie/destructor.cpp
+    src/trie/rendering.cpp
+    src/trie/step.cpp
+    src/trie/event.cpp
+    src/trie/operator/init.cpp
+    src/trie/operator/insert.cpp
+    src/trie/operator/remove.cpp
+    src/trie/operator/search.cpp
+)
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL})
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

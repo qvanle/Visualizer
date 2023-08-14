@@ -39,6 +39,12 @@ namespace NUMBER
     bool isInInterval(std::string s, int64_t a, int64_t b);
 }
 
+namespace SIUSTRING
+{
+    bool isSeparator(char c);
+    std::vector<std::string> split(std::string s);
+}
+
 namespace RANDOM 
 {
     extern std::mt19937 rng;

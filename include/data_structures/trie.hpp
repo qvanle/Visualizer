@@ -9,11 +9,21 @@
 
 #include <sprite.hpp>
 
-struct Node;
 
 class Trie 
 {
 private:
+    struct Node 
+    {
+        char key;
+        Sprite* sprite;
+        Node* childs[26];
+        int endOfWords;
+        int numberOfWords;
+        Node(int k, Sprite* spr);
+        ~Node();
+        void repair();
+    };
     Node* root;        
     int capacity;
     int size;
@@ -34,8 +44,10 @@ private:
 protected:
     Node* insert(Node* node, std::string word, int index);
     bool search(Node* node, std::string word, int index);
-    bool remove(Node* node, std::string word, int index);
+    Node* remove(Node* node, std::string word, int index);
     int locating(Node* node, int shiftDown, int shiftRight);
+    
+    void drawEgdes(Node* u, Node* v);
 public:
     Trie(SDL_Renderer * r, TTF_Font* f, SDL_Rect v, int capacity);
     ~Trie();
@@ -47,6 +59,8 @@ public:
 
     void setEdgesColor(SDL_Color c);
     void setNodeColor(SDL_Color bg, SDL_Color fg);
+
+    void rendering();
 };
 
 #endif 
