@@ -61,6 +61,9 @@ public:
     void setNodeColor(SDL_Color bg, SDL_Color fg);
 
     void rendering();
+
+    bool isReceiveEvent(SDL_Event& e);
+    void react(SDL_Event& e);
 };
 
 #endif 
