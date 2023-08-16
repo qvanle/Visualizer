@@ -39,7 +39,13 @@ void MyWindow::runOperator()
         case DATA_STRUCTURES_OPERATOR::INIT:
         {
             //std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
-            std::vector<std::string> value = SIUSTRING::split(inputbox->getText(1));
+            std::vector<std::string> value = SIUSTRING::split(
+                    inputbox->getText(1) + " " +
+                    inputbox->getText(2) + " " +
+                    inputbox->getText(3) + " " + 
+                    inputbox->getText(4)
+            );
+            
             ds->init(value);
             break;
         }
@@ -213,6 +219,12 @@ void MyWindow::react(Button* but)
             int m = RANDOM::getInt(1, 16);
             inputbox->setText(1, RANDOM::getString(m, 'a', 'z'));
             break;
+        }
+        case BUTTON_ACTION::RANDOM5: 
+        {
+            int n = RANDOM::getInt(1, 64);
+            std::string mem = RANDOM::getInt(n, 1, 999);
+            inputbox->setText(2, mem);
         }
         case BUTTON_ACTION::FILE :{
             

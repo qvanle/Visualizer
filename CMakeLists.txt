@@ -122,7 +122,19 @@ set (
     src/trie/operator/search.cpp
 )
 
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE})
+set (
+    HASH_TABLE 
+    src/hash_table/constructor.cpp
+    src/hash_table/destructor.cpp
+    src/hash_table/rendering.cpp
+    src/hash_table/step.cpp
+    src/hash_table/event.cpp
+    src/hash_table/operator/init.cpp
+    src/hash_table/operator/insert.cpp
+    src/hash_table/operator/remove.cpp
+    src/hash_table/operator/search.cpp
+)
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

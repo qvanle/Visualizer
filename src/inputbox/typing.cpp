@@ -2,6 +2,8 @@
 
 std::string InputBox::getText(int index)
 {
+    if(index == -1 || index >= (int) inputs.size())
+        return "";
     return inputs[index]->getText();
 }
 

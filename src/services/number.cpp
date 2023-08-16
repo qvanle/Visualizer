@@ -3,6 +3,7 @@
 
 std::string NUMBER::intToString(int64_t n)
 {
+    if(n == 0) return "0";
     std::string result = "";
     bool negative = false;
     if(n < 0)

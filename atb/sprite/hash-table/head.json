@@ -1,0 +1,51 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 600,
+            "y": 40,
+            "w": 55,
+            "h": 55
+        },
+        "color": 
+        {
+            "r": 50,
+            "g": 185,
+            "b": 185,
+            "a": 255
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "text-box":
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 55,
+            "h": 55
+        },
+        "color": 
+        {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "text": ""
+    }
+}
+
+
+
+

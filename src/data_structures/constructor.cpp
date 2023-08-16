@@ -6,6 +6,7 @@ DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f) : Object(r)
     render = r;
     avl = nullptr;
     trie = nullptr;
+    hashTable = nullptr;
 }
 
 void DataStructures::initBackground(const json& mem) 
@@ -75,6 +76,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::HASH_TABLE:
             linking("hash_table");
+            hashTable = new HashTable(render, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::GRAPH: 
             linking("graph");

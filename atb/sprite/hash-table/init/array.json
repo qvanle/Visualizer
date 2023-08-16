@@ -1,0 +1,58 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 350,
+            "y": 290,
+            "w": 400,
+            "h": 60
+        },
+        "color": 
+        {
+            "r": 50,
+            "g": 75,
+            "b": 105,
+            "a": 255
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "text-box":
+    {
+        "location": 
+        {
+            "x": 320,
+            "y": 290,
+            "w": 200,
+            "h": 80
+        },
+        "color": 
+        {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "text": "1 2 3 4 5 6"
+    },
+    "input": 
+    {
+        "digit": true,
+        "letter": false,
+        "symbol": true,
+        "maxsize": 4000
+    }
+}
+
+
+
+

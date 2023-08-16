@@ -1,0 +1,44 @@
+{
+    "background":
+    {
+        "location": 
+        {
+            "x": 300,
+            "y": 100,
+            "w": 600,
+            "h": 400
+        },
+        "color": 
+        {
+            "r": 102,
+            "g": 128,
+            "b": 178,
+            "a": 255
+        },
+        "shape":
+        {
+            "type": "RECTANGLE"
+        },
+        "visible": true
+    },
+    "buttons":
+    [
+        {
+            "name": "done"
+        },
+        {
+            "name": "random2"
+        }
+    ],
+    "sprites": 
+    [
+        {
+            "name": "AVL/insert/title"
+        },
+        {
+            "name": "AVL/insert/value"
+        }
+    ],
+    "operator": "INSERT"
+}
+

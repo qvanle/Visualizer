@@ -16,6 +16,7 @@
 
 #include <data_structures/AVL.hpp>
 #include <data_structures/trie.hpp>
+#include <data_structures/hash_table.hpp>
 
 class DataStructures : protected Object
 {
@@ -30,6 +31,7 @@ private:
 
     AVL* avl;
     Trie* trie;
+    HashTable* hashTable;
 
 protected:
     void initBackground(const json& mem);

@@ -1,0 +1,54 @@
+{
+    "background":
+    {
+        "location": 
+        {
+            "x": 300,
+            "y": 100,
+            "w": 600,
+            "h": 400
+        },
+        "color": 
+        {
+            "r": 102,
+            "g": 128,
+            "b": 178,
+            "a": 255
+        },
+        "shape":
+        {
+            "type": "RECTANGLE"
+        },
+        "visible": true
+    },
+    "buttons":
+    [
+        {
+            "name": "file"
+        },
+        {
+            "name": "random2"
+        },
+        {
+            "name": "done"
+        },
+        {
+            "name": "random5"
+        }
+    ],
+    "sprites": 
+    [
+        {
+            "name": "hash-table/init/title"
+        },
+        {
+            "name": "hash-table/init/hash_key"
+        },
+        {
+            "name": "hash-table/init/array"
+        }
+    ],
+    "operator": "INIT"
+}
+
+

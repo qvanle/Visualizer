@@ -15,6 +15,8 @@ bool DataStructures::isReceiveEvent(SDL_Event& e)
                 return true;
             if(trie != nullptr && trie->isReceiveEvent(e))
                 return true;
+            if(hashTable != nullptr && hashTable->isReceiveEvent(e))
+                return true;
             for(auto &i : displays)
                 if(i->isReceiveEvent(e))
                     return true;
@@ -31,6 +33,8 @@ Button* DataStructures::react(SDL_Event& e)
          avl->react(e);
     if(trie != nullptr && trie->isReceiveEvent(e))
         trie->react(e);
+    if(hashTable != nullptr && hashTable->isReceiveEvent(e))
+        hashTable->react(e);
     for(auto &i : displays)
         if(i->isReceiveEvent(e))
             but = i->react(e);

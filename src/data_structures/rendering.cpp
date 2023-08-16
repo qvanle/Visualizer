@@ -11,4 +11,6 @@ void DataStructures::rendering()
         avl->rendering();
     if(trie != nullptr)
         trie->rendering();
+    if(hashTable != nullptr)
+        hashTable->rendering();
 }
