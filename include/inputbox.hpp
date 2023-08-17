@@ -1,3 +1,5 @@
+#ifndef INPUTBOX_HPP
+#define INPUTBOX_HPP
 #include <string>
 #include <vector> 
 
@@ -40,3 +42,5 @@ public:
     void setText(std::string text);
     void rendering();
 };
+
+#endif

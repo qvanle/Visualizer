@@ -64,30 +64,27 @@ void MyWindow::runOperator()
         {
             case DATA_STRUCTURES_OPERATOR::INIT:
             {
-                inputbox_mutex.lock();
-                std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
-                inputbox_mutex.unlock();
-
-                ds_mutex.lock();
-                ds->init(value);
+                std::lock(ds_mutex, inputbox_mutex);
+                ds->init(inputbox);
                 ds_mutex.unlock();
+                inputbox_mutex.unlock();
                 break;
             }
             case DATA_STRUCTURES_OPERATOR::INSERT:
                 std::lock(ds_mutex, inputbox_mutex);
-                ds->insert(inputbox->getText(1));
+                ds->insert(inputbox);
                 ds_mutex.unlock();
                 inputbox_mutex.unlock();
                 break;
             case DATA_STRUCTURES_OPERATOR::DELETE:
                 std::lock(ds_mutex, inputbox_mutex);
-                ds->remove(inputbox->getText(1));
+                ds->remove(inputbox);
                 ds_mutex.unlock();
                 inputbox_mutex.unlock();
                 break;
             case DATA_STRUCTURES_OPERATOR::SEARCH:
                 std::lock(ds_mutex, inputbox_mutex);
-                ds->search(inputbox->getText(1));
+                ds->search(inputbox);
                 ds_mutex.unlock();
                 inputbox_mutex.unlock();
                 break;

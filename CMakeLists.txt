@@ -84,6 +84,18 @@ set (
     src/data_structures/trie.cpp
     src/data_structures/graph.cpp
     src/data_structures/event.cpp
+    src/data_structures/operator/AVL/init.cpp
+    src/data_structures/operator/AVL/insert.cpp
+    src/data_structures/operator/AVL/remove.cpp
+    src/data_structures/operator/AVL/search.cpp
+    src/data_structures/operator/trie/init.cpp
+    src/data_structures/operator/trie/insert.cpp
+    src/data_structures/operator/trie/remove.cpp
+    src/data_structures/operator/trie/search.cpp
+    src/data_structures/operator/hash_table/init.cpp
+    src/data_structures/operator/hash_table/insert.cpp
+    src/data_structures/operator/hash_table/remove.cpp
+    src/data_structures/operator/hash_table/search.cpp
 )
 
 set ( 

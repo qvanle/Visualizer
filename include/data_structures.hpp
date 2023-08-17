@@ -13,6 +13,7 @@
 #include <sprite.hpp>
 #include <services.hpp>
 #include <display.hpp>
+#include <inputbox.hpp>
 
 #include <data_structures/AVL.hpp>
 #include <data_structures/trie.hpp>
@@ -38,6 +39,21 @@ protected:
     void initLinker(const json& mem);
     void initDisplay(const json& mem);
     void importFromJson();
+    
+    void initAVL(InputBox* inp);
+    void insertAVL(InputBox* inp);
+    void removeAVL(InputBox* inp);
+    void searchAVL(InputBox* inp);
+
+    void initTrie(InputBox* inp);
+    void insertTrie(InputBox* inp);
+    void removeTrie(InputBox* inp);
+    void searchTrie(InputBox* inp);
+
+    void initHashTable(InputBox* inp);
+    void insertHashTable(InputBox* inp);
+    void removeHashTable(InputBox* inp);
+    void searchHashTable(InputBox* inp);
 
 public:
     DataStructures(SDL_Renderer* r, TTF_Font* f);
@@ -51,12 +67,11 @@ public:
 
     void rendering();
 
-    void init(std::vector<std::string> v);
-    void init(std::vector<int> v);
-    void initFromFile(std::string f);
-    void insert(std::string v);
-    void remove(std::string v);
-    void search(std::string v);
+    void init(InputBox* inp);
+    void insert(InputBox* inp);
+    void remove(InputBox* inp);
+    void search(InputBox* inp);
+
 
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
