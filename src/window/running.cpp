@@ -6,7 +6,7 @@ void MyWindow::run()
     status = WINDOW_STATUS::IS_OPEN;
     thread_pool.push_back(std::thread(&MyWindow::rendering, this));
     thread_pool.push_back(std::thread(&MyWindow::getEvent, this));
-    //thread_pool.push_back(std::thread(&MyWindow::interacting, this));
+    thread_pool.push_back(std::thread(&MyWindow::runOperator, this));
 
     interacting();
 

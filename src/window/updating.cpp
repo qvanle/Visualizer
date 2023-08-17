@@ -2,65 +2,99 @@
 
 void MyWindow::setDisplay(std::string name)
 {
+    setInputBox("nullptr");
+    display_mutex.lock();
+
     ds = nullptr;
-    inputbox = nullptr;
     if(display_pool.find(name) == display_pool.end())
     {
         display_pool[name] = new Display(render, viewport);
         display_pool[name]->linking(name);
     }
     current_display = display_pool[name];
+
+    display_mutex.unlock();
 }
 
 void MyWindow::setInputBox(std::string name)
 {
+    inputbox_mutex.lock();
     if(inputbox_pool.find(name) == inputbox_pool.end())
     {
         inputbox_pool[name] = new InputBox(render, myfont);
         inputbox_pool[name]->linking(name);
     }
     inputbox = inputbox_pool[name];
+    inputbox_mutex.unlock();
 }
 
 void MyWindow::setDataType(DATA_STRUCTURES_TYPE type)
 {
+    ds_mutex.lock();
     if(ds_pool.find(type) == ds_pool.end())
     {
         ds_pool[type] = new DataStructures(render, myfont);
         ds_pool[type]->setDataType(type);
     }
     ds = ds_pool[type];
+
+    ds_mutex.unlock();
 }
 
 void MyWindow::runOperator()
 {
-    switch(inputbox->getOperator())
+    while(isOpen())
     {
-        case DATA_STRUCTURES_OPERATOR::INIT:
+        std::unique_lock<std::mutex> lock(step_mutex);
+        step_cond.wait(lock, [&](){return isClosed() || isQueuingStep;});
+        if(isClosed()) break;
+
+        isQueuingStep = false;
+
+        inputbox_mutex.lock();
+        if(inputbox == nullptr)
         {
-            //std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
-            std::vector<std::string> value = SIUSTRING::split(
-                    inputbox->getText(1) + " " +
-                    inputbox->getText(2) + " " +
-                    inputbox->getText(3) + " " + 
-                    inputbox->getText(4)
-            );
-            
-            ds->init(value);
-            break;
+            inputbox_mutex.unlock();
+            continue;
         }
-        case DATA_STRUCTURES_OPERATOR::INSERT:
-            
-            ds->insert(inputbox->getText(1));
-            break;
-        case DATA_STRUCTURES_OPERATOR::DELETE:
-            ds->remove(inputbox->getText(1));
-            break;
-        case DATA_STRUCTURES_OPERATOR::SEARCH:
-            ds->search(inputbox->getText(1));
-            break;
-        default :
-            break;
+        DATA_STRUCTURES_OPERATOR inptype = inputbox->getOperator();
+        inputbox_mutex.unlock();
+
+        switch(inptype)
+        {
+            case DATA_STRUCTURES_OPERATOR::INIT:
+            {
+                inputbox_mutex.lock();
+                std::vector<int> value = NUMBER::stringToArray(inputbox->getText(1));
+                inputbox_mutex.unlock();
+
+                ds_mutex.lock();
+                ds->init(value);
+                ds_mutex.unlock();
+                break;
+            }
+            case DATA_STRUCTURES_OPERATOR::INSERT:
+                std::lock(ds_mutex, inputbox_mutex);
+                ds->insert(inputbox->getText(1));
+                ds_mutex.unlock();
+                inputbox_mutex.unlock();
+                break;
+            case DATA_STRUCTURES_OPERATOR::DELETE:
+                std::lock(ds_mutex, inputbox_mutex);
+                ds->remove(inputbox->getText(1));
+                ds_mutex.unlock();
+                inputbox_mutex.unlock();
+                break;
+            case DATA_STRUCTURES_OPERATOR::SEARCH:
+                std::lock(ds_mutex, inputbox_mutex);
+                ds->search(inputbox->getText(1));
+                ds_mutex.unlock();
+                inputbox_mutex.unlock();
+                break;
+            default :
+                break;
+        }
+        setInputBox("nullptr");
     }
 }
 
@@ -71,7 +105,9 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
         case DATA_STRUCTURES_TYPE::AVL:{
             std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::AVL_);
             if(mem.empty()) return ;
+            inputbox_mutex.lock();
             inputbox->setText(1, mem[0]);
+            inputbox_mutex.unlock();
             break;
         }
         case DATA_STRUCTURES_TYPE::TRIE:{
@@ -83,7 +119,9 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
                 total += mem[i];
                 if(i != mem.size() - 1) total += " ";
             }
+            inputbox_mutex.lock();
             inputbox->setText(1, total);
+            inputbox_mutex.unlock();
             break;
         }
         case DATA_STRUCTURES_TYPE::GRAPH:{
@@ -123,7 +161,9 @@ void MyWindow::getDataFromRandom(DATA_STRUCTURES_TYPE type)
         case DATA_STRUCTURES_TYPE::AVL:{
             int n = RANDOM::getInt(1, 32);
             std::string mem = RANDOM::getInt(n, 1, 999);
+            inputbox_mutex.lock();
             inputbox->setText(1, mem);
+            inputbox_mutex.unlock();
             break;
         }
         case DATA_STRUCTURES_TYPE::TRIE:{
@@ -157,7 +197,6 @@ void MyWindow::getDataFromRandom(DATA_STRUCTURES_TYPE type)
             break;
         }
     }
-
 }
 
 void MyWindow::react(Button* but)
@@ -188,8 +227,12 @@ void MyWindow::react(Button* but)
             break;
         }
         case BUTTON_ACTION::DONE:{
-            runOperator();
-            inputbox = nullptr;
+
+            step_mutex.lock();
+            isQueuingStep = true;
+            step_mutex.unlock();
+            step_cond.notify_one();
+
             break;
         }
         case BUTTON_ACTION::RANDOM:{
@@ -198,11 +241,14 @@ void MyWindow::react(Button* but)
         }
         case BUTTON_ACTION::RANDOM2: 
         {
+            inputbox_mutex.lock();
             inputbox->setText(1, RANDOM::getInt(1, 1, 999));
+            inputbox_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::RANDOM3: 
         {
+
             int n = RANDOM::getInt(1, 16);
             int m = RANDOM::getInt(1, 16);
             char upperbound = RANDOM::getInt(97 + 5, 97 + 25);
@@ -211,20 +257,28 @@ void MyWindow::react(Button* but)
 
             for(int i = 1; i < n; i++)
                 mem += " " + RANDOM::getString(m, 'a', upperbound);
+
+            inputbox_mutex.lock();
             inputbox->setText(1, mem);
+            inputbox_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::RANDOM4: 
         {
             int m = RANDOM::getInt(1, 16);
+            inputbox_mutex.lock();
             inputbox->setText(1, RANDOM::getString(m, 'a', 'z'));
+            inputbox_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::RANDOM5: 
         {
             int n = RANDOM::getInt(1, 64);
             std::string mem = RANDOM::getInt(n, 1, 999);
+
+            inputbox_mutex.lock();
             inputbox->setText(2, mem);
+            inputbox_mutex.unlock();
         }
         case BUTTON_ACTION::FILE :{
             

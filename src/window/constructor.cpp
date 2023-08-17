@@ -43,6 +43,10 @@ MyWindow::MyWindow()
     std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
     myfont = TTF_OpenFont(fontpath.c_str(), 24);
 
+    display_pool["nullptr"] = nullptr;
+    inputbox_pool["nullptr"] = nullptr;
+    ds_pool[DATA_STRUCTURES_TYPE::NONE] = nullptr;
+
     setDisplay(DISPLAY::HOME_);
 }
 
