@@ -23,6 +23,8 @@ void Button::importFromJson()
 
 void Button::initAction(const json& mem)
 {
+
+
     if(mem.contains("type"))
     {
         if(mem["type"].get<std::string>() == "CHANGE_SCREEN")
@@ -41,6 +43,18 @@ void Button::initAction(const json& mem)
             action = BUTTON_ACTION::DONE;
         else if(mem["type"].get<std::string>() == "RANDOM") 
             action = BUTTON_ACTION::RANDOM;
+        else if(mem["type"].get<std::string>() == "GO_BACK")
+            action = BUTTON_ACTION::GO_BACK;
+        else if(mem["type"].get<std::string>() == "GO_NEXT")
+            action = BUTTON_ACTION::GO_NEXT;
+        else if(mem["type"].get<std::string>() == "GO_ON")
+            action = BUTTON_ACTION::GO_ON;
+        else if(mem["type"].get<std::string>() == "GO_OFF")
+            action = BUTTON_ACTION::GO_OFF;
+        else if(mem["type"].get<std::string>() == "SPEED_UP")
+            action = BUTTON_ACTION::SPEED_UP;
+        else if(mem["type"].get<std::string>() == "SLOW_DOWN")
+            action = BUTTON_ACTION::SLOW_DOWN;
         else if(mem["type"].get<std::string>() == "RANDOM2")
             action = BUTTON_ACTION::RANDOM2;
         else if(mem["type"].get<std::string>() == "RANDOM3") 

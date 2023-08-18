@@ -49,7 +49,6 @@ void AVL::react(SDL_Event& e)
             lastMousePressed.y = e.motion.y;
             shiftX += dx;
             shiftY += dy;
-            locating(root, 0, 0);
             if(cache != nullptr) 
             {
                 cache->sprite->moveX(dx);

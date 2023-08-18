@@ -36,7 +36,6 @@ void MyWindow::interacting()
                 if(but == nullptr && but == nullptr && current_display->isReceiveEvent(event))
                     but = current_display->react(event);
                 display_mutex.unlock();
-
                 react(but);
                 break;
         }

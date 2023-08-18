@@ -35,6 +35,5 @@ Trie::Node* Trie::insert(Node* node, std::string word, int index)
 bool Trie::insert(std::string word)
 {
     root = insert(root, word, 0);
-    locating(root, 0, 0);
     return true;
 }

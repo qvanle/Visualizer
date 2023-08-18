@@ -10,7 +10,6 @@ void AVL::search(Node* node, int key)
     }
     if(node->key == key)
     {
-        node->sprite->highlight();
         return ;
     }
     if(node->key < key)
@@ -37,10 +36,10 @@ bool AVL::search(int key)
     sprite->setText(NUMBER::intToString(key));
 
     cache = new Node(key, sprite);
-    cache->sprite->highlight();
-    
+
+    isAnimate = true;
+
     search(root, key);
-    cache->sprite->unhighlight();
     
     delete cache;
     cache = nullptr;

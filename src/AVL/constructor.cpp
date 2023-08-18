@@ -19,7 +19,7 @@ AVL::Node::Node(int k, Sprite* spr)
     lson = nullptr;
     rson = nullptr;
 }
-AVL::AVL(SDL_Renderer* rend, TTF_Font* f, SDL_Rect vp, int cap)
+AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) : ds_mutex(m)
 {
     root = nullptr;
     render = rend;
@@ -35,6 +35,8 @@ AVL::AVL(SDL_Renderer* rend, TTF_Font* f, SDL_Rect vp, int cap)
     distanceX = 40;
     distanceY = 100;
     isMoving = false;
+    stepWait = 400;
+    isAnimate = false;
 }
 int AVL::maxDepth()
 {

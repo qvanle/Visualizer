@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string> 
+#include <mutex>
 
 #include <SDL2/SDL.h>
 
@@ -22,6 +23,7 @@
 class DataStructures : protected Object
 {
 private:
+    std::mutex& ds_mutex;
     SDL_Renderer* render;
     std::string name;
     std::vector<Sprite*> node;
@@ -56,7 +58,7 @@ protected:
     void searchHashTable(InputBox* inp);
 
 public:
-    DataStructures(SDL_Renderer* r, TTF_Font* f);
+    DataStructures(SDL_Renderer* r, TTF_Font* f, std::mutex& m);
     ~DataStructures();
 
     void linking(std::string n);
@@ -71,7 +73,13 @@ public:
     void insert(InputBox* inp);
     void remove(InputBox* inp);
     void search(InputBox* inp);
-
+    
+    void goBack();
+    void goNext();
+    void goOn();
+    void goOff();
+    void speedUp();
+    void slowDown();
 
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);

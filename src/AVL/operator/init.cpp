@@ -9,6 +9,7 @@ void AVL::init(std::vector<int> values)
     sizeOfTree = 0;
     shiftX = 20;
     shiftY = 20;
+    isAnimate = false;
 
     for(int i = 0; i < values.size() && sizeOfTree < capacity; i++)
     {
@@ -20,6 +21,5 @@ void AVL::init(std::vector<int> values)
         root = insert(root, new Node(values[i], sprite));
     }
     maxHigh = maxDepth(root);
-    locating(root, 0, 0);
 }
 

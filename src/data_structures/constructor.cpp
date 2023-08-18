@@ -1,6 +1,6 @@
 #include <data_structures.hpp>
 
-DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f) : Object(r)
+DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f, std::mutex& m) : Object(r), ds_mutex(m)
 {
     font = f;
     render = r;
@@ -65,7 +65,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
     {
         case DATA_STRUCTURES_TYPE::AVL: 
             linking("AVL");
-            avl = new AVL(render, font, {10, 10, 800, 600}, 128);
+            avl = new AVL(render, ds_mutex, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::TRIE:
             linking("trie");
@@ -85,6 +85,8 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             linking("btree4th");
             break;
         case DATA_STRUCTURES_TYPE::NONE:
+            break;
+        default:
             break;
     }
 }

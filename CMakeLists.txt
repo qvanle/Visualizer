@@ -84,6 +84,7 @@ set (
     src/data_structures/trie.cpp
     src/data_structures/graph.cpp
     src/data_structures/event.cpp
+    src/data_structures/step.cpp
     src/data_structures/operator/AVL/init.cpp
     src/data_structures/operator/AVL/insert.cpp
     src/data_structures/operator/AVL/remove.cpp

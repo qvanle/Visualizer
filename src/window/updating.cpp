@@ -33,7 +33,7 @@ void MyWindow::setDataType(DATA_STRUCTURES_TYPE type)
     ds_mutex.lock();
     if(ds_pool.find(type) == ds_pool.end())
     {
-        ds_pool[type] = new DataStructures(render, myfont);
+        ds_pool[type] = new DataStructures(render, myfont, ds_mutex);
         ds_pool[type]->setDataType(type);
     }
     ds = ds_pool[type];
@@ -51,6 +51,8 @@ void MyWindow::runOperator()
 
         isQueuingStep = false;
 
+        InputBox* temp;
+
         inputbox_mutex.lock();
         if(inputbox == nullptr)
         {
@@ -58,40 +60,39 @@ void MyWindow::runOperator()
             continue;
         }
         DATA_STRUCTURES_OPERATOR inptype = inputbox->getOperator();
+
+        temp = inputbox;
         inputbox_mutex.unlock();
+
+        setInputBox("nullptr");
 
         switch(inptype)
         {
             case DATA_STRUCTURES_OPERATOR::INIT:
             {
-                std::lock(ds_mutex, inputbox_mutex);
-                ds->init(inputbox);
+                ds_mutex.lock();
+                ds->init(temp);
                 ds_mutex.unlock();
-                inputbox_mutex.unlock();
                 break;
             }
             case DATA_STRUCTURES_OPERATOR::INSERT:
-                std::lock(ds_mutex, inputbox_mutex);
-                ds->insert(inputbox);
+                ds_mutex.lock();
+                ds->insert(temp);
                 ds_mutex.unlock();
-                inputbox_mutex.unlock();
                 break;
             case DATA_STRUCTURES_OPERATOR::DELETE:
-                std::lock(ds_mutex, inputbox_mutex);
-                ds->remove(inputbox);
+                ds_mutex.lock();
+                ds->remove(temp);
                 ds_mutex.unlock();
-                inputbox_mutex.unlock();
                 break;
             case DATA_STRUCTURES_OPERATOR::SEARCH:
-                std::lock(ds_mutex, inputbox_mutex);
-                ds->search(inputbox);
+                ds_mutex.lock();
+                ds->search(temp);
                 ds_mutex.unlock();
-                inputbox_mutex.unlock();
                 break;
             default :
                 break;
         }
-        setInputBox("nullptr");
     }
 }
 
@@ -223,6 +224,48 @@ void MyWindow::react(Button* but)
             setInputBox(ds->getName() + "/search");
             break;
         }
+        case BUTTON_ACTION::GO_BACK: 
+        {
+            ds_mutex.lock();
+            ds->goBack();
+            ds_mutex.unlock();
+            break;
+        }
+        case BUTTON_ACTION::GO_NEXT: 
+        {
+            ds_mutex.lock();
+            ds->goNext();
+            ds_mutex.unlock();
+            break;
+        }
+        case BUTTON_ACTION::GO_ON: 
+        {
+            ds_mutex.lock();
+            ds->goOn();
+            ds_mutex.unlock();
+            break;
+        }
+        case BUTTON_ACTION::GO_OFF: 
+        {
+            ds_mutex.lock();
+            ds->goOff();
+            ds_mutex.unlock();
+            break;
+        }
+        case BUTTON_ACTION::SPEED_UP: 
+        {
+            ds_mutex.lock();
+            ds->speedUp();
+            ds_mutex.unlock();
+            break;
+        }
+        case BUTTON_ACTION::SLOW_DOWN: 
+        {
+            ds_mutex.lock();
+            ds->slowDown();
+            ds_mutex.unlock();
+            break;
+        }
         case BUTTON_ACTION::DONE:{
 
             step_mutex.lock();
@@ -233,7 +276,12 @@ void MyWindow::react(Button* but)
             break;
         }
         case BUTTON_ACTION::RANDOM:{
-            getDataFromRandom(ds->getDataType());
+            int n = RANDOM::getInt(1, 32);
+            std::string mem = RANDOM::getInt(n, 1, 999);
+
+            inputbox_mutex.lock();
+            inputbox->setText(1, mem);
+            inputbox_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::RANDOM2: 

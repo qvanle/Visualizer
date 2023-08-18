@@ -18,7 +18,9 @@ void AVL::rendering()
 {
     if(root == nullptr) return ;
     SDL_RenderSetViewport(render, &viewport);
-    
+
+    locating(root, 0, 0);
+
     std::queue< Node* > q;
     q.push(root);
 

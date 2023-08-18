@@ -61,6 +61,8 @@ bool AVL::remove(int key)
     {
         return false;
     }
+    
+    isAnimate = true;
 
     root = remove(root, key);
     locating(root, 0, 0);

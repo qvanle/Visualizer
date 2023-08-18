@@ -32,7 +32,7 @@
     ],
     "action": 
     {
-        "type": "RUN",
+        "type": "GO_ON",
         "args": 
         {
         }

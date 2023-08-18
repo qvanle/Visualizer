@@ -2,6 +2,8 @@
 #define AVL_HPP
 #include <iostream>
 #include <cmath>
+#include <mutex>
+#include <condition_variable>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
@@ -46,9 +48,16 @@ class AVL
         int distanceX;
         int distanceY;
 
+        bool isAnimate;
         bool isQueue;
         bool isPause;
+        std::mutex pause_mutex;
+        int stepWait;
+        std::condition_variable step_cv;
+        std::mutex step_mutex;
         Node* cache;
+        
+        std::mutex& ds_mutex;
     protected:
         Node* rotateLeft(Node * node);
         Node* rotateRight(Node * node);
@@ -66,8 +75,10 @@ class AVL
 
         int locating(Node* node, int shiftDown, int shiftRight);
         void renderLine(Node* src, Node* dst);
+
+        void waitForStep();
     public:
-        AVL(SDL_Renderer* render, TTF_Font* f, SDL_Rect v, int cap);
+        AVL(SDL_Renderer* render, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap);
         ~AVL();
 
         void init(std::vector< int > v);
