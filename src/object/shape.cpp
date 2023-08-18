@@ -76,6 +76,7 @@ void Object::fillRectangleByColor()
     if(location == nullptr) locating(0, 0, 0, 0);
 
     if(texture != nullptr) SDL_DestroyTexture(texture);
+    texture = nullptr;
 
     SDL_Surface* surf = SDL_CreateRGBSurfaceWithFormat(0, getW(), getH(), 32, SDL_PIXELFORMAT_RGBA32);                       
     SDL_SetSurfaceBlendMode(surf, SDL_BLENDMODE_BLEND);
@@ -92,6 +93,7 @@ void Object::fillCircleByColor()
     if(location == nullptr) locating(0, 0, 0, 0);
 
     if(texture != nullptr) SDL_DestroyTexture(texture);
+    texture = nullptr;
 
     Uint32 rmask, gmask, bmask, amask;
     Uint32 pixelColor;
@@ -118,21 +120,19 @@ void Object::fillCircleByColor()
     Uint32 *pixels = new Uint32[getW() * getH()];
     memset(pixels, 0, getW() * getH() * sizeof(Uint32));
 
-    center.x = getX() + getW() / 2;
-    center.y = getY() + getH() / 2;
+    SDL_Point p = {getW() / 2, getH() / 2};
+    center = p;
 
-    for(int i = center.x - radius; i <= center.x + radius; i++)
-    {
-        for(int j = center.y - radius; j <= center.y + radius; j++)
-        {
-            if((i - center.x) * (i - center.x) + (j - center.y) * (j - center.y) <= radius * radius)
+    if(radius > std::min(getW(), getH()) / 2) radius = std::min(getW(), getH()) / 2;
+    
+    for(int i = p.x - radius; i <= p.x + radius; i++)
+        for(int j = p.y - radius; j <= p.y + radius; j++)
+            if((i - p.x) * (i - p.x) + (j - p.y) * (j - p.y) <= radius * radius)
             {
-                int index = (j - getY()) * getW() + (i - getX());
+                int index = i * getW() + j;
                 if(index < 0 || index >= getW() * getH()) continue;
                 pixels[index] = pixelColor;
             }
-        }
-    }
 
     SDL_UpdateTexture(texture, nullptr, pixels, getW() * sizeof(Uint32));
     delete[] pixels;

@@ -49,6 +49,7 @@ class AVL
         int distanceY;
 
         bool isAnimate;
+        std::mutex animate_mutex;
         bool isQueue;
         bool isPause;
         std::mutex pause_mutex;

@@ -44,8 +44,16 @@ void Object::textToTexture()
 {
     if(font == nullptr) return ;
     if(color == nullptr) return ;
-    if(texture != nullptr) SDL_DestroyTexture(texture);
-    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), *color);
+    if(texture != nullptr) 
+    { 
+        SDL_DestroyTexture(texture);
+    }
+    texture = nullptr;
+
+    SDL_Surface* surface = TTF_RenderText_Blended(font, text.c_str(), *color);
+
+    if(surface == nullptr) return ;
+
     texture = SDL_CreateTextureFromSurface(render, surface);
     SDL_FreeSurface(surface);
     fitTheTexture();

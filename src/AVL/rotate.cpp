@@ -16,11 +16,29 @@ AVL::Node* AVL::rotateLeft(Node* node)
 {
     if(node == nullptr) return nullptr;
     if(node->rson == nullptr) return node;
+    
+    if(isAnimate)
+    {
+        waitForStep();
+        node->sprite->highlight();
+        node->rson->sprite->highlight();
+        if(node->rson->rson != nullptr) 
+            node->rson->rson->sprite->highlight();
+        waitForStep();
+
+        node->sprite->unhighlight();
+        node->rson->sprite->unhighlight();
+        if(node->rson->rson != nullptr) 
+            node->rson->rson->sprite->unhighlight();
+        waitForStep();
+    }
+
     Node* tmp = node->rson;
     node->rson = tmp->lson;
     tmp->lson = node;
     node->repair();
     tmp->repair();
+
     return tmp;
 }
 
@@ -28,6 +46,20 @@ AVL::Node* AVL::rotateRight(Node* node)
 {
     if(node == nullptr) return nullptr;
     if(node->lson == nullptr) return node;
+    if(isAnimate)
+    {
+        waitForStep();
+        node->sprite->highlight();
+        node->lson->sprite->highlight();
+        if(node->lson->lson != nullptr) 
+            node->lson->lson->sprite->highlight();
+        waitForStep();
+        node->sprite->unhighlight();
+        node->lson->sprite->unhighlight();
+        if(node->lson->lson != nullptr) 
+            node->lson->lson->sprite->unhighlight();
+        waitForStep();
+    }
     Node* tmp = node->lson;
     node->lson = tmp->rson;
     int maxDepth;

@@ -59,14 +59,13 @@ void MyWindow::runOperator()
             inputbox_mutex.unlock();
             continue;
         }
-        DATA_STRUCTURES_OPERATOR inptype = inputbox->getOperator();
 
         temp = inputbox;
         inputbox_mutex.unlock();
 
         setInputBox("nullptr");
 
-        switch(inptype)
+        switch(temp->getOperator())
         {
             case DATA_STRUCTURES_OPERATOR::INIT:
             {
@@ -227,42 +226,42 @@ void MyWindow::react(Button* but)
         case BUTTON_ACTION::GO_BACK: 
         {
             ds_mutex.lock();
-            ds->goBack();
+            //ds->goBack();
             ds_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::GO_NEXT: 
         {
             ds_mutex.lock();
-            ds->goNext();
+            //ds->goNext();
             ds_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::GO_ON: 
         {
             ds_mutex.lock();
-            ds->goOn();
+            //ds->goOn();
             ds_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::GO_OFF: 
         {
             ds_mutex.lock();
-            ds->goOff();
+            //ds->goOff();
             ds_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::SPEED_UP: 
         {
             ds_mutex.lock();
-            ds->speedUp();
+            //ds->speedUp();
             ds_mutex.unlock();
             break;
         }
         case BUTTON_ACTION::SLOW_DOWN: 
         {
             ds_mutex.lock();
-            ds->slowDown();
+            //ds->slowDown();
             ds_mutex.unlock();
             break;
         }

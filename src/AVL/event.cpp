@@ -2,6 +2,7 @@
 
 bool AVL::isReceiveEvent(SDL_Event& e)
 {
+    std::lock_guard<std::mutex> lk(animate_mutex);
     switch(e.type)
     {
         case SDL_MOUSEBUTTONDOWN:
@@ -23,6 +24,7 @@ bool AVL::isReceiveEvent(SDL_Event& e)
 
 void AVL::react(SDL_Event& e)
 {
+    std::lock_guard<std::mutex> lk(animate_mutex);
     switch(e.type)
     {
         case SDL_MOUSEBUTTONDOWN:

@@ -18,6 +18,8 @@ void AVL::rendering()
 {
     if(root == nullptr) return ;
     SDL_RenderSetViewport(render, &viewport);
+    
+    std::lock_guard< std::mutex > lock(animate_mutex);
 
     locating(root, 0, 0);
 
@@ -42,6 +44,6 @@ void AVL::rendering()
     }
     if(cache != nullptr) 
     {
-        cache->sprite->rendering();
+        //cache->sprite->rendering();
     }
 }

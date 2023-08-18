@@ -29,22 +29,35 @@ void AVL::goBack()
 
 void AVL::goNext()
 {
+    pause_mutex.lock();
+    isQueue = true;
+    pause_mutex.unlock();
+    step_cv.notify_one();
 }
 
 void AVL::goOn()
 {
+    pause_mutex.lock();
+    isPause = false;
+    pause_mutex.unlock();
+    step_cv.notify_one();
 }
 
 void AVL::goOff()
 {
+    pause_mutex.lock();
+    isPause = true;
+    pause_mutex.unlock();
 }
 
 void AVL::speedUp()
 {
+    if(stepWait >= 100) stepWait = stepWait / 2;
 }
 
 void AVL::slowDown()
 {
+    if(stepWait <= 2000) stepWait = stepWait * 2;
 }
 
 

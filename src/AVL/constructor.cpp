@@ -35,7 +35,7 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     distanceX = 40;
     distanceY = 100;
     isMoving = false;
-    stepWait = 400;
+    stepWait = 600;
     isAnimate = false;
 }
 int AVL::maxDepth()

@@ -139,5 +139,6 @@ void Object::zoomInMiddle(double delta)
 
 void Object::fitTheTexture() 
 {
+    if(texture == nullptr) return;
     SDL_QueryTexture(texture, nullptr, nullptr, &location->w, &location->h);
 }
