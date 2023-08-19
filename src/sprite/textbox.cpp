@@ -1,6 +1,14 @@
 #include <sprite.hpp>
 #include <services.hpp>
 
+void Sprite::setTextBoxTransparent(int a)
+{
+    if(textBox == nullptr) return ;
+    SDL_Color c = *getColor();
+    c.a = a;
+    coloring(c);
+}
+
 void Sprite::setText(std::string s)
 {
     if(textBox == nullptr) return ;

@@ -127,6 +127,7 @@ namespace PATH
     {
         const std::string GRAPHICS_ = "assets/graphics/";
         const std::string FONTS_ = "assets/fonts/";
+        const std::string SCRIPT_ = "assets/script/";
     }
     const std::string ATTRIBUTE_ = "atb/";
     namespace ATB 
@@ -137,6 +138,7 @@ namespace PATH
         const std::string BUTTON_ = "atb/button/";
         const std::string DATA_STRUCTURES_ = "atb/data_structures/";
         const std::string INPUTBOX_ = "atb/input/";
+        const std::string SCRIPT_ = "atb/script/";
     }
 
     const std::string SAVING_ = "saving/";

@@ -1,0 +1,26 @@
+{
+    "background": {
+        "location": 
+        {
+            "x": 750,
+            "y": 280,
+            "w": 400,
+            "h": 350
+        },
+        "color": 
+        {
+            "r": 200,
+            "g": 200,
+            "b": 255,
+            "a": 180
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "sprite": "AVL/script",
+    "script": "AVL/init.lua"
+}
+

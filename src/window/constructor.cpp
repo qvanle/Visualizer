@@ -42,6 +42,7 @@ MyWindow::MyWindow()
     
     std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
     myfont = TTF_OpenFont(fontpath.c_str(), 24);
+    scriptFont = TTF_OpenFont(fontpath.c_str(), 16);
 
     display_pool["nullptr"] = nullptr;
     inputbox_pool["nullptr"] = nullptr;

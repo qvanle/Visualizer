@@ -10,7 +10,6 @@ void Sprite::aligning()
     textBox->cropping(textBox->getW() - w, textBox->getH() - h, w, h);
     textBox->locatingW(w);
     textBox->locatingH(h);
-
     switch(alignH)
     {
         case HORIZONTAL_ALIGN::LEFT:

@@ -147,7 +147,15 @@ set (
     src/hash_table/operator/remove.cpp
     src/hash_table/operator/search.cpp
 )
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE})
+
+set ( 
+    SCRIPT 
+    src/script/constructor.cpp
+    src/script/destructor.cpp
+    src/script/rendering.cpp
+    src/script/highlight.cpp
+)
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
