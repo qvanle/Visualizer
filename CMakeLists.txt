@@ -149,6 +149,19 @@ set (
 )
 
 set ( 
+    MAX_HEAP 
+    src/maxheap/constructor.cpp
+    src/maxheap/destructor.cpp
+    src/maxheap/rendering.cpp
+    src/maxheap/operator/init.cpp
+    src/maxheap/operator/insert.cpp
+    src/maxheap/operator/remove.cpp
+    src/maxheap/operator/heapify.cpp
+    src/maxheap/operator/getmax.cpp
+    src/maxheap/operator/size.cpp
+)
+
+set ( 
     SCRIPT 
     src/script/constructor.cpp
     src/script/destructor.cpp
