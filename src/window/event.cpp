@@ -21,21 +21,19 @@ void MyWindow::interacting()
                 break;
             default:
                 Button* but = nullptr;
+                renderMutex.lock();
 
-                inputbox_mutex.lock();
                 if(but == nullptr && inputbox != nullptr && inputbox->isReceiveEvent(event))
                     but = inputbox->react(event);
-                inputbox_mutex.unlock();
 
-                ds_mutex.lock();
                 if(ds != nullptr && ds->isReceiveEvent(event) && but == nullptr)
                     but = ds->react(event);
-                ds_mutex.unlock();
 
-                display_mutex.lock();
                 if(but == nullptr && but == nullptr && current_display->isReceiveEvent(event))
                     but = current_display->react(event);
-                display_mutex.unlock();
+
+                renderMutex.unlock();
+
                 react(but);
                 break;
         }
@@ -62,37 +60,36 @@ void MyWindow::getEvent()
                 }
                 default:
                 {    
-                    event_mutex.lock();
 
                     bool isds = false;
                     bool isdisplay = false;
                     bool isinputbox = false;
                     
-                    ds_mutex.lock();
+                    event_mutex.lock();
+
+                    renderMutex.lock();
+
                     if(ds != nullptr && ds->isReceiveEvent(event))
                         isds = true;
-                    ds_mutex.unlock();
                     
-                    display_mutex.lock();
                     if(current_display->isReceiveEvent(event)) 
                         isdisplay = true;
-                    display_mutex.unlock();
 
-                    inputbox_mutex.lock();
                     if (inputbox != nullptr && inputbox->isReceiveEvent(event))
                         isinputbox = true;
-                    inputbox_mutex.unlock();
+
+                    renderMutex.unlock();
                     
                     if(isds || isdisplay || isinputbox)
                         event_pool.push(event);
 
                     event_mutex.unlock();
 
+                    EVcond.notify_one();
                     std::this_thread::sleep_for(std::chrono::milliseconds(10));
                     break;
                 }
             }
-            EVcond.notify_one();
         }
     }
 }

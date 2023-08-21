@@ -4,6 +4,7 @@
 
 void AVL::waitForStep()
 {
+    return ;
     if(isAnimate) 
     {
         ds_mutex.unlock();

@@ -36,27 +36,25 @@ private:
     SDL_Rect viewport;
 
     std::queue<SDL_Event> event_pool;
-    std::mutex event_mutex;
     std::condition_variable EVcond;
 
     std::vector<std::thread> thread_pool;
    
     std::map<std::string, Display*> display_pool;
-    std::mutex display_mutex;
     Display* current_display;
 
     std::map<DATA_STRUCTURES_TYPE, DataStructures*> ds_pool;
-    std::mutex ds_mutex;
     DataStructures *ds;
     
     InputBox* inputbox;
-    std::mutex inputbox_mutex;
     std::map<std::string, InputBox*> inputbox_pool;
 
     std::mutex step_mutex;
     bool isQueuingStep;
     std::condition_variable step_cond;
-
+    std::mutex event_mutex;
+    
+    std::mutex renderMutex;
 protected:
     void initSDL2();
     void rendering();

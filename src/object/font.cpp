@@ -9,6 +9,7 @@ void Object::setFont(TTF_Font* f)
 
 void Object::setText(std::string t)
 {
+    if(t.empty()) return ;
     text = t;
     textToTexture();
 }
@@ -44,6 +45,8 @@ void Object::textToTexture()
 {
     if(font == nullptr) return ;
     if(color == nullptr) return ;
+    if(text.size() == 0) return ;
+    if(render == nullptr) return ;
     if(texture != nullptr) 
     { 
         SDL_DestroyTexture(texture);
