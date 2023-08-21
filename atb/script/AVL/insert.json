@@ -20,6 +20,12 @@
             "type": "RECTANGLE"
         }
     },
+    "buttons": 
+    [
+        {
+            "name": "close"
+        }
+    ],
     "sprite": "AVL/script",
     "script": "AVL/insert.lua"
 }

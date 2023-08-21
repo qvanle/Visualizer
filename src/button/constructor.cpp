@@ -87,6 +87,8 @@ void Button::initAction(const json& mem)
             action = BUTTON_ACTION::RANDOM16;
         else if(mem["type"].get<std::string>() == "FILE") 
             action = BUTTON_ACTION::FILE;
+        else if(mem["type"].get<std::string>() == "CLOSE")
+            action = BUTTON_ACTION::CLOSE;
         else 
             action = BUTTON_ACTION::NONE;
     }
@@ -115,4 +117,15 @@ void Button::linking(std::string n)
 {
     name = n;
     importFromJson();
+}
+
+void Button::move(int dx, int dy)
+{
+    Object::moveX(dx);
+    Object::moveY(dy);
+    for(auto& sprite : sprites)
+    {
+        sprite->moveX(dx);
+        sprite->moveY(dy);
+    }
 }

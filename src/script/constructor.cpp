@@ -5,6 +5,7 @@ Script::Script(SDL_Renderer* render, TTF_Font* f) : Object(render)
 {
     this->render = render;
     this->font = f;
+    isMoving = false;
 }
 
 void Script::linking(std::string name)
@@ -22,6 +23,8 @@ void Script::importFromJson()
         initBackground((*mem)["background"]);
     if(mem->contains("sprite"))
         spriteName = (*mem)["sprite"].get<std::string>();
+    if(mem->contains("buttons"))
+        initButtons((*mem)["buttons"]);
 
     if(mem->contains("script"))
     {
@@ -46,3 +49,15 @@ void Script::initBackground(const json& mem)
 {
     Object::importFromJson(mem);
 }
+
+void Script::initButtons(const json& mem)
+{
+    for(auto &i : mem)
+    {
+        Button* b = new Button(render);
+        b->linking(i["name"].get<std::string>());
+        buts.push_back(b);
+
+    }
+}
+

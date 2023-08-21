@@ -47,6 +47,7 @@ enum class BUTTON_ACTION
     GO_OFF,
     SPEED_UP,
     SLOW_DOWN,
+    CLOSE,
     RANDOM,
     RANDOM2,
     RANDOM3,

@@ -81,6 +81,8 @@ public:
     void speedUp();
     void slowDown();
 
+    void closeScript();
+
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
 };

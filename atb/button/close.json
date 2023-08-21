@@ -1,0 +1,40 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 1100,
+            "y": 290,
+            "w": 60,
+            "h": 60
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 0
+        },
+        "visible": true,
+        "SHAPE": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "sprites": 
+    [
+        {
+            "name": "close/released"
+        },
+        {
+            "name": "close/pressed"
+        }
+    ],
+    "action": 
+    {
+        "type": "CLOSE",
+        "args": 
+        {
+        }
+    }
+}

@@ -74,3 +74,16 @@ void DataStructures::slowDown()
             break;
     }
 }
+
+void DataStructures::closeScript()
+{
+    switch(type)
+    {
+        case DATA_STRUCTURES_TYPE::AVL:
+            if(avl == nullptr) return ;
+            avl->closeScript();
+            break;
+        default:
+            break;
+    }
+}

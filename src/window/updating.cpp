@@ -257,6 +257,13 @@ void MyWindow::react(Button* but)
 
             break;
         }
+        case BUTTON_ACTION::CLOSE: 
+        {
+            renderMutex.lock();
+            ds->closeScript();
+            renderMutex.unlock();
+            break;
+        }
         case BUTTON_ACTION::RANDOM:{
             int n = RANDOM::getInt(1, 32);
             std::string mem = RANDOM::getInt(n, 1, 999);

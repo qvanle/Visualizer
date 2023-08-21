@@ -9,6 +9,7 @@
 #include <SDL2/SDL_ttf.h>
 
 #include <sprite.hpp>
+#include <script.hpp>
 
 class AVL 
 {
@@ -59,6 +60,11 @@ class AVL
         Node* cache;
         
         std::mutex& ds_mutex;
+
+        std::map<DATA_STRUCTURES_OPERATOR, Script*> scripts;
+        Script* currentScript;
+        TTF_Font* scriptFont;
+
     protected:
         Node* rotateLeft(Node * node);
         Node* rotateRight(Node * node);
@@ -98,8 +104,10 @@ class AVL
         void speedUp();
         void slowDown();
 
+        void closeScript();
+
         bool isReceiveEvent(SDL_Event& e);
-        void react(SDL_Event& e);
+        Button* react(SDL_Event& e);
         void rendering();
 };
 #endif

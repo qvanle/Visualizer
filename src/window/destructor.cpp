@@ -15,9 +15,6 @@ MyWindow::~MyWindow()
         window = nullptr;
     }
     if(myfont != nullptr) TTF_CloseFont(myfont);
-    TTF_Quit();
-    IMG_Quit();
-    SDL_Quit();
 
     for(auto &i : thread_pool)
     {
@@ -41,5 +38,8 @@ MyWindow::~MyWindow()
     {
         delete i.second;
     }
-
+    
+    TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
 }

@@ -10,6 +10,7 @@
 
 #include <object.hpp>
 #include <sprite.hpp>
+#include <button.hpp>
 
 class Script : Object
 {
@@ -18,11 +19,15 @@ private:
     TTF_Font* font;
     
     std::vector<Sprite*> sprites;
+    std::vector<Button*> buts;
+    bool isMoving;
+    SDL_Point lastMousePressed;
 
     std::string name;
     std::string spriteName;
 protected:
     void initBackground(const json& mem);
+    void initButtons(const json& mem);
     void importFromJson();
 public:
     Script(SDL_Renderer* render, TTF_Font* f);
@@ -32,6 +37,9 @@ public:
 
     void highlight(int index);
     void unhighlight(int index);
+    
+    bool isReceiveEvent(SDL_Event& event);
+    Button* react(SDL_Event& event);
 
     void rendering();
 };

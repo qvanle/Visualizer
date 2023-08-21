@@ -42,6 +42,11 @@ void AVL::rendering()
         }
         u->sprite->rendering();
     }
+    if(currentScript != nullptr)
+    {
+        SDL_RenderSetViewport(render, nullptr);
+        currentScript->rendering();
+    }
     if(cache != nullptr) 
     {
         //cache->sprite->rendering();

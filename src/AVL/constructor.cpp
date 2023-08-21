@@ -37,6 +37,17 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     isMoving = false;
     stepWait = 600;
     isAnimate = false;
+
+    
+    std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
+    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
+
+    currentScript = nullptr;
+    Script* insert = new Script(render, scriptFont);
+    insert->linking("AVL/insert");
+    scripts[DATA_STRUCTURES_OPERATOR::INSERT] = insert;
+
+    currentScript = insert;
 }
 int AVL::maxDepth()
 {

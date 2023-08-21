@@ -6,6 +6,7 @@ void AVL::init(std::vector<int> values)
     if(root != nullptr)
         delete root;
     root = nullptr;
+    cache = nullptr;
     sizeOfTree = 0;
     shiftX = 20;
     shiftY = 20;

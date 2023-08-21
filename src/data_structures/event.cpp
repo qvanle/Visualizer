@@ -30,11 +30,12 @@ Button* DataStructures::react(SDL_Event& e)
 {
     Button* but = nullptr;
     if(avl != nullptr && avl->isReceiveEvent(e))
-         avl->react(e);
-    if(trie != nullptr && trie->isReceiveEvent(e))
+         but = avl->react(e);
+    if(but == nullptr && trie != nullptr && trie->isReceiveEvent(e))
         trie->react(e);
-    if(hashTable != nullptr && hashTable->isReceiveEvent(e))
+    if(but == nullptr && hashTable != nullptr && hashTable->isReceiveEvent(e))
         hashTable->react(e);
+    if(but != nullptr) return but;
     for(auto &i : displays)
         if(i->isReceiveEvent(e))
             but = i->react(e);

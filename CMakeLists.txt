@@ -167,6 +167,7 @@ set (
     src/script/destructor.cpp
     src/script/rendering.cpp
     src/script/highlight.cpp
+    src/script/event.cpp
 )
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT})
 

@@ -28,7 +28,6 @@ private:
 
     SDL_Window* window;
     TTF_Font* myfont;
-    TTF_Font* scriptFont;
     
 
     SDL_Renderer* render;

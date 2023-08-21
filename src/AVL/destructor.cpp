@@ -9,4 +9,5 @@ AVL::Node::~Node()
 AVL::~AVL()
 {
     if(root != nullptr) delete root;
+    if(scriptFont != nullptr) TTF_CloseFont(scriptFont);
 }

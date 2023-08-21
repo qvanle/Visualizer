@@ -44,6 +44,7 @@ public:
     void rendering();
 
     void linking(std::string n);
+    void move(int dx, int dy);
 };
 
 #endif 
