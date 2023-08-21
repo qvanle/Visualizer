@@ -3,8 +3,8 @@
     {
         "location": 
         {
-            "x": 650,
-            "y": 334,
+            "x": 510,
+            "y": 316,
             "w": 180,
             "h": 50
         },
@@ -24,10 +24,10 @@
     "sprites": 
     [
         {
-            "name": "heap/released"
+            "name": "maxheap/released"
         },
         {
-            "name": "heap/pressed"
+            "name": "maxheap/pressed"
         }
     ],
     "action": 
@@ -35,10 +35,12 @@
         "type": "CHANGE_SCREEN",
         "args": 
         {
-            "next-screen": "heap"
+            "next-screen": "working",
+            "data-type": "MAX_HEAP"
         }
     }
 }
+
 
 
 

@@ -3,8 +3,8 @@
     {
         "location": 
         {
-            "x": 650,
-            "y": 334,
+            "x": 510,
+            "y": 198,
             "w": 180,
             "h": 50
         },
@@ -24,10 +24,10 @@
     "sprites": 
     [
         {
-            "name": "heap/released"
+            "name": "minheap/released"
         },
         {
-            "name": "heap/pressed"
+            "name": "minheap/pressed"
         }
     ],
     "action": 
@@ -35,11 +35,8 @@
         "type": "CHANGE_SCREEN",
         "args": 
         {
-            "next-screen": "heap"
+            "next-screen": "working",
+            "data-type": "MIN_HEAP"
         }
     }
 }
-
-
-
-
