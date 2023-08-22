@@ -83,6 +83,10 @@ void DataStructures::closeScript()
             if(avl == nullptr) return ;
             avl->closeScript();
             break;
+        case DATA_STRUCTURES_TYPE::TRIE: 
+            if(trie == nullptr) return ;
+            trie->closeScript();
+            break;
         default:
             break;
     }

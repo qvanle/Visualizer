@@ -42,13 +42,13 @@
         {
             "type": "RECTANGLE"
         },
-        "text": "0"
+        "text": "basdfsdfg"
     },
     "input": 
     {
-        "digit": true,
+        "digit": false,
         "letter": true,
-        "symbol": true,
+        "symbol": false,
         "maxsize": 3000
     }
 }

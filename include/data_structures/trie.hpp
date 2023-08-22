@@ -56,6 +56,9 @@ private:
     Script* currentScript;
     TTF_Font* scriptFont;
 
+    std::mutex step_mutex;
+
+    std::mutex &ds_mutex;
 protected:
     Node* insert(Node* node, std::string word, int index);
     bool search(Node* node, std::string word, int index);
@@ -63,8 +66,13 @@ protected:
     int locating(Node* node, int shiftDown, int shiftRight);
     
     void drawEgdes(Node* u, Node* v);
+
+    void waitForStep();
+    void highlight(std::vector<int> l);
+    void unhighlight(std::vector<int> l);
+
 public:
-    Trie(SDL_Renderer * r, TTF_Font* f, SDL_Rect v, int capacity);
+    Trie(SDL_Renderer * r, std::mutex& m, TTF_Font* f, SDL_Rect v, int capacity);
     ~Trie();
 
     void init(std::vector<std::string> words);
@@ -78,7 +86,8 @@ public:
     void rendering();
 
     bool isReceiveEvent(SDL_Event& e);
-    void react(SDL_Event& e);
+    Button* react(SDL_Event& e);
+    void closeScript();
 };
 
 #endif 

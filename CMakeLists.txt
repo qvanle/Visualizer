@@ -133,6 +133,7 @@ set (
     src/trie/operator/insert.cpp
     src/trie/operator/remove.cpp
     src/trie/operator/search.cpp
+    src/trie/step.cpp
 )
 
 set (

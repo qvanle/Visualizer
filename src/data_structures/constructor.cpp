@@ -69,7 +69,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::TRIE:
             linking("trie");
-            trie = new Trie(render, font, {10, 10, 800, 600}, 3000);
+            trie = new Trie(render, ds_mutex, font, {10, 10, 800, 600}, 3000);
             break;
         case DATA_STRUCTURES_TYPE::HEAP: 
             linking("HEAP");

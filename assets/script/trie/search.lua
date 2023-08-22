@@ -6,7 +6,7 @@ function Trie.search(root, std::string word, index)
         return root.endOfWords > 0
     end 
     key = word[index]
-        return search(
+    return search(
         root.children[key], 
         word, 
         index+1

@@ -32,7 +32,7 @@ Button* DataStructures::react(SDL_Event& e)
     if(avl != nullptr && avl->isReceiveEvent(e))
          but = avl->react(e);
     if(but == nullptr && trie != nullptr && trie->isReceiveEvent(e))
-        trie->react(e);
+        but = trie->react(e);
     if(but == nullptr && hashTable != nullptr && hashTable->isReceiveEvent(e))
         hashTable->react(e);
     if(but != nullptr) return but;

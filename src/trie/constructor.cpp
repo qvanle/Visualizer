@@ -10,7 +10,7 @@ Trie::Node::Node(int k, Sprite* spr)
         childs[i] = nullptr;
 };
 
-Trie::Trie(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int cap)
+Trie::Trie(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap) : ds_mutex(m)
 {
     render = r;
     font = f;
