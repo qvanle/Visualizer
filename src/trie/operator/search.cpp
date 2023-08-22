@@ -13,5 +13,6 @@ bool Trie::search(Node* node, std::string word, int index)
 
 bool Trie::search(std::string word)
 {
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::SEARCH];
     return search(root, word, 0);
 }

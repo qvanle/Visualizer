@@ -9,5 +9,9 @@ Trie::Node::~Node()
 Trie::~Trie()
 {
     if(root != nullptr) delete root;
+    
+    for(auto i : scripts)
+        delete i.second;
+    TTF_CloseFont(scriptFont);
 }
 

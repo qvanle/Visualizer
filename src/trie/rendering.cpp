@@ -18,6 +18,7 @@ void Trie::rendering()
 {
     if(root == nullptr) return ;
     SDL_RenderSetViewport(render, &viewport);
+    locating(root, 0, 0);
 
     std::queue<Node*> q;
     q.push(root);
@@ -36,5 +37,10 @@ void Trie::rendering()
             }
         }
         u->sprite->rendering();
+    }
+    if(currentScript != nullptr)
+    {
+        SDL_RenderSetViewport(render, nullptr);
+        currentScript->rendering();
     }
 }

@@ -24,6 +24,31 @@ Trie::Trie(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int cap)
     distanceX = 60;
     distanceY = 80;
     isMoving = false;
+
+    isQueue = false;
+    isPause = false;
+    stepWait = 600;
+    isAnimate = false;
+
+    std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
+    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
+
+    currentScript = nullptr;
+    Script* insert = new Script(render, scriptFont);
+    insert->linking("trie/insert");
+    scripts[DATA_STRUCTURES_OPERATOR::INSERT] = insert;
+
+    Script* remove = new Script(render, scriptFont);
+    remove->linking("trie/remove");
+    scripts[DATA_STRUCTURES_OPERATOR::DELETE] = remove;
+
+    Script* search = new Script(render, scriptFont);
+    search->linking("trie/search");
+    scripts[DATA_STRUCTURES_OPERATOR::SEARCH] = search;
+
+    Script* init = new Script(render, scriptFont);
+    init->linking("trie/init");
+    scripts[DATA_STRUCTURES_OPERATOR::INIT] = init;
 }
 
 int Trie::locating(Node* node, int shiftDown, int shiftRight)

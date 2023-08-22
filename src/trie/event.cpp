@@ -49,7 +49,6 @@ void Trie::react(SDL_Event& e)
             lastMousePressed.y = e.motion.y;
             shiftX += dx;
             shiftY += dy;
-            locating(root, 0, 0);
             break;
         }
         defaut:

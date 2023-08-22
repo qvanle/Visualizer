@@ -34,6 +34,8 @@ Trie::Node* Trie::insert(Node* node, std::string word, int index)
 
 bool Trie::insert(std::string word)
 {
+
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::INSERT];
     root = insert(root, word, 0);
     return true;
 }

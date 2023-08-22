@@ -25,8 +25,8 @@ Trie::Node* Trie::remove(Node* node, std::string word, int index)
 
 bool Trie::remove(std::string word)
 {
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::DELETE];
     if(!search(root, word, 0)) return false;
     root = remove(root, word, 0);
-    locating(root, 0, 0);
     return true;
 }

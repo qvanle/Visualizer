@@ -3,9 +3,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <mutex>
+#include <condition_variable>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <script.hpp>
 
 #include <sprite.hpp>
 
@@ -40,6 +43,18 @@ private:
     int shiftY;
     int distanceX;
     int distanceY;
+
+    bool isAnimate;
+    std::mutex animate_mutex;
+    bool isQueue;
+    bool isPause;
+    std::mutex pause_mutex;
+    int stepWait;
+    std::condition_variable step_cv;
+
+    std::map<DATA_STRUCTURES_OPERATOR, Script*> scripts;
+    Script* currentScript;
+    TTF_Font* scriptFont;
 
 protected:
     Node* insert(Node* node, std::string word, int index);
