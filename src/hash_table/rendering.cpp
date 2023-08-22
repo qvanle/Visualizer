@@ -22,6 +22,7 @@ void HashTable::drawEdge(Node* src, Node* dst)
 void HashTable::rendering()
 {
     if(table == nullptr) return ;
+    locating(table, 0, 0);
     SDL_RenderSetViewport(render, &viewport);
 
     for(int i = 0; i < HASH_KEY; i++)
@@ -38,5 +39,10 @@ void HashTable::rendering()
                 current = current->pnext;
             }
         }
+    }
+    if(currentScript != nullptr) 
+    {
+        SDL_RenderSetViewport(render, nullptr);
+        currentScript->rendering();
     }
 }

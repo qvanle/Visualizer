@@ -5,6 +5,7 @@ bool HashTable::isReceiveEvent(SDL_Event& e)
     switch(e.type)
     {
         case SDL_MOUSEBUTTONDOWN:
+            if(currentScript != nullptr && currentScript->isReceiveEvent(e)) return true;
             if(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) return false;
             if(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) return false;
             if(e.button.button == SDL_BUTTON_LEFT) return false;
@@ -13,6 +14,8 @@ bool HashTable::isReceiveEvent(SDL_Event& e)
             break;
         case SDL_MOUSEMOTION:
             if(isMoving) return true;
+            if(currentScript == nullptr) return false;
+            if(currentScript->isReceiveEvent(e)) return true;
             return false;
             break;
         default:
@@ -21,11 +24,15 @@ bool HashTable::isReceiveEvent(SDL_Event& e)
     }
 }
 
-void HashTable::react(SDL_Event& e)
+Button* HashTable::react(SDL_Event& e)
 {
     switch(e.type)
     {
         case SDL_MOUSEBUTTONDOWN:
+            if(currentScript != nullptr && currentScript->isReceiveEvent(e)) 
+            {
+                return currentScript->react(e);
+            }
             if(isMoving)
             {
                 isMoving = false;
@@ -39,10 +46,13 @@ void HashTable::react(SDL_Event& e)
                 lastMousePressed.x = e.motion.x;
                 lastMousePressed.y = e.motion.y;
             }
+            return nullptr;
             break;
         case SDL_MOUSEMOTION: 
         {
-            if(!isMoving) return ;
+            if(currentScript != nullptr && currentScript->isReceiveEvent(e)) 
+                return currentScript->react(e);
+            if(!isMoving) return nullptr;
             int dx = e.motion.x - lastMousePressed.x;
             int dy = e.motion.y - lastMousePressed.y;
             lastMousePressed.x = e.motion.x;
@@ -50,10 +60,13 @@ void HashTable::react(SDL_Event& e)
             shiftX += dx;
             shiftY += dy;
             locating(table, 0, 0);
+            return nullptr;
             break;
         }
         defaut:
+            return nullptr;
             break;
     }
+    return nullptr;
 }
 

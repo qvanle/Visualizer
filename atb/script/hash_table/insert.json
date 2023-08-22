@@ -1,0 +1,36 @@
+{
+    "background": {
+        "location": 
+        {
+            "x": 750,
+            "y": 280,
+            "w": 400,
+            "h": 350
+        },
+        "color": 
+        {
+            "r": 200,
+            "g": 200,
+            "b": 255,
+            "a": 180
+        },
+        "visible": true,
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "buttons": 
+    [
+        {
+            "name": "close"
+        }
+    ],
+    "sprite": "hash-table/script",
+    "script": "hash_table/insert.lua"
+}
+
+
+
+
+

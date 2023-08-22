@@ -87,6 +87,10 @@ void DataStructures::closeScript()
             if(trie == nullptr) return ;
             trie->closeScript();
             break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->closeScript();
+            break;
         default:
             break;
     }

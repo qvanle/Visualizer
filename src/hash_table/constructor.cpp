@@ -15,7 +15,7 @@ HashTable::Head::Head(Sprite* spr)
     root = nullptr;
 }
 
-HashTable::HashTable(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int cap)
+HashTable::HashTable(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap) : ds_mutex(m)
 {
     render = r;
     font = f;
@@ -33,8 +33,31 @@ HashTable::HashTable(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int cap)
     shiftX = 20;
     shiftY = 20;
     distanceX = 100;
-    distanceY = 80;
+    distanceY = 70;
     isMoving = false;
+
+    stepWait = 600;
+
+    std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
+    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
+
+    currentScript = nullptr;
+    Script* insert = new Script(render, scriptFont);
+    insert->linking("hash_table/insert");
+    scripts[DATA_STRUCTURES_OPERATOR::INSERT] = insert;
+
+    Script* remove = new Script(render, scriptFont);
+    remove->linking("hash_table/remove");
+    scripts[DATA_STRUCTURES_OPERATOR::DELETE] = remove;
+
+    Script* search = new Script(render, scriptFont);
+    search->linking("hash_table/search");
+    scripts[DATA_STRUCTURES_OPERATOR::SEARCH] = search;
+
+    Script* init = new Script(render, scriptFont);
+    init->linking("hash_table/init");
+    scripts[DATA_STRUCTURES_OPERATOR::INIT] = init;
+
 }
 
 int HashTable::locating(Node* node, int shiftDown, int shiftRight)

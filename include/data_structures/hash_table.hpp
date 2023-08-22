@@ -1,11 +1,19 @@
 #ifndef HASH_TABLE_HPP
 #define HASH_TABLE_HPP
 
+#include <iostream>
+#include <vector>
+#include <map>
+#include <mutex>
+#include <condition_variable>
+#include <thread>
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 
 #include <sprite.hpp>
-#include <type_traits>
+#include <GLOBAL.hpp>
+#include <script.hpp>
 
 class HashTable
 {
@@ -46,6 +54,18 @@ class HashTable
 
         bool isQueue;
         bool isPause;
+        std::map<DATA_STRUCTURES_OPERATOR, Script*> scripts;
+        Script* currentScript;
+        TTF_Font* scriptFont;
+
+        bool isAnimate;
+        std::mutex animate_mutex;
+        std::mutex pause_mutex;
+        int stepWait;
+        std::condition_variable step_cv;
+
+        std::mutex step_mutex;
+        std::mutex &ds_mutex;
     protected:
         Node* insert(Node* root, int k);
         Node* remove(Node* root, int k);
@@ -56,8 +76,13 @@ class HashTable
         void defaultSetting();
 
         void drawEdge(Node* src, Node* dst);
+
+        void waitForStep();
+        void highlight(std::vector<int> l);
+        void unhighlight(std::vector<int> l);
+
     public: 
-        HashTable(SDL_Renderer* render, TTF_Font* font, SDL_Rect v, int cap);
+        HashTable(SDL_Renderer* render, std::mutex& m, TTF_Font* font, SDL_Rect v, int cap);
         ~HashTable();
 
         void init(std::vector<int> v, int KEY);
@@ -76,7 +101,9 @@ class HashTable
         void slowDown();
 
         bool isReceiveEvent(SDL_Event& e);
-        void react(SDL_Event& e);
+        Button* react(SDL_Event& e);
+        void closeScript();
+
         void rendering();
 };
 

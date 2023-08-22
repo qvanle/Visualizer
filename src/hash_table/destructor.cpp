@@ -22,5 +22,8 @@ HashTable::~HashTable()
         }
         delete [] table;
     }
+    for(auto i : scripts)
+        delete i.second;
+    TTF_CloseFont(scriptFont);
 }
 

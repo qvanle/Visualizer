@@ -76,7 +76,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::HASH_TABLE:
             linking("hash_table");
-            hashTable = new HashTable(render, font, {10, 10, 800, 600}, 128);
+            hashTable = new HashTable(render, ds_mutex, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::GRAPH: 
             linking("graph");

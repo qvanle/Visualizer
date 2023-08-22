@@ -34,10 +34,15 @@ Button* DataStructures::react(SDL_Event& e)
     if(but == nullptr && trie != nullptr && trie->isReceiveEvent(e))
         but = trie->react(e);
     if(but == nullptr && hashTable != nullptr && hashTable->isReceiveEvent(e))
-        hashTable->react(e);
+        but = hashTable->react(e);
     if(but != nullptr) return but;
     for(auto &i : displays)
         if(i->isReceiveEvent(e))
             but = i->react(e);
     return but;
+}
+
+void HashTable::closeScript()
+{
+    currentScript = nullptr;
 }
