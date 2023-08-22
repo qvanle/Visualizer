@@ -84,6 +84,8 @@ class AVL
         void renderLine(Node* src, Node* dst);
 
         void waitForStep();
+        void highlight(std::vector<int> l);
+        void unhighlight(std::vector<int> l);
     public:
         AVL(SDL_Renderer* render, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap);
         ~AVL();

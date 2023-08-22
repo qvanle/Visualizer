@@ -82,6 +82,9 @@ AVL::Node* AVL::balancing(Node* node)
     {
         return nullptr;
     }
+    if(node->lson != nullptr) node->lson->repair();
+    if(node->rson != nullptr) node->rson->repair();
+
     node->repair();
     int bf = balanceFactor(node);
 

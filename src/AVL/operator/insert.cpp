@@ -9,6 +9,7 @@ AVL::Node* AVL::insert(Node* node, Node* newNode)
         node = newNode;
         if(isAnimate)
         {
+            highlight({1, 2, 3});
             animate_mutex.lock();
             node->sprite->highlight();
             animate_mutex.unlock();
@@ -18,6 +19,7 @@ AVL::Node* AVL::insert(Node* node, Node* newNode)
             animate_mutex.lock();
             node->sprite->unhighlight();
             animate_mutex.unlock();
+            unhighlight({1, 2, 3});
         }
         sizeOfTree++;
         return newNode;
@@ -36,13 +38,24 @@ AVL::Node* AVL::insert(Node* node, Node* newNode)
     }
     if(compare(newNode, node) == -1)
     {
+        highlight({4, 5});
+        if(isAnimate) waitForStep();
+        unhighlight({4, 5});
+
         node->lson = insert(node->lson, newNode);
     }
     else if(compare(newNode, node) == 1)
     {
+        highlight({6, 7});
+        if(isAnimate) waitForStep();
+        unhighlight({6, 7});
         node->rson = insert(node->rson, newNode);
     }
+
+    highlight({9});
     node = balancing(node);
+    unhighlight({9});
+
     return node;
 }
 
@@ -52,6 +65,7 @@ bool AVL::insert(int key)
     {
         return false;
     }
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::INSERT];
     cache = nullptr;
 
     Sprite* sprite = new Sprite(render);
@@ -64,6 +78,10 @@ bool AVL::insert(int key)
     isPause = false;
     isQueue = false;
     isAnimate = true;
+    
+    highlight({0});
+    waitForStep();
+    unhighlight({0});
 
     root = insert(root, cache);
 

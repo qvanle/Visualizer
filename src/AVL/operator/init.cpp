@@ -11,7 +11,7 @@ void AVL::init(std::vector<int> values)
     shiftX = 20;
     shiftY = 20;
     isAnimate = false;
-
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::INIT];
     for(int i = 0; i < values.size() && sizeOfTree < capacity; i++)
     {
         Sprite* sprite = new Sprite(render);

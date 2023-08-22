@@ -1,5 +1,4 @@
 function AVL.remove(Node node, key)
-    
     if(node == nil) then 
         return nil 
     end 

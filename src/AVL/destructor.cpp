@@ -10,4 +10,9 @@ AVL::~AVL()
 {
     if(root != nullptr) delete root;
     if(scriptFont != nullptr) TTF_CloseFont(scriptFont);
+    for(auto& script : scripts)
+    {
+        if(script.second != nullptr) delete script.second;
+    }
+    scripts.clear();
 }

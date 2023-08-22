@@ -2,9 +2,34 @@
 #include <chrono>
 #include <thread>
 
+void AVL::highlight(std::vector<int> l)
+{
+    if(isAnimate)
+    {
+        animate_mutex.lock();
+        for(int i = 0; i < l.size(); i++)
+        {
+            currentScript->highlight(l[i]);
+        }
+        animate_mutex.unlock();
+    }
+}
+
+void AVL::unhighlight(std::vector<int> l)
+{
+    if(isAnimate)
+    {
+        animate_mutex.lock();
+        for(int i = 0; i < l.size(); i++)
+        {
+            currentScript->unhighlight(l[i]);
+        }
+        animate_mutex.unlock();
+    }
+}
+
 void AVL::waitForStep()
 {
-    return ;
     if(isAnimate) 
     {
         ds_mutex.unlock();
