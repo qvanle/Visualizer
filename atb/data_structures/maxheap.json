@@ -1,0 +1,47 @@
+{
+    "background": {
+        "location": 
+        {
+            "x": 10,
+            "y": 10,
+            "w": 800,
+            "h": 610
+        },
+        "color": 
+        {
+            "r": 149,
+            "g": 157,
+            "b": 215,
+            "a": 100
+        },
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "visible": true
+    },
+    "display":
+    [
+        {
+            "viewport": 
+            {
+                "x": 0,
+                "y": 0,
+                "w": 1200,
+                "h": 635
+            },
+            "name": "toolbox/heap"
+        },
+        {
+            "viewport": 
+            {
+                "x": 0,
+                "y": 0,
+                "w": 1200,
+                "h": 635
+            },
+            "name": "toolbox/step"
+        }
+    ]
+}
+

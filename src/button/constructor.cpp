@@ -55,6 +55,16 @@ void Button::initAction(const json& mem)
             action = BUTTON_ACTION::SPEED_UP;
         else if(mem["type"].get<std::string>() == "SLOW_DOWN")
             action = BUTTON_ACTION::SLOW_DOWN;
+        else if(mem["type"].get<std::string>() == "TOP")
+            action = BUTTON_ACTION::TOP;
+        else if(mem["type"].get<std::string>() == "SIZE")
+            action = BUTTON_ACTION::SIZE;
+        else if(mem["type"].get<std::string>() == "CONNECTED_COMPONENTS")
+            action = BUTTON_ACTION::CONNECTED_COMPONENTS;
+        else if(mem["type"].get<std::string>() == "MST")
+            action = BUTTON_ACTION::MST;
+        else if(mem["type"].get<std::string>() == "DIJKSTRA")
+            action = BUTTON_ACTION::DIJKSTRA;
         else if(mem["type"].get<std::string>() == "RANDOM2")
             action = BUTTON_ACTION::RANDOM2;
         else if(mem["type"].get<std::string>() == "RANDOM3") 

@@ -71,9 +71,6 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             linking("trie");
             trie = new Trie(render, ds_mutex, font, {10, 10, 800, 600}, 3000);
             break;
-        case DATA_STRUCTURES_TYPE::HEAP: 
-            linking("HEAP");
-            break;
         case DATA_STRUCTURES_TYPE::HASH_TABLE:
             linking("hash_table");
             hashTable = new HashTable(render, ds_mutex, font, {10, 10, 800, 600}, 128);
@@ -84,9 +81,13 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             linking("btree4th");
             break;
-        case DATA_STRUCTURES_TYPE::NONE:
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            linking("minheap");
             break;
-        default:
+        case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            linking("maxheap");
+            break;
+        case DATA_STRUCTURES_TYPE::NONE:
             break;
     }
 }

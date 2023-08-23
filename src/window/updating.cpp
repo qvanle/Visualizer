@@ -136,9 +136,6 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
             std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::HASH_TABLE_);
             break;
         }
-        case DATA_STRUCTURES_TYPE::HEAP:{
-            break;
-        }
         case DATA_STRUCTURES_TYPE::NONE:{
             break;
         }
@@ -182,9 +179,6 @@ void MyWindow::getDataFromRandom(DATA_STRUCTURES_TYPE type)
             std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::HASH_TABLE_);
             break;
         }
-        case DATA_STRUCTURES_TYPE::HEAP:{
-            break;
-        }
         case DATA_STRUCTURES_TYPE::NONE:{
             break;
         }
@@ -216,6 +210,14 @@ void MyWindow::react(Button* but)
         }
         case BUTTON_ACTION::SEARCH:{
             setInputBox(ds->getName() + "/search");
+            break;
+        }
+        case BUTTON_ACTION::SIZE:{
+            setInputBox(ds->getName() + "/size");
+            break;
+        }
+        case BUTTON_ACTION::TOP:{
+            setInputBox(ds->getName() + "/top");
             break;
         }
         case BUTTON_ACTION::GO_BACK: 
