@@ -83,6 +83,11 @@ void MyWindow::runOperator()
             case DATA_STRUCTURES_OPERATOR::SEARCH:
                 ds->search(temp);
                 break;
+            case DATA_STRUCTURES_OPERATOR::TOP: 
+                ds->top();
+                break;
+            case DATA_STRUCTURES_OPERATOR::SIZE:
+                ds->size();
             default :
                 break;
         }

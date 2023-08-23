@@ -2,6 +2,7 @@
 
 void minHeap::pop()
 {
+    currentScript = scripts[DATA_STRUCTURES_OPERATOR::DELETE];
     if(value.size() == 0)
     {
         return;

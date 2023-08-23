@@ -10,4 +10,8 @@ minHeap::~minHeap()
     {
         delete i;
     }
+    if(scriptFont != nullptr) TTF_CloseFont(scriptFont);
+    for(auto & i : scripts)
+        delete i.second;
+    scripts.clear();
 }

@@ -97,6 +97,11 @@ set (
     src/data_structures/operator/hash_table/insert.cpp
     src/data_structures/operator/hash_table/remove.cpp
     src/data_structures/operator/hash_table/search.cpp
+    src/data_structures/operator/minheap/init.cpp
+    src/data_structures/operator/minheap/insert.cpp
+    src/data_structures/operator/minheap/pop.cpp
+    src/data_structures/operator/minheap/top.cpp
+    src/data_structures/operator/minheap/size.cpp
 )
 
 set ( 
@@ -161,7 +166,19 @@ set (
     src/maxheap/operator/getmax.cpp
     src/maxheap/operator/size.cpp
 )
-
+set ( 
+    MIN_HEAP
+    src/minheap/constructor.cpp
+    src/minheap/destructor.cpp
+    src/minheap/rendering.cpp
+    src/minheap/event.cpp
+    src/minheap/operator/init.cpp
+    src/minheap/operator/insert.cpp
+    src/minheap/operator/remove.cpp
+    src/minheap/operator/heapify.cpp
+    src/minheap/operator/getmin.cpp
+    src/minheap/operator/size.cpp
+)
 set ( 
     SCRIPT 
     src/script/constructor.cpp
@@ -170,7 +187,7 @@ set (
     src/script/highlight.cpp
     src/script/event.cpp
 )
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT})
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT} ${MAX_HEAP} ${MIN_HEAP})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

@@ -83,6 +83,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::MIN_HEAP:
             linking("minheap");
+            minheap = new minHeap(render, ds_mutex, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
             linking("maxheap");

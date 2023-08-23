@@ -26,9 +26,8 @@ void InputBox::initOperator(const json& mem)
     else if (type == "INSERT") op = DATA_STRUCTURES_OPERATOR::INSERT;
     else if (type == "DELETE") op = DATA_STRUCTURES_OPERATOR::DELETE;
     else if (type == "SEARCH") op = DATA_STRUCTURES_OPERATOR::SEARCH;
-    else if (type == "GET_MIN") op = DATA_STRUCTURES_OPERATOR::GET_MIN;
-    else if (type == "GET_MAX") op = DATA_STRUCTURES_OPERATOR::GET_MAX;
-    else if (type == "GET_SIZE") op = DATA_STRUCTURES_OPERATOR::GET_SIZE;
+    else if (type == "TOP") op = DATA_STRUCTURES_OPERATOR::TOP;
+    else if (type == "SIZE") op = DATA_STRUCTURES_OPERATOR::SIZE;
     else if (type == "FIND_COMPONENTS") op = DATA_STRUCTURES_OPERATOR::FIND_COMPONENTS;
     else if (type == "DIJKSTRA") op = DATA_STRUCTURES_OPERATOR::DIJKSTRA_SHORTEST_PATH;
     else if (type == "MINIMUM_SPANNING_TREE") op = DATA_STRUCTURES_OPERATOR::FIND_MINIMUM_SPANNING_TREE;

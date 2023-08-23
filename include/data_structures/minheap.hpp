@@ -3,30 +3,88 @@
 #include <iostream>
 #include <vector>
 #include <string> 
+#include <mutex>
+#include <thread>
+#include <condition_variable>
+
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+
+#include <sprite.hpp>
+#include <button.hpp>
+#include <script.hpp>
 
 class minHeap 
 {
-private:
-    struct Node 
-    {
-        int value;
-        Node(int value);
-        ~Node();
-    };
+    private:
+        struct Node 
+        {
+            int value;
+            Sprite* sprite;
+            Node(int value, Sprite* spr);
+            ~Node();
+            void repair();
+        };
 
-    std::vector<Node*> value;
-protected:
-    void heapify(int index);
-    void swap(int index1, int index2);
-    bool swapable(int index1, int index2);
-public: 
-    minHeap();
-    ~minHeap();
-    void init(std::vector<int>& value);
-    void insert(int value);
-    void pop();
-    int top();
-    int size();
+        std::vector<Node*> value;
+
+        int capacity;
+
+        SDL_Point lastMousePressed;
+        SDL_Rect viewport;
+        SDL_Renderer* render;
+        TTF_Font* font;
+        bool isMoving;
+        SDL_Color edgesColor;
+
+        int shiftX;
+        int shiftY;
+        int distanceX;
+        int distanceY;
+
+        bool isAnimate;
+        std::mutex animate_mutex;
+        bool isQueue;
+        bool isPause;
+        std::mutex pause_mutex;
+        int stepWait;
+        std::condition_variable step_cv;
+        std::mutex step_mutex;
+        Node* cache;
+
+        std::mutex& ds_mutex;
+
+        std::map<DATA_STRUCTURES_OPERATOR, Script*> scripts;
+        Script* currentScript;
+        TTF_Font* scriptFont;
+
+    protected:
+        void heapify(int index);
+        void swap(int index1, int index2);
+        bool swapable(int index1, int index2);
+        void realInsert(int value);
+
+        int locating(int id, int shiftDown, int shiftRight);
+        void renderLine(Node* src, Node* dst);
+
+        void waitForStep();
+        void highlight(std::vector<int> l);
+        void unhighlight(std::vector<int> l);
+    public: 
+        minHeap(SDL_Renderer* render, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap);
+        ~minHeap();
+
+        void init(std::vector<int> value);
+        void insert(int value);
+        void pop();
+        int top();
+        int size();
+
+        void closeScript();
+
+        bool isReceiveEvent(SDL_Event& e);
+        Button* react(SDL_Event& e);
+        void rendering();
 };
 
 #endif 

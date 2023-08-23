@@ -13,4 +13,6 @@ void DataStructures::rendering()
         trie->rendering();
     if(hashTable != nullptr)
         hashTable->rendering();
+    if(minheap != nullptr)
+        minheap->rendering();
 }

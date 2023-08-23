@@ -48,7 +48,7 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     scripts[DATA_STRUCTURES_OPERATOR::INSERT] = insert;
 
     Script* remove = new Script(render, scriptFont);
-    remove->linking("trie/remove");
+    remove->linking("AVL/remove");
     scripts[DATA_STRUCTURES_OPERATOR::DELETE] = remove;
 
     Script* search = new Script(render, scriptFont);

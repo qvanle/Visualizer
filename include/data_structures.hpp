@@ -19,6 +19,8 @@
 #include <data_structures/AVL.hpp>
 #include <data_structures/trie.hpp>
 #include <data_structures/hash_table.hpp>
+#include <data_structures/minheap.hpp>
+#include <data_structures/maxheap.hpp>
 
 class DataStructures : protected Object
 {
@@ -35,6 +37,8 @@ private:
     AVL* avl;
     Trie* trie;
     HashTable* hashTable;
+    minHeap* minheap;
+    maxHeap* maxheap;
 
 protected:
     void initBackground(const json& mem);
@@ -57,6 +61,11 @@ protected:
     void removeHashTable(InputBox* inp);
     void searchHashTable(InputBox* inp);
 
+    void initMinHeap(InputBox* inp);
+    void insertMinHeap(InputBox* inp);
+    void removeMinHeap(InputBox* inp);
+    void searchMinHeap(InputBox* inp);
+
 public:
     DataStructures(SDL_Renderer* r, TTF_Font* f, std::mutex& m);
     ~DataStructures();
@@ -73,6 +82,11 @@ public:
     void insert(InputBox* inp);
     void remove(InputBox* inp);
     void search(InputBox* inp);
+    void top();
+    void size();
+    void components();
+    void MST(InputBox* inp);
+    void dijkstra(InputBox* inp);
     
     void goBack();
     void goNext();

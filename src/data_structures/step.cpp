@@ -91,6 +91,10 @@ void DataStructures::closeScript()
             if(hashTable == nullptr) return ;
             hashTable->closeScript();
             break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->closeScript();
+            break;
         default:
             break;
     }
