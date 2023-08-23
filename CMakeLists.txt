@@ -172,6 +172,7 @@ set (
     src/minheap/destructor.cpp
     src/minheap/rendering.cpp
     src/minheap/event.cpp
+    src/minheap/step.cpp
     src/minheap/operator/init.cpp
     src/minheap/operator/insert.cpp
     src/minheap/operator/remove.cpp

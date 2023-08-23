@@ -20,7 +20,7 @@ minHeap::minHeap(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int ca
     isMoving = false;
     stepWait = 600;
     isAnimate = false;
-
+    inverse = false;
     std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
     scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
 
@@ -49,4 +49,12 @@ minHeap::minHeap(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int ca
 
 }
 
+void minHeap::setmin()
+{
+    inverse = false;
+}
 
+void minHeap::setmax()
+{
+    inverse = true;
+}

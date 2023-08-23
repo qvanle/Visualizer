@@ -1,5 +1,5 @@
-function minHeap.init(values)
+function heap.init(values)
     for i = 1, #values do
-        minHeap.insert(values[i])
+        heap.insert(values[i])
     end
 end

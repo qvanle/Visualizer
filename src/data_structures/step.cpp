@@ -95,6 +95,10 @@ void DataStructures::closeScript()
             if(minheap == nullptr) return ;
             minheap->closeScript();
             break;
+        case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->closeScript();
+            break;
         default:
             break;
     }

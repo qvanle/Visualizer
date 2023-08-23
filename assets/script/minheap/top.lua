@@ -1,6 +1,6 @@
-function minHeap.top()
-    if(#minHeap.heap == 0) then
+function heap.top()
+    if(#heap.heap == 0) then
         return nil
     end
-    return minHeap.heap[0]
+    return heap.heap[0]
 end

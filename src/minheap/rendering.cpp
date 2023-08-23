@@ -5,11 +5,11 @@ int minHeap::locating(int id, int shiftDown, int shiftRight)
 {
     if(id < 0 || id >= value.size())
     {
-        int shift = log2(value.size()) - shiftDown;
+        int shift = log2(value.size()) - shiftDown + 1;
         return std::max(0, (1 << shift) - 1);
     }
 
-    int left = locating(id * 2 + 1, shiftDown + 1, shiftRight);
+    int left = std::max(0, locating(id * 2 + 1, shiftDown + 1, shiftRight));
     Node* node = value[id];
     if(node->sprite != nullptr)
     {
@@ -19,7 +19,7 @@ int minHeap::locating(int id, int shiftDown, int shiftRight)
     }
     int right = locating(id * 2 + 2, shiftDown + 1, shiftRight + left + 1);
 
-    int shift = log2(value.size()) - shiftDown;
+    int shift = log2(value.size()) - shiftDown + 1;
     return left + right + 1;
 }
 

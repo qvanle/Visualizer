@@ -1,3 +1,3 @@
-function minHeap.size()
-    return #minHeap.heap
+function heap.size()
+    return #heap.heap
 end

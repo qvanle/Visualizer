@@ -1,8 +1,8 @@
-function minHeap.remove()
-    if(#minHeap.heap == 0) then
+function heap.remove()
+    if(#heap.heap == 0) then
         return 
     end
-    swap(0, #minHeap.heap)
-    minHeap.heap.pop_back()
-    minHeap.heapify(0)
+    swap(0, #heap.heap)
+    heap.heap.pop_back()
+    heap.heapify(0)
 end

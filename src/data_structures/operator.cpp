@@ -28,7 +28,7 @@ void DataStructures::init(InputBox* inp)
             initMinHeap(inp);
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
-            //initMaxHeap(inp);
+            initMinHeap(inp);
             break;
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             //initBTree4th(inp);
@@ -60,6 +60,7 @@ void DataStructures::insert(InputBox* inp)
         default:
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            insertMinHeap(inp);
             break;
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             break;
@@ -87,6 +88,7 @@ void DataStructures::remove(InputBox* inp)
             removeMinHeap(inp);
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            removeMinHeap(inp);
             break;
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             break;
@@ -123,6 +125,8 @@ void DataStructures::top()
             minheap->top();
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            minheap->top();
+            break;
             break;
         default:
             break;
@@ -138,6 +142,7 @@ void DataStructures::size()
             minheap->size();
             break;
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            minheap->size();
             break;
         default:
             break;

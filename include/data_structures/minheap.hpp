@@ -27,6 +27,7 @@ class minHeap
         };
 
         std::vector<Node*> value;
+        bool inverse;
 
         int capacity;
 
@@ -73,7 +74,8 @@ class minHeap
     public: 
         minHeap(SDL_Renderer* render, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap);
         ~minHeap();
-
+        void setmax();
+        void setmin();
         void init(std::vector<int> value);
         void insert(int value);
         void pop();

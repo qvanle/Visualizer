@@ -28,7 +28,22 @@ void minHeap::heapify(int index)
 
     if(largest != index)
     {
+        if(isAnimate)
+        {
+            animate_mutex.lock();
+            value[index]->sprite->highlight();
+            value[largest]->sprite->highlight();
+            animate_mutex.unlock();
+            waitForStep();
+        }
         swap(index, largest);
+        if(isAnimate)
+        {
+            animate_mutex.lock();
+            value[index]->sprite->unhighlight();
+            value[largest]->sprite->unhighlight();
+            animate_mutex.unlock();
+        }
         heapify(largest);
     }
 }

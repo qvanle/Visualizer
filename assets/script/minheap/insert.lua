@@ -1,7 +1,7 @@
-function minHeap.insert(value)
-    table.insert(minHeap.heap, value)
+function heap.insert(value)
+    table.insert(heap.values, value)
 
-    local index = #minHeap.heap
+    local index = #heap.values
     
     if(index == 0) then 
         return 
@@ -9,8 +9,8 @@ function minHeap.insert(value)
 
     while(index != 0) do 
         local parent = (index - 1) / 2;
-        if(minHeap.swapable(parent, index)) then 
-            minHeap.swap(parent, index)
+        if(heap.swapable(parent, index)) then 
+            heap.swap(parent, index)
         end
         index = parent
     end
