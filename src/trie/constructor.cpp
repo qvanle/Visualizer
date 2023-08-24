@@ -1,4 +1,5 @@
 #include <data_structures/trie.hpp>
+#include <queue>
 
 Trie::Node::Node(int k, Sprite* spr)
 {
@@ -19,6 +20,8 @@ Trie::Trie(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap) : d
     size = 0;
     root = nullptr;
     edgesColor = {255, 255, 255, 255};
+    fontColor = {255, 255, 255, 255};
+    nodeColor = {20, 85, 185, 255};
     shiftX = 20;
     shiftX = 20;
     distanceX = 60;
@@ -84,4 +87,30 @@ int Trie::locating(Node* node, int shiftDown, int shiftRight)
     }
 
     return shiftRight;
+}
+
+void Trie::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)
+{
+    bgColor = c1;   
+    nodeColor = c2;
+    fontColor = c3;
+    edgesColor = c4;
+
+    std::queue<Node*> q;
+    if(root != nullptr)
+        q.push(root);
+
+    while(!q.empty())
+    {
+        Node* node = q.front();
+        q.pop();
+
+        node->sprite->coloring(nodeColor);
+        node->sprite->setFontColor(fontColor);
+        node->sprite->coloring(nodeColor);
+
+        for(int i = 0; i < 26; i++)
+            if(node->childs[i] != nullptr)
+                q.push(node->childs[i]);
+    }
 }

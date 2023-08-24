@@ -38,6 +38,9 @@ private:
     SDL_Point lastMousePressed;
     bool isMoving;
     SDL_Color edgesColor;
+    SDL_Color nodeColor;
+    SDL_Color fontColor;
+    SDL_Color bgColor;
     
     int shiftX;
     int shiftY;
@@ -88,6 +91,7 @@ public:
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
     void closeScript();
+    void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
 };
 
 #endif 

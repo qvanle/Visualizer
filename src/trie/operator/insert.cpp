@@ -8,8 +8,12 @@ Trie::Node* Trie::insert(Node* node, std::string word, int index)
         spr->setFont(font);
         spr->linking("trie/node");
         spr->typing(' ');
+        spr->setFontColor(fontColor);
+        spr->coloring(nodeColor);
+
         node = new Node('\0', spr);
         if(root == nullptr) root = node;
+        node->sprite->coloring(nodeColor);
 
         if(isAnimate)
         {
@@ -57,6 +61,8 @@ Trie::Node* Trie::insert(Node* node, std::string word, int index)
         spr->setFont(font);
         spr->linking("trie/node");
         spr->typing(word[index]);
+        spr->setFontColor(fontColor);
+        spr->coloring(nodeColor);
 
         currentChild = new Node(key, spr);
     }
