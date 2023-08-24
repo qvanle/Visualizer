@@ -188,7 +188,14 @@ set (
     src/script/highlight.cpp
     src/script/event.cpp
 )
-add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT} ${MAX_HEAP} ${MIN_HEAP})
+
+set ( 
+    GRAPH 
+    src/graph/constructor.cpp
+    src/graph/destructor.cpp
+    src/graph/rendering.cpp
+)
+add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT} ${MAX_HEAP} ${MIN_HEAP} ${GRAPH})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include/)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

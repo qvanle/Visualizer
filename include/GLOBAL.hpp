@@ -41,6 +41,7 @@ enum class BUTTON_ACTION
     SEARCH,
     SETTING,
     DONE,
+    EDGES,
     GO_BACK,
     GO_NEXT,
     GO_ON,

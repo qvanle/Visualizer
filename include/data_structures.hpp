@@ -21,6 +21,7 @@
 #include <data_structures/hash_table.hpp>
 #include <data_structures/minheap.hpp>
 #include <data_structures/maxheap.hpp>
+#include <data_structures/graph.hpp>
 
 class DataStructures : protected Object
 {
@@ -39,6 +40,7 @@ private:
     HashTable* hashTable;
     minHeap* minheap;
     maxHeap* maxheap;
+    Graph* graph;
 
 protected:
     void initBackground(const json& mem);
@@ -99,6 +101,9 @@ public:
 
     bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
+
+    int capacity;
 };
+
 
 #endif 

@@ -41,6 +41,8 @@ void Button::initAction(const json& mem)
             action = BUTTON_ACTION::SETTING;
         else if(mem["type"].get<std::string>() == "DONE")
             action = BUTTON_ACTION::DONE;
+        else if(mem["type"].get<std::string>() == "EDGES")
+            action = BUTTON_ACTION::EDGES;
         else if(mem["type"].get<std::string>() == "RANDOM") 
             action = BUTTON_ACTION::RANDOM;
         else if(mem["type"].get<std::string>() == "GO_BACK")

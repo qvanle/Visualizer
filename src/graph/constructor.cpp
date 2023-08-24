@@ -1,23 +1,46 @@
 #include <data_structures/graph.hpp>
 
-Graph::Edges::Edges(int s, int d)
+Graph::Node::Node(int value, Sprite* spr)
 {
-    u = s;
-    v = d;
-    isWeighted = false;
-    flag = 0;
-    weight = 0;
+    value = value;
+    sprite = spr;
+}
+void Graph::Node::addEdge(Edge* e)
+{
+    edges.push_back(e);
 }
 
-Graph::Edges::Edges(int s, int d, int w)
+Graph::Edge::Edge(Node* u, Node* v)
 {
-    u = s;
-    v = d;
-    isWeighted = true;
-    flag = 0;
-    weight = w;
+    u = u;
+    v = v;
+    weight = 1;
+    isWeight = false;
+    mark = 0;
 }
 
-Graph::Graph()
+Graph::Edge::Edge(Node* u, Node* v, int weight)
 {
+    u = u;
+    v = v;
+    weight = weight;
+    isWeight = true;
+    mark = 0;
+}
+
+Graph::Graph(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int capacity)
+{
+    render = r;
+    font = f;
+    viewport = v;
+    capacity = capacity;
+    edgesColor = {255, 255, 255, 255};
+    shiftX = 20;
+    shiftY = 20;
+
+    isMoving = false;
+    choosedNode = nullptr;
+    lastMousePressed = {0, 0};
+
+
 }

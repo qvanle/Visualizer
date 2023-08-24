@@ -1,42 +1,93 @@
 #include <data_structures/graph.hpp>
 #include <algorithm>
 
-void Graph::FindMiniMumSpanningTree()
+struct DSU 
 {
-    auto l = edges; 
-    MST(l);
-}
-
-int getPresent(std::vector<int> &p, int u)
-{
-    if (p[u] < 0)
-        return u;
-    return p[u] = getPresent(p, p[u]);
-}
-
-bool merge(std::vector<int> &p, int u, int v)
-{
-    u = getPresent(p, u);
-    v = getPresent(p, v);
-    if(u == v) return false;
-
-    p[u] += p[v];
-    p[v] = u;
-
-    return true;
-}
-
-void Graph::MST(EdgesList &list)
-{
-    std::sort(list.begin(), list.end(), [](Edges &a, Edges &b) { return a.weight < b.weight; });
-    present.clear();
-    present.resize(numberOfVertices + 1, -1);
-
-    for(Edges &edge : list)
+    std::vector<int> parent;
+    DSU(int n)
     {
-        if(merge(present, edge.u, edge.v))
+        parent.resize(n + 1);
+        for(int i = 0; i < n; i++)
+            parent[i] = -1;
+    }
+    ~DSU()
+    {
+        parent.clear();
+    }
+
+    void unionEdge(Graph::Edge* e)
+    {
+        unionEdge(e->u, e->v);
+    }
+    void unionEdge(Graph::Node* u, Graph::Node* v)
+    {
+        unionEdge(u->value, v->value);
+    }
+    void unionEdge(int u, int v)
+    {
+        int a = find(u);
+        int b = find(v);
+        if(a == b) return ;
+
+        parent[a] += parent[b];
+        parent[b] = a;
+    }
+
+    int find(Graph::Node* v)
+    {
+        return find(v->value);
+    }
+    int find(int v)
+    {
+        if(parent[v] < 0)
+            return v;
+        return parent[v] = find(parent[v]);
+    }
+    
+    bool isUnionized(Graph::Node* u, Graph::Node* v)
+    {
+        return isUnionized(u->value, v->value);
+    }
+    bool isUnionized(Graph::Edge* e)
+    {
+        return isUnionized(e->u, e->v);
+    }
+    bool isUnionized(int u, int v)
+    {
+        return find(u) == find(v);
+    }
+
+};
+
+void Graph::MST()
+{
+    sortedEdges.clear();
+    
+    for(auto i : edges)
+        sortedEdges.push_back(i);
+    
+    std::sort(
+            sortedEdges.begin(), 
+            sortedEdges.end(),
+            [&](Edge* u, Edge* v){
+                if(u == nullptr) return false;
+                if(v == nullptr) return true;
+                return u->weight < v->weight;
+            }
+    );
+
+    unionEdges();
+}
+
+void Graph::unionEdges()
+{
+    DSU dsu(nodes.size());
+    for(auto i : sortedEdges)
+    {
+        if(!dsu.isUnionized(i))
         {
-            edge.flag = 1;
+            i->mark = 1;
+            dsu.unionEdge(i);
         }
     }
 }

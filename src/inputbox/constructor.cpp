@@ -10,6 +10,8 @@ InputBox::InputBox(SDL_Renderer* render, TTF_Font* font) : Object(render)
 {
     this->font = font;
     this->render = render;
+    n = 1;
+    m = 1;
 }
 
 void InputBox::linking(std::string n) 
@@ -36,7 +38,7 @@ void InputBox::initOperator(const json& mem)
 void InputBox::importFromJson()
 {
     json* mem = JSON::readFile(PATH::ATB::INPUTBOX_ + name + ".json");
-    
+
     if(mem->contains("background"))
         initBackground((*mem)["background"]);
 
@@ -61,6 +63,7 @@ void InputBox::initButtons(const json& mem)
     {
         buts.push_back(new Button(render));
         if(i.contains("name")) buts.back()->linking(i["name"]);
+        if(i.contains("dx")) buts.back()->move(i["dx"], i["dy"]);
     }
 }
 
@@ -68,8 +71,37 @@ void InputBox::initSprites(const json& mem)
 {
     for(auto& i : mem)
     {
-        inputs.push_back(new Sprite(render));
-        inputs.back()->setFont(font);
-        if(i.contains("name")) inputs.back()->linking(i["name"].get<std::string>());
+        if(n * m >= 1 && n > 0 && m > 0 && i["name"].get<std::string>() == "graph/init/edge") 
+        {
+            int dx = 35;
+            int dy = 35;
+
+            for(int u = 0; u < n; u++)
+            {
+                for(int v=  0; v < m; v++)
+                {
+                    inputs.push_back(new Sprite(render));
+                    inputs.back()->setFont(font);
+                    if(i.contains("name")) inputs.back()->linking(i["name"].get<std::string>());
+                    inputs.back()->moveX(dx * u);
+                    inputs.back()->moveY(dy * v);
+                }
+            }
+        }else 
+        {
+            inputs.push_back(new Sprite(render));
+            inputs.back()->setFont(font);
+            if(i.contains("name")) inputs.back()->linking(i["name"].get<std::string>());
+        }
     }
 }
+
+
+
+
+void InputBox::setDuplicate(int n, int m)
+{
+    this->n = n;
+    this->m = m;
+}
+

@@ -1,0 +1,44 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 910,
+            "y": 135,
+            "w": 240,
+            "h": 70
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 0
+        },
+        "visible": true,
+        "SHAPE": 
+        {
+            "type": "RECTANGLE"
+        }
+    },
+    "sprites": 
+    [
+        {
+            "name": "dijkstra/released"
+        },
+        {
+            "name": "dijkstra/pressed"
+        }
+    ],
+    "action": 
+    {
+        "type": "DIJKSTRA",
+        "args": 
+        {
+        }
+    }
+}
+
+
+
+

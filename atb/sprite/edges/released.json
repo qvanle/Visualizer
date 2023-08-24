@@ -1,0 +1,31 @@
+{
+    "background": 
+    {
+        "location": 
+        {
+            "x": 0,
+            "y": 0,
+            "w": 163,
+            "h": 66
+        },
+        "color": 
+        {
+            "r": 100,
+            "g": 75,
+            "b": 175,
+            "a": 255
+        },
+        "shape": 
+        {
+            "type": "RECTANGLE"
+        },
+        "visible": true,
+        "image": "edges/released.png"
+    }
+}
+
+
+
+
+
+

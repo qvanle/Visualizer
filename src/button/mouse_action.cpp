@@ -28,6 +28,7 @@ bool Button::isHover(int x, int y)
     }
 }
 
+
 bool Button::isClicked(int x, int y)
 {
     if (isChoosed(x, y))

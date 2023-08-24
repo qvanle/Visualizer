@@ -29,9 +29,12 @@ protected:
     void importFromJson();
     bool isButtonReceiveEvent(SDL_Event& event);
     bool isInputReceiveEvent(SDL_Event& event);
+    int n, m;
 public:        
     InputBox(SDL_Renderer* render, TTF_Font* font);
     ~InputBox();
+
+    void setDuplicate(int n, int m);
 
     void linking(std::string n);
     DATA_STRUCTURES_OPERATOR getOperator();

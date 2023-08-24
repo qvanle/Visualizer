@@ -13,4 +13,6 @@ bool Button::isReceiveEvent(SDL_Event& e)
         default:
             return false;
     }
+
+
 }

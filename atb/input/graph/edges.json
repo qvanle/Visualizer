@@ -1,0 +1,50 @@
+{
+    "background":
+    {
+        "location": 
+        {
+            "x": 300,
+            "y": 100,
+            "w": 600,
+            "h": 400
+        },
+        "color": 
+        {
+            "r": 102,
+            "g": 128,
+            "b": 178,
+            "a": 255
+        },
+        "shape":
+        {
+            "type": "RECTANGLE"
+        },
+        "visible": true
+    },
+    "buttons":
+    [
+        {
+            "name": "random6",
+            "dx": -50,
+            "dy": -50
+        },
+        {
+            "name": "done",
+            "dx": 150,
+            "dy": 10
+        }
+    ],
+    "sprites": 
+    [
+        {
+            "name": "AVL/init/title"
+        },
+        {
+            "name": "graph/init/edge"
+        }
+    ],
+    "operator": "INIT"
+}
+
+
+

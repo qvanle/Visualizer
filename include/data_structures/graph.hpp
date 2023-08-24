@@ -3,58 +3,87 @@
 
 #include <vector>
 #include <string>
-#include <iostream>
+#include <queue>
 #include <stack>
+#include <iostream>
+#include <mutex>
+#include <thread>
+#include <condition_variable>
+
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+
+#include <sprite.hpp>
+#include <button.hpp>
 
 class Graph 
 {
-private: 
-    struct Edges 
-    {
-        bool isWeighted;
+    private:
+        struct Edge;
+        struct Node 
+        {
+            int value;
+            Sprite* sprite;
+            std::vector<Edge*> edges;
+            Node(int value, Sprite* spr);
+            ~Node();
+            void addEdge(Edge* e);
+        };
+        struct Edge
+        {
+            Node* u;
+            Node* v;
+            int weight;
+            bool isWeight;
+            int mark;
+            Edge(Node* u, Node* v);
+            Edge(Node* u, Node* v, int weight);
+            ~Edge();
+        };
+
+        std::vector<Node*> nodes;
+        std::vector<Edge*> edges;
+        int capacity;
         
-        int flag;
-        
-        int weight;
-        int u;
-        int v;
-        Edges(int s, int d);
-        Edges(int s, int d, int w);
-        ~Edges();
-    };
+        SDL_Rect viewport;
+        SDL_Renderer* render;
+        TTF_Font* font;
+
+        SDL_Point lastMousePressed;
+        Node* choosedNode;
+        bool isMoving;
+        int shiftX;
+        int shiftY;
+
+        SDL_Color edgesColor;
     
-    struct heap 
-    {
-        std::vector<int> values;
-        void insert(int u);
-        int pop();
-        void heapify(int i);
-    };
+        friend struct distanceHeap;
+        std::vector<int> distance;
 
+        std::vector<int> low, order;
+        std::vector< std::vector<Node*> > components;
+        std::stack<Node*> buffer;
+        int state;
+        
+        friend struct DSU;
+        std::vector<Edge*> sortedEdges;
+    protected:
+        void unionEdges();
+        void Tarjan(Node* u);
+        void repair();
+    public:
 
-    using EdgesList = std::vector<Edges>;
-
-    int numberOfVertices;
-    int numberOfEdges;
-    std::vector <EdgesList> adjList;
-    EdgesList edges;
-
-    std::vector<int> distance;
-    std::vector<int> order, lowestOrder;
-    std::vector< std::vector<int> > components;
-
-    std::vector<int> present;
-protected:
-    void dfs(std::vector<EdgesList> &list, std::stack<int> &st, int u);
-    void MST(EdgesList &list);
-    void Dijkstra(std::vector<EdgesList> &list, int start);
-public:
-    Graph();
+    Graph(SDL_Renderer * r, TTF_Font* f, SDL_Rect v, int capacity);
     ~Graph();
-    void init(std::vector< std::vector<int> > matrix);
-    void splitConnected();
-    void FindMiniMumSpanningTree();
-    void Dijkstra(int start);
+
+    void Dijkstra(int start, int end);
+    void MST();
+    void SCC();
+    
+    void isReceiveEvent(SDL_Event& e);
+    Button* react(SDL_Event& e);
+    
+    void rendering();
 };
 
 #endif

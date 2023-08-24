@@ -7,6 +7,8 @@ DataStructures::DataStructures(SDL_Renderer* r, TTF_Font * f, std::mutex& m) : O
     avl = nullptr;
     trie = nullptr;
     hashTable = nullptr;
+    minheap = nullptr;
+    graph = nullptr;
 }
 
 void DataStructures::initBackground(const json& mem) 
@@ -77,6 +79,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::GRAPH: 
             linking("graph");
+            graph = new Graph(render, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             linking("btree4th");
