@@ -46,6 +46,9 @@ class HashTable
         SDL_Point lastMousePressed;
         bool isMoving;
         SDL_Color edgesColor;
+        SDL_Color nodeColor;
+        SDL_Color fontColor;
+        SDL_Color bgColor;
 
         int shiftX;
         int shiftY;
@@ -105,6 +108,8 @@ class HashTable
         void closeScript();
 
         void rendering();
+
+        void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
 };
 
 #endif 

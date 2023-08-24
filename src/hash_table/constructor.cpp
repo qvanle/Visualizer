@@ -30,6 +30,9 @@ HashTable::HashTable(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, in
     isPause = false;
 
     edgesColor = {255, 255, 255, 255};
+    nodeColor = {20, 85, 185, 255};
+    fontColor = {255, 255, 255, 255};
+
     shiftX = 20;
     shiftY = 20;
     distanceX = 100;
@@ -102,8 +105,36 @@ void HashTable::defaultSetting()
     {
         Sprite* spr = new Sprite(render);
         spr->setFont(font);
+        spr->setFontColor(fontColor);
+        spr->coloring(nodeColor);
         spr->linking("hash-table/head");
         table[i] = new Head(spr);
     }
     locating(table, 0, 0);
+}
+
+void HashTable::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)
+{
+    nodeColor = c2;
+    fontColor = c3;
+    edgesColor = c4;
+    bgColor.r = nodeColor.r * 0.5;
+    bgColor.g = nodeColor.g * 0.5;
+    bgColor.b = nodeColor.b * 0.5;
+    bgColor.a = 255;
+
+    for(int i = 0; i < HASH_KEY; i++)
+    {
+        table[i]->sprite->coloring(bgColor);
+        table[i]->sprite->setFontColor(fontColor);
+
+        Node* current = table[i]->root;
+
+        while(current != nullptr)
+        {
+            current->sprite->coloring(nodeColor);
+            current->sprite->setFontColor(fontColor);
+            current = current->pnext;
+        }
+    }
 }

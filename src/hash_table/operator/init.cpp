@@ -25,6 +25,8 @@ void HashTable::init(std::vector<int> v, int key)
         Sprite* spr = new Sprite(render);
         spr->setFont(font);
         spr->linking("hash-table/head");
+        spr->setFontColor(fontColor);
+        spr->coloring(SDL_Color{bgColor.r, bgColor.r, bgColor.r, 255});
         table[i] = new Head(spr);
     }
     for(int i : v) 

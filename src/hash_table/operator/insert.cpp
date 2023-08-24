@@ -9,6 +9,8 @@ HashTable::Node* HashTable::insert(Node* node, int k)
         spr->setFont(font);
         spr->linking("hash-table/node");
         spr->setText(NUMBER::intToString(k));
+        spr->setFontColor(fontColor);
+        spr->coloring(nodeColor);
         highlight({1, 2});
         waitForStep();
         unhighlight({1, 2});
