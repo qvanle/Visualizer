@@ -102,6 +102,10 @@ set (
     src/data_structures/operator/minheap/pop.cpp
     src/data_structures/operator/minheap/top.cpp
     src/data_structures/operator/minheap/size.cpp
+    src/data_structures/operator/graph/init.cpp
+    src/data_structures/operator/graph/dijkstra.cpp
+    src/data_structures/operator/graph/mst.cpp
+    src/data_structures/operator/graph/scc.cpp
 )
 
 set ( 
@@ -194,6 +198,12 @@ set (
     src/graph/constructor.cpp
     src/graph/destructor.cpp
     src/graph/rendering.cpp
+    src/graph/operator/init.cpp
+    src/graph/operator/dijkstra.cpp
+    src/graph/operator/mst.cpp
+    src/graph/operator/scc.cpp
+    src/graph/operator/repair.cpp
+    src/graph/event.cpp
 )
 add_executable(${PROJECT_NAME} ${MAIN} ${WINDOW} ${OBJECT} ${SPRITE} ${SERVICES} ${DISPLAY} ${BUTTON} ${DATA_STRUCTURES} ${INPUTBOX} ${AVL} ${TRIE} ${HASH_TABLE} ${SCRIPT} ${MAX_HEAP} ${MIN_HEAP} ${GRAPH})
 

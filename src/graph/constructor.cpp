@@ -12,19 +12,20 @@ void Graph::Node::addEdge(Edge* e)
 
 Graph::Edge::Edge(Node* u, Node* v)
 {
-    u = u;
-    v = v;
+    this->u = u;
+    this->v = v;
     weight = 1;
     isWeight = false;
     mark = 0;
 }
 
-Graph::Edge::Edge(Node* u, Node* v, int weight)
+Graph::Edge::Edge(Node* u, Node* v, int weight, Sprite* spr)
 {
-    u = u;
-    v = v;
+    this->u = u;
+    this->v = v;
     weight = weight;
     isWeight = true;
+    sprite = spr;
     mark = 0;
 }
 
@@ -39,7 +40,7 @@ Graph::Graph(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int capacity)
     shiftY = 20;
 
     isMoving = false;
-    choosedNode = nullptr;
+    chosenNode = nullptr;
     lastMousePressed = {0, 0};
 
 

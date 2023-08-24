@@ -33,13 +33,18 @@ class Graph
         {
             Node* u;
             Node* v;
+            Sprite* sprite;
             int weight;
             bool isWeight;
             int mark;
             Edge(Node* u, Node* v);
-            Edge(Node* u, Node* v, int weight);
+            Edge(Node* u, Node* v, int weight, Sprite* spr);
             ~Edge();
         };
+    
+        bool isCollisionToNode(Node* node, int x, int y);
+        bool isCollisionToEdge(Edge* edge, int x, int y);
+        bool isCollision(int x, int y);
 
         std::vector<Node*> nodes;
         std::vector<Edge*> edges;
@@ -50,7 +55,7 @@ class Graph
         TTF_Font* font;
 
         SDL_Point lastMousePressed;
-        Node* choosedNode;
+        Node* chosenNode;
         bool isMoving;
         int shiftX;
         int shiftY;
@@ -67,10 +72,13 @@ class Graph
         
         friend struct DSU;
         std::vector<Edge*> sortedEdges;
+
+        std::mutex animate_mutex;
     protected:
         void unionEdges();
         void Tarjan(Node* u);
         void repair();
+        void renderEdge(Edge* edge);
     public:
 
     Graph(SDL_Renderer * r, TTF_Font* f, SDL_Rect v, int capacity);
@@ -79,8 +87,9 @@ class Graph
     void Dijkstra(int start, int end);
     void MST();
     void SCC();
+    void init(std::vector< std::vector<int> > value);
     
-    void isReceiveEvent(SDL_Event& e);
+    bool isReceiveEvent(SDL_Event& e);
     Button* react(SDL_Event& e);
     
     void rendering();

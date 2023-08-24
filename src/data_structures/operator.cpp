@@ -34,7 +34,7 @@ void DataStructures::init(InputBox* inp)
             //initBTree4th(inp);
             break;
         case DATA_STRUCTURES_TYPE::GRAPH:
-            //initGraph(inp);
+            initGraph(inp);
             break;
         case DATA_STRUCTURES_TYPE::NONE:
             break;

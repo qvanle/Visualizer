@@ -11,4 +11,6 @@ DataStructures::~DataStructures()
     if(avl != nullptr) delete avl;
     if(trie != nullptr) delete trie;
     if(hashTable != nullptr) delete hashTable;
+    if(minheap != nullptr) delete minheap;
+    if(graph != nullptr) delete graph;
 }

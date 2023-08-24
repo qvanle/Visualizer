@@ -371,7 +371,10 @@ void MyWindow::react(Button* but)
                                            for(int j = 0; j < ds->capacity; j++)
                                            {
                                                if(i == j) continue;
-                                               inputbox->setText(i * ds->capacity + j + 1, RANDOM::getInt(1, 1, 99));
+                                               if(RANDOM::getInt(1, 100) <= 30) 
+                                                   inputbox->setText(i * ds->capacity + j + 1, RANDOM::getInt(1, 1, 99));
+                                               else 
+                                                   inputbox->setText(i * ds->capacity + j + 1, "0");
                                            }
                                        renderMutex.unlock();
                                    }

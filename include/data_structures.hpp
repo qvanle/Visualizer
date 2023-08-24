@@ -68,6 +68,11 @@ protected:
     void removeMinHeap(InputBox* inp);
     void searchMinHeap(InputBox* inp);
 
+    void initGraph(InputBox* inp);
+    void Dijkstra(InputBox* inp);
+    void MST();
+    void SCC();
+
 public:
     DataStructures(SDL_Renderer* r, TTF_Font* f, std::mutex& m);
     ~DataStructures();

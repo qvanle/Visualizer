@@ -13,6 +13,7 @@ Graph::Edge::~Edge()
 {
     u = nullptr;
     v = nullptr;
+    if(sprite != nullptr) delete sprite;
 }
 
 Graph::~Graph()

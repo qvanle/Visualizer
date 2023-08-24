@@ -15,4 +15,6 @@ void DataStructures::rendering()
         hashTable->rendering();
     if(minheap != nullptr)
         minheap->rendering();
+    if(graph != nullptr)
+        graph->rendering();
 }
