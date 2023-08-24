@@ -36,6 +36,9 @@ class minHeap
         SDL_Renderer* render;
         TTF_Font* font;
         bool isMoving;
+        SDL_Color bgColor;
+        SDL_Color nodeColor;
+        SDL_Color fontColor;
         SDL_Color edgesColor;
 
         int shiftX;
@@ -87,6 +90,7 @@ class minHeap
         bool isReceiveEvent(SDL_Event& e);
         Button* react(SDL_Event& e);
         void rendering();
+        void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
 };
 
 #endif 

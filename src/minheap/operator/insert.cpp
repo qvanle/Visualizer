@@ -7,6 +7,8 @@ void minHeap::realInsert(int value)
     Sprite* sprite = new Sprite(render);
     sprite->setFont(font);
     sprite->linking("AVL/node");
+    sprite->setFontColor(fontColor);
+    sprite->coloring(nodeColor);
     sprite->setText(NUMBER::intToString(value));
     Node* node = new Node(value, sprite);
 

@@ -12,6 +12,8 @@ minHeap::minHeap(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int ca
     font = f;
     viewport = v;
     capacity = cap;
+    nodeColor = {20, 85, 185, 255};
+    fontColor = {255, 255, 255, 255};
     edgesColor = {255, 255, 255, 255};
     shiftX = 20;
     shiftY = 20;
@@ -57,4 +59,18 @@ void minHeap::setmin()
 void minHeap::setmax()
 {
     inverse = true;
+}
+
+void minHeap::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)
+{
+    bgColor = c1;
+    nodeColor = c2;
+    fontColor = c3;
+    edgesColor = c4;
+
+    for(auto i : value)
+    {
+        i->sprite->setFontColor(fontColor);
+        i->sprite->coloring(nodeColor);
+    }
 }
