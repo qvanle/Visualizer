@@ -39,9 +39,26 @@ Graph::Graph(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int capacity)
     shiftX = 20;
     shiftY = 20;
 
+    nodeColor = {20, 75, 185, 255};
+    fontColor = {255, 255, 255, 255};
+
+
     isMoving = false;
     chosenNode = nullptr;
     lastMousePressed = {0, 0};
 
 
+}
+
+void Graph::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)
+{
+    bgColor = c1;
+    nodeColor = c2;
+    fontColor = c3;
+    edgesColor = c4;
+    for(auto i : nodes)
+    {
+        i->sprite->setFontColor(fontColor);
+        i->sprite->coloring(nodeColor);
+    }
 }

@@ -81,6 +81,8 @@ void Graph::init(std::vector<std::vector<int> > g)
         spr->locatingX(x);
         spr->locatingY(y);
         spr->setText(NUMBER::intToString(i));
+        spr->setFontColor(fontColor);
+        spr->coloring(nodeColor);
         spr->aligning(HORIZONTAL_ALIGN::CENTER, VERTICAL_ALIGN::CENTER);
 
         Node* node = new Node(i, spr);

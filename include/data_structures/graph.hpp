@@ -61,6 +61,9 @@ class Graph
         int shiftY;
 
         SDL_Color edgesColor;
+        SDL_Color nodeColor;
+        SDL_Color fontColor;
+        SDL_Color bgColor;
     
         friend struct distanceHeap;
         std::vector<int> distance;
@@ -93,6 +96,7 @@ class Graph
     Button* react(SDL_Event& e);
     
     void rendering();
+    void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
 };
 
 #endif
