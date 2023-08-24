@@ -50,6 +50,7 @@ public:
     
     void linking(std::string n);
     void setFont(TTF_Font* f);
+    void setFontColor(SDL_Color c);
 
     void setTextBox(TTF_Font* f);
     void setTextBoxTransparent(int a);

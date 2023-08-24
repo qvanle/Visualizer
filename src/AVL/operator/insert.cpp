@@ -71,6 +71,10 @@ bool AVL::insert(int key)
     Sprite* sprite = new Sprite(render);
     sprite->setFont(font);
     sprite->linking("AVL/node");
+
+    sprite->setFontColor(fontColor);
+    sprite->Object::coloring(nodeColor);
+
     sprite->setText(NUMBER::intToString(key));
 
     cache = new Node(key, sprite);

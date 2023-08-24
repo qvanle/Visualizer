@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <queue>
 
 #include <data_structures/AVL.hpp>
 
@@ -30,6 +31,8 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     isQueue = false;
     isPause = false;
     edgesColor = {255, 255, 255, 255};
+    fontColor = {255, 255, 255, 255};
+    nodeColor = {20, 85, 185, 255};
     shiftX = 20;
     shiftY = 20;
     distanceX = 40;
@@ -38,6 +41,9 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     stepWait = 600;
     isAnimate = false;
 
+    nodeColor = {20, 85, 185, 255};
+    fontColor = {255, 255, 255, 255};
+    bgColor = {0, 0, 0, 255};
     
     std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
     scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
@@ -92,4 +98,28 @@ int AVL::locating(Node* node, int shiftDown, int shiftRight)
     locating(node->rson, shiftDown + 1, shiftRight + left + 1);
 
     return (1 << (maxHigh - shiftDown)) - 1;
+}
+
+void AVL::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)
+{
+    bgColor = c1;
+    nodeColor = c2;
+    fontColor = c3;
+    edgesColor = c4;
+
+    std::queue<Node*> q;
+    q.push(root);
+
+    while(!q.empty())
+    {
+        Node* node = q.front();
+        q.pop();
+        if(node == nullptr)
+            continue;
+        node->sprite->coloring(nodeColor);
+        node->sprite->setFontColor(fontColor);
+        node->sprite->coloring(nodeColor);
+        q.push(node->lson);
+        q.push(node->rson);
+    }
 }

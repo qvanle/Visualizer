@@ -52,26 +52,31 @@ protected:
     void insertAVL(InputBox* inp);
     void removeAVL(InputBox* inp);
     void searchAVL(InputBox* inp);
+    void settingAVL(InputBox* inp);
 
     void initTrie(InputBox* inp);
     void insertTrie(InputBox* inp);
     void removeTrie(InputBox* inp);
     void searchTrie(InputBox* inp);
+    void settingTrie(InputBox* inp);
 
     void initHashTable(InputBox* inp);
     void insertHashTable(InputBox* inp);
     void removeHashTable(InputBox* inp);
     void searchHashTable(InputBox* inp);
+    void settingHashTable(InputBox* inp);
 
     void initMinHeap(InputBox* inp);
     void insertMinHeap(InputBox* inp);
     void removeMinHeap(InputBox* inp);
     void searchMinHeap(InputBox* inp);
+    void settingMinHeap(InputBox* inp);
 
     void initGraph(InputBox* inp);
     void Dijkstra(InputBox* inp);
     void MST();
     void SCC();
+    void settingGraph(InputBox* inp);
 
 public:
     DataStructures(SDL_Renderer* r, TTF_Font* f, std::mutex& m);
@@ -89,6 +94,7 @@ public:
     void insert(InputBox* inp);
     void remove(InputBox* inp);
     void search(InputBox* inp);
+    void setting(InputBox* inp);
     void top();
     void size();
     void components();

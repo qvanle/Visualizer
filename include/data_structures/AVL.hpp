@@ -42,7 +42,12 @@ class AVL
         TTF_Font* font;
         SDL_Point lastMousePressed;
         bool isMoving;
+
         SDL_Color edgesColor;
+        SDL_Color nodeColor;
+        SDL_Color fontColor;
+        SDL_Color bgColor;
+
 
         int shiftX;
         int shiftY;
@@ -111,5 +116,7 @@ class AVL
         bool isReceiveEvent(SDL_Event& e);
         Button* react(SDL_Event& e);
         void rendering();
+
+        void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
 };
 #endif

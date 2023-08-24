@@ -28,6 +28,14 @@ void Sprite::setFont(TTF_Font* f)
     font = f;
     Object::setFont(f);
 }
+void Sprite::setFontColor(SDL_Color c)
+{
+    if(textBox != nullptr)
+    {
+        textBox->coloring(c);
+        textBox->setText(textBox->getText());
+    }
+}
 void Sprite::setTextBox(TTF_Font* f)
 {
     if(textBox == nullptr)

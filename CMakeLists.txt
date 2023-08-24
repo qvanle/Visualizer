@@ -89,23 +89,28 @@ set (
     src/data_structures/operator/AVL/insert.cpp
     src/data_structures/operator/AVL/remove.cpp
     src/data_structures/operator/AVL/search.cpp
+    src/data_structures/operator/AVL/setting.cpp
     src/data_structures/operator/trie/init.cpp
     src/data_structures/operator/trie/insert.cpp
     src/data_structures/operator/trie/remove.cpp
     src/data_structures/operator/trie/search.cpp
+    src/data_structures/operator/trie/setting.cpp
     src/data_structures/operator/hash_table/init.cpp
     src/data_structures/operator/hash_table/insert.cpp
     src/data_structures/operator/hash_table/remove.cpp
     src/data_structures/operator/hash_table/search.cpp
+    src/data_structures/operator/hash_table/setting.cpp
     src/data_structures/operator/minheap/init.cpp
     src/data_structures/operator/minheap/insert.cpp
     src/data_structures/operator/minheap/pop.cpp
     src/data_structures/operator/minheap/top.cpp
     src/data_structures/operator/minheap/size.cpp
+    src/data_structures/operator/minheap/setting.cpp
     src/data_structures/operator/graph/init.cpp
     src/data_structures/operator/graph/dijkstra.cpp
     src/data_structures/operator/graph/mst.cpp
     src/data_structures/operator/graph/scc.cpp
+    src/data_structures/operator/graph/setting.cpp
 )
 
 set ( 

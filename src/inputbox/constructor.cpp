@@ -33,6 +33,7 @@ void InputBox::initOperator(const json& mem)
     else if (type == "FIND_COMPONENTS") op = DATA_STRUCTURES_OPERATOR::FIND_COMPONENTS;
     else if (type == "DIJKSTRA") op = DATA_STRUCTURES_OPERATOR::DIJKSTRA_SHORTEST_PATH;
     else if (type == "MINIMUM_SPANNING_TREE") op = DATA_STRUCTURES_OPERATOR::FIND_MINIMUM_SPANNING_TREE;
+    else if (type == "SETTING") op = DATA_STRUCTURES_OPERATOR::SETTING;
 }
 
 void InputBox::importFromJson()

@@ -1,4 +1,5 @@
 #include <window.hpp>
+#include <sstream>
 
 void MyWindow::setDisplay(std::string name)
 {
@@ -103,6 +104,8 @@ void MyWindow::runOperator()
                 break;
             case DATA_STRUCTURES_OPERATOR::SIZE:
                 ds->size();
+            case DATA_STRUCTURES_OPERATOR::SETTING:
+                ds->setting(temp);
             default :
                 break;
         }
@@ -249,6 +252,10 @@ void MyWindow::react(Button* but)
 
         case BUTTON_ACTION::INIT: 
             setInputBox(ds->getName() + "/init");
+            break;
+        
+        case BUTTON_ACTION::SETTING: 
+            setInputBox("setting");
             break;
 
         case BUTTON_ACTION::INSERT:

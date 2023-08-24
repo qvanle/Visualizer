@@ -149,3 +149,31 @@ void DataStructures::size()
     }
 }
 
+void DataStructures::setting(InputBox* inp)
+{
+    switch(type)
+    {
+        case DATA_STRUCTURES_TYPE::AVL:
+            settingAVL(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            settingTrie(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::GRAPH:
+            settingGraph(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::MAX_HEAP:
+            settingMinHeap(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            settingMinHeap(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            settingHashTable(inp);
+            break;
+        case DATA_STRUCTURES_TYPE::BTREE_4TH:
+            break;
+        case DATA_STRUCTURES_TYPE::NONE:
+            break;
+    }
+}
