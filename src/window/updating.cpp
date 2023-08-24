@@ -137,7 +137,28 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
                                             break;
                                         }
         case DATA_STRUCTURES_TYPE::GRAPH:{
-                                             std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::GRAPH_);
+                                             std::ifstream fin(PATH::SAVING::GRAPH_);
+
+                                             renderMutex.lock();
+                                            
+                                             fin >> ds->capacity;
+                                             
+                                             renderMutex.unlock();
+
+                                             setInputBox("graph/edges");
+
+                                             renderMutex.lock();
+
+                                             for(int i = 0; i < ds->capacity; i++)
+                                                 for(int j = 0; j < ds->capacity; j++)
+                                                 {
+                                                     int x;
+                                                     fin >> x;
+                                                     inputbox->setText(i * ds->capacity + j + 1, NUMBER::intToString(x));
+                                                 }
+
+                                             renderMutex.unlock();
+                                             fin.close();
                                              break;
                                          }
         case DATA_STRUCTURES_TYPE::BTREE_4TH:{
@@ -146,14 +167,24 @@ void MyWindow::getDataFromFile(DATA_STRUCTURES_TYPE type)
                                              }
         case DATA_STRUCTURES_TYPE::MIN_HEAP:{
                                                 std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::MIN_HEAP_);
+                                                renderMutex.lock();
+                                                inputbox->setText(1, mem[0]);
+                                                renderMutex.unlock();
                                                 break;
                                             }
         case DATA_STRUCTURES_TYPE::MAX_HEAP:{
                                                 std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::MAX_HEAP_);
+                                                renderMutex.lock();
+                                                inputbox->setText(1, mem[0]);
+                                                renderMutex.unlock();
                                                 break;
                                             }
         case DATA_STRUCTURES_TYPE::HASH_TABLE:{
                                                   std::vector<std::string> mem = FILEE::readFile(PATH::SAVING::HASH_TABLE_);
+                                                  renderMutex.lock();
+                                                  inputbox->setText(1, mem[0]);
+                                                  inputbox->setText(2, mem[1]);
+                                                  renderMutex.unlock();
                                                   break;
                                               }
         case DATA_STRUCTURES_TYPE::NONE:{
@@ -210,108 +241,108 @@ void MyWindow::react(Button* but)
     if(but == nullptr) return ;
     switch (but->getAction())
     {
-        case BUTTON_ACTION::CHANGE_SCREEN:{
-                                              setDisplay(but->getNextScreen());
-                                              if(but->getDataType() != DATA_STRUCTURES_TYPE::NONE) 
-                                                  setDataType(but->getDataType());
-                                              break;
-                                          }
-        case BUTTON_ACTION::INIT: {
-                                      setInputBox(ds->getName() + "/init");
-                                      break;
-                                  }
-        case BUTTON_ACTION::INSERT:{
-                                       setInputBox(ds->getName() + "/insert");
-                                       break;
-                                   }
-        case BUTTON_ACTION::DELETE:{
-                                       setInputBox(ds->getName() + "/remove");
-                                       break;
-                                   }
-        case BUTTON_ACTION::SEARCH:{
-                                       setInputBox(ds->getName() + "/search");
-                                       break;
-                                   }
-        case BUTTON_ACTION::SIZE:{
-                                     setInputBox(ds->getName() + "/size");
-                                     break;
-                                 }
-        case BUTTON_ACTION::TOP:{
-                                    setInputBox(ds->getName() + "/top");
-                                    break;
-                                }
-        case BUTTON_ACTION::CONNECTED_COMPONENTS:{
-                                                     setInputBox(ds->getName() + "/scc");
-                                                     break;
-                                                 }
-        case BUTTON_ACTION::DIJKSTRA: {
-                                          setInputBox(ds->getName() + "/dijkstra");
-                                          break;
-                                      }
-        case BUTTON_ACTION::MST: {
-                                     setInputBox(ds->getName() + "/mst");
-                                     break;
-                                 }
+        case BUTTON_ACTION::CHANGE_SCREEN:
+            setDisplay(but->getNextScreen());
+            if(but->getDataType() != DATA_STRUCTURES_TYPE::NONE) 
+                setDataType(but->getDataType());
+            break;
+
+        case BUTTON_ACTION::INIT: 
+            setInputBox(ds->getName() + "/init");
+            break;
+
+        case BUTTON_ACTION::INSERT:
+            setInputBox(ds->getName() + "/insert");
+            break;
+
+        case BUTTON_ACTION::DELETE:
+            setInputBox(ds->getName() + "/remove");
+            break;
+
+        case BUTTON_ACTION::SEARCH:
+            setInputBox(ds->getName() + "/search");
+            break;
+
+        case BUTTON_ACTION::SIZE:
+            setInputBox(ds->getName() + "/size");
+            break;
+
+        case BUTTON_ACTION::TOP:
+            setInputBox(ds->getName() + "/top");
+            break;
+
+        case BUTTON_ACTION::CONNECTED_COMPONENTS:
+            setInputBox(ds->getName() + "/scc");
+            break;
+
+        case BUTTON_ACTION::DIJKSTRA: 
+            setInputBox(ds->getName() + "/dijkstra");
+            break;
+
+        case BUTTON_ACTION::MST: 
+            setInputBox(ds->getName() + "/mst");
+            break;
+
         case BUTTON_ACTION::GO_BACK: 
-                                 {
-                                     //ds->goBack();
-                                     break;
-                                 }
+
+            //ds->goBack();
+            break;
+
         case BUTTON_ACTION::GO_NEXT: 
-                                 {
-                                     //ds->goNext();
-                                     break;
-                                 }
+
+            //ds->goNext();
+            break;
+
         case BUTTON_ACTION::GO_ON: 
-                                 {
-                                     //ds->goOn();
-                                     break;
-                                 }
+
+            //ds->goOn();
+            break;
+
         case BUTTON_ACTION::GO_OFF: 
-                                 {
-                                     //ds->goOff();
-                                     break;
-                                 }
+
+            //ds->goOff();
+            break;
+
         case BUTTON_ACTION::SPEED_UP: 
-                                 {
-                                     //ds->speedUp();
-                                     break;
-                                 }
+
+            //ds->speedUp();
+            break;
+
         case BUTTON_ACTION::SLOW_DOWN: 
-                                 {
-                                     //ds->slowDown();
-                                     break;
-                                 }
-        case BUTTON_ACTION::DONE:{
 
-                                     step_mutex.lock();
-                                     isQueuingStep = true;
-                                     step_mutex.unlock();
-                                     step_cond.notify_one();
+            //ds->slowDown();
+            break;
 
-                                     break;
-                                 }
+        case BUTTON_ACTION::DONE:
+
+            step_mutex.lock();
+            isQueuingStep = true;
+            step_mutex.unlock();
+            step_cond.notify_one();
+
+            break;
+
         case BUTTON_ACTION::EDGES: 
-                                 {
-                                     int n;
-                                     renderMutex.lock();
 
-                                     n = NUMBER::stringToInt(inputbox->getText(1));
-                                     n = std::min(n, 9);
-                                     n = std::max(n, 2);
-                                     if(ds != nullptr) ds->capacity = n;
+            int n;
+            renderMutex.lock();
 
-                                     renderMutex.unlock();
-                                     setInputBox("graph/edges");
-                                     break;
-                                 }
+            n = NUMBER::stringToInt(inputbox->getText(1));
+            n = std::min(n, 9);
+            n = std::max(n, 2);
+            if(ds != nullptr) ds->capacity = n;
+
+            renderMutex.unlock();
+            setInputBox("graph/edges");
+            break;
+
         case BUTTON_ACTION::CLOSE: 
-                                 {
-                                     renderMutex.lock();
-                                     ds->closeScript();
-                                     renderMutex.unlock();
-                                     break;
-                                 }
+
+            renderMutex.lock();
+            ds->closeScript();
+            renderMutex.unlock();
+            break;
+
         case BUTTON_ACTION::RANDOM:{
                                        int n = RANDOM::getInt(1, 32);
                                        std::string mem = RANDOM::getInt(n, 1, 999);
@@ -322,64 +353,60 @@ void MyWindow::react(Button* but)
                                        renderMutex.unlock();
                                        break;
                                    }
-        case BUTTON_ACTION::RANDOM2: 
-                                   {
-                                       renderMutex.lock();
-                                       inputbox->setText(1, RANDOM::getInt(1, 1, 999));
-                                       renderMutex.unlock();
-                                       break;
-                                   }
-        case BUTTON_ACTION::RANDOM3: 
-                                   {
+        case BUTTON_ACTION::RANDOM2: {
 
-                                       int n = RANDOM::getInt(1, 16);
-                                       int m = RANDOM::getInt(1, 16);
-                                       char upperbound = RANDOM::getInt(97 + 5, 97 + 25);
-                                       std::string mem;
-                                       mem = RANDOM::getString(m, 'a', upperbound);
+                                         renderMutex.lock();
+                                         inputbox->setText(1, RANDOM::getInt(1, 1, 999));
+                                         renderMutex.unlock();
+                                         break;
+                                     }
+        case BUTTON_ACTION::RANDOM3:{
+                                        int n = RANDOM::getInt(1, 16);
+                                        int m = RANDOM::getInt(1, 16);
+                                        char upperbound = RANDOM::getInt(97 + 5, 97 + 25);
+                                        std::string mem;
+                                        mem = RANDOM::getString(m, 'a', upperbound);
 
-                                       for(int i = 1; i < n; i++)
-                                           mem += " " + RANDOM::getString(m, 'a', upperbound);
+                                        for(int i = 1; i < n; i++)
+                                            mem += " " + RANDOM::getString(m, 'a', upperbound);
 
-                                       renderMutex.lock();
-                                       inputbox->setText(1, mem);
-                                       renderMutex.unlock();
-                                       break;
-                                   }
+                                        renderMutex.lock();
+                                        inputbox->setText(1, mem);
+                                        renderMutex.unlock();
+                                        break;
+                                    }
         case BUTTON_ACTION::RANDOM4: 
-                                   {
-                                       int m = RANDOM::getInt(1, 16);
-                                       renderMutex.lock();
-                                       inputbox->setText(1, RANDOM::getString(m, 'a', 'z'));
-                                       renderMutex.unlock();
-                                       break;
-                                   }
-        case BUTTON_ACTION::RANDOM5: 
-                                   {
-                                       int n = RANDOM::getInt(1, 64);
-                                       std::string mem = RANDOM::getInt(n, 1, 999);
+                                    {
+                                        int m = RANDOM::getInt(1, 16);
+                                        renderMutex.lock();
+                                        inputbox->setText(1, RANDOM::getString(m, 'a', 'z'));
+                                        renderMutex.unlock();
+                                        break;
+                                    }
+        case BUTTON_ACTION::RANDOM5: {
+                                         int n = RANDOM::getInt(1, 64);
+                                         std::string mem = RANDOM::getInt(n, 1, 999);
 
-                                       renderMutex.lock();
-                                       inputbox->setText(2, mem);
-                                       renderMutex.unlock();
-                                   }
-        case BUTTON_ACTION::RANDOM6: 
-                                   {
-
-                                       renderMutex.lock();
-                                       for(int i = 0; i < ds->capacity; i++)
-                                           for(int j = 0; j < ds->capacity; j++)
-                                           {
-                                               if(i == j) continue;
-                                               if(RANDOM::getInt(1, 100) <= 30) 
-                                                   inputbox->setText(i * ds->capacity + j + 1, RANDOM::getInt(1, 1, 99));
-                                               else 
-                                                   inputbox->setText(i * ds->capacity + j + 1, "0");
-                                           }
-                                       renderMutex.unlock();
-                                   }
+                                         renderMutex.lock();
+                                         inputbox->setText(2, mem);
+                                         renderMutex.unlock();
+                                         break;
+                                     }
+        case BUTTON_ACTION::RANDOM6: {
+                                         renderMutex.lock();
+                                         for(int i = 0; i < ds->capacity; i++)
+                                             for(int j = 0; j < ds->capacity; j++)
+                                             {
+                                                 if(i == j) continue;
+                                                 if(RANDOM::getInt(1, 100) <= 30) 
+                                                     inputbox->setText(i * ds->capacity + j + 1, RANDOM::getInt(1, 1, 99));
+                                                 else 
+                                                     inputbox->setText(i * ds->capacity + j + 1, "0");
+                                             }
+                                         renderMutex.unlock();
+                                         break;
+                                     }
         case BUTTON_ACTION::FILE :{
-
                                       getDataFromFile(ds->getDataType());
                                       break;
                                   }
