@@ -1,5 +1,10 @@
 var namespaces_dup =
 [
+    [ "Open the application", "index.html#autotoc_md3", null ],
+    [ "Choose one of those data structures, let example with AVL", "index.html#autotoc_md4", null ],
+    [ "Init values", "index.html#autotoc_md5", null ],
+    [ "Press done to run", "index.html#autotoc_md6", null ],
+    [ "Press the gear in the bottom right of window", "index.html#autotoc_md7", null ],
     [ "DISPLAY", "namespaceDISPLAY.html", [
       [ "HOME_", "namespaceDISPLAY.html#a848ce995cf56aac7fa6f3314e6221bf1", null ],
       [ "WORKING_", "namespaceDISPLAY.html#a2af8e97a0f04bcebdd98d144b74bba75", null ]

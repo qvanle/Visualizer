@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"trie_2destructor_8cpp_source.html":[6,0,1,14,2],
+"trie_2event_8cpp.html":[6,0,1,14,3],
+"trie_2event_8cpp_source.html":[6,0,1,14,3],
+"trie_2operator_2init_8cpp.html":[6,0,1,14,0,0],
+"trie_2operator_2init_8cpp_source.html":[6,0,1,14,0,0],
 "trie_2operator_2insert_8cpp.html":[6,0,1,14,0,1],
 "trie_2operator_2insert_8cpp_source.html":[6,0,1,14,0,1],
 "trie_2operator_2remove_8cpp.html":[6,0,1,14,0,2],
