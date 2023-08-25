@@ -15,7 +15,14 @@
 #include <display.hpp>
 #include <data_structures.hpp>
 #include <inputbox.hpp>
-
+/** 
+ * @brief Window class
+ * class that create a window and manage it
+ *
+ * Finite state machine
+ *
+ * handle thread
+ */
 class MyWindow 
 {
 private:

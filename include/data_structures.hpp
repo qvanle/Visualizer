@@ -22,7 +22,21 @@
 #include <data_structures/minheap.hpp>
 #include <data_structures/maxheap.hpp>
 #include <data_structures/graph.hpp>
-
+/**
+ * @brief Container that contains all data structures.
+ *
+ * Drawable
+ *
+ * contain AVL 
+ *
+ * contain Trie 
+ *
+ * contain Hash Table 
+ *
+ * contain Graph 
+ *
+ * contain Heap
+ */
 class DataStructures : protected Object
 {
 private:

@@ -10,10 +10,19 @@
 
 #include <sprite.hpp>
 #include <script.hpp>
-
+/**
+ * @brief AVL class.
+ *
+ * Drawable AVL tree.
+ */
 class AVL 
 {
     private:
+        /**
+         * @brief Node class.
+         *
+         * Node of AVL tree.
+         */
         struct Node 
         {
             int key;

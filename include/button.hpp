@@ -7,7 +7,11 @@
 #include <object.hpp>
 #include <sprite.hpp>
 #include <GLOBAL.hpp>
-
+/**
+ * @brief Button class that interact with user input
+ *
+ * Drawable
+ */
 class Button : protected Object
 {
 private: 

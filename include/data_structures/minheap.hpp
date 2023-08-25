@@ -14,9 +14,22 @@
 #include <button.hpp>
 #include <script.hpp>
 
+/**
+ * @brief heap class.
+ *
+ * Drawable heap.
+ *
+ * Default is min heap.
+ */
+
 class minHeap 
 {
     private:
+        /**
+         * @brief Node class.
+         *
+         * Node of heap.
+         */
         struct Node 
         {
             int value;

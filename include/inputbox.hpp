@@ -9,6 +9,12 @@
 #include <sprite.hpp>
 #include <button.hpp>
 
+/**
+ * @brief Register for user keyboard input
+ *
+ * Drawable
+ */
+
 class InputBox : private Object
 {
 private:

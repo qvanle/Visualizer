@@ -10,7 +10,12 @@
 #include <GLOBAL.hpp>
 #include <object.hpp>
 #include <button.hpp>
-
+/**
+ * @brief container of button 
+ * intermediate between button and user input, window
+ *
+ * Drawable
+ */
 class Display : protected Object 
 {
 private: 

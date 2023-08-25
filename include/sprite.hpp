@@ -13,7 +13,10 @@
 #include <object.hpp>
 
 using json = nlohmann::json;
-
+/**
+ * @brief Object container 
+ * Drawable
+ */
 class Sprite : public Object 
 {
 private: 

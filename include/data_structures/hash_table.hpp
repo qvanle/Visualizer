@@ -15,9 +15,19 @@
 #include <GLOBAL.hpp>
 #include <script.hpp>
 
+/**
+ * @brief HashTable class.
+ *
+ * Drawable HashTable.
+ */
 class HashTable
 {
     private:
+        /**
+         * @brief Node class.
+         *
+         * Node of HashTable.
+         */
         struct Node 
         {
             Sprite* sprite;
@@ -27,6 +37,12 @@ class HashTable
             ~Node();
             void repair();
         };
+
+        /**
+         * @brief Head class.
+         *
+         * Head of HashTable.
+         */
         struct Head 
         {
             Node* root;

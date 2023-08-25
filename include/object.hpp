@@ -10,7 +10,9 @@
 #include <GLOBAL.hpp>
 
 using json = nlohmann::json;
-
+/**
+ * @brief location of an object in 2D coordinate
+ */
 struct Position 
 {
     SDL_Rect* location;
@@ -19,7 +21,10 @@ struct Position
     SDL_Point center;
     bool visible;
 };
-
+/** 
+ * @brief Class that represent shape, image from files, text.
+ * Smallest drawable unit
+ */
 class Object : private Position
 {
 private:

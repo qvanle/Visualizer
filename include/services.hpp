@@ -12,17 +12,25 @@
 
 using json = nlohmann::json;
 
+/** 
+ * @brief Interact with *.json files
+ */
 namespace JSON 
 {
     json* readFile(std::string path);
     void saveFile(std::string path, json* data);
 }
-
+/**
+ * @brief Interact with text files
+ */
 namespace FILEE
 {
     std::vector<std::string> readFile(std::string path);
 }
 
+/**
+ * @brief Convert between string and interger
+ */
 namespace NUMBER 
 {
     const int64_t INF = LLONG_MAX;
@@ -38,13 +46,17 @@ namespace NUMBER
     bool isNumber(std::string s);
     bool isInInterval(std::string s, int64_t a, int64_t b);
 }
-
+/**
+ * @brief Features for std::string
+ */
 namespace SIUSTRING
 {
     bool isSeparator(char c);
     std::vector<std::string> split(std::string s);
 }
-
+/**
+ * @brief Random intergers, doubles, strings generator
+ */
 namespace RANDOM 
 {
     extern std::mt19937 rng;

@@ -15,11 +15,21 @@
 
 #include <sprite.hpp>
 #include <button.hpp>
-
+/**
+ * @brief Graph class.
+ *
+ * Drawable graph.
+ */
 class Graph 
 {
     private:
+        /** 
+         * @brief Edge of graph.
+         */
         struct Edge;
+        /** 
+         * @brief Node of graph.
+         */
         struct Node 
         {
             int value;

@@ -12,6 +12,12 @@
 #include <sprite.hpp>
 #include <button.hpp>
 
+/** 
+ * @brief Container that contains a pseudo-code
+ *
+ * Drawable
+ */
+
 class Script : Object
 {
 private: 

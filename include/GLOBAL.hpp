@@ -8,12 +8,17 @@
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
-
+/**
+ * @brief Status of window
+ */
 enum class WINDOW_STATUS 
 {
     IS_OPEN,
     IS_CLOSED
 };
+/**
+ * @brief Kind of simple shape
+ */
 enum class SHAPE 
 {
     NONE,
@@ -23,7 +28,9 @@ enum class SHAPE
     LINE, 
     POLYGON
 };
-
+/**
+ * @brief Status of button
+ */
 enum class BUTTON_STATUS 
 {
     NONE,
@@ -31,7 +38,9 @@ enum class BUTTON_STATUS
     RELEASED,
     CLICKED
 };
-
+/**
+ * @brief Type of button
+ */
 enum class BUTTON_ACTION 
 {
     CHANGE_SCREEN,
@@ -73,7 +82,9 @@ enum class BUTTON_ACTION
     FILE,
     NONE, 
 };
-
+/**
+ * @brief Type of data structures
+ */
 enum class DATA_STRUCTURES_TYPE 
 {
     NONE,
@@ -85,6 +96,10 @@ enum class DATA_STRUCTURES_TYPE
     MAX_HEAP,
     BTREE_4TH
 };
+
+/**
+ * @brief Type of data structures operator
+ */
 enum class DATA_STRUCTURES_OPERATOR 
 {
     INIT,
@@ -98,12 +113,18 @@ enum class DATA_STRUCTURES_OPERATOR
     DIJKSTRA,
     SETTING
 };
+/**
+ * @brief Align in horizon axis
+ */
 enum class HORIZONTAL_ALIGN
 {
     LEFT,
     CENTER,
     RIGHT
 };
+/**
+ * @brief Align in vertical axis
+ */
 enum class VERTICAL_ALIGN
 {
     TOP,
@@ -111,6 +132,9 @@ enum class VERTICAL_ALIGN
     BOTTOM
 };
 
+/**
+ * @brief Type of input
+ */
 enum class INPUT_TYPE
 {
     NONE,
@@ -120,12 +144,18 @@ enum class INPUT_TYPE
     STRINGS
 };
 
+/**
+ * @brief Name of display
+ */
 namespace DISPLAY 
 {
     const std::string HOME_ = "home";
     const std::string WORKING_ = "working";
 }
 
+/**
+ * @brief Path to assets, atributes, and saving files
+ */
 namespace PATH 
 {
     const std::string ASSETS_ = "assets/";   

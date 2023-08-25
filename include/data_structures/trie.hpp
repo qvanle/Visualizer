@@ -13,9 +13,17 @@
 #include <sprite.hpp>
 
 
+/**
+ * @brief Trie data structure
+ * 
+ */
 class Trie 
 {
 private:
+    /**
+     * @brief Node of Trie
+     * 
+     */
     struct Node 
     {
         char key;
