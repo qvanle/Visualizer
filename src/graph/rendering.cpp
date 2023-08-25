@@ -7,6 +7,8 @@ struct Point
 
 void Graph::renderEdge(Edge* e)
 {
+    if(nodirect && e->u->value > e->v->value)
+        return ;
     if(e->mark == 3)
         SDL_SetRenderDrawColor(render, 50, 50, 50, 255);
     else if(e->mark == 2)
@@ -77,6 +79,7 @@ void Graph::renderEdge(Edge* e)
 
 void Graph::rendering()
 {
+    std::lock_guard<std::mutex> lock(animate_mutex);
     for(auto i : edges)
     {
         renderEdge(i);
@@ -85,5 +88,10 @@ void Graph::rendering()
     for(auto i : nodes)
     {
         i->sprite->rendering();
+    }
+
+    if(currentScript != nullptr)
+    {
+        currentScript->rendering();
     }
 }

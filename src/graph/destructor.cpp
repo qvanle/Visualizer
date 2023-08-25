@@ -25,4 +25,9 @@ Graph::~Graph()
     for(auto &i : edges)
         delete i;
     edges.clear();
+
+    TTF_CloseFont(scriptFont);
+    for(auto i : script)
+        delete i.second;
+    script.clear();
 }

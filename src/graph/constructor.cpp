@@ -51,7 +51,17 @@ Graph::Graph(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int capaci
     chosenNode = nullptr;
     lastMousePressed = {0, 0};
 
+    std::string fontpath = PATH::ASSETS::FONTS_ + "nimbus-sans-l/regular.otf";
+    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);
 
+    currentScript = nullptr;
+    Script* dij = new Script(render, scriptFont);
+    dij->linking("graph/dijkstra");
+    Script* mst = new Script(render, scriptFont);
+    mst->linking("graph/mst");
+
+    script[DATA_STRUCTURES_OPERATOR::DIJKSTRA] = dij;
+    script[DATA_STRUCTURES_OPERATOR::MST] = mst;
 }
 
 void Graph::setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)

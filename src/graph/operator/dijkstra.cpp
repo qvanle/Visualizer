@@ -1,3 +1,4 @@
+#include "GLOBAL.hpp"
 #include <data_structures/graph.hpp>
 
 struct distanceHeap
@@ -74,12 +75,21 @@ struct distanceHeap
 void Graph::Dijkstra(int start, int end)
 {
     repair();
+    currentScript = script[DATA_STRUCTURES_OPERATOR::DIJKSTRA];
     distance.clear();
     distance.resize(nodes.size() + 1, -1);
     distanceHeap heap(this);
     distance[start] = 0;
 
     heap.insert(start);
+    
+    highlight({0});
+    waitForStep();
+    unhighlight({0});
+
+    highlight({1, 2, 3, 5});
+    waitForStep();
+    unhighlight({1, 2, 3, 5});
 
     for(auto i : nodes) i->sprite->coloring(SDL_Color{50, 50, 50, 255});
 
@@ -87,22 +97,30 @@ void Graph::Dijkstra(int start, int end)
     {
         int u = heap.pop();
         nodes[u]->sprite->coloring(SDL_Color{0, 125, 0, 255});
+        highlight({8, 9});
+        waitForStep();
+        unhighlight({8, 9});
+        
+        highlight({11});
         waitForStep();
         for(auto e : nodes[u]->edges)
         {
             int v = e->v->value;
-
+            
 
             if(distance[v] == -1 || distance[v] > distance[u] + e->weight)
             {
                 nodes[v]->sprite->coloring(SDL_Color{255, 255, 0, 255});
+                highlight({11, 12, 13, 14, 15});
                 waitForStep();
                 nodes[v]->sprite->coloring(SDL_Color{0, 255, 255, 255});
+                unhighlight({11, 12, 13, 14, 15});
                 waitForStep();
                 distance[v] = distance[u] + e->weight;
                 heap.insert(v);
             }
         }
+        unhighlight({11});
         nodes[u]->sprite->coloring(SDL_Color{0, 255, 0, 255});
     }
 }

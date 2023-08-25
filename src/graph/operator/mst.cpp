@@ -82,10 +82,24 @@ void Graph::MST()
 void Graph::unionEdges()
 {
     repair();
+    currentScript = script[DATA_STRUCTURES_OPERATOR::MST];
     DSU dsu(nodes.size());
     nodirect = true;
+
+    highlight({0});
+    waitForStep();
+    unhighlight({0});
+
+    highlight({1});
+    waitForStep();
+    unhighlight({1});
+
+    highlight({2, 3, 4, 5, 6});
+    waitForStep();
     for(auto i : sortedEdges)
     {
+        if(nodirect && i->u->value > i->v->value)
+            continue;
         i->mark = 3;
         waitForStep();
         if(!dsu.isUnionized(i))
@@ -99,4 +113,5 @@ void Graph::unionEdges()
             waitForStep();
         }
     }
+    unhighlight({2, 3, 4, 5, 6});
 }

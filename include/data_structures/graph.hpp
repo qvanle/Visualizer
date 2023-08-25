@@ -15,6 +15,8 @@
 
 #include <sprite.hpp>
 #include <button.hpp>
+#include <script.hpp>
+
 /**
  * @brief Graph class.
  *
@@ -90,6 +92,10 @@ class Graph
         std::mutex& ds_mutex;
         int stepWait;
         bool nodirect;
+
+        TTF_Font* scriptFont;
+        std::map<DATA_STRUCTURES_OPERATOR, Script*> script;
+        Script* currentScript;
     protected:
         void unionEdges();
         void Tarjan(Node* u);
@@ -111,6 +117,9 @@ class Graph
     
     void rendering();
     void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
+    void closeScript();
+    void highlight(std::vector<int> v);
+    void unhighlight(std::vector<int> v);
 };
 
 #endif

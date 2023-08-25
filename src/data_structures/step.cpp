@@ -99,6 +99,10 @@ void DataStructures::closeScript()
             if(minheap == nullptr) return ;
             minheap->closeScript();
             break;
+        case DATA_STRUCTURES_TYPE::GRAPH: 
+            if(graph == nullptr) return ;
+            graph->closeScript();
+            break;
         default:
             break;
     }
