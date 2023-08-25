@@ -1,0 +1,585 @@
+\hypertarget{classInputBox}{}\doxysection{Input\+Box Class Reference}
+\label{classInputBox}\index{InputBox@{InputBox}}
+
+
+Register for user keyboard input.  
+
+
+
+
+{\ttfamily \#include $<$inputbox.\+hpp$>$}
+
+Inheritance diagram for Input\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classInputBox}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInputBox_a55b4528614ff39c7766fa7652b91447f}{Input\+Box}} (SDL\+\_\+\+Renderer $\ast$render, TTF\+\_\+\+Font $\ast$font)
+\item 
+\mbox{\hyperlink{classInputBox_abe56acf07570e1ff883705edf3223b5b}{$\sim$\+Input\+Box}} ()
+\item 
+void \mbox{\hyperlink{classInputBox_aea0f7140e92e6cc600b0f6871edad871}{set\+Duplicate}} (int \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}}, int \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}})
+\item 
+void \mbox{\hyperlink{classInputBox_aec8fa6116e4244dd6276a065ec2bde88}{linking}} (std\+::string \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}})
+\item 
+\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4}{DATA\+\_\+\+STRUCTURES\+\_\+\+OPERATOR}} \mbox{\hyperlink{classInputBox_ab5d08656c28838bafffcd40c1bc222b3}{get\+Operator}} ()
+\item 
+bool \mbox{\hyperlink{classInputBox_a524434267b12eb2abdfc09980a4975e9}{is\+Receive\+Event}} (SDL\+\_\+\+Event \&e)
+\item 
+\mbox{\hyperlink{classButton}{Button}} $\ast$ \mbox{\hyperlink{classInputBox_abacb8608df6741fc61134b7fc20b6eb5}{react}} (SDL\+\_\+\+Event \&e)
+\item 
+std\+::string \mbox{\hyperlink{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}{get\+Text}} (int index)
+\item 
+void \mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{set\+Text}} (int index, std\+::string text)
+\item 
+void \mbox{\hyperlink{classInputBox_aa89f456b635532dd7f0f068b0b32f30f}{set\+Text}} (std\+::string text)
+\item 
+void \mbox{\hyperlink{classInputBox_a8d8de45186e4fd514bc79e9f6ffa7313}{rendering}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInputBox_aaaf8b9d1d6960b5c68a5bed9b3795a87}{init\+Background}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classInputBox_ac8dae8279d8f85b56183e87af958123f}{init\+Buttons}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classInputBox_a6e2076bf02a304493182ef102308cbcb}{init\+Sprites}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classInputBox_af757218b8ac218842e678fa512b96b38}{init\+Operator}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classInputBox_a8ba8c2edb75b563b6049a0bf7f777d3a}{import\+From\+Json}} ()
+\item 
+bool \mbox{\hyperlink{classInputBox_afed08b100b833c851ee2a43bf87688fe}{is\+Button\+Receive\+Event}} (SDL\+\_\+\+Event \&event)
+\item 
+bool \mbox{\hyperlink{classInputBox_a5c7ec4d227cf52fe4b991cbf88c4d5ec}{is\+Input\+Receive\+Event}} (SDL\+\_\+\+Event \&event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}}
+\item 
+int \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{import\+From\+Json}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+std\+::string \mbox{\hyperlink{classObject_a761e2136fc7a5f7f45dcab91f5f7f700}{get\+Text}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Register for user keyboard input. 
+
+Drawable 
+
+Definition at line 18 of file inputbox.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInputBox_a55b4528614ff39c7766fa7652b91447f}\label{classInputBox_a55b4528614ff39c7766fa7652b91447f}} 
+\index{InputBox@{InputBox}!InputBox@{InputBox}}
+\index{InputBox@{InputBox}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{InputBox()}{InputBox()}}
+{\footnotesize\ttfamily Input\+Box\+::\+Input\+Box (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{render,  }\item[{TTF\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                        : \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(render)}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     this-\/>font = font;}
+\DoxyCodeLine{12     this-\/>render = render;}
+\DoxyCodeLine{13     \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}} = 1;}
+\DoxyCodeLine{14     \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}} = 1;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_abe56acf07570e1ff883705edf3223b5b}\label{classInputBox_abe56acf07570e1ff883705edf3223b5b}} 
+\index{InputBox@{InputBox}!````~InputBox@{$\sim$InputBox}}
+\index{````~InputBox@{$\sim$InputBox}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputBox()}{~InputBox()}}
+{\footnotesize\ttfamily Input\+Box\+::$\sim$\+Input\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : buts) \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : inputs) \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInputBox_ab5d08656c28838bafffcd40c1bc222b3}\label{classInputBox_ab5d08656c28838bafffcd40c1bc222b3}} 
+\index{InputBox@{InputBox}!getOperator@{getOperator}}
+\index{getOperator@{getOperator}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{getOperator()}{getOperator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4}{DATA\+\_\+\+STRUCTURES\+\_\+\+OPERATOR}} Input\+Box\+::get\+Operator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file operator.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} op;}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}\label{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}} 
+\index{InputBox@{InputBox}!getText@{getText}}
+\index{getText@{getText}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily std\+::string Input\+Box\+::get\+Text (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file typing.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(index == -\/1 || index >= (\textcolor{keywordtype}{int}) inputs.size())}
+\DoxyCodeLine{6         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{7     \textcolor{keywordflow}{return} inputs[index]-\/>getText();}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a8ba8c2edb75b563b6049a0bf7f777d3a}\label{classInputBox_a8ba8c2edb75b563b6049a0bf7f777d3a}} 
+\index{InputBox@{InputBox}!importFromJson@{importFromJson}}
+\index{importFromJson@{importFromJson}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{importFromJson()}{importFromJson()}}
+{\footnotesize\ttfamily void Input\+Box\+::import\+From\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 39 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}}* mem = \mbox{\hyperlink{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}{JSON::readFile}}(\mbox{\hyperlink{namespacePATH_1_1ATB_a57b0670dfeb76489d9c43d2449256499}{PATH::ATB::INPUTBOX\_}} + name + \textcolor{stringliteral}{"{}.json"{}});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}background"{}}))}
+\DoxyCodeLine{44         \mbox{\hyperlink{classInputBox_aaaf8b9d1d6960b5c68a5bed9b3795a87}{initBackground}}((*mem)[\textcolor{stringliteral}{"{}background"{}}]);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}buttons"{}}))}
+\DoxyCodeLine{47         \mbox{\hyperlink{classInputBox_ac8dae8279d8f85b56183e87af958123f}{initButtons}}((*mem)[\textcolor{stringliteral}{"{}buttons"{}}]);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}sprites"{}}))}
+\DoxyCodeLine{50         \mbox{\hyperlink{classInputBox_a6e2076bf02a304493182ef102308cbcb}{initSprites}}((*mem)[\textcolor{stringliteral}{"{}sprites"{}}]);}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}operator"{}}))}
+\DoxyCodeLine{52         \mbox{\hyperlink{classInputBox_af757218b8ac218842e678fa512b96b38}{initOperator}}((*mem)[\textcolor{stringliteral}{"{}operator"{}}]);}
+\DoxyCodeLine{53     \textcolor{keyword}{delete} mem;}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_aaaf8b9d1d6960b5c68a5bed9b3795a87}\label{classInputBox_aaaf8b9d1d6960b5c68a5bed9b3795a87}} 
+\index{InputBox@{InputBox}!initBackground@{initBackground}}
+\index{initBackground@{initBackground}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{initBackground()}{initBackground()}}
+{\footnotesize\ttfamily void Input\+Box\+::init\+Background (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 56 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{Object::importFromJson}}(mem);}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_ac8dae8279d8f85b56183e87af958123f}\label{classInputBox_ac8dae8279d8f85b56183e87af958123f}} 
+\index{InputBox@{InputBox}!initButtons@{initButtons}}
+\index{initButtons@{initButtons}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{initButtons()}{initButtons()}}
+{\footnotesize\ttfamily void Input\+Box\+::init\+Buttons (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 61 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : mem)}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         buts.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classButton}{Button}}(render));}
+\DoxyCodeLine{66         \textcolor{keywordflow}{if}(i.contains(\textcolor{stringliteral}{"{}name"{}})) buts.back()-\/>linking(i[\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{67         \textcolor{keywordflow}{if}(i.contains(\textcolor{stringliteral}{"{}dx"{}})) buts.back()-\/>move(i[\textcolor{stringliteral}{"{}dx"{}}], i[\textcolor{stringliteral}{"{}dy"{}}]);}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_af757218b8ac218842e678fa512b96b38}\label{classInputBox_af757218b8ac218842e678fa512b96b38}} 
+\index{InputBox@{InputBox}!initOperator@{initOperator}}
+\index{initOperator@{initOperator}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{initOperator()}{initOperator()}}
+{\footnotesize\ttfamily void Input\+Box\+::init\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 23 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     std::string type = mem.get<std::string>();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordflow}{if}(type == \textcolor{stringliteral}{"{}INIT"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}};}
+\DoxyCodeLine{28     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}INSERT"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}};}
+\DoxyCodeLine{29     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}DELETE"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}};}
+\DoxyCodeLine{30     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}SEARCH"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}};}
+\DoxyCodeLine{31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}TOP"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a6705777b712ee811e76fb07162081d63}{DATA\_STRUCTURES\_OPERATOR::TOP}};}
+\DoxyCodeLine{32     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}SIZE"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a62e5cef85d46f1a5a2144d9fd463b79e}{DATA\_STRUCTURES\_OPERATOR::SIZE}};}
+\DoxyCodeLine{33     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}SCC"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a506e80ad4373b52e7d03a714c23c696c}{DATA\_STRUCTURES\_OPERATOR::SCC}};}
+\DoxyCodeLine{34     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}DIJKSTRA"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481}{DATA\_STRUCTURES\_OPERATOR::DIJKSTRA}};}
+\DoxyCodeLine{35     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}MST"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe}{DATA\_STRUCTURES\_OPERATOR::MST}};}
+\DoxyCodeLine{36     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}SETTING"{}}) op = \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9a4ad0490c7f7c16aa78af29e73ac1bf}{DATA\_STRUCTURES\_OPERATOR::SETTING}};}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a6e2076bf02a304493182ef102308cbcb}\label{classInputBox_a6e2076bf02a304493182ef102308cbcb}} 
+\index{InputBox@{InputBox}!initSprites@{initSprites}}
+\index{initSprites@{initSprites}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{initSprites()}{initSprites()}}
+{\footnotesize\ttfamily void Input\+Box\+::init\+Sprites (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 71 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72 \{}
+\DoxyCodeLine{73     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : mem)}
+\DoxyCodeLine{74     \{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}} * \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}} >= 1 \&\& \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}} > 0 \&\& \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}} > 0 \&\& i[\textcolor{stringliteral}{"{}name"{}}].get<std::string>() == \textcolor{stringliteral}{"{}graph/init/edge"{}}) }
+\DoxyCodeLine{76         \{}
+\DoxyCodeLine{77             \textcolor{keywordtype}{int} dx = 35;}
+\DoxyCodeLine{78             \textcolor{keywordtype}{int} dy = 35;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} u = 0; u < \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}}; u++)}
+\DoxyCodeLine{81             \{}
+\DoxyCodeLine{82                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} v=  0; v < \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}}; v++)}
+\DoxyCodeLine{83                 \{}
+\DoxyCodeLine{84                     inputs.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render));}
+\DoxyCodeLine{85                     inputs.back()-\/>setFont(font);}
+\DoxyCodeLine{86                     \textcolor{keywordflow}{if}(i.contains(\textcolor{stringliteral}{"{}name"{}})) inputs.back()-\/>linking(i[\textcolor{stringliteral}{"{}name"{}}].get<std::string>());}
+\DoxyCodeLine{87                     inputs.back()-\/>moveX(dx * u);}
+\DoxyCodeLine{88                     inputs.back()-\/>moveY(dy * v);}
+\DoxyCodeLine{89                 \}}
+\DoxyCodeLine{90             \}}
+\DoxyCodeLine{91         \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             inputs.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render));}
+\DoxyCodeLine{94             inputs.back()-\/>setFont(font);}
+\DoxyCodeLine{95             \textcolor{keywordflow}{if}(i.contains(\textcolor{stringliteral}{"{}name"{}})) inputs.back()-\/>linking(i[\textcolor{stringliteral}{"{}name"{}}].get<std::string>());}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_afed08b100b833c851ee2a43bf87688fe}\label{classInputBox_afed08b100b833c851ee2a43bf87688fe}} 
+\index{InputBox@{InputBox}!isButtonReceiveEvent@{isButtonReceiveEvent}}
+\index{isButtonReceiveEvent@{isButtonReceiveEvent}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{isButtonReceiveEvent()}{isButtonReceiveEvent()}}
+{\footnotesize\ttfamily bool Input\+Box\+::is\+Button\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 46 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& but : buts)}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if}(but-\/>isReceiveEvent(e))}
+\DoxyCodeLine{51         \{}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a5c7ec4d227cf52fe4b991cbf88c4d5ec}\label{classInputBox_a5c7ec4d227cf52fe4b991cbf88c4d5ec}} 
+\index{InputBox@{InputBox}!isInputReceiveEvent@{isInputReceiveEvent}}
+\index{isInputReceiveEvent@{isInputReceiveEvent}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{isInputReceiveEvent()}{isInputReceiveEvent()}}
+{\footnotesize\ttfamily bool Input\+Box\+::is\+Input\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 19 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN: }
+\DoxyCodeLine{24             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& inp : inputs) }
+\DoxyCodeLine{25                 \textcolor{keywordflow}{if}(inp-\/>isLieInside(e.motion.x, e.motion.y)) }
+\DoxyCodeLine{26                     \textcolor{keywordflow}{return} \textcolor{keyword}{true}; }
+\DoxyCodeLine{27             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{28             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION: }
+\DoxyCodeLine{30             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& inp : inputs) }
+\DoxyCodeLine{31                 \textcolor{keywordflow}{if}(inp-\/>isLieInside(e.motion.x, e.motion.y)) }
+\DoxyCodeLine{32                     \textcolor{keywordflow}{return} \textcolor{keyword}{true}; }
+\DoxyCodeLine{33             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{34             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35         \textcolor{keywordflow}{case} SDL\_KEYDOWN: }
+\DoxyCodeLine{36             \textcolor{keywordflow}{if}(typingIndex == -\/1) }
+\DoxyCodeLine{37                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{38             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{39             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{40         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{41             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{42             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a524434267b12eb2abdfc09980a4975e9}\label{classInputBox_a524434267b12eb2abdfc09980a4975e9}} 
+\index{InputBox@{InputBox}!isReceiveEvent@{isReceiveEvent}}
+\index{isReceiveEvent@{isReceiveEvent}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{isReceiveEvent()}{isReceiveEvent()}}
+{\footnotesize\ttfamily bool Input\+Box\+::is\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{case} SDL\_QUIT: }
+\DoxyCodeLine{9             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{10             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{12             \textcolor{keywordflow}{if}(\mbox{\hyperlink{classInputBox_afed08b100b833c851ee2a43bf87688fe}{isButtonReceiveEvent}}(e) || \mbox{\hyperlink{classInputBox_a5c7ec4d227cf52fe4b991cbf88c4d5ec}{isInputReceiveEvent}}(e))}
+\DoxyCodeLine{13                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{14             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{15             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_aec8fa6116e4244dd6276a065ec2bde88}\label{classInputBox_aec8fa6116e4244dd6276a065ec2bde88}} 
+\index{InputBox@{InputBox}!linking@{linking}}
+\index{linking@{linking}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{linking()}{linking()}}
+{\footnotesize\ttfamily void Input\+Box\+::linking (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     name = \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}};}
+\DoxyCodeLine{20     \mbox{\hyperlink{classInputBox_a8ba8c2edb75b563b6049a0bf7f777d3a}{importFromJson}}();}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_abacb8608df6741fc61134b7fc20b6eb5}\label{classInputBox_abacb8608df6741fc61134b7fc20b6eb5}} 
+\index{InputBox@{InputBox}!react@{react}}
+\index{react@{react}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classButton}{Button}} $\ast$ Input\+Box\+::react (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59 \{}
+\DoxyCodeLine{60     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{62         \textcolor{keywordflow}{case} SDL\_KEYDOWN:}
+\DoxyCodeLine{63         \{}
+\DoxyCodeLine{64             \textcolor{keywordflow}{if}(typingIndex == -\/1)}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{66             \textcolor{keywordflow}{if}(e.key.keysym.sym == SDLK\_BACKSPACE)}
+\DoxyCodeLine{67             \{}
+\DoxyCodeLine{68                 inputs[typingIndex]-\/>backspace();}
+\DoxyCodeLine{69             \}}
+\DoxyCodeLine{70             \textcolor{keywordflow}{if}(SDLK\_SPACE <= e.key.keysym.sym \&\& e.key.keysym.sym <= SDLK\_z)}
+\DoxyCodeLine{71             \{}
+\DoxyCodeLine{72                 inputs[typingIndex]-\/>typing(e.key.keysym.sym);}
+\DoxyCodeLine{73             \}}
+\DoxyCodeLine{74             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{75             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION: }
+\DoxyCodeLine{78         \{    }
+\DoxyCodeLine{79             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& but : buts)}
+\DoxyCodeLine{80                 but-\/>isHover(e.motion.x, e.motion.y);}
+\DoxyCodeLine{81             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{82             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{85         \{}
+\DoxyCodeLine{86             \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{87             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& inp : inputs)}
+\DoxyCodeLine{88             \{}
+\DoxyCodeLine{89                 \textcolor{keywordflow}{if}(inp-\/>isLieInside(e.motion.x, e.motion.y))}
+\DoxyCodeLine{90                 \{}
+\DoxyCodeLine{91                     typingIndex = i;}
+\DoxyCodeLine{92                     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{93                 \}}
+\DoxyCodeLine{94                 i++;}
+\DoxyCodeLine{95             \}}
+\DoxyCodeLine{96             typingIndex = 0;}
+\DoxyCodeLine{97             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& but : buts)}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{if}(but-\/>isClicked(e.motion.x, e.motion.y))}
+\DoxyCodeLine{99                     \textcolor{keywordflow}{return} but;}
+\DoxyCodeLine{100             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{101             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{102         \}}
+\DoxyCodeLine{103         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{104             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a8d8de45186e4fd514bc79e9f6ffa7313}\label{classInputBox_a8d8de45186e4fd514bc79e9f6ffa7313}} 
+\index{InputBox@{InputBox}!rendering@{rendering}}
+\index{rendering@{rendering}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void Input\+Box\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object}}.
+
+
+
+Definition at line 3 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object::rendering}}();}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : buts) i-\/>rendering();}
+\DoxyCodeLine{7     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : inputs) i-\/>rendering();}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_aea0f7140e92e6cc600b0f6871edad871}\label{classInputBox_aea0f7140e92e6cc600b0f6871edad871}} 
+\index{InputBox@{InputBox}!setDuplicate@{setDuplicate}}
+\index{setDuplicate@{setDuplicate}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{setDuplicate()}{setDuplicate()}}
+{\footnotesize\ttfamily void Input\+Box\+::set\+Duplicate (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 \{}
+\DoxyCodeLine{105     this-\/>\mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}} = \mbox{\hyperlink{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}{n}};}
+\DoxyCodeLine{106     this-\/>\mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}} = \mbox{\hyperlink{classInputBox_aadd77710aecde727236d336dfc8aef99}{m}};}
+\DoxyCodeLine{107 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_a94c7852ad9649f34aa0d45899b183460}\label{classInputBox_a94c7852ad9649f34aa0d45899b183460}} 
+\index{InputBox@{InputBox}!setText@{setText}}
+\index{setText@{setText}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Input\+Box\+::set\+Text (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file typing.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if} (index != -\/1 \&\& index < (\textcolor{keywordtype}{int}) inputs.size())}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         inputs[index]-\/>setText(text);}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classInputBox_aa89f456b635532dd7f0f068b0b32f30f}\label{classInputBox_aa89f456b635532dd7f0f068b0b32f30f}} 
+\index{InputBox@{InputBox}!setText@{setText}}
+\index{setText@{setText}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Input\+Box\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file typing.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (typingIndex != -\/1)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         inputs[typingIndex]-\/>setText(text);}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classInputBox_aadd77710aecde727236d336dfc8aef99}\label{classInputBox_aadd77710aecde727236d336dfc8aef99}} 
+\index{InputBox@{InputBox}!m@{m}}
+\index{m@{m}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily int Input\+Box\+::m\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file inputbox.\+hpp.
+
+\mbox{\Hypertarget{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}\label{classInputBox_ae2dc1a5547e28ca3fa9cc5f2b8d0557c}} 
+\index{InputBox@{InputBox}!n@{n}}
+\index{n@{n}!InputBox@{InputBox}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int Input\+Box\+::n\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 38 of file inputbox.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{inputbox_8hpp}{inputbox.\+hpp}}\item 
+src/inputbox/\mbox{\hyperlink{inputbox_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/inputbox/\mbox{\hyperlink{inputbox_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/inputbox/\mbox{\hyperlink{inputbox_2event_8cpp}{event.\+cpp}}\item 
+src/inputbox/\mbox{\hyperlink{inputbox_2operator_8cpp}{operator.\+cpp}}\item 
+src/inputbox/\mbox{\hyperlink{inputbox_2rendering_8cpp}{rendering.\+cpp}}\item 
+src/inputbox/\mbox{\hyperlink{typing_8cpp}{typing.\+cpp}}\end{DoxyCompactItemize}

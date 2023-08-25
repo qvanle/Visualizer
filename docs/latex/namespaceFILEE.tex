@@ -1,0 +1,48 @@
+\hypertarget{namespaceFILEE}{}\doxysection{FILEE Namespace Reference}
+\label{namespaceFILEE}\index{FILEE@{FILEE}}
+
+
+Interact with text files.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{read\+File}} (std\+::string path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interact with text files. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}\label{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}} 
+\index{FILEE@{FILEE}!readFile@{readFile}}
+\index{readFile@{readFile}!FILEE@{FILEE}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ FILEE\+::read\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file file.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     std::vector<std::string> result;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     std::ifstream fin(path);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     std::string line;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordflow}{while}(std::getline(fin, line))}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         result.push\_back(line);}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     fin.close();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}

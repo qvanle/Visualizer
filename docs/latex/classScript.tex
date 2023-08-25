@@ -1,0 +1,409 @@
+\hypertarget{classScript}{}\doxysection{Script Class Reference}
+\label{classScript}\index{Script@{Script}}
+
+
+Container that contains a pseudo-\/code.  
+
+
+
+
+{\ttfamily \#include $<$script.\+hpp$>$}
+
+Inheritance diagram for Script\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classScript}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScript_a0de3d5fd4190a40d7d6437a066e08893}{Script}} (SDL\+\_\+\+Renderer $\ast$render, TTF\+\_\+\+Font $\ast$f)
+\item 
+\mbox{\hyperlink{classScript_a7f3a173d141bcfefce0ba98b941dc823}{$\sim$\+Script}} ()
+\item 
+void \mbox{\hyperlink{classScript_a8b9fefd83a73b635509d263cde80b762}{linking}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}} (int index)
+\item 
+void \mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}} (int index)
+\item 
+bool \mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{is\+Receive\+Event}} (SDL\+\_\+\+Event \&event)
+\item 
+\mbox{\hyperlink{classButton}{Button}} $\ast$ \mbox{\hyperlink{classScript_af7bd060b4589e5e17e0dd32124b90232}{react}} (SDL\+\_\+\+Event \&event)
+\item 
+void \mbox{\hyperlink{classScript_afabe6d8f50598c591160b181f77c14a4}{rendering}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScript_a49ba21d8e1c8c19d327054c23912cf8a}{init\+Background}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classScript_ac29263bfdf2f3f311c27e20349c2bc93}{init\+Buttons}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classScript_ae7cc6576a053170faf365842c8dd2786}{import\+From\+Json}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{import\+From\+Json}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container that contains a pseudo-\/code. 
+
+Drawable 
+
+Definition at line 21 of file script.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScript_a0de3d5fd4190a40d7d6437a066e08893}\label{classScript_a0de3d5fd4190a40d7d6437a066e08893}} 
+\index{Script@{Script}!Script@{Script}}
+\index{Script@{Script}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{Script()}{Script()}}
+{\footnotesize\ttfamily Script\+::\+Script (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{render,  }\item[{TTF\+\_\+\+Font $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4                                                 : \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(render)}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     this-\/>render = render;}
+\DoxyCodeLine{7     this-\/>font = f;}
+\DoxyCodeLine{8     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{9 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_a7f3a173d141bcfefce0ba98b941dc823}\label{classScript_a7f3a173d141bcfefce0ba98b941dc823}} 
+\index{Script@{Script}!````~Script@{$\sim$Script}}
+\index{````~Script@{$\sim$Script}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{$\sim$Script()}{~Script()}}
+{\footnotesize\ttfamily Script\+::$\sim$\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     render = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{6     font = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{7     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < sprites.size(); i++)}
+\DoxyCodeLine{8         \textcolor{keywordflow}{if}(sprites[i] != \textcolor{keyword}{nullptr}) \textcolor{keyword}{delete} sprites[i];}
+\DoxyCodeLine{9     sprites.clear();}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScript_ad060d7d1676e4b49ac87c00593023eb6}\label{classScript_ad060d7d1676e4b49ac87c00593023eb6}} 
+\index{Script@{Script}!highlight@{highlight}}
+\index{highlight@{highlight}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily void Script\+::highlight (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file highlight.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(index < 0 || index >= sprites.size()) return ;}
+\DoxyCodeLine{6     sprites[index]-\/>setTextBoxTransparent(180);}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_ae7cc6576a053170faf365842c8dd2786}\label{classScript_ae7cc6576a053170faf365842c8dd2786}} 
+\index{Script@{Script}!importFromJson@{importFromJson}}
+\index{importFromJson@{importFromJson}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{importFromJson()}{importFromJson()}}
+{\footnotesize\ttfamily void Script\+::import\+From\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 17 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} * mem = \mbox{\hyperlink{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}{JSON::readFile}}(\mbox{\hyperlink{namespacePATH_1_1ATB_a93c8aaf897b36dfb38c5097f0b16d7b5}{PATH::ATB::SCRIPT\_}} + name + \textcolor{stringliteral}{"{}.json"{}});}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if}(mem == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}background"{}})) }
+\DoxyCodeLine{23         \mbox{\hyperlink{classScript_a49ba21d8e1c8c19d327054c23912cf8a}{initBackground}}((*mem)[\textcolor{stringliteral}{"{}background"{}}]);}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}sprite"{}}))}
+\DoxyCodeLine{25         spriteName = (*mem)[\textcolor{stringliteral}{"{}sprite"{}}].get<std::string>();}
+\DoxyCodeLine{26     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}buttons"{}}))}
+\DoxyCodeLine{27         \mbox{\hyperlink{classScript_ac29263bfdf2f3f311c27e20349c2bc93}{initButtons}}((*mem)[\textcolor{stringliteral}{"{}buttons"{}}]);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}script"{}}))}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keyword}{auto} lines = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1ASSETS_a6b1a88acd92d903e742d96f0a9f86170}{PATH::ASSETS::SCRIPT\_}} + (*mem)[\textcolor{stringliteral}{"{}script"{}}].get<std::string>());}
+\DoxyCodeLine{32         \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : lines) }
+\DoxyCodeLine{34         \{}
+\DoxyCodeLine{35             sprites.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render));}
+\DoxyCodeLine{36             sprites.back()-\/>setFont(font);}
+\DoxyCodeLine{37             sprites.back()-\/>linking(spriteName);}
+\DoxyCodeLine{38             sprites.back()-\/>setText(i);}
+\DoxyCodeLine{39             sprites.back()-\/>locatingX(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}());}
+\DoxyCodeLine{40             sprites.back()-\/>locatingY(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}() + j * 18);}
+\DoxyCodeLine{41             sprites.back()-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906a684d325a7303f52e64011467ff5c5758}{HORIZONTAL\_ALIGN::LEFT}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{42             j++;}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_a49ba21d8e1c8c19d327054c23912cf8a}\label{classScript_a49ba21d8e1c8c19d327054c23912cf8a}} 
+\index{Script@{Script}!initBackground@{initBackground}}
+\index{initBackground@{initBackground}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{initBackground()}{initBackground()}}
+{\footnotesize\ttfamily void Script\+::init\+Background (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{Object::importFromJson}}(mem);}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_ac29263bfdf2f3f311c27e20349c2bc93}\label{classScript_ac29263bfdf2f3f311c27e20349c2bc93}} 
+\index{Script@{Script}!initButtons@{initButtons}}
+\index{initButtons@{initButtons}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{initButtons()}{initButtons()}}
+{\footnotesize\ttfamily void Script\+::init\+Buttons (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 53 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : mem)}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \mbox{\hyperlink{classButton}{Button}}* b = \textcolor{keyword}{new} \mbox{\hyperlink{classButton}{Button}}(render);}
+\DoxyCodeLine{58         b-\/>\mbox{\hyperlink{classButton_a81a14b769f63ca4d65647d7ea14f039b}{linking}}(i[\textcolor{stringliteral}{"{}name"{}}].get<std::string>());}
+\DoxyCodeLine{59         buts.push\_back(b);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_a52c574264ef13f176fbaf74821f3f3e8}\label{classScript_a52c574264ef13f176fbaf74821f3f3e8}} 
+\index{Script@{Script}!isReceiveEvent@{isReceiveEvent}}
+\index{isReceiveEvent@{isReceiveEvent}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{isReceiveEvent()}{isReceiveEvent()}}
+{\footnotesize\ttfamily bool Script\+::is\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     SDL\_Rect viewport = \{\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}(), \mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}(), \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()\};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN: }
+\DoxyCodeLine{11             \textcolor{keywordflow}{if}(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{12             \textcolor{keywordflow}{if}(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{13             \textcolor{keywordflow}{if}(e.button.button == SDL\_BUTTON\_LEFT) }
+\DoxyCodeLine{14             \{}
+\DoxyCodeLine{15                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{16                 \{}
+\DoxyCodeLine{17                     \textcolor{keywordflow}{if}(i-\/>isReceiveEvent(e))}
+\DoxyCodeLine{18                     \{}
+\DoxyCodeLine{19                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{20                     \}}
+\DoxyCodeLine{21                 \}}
+\DoxyCodeLine{22                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{23             \}}
+\DoxyCodeLine{24             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{25             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{26         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:}
+\DoxyCodeLine{27             \textcolor{keywordflow}{if}(isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{28             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{29             \{}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{if}(i-\/>isReceiveEvent(e))}
+\DoxyCodeLine{31                 \{}
+\DoxyCodeLine{32                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{33                 \}}
+\DoxyCodeLine{34             \}}
+\DoxyCodeLine{35             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{36             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37         \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{38             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{39             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_a8b9fefd83a73b635509d263cde80b762}\label{classScript_a8b9fefd83a73b635509d263cde80b762}} 
+\index{Script@{Script}!linking@{linking}}
+\index{linking@{linking}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{linking()}{linking()}}
+{\footnotesize\ttfamily void Script\+::linking (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     this-\/>name = name;}
+\DoxyCodeLine{14     \mbox{\hyperlink{classScript_ae7cc6576a053170faf365842c8dd2786}{importFromJson}}();}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_af7bd060b4589e5e17e0dd32124b90232}\label{classScript_af7bd060b4589e5e17e0dd32124b90232}} 
+\index{Script@{Script}!react@{react}}
+\index{react@{react}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classButton}{Button}} $\ast$ Script\+::react (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{48             \textcolor{keywordflow}{if}(isMoving)}
+\DoxyCodeLine{49             \{}
+\DoxyCodeLine{50                 isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{51                 \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{52                 \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{53                 \mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{moveX}}(dx);}
+\DoxyCodeLine{54                 \mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{moveY}}(dy);}
+\DoxyCodeLine{55                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{56                     i-\/>move(dx, dy);}
+\DoxyCodeLine{57                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : sprites)}
+\DoxyCodeLine{58                 \{}
+\DoxyCodeLine{59                     i-\/>moveX(dx);}
+\DoxyCodeLine{60                     i-\/>moveY(dy);}
+\DoxyCodeLine{61                 \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63             \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{64             \{}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{67                 \{}
+\DoxyCodeLine{68                     \textcolor{keywordflow}{if}(i-\/>isReceiveEvent(e))}
+\DoxyCodeLine{69                     \{}
+\DoxyCodeLine{70                         \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{71                     \}}
+\DoxyCodeLine{72                 \}}
+\DoxyCodeLine{73                 isMoving = \textcolor{keyword}{true};}
+\DoxyCodeLine{74                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{75                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{78             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{79         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{if}(!isMoving) }
+\DoxyCodeLine{82                 \{}
+\DoxyCodeLine{83                     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{84                         i-\/>isHover(e.motion.x, e.motion.y);}
+\DoxyCodeLine{85                     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{86                 \}}
+\DoxyCodeLine{87                 \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{88                 \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{89                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{90                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{91                 \mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{moveX}}(dx);}
+\DoxyCodeLine{92                 \mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{moveY}}(dy);}
+\DoxyCodeLine{93                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : buts)}
+\DoxyCodeLine{94                     i-\/>move(dx, dy);}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : sprites)}
+\DoxyCodeLine{96                 \{}
+\DoxyCodeLine{97                     i-\/>moveX(dx);}
+\DoxyCodeLine{98                     i-\/>moveY(dy);}
+\DoxyCodeLine{99                 \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101                 \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{102                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{103             \}}
+\DoxyCodeLine{104         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{105             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{106             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_afabe6d8f50598c591160b181f77c14a4}\label{classScript_afabe6d8f50598c591160b181f77c14a4}} 
+\index{Script@{Script}!rendering@{rendering}}
+\index{rendering@{rendering}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void Script\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object}}.
+
+
+
+Definition at line 3 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object::rendering}}();}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : sprites)}
+\DoxyCodeLine{7         i-\/>rendering();}
+\DoxyCodeLine{8     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : buts)}
+\DoxyCodeLine{9         i-\/>rendering();}
+\DoxyCodeLine{10     return ;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classScript_aa8486e367a767589984c2a2a078898ae}\label{classScript_aa8486e367a767589984c2a2a078898ae}} 
+\index{Script@{Script}!unhighlight@{unhighlight}}
+\index{unhighlight@{unhighlight}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{unhighlight()}{unhighlight()}}
+{\footnotesize\ttfamily void Script\+::unhighlight (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file highlight.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keywordflow}{if}(index < 0 || index >= sprites.size()) return ;}
+\DoxyCodeLine{12     sprites[index]-\/>setTextBoxTransparent(0);}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{script_8hpp}{script.\+hpp}}\item 
+src/script/\mbox{\hyperlink{script_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/script/\mbox{\hyperlink{script_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/script/\mbox{\hyperlink{script_2event_8cpp}{event.\+cpp}}\item 
+src/script/\mbox{\hyperlink{highlight_8cpp}{highlight.\+cpp}}\item 
+src/script/\mbox{\hyperlink{script_2rendering_8cpp}{rendering.\+cpp}}\end{DoxyCompactItemize}

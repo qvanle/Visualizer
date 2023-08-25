@@ -1,0 +1,278 @@
+\hypertarget{classmaxHeap}{}\doxysection{max\+Heap Class Reference}
+\label{classmaxHeap}\index{maxHeap@{maxHeap}}
+
+
+{\ttfamily \#include $<$maxheap.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmaxHeap_aa478db88fa4b1030c2e93d7a4805f191}{max\+Heap}} ()
+\item 
+\mbox{\hyperlink{classmaxHeap_a975ccdaaf69c32bc4002429fb895a97d}{$\sim$max\+Heap}} ()
+\item 
+void \mbox{\hyperlink{classmaxHeap_a41b141a0aa3c0bdd54923dc8ad9849d4}{init}} (std\+::vector$<$ int $>$ \&value)
+\item 
+void \mbox{\hyperlink{classmaxHeap_ab4f8893fb7681416315ecca625628e2f}{insert}} (int value)
+\item 
+void \mbox{\hyperlink{classmaxHeap_a906e3130105f49e1a5566b04382b5f7b}{pop}} ()
+\item 
+int \mbox{\hyperlink{classmaxHeap_ab6401bf9d6e3c7a05b980ec4c37dadd9}{top}} ()
+\item 
+int \mbox{\hyperlink{classmaxHeap_aaf1a32a44fb9777a1a01f987da131c00}{size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmaxHeap_ad01f48f463ca7c55e579bda80452215f}{heapify}} (int index)
+\item 
+void \mbox{\hyperlink{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}{swap}} (int index1, int index2)
+\item 
+bool \mbox{\hyperlink{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}{swapable}} (int index1, int index2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 7 of file maxheap.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmaxHeap_aa478db88fa4b1030c2e93d7a4805f191}\label{classmaxHeap_aa478db88fa4b1030c2e93d7a4805f191}} 
+\index{maxHeap@{maxHeap}!maxHeap@{maxHeap}}
+\index{maxHeap@{maxHeap}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{maxHeap()}{maxHeap()}}
+{\footnotesize\ttfamily max\+Heap\+::max\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_a975ccdaaf69c32bc4002429fb895a97d}\label{classmaxHeap_a975ccdaaf69c32bc4002429fb895a97d}} 
+\index{maxHeap@{maxHeap}!````~maxHeap@{$\sim$maxHeap}}
+\index{````~maxHeap@{$\sim$maxHeap}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{$\sim$maxHeap()}{~maxHeap()}}
+{\footnotesize\ttfamily max\+Heap\+::$\sim$max\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : value)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmaxHeap_ad01f48f463ca7c55e579bda80452215f}\label{classmaxHeap_ad01f48f463ca7c55e579bda80452215f}} 
+\index{maxHeap@{maxHeap}!heapify@{heapify}}
+\index{heapify@{heapify}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{heapify()}{heapify()}}
+{\footnotesize\ttfamily void max\+Heap\+::heapify (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 13 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} left = 2 * index + 1;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} right = 2 * index + 2;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} largest = index;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordflow}{if}(left < value.size() \&\& \mbox{\hyperlink{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}{swapable}}(index, left))}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         largest = left;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordflow}{if}(right < value.size() \&\& \mbox{\hyperlink{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}{swapable}}(largest, right))}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         largest = right;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{if}(largest != index)}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \mbox{\hyperlink{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}{swap}}(index, largest);}
+\DoxyCodeLine{32         \mbox{\hyperlink{classmaxHeap_ad01f48f463ca7c55e579bda80452215f}{heapify}}(largest);}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_a41b141a0aa3c0bdd54923dc8ad9849d4}\label{classmaxHeap_a41b141a0aa3c0bdd54923dc8ad9849d4}} 
+\index{maxHeap@{maxHeap}!init@{init}}
+\index{init@{init}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void max\+Heap\+::init (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file init.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : value)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \mbox{\hyperlink{classmaxHeap_ab4f8893fb7681416315ecca625628e2f}{insert}}(i);}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_ab4f8893fb7681416315ecca625628e2f}\label{classmaxHeap_ab4f8893fb7681416315ecca625628e2f}} 
+\index{maxHeap@{maxHeap}!insert@{insert}}
+\index{insert@{insert}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void max\+Heap\+::insert (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file insert.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     Node* node = \textcolor{keyword}{new} Node(value);}
+\DoxyCodeLine{6     this-\/>value.push\_back(node);}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} index = this-\/>value.size() -\/ 1;}
+\DoxyCodeLine{9         }
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(index == 0) return ;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keywordtype}{int} parent = (index -\/ 1) / 2;}
+\DoxyCodeLine{15         }
+\DoxyCodeLine{16         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}{swapable}}(parent, index))}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             \mbox{\hyperlink{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}{swap}}(parent, index);}
+\DoxyCodeLine{19         \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         index = parent;}
+\DoxyCodeLine{22     \}\textcolor{keywordflow}{while}(index !=0);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_a906e3130105f49e1a5566b04382b5f7b}\label{classmaxHeap_a906e3130105f49e1a5566b04382b5f7b}} 
+\index{maxHeap@{maxHeap}!pop@{pop}}
+\index{pop@{pop}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void max\+Heap\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file remove.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(value.size() == 0)}
+\DoxyCodeLine{6     \{}
+\DoxyCodeLine{7         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{8     \}}
+\DoxyCodeLine{9     }
+\DoxyCodeLine{10     \mbox{\hyperlink{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}{swap}}(0, value.size() -\/ 1);}
+\DoxyCodeLine{11     value.pop\_back();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \mbox{\hyperlink{classmaxHeap_ad01f48f463ca7c55e579bda80452215f}{heapify}}(0);}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_aaf1a32a44fb9777a1a01f987da131c00}\label{classmaxHeap_aaf1a32a44fb9777a1a01f987da131c00}} 
+\index{maxHeap@{maxHeap}!size@{size}}
+\index{size@{size}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int max\+Heap\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file size.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{return} value.size();}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}\label{classmaxHeap_a9a8ec7243e9d8fe9578ff3ffdadf4875}} 
+\index{maxHeap@{maxHeap}!swap@{swap}}
+\index{swap@{swap}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void max\+Heap\+::swap (\begin{DoxyParamCaption}\item[{int}]{index1,  }\item[{int}]{index2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 3 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     std::swap(value[index1], value[index2]);}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}\label{classmaxHeap_afd1e3f9335c829688627f427f94ba3c6}} 
+\index{maxHeap@{maxHeap}!swapable@{swapable}}
+\index{swapable@{swapable}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{swapable()}{swapable()}}
+{\footnotesize\ttfamily bool max\+Heap\+::swapable (\begin{DoxyParamCaption}\item[{int}]{index1,  }\item[{int}]{index2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 8 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{return} value[index1]-\/>value < value[index2]-\/>value;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmaxHeap_ab6401bf9d6e3c7a05b980ec4c37dadd9}\label{classmaxHeap_ab6401bf9d6e3c7a05b980ec4c37dadd9}} 
+\index{maxHeap@{maxHeap}!top@{top}}
+\index{top@{top}!maxHeap@{maxHeap}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily int max\+Heap\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file getmax.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} value[0]-\/>value;}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{maxheap_8hpp}{maxheap.\+hpp}}\item 
+src/maxheap/\mbox{\hyperlink{maxheap_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/maxheap/\mbox{\hyperlink{maxheap_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{getmax_8cpp}{getmax.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{maxheap_2operator_2heapify_8cpp}{heapify.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{maxheap_2operator_2init_8cpp}{init.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{maxheap_2operator_2insert_8cpp}{insert.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{maxheap_2operator_2remove_8cpp}{remove.\+cpp}}\item 
+src/maxheap/operator/\mbox{\hyperlink{maxheap_2operator_2size_8cpp}{size.\+cpp}}\end{DoxyCompactItemize}

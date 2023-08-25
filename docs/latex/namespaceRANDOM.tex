@@ -1,0 +1,234 @@
+\hypertarget{namespaceRANDOM}{}\doxysection{RANDOM Namespace Reference}
+\label{namespaceRANDOM}\index{RANDOM@{RANDOM}}
+
+
+Random intergers, doubles, strings generator.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{get\+Int}} (int a, int b)
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_a697e558478762ae4c21709c18e557577}{get\+Int}} (int length, int a, int b)
+\item 
+long long \mbox{\hyperlink{namespaceRANDOM_ab3a88ae4be97a2da1e125c271a3d34f7}{get\+Long\+Long}} (long long a, long long b)
+\item 
+float \mbox{\hyperlink{namespaceRANDOM_a7feb4547f4ceef9b644179ef334bb6df}{get\+Float}} (float a, float b)
+\item 
+double \mbox{\hyperlink{namespaceRANDOM_ab5880095e0bf0d280fd3a647fc539873}{get\+Double}} (double a, double b)
+\item 
+char \mbox{\hyperlink{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}{get\+Char}} (char a, char b)
+\item 
+char \mbox{\hyperlink{namespaceRANDOM_abffe63b7897b4806a685e5ae81e07dfe}{get\+Char}} ()
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{get\+String}} (int length)
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_ad3a996fc37daa3b0875082a92db4a36d}{get\+String}} (int length, char a, char b)
+\item 
+bool \mbox{\hyperlink{namespaceRANDOM_abd6bc241ef81b78aa06dfa44f4fb1aa3}{flip\+Coin}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}} = std\+::mt19937(std\+::chrono\+::steady\+\_\+clock\+::now().time\+\_\+since\+\_\+epoch().count())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Random intergers, doubles, strings generator. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceRANDOM_abd6bc241ef81b78aa06dfa44f4fb1aa3}\label{namespaceRANDOM_abd6bc241ef81b78aa06dfa44f4fb1aa3}} 
+\index{RANDOM@{RANDOM}!flipCoin@{flipCoin}}
+\index{flipCoin@{flipCoin}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{flipCoin()}{flipCoin()}}
+{\footnotesize\ttfamily bool RANDOM\+::flip\+Coin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{getInt}}(1, 2) -\/ 1;}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_abffe63b7897b4806a685e5ae81e07dfe}\label{namespaceRANDOM_abffe63b7897b4806a685e5ae81e07dfe}} 
+\index{RANDOM@{RANDOM}!getChar@{getChar}}
+\index{getChar@{getChar}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char RANDOM\+::get\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}{getChar}}(\textcolor{charliteral}{'a'}, \textcolor{charliteral}{'z'});}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}\label{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}} 
+\index{RANDOM@{RANDOM}!getChar@{getChar}}
+\index{getChar@{getChar}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char RANDOM\+::get\+Char (\begin{DoxyParamCaption}\item[{char}]{a,  }\item[{char}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \textcolor{keywordflow}{return} std::uniform\_int\_distribution<char> (a, b)(\mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}});}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_ab5880095e0bf0d280fd3a647fc539873}\label{namespaceRANDOM_ab5880095e0bf0d280fd3a647fc539873}} 
+\index{RANDOM@{RANDOM}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily double RANDOM\+::get\+Double (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} std::uniform\_real\_distribution<double> (a, b)(\mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}});}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_a7feb4547f4ceef9b644179ef334bb6df}\label{namespaceRANDOM_a7feb4547f4ceef9b644179ef334bb6df}} 
+\index{RANDOM@{RANDOM}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily float RANDOM\+::get\+Float (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} std::uniform\_real\_distribution<float> (a, b)(\mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}});}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}\label{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}} 
+\index{RANDOM@{RANDOM}!getInt@{getInt}}
+\index{getInt@{getInt}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int RANDOM\+::get\+Int (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{return} std::uniform\_int\_distribution<int> (a, b)(\mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}});}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_a697e558478762ae4c21709c18e557577}\label{namespaceRANDOM_a697e558478762ae4c21709c18e557577}} 
+\index{RANDOM@{RANDOM}!getInt@{getInt}}
+\index{getInt@{getInt}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string RANDOM\+::get\+Int (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(length == 0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{13     std::string result = \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(a, b));}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{while}(-\/-\/length) result = result + \textcolor{stringliteral}{"{} "{}} + \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(a, b));}
+\DoxyCodeLine{16     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_ab3a88ae4be97a2da1e125c271a3d34f7}\label{namespaceRANDOM_ab3a88ae4be97a2da1e125c271a3d34f7}} 
+\index{RANDOM@{RANDOM}!getLongLong@{getLongLong}}
+\index{getLongLong@{getLongLong}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getLongLong()}{getLongLong()}}
+{\footnotesize\ttfamily long long RANDOM\+::get\+Long\+Long (\begin{DoxyParamCaption}\item[{long long}]{a,  }\item[{long long}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{return} std::uniform\_int\_distribution<long long> (a, b)(\mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{rng}});}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}\label{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}} 
+\index{RANDOM@{RANDOM}!getString@{getString}}
+\index{getString@{getString}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string RANDOM\+::get\+String (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     std::string s = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i++)}
+\DoxyCodeLine{48         s += \mbox{\hyperlink{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}{getChar}}();}
+\DoxyCodeLine{49     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceRANDOM_ad3a996fc37daa3b0875082a92db4a36d}\label{namespaceRANDOM_ad3a996fc37daa3b0875082a92db4a36d}} 
+\index{RANDOM@{RANDOM}!getString@{getString}}
+\index{getString@{getString}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string RANDOM\+::get\+String (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{char}]{a,  }\item[{char}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file random.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     std::string s = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{55     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i++)}
+\DoxyCodeLine{56         s += \mbox{\hyperlink{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}{getChar}}(a, b);}
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}\label{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}} 
+\index{RANDOM@{RANDOM}!rng@{rng}}
+\index{rng@{rng}!RANDOM@{RANDOM}}
+\doxysubsubsection{\texorpdfstring{rng}{rng}}
+{\footnotesize\ttfamily std\+::mt19937 RANDOM\+::rng = std\+::mt19937(std\+::chrono\+::steady\+\_\+clock\+::now().time\+\_\+since\+\_\+epoch().count())\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line 3 of file random.\+cpp.
+

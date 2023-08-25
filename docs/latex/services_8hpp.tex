@@ -1,0 +1,102 @@
+\hypertarget{services_8hpp}{}\doxysection{include/services.hpp File Reference}
+\label{services_8hpp}\index{include/services.hpp@{include/services.hpp}}
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$nlohmann/json.\+hpp$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceJSON}{JSON}}
+\begin{DoxyCompactList}\small\item\em Interact with $\ast$.json files. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceFILEE}{FILEE}}
+\begin{DoxyCompactList}\small\item\em Interact with text files. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceNUMBER}{NUMBER}}
+\begin{DoxyCompactList}\small\item\em Convert between string and interger. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceSIUSTRING}{SIUSTRING}}
+\begin{DoxyCompactList}\small\item\em Features for std\+::string. \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceRANDOM}{RANDOM}}
+\begin{DoxyCompactList}\small\item\em Random intergers, doubles, strings generator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{services_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$ \mbox{\hyperlink{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}{JSON\+::read\+File}} (std\+::string path)
+\item 
+void \mbox{\hyperlink{namespaceJSON_a76bf1c2560afe515301e900966e42f6a}{JSON\+::save\+File}} (std\+::string path, \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$data)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE\+::read\+File}} (std\+::string path)
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{NUMBER\+::string\+To\+Int}} (std\+::string s)
+\item 
+std\+::string \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER\+::int\+To\+String}} (int64\+\_\+t n)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{namespaceNUMBER_a2fa8657dd4afaa776f853f42fb3abab0}{NUMBER\+::string\+To\+Array}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER\+::is\+Digit}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}{NUMBER\+::is\+Letter}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}{NUMBER\+::is\+Symbol}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}{NUMBER\+::is\+Sign}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a19bd6f6f77352335234f63924552e0e2}{NUMBER\+::is\+Operator}} (char c)
+\item 
+std\+::string \mbox{\hyperlink{namespaceNUMBER_af19e2f3556e33facf037bc7f7f193905}{NUMBER\+::remove\+Leading\+Zero}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}{NUMBER\+::is\+Number}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_ae3a2e4fd61daaddec4bdaf052d17f1dc}{NUMBER\+::is\+In\+Interval}} (std\+::string s, int64\+\_\+t a, int64\+\_\+t b)
+\item 
+bool \mbox{\hyperlink{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}{SIUSTRING\+::is\+Separator}} (char c)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceSIUSTRING_ad92654904f9a3ed6eb214ccd2c92c5e0}{SIUSTRING\+::split}} (std\+::string s)
+\item 
+int \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM\+::get\+Int}} (int a, int b)
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_a697e558478762ae4c21709c18e557577}{RANDOM\+::get\+Int}} (int length, int a, int b)
+\item 
+long long \mbox{\hyperlink{namespaceRANDOM_ab3a88ae4be97a2da1e125c271a3d34f7}{RANDOM\+::get\+Long\+Long}} (long long a, long long b)
+\item 
+float \mbox{\hyperlink{namespaceRANDOM_a7feb4547f4ceef9b644179ef334bb6df}{RANDOM\+::get\+Float}} (float a, float b)
+\item 
+double \mbox{\hyperlink{namespaceRANDOM_ab5880095e0bf0d280fd3a647fc539873}{RANDOM\+::get\+Double}} (double a, double b)
+\item 
+char \mbox{\hyperlink{namespaceRANDOM_aea40c0f253275f5d31d6138a62b46568}{RANDOM\+::get\+Char}} (char a, char b)
+\item 
+char \mbox{\hyperlink{namespaceRANDOM_abffe63b7897b4806a685e5ae81e07dfe}{RANDOM\+::get\+Char}} ()
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM\+::get\+String}} (int length)
+\item 
+std\+::string \mbox{\hyperlink{namespaceRANDOM_ad3a996fc37daa3b0875082a92db4a36d}{RANDOM\+::get\+String}} (int length, char a, char b)
+\item 
+bool \mbox{\hyperlink{namespaceRANDOM_abd6bc241ef81b78aa06dfa44f4fb1aa3}{RANDOM\+::flip\+Coin}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int64\+\_\+t \mbox{\hyperlink{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}{NUMBER\+::\+INF}} = LLONG\+\_\+\+MAX
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespaceRANDOM_a2d07c20dabcfb422b1f4f0fc22cdf240}{RANDOM\+::rng}} = std\+::mt19937(std\+::chrono\+::steady\+\_\+clock\+::now().time\+\_\+since\+\_\+epoch().count())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{services_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{services_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{services.hpp@{services.hpp}!json@{json}}
+\index{json@{json}!services.hpp@{services.hpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+Definition at line 13 of file services.\+hpp.
+

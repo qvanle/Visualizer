@@ -1,0 +1,67 @@
+\hypertarget{namespaceJSON}{}\doxysection{JSON Namespace Reference}
+\label{namespaceJSON}\index{JSON@{JSON}}
+
+
+Interact with $\ast$.json files.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$ \mbox{\hyperlink{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}{read\+File}} (std\+::string path)
+\item 
+void \mbox{\hyperlink{namespaceJSON_a76bf1c2560afe515301e900966e42f6a}{save\+File}} (std\+::string path, \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interact with $\ast$.json files. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}\label{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}} 
+\index{JSON@{JSON}!readFile@{readFile}}
+\index{readFile@{readFile}!JSON@{JSON}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$ JSON\+::read\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file json.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}}* mem = \textcolor{keyword}{new} \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}}();}
+\DoxyCodeLine{8     std::ifstream fin(path);}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     fin >> *mem;}
+\DoxyCodeLine{11     }
+\DoxyCodeLine{12     fin.close();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordflow}{return} mem;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceJSON_a76bf1c2560afe515301e900966e42f6a}\label{namespaceJSON_a76bf1c2560afe515301e900966e42f6a}} 
+\index{JSON@{JSON}!saveFile@{saveFile}}
+\index{saveFile@{saveFile}!JSON@{JSON}}
+\doxysubsubsection{\texorpdfstring{saveFile()}{saveFile()}}
+{\footnotesize\ttfamily void JSON\+::save\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{\mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file json.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     std::ofstream fout(path);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     fout << data-\/>dump(4);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     fout.close();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     return ;}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}

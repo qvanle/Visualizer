@@ -1,0 +1,989 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}VISUALIZER}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Dependency}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Demonstrate}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Features}{1}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Main features}{1}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Data structures}{2}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Documentation}{2}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}DISPLAY Namespace Reference}{13}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{13}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Variable Documentation}{13}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}HOME\_}{13}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}WORKING\_}{13}{subsubsection.6.1.2.2}%
+\contentsline {section}{\numberline {6.2}FILEE Namespace Reference}{14}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{14}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Function Documentation}{14}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}readFile()}{14}{subsubsection.6.2.2.1}%
+\contentsline {section}{\numberline {6.3}JSON Namespace Reference}{14}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{14}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Function Documentation}{15}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}readFile()}{15}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}saveFile()}{15}{subsubsection.6.3.2.2}%
+\contentsline {section}{\numberline {6.4}NUMBER Namespace Reference}{15}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{16}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Function Documentation}{16}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}intToString()}{16}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}isDigit()}{16}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}isInInterval()}{17}{subsubsection.6.4.2.3}%
+\contentsline {subsubsection}{\numberline {6.4.2.4}isLetter()}{17}{subsubsection.6.4.2.4}%
+\contentsline {subsubsection}{\numberline {6.4.2.5}isNumber()}{17}{subsubsection.6.4.2.5}%
+\contentsline {subsubsection}{\numberline {6.4.2.6}isOperator()}{17}{subsubsection.6.4.2.6}%
+\contentsline {subsubsection}{\numberline {6.4.2.7}isSign()}{18}{subsubsection.6.4.2.7}%
+\contentsline {subsubsection}{\numberline {6.4.2.8}isSymbol()}{18}{subsubsection.6.4.2.8}%
+\contentsline {subsubsection}{\numberline {6.4.2.9}removeLeadingZero()}{18}{subsubsection.6.4.2.9}%
+\contentsline {subsubsection}{\numberline {6.4.2.10}stringToArray()}{18}{subsubsection.6.4.2.10}%
+\contentsline {subsubsection}{\numberline {6.4.2.11}stringToInt()}{19}{subsubsection.6.4.2.11}%
+\contentsline {subsection}{\numberline {6.4.3}Variable Documentation}{19}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}INF}{19}{subsubsection.6.4.3.1}%
+\contentsline {section}{\numberline {6.5}PATH Namespace Reference}{19}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{20}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Variable Documentation}{20}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}ASSETS\_}{20}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}ATTRIBUTE\_}{20}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}SAVING\_}{20}{subsubsection.6.5.2.3}%
+\contentsline {section}{\numberline {6.6}PATH\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ASSETS Namespace Reference}{20}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Variable Documentation}{20}{subsection.6.6.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.1}FONTS\_}{21}{subsubsection.6.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.6.1.2}GRAPHICS\_}{21}{subsubsection.6.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.6.1.3}SCRIPT\_}{21}{subsubsection.6.6.1.3}%
+\contentsline {section}{\numberline {6.7}PATH\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::ATB Namespace Reference}{21}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Variable Documentation}{21}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}BUTTON\_}{21}{subsubsection.6.7.1.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.2}DATA\_STRUCTURES\_}{22}{subsubsection.6.7.1.2}%
+\contentsline {subsubsection}{\numberline {6.7.1.3}DISPLAY\_}{22}{subsubsection.6.7.1.3}%
+\contentsline {subsubsection}{\numberline {6.7.1.4}INPUTBOX\_}{22}{subsubsection.6.7.1.4}%
+\contentsline {subsubsection}{\numberline {6.7.1.5}OBJECT\_}{22}{subsubsection.6.7.1.5}%
+\contentsline {subsubsection}{\numberline {6.7.1.6}SCRIPT\_}{22}{subsubsection.6.7.1.6}%
+\contentsline {subsubsection}{\numberline {6.7.1.7}SPRITE\_}{22}{subsubsection.6.7.1.7}%
+\contentsline {section}{\numberline {6.8}PATH\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::SAVING Namespace Reference}{23}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Variable Documentation}{23}{subsection.6.8.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.1}AVL\_}{23}{subsubsection.6.8.1.1}%
+\contentsline {subsubsection}{\numberline {6.8.1.2}BTREE\_4TH\_}{23}{subsubsection.6.8.1.2}%
+\contentsline {subsubsection}{\numberline {6.8.1.3}GRAPH\_}{23}{subsubsection.6.8.1.3}%
+\contentsline {subsubsection}{\numberline {6.8.1.4}HASH\_TABLE\_}{23}{subsubsection.6.8.1.4}%
+\contentsline {subsubsection}{\numberline {6.8.1.5}MAX\_HEAP\_}{24}{subsubsection.6.8.1.5}%
+\contentsline {subsubsection}{\numberline {6.8.1.6}MIN\_HEAP\_}{24}{subsubsection.6.8.1.6}%
+\contentsline {subsubsection}{\numberline {6.8.1.7}TRIE\_}{24}{subsubsection.6.8.1.7}%
+\contentsline {section}{\numberline {6.9}RANDOM Namespace Reference}{24}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{24}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Function Documentation}{25}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}flipCoin()}{25}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}getChar()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{25}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}getChar()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{25}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}getDouble()}{25}{subsubsection.6.9.2.4}%
+\contentsline {subsubsection}{\numberline {6.9.2.5}getFloat()}{26}{subsubsection.6.9.2.5}%
+\contentsline {subsubsection}{\numberline {6.9.2.6}getInt()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{26}{subsubsection.6.9.2.6}%
+\contentsline {subsubsection}{\numberline {6.9.2.7}getInt()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{26}{subsubsection.6.9.2.7}%
+\contentsline {subsubsection}{\numberline {6.9.2.8}getLongLong()}{26}{subsubsection.6.9.2.8}%
+\contentsline {subsubsection}{\numberline {6.9.2.9}getString()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{27}{subsubsection.6.9.2.9}%
+\contentsline {subsubsection}{\numberline {6.9.2.10}getString()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{27}{subsubsection.6.9.2.10}%
+\contentsline {subsection}{\numberline {6.9.3}Variable Documentation}{27}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}rng}{27}{subsubsection.6.9.3.1}%
+\contentsline {section}{\numberline {6.10}SIUSTRING Namespace Reference}{27}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{28}{subsection.6.10.1}%
+\contentsline {subsection}{\numberline {6.10.2}Function Documentation}{28}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}isSeparator()}{28}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}split()}{28}{subsubsection.6.10.2.2}%
+\contentsline {chapter}{\numberline {7}Class Documentation}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}AVL Class Reference}{29}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{30}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Constructor \& Destructor Documentation}{30}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}AVL()}{30}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}$\sim $AVL()}{31}{subsubsection.7.1.2.2}%
+\contentsline {subsection}{\numberline {7.1.3}Member Function Documentation}{31}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}balanceFactor()}{31}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}balancing()}{32}{subsubsection.7.1.3.2}%
+\contentsline {subsubsection}{\numberline {7.1.3.3}closeScript()}{32}{subsubsection.7.1.3.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.4}getHigh()}{32}{subsubsection.7.1.3.4}%
+\contentsline {subsubsection}{\numberline {7.1.3.5}goBack()}{33}{subsubsection.7.1.3.5}%
+\contentsline {subsubsection}{\numberline {7.1.3.6}goNext()}{33}{subsubsection.7.1.3.6}%
+\contentsline {subsubsection}{\numberline {7.1.3.7}goOff()}{33}{subsubsection.7.1.3.7}%
+\contentsline {subsubsection}{\numberline {7.1.3.8}goOn()}{33}{subsubsection.7.1.3.8}%
+\contentsline {subsubsection}{\numberline {7.1.3.9}highlight()}{34}{subsubsection.7.1.3.9}%
+\contentsline {subsubsection}{\numberline {7.1.3.10}init()}{34}{subsubsection.7.1.3.10}%
+\contentsline {subsubsection}{\numberline {7.1.3.11}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{34}{subsubsection.7.1.3.11}%
+\contentsline {subsubsection}{\numberline {7.1.3.12}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{35}{subsubsection.7.1.3.12}%
+\contentsline {subsubsection}{\numberline {7.1.3.13}isReceiveEvent()}{36}{subsubsection.7.1.3.13}%
+\contentsline {subsubsection}{\numberline {7.1.3.14}locating()}{36}{subsubsection.7.1.3.14}%
+\contentsline {subsubsection}{\numberline {7.1.3.15}maxDepth()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{37}{subsubsection.7.1.3.15}%
+\contentsline {subsubsection}{\numberline {7.1.3.16}maxDepth()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{37}{subsubsection.7.1.3.16}%
+\contentsline {subsubsection}{\numberline {7.1.3.17}react()}{37}{subsubsection.7.1.3.17}%
+\contentsline {subsubsection}{\numberline {7.1.3.18}remove()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{38}{subsubsection.7.1.3.18}%
+\contentsline {subsubsection}{\numberline {7.1.3.19}remove()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{38}{subsubsection.7.1.3.19}%
+\contentsline {subsubsection}{\numberline {7.1.3.20}rendering()}{40}{subsubsection.7.1.3.20}%
+\contentsline {subsubsection}{\numberline {7.1.3.21}renderLine()}{40}{subsubsection.7.1.3.21}%
+\contentsline {subsubsection}{\numberline {7.1.3.22}rotateLeft()}{41}{subsubsection.7.1.3.22}%
+\contentsline {subsubsection}{\numberline {7.1.3.23}rotateRight()}{41}{subsubsection.7.1.3.23}%
+\contentsline {subsubsection}{\numberline {7.1.3.24}search()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{42}{subsubsection.7.1.3.24}%
+\contentsline {subsubsection}{\numberline {7.1.3.25}search()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{42}{subsubsection.7.1.3.25}%
+\contentsline {subsubsection}{\numberline {7.1.3.26}setEdgesColor()}{43}{subsubsection.7.1.3.26}%
+\contentsline {subsubsection}{\numberline {7.1.3.27}setNodeColor()}{43}{subsubsection.7.1.3.27}%
+\contentsline {subsubsection}{\numberline {7.1.3.28}setting()}{43}{subsubsection.7.1.3.28}%
+\contentsline {subsubsection}{\numberline {7.1.3.29}slowDown()}{44}{subsubsection.7.1.3.29}%
+\contentsline {subsubsection}{\numberline {7.1.3.30}speedUp()}{44}{subsubsection.7.1.3.30}%
+\contentsline {subsubsection}{\numberline {7.1.3.31}unhighlight()}{44}{subsubsection.7.1.3.31}%
+\contentsline {subsubsection}{\numberline {7.1.3.32}unplugSmallest()}{44}{subsubsection.7.1.3.32}%
+\contentsline {subsubsection}{\numberline {7.1.3.33}waitForStep()}{45}{subsubsection.7.1.3.33}%
+\contentsline {section}{\numberline {7.2}BTree4th Class Reference}{45}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{46}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Constructor \& Destructor Documentation}{46}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}BTree4th()}{46}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}$\sim $BTree4th()}{46}{subsubsection.7.2.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Member Function Documentation}{46}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}addRecordToLeaf()}{46}{subsubsection.7.2.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.3.2}init()}{47}{subsubsection.7.2.3.2}%
+\contentsline {subsubsection}{\numberline {7.2.3.3}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{47}{subsubsection.7.2.3.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.4}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{48}{subsubsection.7.2.3.4}%
+\contentsline {subsubsection}{\numberline {7.2.3.5}leftMost()}{48}{subsubsection.7.2.3.5}%
+\contentsline {subsubsection}{\numberline {7.2.3.6}mergeChild()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{48}{subsubsection.7.2.3.6}%
+\contentsline {subsubsection}{\numberline {7.2.3.7}mergeChild()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{49}{subsubsection.7.2.3.7}%
+\contentsline {subsubsection}{\numberline {7.2.3.8}remove()}{49}{subsubsection.7.2.3.8}%
+\contentsline {subsubsection}{\numberline {7.2.3.9}rightMost()}{49}{subsubsection.7.2.3.9}%
+\contentsline {subsubsection}{\numberline {7.2.3.10}search()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{49}{subsubsection.7.2.3.10}%
+\contentsline {subsubsection}{\numberline {7.2.3.11}search()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{50}{subsubsection.7.2.3.11}%
+\contentsline {subsubsection}{\numberline {7.2.3.12}split()}{50}{subsubsection.7.2.3.12}%
+\contentsline {section}{\numberline {7.3}Button Class Reference}{51}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{52}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{53}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}Button()}{53}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}$\sim $Button()}{53}{subsubsection.7.3.2.2}%
+\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{53}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}addCharacter()}{53}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}addText()}{54}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{54}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{54}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{54}{subsubsection.7.3.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.3.6}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{55}{subsubsection.7.3.3.6}%
+\contentsline {subsubsection}{\numberline {7.3.3.7}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{55}{subsubsection.7.3.3.7}%
+\contentsline {subsubsection}{\numberline {7.3.3.8}changeToRectangle()}{55}{subsubsection.7.3.3.8}%
+\contentsline {subsubsection}{\numberline {7.3.3.9}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{55}{subsubsection.7.3.3.9}%
+\contentsline {subsubsection}{\numberline {7.3.3.10}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{56}{subsubsection.7.3.3.10}%
+\contentsline {subsubsection}{\numberline {7.3.3.11}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{56}{subsubsection.7.3.3.11}%
+\contentsline {subsubsection}{\numberline {7.3.3.12}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{56}{subsubsection.7.3.3.12}%
+\contentsline {subsubsection}{\numberline {7.3.3.13}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{56}{subsubsection.7.3.3.13}%
+\contentsline {subsubsection}{\numberline {7.3.3.14}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{57}{subsubsection.7.3.3.14}%
+\contentsline {subsubsection}{\numberline {7.3.3.15}fillCircleByColor()}{57}{subsubsection.7.3.3.15}%
+\contentsline {subsubsection}{\numberline {7.3.3.16}fillRectangleByColor()}{58}{subsubsection.7.3.3.16}%
+\contentsline {subsubsection}{\numberline {7.3.3.17}fillWithColor()}{58}{subsubsection.7.3.3.17}%
+\contentsline {subsubsection}{\numberline {7.3.3.18}fitTheTexture()}{58}{subsubsection.7.3.3.18}%
+\contentsline {subsubsection}{\numberline {7.3.3.19}getAction()}{58}{subsubsection.7.3.3.19}%
+\contentsline {subsubsection}{\numberline {7.3.3.20}getColor()}{59}{subsubsection.7.3.3.20}%
+\contentsline {subsubsection}{\numberline {7.3.3.21}getCrop()}{59}{subsubsection.7.3.3.21}%
+\contentsline {subsubsection}{\numberline {7.3.3.22}getDataType()}{59}{subsubsection.7.3.3.22}%
+\contentsline {subsubsection}{\numberline {7.3.3.23}getH()}{59}{subsubsection.7.3.3.23}%
+\contentsline {subsubsection}{\numberline {7.3.3.24}getInputType()}{60}{subsubsection.7.3.3.24}%
+\contentsline {subsubsection}{\numberline {7.3.3.25}getLocation()}{60}{subsubsection.7.3.3.25}%
+\contentsline {subsubsection}{\numberline {7.3.3.26}getNextScreen()}{60}{subsubsection.7.3.3.26}%
+\contentsline {subsubsection}{\numberline {7.3.3.27}getSize()}{60}{subsubsection.7.3.3.27}%
+\contentsline {subsubsection}{\numberline {7.3.3.28}getText()}{60}{subsubsection.7.3.3.28}%
+\contentsline {subsubsection}{\numberline {7.3.3.29}getW()}{61}{subsubsection.7.3.3.29}%
+\contentsline {subsubsection}{\numberline {7.3.3.30}getX()}{61}{subsubsection.7.3.3.30}%
+\contentsline {subsubsection}{\numberline {7.3.3.31}getY()}{61}{subsubsection.7.3.3.31}%
+\contentsline {subsubsection}{\numberline {7.3.3.32}hide()}{61}{subsubsection.7.3.3.32}%
+\contentsline {subsubsection}{\numberline {7.3.3.33}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{61}{subsubsection.7.3.3.33}%
+\contentsline {subsubsection}{\numberline {7.3.3.34}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{62}{subsubsection.7.3.3.34}%
+\contentsline {subsubsection}{\numberline {7.3.3.35}initAction()}{62}{subsubsection.7.3.3.35}%
+\contentsline {subsubsection}{\numberline {7.3.3.36}initBackground()}{63}{subsubsection.7.3.3.36}%
+\contentsline {subsubsection}{\numberline {7.3.3.37}initSprites()}{63}{subsubsection.7.3.3.37}%
+\contentsline {subsubsection}{\numberline {7.3.3.38}isChoosed()}{64}{subsubsection.7.3.3.38}%
+\contentsline {subsubsection}{\numberline {7.3.3.39}isClicked()}{64}{subsubsection.7.3.3.39}%
+\contentsline {subsubsection}{\numberline {7.3.3.40}isHover()}{64}{subsubsection.7.3.3.40}%
+\contentsline {subsubsection}{\numberline {7.3.3.41}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{65}{subsubsection.7.3.3.41}%
+\contentsline {subsubsection}{\numberline {7.3.3.42}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{65}{subsubsection.7.3.3.42}%
+\contentsline {subsubsection}{\numberline {7.3.3.43}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{65}{subsubsection.7.3.3.43}%
+\contentsline {subsubsection}{\numberline {7.3.3.44}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{65}{subsubsection.7.3.3.44}%
+\contentsline {subsubsection}{\numberline {7.3.3.45}isReceiveEvent()}{66}{subsubsection.7.3.3.45}%
+\contentsline {subsubsection}{\numberline {7.3.3.46}isVisible()}{66}{subsubsection.7.3.3.46}%
+\contentsline {subsubsection}{\numberline {7.3.3.47}linking()}{66}{subsubsection.7.3.3.47}%
+\contentsline {subsubsection}{\numberline {7.3.3.48}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{66}{subsubsection.7.3.3.48}%
+\contentsline {subsubsection}{\numberline {7.3.3.49}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{67}{subsubsection.7.3.3.49}%
+\contentsline {subsubsection}{\numberline {7.3.3.50}locating()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{67}{subsubsection.7.3.3.50}%
+\contentsline {subsubsection}{\numberline {7.3.3.51}locatingH()}{67}{subsubsection.7.3.3.51}%
+\contentsline {subsubsection}{\numberline {7.3.3.52}locatingW()}{67}{subsubsection.7.3.3.52}%
+\contentsline {subsubsection}{\numberline {7.3.3.53}locatingX()}{68}{subsubsection.7.3.3.53}%
+\contentsline {subsubsection}{\numberline {7.3.3.54}locatingY()}{68}{subsubsection.7.3.3.54}%
+\contentsline {subsubsection}{\numberline {7.3.3.55}move()}{68}{subsubsection.7.3.3.55}%
+\contentsline {subsubsection}{\numberline {7.3.3.56}moveX()}{68}{subsubsection.7.3.3.56}%
+\contentsline {subsubsection}{\numberline {7.3.3.57}moveY()}{69}{subsubsection.7.3.3.57}%
+\contentsline {subsubsection}{\numberline {7.3.3.58}noCropping()}{69}{subsubsection.7.3.3.58}%
+\contentsline {subsubsection}{\numberline {7.3.3.59}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{69}{subsubsection.7.3.3.59}%
+\contentsline {subsubsection}{\numberline {7.3.3.60}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{69}{subsubsection.7.3.3.60}%
+\contentsline {subsubsection}{\numberline {7.3.3.61}rendering()}{70}{subsubsection.7.3.3.61}%
+\contentsline {subsubsection}{\numberline {7.3.3.62}setFont()}{70}{subsubsection.7.3.3.62}%
+\contentsline {subsubsection}{\numberline {7.3.3.63}setShape()}{70}{subsubsection.7.3.3.63}%
+\contentsline {subsubsection}{\numberline {7.3.3.64}setText()}{71}{subsubsection.7.3.3.64}%
+\contentsline {subsubsection}{\numberline {7.3.3.65}show()}{71}{subsubsection.7.3.3.65}%
+\contentsline {subsubsection}{\numberline {7.3.3.66}textToTexture()}{71}{subsubsection.7.3.3.66}%
+\contentsline {subsubsection}{\numberline {7.3.3.67}textureFromFile()}{71}{subsubsection.7.3.3.67}%
+\contentsline {subsubsection}{\numberline {7.3.3.68}zoom()}{72}{subsubsection.7.3.3.68}%
+\contentsline {subsubsection}{\numberline {7.3.3.69}zoomH()}{72}{subsubsection.7.3.3.69}%
+\contentsline {subsubsection}{\numberline {7.3.3.70}zoomInMiddle()}{72}{subsubsection.7.3.3.70}%
+\contentsline {subsubsection}{\numberline {7.3.3.71}zoomW()}{72}{subsubsection.7.3.3.71}%
+\contentsline {section}{\numberline {7.4}Data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Structures Class Reference}{73}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{75}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Constructor \& Destructor Documentation}{75}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}DataStructures()}{76}{subsubsection.7.4.2.1}%
+\contentsline {subsubsection}{\numberline {7.4.2.2}$\sim $DataStructures()}{76}{subsubsection.7.4.2.2}%
+\contentsline {subsection}{\numberline {7.4.3}Member Function Documentation}{76}{subsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.3.1}addCharacter()}{76}{subsubsection.7.4.3.1}%
+\contentsline {subsubsection}{\numberline {7.4.3.2}addText()}{77}{subsubsection.7.4.3.2}%
+\contentsline {subsubsection}{\numberline {7.4.3.3}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{77}{subsubsection.7.4.3.3}%
+\contentsline {subsubsection}{\numberline {7.4.3.4}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{77}{subsubsection.7.4.3.4}%
+\contentsline {subsubsection}{\numberline {7.4.3.5}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{77}{subsubsection.7.4.3.5}%
+\contentsline {subsubsection}{\numberline {7.4.3.6}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{78}{subsubsection.7.4.3.6}%
+\contentsline {subsubsection}{\numberline {7.4.3.7}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{78}{subsubsection.7.4.3.7}%
+\contentsline {subsubsection}{\numberline {7.4.3.8}changeToRectangle()}{78}{subsubsection.7.4.3.8}%
+\contentsline {subsubsection}{\numberline {7.4.3.9}closeScript()}{78}{subsubsection.7.4.3.9}%
+\contentsline {subsubsection}{\numberline {7.4.3.10}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{79}{subsubsection.7.4.3.10}%
+\contentsline {subsubsection}{\numberline {7.4.3.11}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{79}{subsubsection.7.4.3.11}%
+\contentsline {subsubsection}{\numberline {7.4.3.12}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{79}{subsubsection.7.4.3.12}%
+\contentsline {subsubsection}{\numberline {7.4.3.13}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{80}{subsubsection.7.4.3.13}%
+\contentsline {subsubsection}{\numberline {7.4.3.14}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{80}{subsubsection.7.4.3.14}%
+\contentsline {subsubsection}{\numberline {7.4.3.15}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{80}{subsubsection.7.4.3.15}%
+\contentsline {subsubsection}{\numberline {7.4.3.16}Dijkstra()}{80}{subsubsection.7.4.3.16}%
+\contentsline {subsubsection}{\numberline {7.4.3.17}dijkstra()}{81}{subsubsection.7.4.3.17}%
+\contentsline {subsubsection}{\numberline {7.4.3.18}fillCircleByColor()}{81}{subsubsection.7.4.3.18}%
+\contentsline {subsubsection}{\numberline {7.4.3.19}fillRectangleByColor()}{82}{subsubsection.7.4.3.19}%
+\contentsline {subsubsection}{\numberline {7.4.3.20}fillWithColor()}{82}{subsubsection.7.4.3.20}%
+\contentsline {subsubsection}{\numberline {7.4.3.21}fitTheTexture()}{82}{subsubsection.7.4.3.21}%
+\contentsline {subsubsection}{\numberline {7.4.3.22}getColor()}{82}{subsubsection.7.4.3.22}%
+\contentsline {subsubsection}{\numberline {7.4.3.23}getCrop()}{83}{subsubsection.7.4.3.23}%
+\contentsline {subsubsection}{\numberline {7.4.3.24}getDataType()}{83}{subsubsection.7.4.3.24}%
+\contentsline {subsubsection}{\numberline {7.4.3.25}getH()}{83}{subsubsection.7.4.3.25}%
+\contentsline {subsubsection}{\numberline {7.4.3.26}getLocation()}{83}{subsubsection.7.4.3.26}%
+\contentsline {subsubsection}{\numberline {7.4.3.27}getName()}{83}{subsubsection.7.4.3.27}%
+\contentsline {subsubsection}{\numberline {7.4.3.28}getSize()}{84}{subsubsection.7.4.3.28}%
+\contentsline {subsubsection}{\numberline {7.4.3.29}getText()}{84}{subsubsection.7.4.3.29}%
+\contentsline {subsubsection}{\numberline {7.4.3.30}getW()}{84}{subsubsection.7.4.3.30}%
+\contentsline {subsubsection}{\numberline {7.4.3.31}getX()}{84}{subsubsection.7.4.3.31}%
+\contentsline {subsubsection}{\numberline {7.4.3.32}getY()}{84}{subsubsection.7.4.3.32}%
+\contentsline {subsubsection}{\numberline {7.4.3.33}goBack()}{85}{subsubsection.7.4.3.33}%
+\contentsline {subsubsection}{\numberline {7.4.3.34}goNext()}{85}{subsubsection.7.4.3.34}%
+\contentsline {subsubsection}{\numberline {7.4.3.35}goOff()}{85}{subsubsection.7.4.3.35}%
+\contentsline {subsubsection}{\numberline {7.4.3.36}goOn()}{85}{subsubsection.7.4.3.36}%
+\contentsline {subsubsection}{\numberline {7.4.3.37}hide()}{86}{subsubsection.7.4.3.37}%
+\contentsline {subsubsection}{\numberline {7.4.3.38}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{86}{subsubsection.7.4.3.38}%
+\contentsline {subsubsection}{\numberline {7.4.3.39}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{86}{subsubsection.7.4.3.39}%
+\contentsline {subsubsection}{\numberline {7.4.3.40}init()}{87}{subsubsection.7.4.3.40}%
+\contentsline {subsubsection}{\numberline {7.4.3.41}initAVL()}{87}{subsubsection.7.4.3.41}%
+\contentsline {subsubsection}{\numberline {7.4.3.42}initBackground()}{87}{subsubsection.7.4.3.42}%
+\contentsline {subsubsection}{\numberline {7.4.3.43}initDisplay()}{88}{subsubsection.7.4.3.43}%
+\contentsline {subsubsection}{\numberline {7.4.3.44}initGraph()}{88}{subsubsection.7.4.3.44}%
+\contentsline {subsubsection}{\numberline {7.4.3.45}initHashTable()}{88}{subsubsection.7.4.3.45}%
+\contentsline {subsubsection}{\numberline {7.4.3.46}initLinker()}{89}{subsubsection.7.4.3.46}%
+\contentsline {subsubsection}{\numberline {7.4.3.47}initMinHeap()}{89}{subsubsection.7.4.3.47}%
+\contentsline {subsubsection}{\numberline {7.4.3.48}initTrie()}{89}{subsubsection.7.4.3.48}%
+\contentsline {subsubsection}{\numberline {7.4.3.49}insert()}{89}{subsubsection.7.4.3.49}%
+\contentsline {subsubsection}{\numberline {7.4.3.50}insertAVL()}{90}{subsubsection.7.4.3.50}%
+\contentsline {subsubsection}{\numberline {7.4.3.51}insertHashTable()}{90}{subsubsection.7.4.3.51}%
+\contentsline {subsubsection}{\numberline {7.4.3.52}insertMinHeap()}{90}{subsubsection.7.4.3.52}%
+\contentsline {subsubsection}{\numberline {7.4.3.53}insertTrie()}{90}{subsubsection.7.4.3.53}%
+\contentsline {subsubsection}{\numberline {7.4.3.54}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{91}{subsubsection.7.4.3.54}%
+\contentsline {subsubsection}{\numberline {7.4.3.55}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{91}{subsubsection.7.4.3.55}%
+\contentsline {subsubsection}{\numberline {7.4.3.56}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{91}{subsubsection.7.4.3.56}%
+\contentsline {subsubsection}{\numberline {7.4.3.57}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{91}{subsubsection.7.4.3.57}%
+\contentsline {subsubsection}{\numberline {7.4.3.58}isReceiveEvent()}{92}{subsubsection.7.4.3.58}%
+\contentsline {subsubsection}{\numberline {7.4.3.59}isVisible()}{92}{subsubsection.7.4.3.59}%
+\contentsline {subsubsection}{\numberline {7.4.3.60}linking()}{92}{subsubsection.7.4.3.60}%
+\contentsline {subsubsection}{\numberline {7.4.3.61}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{92}{subsubsection.7.4.3.61}%
+\contentsline {subsubsection}{\numberline {7.4.3.62}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{93}{subsubsection.7.4.3.62}%
+\contentsline {subsubsection}{\numberline {7.4.3.63}locating()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{93}{subsubsection.7.4.3.63}%
+\contentsline {subsubsection}{\numberline {7.4.3.64}locatingH()}{93}{subsubsection.7.4.3.64}%
+\contentsline {subsubsection}{\numberline {7.4.3.65}locatingW()}{93}{subsubsection.7.4.3.65}%
+\contentsline {subsubsection}{\numberline {7.4.3.66}locatingX()}{94}{subsubsection.7.4.3.66}%
+\contentsline {subsubsection}{\numberline {7.4.3.67}locatingY()}{94}{subsubsection.7.4.3.67}%
+\contentsline {subsubsection}{\numberline {7.4.3.68}moveX()}{94}{subsubsection.7.4.3.68}%
+\contentsline {subsubsection}{\numberline {7.4.3.69}moveY()}{94}{subsubsection.7.4.3.69}%
+\contentsline {subsubsection}{\numberline {7.4.3.70}MST()}{95}{subsubsection.7.4.3.70}%
+\contentsline {subsubsection}{\numberline {7.4.3.71}mst()}{95}{subsubsection.7.4.3.71}%
+\contentsline {subsubsection}{\numberline {7.4.3.72}noCropping()}{95}{subsubsection.7.4.3.72}%
+\contentsline {subsubsection}{\numberline {7.4.3.73}react()}{95}{subsubsection.7.4.3.73}%
+\contentsline {subsubsection}{\numberline {7.4.3.74}remove()}{96}{subsubsection.7.4.3.74}%
+\contentsline {subsubsection}{\numberline {7.4.3.75}removeAVL()}{96}{subsubsection.7.4.3.75}%
+\contentsline {subsubsection}{\numberline {7.4.3.76}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{96}{subsubsection.7.4.3.76}%
+\contentsline {subsubsection}{\numberline {7.4.3.77}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{97}{subsubsection.7.4.3.77}%
+\contentsline {subsubsection}{\numberline {7.4.3.78}removeHashTable()}{97}{subsubsection.7.4.3.78}%
+\contentsline {subsubsection}{\numberline {7.4.3.79}removeMinHeap()}{97}{subsubsection.7.4.3.79}%
+\contentsline {subsubsection}{\numberline {7.4.3.80}removeTrie()}{97}{subsubsection.7.4.3.80}%
+\contentsline {subsubsection}{\numberline {7.4.3.81}rendering()}{98}{subsubsection.7.4.3.81}%
+\contentsline {subsubsection}{\numberline {7.4.3.82}SCC()}{98}{subsubsection.7.4.3.82}%
+\contentsline {subsubsection}{\numberline {7.4.3.83}scc()}{98}{subsubsection.7.4.3.83}%
+\contentsline {subsubsection}{\numberline {7.4.3.84}search()}{98}{subsubsection.7.4.3.84}%
+\contentsline {subsubsection}{\numberline {7.4.3.85}searchAVL()}{99}{subsubsection.7.4.3.85}%
+\contentsline {subsubsection}{\numberline {7.4.3.86}searchHashTable()}{99}{subsubsection.7.4.3.86}%
+\contentsline {subsubsection}{\numberline {7.4.3.87}searchMinHeap()}{99}{subsubsection.7.4.3.87}%
+\contentsline {subsubsection}{\numberline {7.4.3.88}searchTrie()}{99}{subsubsection.7.4.3.88}%
+\contentsline {subsubsection}{\numberline {7.4.3.89}setDataType()}{100}{subsubsection.7.4.3.89}%
+\contentsline {subsubsection}{\numberline {7.4.3.90}setFont()}{100}{subsubsection.7.4.3.90}%
+\contentsline {subsubsection}{\numberline {7.4.3.91}setShape()}{100}{subsubsection.7.4.3.91}%
+\contentsline {subsubsection}{\numberline {7.4.3.92}setText()}{101}{subsubsection.7.4.3.92}%
+\contentsline {subsubsection}{\numberline {7.4.3.93}setting()}{101}{subsubsection.7.4.3.93}%
+\contentsline {subsubsection}{\numberline {7.4.3.94}settingAVL()}{102}{subsubsection.7.4.3.94}%
+\contentsline {subsubsection}{\numberline {7.4.3.95}settingGraph()}{102}{subsubsection.7.4.3.95}%
+\contentsline {subsubsection}{\numberline {7.4.3.96}settingHashTable()}{103}{subsubsection.7.4.3.96}%
+\contentsline {subsubsection}{\numberline {7.4.3.97}settingMinHeap()}{103}{subsubsection.7.4.3.97}%
+\contentsline {subsubsection}{\numberline {7.4.3.98}settingTrie()}{104}{subsubsection.7.4.3.98}%
+\contentsline {subsubsection}{\numberline {7.4.3.99}show()}{105}{subsubsection.7.4.3.99}%
+\contentsline {subsubsection}{\numberline {7.4.3.100}size()}{105}{subsubsection.7.4.3.100}%
+\contentsline {subsubsection}{\numberline {7.4.3.101}slowDown()}{105}{subsubsection.7.4.3.101}%
+\contentsline {subsubsection}{\numberline {7.4.3.102}speedUp()}{106}{subsubsection.7.4.3.102}%
+\contentsline {subsubsection}{\numberline {7.4.3.103}textToTexture()}{106}{subsubsection.7.4.3.103}%
+\contentsline {subsubsection}{\numberline {7.4.3.104}textureFromFile()}{106}{subsubsection.7.4.3.104}%
+\contentsline {subsubsection}{\numberline {7.4.3.105}top()}{107}{subsubsection.7.4.3.105}%
+\contentsline {subsubsection}{\numberline {7.4.3.106}zoom()}{107}{subsubsection.7.4.3.106}%
+\contentsline {subsubsection}{\numberline {7.4.3.107}zoomH()}{107}{subsubsection.7.4.3.107}%
+\contentsline {subsubsection}{\numberline {7.4.3.108}zoomInMiddle()}{107}{subsubsection.7.4.3.108}%
+\contentsline {subsubsection}{\numberline {7.4.3.109}zoomW()}{108}{subsubsection.7.4.3.109}%
+\contentsline {subsection}{\numberline {7.4.4}Member Data Documentation}{108}{subsection.7.4.4}%
+\contentsline {subsubsection}{\numberline {7.4.4.1}capacity}{108}{subsubsection.7.4.4.1}%
+\contentsline {section}{\numberline {7.5}Display Class Reference}{108}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{110}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{110}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}Display()}{110}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}$\sim $Display()}{110}{subsubsection.7.5.2.2}%
+\contentsline {subsection}{\numberline {7.5.3}Member Function Documentation}{111}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}addCharacter()}{111}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}addText()}{111}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{111}{subsubsection.7.5.3.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{111}{subsubsection.7.5.3.4}%
+\contentsline {subsubsection}{\numberline {7.5.3.5}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{112}{subsubsection.7.5.3.5}%
+\contentsline {subsubsection}{\numberline {7.5.3.6}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{112}{subsubsection.7.5.3.6}%
+\contentsline {subsubsection}{\numberline {7.5.3.7}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{112}{subsubsection.7.5.3.7}%
+\contentsline {subsubsection}{\numberline {7.5.3.8}changeToRectangle()}{112}{subsubsection.7.5.3.8}%
+\contentsline {subsubsection}{\numberline {7.5.3.9}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{113}{subsubsection.7.5.3.9}%
+\contentsline {subsubsection}{\numberline {7.5.3.10}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{113}{subsubsection.7.5.3.10}%
+\contentsline {subsubsection}{\numberline {7.5.3.11}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{113}{subsubsection.7.5.3.11}%
+\contentsline {subsubsection}{\numberline {7.5.3.12}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{113}{subsubsection.7.5.3.12}%
+\contentsline {subsubsection}{\numberline {7.5.3.13}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{114}{subsubsection.7.5.3.13}%
+\contentsline {subsubsection}{\numberline {7.5.3.14}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{114}{subsubsection.7.5.3.14}%
+\contentsline {subsubsection}{\numberline {7.5.3.15}fillCircleByColor()}{114}{subsubsection.7.5.3.15}%
+\contentsline {subsubsection}{\numberline {7.5.3.16}fillRectangleByColor()}{115}{subsubsection.7.5.3.16}%
+\contentsline {subsubsection}{\numberline {7.5.3.17}fillWithColor()}{115}{subsubsection.7.5.3.17}%
+\contentsline {subsubsection}{\numberline {7.5.3.18}fitTheTexture()}{115}{subsubsection.7.5.3.18}%
+\contentsline {subsubsection}{\numberline {7.5.3.19}getColor()}{116}{subsubsection.7.5.3.19}%
+\contentsline {subsubsection}{\numberline {7.5.3.20}getCrop()}{116}{subsubsection.7.5.3.20}%
+\contentsline {subsubsection}{\numberline {7.5.3.21}getH()}{116}{subsubsection.7.5.3.21}%
+\contentsline {subsubsection}{\numberline {7.5.3.22}getLocation()}{116}{subsubsection.7.5.3.22}%
+\contentsline {subsubsection}{\numberline {7.5.3.23}getSize()}{116}{subsubsection.7.5.3.23}%
+\contentsline {subsubsection}{\numberline {7.5.3.24}getText()}{117}{subsubsection.7.5.3.24}%
+\contentsline {subsubsection}{\numberline {7.5.3.25}getW()}{117}{subsubsection.7.5.3.25}%
+\contentsline {subsubsection}{\numberline {7.5.3.26}getX()}{117}{subsubsection.7.5.3.26}%
+\contentsline {subsubsection}{\numberline {7.5.3.27}getY()}{117}{subsubsection.7.5.3.27}%
+\contentsline {subsubsection}{\numberline {7.5.3.28}hide()}{117}{subsubsection.7.5.3.28}%
+\contentsline {subsubsection}{\numberline {7.5.3.29}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{118}{subsubsection.7.5.3.29}%
+\contentsline {subsubsection}{\numberline {7.5.3.30}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{118}{subsubsection.7.5.3.30}%
+\contentsline {subsubsection}{\numberline {7.5.3.31}initBackground()}{118}{subsubsection.7.5.3.31}%
+\contentsline {subsubsection}{\numberline {7.5.3.32}initButtons()}{119}{subsubsection.7.5.3.32}%
+\contentsline {subsubsection}{\numberline {7.5.3.33}isButtonReceiveEvent()}{119}{subsubsection.7.5.3.33}%
+\contentsline {subsubsection}{\numberline {7.5.3.34}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{119}{subsubsection.7.5.3.34}%
+\contentsline {subsubsection}{\numberline {7.5.3.35}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{119}{subsubsection.7.5.3.35}%
+\contentsline {subsubsection}{\numberline {7.5.3.36}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{120}{subsubsection.7.5.3.36}%
+\contentsline {subsubsection}{\numberline {7.5.3.37}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{120}{subsubsection.7.5.3.37}%
+\contentsline {subsubsection}{\numberline {7.5.3.38}isReceiveEvent()}{120}{subsubsection.7.5.3.38}%
+\contentsline {subsubsection}{\numberline {7.5.3.39}isVisible()}{120}{subsubsection.7.5.3.39}%
+\contentsline {subsubsection}{\numberline {7.5.3.40}linking()}{121}{subsubsection.7.5.3.40}%
+\contentsline {subsubsection}{\numberline {7.5.3.41}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{121}{subsubsection.7.5.3.41}%
+\contentsline {subsubsection}{\numberline {7.5.3.42}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{121}{subsubsection.7.5.3.42}%
+\contentsline {subsubsection}{\numberline {7.5.3.43}locating()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{121}{subsubsection.7.5.3.43}%
+\contentsline {subsubsection}{\numberline {7.5.3.44}locatingH()}{122}{subsubsection.7.5.3.44}%
+\contentsline {subsubsection}{\numberline {7.5.3.45}locatingW()}{122}{subsubsection.7.5.3.45}%
+\contentsline {subsubsection}{\numberline {7.5.3.46}locatingX()}{122}{subsubsection.7.5.3.46}%
+\contentsline {subsubsection}{\numberline {7.5.3.47}locatingY()}{122}{subsubsection.7.5.3.47}%
+\contentsline {subsubsection}{\numberline {7.5.3.48}moveX()}{123}{subsubsection.7.5.3.48}%
+\contentsline {subsubsection}{\numberline {7.5.3.49}moveY()}{123}{subsubsection.7.5.3.49}%
+\contentsline {subsubsection}{\numberline {7.5.3.50}noCropping()}{123}{subsubsection.7.5.3.50}%
+\contentsline {subsubsection}{\numberline {7.5.3.51}react()}{123}{subsubsection.7.5.3.51}%
+\contentsline {subsubsection}{\numberline {7.5.3.52}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{124}{subsubsection.7.5.3.52}%
+\contentsline {subsubsection}{\numberline {7.5.3.53}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{124}{subsubsection.7.5.3.53}%
+\contentsline {subsubsection}{\numberline {7.5.3.54}rendering()}{124}{subsubsection.7.5.3.54}%
+\contentsline {subsubsection}{\numberline {7.5.3.55}setFont()}{124}{subsubsection.7.5.3.55}%
+\contentsline {subsubsection}{\numberline {7.5.3.56}setShape()}{125}{subsubsection.7.5.3.56}%
+\contentsline {subsubsection}{\numberline {7.5.3.57}setText()}{125}{subsubsection.7.5.3.57}%
+\contentsline {subsubsection}{\numberline {7.5.3.58}show()}{125}{subsubsection.7.5.3.58}%
+\contentsline {subsubsection}{\numberline {7.5.3.59}textToTexture()}{126}{subsubsection.7.5.3.59}%
+\contentsline {subsubsection}{\numberline {7.5.3.60}textureFromFile()}{126}{subsubsection.7.5.3.60}%
+\contentsline {subsubsection}{\numberline {7.5.3.61}zoom()}{126}{subsubsection.7.5.3.61}%
+\contentsline {subsubsection}{\numberline {7.5.3.62}zoomH()}{126}{subsubsection.7.5.3.62}%
+\contentsline {subsubsection}{\numberline {7.5.3.63}zoomInMiddle()}{127}{subsubsection.7.5.3.63}%
+\contentsline {subsubsection}{\numberline {7.5.3.64}zoomW()}{127}{subsubsection.7.5.3.64}%
+\contentsline {section}{\numberline {7.6}distance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Heap Struct Reference}{127}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{128}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Constructor \& Destructor Documentation}{128}{subsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.1}distanceHeap()}{128}{subsubsection.7.6.2.1}%
+\contentsline {subsubsection}{\numberline {7.6.2.2}$\sim $distanceHeap()}{128}{subsubsection.7.6.2.2}%
+\contentsline {subsection}{\numberline {7.6.3}Member Function Documentation}{128}{subsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}empty()}{128}{subsubsection.7.6.3.1}%
+\contentsline {subsubsection}{\numberline {7.6.3.2}insert()}{129}{subsubsection.7.6.3.2}%
+\contentsline {subsubsection}{\numberline {7.6.3.3}pop()}{129}{subsubsection.7.6.3.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.4}swap()}{129}{subsubsection.7.6.3.4}%
+\contentsline {subsubsection}{\numberline {7.6.3.5}swapable()}{130}{subsubsection.7.6.3.5}%
+\contentsline {subsection}{\numberline {7.6.4}Member Data Documentation}{130}{subsection.7.6.4}%
+\contentsline {subsubsection}{\numberline {7.6.4.1}g}{130}{subsubsection.7.6.4.1}%
+\contentsline {subsubsection}{\numberline {7.6.4.2}value}{130}{subsubsection.7.6.4.2}%
+\contentsline {section}{\numberline {7.7}DSU Struct Reference}{130}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{131}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Constructor \& Destructor Documentation}{131}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}DSU()}{131}{subsubsection.7.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.7.2.2}$\sim $DSU()}{131}{subsubsection.7.7.2.2}%
+\contentsline {subsection}{\numberline {7.7.3}Member Function Documentation}{131}{subsection.7.7.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.1}find()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{131}{subsubsection.7.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.7.3.2}find()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{132}{subsubsection.7.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.7.3.3}isUnionized()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{132}{subsubsection.7.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.7.3.4}isUnionized()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{132}{subsubsection.7.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.7.3.5}isUnionized()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{132}{subsubsection.7.7.3.5}%
+\contentsline {subsubsection}{\numberline {7.7.3.6}unionEdge()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{133}{subsubsection.7.7.3.6}%
+\contentsline {subsubsection}{\numberline {7.7.3.7}unionEdge()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{133}{subsubsection.7.7.3.7}%
+\contentsline {subsubsection}{\numberline {7.7.3.8}unionEdge()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{133}{subsubsection.7.7.3.8}%
+\contentsline {subsection}{\numberline {7.7.4}Member Data Documentation}{133}{subsection.7.7.4}%
+\contentsline {subsubsection}{\numberline {7.7.4.1}parent}{133}{subsubsection.7.7.4.1}%
+\contentsline {section}{\numberline {7.8}Graph Class Reference}{134}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{134}{subsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.8.2}Constructor \& Destructor Documentation}{134}{subsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.1}Graph()}{135}{subsubsection.7.8.2.1}%
+\contentsline {subsubsection}{\numberline {7.8.2.2}$\sim $Graph()}{135}{subsubsection.7.8.2.2}%
+\contentsline {subsection}{\numberline {7.8.3}Member Function Documentation}{135}{subsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.1}Dijkstra()}{135}{subsubsection.7.8.3.1}%
+\contentsline {subsubsection}{\numberline {7.8.3.2}init()}{136}{subsubsection.7.8.3.2}%
+\contentsline {subsubsection}{\numberline {7.8.3.3}isReceiveEvent()}{137}{subsubsection.7.8.3.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.4}MST()}{137}{subsubsection.7.8.3.4}%
+\contentsline {subsubsection}{\numberline {7.8.3.5}react()}{138}{subsubsection.7.8.3.5}%
+\contentsline {subsubsection}{\numberline {7.8.3.6}renderEdge()}{138}{subsubsection.7.8.3.6}%
+\contentsline {subsubsection}{\numberline {7.8.3.7}rendering()}{139}{subsubsection.7.8.3.7}%
+\contentsline {subsubsection}{\numberline {7.8.3.8}repair()}{139}{subsubsection.7.8.3.8}%
+\contentsline {subsubsection}{\numberline {7.8.3.9}SCC()}{140}{subsubsection.7.8.3.9}%
+\contentsline {subsubsection}{\numberline {7.8.3.10}setting()}{140}{subsubsection.7.8.3.10}%
+\contentsline {subsubsection}{\numberline {7.8.3.11}Tarjan()}{141}{subsubsection.7.8.3.11}%
+\contentsline {subsubsection}{\numberline {7.8.3.12}unionEdges()}{141}{subsubsection.7.8.3.12}%
+\contentsline {subsubsection}{\numberline {7.8.3.13}waitForStep()}{141}{subsubsection.7.8.3.13}%
+\contentsline {subsection}{\numberline {7.8.4}Friends And Related Function Documentation}{142}{subsection.7.8.4}%
+\contentsline {subsubsection}{\numberline {7.8.4.1}distanceHeap}{142}{subsubsection.7.8.4.1}%
+\contentsline {subsubsection}{\numberline {7.8.4.2}DSU}{142}{subsubsection.7.8.4.2}%
+\contentsline {section}{\numberline {7.9}Hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Table Class Reference}{142}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{143}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Constructor \& Destructor Documentation}{143}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}HashTable()}{143}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}$\sim $HashTable()}{144}{subsubsection.7.9.2.2}%
+\contentsline {subsection}{\numberline {7.9.3}Member Function Documentation}{144}{subsection.7.9.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.1}closeScript()}{144}{subsubsection.7.9.3.1}%
+\contentsline {subsubsection}{\numberline {7.9.3.2}defaultSetting()}{145}{subsubsection.7.9.3.2}%
+\contentsline {subsubsection}{\numberline {7.9.3.3}drawEdge()}{145}{subsubsection.7.9.3.3}%
+\contentsline {subsubsection}{\numberline {7.9.3.4}goBack()}{145}{subsubsection.7.9.3.4}%
+\contentsline {subsubsection}{\numberline {7.9.3.5}goNext()}{145}{subsubsection.7.9.3.5}%
+\contentsline {subsubsection}{\numberline {7.9.3.6}goOff()}{146}{subsubsection.7.9.3.6}%
+\contentsline {subsubsection}{\numberline {7.9.3.7}goOn()}{146}{subsubsection.7.9.3.7}%
+\contentsline {subsubsection}{\numberline {7.9.3.8}highlight()}{146}{subsubsection.7.9.3.8}%
+\contentsline {subsubsection}{\numberline {7.9.3.9}init()}{146}{subsubsection.7.9.3.9}%
+\contentsline {subsubsection}{\numberline {7.9.3.10}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{147}{subsubsection.7.9.3.10}%
+\contentsline {subsubsection}{\numberline {7.9.3.11}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{147}{subsubsection.7.9.3.11}%
+\contentsline {subsubsection}{\numberline {7.9.3.12}isReceiveEvent()}{148}{subsubsection.7.9.3.12}%
+\contentsline {subsubsection}{\numberline {7.9.3.13}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{149}{subsubsection.7.9.3.13}%
+\contentsline {subsubsection}{\numberline {7.9.3.14}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{149}{subsubsection.7.9.3.14}%
+\contentsline {subsubsection}{\numberline {7.9.3.15}react()}{149}{subsubsection.7.9.3.15}%
+\contentsline {subsubsection}{\numberline {7.9.3.16}remove()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{150}{subsubsection.7.9.3.16}%
+\contentsline {subsubsection}{\numberline {7.9.3.17}remove()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{151}{subsubsection.7.9.3.17}%
+\contentsline {subsubsection}{\numberline {7.9.3.18}renderEdges()}{151}{subsubsection.7.9.3.18}%
+\contentsline {subsubsection}{\numberline {7.9.3.19}rendering()}{152}{subsubsection.7.9.3.19}%
+\contentsline {subsubsection}{\numberline {7.9.3.20}search()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{152}{subsubsection.7.9.3.20}%
+\contentsline {subsubsection}{\numberline {7.9.3.21}search()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{153}{subsubsection.7.9.3.21}%
+\contentsline {subsubsection}{\numberline {7.9.3.22}setEdgesColor()}{153}{subsubsection.7.9.3.22}%
+\contentsline {subsubsection}{\numberline {7.9.3.23}setNodeColor()}{153}{subsubsection.7.9.3.23}%
+\contentsline {subsubsection}{\numberline {7.9.3.24}setting()}{153}{subsubsection.7.9.3.24}%
+\contentsline {subsubsection}{\numberline {7.9.3.25}slowDown()}{154}{subsubsection.7.9.3.25}%
+\contentsline {subsubsection}{\numberline {7.9.3.26}speedUp()}{154}{subsubsection.7.9.3.26}%
+\contentsline {subsubsection}{\numberline {7.9.3.27}unhighlight()}{154}{subsubsection.7.9.3.27}%
+\contentsline {subsubsection}{\numberline {7.9.3.28}waitForStep()}{155}{subsubsection.7.9.3.28}%
+\contentsline {section}{\numberline {7.10}Input\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Box Class Reference}{155}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{156}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{156}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}InputBox()}{156}{subsubsection.7.10.2.1}%
+\contentsline {subsubsection}{\numberline {7.10.2.2}$\sim $InputBox()}{157}{subsubsection.7.10.2.2}%
+\contentsline {subsection}{\numberline {7.10.3}Member Function Documentation}{157}{subsection.7.10.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.1}getOperator()}{157}{subsubsection.7.10.3.1}%
+\contentsline {subsubsection}{\numberline {7.10.3.2}getText()}{157}{subsubsection.7.10.3.2}%
+\contentsline {subsubsection}{\numberline {7.10.3.3}importFromJson()}{157}{subsubsection.7.10.3.3}%
+\contentsline {subsubsection}{\numberline {7.10.3.4}initBackground()}{158}{subsubsection.7.10.3.4}%
+\contentsline {subsubsection}{\numberline {7.10.3.5}initButtons()}{158}{subsubsection.7.10.3.5}%
+\contentsline {subsubsection}{\numberline {7.10.3.6}initOperator()}{158}{subsubsection.7.10.3.6}%
+\contentsline {subsubsection}{\numberline {7.10.3.7}initSprites()}{159}{subsubsection.7.10.3.7}%
+\contentsline {subsubsection}{\numberline {7.10.3.8}isButtonReceiveEvent()}{159}{subsubsection.7.10.3.8}%
+\contentsline {subsubsection}{\numberline {7.10.3.9}isInputReceiveEvent()}{159}{subsubsection.7.10.3.9}%
+\contentsline {subsubsection}{\numberline {7.10.3.10}isReceiveEvent()}{160}{subsubsection.7.10.3.10}%
+\contentsline {subsubsection}{\numberline {7.10.3.11}linking()}{160}{subsubsection.7.10.3.11}%
+\contentsline {subsubsection}{\numberline {7.10.3.12}react()}{160}{subsubsection.7.10.3.12}%
+\contentsline {subsubsection}{\numberline {7.10.3.13}rendering()}{161}{subsubsection.7.10.3.13}%
+\contentsline {subsubsection}{\numberline {7.10.3.14}setDuplicate()}{161}{subsubsection.7.10.3.14}%
+\contentsline {subsubsection}{\numberline {7.10.3.15}setText()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{162}{subsubsection.7.10.3.15}%
+\contentsline {subsubsection}{\numberline {7.10.3.16}setText()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{162}{subsubsection.7.10.3.16}%
+\contentsline {subsection}{\numberline {7.10.4}Member Data Documentation}{162}{subsection.7.10.4}%
+\contentsline {subsubsection}{\numberline {7.10.4.1}m}{162}{subsubsection.7.10.4.1}%
+\contentsline {subsubsection}{\numberline {7.10.4.2}n}{162}{subsubsection.7.10.4.2}%
+\contentsline {section}{\numberline {7.11}max\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Heap Class Reference}{163}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{163}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Constructor \& Destructor Documentation}{163}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}maxHeap()}{163}{subsubsection.7.11.2.1}%
+\contentsline {subsubsection}{\numberline {7.11.2.2}$\sim $maxHeap()}{163}{subsubsection.7.11.2.2}%
+\contentsline {subsection}{\numberline {7.11.3}Member Function Documentation}{164}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}heapify()}{164}{subsubsection.7.11.3.1}%
+\contentsline {subsubsection}{\numberline {7.11.3.2}init()}{164}{subsubsection.7.11.3.2}%
+\contentsline {subsubsection}{\numberline {7.11.3.3}insert()}{164}{subsubsection.7.11.3.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.4}pop()}{165}{subsubsection.7.11.3.4}%
+\contentsline {subsubsection}{\numberline {7.11.3.5}size()}{165}{subsubsection.7.11.3.5}%
+\contentsline {subsubsection}{\numberline {7.11.3.6}swap()}{165}{subsubsection.7.11.3.6}%
+\contentsline {subsubsection}{\numberline {7.11.3.7}swapable()}{166}{subsubsection.7.11.3.7}%
+\contentsline {subsubsection}{\numberline {7.11.3.8}top()}{166}{subsubsection.7.11.3.8}%
+\contentsline {section}{\numberline {7.12}min\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Heap Class Reference}{166}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{167}{subsection.7.12.1}%
+\contentsline {subsection}{\numberline {7.12.2}Constructor \& Destructor Documentation}{167}{subsection.7.12.2}%
+\contentsline {subsubsection}{\numberline {7.12.2.1}minHeap()}{167}{subsubsection.7.12.2.1}%
+\contentsline {subsubsection}{\numberline {7.12.2.2}$\sim $minHeap()}{168}{subsubsection.7.12.2.2}%
+\contentsline {subsection}{\numberline {7.12.3}Member Function Documentation}{168}{subsection.7.12.3}%
+\contentsline {subsubsection}{\numberline {7.12.3.1}closeScript()}{168}{subsubsection.7.12.3.1}%
+\contentsline {subsubsection}{\numberline {7.12.3.2}heapify()}{169}{subsubsection.7.12.3.2}%
+\contentsline {subsubsection}{\numberline {7.12.3.3}highlight()}{169}{subsubsection.7.12.3.3}%
+\contentsline {subsubsection}{\numberline {7.12.3.4}init()}{170}{subsubsection.7.12.3.4}%
+\contentsline {subsubsection}{\numberline {7.12.3.5}insert()}{170}{subsubsection.7.12.3.5}%
+\contentsline {subsubsection}{\numberline {7.12.3.6}isReceiveEvent()}{170}{subsubsection.7.12.3.6}%
+\contentsline {subsubsection}{\numberline {7.12.3.7}locating()}{171}{subsubsection.7.12.3.7}%
+\contentsline {subsubsection}{\numberline {7.12.3.8}pop()}{171}{subsubsection.7.12.3.8}%
+\contentsline {subsubsection}{\numberline {7.12.3.9}react()}{172}{subsubsection.7.12.3.9}%
+\contentsline {subsubsection}{\numberline {7.12.3.10}realInsert()}{172}{subsubsection.7.12.3.10}%
+\contentsline {subsubsection}{\numberline {7.12.3.11}rendering()}{173}{subsubsection.7.12.3.11}%
+\contentsline {subsubsection}{\numberline {7.12.3.12}renderLine()}{174}{subsubsection.7.12.3.12}%
+\contentsline {subsubsection}{\numberline {7.12.3.13}setmax()}{174}{subsubsection.7.12.3.13}%
+\contentsline {subsubsection}{\numberline {7.12.3.14}setmin()}{174}{subsubsection.7.12.3.14}%
+\contentsline {subsubsection}{\numberline {7.12.3.15}setting()}{175}{subsubsection.7.12.3.15}%
+\contentsline {subsubsection}{\numberline {7.12.3.16}size()}{175}{subsubsection.7.12.3.16}%
+\contentsline {subsubsection}{\numberline {7.12.3.17}swap()}{175}{subsubsection.7.12.3.17}%
+\contentsline {subsubsection}{\numberline {7.12.3.18}swapable()}{175}{subsubsection.7.12.3.18}%
+\contentsline {subsubsection}{\numberline {7.12.3.19}top()}{176}{subsubsection.7.12.3.19}%
+\contentsline {subsubsection}{\numberline {7.12.3.20}unhighlight()}{176}{subsubsection.7.12.3.20}%
+\contentsline {subsubsection}{\numberline {7.12.3.21}waitForStep()}{176}{subsubsection.7.12.3.21}%
+\contentsline {section}{\numberline {7.13}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{177}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{177}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Constructor \& Destructor Documentation}{178}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}MyWindow()}{178}{subsubsection.7.13.2.1}%
+\contentsline {subsubsection}{\numberline {7.13.2.2}$\sim $MyWindow()}{178}{subsubsection.7.13.2.2}%
+\contentsline {subsection}{\numberline {7.13.3}Member Function Documentation}{179}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}getDataFromFile()}{179}{subsubsection.7.13.3.1}%
+\contentsline {subsubsection}{\numberline {7.13.3.2}getDataFromRandom()}{180}{subsubsection.7.13.3.2}%
+\contentsline {subsubsection}{\numberline {7.13.3.3}getEvent()}{181}{subsubsection.7.13.3.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.4}initSDL2()}{181}{subsubsection.7.13.3.4}%
+\contentsline {subsubsection}{\numberline {7.13.3.5}interacting()}{182}{subsubsection.7.13.3.5}%
+\contentsline {subsubsection}{\numberline {7.13.3.6}isClosed()}{182}{subsubsection.7.13.3.6}%
+\contentsline {subsubsection}{\numberline {7.13.3.7}isOpen()}{183}{subsubsection.7.13.3.7}%
+\contentsline {subsubsection}{\numberline {7.13.3.8}react()}{183}{subsubsection.7.13.3.8}%
+\contentsline {subsubsection}{\numberline {7.13.3.9}rendering()}{185}{subsubsection.7.13.3.9}%
+\contentsline {subsubsection}{\numberline {7.13.3.10}run()}{186}{subsubsection.7.13.3.10}%
+\contentsline {subsubsection}{\numberline {7.13.3.11}runOperator()}{186}{subsubsection.7.13.3.11}%
+\contentsline {subsubsection}{\numberline {7.13.3.12}setDataType()}{187}{subsubsection.7.13.3.12}%
+\contentsline {subsubsection}{\numberline {7.13.3.13}setDisplay()}{187}{subsubsection.7.13.3.13}%
+\contentsline {subsubsection}{\numberline {7.13.3.14}setInputBox()}{188}{subsubsection.7.13.3.14}%
+\contentsline {section}{\numberline {7.14}Object Class Reference}{188}{section.7.14}%
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{190}{subsection.7.14.1}%
+\contentsline {subsection}{\numberline {7.14.2}Constructor \& Destructor Documentation}{190}{subsection.7.14.2}%
+\contentsline {subsubsection}{\numberline {7.14.2.1}Object()}{190}{subsubsection.7.14.2.1}%
+\contentsline {subsubsection}{\numberline {7.14.2.2}$\sim $Object()}{190}{subsubsection.7.14.2.2}%
+\contentsline {subsection}{\numberline {7.14.3}Member Function Documentation}{191}{subsection.7.14.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.1}addCharacter()}{191}{subsubsection.7.14.3.1}%
+\contentsline {subsubsection}{\numberline {7.14.3.2}addText()}{191}{subsubsection.7.14.3.2}%
+\contentsline {subsubsection}{\numberline {7.14.3.3}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{191}{subsubsection.7.14.3.3}%
+\contentsline {subsubsection}{\numberline {7.14.3.4}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{191}{subsubsection.7.14.3.4}%
+\contentsline {subsubsection}{\numberline {7.14.3.5}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{192}{subsubsection.7.14.3.5}%
+\contentsline {subsubsection}{\numberline {7.14.3.6}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{192}{subsubsection.7.14.3.6}%
+\contentsline {subsubsection}{\numberline {7.14.3.7}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{192}{subsubsection.7.14.3.7}%
+\contentsline {subsubsection}{\numberline {7.14.3.8}changeToRectangle()}{192}{subsubsection.7.14.3.8}%
+\contentsline {subsubsection}{\numberline {7.14.3.9}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{193}{subsubsection.7.14.3.9}%
+\contentsline {subsubsection}{\numberline {7.14.3.10}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{193}{subsubsection.7.14.3.10}%
+\contentsline {subsubsection}{\numberline {7.14.3.11}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{193}{subsubsection.7.14.3.11}%
+\contentsline {subsubsection}{\numberline {7.14.3.12}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{193}{subsubsection.7.14.3.12}%
+\contentsline {subsubsection}{\numberline {7.14.3.13}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{194}{subsubsection.7.14.3.13}%
+\contentsline {subsubsection}{\numberline {7.14.3.14}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{194}{subsubsection.7.14.3.14}%
+\contentsline {subsubsection}{\numberline {7.14.3.15}fillCircleByColor()}{194}{subsubsection.7.14.3.15}%
+\contentsline {subsubsection}{\numberline {7.14.3.16}fillRectangleByColor()}{195}{subsubsection.7.14.3.16}%
+\contentsline {subsubsection}{\numberline {7.14.3.17}fillWithColor()}{195}{subsubsection.7.14.3.17}%
+\contentsline {subsubsection}{\numberline {7.14.3.18}fitTheTexture()}{195}{subsubsection.7.14.3.18}%
+\contentsline {subsubsection}{\numberline {7.14.3.19}getColor()}{196}{subsubsection.7.14.3.19}%
+\contentsline {subsubsection}{\numberline {7.14.3.20}getCrop()}{196}{subsubsection.7.14.3.20}%
+\contentsline {subsubsection}{\numberline {7.14.3.21}getH()}{196}{subsubsection.7.14.3.21}%
+\contentsline {subsubsection}{\numberline {7.14.3.22}getLocation()}{196}{subsubsection.7.14.3.22}%
+\contentsline {subsubsection}{\numberline {7.14.3.23}getSize()}{196}{subsubsection.7.14.3.23}%
+\contentsline {subsubsection}{\numberline {7.14.3.24}getText()}{197}{subsubsection.7.14.3.24}%
+\contentsline {subsubsection}{\numberline {7.14.3.25}getW()}{197}{subsubsection.7.14.3.25}%
+\contentsline {subsubsection}{\numberline {7.14.3.26}getX()}{197}{subsubsection.7.14.3.26}%
+\contentsline {subsubsection}{\numberline {7.14.3.27}getY()}{197}{subsubsection.7.14.3.27}%
+\contentsline {subsubsection}{\numberline {7.14.3.28}hide()}{197}{subsubsection.7.14.3.28}%
+\contentsline {subsubsection}{\numberline {7.14.3.29}importFromJson()}{198}{subsubsection.7.14.3.29}%
+\contentsline {subsubsection}{\numberline {7.14.3.30}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{198}{subsubsection.7.14.3.30}%
+\contentsline {subsubsection}{\numberline {7.14.3.31}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{198}{subsubsection.7.14.3.31}%
+\contentsline {subsubsection}{\numberline {7.14.3.32}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{199}{subsubsection.7.14.3.32}%
+\contentsline {subsubsection}{\numberline {7.14.3.33}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{199}{subsubsection.7.14.3.33}%
+\contentsline {subsubsection}{\numberline {7.14.3.34}isVisible()}{199}{subsubsection.7.14.3.34}%
+\contentsline {subsubsection}{\numberline {7.14.3.35}linking()}{199}{subsubsection.7.14.3.35}%
+\contentsline {subsubsection}{\numberline {7.14.3.36}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{200}{subsubsection.7.14.3.36}%
+\contentsline {subsubsection}{\numberline {7.14.3.37}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{200}{subsubsection.7.14.3.37}%
+\contentsline {subsubsection}{\numberline {7.14.3.38}locating()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{200}{subsubsection.7.14.3.38}%
+\contentsline {subsubsection}{\numberline {7.14.3.39}locatingH()}{200}{subsubsection.7.14.3.39}%
+\contentsline {subsubsection}{\numberline {7.14.3.40}locatingW()}{201}{subsubsection.7.14.3.40}%
+\contentsline {subsubsection}{\numberline {7.14.3.41}locatingX()}{201}{subsubsection.7.14.3.41}%
+\contentsline {subsubsection}{\numberline {7.14.3.42}locatingY()}{201}{subsubsection.7.14.3.42}%
+\contentsline {subsubsection}{\numberline {7.14.3.43}moveX()}{201}{subsubsection.7.14.3.43}%
+\contentsline {subsubsection}{\numberline {7.14.3.44}moveY()}{202}{subsubsection.7.14.3.44}%
+\contentsline {subsubsection}{\numberline {7.14.3.45}noCropping()}{202}{subsubsection.7.14.3.45}%
+\contentsline {subsubsection}{\numberline {7.14.3.46}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{202}{subsubsection.7.14.3.46}%
+\contentsline {subsubsection}{\numberline {7.14.3.47}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{202}{subsubsection.7.14.3.47}%
+\contentsline {subsubsection}{\numberline {7.14.3.48}rendering()}{203}{subsubsection.7.14.3.48}%
+\contentsline {subsubsection}{\numberline {7.14.3.49}setFont()}{203}{subsubsection.7.14.3.49}%
+\contentsline {subsubsection}{\numberline {7.14.3.50}setShape()}{203}{subsubsection.7.14.3.50}%
+\contentsline {subsubsection}{\numberline {7.14.3.51}setText()}{203}{subsubsection.7.14.3.51}%
+\contentsline {subsubsection}{\numberline {7.14.3.52}show()}{204}{subsubsection.7.14.3.52}%
+\contentsline {subsubsection}{\numberline {7.14.3.53}textToTexture()}{204}{subsubsection.7.14.3.53}%
+\contentsline {subsubsection}{\numberline {7.14.3.54}textureFromFile()}{204}{subsubsection.7.14.3.54}%
+\contentsline {subsubsection}{\numberline {7.14.3.55}zoom()}{204}{subsubsection.7.14.3.55}%
+\contentsline {subsubsection}{\numberline {7.14.3.56}zoomH()}{205}{subsubsection.7.14.3.56}%
+\contentsline {subsubsection}{\numberline {7.14.3.57}zoomInMiddle()}{205}{subsubsection.7.14.3.57}%
+\contentsline {subsubsection}{\numberline {7.14.3.58}zoomW()}{205}{subsubsection.7.14.3.58}%
+\contentsline {section}{\numberline {7.15}Point Struct Reference}{206}{section.7.15}%
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{206}{subsection.7.15.1}%
+\contentsline {subsection}{\numberline {7.15.2}Member Data Documentation}{206}{subsection.7.15.2}%
+\contentsline {subsubsection}{\numberline {7.15.2.1}x}{206}{subsubsection.7.15.2.1}%
+\contentsline {subsubsection}{\numberline {7.15.2.2}y}{206}{subsubsection.7.15.2.2}%
+\contentsline {section}{\numberline {7.16}Position Struct Reference}{206}{section.7.16}%
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{207}{subsection.7.16.1}%
+\contentsline {subsection}{\numberline {7.16.2}Member Data Documentation}{207}{subsection.7.16.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.1}center}{207}{subsubsection.7.16.2.1}%
+\contentsline {subsubsection}{\numberline {7.16.2.2}crop}{207}{subsubsection.7.16.2.2}%
+\contentsline {subsubsection}{\numberline {7.16.2.3}location}{207}{subsubsection.7.16.2.3}%
+\contentsline {subsubsection}{\numberline {7.16.2.4}radius}{207}{subsubsection.7.16.2.4}%
+\contentsline {subsubsection}{\numberline {7.16.2.5}visible}{208}{subsubsection.7.16.2.5}%
+\contentsline {section}{\numberline {7.17}Script Class Reference}{208}{section.7.17}%
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{209}{subsection.7.17.1}%
+\contentsline {subsection}{\numberline {7.17.2}Constructor \& Destructor Documentation}{209}{subsection.7.17.2}%
+\contentsline {subsubsection}{\numberline {7.17.2.1}Script()}{209}{subsubsection.7.17.2.1}%
+\contentsline {subsubsection}{\numberline {7.17.2.2}$\sim $Script()}{209}{subsubsection.7.17.2.2}%
+\contentsline {subsection}{\numberline {7.17.3}Member Function Documentation}{209}{subsection.7.17.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.1}highlight()}{209}{subsubsection.7.17.3.1}%
+\contentsline {subsubsection}{\numberline {7.17.3.2}importFromJson()}{210}{subsubsection.7.17.3.2}%
+\contentsline {subsubsection}{\numberline {7.17.3.3}initBackground()}{210}{subsubsection.7.17.3.3}%
+\contentsline {subsubsection}{\numberline {7.17.3.4}initButtons()}{210}{subsubsection.7.17.3.4}%
+\contentsline {subsubsection}{\numberline {7.17.3.5}isReceiveEvent()}{211}{subsubsection.7.17.3.5}%
+\contentsline {subsubsection}{\numberline {7.17.3.6}linking()}{211}{subsubsection.7.17.3.6}%
+\contentsline {subsubsection}{\numberline {7.17.3.7}react()}{211}{subsubsection.7.17.3.7}%
+\contentsline {subsubsection}{\numberline {7.17.3.8}rendering()}{212}{subsubsection.7.17.3.8}%
+\contentsline {subsubsection}{\numberline {7.17.3.9}unhighlight()}{213}{subsubsection.7.17.3.9}%
+\contentsline {section}{\numberline {7.18}Sprite Class Reference}{213}{section.7.18}%
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{215}{subsection.7.18.1}%
+\contentsline {subsection}{\numberline {7.18.2}Constructor \& Destructor Documentation}{215}{subsection.7.18.2}%
+\contentsline {subsubsection}{\numberline {7.18.2.1}Sprite()}{215}{subsubsection.7.18.2.1}%
+\contentsline {subsubsection}{\numberline {7.18.2.2}$\sim $Sprite()}{215}{subsubsection.7.18.2.2}%
+\contentsline {subsection}{\numberline {7.18.3}Member Function Documentation}{216}{subsection.7.18.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.1}addCharacter()}{216}{subsubsection.7.18.3.1}%
+\contentsline {subsubsection}{\numberline {7.18.3.2}addText()}{216}{subsubsection.7.18.3.2}%
+\contentsline {subsubsection}{\numberline {7.18.3.3}aligning()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{216}{subsubsection.7.18.3.3}%
+\contentsline {subsubsection}{\numberline {7.18.3.4}aligning()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{217}{subsubsection.7.18.3.4}%
+\contentsline {subsubsection}{\numberline {7.18.3.5}aligning()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{217}{subsubsection.7.18.3.5}%
+\contentsline {subsubsection}{\numberline {7.18.3.6}aligning()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{217}{subsubsection.7.18.3.6}%
+\contentsline {subsubsection}{\numberline {7.18.3.7}backspace()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{217}{subsubsection.7.18.3.7}%
+\contentsline {subsubsection}{\numberline {7.18.3.8}backspace()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{218}{subsubsection.7.18.3.8}%
+\contentsline {subsubsection}{\numberline {7.18.3.9}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [1/5]}}{218}{subsubsection.7.18.3.9}%
+\contentsline {subsubsection}{\numberline {7.18.3.10}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [2/5]}}{218}{subsubsection.7.18.3.10}%
+\contentsline {subsubsection}{\numberline {7.18.3.11}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [3/5]}}{218}{subsubsection.7.18.3.11}%
+\contentsline {subsubsection}{\numberline {7.18.3.12}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [4/5]}}{219}{subsubsection.7.18.3.12}%
+\contentsline {subsubsection}{\numberline {7.18.3.13}changeToCircle()\hspace {0.1cm}{\footnotesize \ttfamily [5/5]}}{219}{subsubsection.7.18.3.13}%
+\contentsline {subsubsection}{\numberline {7.18.3.14}changeToRectangle()}{219}{subsubsection.7.18.3.14}%
+\contentsline {subsubsection}{\numberline {7.18.3.15}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{219}{subsubsection.7.18.3.15}%
+\contentsline {subsubsection}{\numberline {7.18.3.16}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{220}{subsubsection.7.18.3.16}%
+\contentsline {subsubsection}{\numberline {7.18.3.17}coloring()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{220}{subsubsection.7.18.3.17}%
+\contentsline {subsubsection}{\numberline {7.18.3.18}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{220}{subsubsection.7.18.3.18}%
+\contentsline {subsubsection}{\numberline {7.18.3.19}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{220}{subsubsection.7.18.3.19}%
+\contentsline {subsubsection}{\numberline {7.18.3.20}cropping()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{221}{subsubsection.7.18.3.20}%
+\contentsline {subsubsection}{\numberline {7.18.3.21}fillCircleByColor()}{221}{subsubsection.7.18.3.21}%
+\contentsline {subsubsection}{\numberline {7.18.3.22}fillRectangleByColor()}{222}{subsubsection.7.18.3.22}%
+\contentsline {subsubsection}{\numberline {7.18.3.23}fillWithColor()}{222}{subsubsection.7.18.3.23}%
+\contentsline {subsubsection}{\numberline {7.18.3.24}fitTheTexture()}{222}{subsubsection.7.18.3.24}%
+\contentsline {subsubsection}{\numberline {7.18.3.25}getColor()}{222}{subsubsection.7.18.3.25}%
+\contentsline {subsubsection}{\numberline {7.18.3.26}getCrop()}{223}{subsubsection.7.18.3.26}%
+\contentsline {subsubsection}{\numberline {7.18.3.27}getH()}{223}{subsubsection.7.18.3.27}%
+\contentsline {subsubsection}{\numberline {7.18.3.28}getLocation()}{223}{subsubsection.7.18.3.28}%
+\contentsline {subsubsection}{\numberline {7.18.3.29}getSize()}{223}{subsubsection.7.18.3.29}%
+\contentsline {subsubsection}{\numberline {7.18.3.30}getText()}{223}{subsubsection.7.18.3.30}%
+\contentsline {subsubsection}{\numberline {7.18.3.31}getW()}{224}{subsubsection.7.18.3.31}%
+\contentsline {subsubsection}{\numberline {7.18.3.32}getX()}{224}{subsubsection.7.18.3.32}%
+\contentsline {subsubsection}{\numberline {7.18.3.33}getY()}{224}{subsubsection.7.18.3.33}%
+\contentsline {subsubsection}{\numberline {7.18.3.34}hide()}{224}{subsubsection.7.18.3.34}%
+\contentsline {subsubsection}{\numberline {7.18.3.35}highlight()}{224}{subsubsection.7.18.3.35}%
+\contentsline {subsubsection}{\numberline {7.18.3.36}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{225}{subsubsection.7.18.3.36}%
+\contentsline {subsubsection}{\numberline {7.18.3.37}importFromJson()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{225}{subsubsection.7.18.3.37}%
+\contentsline {subsubsection}{\numberline {7.18.3.38}initBackground()}{225}{subsubsection.7.18.3.38}%
+\contentsline {subsubsection}{\numberline {7.18.3.39}initInput()}{226}{subsubsection.7.18.3.39}%
+\contentsline {subsubsection}{\numberline {7.18.3.40}initObjects()}{226}{subsubsection.7.18.3.40}%
+\contentsline {subsubsection}{\numberline {7.18.3.41}initTextBox()}{226}{subsubsection.7.18.3.41}%
+\contentsline {subsubsection}{\numberline {7.18.3.42}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{227}{subsubsection.7.18.3.42}%
+\contentsline {subsubsection}{\numberline {7.18.3.43}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{227}{subsubsection.7.18.3.43}%
+\contentsline {subsubsection}{\numberline {7.18.3.44}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{227}{subsubsection.7.18.3.44}%
+\contentsline {subsubsection}{\numberline {7.18.3.45}isLieInside()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{227}{subsubsection.7.18.3.45}%
+\contentsline {subsubsection}{\numberline {7.18.3.46}isVisible()}{228}{subsubsection.7.18.3.46}%
+\contentsline {subsubsection}{\numberline {7.18.3.47}linking()}{228}{subsubsection.7.18.3.47}%
+\contentsline {subsubsection}{\numberline {7.18.3.48}locating()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{228}{subsubsection.7.18.3.48}%
+\contentsline {subsubsection}{\numberline {7.18.3.49}locating()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{228}{subsubsection.7.18.3.49}%
+\contentsline {subsubsection}{\numberline {7.18.3.50}locating()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{229}{subsubsection.7.18.3.50}%
+\contentsline {subsubsection}{\numberline {7.18.3.51}locatingH()}{229}{subsubsection.7.18.3.51}%
+\contentsline {subsubsection}{\numberline {7.18.3.52}locatingW()}{229}{subsubsection.7.18.3.52}%
+\contentsline {subsubsection}{\numberline {7.18.3.53}locatingX()}{229}{subsubsection.7.18.3.53}%
+\contentsline {subsubsection}{\numberline {7.18.3.54}locatingY()}{230}{subsubsection.7.18.3.54}%
+\contentsline {subsubsection}{\numberline {7.18.3.55}moveX()}{230}{subsubsection.7.18.3.55}%
+\contentsline {subsubsection}{\numberline {7.18.3.56}moveY()}{230}{subsubsection.7.18.3.56}%
+\contentsline {subsubsection}{\numberline {7.18.3.57}noCropping()}{230}{subsubsection.7.18.3.57}%
+\contentsline {subsubsection}{\numberline {7.18.3.58}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{231}{subsubsection.7.18.3.58}%
+\contentsline {subsubsection}{\numberline {7.18.3.59}removeCharacter()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{231}{subsubsection.7.18.3.59}%
+\contentsline {subsubsection}{\numberline {7.18.3.60}rendering()}{231}{subsubsection.7.18.3.60}%
+\contentsline {subsubsection}{\numberline {7.18.3.61}setFont()}{231}{subsubsection.7.18.3.61}%
+\contentsline {subsubsection}{\numberline {7.18.3.62}setFontColor()}{232}{subsubsection.7.18.3.62}%
+\contentsline {subsubsection}{\numberline {7.18.3.63}setShape()}{232}{subsubsection.7.18.3.63}%
+\contentsline {subsubsection}{\numberline {7.18.3.64}setText()}{232}{subsubsection.7.18.3.64}%
+\contentsline {subsubsection}{\numberline {7.18.3.65}setTextBox()}{233}{subsubsection.7.18.3.65}%
+\contentsline {subsubsection}{\numberline {7.18.3.66}setTextBoxTransparent()}{233}{subsubsection.7.18.3.66}%
+\contentsline {subsubsection}{\numberline {7.18.3.67}show()}{233}{subsubsection.7.18.3.67}%
+\contentsline {subsubsection}{\numberline {7.18.3.68}textToTexture()}{233}{subsubsection.7.18.3.68}%
+\contentsline {subsubsection}{\numberline {7.18.3.69}textureFromFile()}{234}{subsubsection.7.18.3.69}%
+\contentsline {subsubsection}{\numberline {7.18.3.70}typing()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{234}{subsubsection.7.18.3.70}%
+\contentsline {subsubsection}{\numberline {7.18.3.71}typing()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{234}{subsubsection.7.18.3.71}%
+\contentsline {subsubsection}{\numberline {7.18.3.72}unhighlight()}{234}{subsubsection.7.18.3.72}%
+\contentsline {subsubsection}{\numberline {7.18.3.73}zoom()}{235}{subsubsection.7.18.3.73}%
+\contentsline {subsubsection}{\numberline {7.18.3.74}zoomH()}{235}{subsubsection.7.18.3.74}%
+\contentsline {subsubsection}{\numberline {7.18.3.75}zoomInMiddle()}{235}{subsubsection.7.18.3.75}%
+\contentsline {subsubsection}{\numberline {7.18.3.76}zoomW()}{235}{subsubsection.7.18.3.76}%
+\contentsline {section}{\numberline {7.19}Trie Class Reference}{236}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{236}{subsection.7.19.1}%
+\contentsline {subsection}{\numberline {7.19.2}Constructor \& Destructor Documentation}{236}{subsection.7.19.2}%
+\contentsline {subsubsection}{\numberline {7.19.2.1}Trie()}{237}{subsubsection.7.19.2.1}%
+\contentsline {subsubsection}{\numberline {7.19.2.2}$\sim $Trie()}{237}{subsubsection.7.19.2.2}%
+\contentsline {subsection}{\numberline {7.19.3}Member Function Documentation}{237}{subsection.7.19.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.1}closeScript()}{238}{subsubsection.7.19.3.1}%
+\contentsline {subsubsection}{\numberline {7.19.3.2}drawEgdes()}{238}{subsubsection.7.19.3.2}%
+\contentsline {subsubsection}{\numberline {7.19.3.3}highlight()}{238}{subsubsection.7.19.3.3}%
+\contentsline {subsubsection}{\numberline {7.19.3.4}init()}{238}{subsubsection.7.19.3.4}%
+\contentsline {subsubsection}{\numberline {7.19.3.5}insert()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{239}{subsubsection.7.19.3.5}%
+\contentsline {subsubsection}{\numberline {7.19.3.6}insert()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{240}{subsubsection.7.19.3.6}%
+\contentsline {subsubsection}{\numberline {7.19.3.7}isReceiveEvent()}{240}{subsubsection.7.19.3.7}%
+\contentsline {subsubsection}{\numberline {7.19.3.8}locating()}{241}{subsubsection.7.19.3.8}%
+\contentsline {subsubsection}{\numberline {7.19.3.9}react()}{241}{subsubsection.7.19.3.9}%
+\contentsline {subsubsection}{\numberline {7.19.3.10}remove()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{242}{subsubsection.7.19.3.10}%
+\contentsline {subsubsection}{\numberline {7.19.3.11}remove()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{243}{subsubsection.7.19.3.11}%
+\contentsline {subsubsection}{\numberline {7.19.3.12}rendering()}{243}{subsubsection.7.19.3.12}%
+\contentsline {subsubsection}{\numberline {7.19.3.13}search()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{244}{subsubsection.7.19.3.13}%
+\contentsline {subsubsection}{\numberline {7.19.3.14}search()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{244}{subsubsection.7.19.3.14}%
+\contentsline {subsubsection}{\numberline {7.19.3.15}setEdgesColor()}{245}{subsubsection.7.19.3.15}%
+\contentsline {subsubsection}{\numberline {7.19.3.16}setNodeColor()}{245}{subsubsection.7.19.3.16}%
+\contentsline {subsubsection}{\numberline {7.19.3.17}setting()}{245}{subsubsection.7.19.3.17}%
+\contentsline {subsubsection}{\numberline {7.19.3.18}unhighlight()}{246}{subsubsection.7.19.3.18}%
+\contentsline {subsubsection}{\numberline {7.19.3.19}waitForStep()}{246}{subsubsection.7.19.3.19}%
+\contentsline {chapter}{\numberline {8}File Documentation}{247}{chapter.8}%
+\contentsline {section}{\numberline {8.1}include/button.hpp File Reference}{247}{section.8.1}%
+\contentsline {section}{\numberline {8.2}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures.hpp File Reference}{247}{section.8.2}%
+\contentsline {section}{\numberline {8.3}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL.hpp File Reference}{248}{section.8.3}%
+\contentsline {section}{\numberline {8.4}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/btree4th.hpp File Reference}{248}{section.8.4}%
+\contentsline {section}{\numberline {8.5}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/graph.hpp File Reference}{248}{section.8.5}%
+\contentsline {section}{\numberline {8.6}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table.hpp File Reference}{249}{section.8.6}%
+\contentsline {section}{\numberline {8.7}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/maxheap.hpp File Reference}{249}{section.8.7}%
+\contentsline {section}{\numberline {8.8}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/minheap.hpp File Reference}{249}{section.8.8}%
+\contentsline {section}{\numberline {8.9}include/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/trie.hpp File Reference}{250}{section.8.9}%
+\contentsline {section}{\numberline {8.10}include/display.hpp File Reference}{250}{section.8.10}%
+\contentsline {section}{\numberline {8.11}include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GLOBAL.hpp File Reference}{250}{section.8.11}%
+\contentsline {subsection}{\numberline {8.11.1}Typedef Documentation}{252}{subsection.8.11.1}%
+\contentsline {subsubsection}{\numberline {8.11.1.1}json}{252}{subsubsection.8.11.1.1}%
+\contentsline {subsection}{\numberline {8.11.2}Enumeration Type Documentation}{252}{subsection.8.11.2}%
+\contentsline {subsubsection}{\numberline {8.11.2.1}BUTTON\_ACTION}{253}{subsubsection.8.11.2.1}%
+\contentsline {subsubsection}{\numberline {8.11.2.2}BUTTON\_STATUS}{254}{subsubsection.8.11.2.2}%
+\contentsline {subsubsection}{\numberline {8.11.2.3}DATA\_STRUCTURES\_OPERATOR}{254}{subsubsection.8.11.2.3}%
+\contentsline {subsubsection}{\numberline {8.11.2.4}DATA\_STRUCTURES\_TYPE}{256}{subsubsection.8.11.2.4}%
+\contentsline {subsubsection}{\numberline {8.11.2.5}HORIZONTAL\_ALIGN}{257}{subsubsection.8.11.2.5}%
+\contentsline {subsubsection}{\numberline {8.11.2.6}INPUT\_TYPE}{257}{subsubsection.8.11.2.6}%
+\contentsline {subsubsection}{\numberline {8.11.2.7}SHAPE}{257}{subsubsection.8.11.2.7}%
+\contentsline {subsubsection}{\numberline {8.11.2.8}VERTICAL\_ALIGN}{258}{subsubsection.8.11.2.8}%
+\contentsline {subsubsection}{\numberline {8.11.2.9}WINDOW\_STATUS}{258}{subsubsection.8.11.2.9}%
+\contentsline {section}{\numberline {8.12}include/inputbox.hpp File Reference}{259}{section.8.12}%
+\contentsline {section}{\numberline {8.13}include/object.hpp File Reference}{259}{section.8.13}%
+\contentsline {subsection}{\numberline {8.13.1}Typedef Documentation}{259}{subsection.8.13.1}%
+\contentsline {subsubsection}{\numberline {8.13.1.1}json}{260}{subsubsection.8.13.1.1}%
+\contentsline {section}{\numberline {8.14}include/script.hpp File Reference}{260}{section.8.14}%
+\contentsline {section}{\numberline {8.15}include/services.hpp File Reference}{260}{section.8.15}%
+\contentsline {subsection}{\numberline {8.15.1}Typedef Documentation}{261}{subsection.8.15.1}%
+\contentsline {subsubsection}{\numberline {8.15.1.1}json}{261}{subsubsection.8.15.1.1}%
+\contentsline {section}{\numberline {8.16}include/sprite.hpp File Reference}{262}{section.8.16}%
+\contentsline {subsection}{\numberline {8.16.1}Typedef Documentation}{262}{subsection.8.16.1}%
+\contentsline {subsubsection}{\numberline {8.16.1.1}json}{262}{subsubsection.8.16.1.1}%
+\contentsline {section}{\numberline {8.17}include/window.hpp File Reference}{262}{section.8.17}%
+\contentsline {section}{\numberline {8.18}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{263}{section.8.18}%
+\contentsline {section}{\numberline {8.19}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/constructor.cpp File Reference}{263}{section.8.19}%
+\contentsline {section}{\numberline {8.20}src/btree4th/constructor.cpp File Reference}{263}{section.8.20}%
+\contentsline {section}{\numberline {8.21}src/button/constructor.cpp File Reference}{263}{section.8.21}%
+\contentsline {section}{\numberline {8.22}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/constructor.cpp File Reference}{263}{section.8.22}%
+\contentsline {section}{\numberline {8.23}src/display/constructor.cpp File Reference}{263}{section.8.23}%
+\contentsline {section}{\numberline {8.24}src/graph/constructor.cpp File Reference}{263}{section.8.24}%
+\contentsline {section}{\numberline {8.25}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/constructor.cpp File Reference}{264}{section.8.25}%
+\contentsline {section}{\numberline {8.26}src/inputbox/constructor.cpp File Reference}{264}{section.8.26}%
+\contentsline {section}{\numberline {8.27}src/maxheap/constructor.cpp File Reference}{264}{section.8.27}%
+\contentsline {section}{\numberline {8.28}src/minheap/constructor.cpp File Reference}{264}{section.8.28}%
+\contentsline {section}{\numberline {8.29}src/object/constructor.cpp File Reference}{264}{section.8.29}%
+\contentsline {section}{\numberline {8.30}src/script/constructor.cpp File Reference}{264}{section.8.30}%
+\contentsline {section}{\numberline {8.31}src/sprite/constructor.cpp File Reference}{265}{section.8.31}%
+\contentsline {section}{\numberline {8.32}src/trie/constructor.cpp File Reference}{265}{section.8.32}%
+\contentsline {section}{\numberline {8.33}src/window/constructor.cpp File Reference}{265}{section.8.33}%
+\contentsline {section}{\numberline {8.34}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/destructor.cpp File Reference}{265}{section.8.34}%
+\contentsline {section}{\numberline {8.35}src/btree4th/destructor.cpp File Reference}{265}{section.8.35}%
+\contentsline {section}{\numberline {8.36}src/button/destructor.cpp File Reference}{265}{section.8.36}%
+\contentsline {section}{\numberline {8.37}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/destructor.cpp File Reference}{265}{section.8.37}%
+\contentsline {section}{\numberline {8.38}src/display/destructor.cpp File Reference}{266}{section.8.38}%
+\contentsline {section}{\numberline {8.39}src/graph/destructor.cpp File Reference}{266}{section.8.39}%
+\contentsline {section}{\numberline {8.40}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/destructor.cpp File Reference}{266}{section.8.40}%
+\contentsline {section}{\numberline {8.41}src/inputbox/destructor.cpp File Reference}{266}{section.8.41}%
+\contentsline {section}{\numberline {8.42}src/maxheap/destructor.cpp File Reference}{266}{section.8.42}%
+\contentsline {section}{\numberline {8.43}src/minheap/destructor.cpp File Reference}{266}{section.8.43}%
+\contentsline {section}{\numberline {8.44}src/object/destructor.cpp File Reference}{266}{section.8.44}%
+\contentsline {section}{\numberline {8.45}src/script/destructor.cpp File Reference}{266}{section.8.45}%
+\contentsline {section}{\numberline {8.46}src/sprite/destructor.cpp File Reference}{267}{section.8.46}%
+\contentsline {section}{\numberline {8.47}src/trie/destructor.cpp File Reference}{267}{section.8.47}%
+\contentsline {section}{\numberline {8.48}src/window/destructor.cpp File Reference}{267}{section.8.48}%
+\contentsline {section}{\numberline {8.49}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/event.cpp File Reference}{267}{section.8.49}%
+\contentsline {section}{\numberline {8.50}src/button/event.cpp File Reference}{267}{section.8.50}%
+\contentsline {section}{\numberline {8.51}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/event.cpp File Reference}{267}{section.8.51}%
+\contentsline {section}{\numberline {8.52}src/display/event.cpp File Reference}{267}{section.8.52}%
+\contentsline {section}{\numberline {8.53}src/graph/event.cpp File Reference}{268}{section.8.53}%
+\contentsline {section}{\numberline {8.54}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/event.cpp File Reference}{268}{section.8.54}%
+\contentsline {section}{\numberline {8.55}src/inputbox/event.cpp File Reference}{268}{section.8.55}%
+\contentsline {section}{\numberline {8.56}src/minheap/event.cpp File Reference}{268}{section.8.56}%
+\contentsline {section}{\numberline {8.57}src/script/event.cpp File Reference}{268}{section.8.57}%
+\contentsline {section}{\numberline {8.58}src/trie/event.cpp File Reference}{268}{section.8.58}%
+\contentsline {section}{\numberline {8.59}src/window/event.cpp File Reference}{268}{section.8.59}%
+\contentsline {section}{\numberline {8.60}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/operator/delete.cpp File Reference}{269}{section.8.60}%
+\contentsline {section}{\numberline {8.61}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/operator/init.cpp File Reference}{269}{section.8.61}%
+\contentsline {section}{\numberline {8.62}src/btree4th/operator/init.cpp File Reference}{269}{section.8.62}%
+\contentsline {section}{\numberline {8.63}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/init.cpp File Reference}{269}{section.8.63}%
+\contentsline {section}{\numberline {8.64}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/graph/init.cpp File Reference}{269}{section.8.64}%
+\contentsline {section}{\numberline {8.65}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/init.cpp File Reference}{269}{section.8.65}%
+\contentsline {section}{\numberline {8.66}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/init.cpp File Reference}{269}{section.8.66}%
+\contentsline {section}{\numberline {8.67}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/trie/init.cpp File Reference}{269}{section.8.67}%
+\contentsline {section}{\numberline {8.68}src/graph/operator/init.cpp File Reference}{270}{section.8.68}%
+\contentsline {subsection}{\numberline {8.68.1}Function Documentation}{270}{subsection.8.68.1}%
+\contentsline {subsubsection}{\numberline {8.68.1.1}sqr()}{270}{subsubsection.8.68.1.1}%
+\contentsline {section}{\numberline {8.69}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/operator/init.cpp File Reference}{270}{section.8.69}%
+\contentsline {section}{\numberline {8.70}src/maxheap/operator/init.cpp File Reference}{270}{section.8.70}%
+\contentsline {section}{\numberline {8.71}src/minheap/operator/init.cpp File Reference}{270}{section.8.71}%
+\contentsline {section}{\numberline {8.72}src/trie/operator/init.cpp File Reference}{270}{section.8.72}%
+\contentsline {section}{\numberline {8.73}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/operator/insert.cpp File Reference}{271}{section.8.73}%
+\contentsline {section}{\numberline {8.74}src/btree4th/operator/insert.cpp File Reference}{271}{section.8.74}%
+\contentsline {section}{\numberline {8.75}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/insert.cpp File Reference}{271}{section.8.75}%
+\contentsline {section}{\numberline {8.76}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/insert.cpp File Reference}{271}{section.8.76}%
+\contentsline {section}{\numberline {8.77}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/insert.cpp File Reference}{271}{section.8.77}%
+\contentsline {section}{\numberline {8.78}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/trie/insert.cpp File Reference}{271}{section.8.78}%
+\contentsline {section}{\numberline {8.79}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/operator/insert.cpp File Reference}{271}{section.8.79}%
+\contentsline {section}{\numberline {8.80}src/maxheap/operator/insert.cpp File Reference}{271}{section.8.80}%
+\contentsline {section}{\numberline {8.81}src/minheap/operator/insert.cpp File Reference}{272}{section.8.81}%
+\contentsline {section}{\numberline {8.82}src/trie/operator/insert.cpp File Reference}{272}{section.8.82}%
+\contentsline {section}{\numberline {8.83}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/operator/search.cpp File Reference}{272}{section.8.83}%
+\contentsline {section}{\numberline {8.84}src/btree4th/operator/search.cpp File Reference}{272}{section.8.84}%
+\contentsline {section}{\numberline {8.85}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/search.cpp File Reference}{272}{section.8.85}%
+\contentsline {section}{\numberline {8.86}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/search.cpp File Reference}{272}{section.8.86}%
+\contentsline {section}{\numberline {8.87}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/trie/search.cpp File Reference}{272}{section.8.87}%
+\contentsline {section}{\numberline {8.88}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/operator/search.cpp File Reference}{272}{section.8.88}%
+\contentsline {section}{\numberline {8.89}src/trie/operator/search.cpp File Reference}{273}{section.8.89}%
+\contentsline {section}{\numberline {8.90}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/rendering.cpp File Reference}{273}{section.8.90}%
+\contentsline {section}{\numberline {8.91}src/button/rendering.cpp File Reference}{273}{section.8.91}%
+\contentsline {section}{\numberline {8.92}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/rendering.cpp File Reference}{273}{section.8.92}%
+\contentsline {section}{\numberline {8.93}src/display/rendering.cpp File Reference}{273}{section.8.93}%
+\contentsline {section}{\numberline {8.94}src/graph/rendering.cpp File Reference}{273}{section.8.94}%
+\contentsline {section}{\numberline {8.95}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/rendering.cpp File Reference}{273}{section.8.95}%
+\contentsline {section}{\numberline {8.96}src/inputbox/rendering.cpp File Reference}{274}{section.8.96}%
+\contentsline {section}{\numberline {8.97}src/maxheap/rendering.cpp File Reference}{274}{section.8.97}%
+\contentsline {section}{\numberline {8.98}src/minheap/rendering.cpp File Reference}{274}{section.8.98}%
+\contentsline {section}{\numberline {8.99}src/object/rendering.cpp File Reference}{274}{section.8.99}%
+\contentsline {section}{\numberline {8.100}src/script/rendering.cpp File Reference}{274}{section.8.100}%
+\contentsline {section}{\numberline {8.101}src/sprite/rendering.cpp File Reference}{274}{section.8.101}%
+\contentsline {section}{\numberline {8.102}src/trie/rendering.cpp File Reference}{274}{section.8.102}%
+\contentsline {section}{\numberline {8.103}src/window/rendering.cpp File Reference}{274}{section.8.103}%
+\contentsline {section}{\numberline {8.104}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/rotate.cpp File Reference}{275}{section.8.104}%
+\contentsline {section}{\numberline {8.105}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/step.cpp File Reference}{275}{section.8.105}%
+\contentsline {section}{\numberline {8.106}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/step.cpp File Reference}{275}{section.8.106}%
+\contentsline {section}{\numberline {8.107}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/step.cpp File Reference}{275}{section.8.107}%
+\contentsline {section}{\numberline {8.108}src/minheap/step.cpp File Reference}{275}{section.8.108}%
+\contentsline {section}{\numberline {8.109}src/trie/step.cpp File Reference}{275}{section.8.109}%
+\contentsline {section}{\numberline {8.110}src/btree4th/node.cpp File Reference}{275}{section.8.110}%
+\contentsline {section}{\numberline {8.111}src/btree4th/operator/add\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record.cpp File Reference}{276}{section.8.111}%
+\contentsline {section}{\numberline {8.112}src/btree4th/operator/split.cpp File Reference}{276}{section.8.112}%
+\contentsline {section}{\numberline {8.113}src/button/action.cpp File Reference}{276}{section.8.113}%
+\contentsline {section}{\numberline {8.114}src/button/mouse\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}action.cpp File Reference}{276}{section.8.114}%
+\contentsline {section}{\numberline {8.115}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL.cpp File Reference}{276}{section.8.115}%
+\contentsline {section}{\numberline {8.116}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/btree4th.cpp File Reference}{276}{section.8.116}%
+\contentsline {section}{\numberline {8.117}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/graph.cpp File Reference}{276}{section.8.117}%
+\contentsline {section}{\numberline {8.118}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table.cpp File Reference}{276}{section.8.118}%
+\contentsline {section}{\numberline {8.119}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/heap.cpp File Reference}{276}{section.8.119}%
+\contentsline {section}{\numberline {8.120}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator.cpp File Reference}{276}{section.8.120}%
+\contentsline {section}{\numberline {8.121}src/inputbox/operator.cpp File Reference}{277}{section.8.121}%
+\contentsline {section}{\numberline {8.122}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/remove.cpp File Reference}{277}{section.8.122}%
+\contentsline {section}{\numberline {8.123}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/remove.cpp File Reference}{277}{section.8.123}%
+\contentsline {section}{\numberline {8.124}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/trie/remove.cpp File Reference}{277}{section.8.124}%
+\contentsline {section}{\numberline {8.125}src/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/operator/remove.cpp File Reference}{277}{section.8.125}%
+\contentsline {section}{\numberline {8.126}src/maxheap/operator/remove.cpp File Reference}{277}{section.8.126}%
+\contentsline {section}{\numberline {8.127}src/minheap/operator/remove.cpp File Reference}{277}{section.8.127}%
+\contentsline {subsection}{\numberline {8.127.1}Variable Documentation}{278}{subsection.8.127.1}%
+\contentsline {subsubsection}{\numberline {8.127.1.1}valuesReachedZero}{278}{subsubsection.8.127.1.1}%
+\contentsline {section}{\numberline {8.128}src/trie/operator/remove.cpp File Reference}{278}{section.8.128}%
+\contentsline {section}{\numberline {8.129}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}AVL/setting.cpp File Reference}{278}{section.8.129}%
+\contentsline {section}{\numberline {8.130}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/graph/setting.cpp File Reference}{278}{section.8.130}%
+\contentsline {section}{\numberline {8.131}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/hash\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}table/setting.cpp File Reference}{278}{section.8.131}%
+\contentsline {section}{\numberline {8.132}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/setting.cpp File Reference}{278}{section.8.132}%
+\contentsline {section}{\numberline {8.133}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/trie/setting.cpp File Reference}{279}{section.8.133}%
+\contentsline {section}{\numberline {8.134}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/graph/dijkstra.cpp File Reference}{279}{section.8.134}%
+\contentsline {section}{\numberline {8.135}src/graph/operator/dijkstra.cpp File Reference}{279}{section.8.135}%
+\contentsline {section}{\numberline {8.136}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/graph/mst.cpp File Reference}{279}{section.8.136}%
+\contentsline {section}{\numberline {8.137}src/graph/operator/mst.cpp File Reference}{279}{section.8.137}%
+\contentsline {section}{\numberline {8.138}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/graph/scc.cpp File Reference}{279}{section.8.138}%
+\contentsline {section}{\numberline {8.139}src/graph/operator/scc.cpp File Reference}{280}{section.8.139}%
+\contentsline {section}{\numberline {8.140}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/pop.cpp File Reference}{280}{section.8.140}%
+\contentsline {section}{\numberline {8.141}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/size.cpp File Reference}{280}{section.8.141}%
+\contentsline {section}{\numberline {8.142}src/maxheap/operator/size.cpp File Reference}{280}{section.8.142}%
+\contentsline {section}{\numberline {8.143}src/minheap/operator/size.cpp File Reference}{280}{section.8.143}%
+\contentsline {section}{\numberline {8.144}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/operator/minheap/top.cpp File Reference}{280}{section.8.144}%
+\contentsline {section}{\numberline {8.145}src/data\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}structures/trie.cpp File Reference}{280}{section.8.145}%
+\contentsline {section}{\numberline {8.146}src/graph/operator/repair.cpp File Reference}{280}{section.8.146}%
+\contentsline {section}{\numberline {8.147}src/inputbox/typing.cpp File Reference}{280}{section.8.147}%
+\contentsline {section}{\numberline {8.148}src/main.cpp File Reference}{281}{section.8.148}%
+\contentsline {subsection}{\numberline {8.148.1}Function Documentation}{281}{subsection.8.148.1}%
+\contentsline {subsubsection}{\numberline {8.148.1.1}main()}{281}{subsubsection.8.148.1.1}%
+\contentsline {section}{\numberline {8.149}src/maxheap/operator/getmax.cpp File Reference}{281}{section.8.149}%
+\contentsline {section}{\numberline {8.150}src/maxheap/operator/heapify.cpp File Reference}{281}{section.8.150}%
+\contentsline {section}{\numberline {8.151}src/minheap/operator/heapify.cpp File Reference}{281}{section.8.151}%
+\contentsline {section}{\numberline {8.152}src/minheap/operator/getmin.cpp File Reference}{281}{section.8.152}%
+\contentsline {section}{\numberline {8.153}src/object/coloring.cpp File Reference}{282}{section.8.153}%
+\contentsline {section}{\numberline {8.154}src/sprite/coloring.cpp File Reference}{282}{section.8.154}%
+\contentsline {section}{\numberline {8.155}src/object/cropping.cpp File Reference}{282}{section.8.155}%
+\contentsline {section}{\numberline {8.156}src/object/external\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}storage.cpp File Reference}{282}{section.8.156}%
+\contentsline {section}{\numberline {8.157}src/object/font.cpp File Reference}{282}{section.8.157}%
+\contentsline {section}{\numberline {8.158}src/object/locating.cpp File Reference}{282}{section.8.158}%
+\contentsline {section}{\numberline {8.159}src/sprite/locating.cpp File Reference}{282}{section.8.159}%
+\contentsline {section}{\numberline {8.160}src/object/shape.cpp File Reference}{283}{section.8.160}%
+\contentsline {section}{\numberline {8.161}src/object/visible.cpp File Reference}{283}{section.8.161}%
+\contentsline {section}{\numberline {8.162}src/script/highlight.cpp File Reference}{283}{section.8.162}%
+\contentsline {section}{\numberline {8.163}src/services/file.cpp File Reference}{283}{section.8.163}%
+\contentsline {section}{\numberline {8.164}src/services/json.cpp File Reference}{283}{section.8.164}%
+\contentsline {section}{\numberline {8.165}src/services/number.cpp File Reference}{283}{section.8.165}%
+\contentsline {subsection}{\numberline {8.165.1}Function Documentation}{284}{subsection.8.165.1}%
+\contentsline {subsubsection}{\numberline {8.165.1.1}removeLeadingZero()}{284}{subsubsection.8.165.1.1}%
+\contentsline {section}{\numberline {8.166}src/services/random.cpp File Reference}{284}{section.8.166}%
+\contentsline {section}{\numberline {8.167}src/services/string.cpp File Reference}{284}{section.8.167}%
+\contentsline {section}{\numberline {8.168}src/sprite/aligning.cpp File Reference}{284}{section.8.168}%
+\contentsline {section}{\numberline {8.169}src/sprite/textbox.cpp File Reference}{284}{section.8.169}%
+\contentsline {section}{\numberline {8.170}src/window/running.cpp File Reference}{285}{section.8.170}%
+\contentsline {section}{\numberline {8.171}src/window/status.cpp File Reference}{285}{section.8.171}%
+\contentsline {section}{\numberline {8.172}src/window/updating.cpp File Reference}{285}{section.8.172}%
+\contentsline {chapter}{Index}{287}{section*.95}%

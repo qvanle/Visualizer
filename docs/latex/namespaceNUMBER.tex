@@ -1,0 +1,295 @@
+\hypertarget{namespaceNUMBER}{}\doxysection{NUMBER Namespace Reference}
+\label{namespaceNUMBER}\index{NUMBER@{NUMBER}}
+
+
+Convert between string and interger.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{string\+To\+Int}} (std\+::string s)
+\item 
+std\+::string \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{int\+To\+String}} (int64\+\_\+t n)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{namespaceNUMBER_a2fa8657dd4afaa776f853f42fb3abab0}{string\+To\+Array}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{is\+Digit}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}{is\+Letter}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}{is\+Symbol}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}{is\+Sign}} (char c)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_a19bd6f6f77352335234f63924552e0e2}{is\+Operator}} (char c)
+\item 
+std\+::string \mbox{\hyperlink{namespaceNUMBER_af19e2f3556e33facf037bc7f7f193905}{remove\+Leading\+Zero}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}{is\+Number}} (std\+::string s)
+\item 
+bool \mbox{\hyperlink{namespaceNUMBER_ae3a2e4fd61daaddec4bdaf052d17f1dc}{is\+In\+Interval}} (std\+::string s, int64\+\_\+t a, int64\+\_\+t b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int64\+\_\+t \mbox{\hyperlink{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}{INF}} = LLONG\+\_\+\+MAX
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Convert between string and interger. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}\label{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}} 
+\index{NUMBER@{NUMBER}!intToString@{intToString}}
+\index{intToString@{intToString}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{intToString()}{intToString()}}
+{\footnotesize\ttfamily std\+::string NUMBER\+::int\+To\+String (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(n == 0) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{7     std::string result = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{8     \textcolor{keywordtype}{bool} negative = \textcolor{keyword}{false};}
+\DoxyCodeLine{9     \textcolor{keywordflow}{if}(n < 0)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         negative = \textcolor{keyword}{true};}
+\DoxyCodeLine{12         n *= -\/1;}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{while}(n)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         result = (char) (n \% 10 + \textcolor{charliteral}{'0'}) + result;}
+\DoxyCodeLine{18         n /= 10;}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}\label{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}} 
+\index{NUMBER@{NUMBER}!isDigit@{isDigit}}
+\index{isDigit@{isDigit}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isDigit()}{isDigit()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Digit (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int}) c < 48 || (\textcolor{keywordtype}{int}) c > 57) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_ae3a2e4fd61daaddec4bdaf052d17f1dc}\label{namespaceNUMBER_ae3a2e4fd61daaddec4bdaf052d17f1dc}} 
+\index{NUMBER@{NUMBER}!isInInterval@{isInInterval}}
+\index{isInInterval@{isInInterval}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isInInterval()}{isInInterval()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+In\+Interval (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{int64\+\_\+t}]{a,  }\item[{int64\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107 \{}
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}{NUMBER::isNumber}}(s)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     int64\_t n = \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{stringToInt}}(s);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordflow}{return} (n >= a \&\& n <= b);}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}\label{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}} 
+\index{NUMBER@{NUMBER}!isLetter@{isLetter}}
+\index{isLetter@{isLetter}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isLetter()}{isLetter()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Letter (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} ((c >= \textcolor{charliteral}{'a'} \&\& c <= \textcolor{charliteral}{'z'}) || (c >= \textcolor{charliteral}{'A'} \&\& c <= \textcolor{charliteral}{'Z'}));}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}\label{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}} 
+\index{NUMBER@{NUMBER}!isNumber@{isNumber}}
+\index{isNumber@{isNumber}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isNumber()}{isNumber()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Number (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int}) s.size() == 0)}
+\DoxyCodeLine{94         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int}) s.size() == 1) }
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{isDigit}}(s[0]);}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if}(!\mbox{\hyperlink{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}{NUMBER::isSign}}(s[0]) \&\& !\mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(s[0]))}
+\DoxyCodeLine{98         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < (int) s.size(); i++)}
+\DoxyCodeLine{101         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(s[i])) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{104 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_a19bd6f6f77352335234f63924552e0e2}\label{namespaceNUMBER_a19bd6f6f77352335234f63924552e0e2}} 
+\index{NUMBER@{NUMBER}!isOperator@{isOperator}}
+\index{isOperator@{isOperator}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isOperator()}{isOperator()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Operator (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 82 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{return} (c == \textcolor{charliteral}{'+'} || c == \textcolor{charliteral}{'-\/'} || c == \textcolor{charliteral}{'*'} || c == \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}\label{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}} 
+\index{NUMBER@{NUMBER}!isSign@{isSign}}
+\index{isSign@{isSign}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isSign()}{isSign()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Sign (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 86 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} (c == \textcolor{charliteral}{'+'} || c == \textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}\label{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}} 
+\index{NUMBER@{NUMBER}!isSymbol@{isSymbol}}
+\index{isSymbol@{isSymbol}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{isSymbol()}{isSymbol()}}
+{\footnotesize\ttfamily bool NUMBER\+::is\+Symbol (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} (c == \textcolor{charliteral}{'.'} || c == \textcolor{charliteral}{','} || c == \textcolor{charliteral}{'!'} || c == \textcolor{charliteral}{'?'} || c == \textcolor{charliteral}{':'} || c == \textcolor{charliteral}{';'} || c == \textcolor{charliteral}{'('} || c == \textcolor{charliteral}{')'} || c == \textcolor{charliteral}{'['} || c == \textcolor{charliteral}{']'} || c == \textcolor{charliteral}{'\{'} || c == \textcolor{charliteral}{'\}'} || c == \textcolor{charliteral}{'"{}'} || c == \textcolor{charliteral}{'\(\backslash\)''});}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_af19e2f3556e33facf037bc7f7f193905}\label{namespaceNUMBER_af19e2f3556e33facf037bc7f7f193905}} 
+\index{NUMBER@{NUMBER}!removeLeadingZero@{removeLeadingZero}}
+\index{removeLeadingZero@{removeLeadingZero}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{removeLeadingZero()}{removeLeadingZero()}}
+{\footnotesize\ttfamily std\+::string NUMBER\+::remove\+Leading\+Zero (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceNUMBER_a2fa8657dd4afaa776f853f42fb3abab0}\label{namespaceNUMBER_a2fa8657dd4afaa776f853f42fb3abab0}} 
+\index{NUMBER@{NUMBER}!stringToArray@{stringToArray}}
+\index{stringToArray@{stringToArray}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{stringToArray()}{stringToArray()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ NUMBER\+::string\+To\+Array (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     std::vector<int> result;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{while}(i != (\textcolor{keywordtype}{int}) s.size())}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{while}(i != (\textcolor{keywordtype}{int}) s.size() \&\& !\mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(s[i])) i++;}
+\DoxyCodeLine{32         \textcolor{keywordflow}{if}(i == (\textcolor{keywordtype}{int}) s.size()) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33         }
+\DoxyCodeLine{34         \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{35         \textcolor{keywordflow}{while}(i != (\textcolor{keywordtype}{int}) s.size() \&\& \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(s[i])) n = n * 10 + s[i++] -\/ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{36         result.push\_back(n);}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}\label{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}} 
+\index{NUMBER@{NUMBER}!stringToInt@{stringToInt}}
+\index{stringToInt@{stringToInt}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{stringToInt()}{stringToInt()}}
+{\footnotesize\ttfamily int64\+\_\+t NUMBER\+::string\+To\+Int (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file number.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42 \{}
+\DoxyCodeLine{43     \textcolor{keywordflow}{if}(!\mbox{\hyperlink{namespaceNUMBER_aedc948caaec59972829d61ed8c166fdd}{NUMBER::isNumber}}(s)) \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}{NUMBER::INF}};}
+\DoxyCodeLine{44     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int}) s.size() > 18) \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}{NUMBER::INF}};}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{int}) s.size() == 1) \textcolor{keywordflow}{return} (int64\_t) (s[0] -\/ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     int64\_t n = 0;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} negative = \textcolor{keyword}{false};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} sign = \textcolor{keyword}{false};}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceNUMBER_afe5aa18d7080e3734fdb4b7e4a188a57}{NUMBER::isSign}}(s[0]))}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         sign = \textcolor{keyword}{true};}
+\DoxyCodeLine{53         negative = (s[0] == \textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = sign; i < (int) s.size(); i++)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         n *= 10;}
+\DoxyCodeLine{59         n += (int64\_t) (s[i] -\/ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(negative) n *= -\/1;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}\label{namespaceNUMBER_a5d5b5773c31ccc49b5b8da25d8aea397}} 
+\index{NUMBER@{NUMBER}!INF@{INF}}
+\index{INF@{INF}!NUMBER@{NUMBER}}
+\doxysubsubsection{\texorpdfstring{INF}{INF}}
+{\footnotesize\ttfamily const int64\+\_\+t NUMBER\+::\+INF = LLONG\+\_\+\+MAX}
+
+
+
+Definition at line 36 of file services.\+hpp.
+

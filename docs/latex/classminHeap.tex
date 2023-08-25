@@ -1,0 +1,839 @@
+\hypertarget{classminHeap}{}\doxysection{min\+Heap Class Reference}
+\label{classminHeap}\index{minHeap@{minHeap}}
+
+
+heap class.  
+
+
+
+
+{\ttfamily \#include $<$minheap.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classminHeap_a0518f1b94b69bb39662cffc907a7825e}{min\+Heap}} (SDL\+\_\+\+Renderer $\ast$render, std\+::mutex \&m, TTF\+\_\+\+Font $\ast$f, SDL\+\_\+\+Rect v, int cap)
+\item 
+\mbox{\hyperlink{classminHeap_a0d21356dfe1895d4001fd212ff929758}{$\sim$min\+Heap}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_acdf7faddbce9768ac667046e4b3b3046}{setmax}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a79fbe30a2c4165295964bf35c773ba09}{setmin}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}{init}} (std\+::vector$<$ int $>$ value)
+\item 
+void \mbox{\hyperlink{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}{insert}} (int value)
+\item 
+void \mbox{\hyperlink{classminHeap_af9cb05b75094bc28297a5061edb863f9}{pop}} ()
+\item 
+int \mbox{\hyperlink{classminHeap_ac0417e8f7d1c81aee42ef409d35bbca1}{top}} ()
+\item 
+int \mbox{\hyperlink{classminHeap_a50dd1db1832b592debb80782f8f95370}{size}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_aa14fb26c8cc5568c4e2e4a83232a8106}{close\+Script}} ()
+\item 
+bool \mbox{\hyperlink{classminHeap_a723759bc11aa6b1e2b630ed9a76d92f0}{is\+Receive\+Event}} (SDL\+\_\+\+Event \&e)
+\item 
+\mbox{\hyperlink{classButton}{Button}} $\ast$ \mbox{\hyperlink{classminHeap_a8908e2a3e7426454ea416defd1896316}{react}} (SDL\+\_\+\+Event \&e)
+\item 
+void \mbox{\hyperlink{classminHeap_a9a170c5e0676c4c4177208569817d222}{rendering}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_ad633fe1c4691034c6c57af856669de55}{setting}} (SDL\+\_\+\+Color c1, SDL\+\_\+\+Color c2, SDL\+\_\+\+Color c3, SDL\+\_\+\+Color c4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classminHeap_a89e333e1f56754d79fd852bee825d18f}{heapify}} (int index)
+\item 
+void \mbox{\hyperlink{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}{swap}} (int index1, int index2)
+\item 
+bool \mbox{\hyperlink{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}{swapable}} (int index1, int index2)
+\item 
+void \mbox{\hyperlink{classminHeap_ab4daa5f12e2a8c4038bef2d5fa754eed}{real\+Insert}} (int value)
+\item 
+int \mbox{\hyperlink{classminHeap_a19138c6dc788eebcdc672705156c9f93}{locating}} (int id, int shift\+Down, int shift\+Right)
+\item 
+void \mbox{\hyperlink{classminHeap_a7d4a52ca93753e2d4fa45d7a037ff083}{render\+Line}} (Node $\ast$src, Node $\ast$dst)
+\item 
+void \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{wait\+For\+Step}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}} (std\+::vector$<$ int $>$ l)
+\item 
+void \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}} (std\+::vector$<$ int $>$ l)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+heap class. 
+
+Drawable heap.
+
+Default is min heap. 
+
+Definition at line 25 of file minheap.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classminHeap_a0518f1b94b69bb39662cffc907a7825e}\label{classminHeap_a0518f1b94b69bb39662cffc907a7825e}} 
+\index{minHeap@{minHeap}!minHeap@{minHeap}}
+\index{minHeap@{minHeap}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{minHeap()}{minHeap()}}
+{\footnotesize\ttfamily min\+Heap\+::min\+Heap (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{render,  }\item[{std\+::mutex \&}]{m,  }\item[{TTF\+\_\+\+Font $\ast$}]{f,  }\item[{SDL\+\_\+\+Rect}]{v,  }\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                                                : ds\_mutex(m)}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     render = r;}
+\DoxyCodeLine{12     font = f;}
+\DoxyCodeLine{13     viewport = v;}
+\DoxyCodeLine{14     capacity = cap;}
+\DoxyCodeLine{15     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{16     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{17     edgesColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{18     shiftX = 20;}
+\DoxyCodeLine{19     shiftY = 20;}
+\DoxyCodeLine{20     distanceX = 60;}
+\DoxyCodeLine{21     distanceY = 80;}
+\DoxyCodeLine{22     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{23     stepWait = 600;}
+\DoxyCodeLine{24     isAnimate = \textcolor{keyword}{false};}
+\DoxyCodeLine{25     inverse = \textcolor{keyword}{false};}
+\DoxyCodeLine{26     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{27     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{32     \mbox{\hyperlink{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}{insert}}-\/>linking(\textcolor{stringliteral}{"{}minheap/insert"{}});}
+\DoxyCodeLine{33     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}{insert}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{classScript}{Script}}* remove = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{36     remove-\/>\mbox{\hyperlink{classScript_a8b9fefd83a73b635509d263cde80b762}{linking}}(\textcolor{stringliteral}{"{}minheap/remove"{}});}
+\DoxyCodeLine{37     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = remove;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \mbox{\hyperlink{classScript}{Script}}* search = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{40     search-\/>\mbox{\hyperlink{classScript_a8b9fefd83a73b635509d263cde80b762}{linking}}(\textcolor{stringliteral}{"{}minheap/top"{}});}
+\DoxyCodeLine{41     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a6705777b712ee811e76fb07162081d63}{DATA\_STRUCTURES\_OPERATOR::TOP}}] = search;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{44     \mbox{\hyperlink{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}{init}}-\/>linking(\textcolor{stringliteral}{"{}minheap/init"{}});}
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}{init}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classminHeap_a50dd1db1832b592debb80782f8f95370}{size}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{49     \mbox{\hyperlink{classminHeap_a50dd1db1832b592debb80782f8f95370}{size}}-\/>linking(\textcolor{stringliteral}{"{}minheap/size"{}});}
+\DoxyCodeLine{50     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a62e5cef85d46f1a5a2144d9fd463b79e}{DATA\_STRUCTURES\_OPERATOR::SIZE}}] = \mbox{\hyperlink{classminHeap_a50dd1db1832b592debb80782f8f95370}{size}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a0d21356dfe1895d4001fd212ff929758}\label{classminHeap_a0d21356dfe1895d4001fd212ff929758}} 
+\index{minHeap@{minHeap}!````~minHeap@{$\sim$minHeap}}
+\index{````~minHeap@{$\sim$minHeap}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{$\sim$minHeap()}{~minHeap()}}
+{\footnotesize\ttfamily min\+Heap\+::$\sim$min\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : value)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13     \textcolor{keywordflow}{if}(scriptFont != \textcolor{keyword}{nullptr}) TTF\_CloseFont(scriptFont);}
+\DoxyCodeLine{14     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \& i : scripts)}
+\DoxyCodeLine{15         \textcolor{keyword}{delete} i.second;}
+\DoxyCodeLine{16     scripts.clear();}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classminHeap_aa14fb26c8cc5568c4e2e4a83232a8106}\label{classminHeap_aa14fb26c8cc5568c4e2e4a83232a8106}} 
+\index{minHeap@{minHeap}!closeScript@{closeScript}}
+\index{closeScript@{closeScript}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{closeScript()}{closeScript()}}
+{\footnotesize\ttfamily void min\+Heap\+::close\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a89e333e1f56754d79fd852bee825d18f}\label{classminHeap_a89e333e1f56754d79fd852bee825d18f}} 
+\index{minHeap@{minHeap}!heapify@{heapify}}
+\index{heapify@{heapify}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{heapify()}{heapify()}}
+{\footnotesize\ttfamily void min\+Heap\+::heapify (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 13 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} left = 2 * index + 1;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} right = 2 * index + 2;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} largest = index;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordflow}{if}(left < value.size() \&\& \mbox{\hyperlink{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}{swapable}}(index, left))}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         largest = left;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordflow}{if}(right < value.size() \&\& \mbox{\hyperlink{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}{swapable}}(largest, right))}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         largest = right;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{if}(largest != index)}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             animate\_mutex.lock();}
+\DoxyCodeLine{34             value[index]-\/>sprite-\/>highlight();}
+\DoxyCodeLine{35             value[largest]-\/>sprite-\/>highlight();}
+\DoxyCodeLine{36             animate\_mutex.unlock();}
+\DoxyCodeLine{37             \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39         \mbox{\hyperlink{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}{swap}}(index, largest);}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             animate\_mutex.lock();}
+\DoxyCodeLine{43             value[index]-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{44             value[largest]-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{45             animate\_mutex.unlock();}
+\DoxyCodeLine{46         \}}
+\DoxyCodeLine{47         \mbox{\hyperlink{classminHeap_a89e333e1f56754d79fd852bee825d18f}{heapify}}(largest);}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a903b3d14e43685176264e8de8abbde68}\label{classminHeap_a903b3d14e43685176264e8de8abbde68}} 
+\index{minHeap@{minHeap}!highlight@{highlight}}
+\index{highlight@{highlight}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily void min\+Heap\+::highlight (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         animate\_mutex.lock();}
+\DoxyCodeLine{10         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{11         \{}
+\DoxyCodeLine{12             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
+\DoxyCodeLine{13         \}}
+\DoxyCodeLine{14         animate\_mutex.unlock();}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}\label{classminHeap_a89ea24a969b8ff8b401556b28dabdcf3}} 
+\index{minHeap@{minHeap}!init@{init}}
+\index{init@{init}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void min\+Heap\+::init (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file init.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}];}
+\DoxyCodeLine{7     this-\/>value.clear();}
+\DoxyCodeLine{8     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : value)}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \mbox{\hyperlink{classminHeap_ab4daa5f12e2a8c4038bef2d5fa754eed}{realInsert}}(i);}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}\label{classminHeap_aecbeacb58565b667e2a6f77d3b1ab185}} 
+\index{minHeap@{minHeap}!insert@{insert}}
+\index{insert@{insert}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void min\+Heap\+::insert (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file insert.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62 \{}
+\DoxyCodeLine{63     shiftX = 20;}
+\DoxyCodeLine{64     shiftY = 20;}
+\DoxyCodeLine{65     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}];}
+\DoxyCodeLine{66     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{0\});}
+\DoxyCodeLine{69     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{70     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{0\});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \mbox{\hyperlink{classminHeap_ab4daa5f12e2a8c4038bef2d5fa754eed}{realInsert}}(value);}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a723759bc11aa6b1e2b630ed9a76d92f0}\label{classminHeap_a723759bc11aa6b1e2b630ed9a76d92f0}} 
+\index{minHeap@{minHeap}!isReceiveEvent@{isReceiveEvent}}
+\index{isReceiveEvent@{isReceiveEvent}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{isReceiveEvent()}{isReceiveEvent()}}
+{\footnotesize\ttfamily bool min\+Heap\+::is\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{6     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{9             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{10             \textcolor{keywordflow}{if}(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{11             \textcolor{keywordflow}{if}(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{12             \textcolor{keywordflow}{if}(e.button.button == SDL\_BUTTON\_LEFT) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{13             \textcolor{keywordflow}{if}(value.empty()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{14             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{15             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{16         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:}
+\DoxyCodeLine{17             \textcolor{keywordflow}{if}(isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{18             \textcolor{keywordflow}{if}(currentScript == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{19             \textcolor{keywordflow}{if}(currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{20             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{21             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{22         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{23             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{24             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a19138c6dc788eebcdc672705156c9f93}\label{classminHeap_a19138c6dc788eebcdc672705156c9f93}} 
+\index{minHeap@{minHeap}!locating@{locating}}
+\index{locating@{locating}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{locating()}{locating()}}
+{\footnotesize\ttfamily int min\+Heap\+::locating (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{shift\+Down,  }\item[{int}]{shift\+Right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(id < 0 || id >= value.size())}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keywordtype}{int} shift = log2(value.size()) -\/ shiftDown + 1;}
+\DoxyCodeLine{9         \textcolor{keywordflow}{return} std::max(0, (1 << shift) -\/ 1);}
+\DoxyCodeLine{10     \}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} left = std::max(0, \mbox{\hyperlink{classminHeap_a19138c6dc788eebcdc672705156c9f93}{locating}}(\textcolor{keywordtype}{id} * 2 + 1, shiftDown + 1, shiftRight));}
+\DoxyCodeLine{13     Node* node = value[id];}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if}(node-\/>sprite != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX + left * distanceX);}
+\DoxyCodeLine{17         node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
+\DoxyCodeLine{18         node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} right = \mbox{\hyperlink{classminHeap_a19138c6dc788eebcdc672705156c9f93}{locating}}(\textcolor{keywordtype}{id} * 2 + 2, shiftDown + 1, shiftRight + left + 1);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} shift = log2(value.size()) -\/ shiftDown + 1;}
+\DoxyCodeLine{23     \textcolor{keywordflow}{return} left + right + 1;}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_af9cb05b75094bc28297a5061edb863f9}\label{classminHeap_af9cb05b75094bc28297a5061edb863f9}} 
+\index{minHeap@{minHeap}!pop@{pop}}
+\index{pop@{pop}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void min\+Heap\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file remove.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(!value.empty()) \mbox{\hyperlink{minheap_2operator_2remove_8cpp_a57288b69cdbb2d08a60788ea2de54223}{valuesReachedZero}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{8     \textcolor{keywordflow}{if}(\mbox{\hyperlink{minheap_2operator_2remove_8cpp_a57288b69cdbb2d08a60788ea2de54223}{valuesReachedZero}}) return ;}
+\DoxyCodeLine{9     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}];}
+\DoxyCodeLine{10     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{11     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{0\});}
+\DoxyCodeLine{12     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{13     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{0\});}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keywordflow}{if}(value.size() == 0)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \mbox{\hyperlink{minheap_2operator_2remove_8cpp_a57288b69cdbb2d08a60788ea2de54223}{valuesReachedZero}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{18         \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{19         \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{20         \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{21         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         animate\_mutex.lock();}
+\DoxyCodeLine{26         value[0]-\/>sprite-\/>highlight();}
+\DoxyCodeLine{27         value.back()-\/>sprite-\/>highlight();}
+\DoxyCodeLine{28         animate\_mutex.unlock();}
+\DoxyCodeLine{29         \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     \mbox{\hyperlink{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}{swap}}(0, value.size() -\/ 1);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         animate\_mutex.lock();}
+\DoxyCodeLine{36         value[0]-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{37         value.back()-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{38         animate\_mutex.unlock();}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     }
+\DoxyCodeLine{41     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{5\});}
+\DoxyCodeLine{42     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{43     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{5\});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     value.pop\_back();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{6\});}
+\DoxyCodeLine{48     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classminHeap_a89e333e1f56754d79fd852bee825d18f}{heapify}}(0);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{6\});}
+\DoxyCodeLine{53     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a8908e2a3e7426454ea416defd1896316}\label{classminHeap_a8908e2a3e7426454ea416defd1896316}} 
+\index{minHeap@{minHeap}!react@{react}}
+\index{react@{react}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classButton}{Button}} $\ast$ min\+Heap\+::react (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{31     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) }
+\DoxyCodeLine{35             \{}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{return} currentScript-\/>\mbox{\hyperlink{classScript_af7bd060b4589e5e17e0dd32124b90232}{react}}(e);}
+\DoxyCodeLine{37             \}}
+\DoxyCodeLine{38             \textcolor{keywordflow}{if}(isMoving)}
+\DoxyCodeLine{39             \{}
+\DoxyCodeLine{40                 isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{41                 \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{42                 \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{43                 shiftX += dx;}
+\DoxyCodeLine{44                 shiftY += dy;}
+\DoxyCodeLine{45             \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{46             \{}
+\DoxyCodeLine{47                 isMoving = \textcolor{keyword}{true};}
+\DoxyCodeLine{48                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{49                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{53         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION: }
+\DoxyCodeLine{54         \{}
+\DoxyCodeLine{55             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) }
+\DoxyCodeLine{56                 \textcolor{keywordflow}{return} currentScript-\/>\mbox{\hyperlink{classScript_af7bd060b4589e5e17e0dd32124b90232}{react}}(e);}
+\DoxyCodeLine{57             \textcolor{keywordflow}{if}(!isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{58             \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{59             \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{60             lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{61             lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{62             shiftX += dx;}
+\DoxyCodeLine{63             shiftY += dy;}
+\DoxyCodeLine{64             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{65             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         defaut:}
+\DoxyCodeLine{68             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{69             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ab4daa5f12e2a8c4038bef2d5fa754eed}\label{classminHeap_ab4daa5f12e2a8c4038bef2d5fa754eed}} 
+\index{minHeap@{minHeap}!realInsert@{realInsert}}
+\index{realInsert@{realInsert}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{realInsert()}{realInsert()}}
+{\footnotesize\ttfamily void min\+Heap\+::real\+Insert (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file insert.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(inverse) value *= -\/1;}
+\DoxyCodeLine{7     \mbox{\hyperlink{classSprite}{Sprite}}* sprite = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{8     sprite-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{9     sprite-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}AVL/node"{}});}
+\DoxyCodeLine{10     sprite-\/>\mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{setFontColor}}(fontColor);}
+\DoxyCodeLine{11     sprite-\/>\mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(nodeColor);}
+\DoxyCodeLine{12     sprite-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(value));}
+\DoxyCodeLine{13     Node* node = \textcolor{keyword}{new} Node(value, sprite);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     this-\/>value.push\_back(node);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} index = this-\/>value.size() -\/ 1;}
+\DoxyCodeLine{18     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{19     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(index == 0)}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{5, 6, 7\});}
+\DoxyCodeLine{25         \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{26         \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{5, 6, 7\});}
+\DoxyCodeLine{27         return ;}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{9\});}
+\DoxyCodeLine{30     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32         \textcolor{keywordtype}{int} parent = (index -\/ 1) / 2;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{35         \{}
+\DoxyCodeLine{36             animate\_mutex.lock();}
+\DoxyCodeLine{37             this-\/>value[index]-\/>sprite-\/>highlight();}
+\DoxyCodeLine{38             this-\/>value[parent]-\/>sprite-\/>highlight();}
+\DoxyCodeLine{39             animate\_mutex.unlock();}
+\DoxyCodeLine{40             \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}{swapable}}(parent, index))}
+\DoxyCodeLine{43         \{}
+\DoxyCodeLine{44             \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{11, 12, 13\});}
+\DoxyCodeLine{45             \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{46             \mbox{\hyperlink{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}{swap}}(parent, index);}
+\DoxyCodeLine{47             \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{11, 12, 13\});}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             animate\_mutex.lock();}
+\DoxyCodeLine{52             this-\/>value[index]-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{53             this-\/>value[parent]-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{54             animate\_mutex.unlock();}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56         index = parent;}
+\DoxyCodeLine{57     \}\textcolor{keywordflow}{while}(index !=0);}
+\DoxyCodeLine{58     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{9\});}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a9a170c5e0676c4c4177208569817d222}\label{classminHeap_a9a170c5e0676c4c4177208569817d222}} 
+\index{minHeap@{minHeap}!rendering@{rendering}}
+\index{rendering@{rendering}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void min\+Heap\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     SDL\_RenderSetViewport(render, \&viewport);}
+\DoxyCodeLine{42     std::lock\_guard<std::mutex> lock(animate\_mutex);}
+\DoxyCodeLine{43     \mbox{\hyperlink{classminHeap_a19138c6dc788eebcdc672705156c9f93}{locating}}(0, 0, 0);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < value.size(); i++)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         Node* node = value[i];}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if}(node-\/>sprite != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             Node* parent = value[(i -\/ 1) / 2];}
+\DoxyCodeLine{51             \mbox{\hyperlink{classminHeap_a7d4a52ca93753e2d4fa45d7a037ff083}{renderLine}}(parent, node);}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : value)}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{if}(i-\/>sprite != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{57             i-\/>sprite-\/>rendering();}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         SDL\_RenderSetViewport(render, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{62         currentScript-\/>\mbox{\hyperlink{classScript_afabe6d8f50598c591160b181f77c14a4}{rendering}}();}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a7d4a52ca93753e2d4fa45d7a037ff083}\label{classminHeap_a7d4a52ca93753e2d4fa45d7a037ff083}} 
+\index{minHeap@{minHeap}!renderLine@{renderLine}}
+\index{renderLine@{renderLine}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{renderLine()}{renderLine()}}
+{\footnotesize\ttfamily void min\+Heap\+::render\+Line (\begin{DoxyParamCaption}\item[{Node $\ast$}]{src,  }\item[{Node $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 26 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     SDL\_Point psrc = \{src-\/>sprite-\/>getX() + src-\/>sprite-\/>getW() / 2, src-\/>sprite-\/>getY() + src-\/>sprite-\/>getH() / 2\};}
+\DoxyCodeLine{29     SDL\_Point pdst = \{dst-\/>sprite-\/>getX() + dst-\/>sprite-\/>getW() / 2, dst-\/>sprite-\/>getY() + dst-\/>sprite-\/>getH() / 2\};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     SDL\_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);}
+\DoxyCodeLine{32     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = -\/1; i <= 1; i++)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = -\/1; j <= 1; j++)}
+\DoxyCodeLine{35             SDL\_RenderDrawLine(render, psrc.x + i, psrc.y + j, pdst.x + i, pdst.y + j);}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_acdf7faddbce9768ac667046e4b3b3046}\label{classminHeap_acdf7faddbce9768ac667046e4b3b3046}} 
+\index{minHeap@{minHeap}!setmax@{setmax}}
+\index{setmax@{setmax}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{setmax()}{setmax()}}
+{\footnotesize\ttfamily void min\+Heap\+::setmax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     inverse = \textcolor{keyword}{true};}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a79fbe30a2c4165295964bf35c773ba09}\label{classminHeap_a79fbe30a2c4165295964bf35c773ba09}} 
+\index{minHeap@{minHeap}!setmin@{setmin}}
+\index{setmin@{setmin}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{setmin()}{setmin()}}
+{\footnotesize\ttfamily void min\+Heap\+::setmin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55 \{}
+\DoxyCodeLine{56     inverse = \textcolor{keyword}{false};}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ad633fe1c4691034c6c57af856669de55}\label{classminHeap_ad633fe1c4691034c6c57af856669de55}} 
+\index{minHeap@{minHeap}!setting@{setting}}
+\index{setting@{setting}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{setting()}{setting()}}
+{\footnotesize\ttfamily void min\+Heap\+::setting (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c1,  }\item[{SDL\+\_\+\+Color}]{c2,  }\item[{SDL\+\_\+\+Color}]{c3,  }\item[{SDL\+\_\+\+Color}]{c4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65 \{}
+\DoxyCodeLine{66     bgColor = c1;}
+\DoxyCodeLine{67     nodeColor = c2;}
+\DoxyCodeLine{68     fontColor = c3;}
+\DoxyCodeLine{69     edgesColor = c4;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : value)}
+\DoxyCodeLine{72     \{}
+\DoxyCodeLine{73         i-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{74         i-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a50dd1db1832b592debb80782f8f95370}\label{classminHeap_a50dd1db1832b592debb80782f8f95370}} 
+\index{minHeap@{minHeap}!size@{size}}
+\index{size@{size}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int min\+Heap\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file size.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a62e5cef85d46f1a5a2144d9fd463b79e}{DATA\_STRUCTURES\_OPERATOR::SIZE}}];}
+\DoxyCodeLine{7     \textcolor{keywordflow}{return} value.size();}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}\label{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}} 
+\index{minHeap@{minHeap}!swap@{swap}}
+\index{swap@{swap}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void min\+Heap\+::swap (\begin{DoxyParamCaption}\item[{int}]{index1,  }\item[{int}]{index2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 3 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     std::swap(value[index1], value[index2]);}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}\label{classminHeap_a89b9a17cf6825e23c4d83336eca527fe}} 
+\index{minHeap@{minHeap}!swapable@{swapable}}
+\index{swapable@{swapable}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{swapable()}{swapable()}}
+{\footnotesize\ttfamily bool min\+Heap\+::swapable (\begin{DoxyParamCaption}\item[{int}]{index1,  }\item[{int}]{index2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 8 of file heapify.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{return} value[index1]-\/>value > value[index2]-\/>value;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ac0417e8f7d1c81aee42ef409d35bbca1}\label{classminHeap_ac0417e8f7d1c81aee42ef409d35bbca1}} 
+\index{minHeap@{minHeap}!top@{top}}
+\index{top@{top}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily int min\+Heap\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file getmin.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a6705777b712ee811e76fb07162081d63}{DATA\_STRUCTURES\_OPERATOR::TOP}}];}
+\DoxyCodeLine{7     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{8     \mbox{\hyperlink{classminHeap_a903b3d14e43685176264e8de8abbde68}{highlight}}(\{0, 1, 2, 3, 4, 5\});}
+\DoxyCodeLine{9     \mbox{\hyperlink{classminHeap_ac83f6817478b96472998e2dd117769b0}{waitForStep}}();}
+\DoxyCodeLine{10     \mbox{\hyperlink{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}{unhighlight}}(\{0, 1, 2, 3, 4, 5\});}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(value.size() == 0)}
+\DoxyCodeLine{13         \textcolor{keywordflow}{return} INT\_MAX;}
+\DoxyCodeLine{14     \textcolor{keywordflow}{return} value[0]-\/>value;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}\label{classminHeap_aaef86e46de8878f16c8b7bd0f51f3549}} 
+\index{minHeap@{minHeap}!unhighlight@{unhighlight}}
+\index{unhighlight@{unhighlight}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{unhighlight()}{unhighlight()}}
+{\footnotesize\ttfamily void min\+Heap\+::unhighlight (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         animate\_mutex.lock();}
+\DoxyCodeLine{23         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{24         \{}
+\DoxyCodeLine{25             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27         animate\_mutex.unlock();}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ac83f6817478b96472998e2dd117769b0}\label{classminHeap_ac83f6817478b96472998e2dd117769b0}} 
+\index{minHeap@{minHeap}!waitForStep@{waitForStep}}
+\index{waitForStep@{waitForStep}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{waitForStep()}{waitForStep()}}
+{\footnotesize\ttfamily void min\+Heap\+::wait\+For\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(isAnimate) }
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         ds\_mutex.unlock();}
+\DoxyCodeLine{36         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
+\DoxyCodeLine{37         ds\_mutex.lock();}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         return ;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     ds\_mutex.unlock();}
+\DoxyCodeLine{46     std::unique\_lock<std::mutex> lk(step\_mutex);}
+\DoxyCodeLine{47     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
+\DoxyCodeLine{48     isQueue = \textcolor{keyword}{false};}
+\DoxyCodeLine{49     ds\_mutex.lock();}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{minheap_8hpp}{minheap.\+hpp}}\item 
+src/minheap/\mbox{\hyperlink{minheap_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/minheap/\mbox{\hyperlink{minheap_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/minheap/\mbox{\hyperlink{minheap_2event_8cpp}{event.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{getmin_8cpp}{getmin.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{minheap_2operator_2heapify_8cpp}{heapify.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{minheap_2operator_2init_8cpp}{init.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{minheap_2operator_2insert_8cpp}{insert.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{minheap_2operator_2remove_8cpp}{remove.\+cpp}}\item 
+src/minheap/operator/\mbox{\hyperlink{minheap_2operator_2size_8cpp}{size.\+cpp}}\item 
+src/minheap/\mbox{\hyperlink{minheap_2rendering_8cpp}{rendering.\+cpp}}\item 
+src/minheap/\mbox{\hyperlink{minheap_2step_8cpp}{step.\+cpp}}\end{DoxyCompactItemize}

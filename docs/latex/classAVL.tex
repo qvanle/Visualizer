@@ -1,0 +1,1310 @@
+\hypertarget{classAVL}{}\doxysection{AVL Class Reference}
+\label{classAVL}\index{AVL@{AVL}}
+
+
+\mbox{\hyperlink{classAVL}{AVL}} class.  
+
+
+
+
+{\ttfamily \#include $<$AVL.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAVL_a4649d16de1514bc825e2883fc8cca3db}{AVL}} (SDL\+\_\+\+Renderer $\ast$render, std\+::mutex \&m, TTF\+\_\+\+Font $\ast$f, SDL\+\_\+\+Rect v, int cap)
+\item 
+\mbox{\hyperlink{classAVL_ac119f7c61c6d7dd159a71ae08561596b}{$\sim$\+AVL}} ()
+\item 
+void \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}} (std\+::vector$<$ int $>$ v)
+\item 
+bool \mbox{\hyperlink{classAVL_a9afbe7dbcb00bd88d1f36354174afa0f}{insert}} (int key)
+\item 
+bool \mbox{\hyperlink{classAVL_a12967643f317bfb6a9da845d9b66d653}{remove}} (int key)
+\item 
+bool \mbox{\hyperlink{classAVL_a75a6fac7d6f6f5eedf1ab5f8933a96dd}{search}} (int key)
+\item 
+int \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{max\+Depth}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a6e522e526f5e2458cf47d5521db26c3e}{set\+Edges\+Color}} (SDL\+\_\+\+Color c)
+\item 
+void \mbox{\hyperlink{classAVL_aa9080ffc8cf6c9282a3f92dd8bd1d071}{set\+Node\+Color}} (SDL\+\_\+\+Color bg, SDL\+\_\+\+Color fg)
+\item 
+void \mbox{\hyperlink{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}{go\+Off}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a9e5e602f2c339f29af917258ce88fa2d}{go\+On}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a891d6851b767ec15cc5c685f21205efb}{go\+Next}} ()
+\item 
+void \mbox{\hyperlink{classAVL_ada67cca53dff28acf99626e28fa24397}{go\+Back}} ()
+\item 
+void \mbox{\hyperlink{classAVL_aeb6f36800868272fd8b95fbc48e6bddf}{speed\+Up}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a175b78181e516b7052c384f4384fe04b}{slow\+Down}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a7aa501921a8a3534a0ba3f88bc6dca47}{close\+Script}} ()
+\item 
+bool \mbox{\hyperlink{classAVL_a0937b26712c684b8dde03e59b74382cc}{is\+Receive\+Event}} (SDL\+\_\+\+Event \&e)
+\item 
+\mbox{\hyperlink{classButton}{Button}} $\ast$ \mbox{\hyperlink{classAVL_a56b564df68059084a26f6643f17b09fb}{react}} (SDL\+\_\+\+Event \&e)
+\item 
+void \mbox{\hyperlink{classAVL_a3125810271a77528c08e83278def242e}{rendering}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a5003fc1d4c81f7aa395d0e62a9543dc5}{setting}} (SDL\+\_\+\+Color c1, SDL\+\_\+\+Color c2, SDL\+\_\+\+Color c3, SDL\+\_\+\+Color c4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_ab930344266576f814059918306dc90ae}{rotate\+Left}} (Node $\ast$node)
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_a7f730fb2c6ec45a93520cce0ac527131}{rotate\+Right}} (Node $\ast$node)
+\item 
+int \mbox{\hyperlink{classAVL_ac148ddea9a65b6f7972b940a33ebd92e}{get\+High}} (Node $\ast$node)
+\item 
+int \mbox{\hyperlink{classAVL_aa1ae4a2ecac795673d711829aa1592ab}{balance\+Factor}} (Node $\ast$node)
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}} (Node $\ast$node)
+\item 
+int \mbox{\hyperlink{classAVL_a68b0ea2de62d0499e1120713603e34ad}{max\+Depth}} (Node $\ast$node)
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}} (Node $\ast$node, Node $\ast$new\+Node)
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_ae114c60732778843acaf13a052a66c10}{unplug\+Smallest}} (Node $\ast$Node, struct Node $\ast$\&n2)
+\item 
+Node $\ast$ \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}} (Node $\ast$node, int key)
+\item 
+void \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}} (Node $\ast$node, int key)
+\item 
+int \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}} (Node $\ast$node, int shift\+Down, int shift\+Right)
+\item 
+void \mbox{\hyperlink{classAVL_ab79132701e10a69b2b8dcdf68557be44}{render\+Line}} (Node $\ast$src, Node $\ast$dst)
+\item 
+void \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{wait\+For\+Step}} ()
+\item 
+void \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}} (std\+::vector$<$ int $>$ l)
+\item 
+void \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}} (std\+::vector$<$ int $>$ l)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classAVL}{AVL}} class. 
+
+Drawable \mbox{\hyperlink{classAVL}{AVL}} tree. 
+
+Definition at line 18 of file AVL.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAVL_a4649d16de1514bc825e2883fc8cca3db}\label{classAVL_a4649d16de1514bc825e2883fc8cca3db}} 
+\index{AVL@{AVL}!AVL@{AVL}}
+\index{AVL@{AVL}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{AVL()}{AVL()}}
+{\footnotesize\ttfamily AVL\+::\+AVL (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{render,  }\item[{std\+::mutex \&}]{m,  }\item[{TTF\+\_\+\+Font $\ast$}]{f,  }\item[{SDL\+\_\+\+Rect}]{v,  }\item[{int}]{cap }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                                                            : ds\_mutex(m)}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     root = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{26     render = rend;}
+\DoxyCodeLine{27     font = f;}
+\DoxyCodeLine{28     viewport = vp;}
+\DoxyCodeLine{29     capacity = cap;}
+\DoxyCodeLine{30     sizeOfTree = 0;}
+\DoxyCodeLine{31     isQueue = \textcolor{keyword}{false};}
+\DoxyCodeLine{32     isPause = \textcolor{keyword}{false};}
+\DoxyCodeLine{33     edgesColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{34     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{35     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{36     shiftX = 20;}
+\DoxyCodeLine{37     shiftY = 20;}
+\DoxyCodeLine{38     distanceX = 40;}
+\DoxyCodeLine{39     distanceY = 100;}
+\DoxyCodeLine{40     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{41     stepWait = 600;}
+\DoxyCodeLine{42     isAnimate = \textcolor{keyword}{false};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{45     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{46     bgColor = \{0, 0, 0, 255\};}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{49     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{53     \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}-\/>linking(\textcolor{stringliteral}{"{}AVL/insert"{}});}
+\DoxyCodeLine{54     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{57     \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}-\/>linking(\textcolor{stringliteral}{"{}AVL/remove"{}});}
+\DoxyCodeLine{58     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{61     \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}-\/>linking(\textcolor{stringliteral}{"{}AVL/search"{}});}
+\DoxyCodeLine{62     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{65     \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}}-\/>linking(\textcolor{stringliteral}{"{}AVL/init"{}});}
+\DoxyCodeLine{66     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     currentScript = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ac119f7c61c6d7dd159a71ae08561596b}\label{classAVL_ac119f7c61c6d7dd159a71ae08561596b}} 
+\index{AVL@{AVL}!````~AVL@{$\sim$AVL}}
+\index{````~AVL@{$\sim$AVL}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{$\sim$AVL()}{~AVL()}}
+{\footnotesize\ttfamily AVL\+::$\sim$\+AVL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keywordflow}{if}(root != \textcolor{keyword}{nullptr}) \textcolor{keyword}{delete} root;}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(scriptFont != \textcolor{keyword}{nullptr}) TTF\_CloseFont(scriptFont);}
+\DoxyCodeLine{13     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& script : scripts)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         \textcolor{keywordflow}{if}(script.second != \textcolor{keyword}{nullptr}) \textcolor{keyword}{delete} script.second;}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17     scripts.clear();}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAVL_aa1ae4a2ecac795673d711829aa1592ab}\label{classAVL_aa1ae4a2ecac795673d711829aa1592ab}} 
+\index{AVL@{AVL}!balanceFactor@{balanceFactor}}
+\index{balanceFactor@{balanceFactor}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{balanceFactor()}{balanceFactor()}}
+{\footnotesize\ttfamily int AVL\+::balance\+Factor (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 9 of file rotate.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} \mbox{\hyperlink{classAVL_ac148ddea9a65b6f7972b940a33ebd92e}{getHigh}}(node-\/>lson) -\/ \mbox{\hyperlink{classAVL_ac148ddea9a65b6f7972b940a33ebd92e}{getHigh}}(node-\/>rson);}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}\label{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}} 
+\index{AVL@{AVL}!balancing@{balancing}}
+\index{balancing@{balancing}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{balancing()}{balancing()}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::balancing (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 79 of file rotate.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if}(node-\/>lson != \textcolor{keyword}{nullptr}) node-\/>lson-\/>repair();}
+\DoxyCodeLine{86     \textcolor{keywordflow}{if}(node-\/>rson != \textcolor{keyword}{nullptr}) node-\/>rson-\/>repair();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     node-\/>repair();}
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} bf = \mbox{\hyperlink{classAVL_aa1ae4a2ecac795673d711829aa1592ab}{balanceFactor}}(node);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordflow}{if}(bf >= -\/1 \&\& bf <= 1) \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(bf > 1)}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classAVL_aa1ae4a2ecac795673d711829aa1592ab}{balanceFactor}}(node-\/>lson) < 0)}
+\DoxyCodeLine{95         \{}
+\DoxyCodeLine{96             node-\/>lson = \mbox{\hyperlink{classAVL_ab930344266576f814059918306dc90ae}{rotateLeft}}(node-\/>lson);}
+\DoxyCodeLine{97             node-\/>repair();}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99         node = \mbox{\hyperlink{classAVL_a7f730fb2c6ec45a93520cce0ac527131}{rotateRight}}(node);}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bf < -\/1)}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classAVL_aa1ae4a2ecac795673d711829aa1592ab}{balanceFactor}}(node-\/>rson) > 0)}
+\DoxyCodeLine{104         \{}
+\DoxyCodeLine{105             node-\/>rson = \mbox{\hyperlink{classAVL_a7f730fb2c6ec45a93520cce0ac527131}{rotateRight}}(node-\/>rson);}
+\DoxyCodeLine{106             node-\/>repair();}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108         node = \mbox{\hyperlink{classAVL_ab930344266576f814059918306dc90ae}{rotateLeft}}(node);}
+\DoxyCodeLine{109         node-\/>repair();}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111     \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{112 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a7aa501921a8a3534a0ba3f88bc6dca47}\label{classAVL_a7aa501921a8a3534a0ba3f88bc6dca47}} 
+\index{AVL@{AVL}!closeScript@{closeScript}}
+\index{closeScript@{closeScript}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{closeScript()}{closeScript()}}
+{\footnotesize\ttfamily void AVL\+::close\+Script (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 79 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ac148ddea9a65b6f7972b940a33ebd92e}\label{classAVL_ac148ddea9a65b6f7972b940a33ebd92e}} 
+\index{AVL@{AVL}!getHigh@{getHigh}}
+\index{getHigh@{getHigh}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{getHigh()}{getHigh()}}
+{\footnotesize\ttfamily int AVL\+::get\+High (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 3 of file rotate.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{6     \textcolor{keywordflow}{return} node-\/>high;}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ada67cca53dff28acf99626e28fa24397}\label{classAVL_ada67cca53dff28acf99626e28fa24397}} 
+\index{AVL@{AVL}!goBack@{goBack}}
+\index{goBack@{goBack}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{goBack()}{goBack()}}
+{\footnotesize\ttfamily void AVL\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a891d6851b767ec15cc5c685f21205efb}\label{classAVL_a891d6851b767ec15cc5c685f21205efb}} 
+\index{AVL@{AVL}!goNext@{goNext}}
+\index{goNext@{goNext}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{goNext()}{goNext()}}
+{\footnotesize\ttfamily void AVL\+::go\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     pause\_mutex.lock();}
+\DoxyCodeLine{59     isQueue = \textcolor{keyword}{true};}
+\DoxyCodeLine{60     pause\_mutex.unlock();}
+\DoxyCodeLine{61     step\_cv.notify\_one();}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}\label{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}} 
+\index{AVL@{AVL}!goOff@{goOff}}
+\index{goOff@{goOff}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{goOff()}{goOff()}}
+{\footnotesize\ttfamily void AVL\+::go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{74     pause\_mutex.lock();}
+\DoxyCodeLine{75     isPause = \textcolor{keyword}{true};}
+\DoxyCodeLine{76     pause\_mutex.unlock();}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a9e5e602f2c339f29af917258ce88fa2d}\label{classAVL_a9e5e602f2c339f29af917258ce88fa2d}} 
+\index{AVL@{AVL}!goOn@{goOn}}
+\index{goOn@{goOn}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{goOn()}{goOn()}}
+{\footnotesize\ttfamily void AVL\+::go\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65 \{}
+\DoxyCodeLine{66     pause\_mutex.lock();}
+\DoxyCodeLine{67     isPause = \textcolor{keyword}{false};}
+\DoxyCodeLine{68     pause\_mutex.unlock();}
+\DoxyCodeLine{69     step\_cv.notify\_one();}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}\label{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}} 
+\index{AVL@{AVL}!highlight@{highlight}}
+\index{highlight@{highlight}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily void AVL\+::highlight (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         animate\_mutex.lock();}
+\DoxyCodeLine{10         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{11         \{}
+\DoxyCodeLine{12             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
+\DoxyCodeLine{13         \}}
+\DoxyCodeLine{14         animate\_mutex.unlock();}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}\label{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}} 
+\index{AVL@{AVL}!init@{init}}
+\index{init@{init}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void AVL\+::init (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file init.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(root != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{7         \textcolor{keyword}{delete} root;}
+\DoxyCodeLine{8     root = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{9     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{10     sizeOfTree = 0;}
+\DoxyCodeLine{11     shiftX = 20;}
+\DoxyCodeLine{12     shiftY = 20;}
+\DoxyCodeLine{13     isAnimate = \textcolor{keyword}{false};}
+\DoxyCodeLine{14     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}];}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < values.size() \&\& sizeOfTree < capacity; i++)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \mbox{\hyperlink{classSprite}{Sprite}}* sprite = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{18         sprite-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{19         sprite-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}AVL/node"{}});}
+\DoxyCodeLine{20         sprite-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(values[i]));}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         root = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(root, \textcolor{keyword}{new} Node(values[i], sprite));}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     maxHigh = \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a9afbe7dbcb00bd88d1f36354174afa0f}\label{classAVL_a9afbe7dbcb00bd88d1f36354174afa0f}} 
+\index{AVL@{AVL}!insert@{insert}}
+\index{insert@{insert}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool AVL\+::insert (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file insert.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if}(sizeOfTree == capacity)}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}];}
+\DoxyCodeLine{69     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \mbox{\hyperlink{classSprite}{Sprite}}* sprite = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{72     sprite-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{73     sprite-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}AVL/node"{}});}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     sprite-\/>\mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{setFontColor}}(fontColor);}
+\DoxyCodeLine{76     sprite-\/>Object::coloring(nodeColor);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     sprite-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(key));}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     cache = \textcolor{keyword}{new} Node(key, sprite);}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     isPause = \textcolor{keyword}{false};}
+\DoxyCodeLine{83     isQueue = \textcolor{keyword}{false};}
+\DoxyCodeLine{84     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{86     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{0\});}
+\DoxyCodeLine{87     \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{88     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{0\});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     root = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(root, cache);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     maxHigh = \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}\label{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}} 
+\index{AVL@{AVL}!insert@{insert}}
+\index{insert@{insert}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::insert (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node,  }\item[{Node $\ast$}]{new\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file insert.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         node = newNode;}
+\DoxyCodeLine{10         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{11         \{}
+\DoxyCodeLine{12             \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{13             animate\_mutex.lock();}
+\DoxyCodeLine{14             node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{15             animate\_mutex.unlock();}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17             \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19             animate\_mutex.lock();}
+\DoxyCodeLine{20             node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{21             animate\_mutex.unlock();}
+\DoxyCodeLine{22             \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{23         \}}
+\DoxyCodeLine{24         sizeOfTree++;}
+\DoxyCodeLine{25         \textcolor{keywordflow}{return} newNode;}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         animate\_mutex.lock();}
+\DoxyCodeLine{30         node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{31         animate\_mutex.unlock();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         animate\_mutex.lock();}
+\DoxyCodeLine{36         node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{37         animate\_mutex.unlock();}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if}(compare(newNode, node) == -\/1)}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{4, 5\});}
+\DoxyCodeLine{42         \textcolor{keywordflow}{if}(isAnimate) \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{43         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{4, 5\});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         node-\/>lson = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(node-\/>lson, newNode);}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(compare(newNode, node) == 1)}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{6, 7\});}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if}(isAnimate) \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{51         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{6, 7\});}
+\DoxyCodeLine{52         node-\/>rson = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(node-\/>rson, newNode);}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{9\});}
+\DoxyCodeLine{56     node = \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}}(node);}
+\DoxyCodeLine{57     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{9\});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a0937b26712c684b8dde03e59b74382cc}\label{classAVL_a0937b26712c684b8dde03e59b74382cc}} 
+\index{AVL@{AVL}!isReceiveEvent@{isReceiveEvent}}
+\index{isReceiveEvent@{isReceiveEvent}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{isReceiveEvent()}{isReceiveEvent()}}
+{\footnotesize\ttfamily bool AVL\+::is\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{6     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{9             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{10             \textcolor{keywordflow}{if}(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{11             \textcolor{keywordflow}{if}(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{12             \textcolor{keywordflow}{if}(e.button.button == SDL\_BUTTON\_LEFT) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{13             \textcolor{keywordflow}{if}(root == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{14             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{15             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{16         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:}
+\DoxyCodeLine{17             \textcolor{keywordflow}{if}(isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{18             \textcolor{keywordflow}{if}(currentScript == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{19             \textcolor{keywordflow}{if}(currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{20             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{21             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{22         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{23             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{24             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}\label{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}} 
+\index{AVL@{AVL}!locating@{locating}}
+\index{locating@{locating}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{locating()}{locating()}}
+{\footnotesize\ttfamily int AVL\+::locating (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node,  }\item[{int}]{shift\+Down,  }\item[{int}]{shift\+Right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 83 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         \textcolor{keywordtype}{int} shift = maxHigh -\/ shiftDown;}
+\DoxyCodeLine{88         \textcolor{keywordflow}{return} (1 << shift) -\/ 1;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} left = \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>lson, shiftDown + 1, shiftRight);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordflow}{if}(node-\/>sprite != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX + left * distanceX);}
+\DoxyCodeLine{95         node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
+\DoxyCodeLine{96         node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98     \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>rson, shiftDown + 1, shiftRight + left + 1);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} (1 << (maxHigh -\/ shiftDown)) -\/ 1;}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}\label{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}} 
+\index{AVL@{AVL}!maxDepth@{maxDepth}}
+\index{maxDepth@{maxDepth}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{maxDepth()}{maxDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int AVL\+::max\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{return} \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a68b0ea2de62d0499e1120713603e34ad}\label{classAVL_a68b0ea2de62d0499e1120713603e34ad}} 
+\index{AVL@{AVL}!maxDepth@{maxDepth}}
+\index{maxDepth@{maxDepth}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{maxDepth()}{maxDepth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int AVL\+::max\+Depth (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 75 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} 1 + std::max(\mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>lson), \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>rson));}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a56b564df68059084a26f6643f17b09fb}\label{classAVL_a56b564df68059084a26f6643f17b09fb}} 
+\index{AVL@{AVL}!react@{react}}
+\index{react@{react}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classButton}{Button}} $\ast$ AVL\+::react (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{31     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) }
+\DoxyCodeLine{35             \{}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{return} currentScript-\/>\mbox{\hyperlink{classScript_af7bd060b4589e5e17e0dd32124b90232}{react}}(e);}
+\DoxyCodeLine{37             \}}
+\DoxyCodeLine{38             \textcolor{keywordflow}{if}(isMoving)}
+\DoxyCodeLine{39             \{}
+\DoxyCodeLine{40                 isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{41                 \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{42                 \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{43                 shiftX += dx;}
+\DoxyCodeLine{44                 shiftY += dy;}
+\DoxyCodeLine{45             \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{46             \{}
+\DoxyCodeLine{47                 isMoving = \textcolor{keyword}{true};}
+\DoxyCodeLine{48                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{49                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{53         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION: }
+\DoxyCodeLine{54         \{}
+\DoxyCodeLine{55             \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr} \&\& currentScript-\/>\mbox{\hyperlink{classScript_a52c574264ef13f176fbaf74821f3f3e8}{isReceiveEvent}}(e)) }
+\DoxyCodeLine{56                 \textcolor{keywordflow}{return} currentScript-\/>\mbox{\hyperlink{classScript_af7bd060b4589e5e17e0dd32124b90232}{react}}(e);}
+\DoxyCodeLine{57             \textcolor{keywordflow}{if}(!isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{58             \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{59             \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{60             lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{61             lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{62             shiftX += dx;}
+\DoxyCodeLine{63             shiftY += dy;}
+\DoxyCodeLine{64             \textcolor{keywordflow}{if}(cache != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{65             \{}
+\DoxyCodeLine{66                 cache-\/>sprite-\/>moveX(dx);}
+\DoxyCodeLine{67                 cache-\/>sprite-\/>moveY(dy);}
+\DoxyCodeLine{68             \}}
+\DoxyCodeLine{69             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{70             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72         defaut:}
+\DoxyCodeLine{73             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{74             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a12967643f317bfb6a9da845d9b66d653}\label{classAVL_a12967643f317bfb6a9da845d9b66d653}} 
+\index{AVL@{AVL}!remove@{remove}}
+\index{remove@{remove}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool AVL\+::remove (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 136 of file delete.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137 \{}
+\DoxyCodeLine{138     \textcolor{keywordflow}{if}(sizeOfTree == 0)}
+\DoxyCodeLine{139     \{}
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}];}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{0\});}
+\DoxyCodeLine{148     \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{149     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{0\});}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     root = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}(root, key);}
+\DoxyCodeLine{152     \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(root, 0, 0);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a3d935287d07601b9a08e5fc58a576d5f}\label{classAVL_a3d935287d07601b9a08e5fc58a576d5f}} 
+\index{AVL@{AVL}!remove@{remove}}
+\index{remove@{remove}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::remove (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node,  }\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file delete.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{20         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{21         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{1, 2, 3\});}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         animate\_mutex.lock();}
+\DoxyCodeLine{27         node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{28         animate\_mutex.unlock();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         animate\_mutex.lock();}
+\DoxyCodeLine{33         node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{34         animate\_mutex.unlock();}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36     \textcolor{keywordflow}{if}(node-\/>key < key)}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{7, 8\});}
+\DoxyCodeLine{39         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{40         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{7, 8\});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         node-\/>rson = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}(node-\/>rson, key);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{13\});}
+\DoxyCodeLine{45         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{48         \{}
+\DoxyCodeLine{49             animate\_mutex.lock();}
+\DoxyCodeLine{50             node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{51             animate\_mutex.unlock();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55             animate\_mutex.lock();}
+\DoxyCodeLine{56             node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{57             animate\_mutex.unlock();}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59         node = \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}}(node);}
+\DoxyCodeLine{60         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{13\});}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(node-\/>key > key)}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{9, 10, 11\});}
+\DoxyCodeLine{67         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{68         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{9, 10, 11\});}
+\DoxyCodeLine{69         node-\/>lson = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}(node-\/>lson, key);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{13\});}
+\DoxyCodeLine{72         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{75         \{}
+\DoxyCodeLine{76             animate\_mutex.lock();}
+\DoxyCodeLine{77             node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{78             animate\_mutex.unlock();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82             animate\_mutex.lock();}
+\DoxyCodeLine{83             node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{84             animate\_mutex.unlock();}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         node = \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}}(node);}
+\DoxyCodeLine{88         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{13\});}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{92     \}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{5, 6\});}
+\DoxyCodeLine{96         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{97         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{5, 6\});}
+\DoxyCodeLine{98         }
+\DoxyCodeLine{99         \textcolor{keywordflow}{if}(node-\/>rson == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{100         \{}
+\DoxyCodeLine{101             Node* temp = node-\/>lson;}
+\DoxyCodeLine{102             node-\/>lson = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{103             node-\/>rson = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106             \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{13\});}
+\DoxyCodeLine{107             \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{108             temp = \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}}(temp);}
+\DoxyCodeLine{109             \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{13\});}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111             \textcolor{keyword}{delete} node;}
+\DoxyCodeLine{112             \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{113         \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{114         \{}
+\DoxyCodeLine{115             Node* temp = \mbox{\hyperlink{classAVL_ae114c60732778843acaf13a052a66c10}{unplugSmallest}}(node-\/>rson, cache);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117             cache-\/>lson = node-\/>lson;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119             cache-\/>rson = temp;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122             node-\/>lson = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{123             node-\/>rson = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125             \textcolor{keyword}{delete} node;}
+\DoxyCodeLine{126             node = cache;}
+\DoxyCodeLine{127             \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{13\});}
+\DoxyCodeLine{128             \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{129             node = \mbox{\hyperlink{classAVL_a3b2f4abf659dd22f81cbc003cb7664ad}{balancing}}(node);}
+\DoxyCodeLine{130             \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{13\});}
+\DoxyCodeLine{131             \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a3125810271a77528c08e83278def242e}\label{classAVL_a3125810271a77528c08e83278def242e}} 
+\index{AVL@{AVL}!rendering@{rendering}}
+\index{rendering@{rendering}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void AVL\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if}(root == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{20     SDL\_RenderSetViewport(render, \&viewport);}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22     std::lock\_guard< std::mutex > lock(animate\_mutex);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(root, 0, 0);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     std::queue< Node* > q;}
+\DoxyCodeLine{27     q.push(root);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{while}(!q.empty())}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         Node* u = q.front();}
+\DoxyCodeLine{32         q.pop();}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if}(u-\/>lson != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{34         \{}
+\DoxyCodeLine{35             \mbox{\hyperlink{classAVL_ab79132701e10a69b2b8dcdf68557be44}{renderLine}}(u, u-\/>lson);}
+\DoxyCodeLine{36             q.push(u-\/>lson);}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{if}(u-\/>rson != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{39         \{}
+\DoxyCodeLine{40             \mbox{\hyperlink{classAVL_ab79132701e10a69b2b8dcdf68557be44}{renderLine}}(u, u-\/>rson);}
+\DoxyCodeLine{41             q.push(u-\/>rson);}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         u-\/>sprite-\/>rendering();}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if}(currentScript != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         SDL\_RenderSetViewport(render, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{48         currentScript-\/>\mbox{\hyperlink{classScript_afabe6d8f50598c591160b181f77c14a4}{rendering}}();}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if}(cache != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         \textcolor{comment}{//cache-\/>sprite-\/>rendering();}}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ab79132701e10a69b2b8dcdf68557be44}\label{classAVL_ab79132701e10a69b2b8dcdf68557be44}} 
+\index{AVL@{AVL}!renderLine@{renderLine}}
+\index{renderLine@{renderLine}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{renderLine()}{renderLine()}}
+{\footnotesize\ttfamily void AVL\+::render\+Line (\begin{DoxyParamCaption}\item[{Node $\ast$}]{src,  }\item[{Node $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     SDL\_Point psrc = \{src-\/>sprite-\/>getX() + src-\/>sprite-\/>getW() / 2, src-\/>sprite-\/>getY() + src-\/>sprite-\/>getH() / 2\};}
+\DoxyCodeLine{7     SDL\_Point pdst = \{dst-\/>sprite-\/>getX() + dst-\/>sprite-\/>getW() / 2, dst-\/>sprite-\/>getY() + dst-\/>sprite-\/>getH() / 2\};}
+\DoxyCodeLine{8     }
+\DoxyCodeLine{9     SDL\_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);}
+\DoxyCodeLine{10     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = -\/1; i <= 1; i++)}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = -\/1; j <= 1; j++)}
+\DoxyCodeLine{13             SDL\_RenderDrawLine(render, psrc.x + i, psrc.y + j, pdst.x + i, pdst.y + j);}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ab930344266576f814059918306dc90ae}\label{classAVL_ab930344266576f814059918306dc90ae}} 
+\index{AVL@{AVL}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::rotate\+Left (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 15 of file rotate.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{18     \textcolor{keywordflow}{if}(node-\/>rson == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{19     }
+\DoxyCodeLine{20     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{23         node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{24         node-\/>rson-\/>sprite-\/>highlight();}
+\DoxyCodeLine{25         \textcolor{keywordflow}{if}(node-\/>rson-\/>rson != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{26             node-\/>rson-\/>rson-\/>sprite-\/>highlight();}
+\DoxyCodeLine{27         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{30         node-\/>rson-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}(node-\/>rson-\/>rson != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{32             node-\/>rson-\/>rson-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{33         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     Node* tmp = node-\/>rson;}
+\DoxyCodeLine{37     node-\/>rson = tmp-\/>lson;}
+\DoxyCodeLine{38     tmp-\/>lson = node;}
+\DoxyCodeLine{39     node-\/>repair();}
+\DoxyCodeLine{40     tmp-\/>repair();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a7f730fb2c6ec45a93520cce0ac527131}\label{classAVL_a7f730fb2c6ec45a93520cce0ac527131}} 
+\index{AVL@{AVL}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::rotate\+Right (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 45 of file rotate.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if}(node-\/>lson == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{49     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{50     \{}
+\DoxyCodeLine{51         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{52         node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{53         node-\/>lson-\/>sprite-\/>highlight();}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if}(node-\/>lson-\/>lson != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{55             node-\/>lson-\/>lson-\/>sprite-\/>highlight();}
+\DoxyCodeLine{56         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{57         node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{58         node-\/>lson-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if}(node-\/>lson-\/>lson != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{60             node-\/>lson-\/>lson-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{61         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     Node* tmp = node-\/>lson;}
+\DoxyCodeLine{64     node-\/>lson = tmp-\/>rson;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}};}
+\DoxyCodeLine{66     tmp-\/>rson = node;}
+\DoxyCodeLine{67     node-\/>repair();}
+\DoxyCodeLine{68     tmp-\/>repair();}
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a75a6fac7d6f6f5eedf1ab5f8933a96dd}\label{classAVL_a75a6fac7d6f6f5eedf1ab5f8933a96dd}} 
+\index{AVL@{AVL}!search@{search}}
+\index{search@{search}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool AVL\+::search (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file search.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if}(sizeOfTree == 0)}
+\DoxyCodeLine{54     \{}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57     currentScript = scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}];}
+\DoxyCodeLine{58     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{59     \mbox{\hyperlink{classSprite}{Sprite}}* sprite = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{60     sprite-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{61     sprite-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}AVL/node"{}});}
+\DoxyCodeLine{62     sprite-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(key));}
+\DoxyCodeLine{63     }
+\DoxyCodeLine{64     cache = \textcolor{keyword}{new} Node(key, sprite);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{0\});}
+\DoxyCodeLine{69     \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{70     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{0\});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}(root, key);}
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75     \textcolor{keyword}{delete} cache;}
+\DoxyCodeLine{76     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{77     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{78 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}\label{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}} 
+\index{AVL@{AVL}!search@{search}}
+\index{search@{search}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void AVL\+::search (\begin{DoxyParamCaption}\item[{Node $\ast$}]{node,  }\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file search.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{2, 3, 4\});}
+\DoxyCodeLine{11         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{12         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{2, 3, 4\});}
+\DoxyCodeLine{13         return ;}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         animate\_mutex.lock();}
+\DoxyCodeLine{19         node-\/>sprite-\/>highlight();}
+\DoxyCodeLine{20         animate\_mutex.unlock();}
+\DoxyCodeLine{21         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         animate\_mutex.lock();}
+\DoxyCodeLine{24         node-\/>sprite-\/>unhighlight();}
+\DoxyCodeLine{25         animate\_mutex.unlock();}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}(node-\/>key == key)}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{6, 7, 8\});}
+\DoxyCodeLine{31         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{32         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{6, 7, 8\});}
+\DoxyCodeLine{33         return ;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(node-\/>key < key)}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{10, 11\});}
+\DoxyCodeLine{38         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{39         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{10, 11\});}
+\DoxyCodeLine{40         \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}(node-\/>rson, key);}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{12, 13, 14\});}
+\DoxyCodeLine{45         \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{46         \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{12, 13, 14\});}
+\DoxyCodeLine{47         \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}(node-\/>lson, key);}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a6e522e526f5e2458cf47d5521db26c3e}\label{classAVL_a6e522e526f5e2458cf47d5521db26c3e}} 
+\index{AVL@{AVL}!setEdgesColor@{setEdgesColor}}
+\index{setEdgesColor@{setEdgesColor}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{setEdgesColor()}{setEdgesColor()}}
+{\footnotesize\ttfamily void AVL\+::set\+Edges\+Color (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAVL_aa9080ffc8cf6c9282a3f92dd8bd1d071}\label{classAVL_aa9080ffc8cf6c9282a3f92dd8bd1d071}} 
+\index{AVL@{AVL}!setNodeColor@{setNodeColor}}
+\index{setNodeColor@{setNodeColor}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{setNodeColor()}{setNodeColor()}}
+{\footnotesize\ttfamily void AVL\+::set\+Node\+Color (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{bg,  }\item[{SDL\+\_\+\+Color}]{fg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAVL_a5003fc1d4c81f7aa395d0e62a9543dc5}\label{classAVL_a5003fc1d4c81f7aa395d0e62a9543dc5}} 
+\index{AVL@{AVL}!setting@{setting}}
+\index{setting@{setting}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{setting()}{setting()}}
+{\footnotesize\ttfamily void AVL\+::setting (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c1,  }\item[{SDL\+\_\+\+Color}]{c2,  }\item[{SDL\+\_\+\+Color}]{c3,  }\item[{SDL\+\_\+\+Color}]{c4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104 \{}
+\DoxyCodeLine{105     bgColor = c1;}
+\DoxyCodeLine{106     nodeColor = c2;}
+\DoxyCodeLine{107     fontColor = c3;}
+\DoxyCodeLine{108     edgesColor = c4;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     std::queue<Node*> q;}
+\DoxyCodeLine{111     q.push(root);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordflow}{while}(!q.empty())}
+\DoxyCodeLine{114     \{}
+\DoxyCodeLine{115         Node* node = q.front();}
+\DoxyCodeLine{116         q.pop();}
+\DoxyCodeLine{117         \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{118             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{119         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{120         node-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{121         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{122         q.push(node-\/>lson);}
+\DoxyCodeLine{123         q.push(node-\/>rson);}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a175b78181e516b7052c384f4384fe04b}\label{classAVL_a175b78181e516b7052c384f4384fe04b}} 
+\index{AVL@{AVL}!slowDown@{slowDown}}
+\index{slowDown@{slowDown}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
+{\footnotesize\ttfamily void AVL\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_aeb6f36800868272fd8b95fbc48e6bddf}\label{classAVL_aeb6f36800868272fd8b95fbc48e6bddf}} 
+\index{AVL@{AVL}!speedUp@{speedUp}}
+\index{speedUp@{speedUp}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
+{\footnotesize\ttfamily void AVL\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 79 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}\label{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}} 
+\index{AVL@{AVL}!unhighlight@{unhighlight}}
+\index{unhighlight@{unhighlight}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{unhighlight()}{unhighlight()}}
+{\footnotesize\ttfamily void AVL\+::unhighlight (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 18 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         animate\_mutex.lock();}
+\DoxyCodeLine{23         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{24         \{}
+\DoxyCodeLine{25             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27         animate\_mutex.unlock();}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_ae114c60732778843acaf13a052a66c10}\label{classAVL_ae114c60732778843acaf13a052a66c10}} 
+\index{AVL@{AVL}!unplugSmallest@{unplugSmallest}}
+\index{unplugSmallest@{unplugSmallest}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{unplugSmallest()}{unplugSmallest()}}
+{\footnotesize\ttfamily AVL\+::\+Node $\ast$ AVL\+::unplug\+Smallest (\begin{DoxyParamCaption}\item[{Node $\ast$}]{Node,  }\item[{struct Node $\ast$\&}]{n2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file delete.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(node-\/>lson == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         n2 = node;}
+\DoxyCodeLine{10         \textcolor{keywordflow}{return} node-\/>rson;}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12     node-\/>lson = \mbox{\hyperlink{classAVL_ae114c60732778843acaf13a052a66c10}{unplugSmallest}}(node-\/>lson, n2);}
+\DoxyCodeLine{13     \textcolor{keywordflow}{return} node;}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classAVL_a6f008a067c2278bd867ac1399ce88512}\label{classAVL_a6f008a067c2278bd867ac1399ce88512}} 
+\index{AVL@{AVL}!waitForStep@{waitForStep}}
+\index{waitForStep@{waitForStep}!AVL@{AVL}}
+\doxysubsubsection{\texorpdfstring{waitForStep()}{waitForStep()}}
+{\footnotesize\ttfamily void AVL\+::wait\+For\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 31 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(isAnimate) }
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         ds\_mutex.unlock();}
+\DoxyCodeLine{36         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
+\DoxyCodeLine{37         ds\_mutex.lock();}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         return ;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     ds\_mutex.unlock();}
+\DoxyCodeLine{46     std::unique\_lock<std::mutex> lk(step\_mutex);}
+\DoxyCodeLine{47     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
+\DoxyCodeLine{48     isQueue = \textcolor{keyword}{false};}
+\DoxyCodeLine{49     ds\_mutex.lock();}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{AVL_8hpp}{AVL.\+hpp}}\item 
+src/\+AVL/\mbox{\hyperlink{AVL_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/\+AVL/\mbox{\hyperlink{AVL_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/\+AVL/\mbox{\hyperlink{AVL_2event_8cpp}{event.\+cpp}}\item 
+src/\+AVL/operator/\mbox{\hyperlink{delete_8cpp}{delete.\+cpp}}\item 
+src/\+AVL/operator/\mbox{\hyperlink{AVL_2operator_2init_8cpp}{init.\+cpp}}\item 
+src/\+AVL/operator/\mbox{\hyperlink{AVL_2operator_2insert_8cpp}{insert.\+cpp}}\item 
+src/\+AVL/operator/\mbox{\hyperlink{AVL_2operator_2search_8cpp}{search.\+cpp}}\item 
+src/\+AVL/\mbox{\hyperlink{AVL_2rendering_8cpp}{rendering.\+cpp}}\item 
+src/\+AVL/\mbox{\hyperlink{rotate_8cpp}{rotate.\+cpp}}\item 
+src/\+AVL/\mbox{\hyperlink{AVL_2step_8cpp}{step.\+cpp}}\end{DoxyCompactItemize}

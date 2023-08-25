@@ -1,0 +1,950 @@
+\hypertarget{classMyWindow}{}\doxysection{My\+Window Class Reference}
+\label{classMyWindow}\index{MyWindow@{MyWindow}}
+
+
+Window class class that create a window and manage it.  
+
+
+
+
+{\ttfamily \#include $<$window.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMyWindow_ae0ae4de3a21d55202f428bd6bf5656d9}{My\+Window}} ()
+\item 
+\mbox{\hyperlink{classMyWindow_acc6b33f79cb9f1ee9107beac4c474fd3}{$\sim$\+My\+Window}} ()
+\item 
+bool \mbox{\hyperlink{classMyWindow_aa08dcef1ba85d1a3d6dee6ad638f3d04}{is\+Closed}} ()
+\item 
+bool \mbox{\hyperlink{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}{is\+Open}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_ad3cdc8d2dfc2758c4d30ba22a6ff8622}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMyWindow_a97e33360f0e88a1babfa1b022ab183d6}{init\+SDL2}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}{rendering}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_a11e405cd9ec96df04205ae2fe61c9d79}{interacting}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}{get\+Event}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_a16dcb0bcc73da2ebf930cd0deffe8ff8}{react}} (\mbox{\hyperlink{classButton}{Button}} $\ast$but)
+\item 
+void \mbox{\hyperlink{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}{set\+Display}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{set\+Input\+Box}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}{set\+Data\+Type}} (\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}} type)
+\item 
+void \mbox{\hyperlink{classMyWindow_aae49e30f633091f0a248493c54b005b0}{run\+Operator}} ()
+\item 
+void \mbox{\hyperlink{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}{get\+Data\+From\+File}} (\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}} type)
+\item 
+void \mbox{\hyperlink{classMyWindow_aded8a2026b8e5e5cb955ae2deb90203e}{get\+Data\+From\+Random}} (\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}} type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Window class class that create a window and manage it. 
+
+Finite state machine
+
+handle thread 
+
+Definition at line 26 of file window.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMyWindow_ae0ae4de3a21d55202f428bd6bf5656d9}\label{classMyWindow_ae0ae4de3a21d55202f428bd6bf5656d9}} 
+\index{MyWindow@{MyWindow}!MyWindow@{MyWindow}}
+\index{MyWindow@{MyWindow}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{MyWindow()}{MyWindow()}}
+{\footnotesize\ttfamily My\+Window\+::\+My\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     HEIGHT = 635;}
+\DoxyCodeLine{31     WIDTH = 1200;}
+\DoxyCodeLine{32     status = \mbox{\hyperlink{GLOBAL_8hpp_a5e99ac06d31ef62194f8a64c8fd98623a53490b43628e666a617d5fa14704cb8d}{WINDOW\_STATUS::IS\_CLOSED}};}
+\DoxyCodeLine{33     FPS = 60;}
+\DoxyCodeLine{34     viewport = SDL\_Rect(\{0, 0, WIDTH, HEIGHT\});}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     window = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{37     render = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{38     ds = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{39     inputbox = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \mbox{\hyperlink{classMyWindow_a97e33360f0e88a1babfa1b022ab183d6}{initSDL2}}();}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{44     myfont = TTF\_OpenFont(fontpath.c\_str(), 24);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     display\_pool[\textcolor{stringliteral}{"{}nullptr"{}}] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{47     inputbox\_pool[\textcolor{stringliteral}{"{}nullptr"{}}] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{48     ds\_pool[\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}] = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}{setDisplay}}(\mbox{\hyperlink{namespaceDISPLAY_a848ce995cf56aac7fa6f3314e6221bf1}{DISPLAY::HOME\_}});}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_acc6b33f79cb9f1ee9107beac4c474fd3}\label{classMyWindow_acc6b33f79cb9f1ee9107beac4c474fd3}} 
+\index{MyWindow@{MyWindow}!````~MyWindow@{$\sim$MyWindow}}
+\index{````~MyWindow@{$\sim$MyWindow}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MyWindow()}{~MyWindow()}}
+{\footnotesize\ttfamily My\+Window\+::$\sim$\+My\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if}(render != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         SDL\_DestroyRenderer(render);}
+\DoxyCodeLine{10         render = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(window != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         SDL\_DestroyWindow(window);}
+\DoxyCodeLine{15         window = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(myfont != \textcolor{keyword}{nullptr}) TTF\_CloseFont(myfont);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : thread\_pool)}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{if}(i.joinable())}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23             i.join();}
+\DoxyCodeLine{24         \}}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : display\_pool)}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{keyword}{delete} i.second;}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31     }
+\DoxyCodeLine{32     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : ds\_pool)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keyword}{delete} i.second;}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : inputbox\_pool)}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         \textcolor{keyword}{delete} i.second;}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41     }
+\DoxyCodeLine{42     TTF\_Quit();}
+\DoxyCodeLine{43     IMG\_Quit();}
+\DoxyCodeLine{44     SDL\_Quit();}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}\label{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}} 
+\index{MyWindow@{MyWindow}!getDataFromFile@{getDataFromFile}}
+\index{getDataFromFile@{getDataFromFile}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{getDataFromFile()}{getDataFromFile()}}
+{\footnotesize\ttfamily void My\+Window\+::get\+Data\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 123 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{switch}(type)}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
+\DoxyCodeLine{128                                            std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a256e17ee4bfb67abbdafa5ac565d0d55}{PATH::SAVING::AVL\_}});}
+\DoxyCodeLine{129                                            \textcolor{keywordflow}{if}(mem.empty()) return ;}
+\DoxyCodeLine{130                                            renderMutex.lock();}
+\DoxyCodeLine{131                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{132                                            renderMutex.unlock();}
+\DoxyCodeLine{133                                            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{134                                        \}}
+\DoxyCodeLine{135         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
+\DoxyCodeLine{136                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
+\DoxyCodeLine{137                                             \textcolor{keywordflow}{if}(mem.empty()) return ;}
+\DoxyCodeLine{138                                             std::string total = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{139                                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < mem.size(); i++)}
+\DoxyCodeLine{140                                             \{}
+\DoxyCodeLine{141                                                 total += mem[i];}
+\DoxyCodeLine{142                                                 \textcolor{keywordflow}{if}(i != mem.size() -\/ 1) total += \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{143                                             \}}
+\DoxyCodeLine{144                                             renderMutex.lock();}
+\DoxyCodeLine{145                                             inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, total);}
+\DoxyCodeLine{146                                             renderMutex.unlock();}
+\DoxyCodeLine{147                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{148                                         \}}
+\DoxyCodeLine{149         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
+\DoxyCodeLine{150                                              std::ifstream fin(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152                                              renderMutex.lock();}
+\DoxyCodeLine{153                                             }
+\DoxyCodeLine{154                                              fin >> ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}};}
+\DoxyCodeLine{155                                              }
+\DoxyCodeLine{156                                              renderMutex.unlock();}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158                                              \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160                                              renderMutex.lock();}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
+\DoxyCodeLine{163                                                  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
+\DoxyCodeLine{164                                                  \{}
+\DoxyCodeLine{165                                                      \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{166                                                      fin >> x;}
+\DoxyCodeLine{167                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(x));}
+\DoxyCodeLine{168                                                  \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170                                              renderMutex.unlock();}
+\DoxyCodeLine{171                                              fin.close();}
+\DoxyCodeLine{172                                              \textcolor{keywordflow}{break};}
+\DoxyCodeLine{173                                          \}}
+\DoxyCodeLine{174         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
+\DoxyCodeLine{175                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
+\DoxyCodeLine{176                                                  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{177                                              \}}
+\DoxyCodeLine{178         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
+\DoxyCodeLine{179                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
+\DoxyCodeLine{180                                                 renderMutex.lock();}
+\DoxyCodeLine{181                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{182                                                 renderMutex.unlock();}
+\DoxyCodeLine{183                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{184                                             \}}
+\DoxyCodeLine{185         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
+\DoxyCodeLine{186                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
+\DoxyCodeLine{187                                                 renderMutex.lock();}
+\DoxyCodeLine{188                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{189                                                 renderMutex.unlock();}
+\DoxyCodeLine{190                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{191                                             \}}
+\DoxyCodeLine{192         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
+\DoxyCodeLine{193                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
+\DoxyCodeLine{194                                                   renderMutex.lock();}
+\DoxyCodeLine{195                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{196                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem[1]);}
+\DoxyCodeLine{197                                                   renderMutex.unlock();}
+\DoxyCodeLine{198                                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{199                                               \}}
+\DoxyCodeLine{200         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
+\DoxyCodeLine{201                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{202                                         \}}
+\DoxyCodeLine{203     \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_aded8a2026b8e5e5cb955ae2deb90203e}\label{classMyWindow_aded8a2026b8e5e5cb955ae2deb90203e}} 
+\index{MyWindow@{MyWindow}!getDataFromRandom@{getDataFromRandom}}
+\index{getDataFromRandom@{getDataFromRandom}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{getDataFromRandom()}{getDataFromRandom()}}
+{\footnotesize\ttfamily void My\+Window\+::get\+Data\+From\+Random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 207 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{208 \{}
+\DoxyCodeLine{209     \textcolor{keywordflow}{switch}(type)}
+\DoxyCodeLine{210     \{}
+\DoxyCodeLine{211         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
+\DoxyCodeLine{212                                            \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
+\DoxyCodeLine{213                                            std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{214                                            renderMutex.lock();}
+\DoxyCodeLine{215                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{216                                            renderMutex.unlock();}
+\DoxyCodeLine{217                                            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{218                                        \}}
+\DoxyCodeLine{219         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
+\DoxyCodeLine{220                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
+\DoxyCodeLine{221                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{222                                         \}}
+\DoxyCodeLine{223         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
+\DoxyCodeLine{224                                              std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
+\DoxyCodeLine{225                                              \textcolor{keywordflow}{break};}
+\DoxyCodeLine{226                                          \}}
+\DoxyCodeLine{227         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
+\DoxyCodeLine{228                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
+\DoxyCodeLine{229                                                  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{230                                              \}}
+\DoxyCodeLine{231         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
+\DoxyCodeLine{232                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
+\DoxyCodeLine{233                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{234                                             \}}
+\DoxyCodeLine{235         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
+\DoxyCodeLine{236                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
+\DoxyCodeLine{237                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{238                                             \}}
+\DoxyCodeLine{239         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
+\DoxyCodeLine{240                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
+\DoxyCodeLine{241                                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{242                                               \}}
+\DoxyCodeLine{243         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
+\DoxyCodeLine{244                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{245                                         \}}
+\DoxyCodeLine{246     \}}
+\DoxyCodeLine{247 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}\label{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}} 
+\index{MyWindow@{MyWindow}!getEvent@{getEvent}}
+\index{getEvent@{getEvent}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{getEvent()}{getEvent()}}
+{\footnotesize\ttfamily void My\+Window\+::get\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 43 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     SDL\_Event event;}
+\DoxyCodeLine{46     \textcolor{keywordflow}{while}(\mbox{\hyperlink{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}{isOpen}}())}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{while}(SDL\_PollEvent(\&event))}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             \textcolor{keywordflow}{switch}(event.type) }
+\DoxyCodeLine{51             \{}
+\DoxyCodeLine{52                 \textcolor{keywordflow}{case} SDL\_QUIT: }
+\DoxyCodeLine{53                 \{}
+\DoxyCodeLine{54                     event\_mutex.lock();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56                     event\_pool.push(event);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58                     event\_mutex.unlock();}
+\DoxyCodeLine{59                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{60                 \}}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{62                 \{    }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64                     \textcolor{keywordtype}{bool} isds = \textcolor{keyword}{false};}
+\DoxyCodeLine{65                     \textcolor{keywordtype}{bool} isdisplay = \textcolor{keyword}{false};}
+\DoxyCodeLine{66                     \textcolor{keywordtype}{bool} isinputbox = \textcolor{keyword}{false};}
+\DoxyCodeLine{67                     }
+\DoxyCodeLine{68                     event\_mutex.lock();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70                     renderMutex.lock();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72                     \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr} \&\& ds-\/>\mbox{\hyperlink{classDataStructures_a0a894f18ef0d33061ec62e058b625100}{isReceiveEvent}}(event))}
+\DoxyCodeLine{73                         isds = \textcolor{keyword}{true};}
+\DoxyCodeLine{74                     }
+\DoxyCodeLine{75                     \textcolor{keywordflow}{if}(current\_display-\/>\mbox{\hyperlink{classDisplay_af2648fa7e2c8e65e337166b5048100a5}{isReceiveEvent}}(event)) }
+\DoxyCodeLine{76                         isdisplay = \textcolor{keyword}{true};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78                     \textcolor{keywordflow}{if} (inputbox != \textcolor{keyword}{nullptr} \&\& inputbox-\/>\mbox{\hyperlink{classInputBox_a524434267b12eb2abdfc09980a4975e9}{isReceiveEvent}}(event))}
+\DoxyCodeLine{79                         isinputbox = \textcolor{keyword}{true};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81                     renderMutex.unlock();}
+\DoxyCodeLine{82                     }
+\DoxyCodeLine{83                     \textcolor{keywordflow}{if}(isds || isdisplay || isinputbox)}
+\DoxyCodeLine{84                         event\_pool.push(event);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86                     event\_mutex.unlock();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88                     EVcond.notify\_one();}
+\DoxyCodeLine{89                     std::this\_thread::sleep\_for(std::chrono::milliseconds(10));}
+\DoxyCodeLine{90                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{91                 \}}
+\DoxyCodeLine{92             \}}
+\DoxyCodeLine{93         \}}
+\DoxyCodeLine{94     \}}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a97e33360f0e88a1babfa1b022ab183d6}\label{classMyWindow_a97e33360f0e88a1babfa1b022ab183d6}} 
+\index{MyWindow@{MyWindow}!initSDL2@{initSDL2}}
+\index{initSDL2@{initSDL2}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{initSDL2()}{initSDL2()}}
+{\footnotesize\ttfamily void My\+Window\+::init\+SDL2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 5 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     SDL\_Init(SDL\_INIT\_VIDEO | SDL\_INIT\_AUDIO);}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     window = SDL\_CreateWindow(}
+\DoxyCodeLine{10         \textcolor{stringliteral}{"{}Dr Duck"{}},}
+\DoxyCodeLine{11         SDL\_WINDOWPOS\_CENTERED,}
+\DoxyCodeLine{12         SDL\_WINDOWPOS\_CENTERED,}
+\DoxyCodeLine{13         WIDTH,}
+\DoxyCodeLine{14         HEIGHT,}
+\DoxyCodeLine{15         SDL\_WINDOW\_SHOWN}
+\DoxyCodeLine{16     );}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     render = SDL\_CreateRenderer(}
+\DoxyCodeLine{19         window,}
+\DoxyCodeLine{20         -\/1,}
+\DoxyCodeLine{21         SDL\_RENDERER\_ACCELERATED}
+\DoxyCodeLine{22     );}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     IMG\_Init(IMG\_INIT\_PNG | IMG\_INIT\_JPG);}
+\DoxyCodeLine{25     TTF\_Init();}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a11e405cd9ec96df04205ae2fe61c9d79}\label{classMyWindow_a11e405cd9ec96df04205ae2fe61c9d79}} 
+\index{MyWindow@{MyWindow}!interacting@{interacting}}
+\index{interacting@{interacting}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{interacting()}{interacting()}}
+{\footnotesize\ttfamily void My\+Window\+::interacting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     SDL\_Event event;}
+\DoxyCodeLine{7     std::unique\_lock<std::mutex> ul(event\_mutex);}
+\DoxyCodeLine{8     \textcolor{keywordflow}{while}(\mbox{\hyperlink{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}{isOpen}}())}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         EVcond.wait(ul, [\&]()\{\textcolor{keywordflow}{return} !event\_pool.empty();\});}
+\DoxyCodeLine{11         \textcolor{keyword}{event} = event\_pool.front();}
+\DoxyCodeLine{12         event\_pool.pop();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         \textcolor{keywordflow}{switch}(event.type)}
+\DoxyCodeLine{15         \{}
+\DoxyCodeLine{16             \textcolor{keywordflow}{case} SDL\_QUIT:}
+\DoxyCodeLine{17                 status\_mutex.lock();}
+\DoxyCodeLine{18                 status = \mbox{\hyperlink{GLOBAL_8hpp_a5e99ac06d31ef62194f8a64c8fd98623a53490b43628e666a617d5fa14704cb8d}{WINDOW\_STATUS::IS\_CLOSED}};}
+\DoxyCodeLine{19                 status\_mutex.unlock();}
+\DoxyCodeLine{20                 step\_cond.notify\_all();}
+\DoxyCodeLine{21                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{22             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{23                 \mbox{\hyperlink{classButton}{Button}}* but = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{24                 renderMutex.lock();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26                 \textcolor{keywordflow}{if}(but == \textcolor{keyword}{nullptr} \&\& inputbox != \textcolor{keyword}{nullptr} \&\& inputbox-\/>\mbox{\hyperlink{classInputBox_a524434267b12eb2abdfc09980a4975e9}{isReceiveEvent}}(event))}
+\DoxyCodeLine{27                     but = inputbox-\/>\mbox{\hyperlink{classInputBox_abacb8608df6741fc61134b7fc20b6eb5}{react}}(event);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29                 \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr} \&\& ds-\/>\mbox{\hyperlink{classDataStructures_a0a894f18ef0d33061ec62e058b625100}{isReceiveEvent}}(event) \&\& but == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{30                     but = ds-\/>\mbox{\hyperlink{classDataStructures_a39b6dfc72d2862aa494ed43ec2846aac}{react}}(event);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32                 \textcolor{keywordflow}{if}(but == \textcolor{keyword}{nullptr} \&\& but == \textcolor{keyword}{nullptr} \&\& current\_display-\/>\mbox{\hyperlink{classDisplay_af2648fa7e2c8e65e337166b5048100a5}{isReceiveEvent}}(event))}
+\DoxyCodeLine{33                     but = current\_display-\/>\mbox{\hyperlink{classDisplay_a88a536f1bf55b0f3a8ccd5312b61ed07}{react}}(event);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35                 renderMutex.unlock();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37                 \mbox{\hyperlink{classMyWindow_a16dcb0bcc73da2ebf930cd0deffe8ff8}{react}}(but);}
+\DoxyCodeLine{38                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40         std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_aa08dcef1ba85d1a3d6dee6ad638f3d04}\label{classMyWindow_aa08dcef1ba85d1a3d6dee6ad638f3d04}} 
+\index{MyWindow@{MyWindow}!isClosed@{isClosed}}
+\index{isClosed@{isClosed}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{isClosed()}{isClosed()}}
+{\footnotesize\ttfamily bool My\+Window\+::is\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file status.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     std::lock\_guard<std::mutex> lg(status\_mutex);}
+\DoxyCodeLine{6     \textcolor{keywordflow}{return} status == \mbox{\hyperlink{GLOBAL_8hpp_a5e99ac06d31ef62194f8a64c8fd98623a53490b43628e666a617d5fa14704cb8d}{WINDOW\_STATUS::IS\_CLOSED}};}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}\label{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}} 
+\index{MyWindow@{MyWindow}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool My\+Window\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file status.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     std::lock\_guard<std::mutex> lg(status\_mutex);}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} status == \mbox{\hyperlink{GLOBAL_8hpp_a5e99ac06d31ef62194f8a64c8fd98623ab7a4ac8d1c19f6cf0d565c42a68cc95a}{WINDOW\_STATUS::IS\_OPEN}};}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a16dcb0bcc73da2ebf930cd0deffe8ff8}\label{classMyWindow_a16dcb0bcc73da2ebf930cd0deffe8ff8}} 
+\index{MyWindow@{MyWindow}!react@{react}}
+\index{react@{react}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily void My\+Window\+::react (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classButton}{Button}} $\ast$}]{but }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 249 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{250 \{}
+\DoxyCodeLine{251     \textcolor{keywordflow}{if}(but == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{252     \textcolor{keywordflow}{switch} (but-\/>\mbox{\hyperlink{classButton_ab45b795d6dd84be05c6fd001d097f472}{getAction}}())}
+\DoxyCodeLine{253     \{}
+\DoxyCodeLine{254         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafe442ee7003aba31673205887dbdf204}{BUTTON\_ACTION::CHANGE\_SCREEN}}:}
+\DoxyCodeLine{255             \mbox{\hyperlink{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}{setDisplay}}(but-\/>\mbox{\hyperlink{classButton_ac5a005a31136c7c76de35c2dc4b85c6f}{getNextScreen}}());}
+\DoxyCodeLine{256             \textcolor{keywordflow}{if}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}() != \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}) }
+\DoxyCodeLine{257                 \mbox{\hyperlink{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}{setDataType}}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}());}
+\DoxyCodeLine{258             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafaee4ca3c30ee18148ce3ada37466498}{BUTTON\_ACTION::INIT}}: }
+\DoxyCodeLine{261             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/init"{}});}
+\DoxyCodeLine{262             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{263         }
+\DoxyCodeLine{264         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9a4ad0490c7f7c16aa78af29e73ac1bf}{BUTTON\_ACTION::SETTING}}: }
+\DoxyCodeLine{265             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}setting"{}});}
+\DoxyCodeLine{266             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa61ee777e7f71dc466c3b2c685d8d313b}{BUTTON\_ACTION::INSERT}}:}
+\DoxyCodeLine{269             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/insert"{}});}
+\DoxyCodeLine{270             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa32f68a60cef40faedbc6af20298c1a1e}{BUTTON\_ACTION::DELETE}}:}
+\DoxyCodeLine{273             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/remove"{}});}
+\DoxyCodeLine{274             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa0f544d682c3a664870f025f48c4b04b5}{BUTTON\_ACTION::SEARCH}}:}
+\DoxyCodeLine{277             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/search"{}});}
+\DoxyCodeLine{278             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa62e5cef85d46f1a5a2144d9fd463b79e}{BUTTON\_ACTION::SIZE}}:}
+\DoxyCodeLine{281             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/size"{}});}
+\DoxyCodeLine{282             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6705777b712ee811e76fb07162081d63}{BUTTON\_ACTION::TOP}}:}
+\DoxyCodeLine{285             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/top"{}});}
+\DoxyCodeLine{286             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aac17a361da4703fb6387402833d0be532}{BUTTON\_ACTION::CONNECTED\_COMPONENTS}}:}
+\DoxyCodeLine{289             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/scc"{}});}
+\DoxyCodeLine{290             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa79f676ad8a477dbf2582d8c7133ce481}{BUTTON\_ACTION::DIJKSTRA}}: }
+\DoxyCodeLine{293             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/dijkstra"{}});}
+\DoxyCodeLine{294             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9b64696be05602589dfa9ea20da1e5fe}{BUTTON\_ACTION::MST}}: }
+\DoxyCodeLine{297             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/mst"{}});}
+\DoxyCodeLine{298             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa978c7029f00a61638448e134ffd3d354}{BUTTON\_ACTION::GO\_BACK}}: }
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302             \textcolor{comment}{//ds-\/>goBack();}}
+\DoxyCodeLine{303             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aae566f1112c70f7be35c572f463f889d0}{BUTTON\_ACTION::GO\_NEXT}}: }
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307             \textcolor{comment}{//ds-\/>goNext();}}
+\DoxyCodeLine{308             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f8ce139a3b8502afc17891bad3168d1}{BUTTON\_ACTION::GO\_ON}}: }
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312             \textcolor{comment}{//ds-\/>goOn();}}
+\DoxyCodeLine{313             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa71db17a7478017814bbe13f448454bf7}{BUTTON\_ACTION::GO\_OFF}}: }
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317             \textcolor{comment}{//ds-\/>goOff();}}
+\DoxyCodeLine{318             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa18fc989e412ad64bd82a0cbc9a6a93c8}{BUTTON\_ACTION::SPEED\_UP}}: }
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322             \textcolor{comment}{//ds-\/>speedUp();}}
+\DoxyCodeLine{323             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa4a0a2ddc7446f94d38bcdd71e9bd4ee6}{BUTTON\_ACTION::SLOW\_DOWN}}: }
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327             \textcolor{comment}{//ds-\/>slowDown();}}
+\DoxyCodeLine{328             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2ba22e58ca17bb728d522bba36cf8350}{BUTTON\_ACTION::DONE}}:}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332             step\_mutex.lock();}
+\DoxyCodeLine{333             isQueuingStep = \textcolor{keyword}{true};}
+\DoxyCodeLine{334             step\_mutex.unlock();}
+\DoxyCodeLine{335             step\_cond.notify\_one();}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa42861b39fff0a83ef415a81d1bafa380}{BUTTON\_ACTION::EDGES}}: }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341             \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{342             renderMutex.lock();}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344             n = \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{NUMBER::stringToInt}}(inputbox-\/>\mbox{\hyperlink{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}{getText}}(1));}
+\DoxyCodeLine{345             n = std::min(n, 9);}
+\DoxyCodeLine{346             n = std::max(n, 2);}
+\DoxyCodeLine{347             \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr}) ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} = n;}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349             renderMutex.unlock();}
+\DoxyCodeLine{350             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{351             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa7286293c9125ac7d7bace94c190bc16d}{BUTTON\_ACTION::CLOSE}}: }
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355             renderMutex.lock();}
+\DoxyCodeLine{356             ds-\/>\mbox{\hyperlink{classDataStructures_aae70dcd4032de67b16ecca00b4909a16}{closeScript}}();}
+\DoxyCodeLine{357             renderMutex.unlock();}
+\DoxyCodeLine{358             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa170e02e86972c2be8559884cc3c12254}{BUTTON\_ACTION::RANDOM}}:\{}
+\DoxyCodeLine{361                                        \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
+\DoxyCodeLine{362                                        std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364                                        renderMutex.lock();}
+\DoxyCodeLine{365                                        inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367                                        renderMutex.unlock();}
+\DoxyCodeLine{368                                        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{369                                    \}}
+\DoxyCodeLine{370         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aab08a80192c9e705beef657f6ab27ad2f}{BUTTON\_ACTION::RANDOM2}}: \{}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372                                          renderMutex.lock();}
+\DoxyCodeLine{373                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 999));}
+\DoxyCodeLine{374                                          renderMutex.unlock();}
+\DoxyCodeLine{375                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{376                                      \}}
+\DoxyCodeLine{377         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f24439fa48b96472eb150b9fd386c92}{BUTTON\_ACTION::RANDOM3}}:\{}
+\DoxyCodeLine{378                                         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{379                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{380                                         \textcolor{keywordtype}{char} upperbound = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(97 + 5, 97 + 25);}
+\DoxyCodeLine{381                                         std::string mem;}
+\DoxyCodeLine{382                                         mem = \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384                                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < n; i++)}
+\DoxyCodeLine{385                                             mem += \textcolor{stringliteral}{"{} "{}} + \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387                                         renderMutex.lock();}
+\DoxyCodeLine{388                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{389                                         renderMutex.unlock();}
+\DoxyCodeLine{390                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{391                                     \}}
+\DoxyCodeLine{392         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa5ad9642cab4518d6507a18514851e4ac}{BUTTON\_ACTION::RANDOM4}}: }
+\DoxyCodeLine{393                                     \{}
+\DoxyCodeLine{394                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{395                                         renderMutex.lock();}
+\DoxyCodeLine{396                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'z'}));}
+\DoxyCodeLine{397                                         renderMutex.unlock();}
+\DoxyCodeLine{398                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{399                                     \}}
+\DoxyCodeLine{400         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaeccffff442640478b9deb8eadf9efa9b}{BUTTON\_ACTION::RANDOM5}}: \{}
+\DoxyCodeLine{401                                          \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 64);}
+\DoxyCodeLine{402                                          std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{403 }
+\DoxyCodeLine{404                                          renderMutex.lock();}
+\DoxyCodeLine{405                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem);}
+\DoxyCodeLine{406                                          renderMutex.unlock();}
+\DoxyCodeLine{407                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{408                                      \}}
+\DoxyCodeLine{409         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa333a796370473a11042e908ef60c7977}{BUTTON\_ACTION::RANDOM6}}: \{}
+\DoxyCodeLine{410                                          renderMutex.lock();}
+\DoxyCodeLine{411                                          \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
+\DoxyCodeLine{412                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
+\DoxyCodeLine{413                                              \{}
+\DoxyCodeLine{414                                                  \textcolor{keywordflow}{if}(i == j) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{415                                                  \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 100) <= 30) }
+\DoxyCodeLine{416                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 99));}
+\DoxyCodeLine{417                                                  \textcolor{keywordflow}{else} }
+\DoxyCodeLine{418                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{419                                              \}}
+\DoxyCodeLine{420                                          renderMutex.unlock();}
+\DoxyCodeLine{421                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{422                                      \}}
+\DoxyCodeLine{423         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaf1f0d1bd5f26566e0f02ac94b452ab90}{BUTTON\_ACTION::RANDOM7}}: \{ }
+\DoxyCodeLine{424                                          renderMutex.lock();}
+\DoxyCodeLine{425                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
+\DoxyCodeLine{426                                          renderMutex.unlock();}
+\DoxyCodeLine{427                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{428                                      \}}
+\DoxyCodeLine{429         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2bf848abc2187f052536cc07819b7609}{BUTTON\_ACTION::RANDOM8}}: \{ }
+\DoxyCodeLine{430                                          renderMutex.lock();}
+\DoxyCodeLine{431                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
+\DoxyCodeLine{432                                          renderMutex.unlock();}
+\DoxyCodeLine{433                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{434                                      \}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9fc5887c030f7a3e19821ebec457e719}{BUTTON\_ACTION::FILE}} :\{}
+\DoxyCodeLine{437                                       \mbox{\hyperlink{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}{getDataFromFile}}(ds-\/>\mbox{\hyperlink{classDataStructures_a7ff660d9f1ceb6735f2ed544137e21db}{getDataType}}());}
+\DoxyCodeLine{438                                       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{439                                   \}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441         \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{442                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{443     \}}
+\DoxyCodeLine{444 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}\label{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}} 
+\index{MyWindow@{MyWindow}!rendering@{rendering}}
+\index{rendering@{rendering}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void My\+Window\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{while}(\mbox{\hyperlink{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}{isOpen}}())}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{if}(!renderMutex.try\_lock())}
+\DoxyCodeLine{9         \{}
+\DoxyCodeLine{10             std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{11             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{12         \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         SDL\_RenderClear(render);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         current\_display-\/>\mbox{\hyperlink{classDisplay_aaee8ec6f17eb7a92f592e3596b1b9844}{rendering}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr}) ds-\/>\mbox{\hyperlink{classDataStructures_a2e0856cef6c208b4fbc5d1c98582e621}{rendering}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         SDL\_RenderSetViewport(render, \&viewport);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keywordflow}{if}(inputbox != \textcolor{keyword}{nullptr}) inputbox-\/>\mbox{\hyperlink{classInputBox_a8d8de45186e4fd514bc79e9f6ffa7313}{rendering}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         SDL\_RenderPresent(render);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26        renderMutex.unlock();}
+\DoxyCodeLine{27         std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_ad3cdc8d2dfc2758c4d30ba22a6ff8622}\label{classMyWindow_ad3cdc8d2dfc2758c4d30ba22a6ff8622}} 
+\index{MyWindow@{MyWindow}!run@{run}}
+\index{run@{run}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void My\+Window\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file running.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     status = \mbox{\hyperlink{GLOBAL_8hpp_a5e99ac06d31ef62194f8a64c8fd98623ab7a4ac8d1c19f6cf0d565c42a68cc95a}{WINDOW\_STATUS::IS\_OPEN}};}
+\DoxyCodeLine{7     thread\_pool.push\_back(std::thread(\&\mbox{\hyperlink{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}{MyWindow::rendering}}, \textcolor{keyword}{this}));}
+\DoxyCodeLine{8     thread\_pool.push\_back(std::thread(\&\mbox{\hyperlink{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}{MyWindow::getEvent}}, \textcolor{keyword}{this}));}
+\DoxyCodeLine{9     thread\_pool.push\_back(std::thread(\&\mbox{\hyperlink{classMyWindow_aae49e30f633091f0a248493c54b005b0}{MyWindow::runOperator}}, \textcolor{keyword}{this}));}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{classMyWindow_a11e405cd9ec96df04205ae2fe61c9d79}{interacting}}();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& thread : thread\_pool)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         thread.join();}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_aae49e30f633091f0a248493c54b005b0}\label{classMyWindow_aae49e30f633091f0a248493c54b005b0}} 
+\index{MyWindow@{MyWindow}!runOperator@{runOperator}}
+\index{runOperator@{runOperator}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{runOperator()}{runOperator()}}
+{\footnotesize\ttfamily void My\+Window\+::run\+Operator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 60 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{while}(\mbox{\hyperlink{classMyWindow_a4e2cf4ccdda978aeb0a6e356a60cfdbf}{isOpen}}())}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         std::unique\_lock<std::mutex> lock(step\_mutex);}
+\DoxyCodeLine{65         step\_cond.wait(lock, [\&]()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{classMyWindow_aa08dcef1ba85d1a3d6dee6ad638f3d04}{isClosed}}() || isQueuingStep;\});}
+\DoxyCodeLine{66         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classMyWindow_aa08dcef1ba85d1a3d6dee6ad638f3d04}{isClosed}}()) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         isQueuingStep = \textcolor{keyword}{false};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \mbox{\hyperlink{classInputBox}{InputBox}}* temp;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         renderMutex.lock();}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if}(inputbox == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{74         \{}
+\DoxyCodeLine{75             renderMutex.unlock();}
+\DoxyCodeLine{76             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         temp = inputbox;}
+\DoxyCodeLine{80         renderMutex.unlock();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}nullptr"{}});}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         renderMutex.lock();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         \textcolor{keywordflow}{switch}(temp-\/>\mbox{\hyperlink{classInputBox_ab5d08656c28838bafffcd40c1bc222b3}{getOperator}}())}
+\DoxyCodeLine{87         \{}
+\DoxyCodeLine{88             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}:}
+\DoxyCodeLine{89                 \{}
+\DoxyCodeLine{90                     ds-\/>\mbox{\hyperlink{classDataStructures_a6590fa74c6bb3c162845313ff57cbda3}{init}}(temp);}
+\DoxyCodeLine{91                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{92                 \}}
+\DoxyCodeLine{93             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}:}
+\DoxyCodeLine{94                 ds-\/>\mbox{\hyperlink{classDataStructures_ae38e4872f828cee8f4e7c55cb2d9770d}{insert}}(temp);}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{96             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}:}
+\DoxyCodeLine{97                 ds-\/>\mbox{\hyperlink{classDataStructures_a55888e76984c70c4cb3e1eb519f9a9f1}{remove}}(temp);}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{99             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}:}
+\DoxyCodeLine{100                 ds-\/>\mbox{\hyperlink{classDataStructures_addced8076cc03eb637f916150858221a}{search}}(temp);}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{102             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a6705777b712ee811e76fb07162081d63}{DATA\_STRUCTURES\_OPERATOR::TOP}}: }
+\DoxyCodeLine{103                 ds-\/>\mbox{\hyperlink{classDataStructures_a9ec45cced837c268a477177e87ea0957}{top}}();}
+\DoxyCodeLine{104                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{105             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a62e5cef85d46f1a5a2144d9fd463b79e}{DATA\_STRUCTURES\_OPERATOR::SIZE}}:}
+\DoxyCodeLine{106                 ds-\/>\mbox{\hyperlink{classDataStructures_a34f062c7ec1ed90d91f44e28e4e054a9}{size}}();}
+\DoxyCodeLine{107             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9a4ad0490c7f7c16aa78af29e73ac1bf}{DATA\_STRUCTURES\_OPERATOR::SETTING}}:}
+\DoxyCodeLine{108                 ds-\/>\mbox{\hyperlink{classDataStructures_a3864cecae63179069a5f71b8e828a772}{setting}}(temp);}
+\DoxyCodeLine{109             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481}{DATA\_STRUCTURES\_OPERATOR::DIJKSTRA}}:}
+\DoxyCodeLine{110                 ds-\/>\mbox{\hyperlink{classDataStructures_a78ef7e52750de838abe1852a98ae97cc}{dijkstra}}(temp);}
+\DoxyCodeLine{111                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{112             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe}{DATA\_STRUCTURES\_OPERATOR::MST}}:}
+\DoxyCodeLine{113                 ds-\/>\mbox{\hyperlink{classDataStructures_acd516bffee6de9604742c41564d30730}{mst}}();}
+\DoxyCodeLine{114                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{115             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a506e80ad4373b52e7d03a714c23c696c}{DATA\_STRUCTURES\_OPERATOR::SCC}}:}
+\DoxyCodeLine{116                 ds-\/>\mbox{\hyperlink{classDataStructures_ad020e582a3c9c966c67d078a6505174a}{scc}}();}
+\DoxyCodeLine{117                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119         renderMutex.unlock();}
+\DoxyCodeLine{120     \}}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}\label{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}} 
+\index{MyWindow@{MyWindow}!setDataType@{setDataType}}
+\index{setDataType@{setDataType}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{setDataType()}{setDataType()}}
+{\footnotesize\ttfamily void My\+Window\+::set\+Data\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735dead}{DATA\+\_\+\+STRUCTURES\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     renderMutex.lock();}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if}(ds\_pool.find(type) == ds\_pool.end())}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         ds\_pool[type] = \textcolor{keyword}{new} \mbox{\hyperlink{classDataStructures}{DataStructures}}(render, myfont, renderMutex);}
+\DoxyCodeLine{53         ds\_pool[type]-\/>setDataType(type);}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55     ds = ds\_pool[type];}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     renderMutex.unlock();}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}\label{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}} 
+\index{MyWindow@{MyWindow}!setDisplay@{setDisplay}}
+\index{setDisplay@{setDisplay}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{setDisplay()}{setDisplay()}}
+{\footnotesize\ttfamily void My\+Window\+::set\+Display (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}nullptr"{}});}
+\DoxyCodeLine{7     renderMutex.lock();}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     ds = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(display\_pool.find(name) == display\_pool.end())}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         display\_pool[name] = \textcolor{keyword}{new} \mbox{\hyperlink{classDisplay}{Display}}(render, viewport);}
+\DoxyCodeLine{13         display\_pool[name]-\/>linking(name);}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15     current\_display = display\_pool[name];}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     renderMutex.unlock();}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMyWindow_a1da36075e78b547cffd44d562bc5897f}\label{classMyWindow_a1da36075e78b547cffd44d562bc5897f}} 
+\index{MyWindow@{MyWindow}!setInputBox@{setInputBox}}
+\index{setInputBox@{setInputBox}!MyWindow@{MyWindow}}
+\doxysubsubsection{\texorpdfstring{setInputBox()}{setInputBox()}}
+{\footnotesize\ttfamily void My\+Window\+::set\+Input\+Box (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file updating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     renderMutex.lock();}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"{}graph/edges"{}})}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         \textcolor{keyword}{auto} i = inputbox\_pool.find(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if}(i != inputbox\_pool.end())}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             \textcolor{keyword}{auto} t = i-\/>second;}
+\DoxyCodeLine{29             inputbox\_pool.erase(i);}
+\DoxyCodeLine{30             \textcolor{keyword}{delete} t;}
+\DoxyCodeLine{31         \}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             inputbox\_pool[\textcolor{stringliteral}{"{}graph/edges"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classInputBox}{InputBox}}(render, myfont);}
+\DoxyCodeLine{34             inputbox\_pool[\textcolor{stringliteral}{"{}graph/edges"{}}]-\/>setDuplicate(ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}});}
+\DoxyCodeLine{35             inputbox\_pool[\textcolor{stringliteral}{"{}graph/edges"{}}]-\/>linking(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(inputbox\_pool.find(name) == inputbox\_pool.end())}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         inputbox\_pool[name] = \textcolor{keyword}{new} \mbox{\hyperlink{classInputBox}{InputBox}}(render, myfont);}
+\DoxyCodeLine{41         inputbox\_pool[name]-\/>linking(name);}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43     inputbox = inputbox\_pool[name];}
+\DoxyCodeLine{44     renderMutex.unlock();}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{window_8hpp}{window.\+hpp}}\item 
+src/window/\mbox{\hyperlink{window_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/window/\mbox{\hyperlink{window_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/window/\mbox{\hyperlink{window_2event_8cpp}{event.\+cpp}}\item 
+src/window/\mbox{\hyperlink{window_2rendering_8cpp}{rendering.\+cpp}}\item 
+src/window/\mbox{\hyperlink{running_8cpp}{running.\+cpp}}\item 
+src/window/\mbox{\hyperlink{status_8cpp}{status.\+cpp}}\item 
+src/window/\mbox{\hyperlink{updating_8cpp}{updating.\+cpp}}\end{DoxyCompactItemize}

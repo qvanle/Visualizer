@@ -1,0 +1,240 @@
+\hypertarget{structDSU}{}\doxysection{DSU Struct Reference}
+\label{structDSU}\index{DSU@{DSU}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structDSU_abbae2d8b88cba33b50386cbbf229685a}{DSU}} (int n)
+\item 
+\mbox{\hyperlink{structDSU_aa09dc3d96bbccfecef26b3dba9e74bd4}{$\sim$\+DSU}} ()
+\item 
+void \mbox{\hyperlink{structDSU_a0b4aeb02a4c7d69c833ea13cf5de35a4}{union\+Edge}} (Graph\+::\+Edge $\ast$e)
+\item 
+void \mbox{\hyperlink{structDSU_a734f10839b84d3bdf20aee77325f75de}{union\+Edge}} (Graph\+::\+Node $\ast$u, Graph\+::\+Node $\ast$v)
+\item 
+void \mbox{\hyperlink{structDSU_a893c112a612b71edc3aa9215c526e94a}{union\+Edge}} (int u, int v)
+\item 
+int \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}} (Graph\+::\+Node $\ast$v)
+\item 
+int \mbox{\hyperlink{structDSU_a35900d1d382b7f5f1bc3804fd5b33593}{find}} (int v)
+\item 
+bool \mbox{\hyperlink{structDSU_ac81f87d687af174ef35c985716aa3e7a}{is\+Unionized}} (Graph\+::\+Node $\ast$u, Graph\+::\+Node $\ast$v)
+\item 
+bool \mbox{\hyperlink{structDSU_a27f43f34ec880dc2f6f7c155a41cbb36}{is\+Unionized}} (Graph\+::\+Edge $\ast$e)
+\item 
+bool \mbox{\hyperlink{structDSU_a6b4a4b8c75d8b73956584d9517b77de6}{is\+Unionized}} (int u, int v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 4 of file mst.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structDSU_abbae2d8b88cba33b50386cbbf229685a}\label{structDSU_abbae2d8b88cba33b50386cbbf229685a}} 
+\index{DSU@{DSU}!DSU@{DSU}}
+\index{DSU@{DSU}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{DSU()}{DSU()}}
+{\footnotesize\ttfamily DSU\+::\+DSU (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 7 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}.resize(n + 1);}
+\DoxyCodeLine{10         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)}
+\DoxyCodeLine{11             \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[i] = -\/1;}
+\DoxyCodeLine{12     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_aa09dc3d96bbccfecef26b3dba9e74bd4}\label{structDSU_aa09dc3d96bbccfecef26b3dba9e74bd4}} 
+\index{DSU@{DSU}!````~DSU@{$\sim$DSU}}
+\index{````~DSU@{$\sim$DSU}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{$\sim$DSU()}{~DSU()}}
+{\footnotesize\ttfamily DSU\+::$\sim$\+DSU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 13 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}.clear();}
+\DoxyCodeLine{16     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structDSU_adb5f560252ba3bb93c5d7a490187d24d}\label{structDSU_adb5f560252ba3bb93c5d7a490187d24d}} 
+\index{DSU@{DSU}!find@{find}}
+\index{find@{find}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int DSU\+::find (\begin{DoxyParamCaption}\item[{Graph\+::\+Node $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 36 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(v-\/>value);}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a35900d1d382b7f5f1bc3804fd5b33593}\label{structDSU_a35900d1d382b7f5f1bc3804fd5b33593}} 
+\index{DSU@{DSU}!find@{find}}
+\index{find@{find}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int DSU\+::find (\begin{DoxyParamCaption}\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 40 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         \textcolor{keywordflow}{if}(\mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[v] < 0)}
+\DoxyCodeLine{43             \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{44         \textcolor{keywordflow}{return} \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[v] = \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(\mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[v]);}
+\DoxyCodeLine{45     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a27f43f34ec880dc2f6f7c155a41cbb36}\label{structDSU_a27f43f34ec880dc2f6f7c155a41cbb36}} 
+\index{DSU@{DSU}!isUnionized@{isUnionized}}
+\index{isUnionized@{isUnionized}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{isUnionized()}{isUnionized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool DSU\+::is\+Unionized (\begin{DoxyParamCaption}\item[{Graph\+::\+Edge $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 51 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52     \{}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} \mbox{\hyperlink{structDSU_ac81f87d687af174ef35c985716aa3e7a}{isUnionized}}(e-\/>u, e-\/>v);}
+\DoxyCodeLine{54     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_ac81f87d687af174ef35c985716aa3e7a}\label{structDSU_ac81f87d687af174ef35c985716aa3e7a}} 
+\index{DSU@{DSU}!isUnionized@{isUnionized}}
+\index{isUnionized@{isUnionized}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{isUnionized()}{isUnionized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool DSU\+::is\+Unionized (\begin{DoxyParamCaption}\item[{Graph\+::\+Node $\ast$}]{u,  }\item[{Graph\+::\+Node $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 47 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49         \textcolor{keywordflow}{return} \mbox{\hyperlink{structDSU_ac81f87d687af174ef35c985716aa3e7a}{isUnionized}}(u-\/>value, v-\/>value);}
+\DoxyCodeLine{50     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a6b4a4b8c75d8b73956584d9517b77de6}\label{structDSU_a6b4a4b8c75d8b73956584d9517b77de6}} 
+\index{DSU@{DSU}!isUnionized@{isUnionized}}
+\index{isUnionized@{isUnionized}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{isUnionized()}{isUnionized()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool DSU\+::is\+Unionized (\begin{DoxyParamCaption}\item[{int}]{u,  }\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 55 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         \textcolor{keywordflow}{return} \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(u) == \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(v);}
+\DoxyCodeLine{58     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a0b4aeb02a4c7d69c833ea13cf5de35a4}\label{structDSU_a0b4aeb02a4c7d69c833ea13cf5de35a4}} 
+\index{DSU@{DSU}!unionEdge@{unionEdge}}
+\index{unionEdge@{unionEdge}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{unionEdge()}{unionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void DSU\+::union\+Edge (\begin{DoxyParamCaption}\item[{Graph\+::\+Edge $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         \mbox{\hyperlink{structDSU_a0b4aeb02a4c7d69c833ea13cf5de35a4}{unionEdge}}(e-\/>u, e-\/>v);}
+\DoxyCodeLine{21     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a734f10839b84d3bdf20aee77325f75de}\label{structDSU_a734f10839b84d3bdf20aee77325f75de}} 
+\index{DSU@{DSU}!unionEdge@{unionEdge}}
+\index{unionEdge@{unionEdge}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{unionEdge()}{unionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void DSU\+::union\+Edge (\begin{DoxyParamCaption}\item[{Graph\+::\+Node $\ast$}]{u,  }\item[{Graph\+::\+Node $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 22 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         \mbox{\hyperlink{structDSU_a0b4aeb02a4c7d69c833ea13cf5de35a4}{unionEdge}}(u-\/>value, v-\/>value);}
+\DoxyCodeLine{25     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structDSU_a893c112a612b71edc3aa9215c526e94a}\label{structDSU_a893c112a612b71edc3aa9215c526e94a}} 
+\index{DSU@{DSU}!unionEdge@{unionEdge}}
+\index{unionEdge@{unionEdge}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{unionEdge()}{unionEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void DSU\+::union\+Edge (\begin{DoxyParamCaption}\item[{int}]{u,  }\item[{int}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 26 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} a = \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(u);}
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} b = \mbox{\hyperlink{structDSU_adb5f560252ba3bb93c5d7a490187d24d}{find}}(v);}
+\DoxyCodeLine{30         \textcolor{keywordflow}{if}(a == b) return ;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[a] += \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[b];}
+\DoxyCodeLine{33         \mbox{\hyperlink{structDSU_a809c0c8955f856f92c0e930a2e9a736c}{parent}}[b] = a;}
+\DoxyCodeLine{34     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structDSU_a809c0c8955f856f92c0e930a2e9a736c}\label{structDSU_a809c0c8955f856f92c0e930a2e9a736c}} 
+\index{DSU@{DSU}!parent@{parent}}
+\index{parent@{parent}!DSU@{DSU}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ DSU\+::parent}
+
+
+
+Definition at line 6 of file mst.\+cpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/graph/operator/\mbox{\hyperlink{graph_2operator_2mst_8cpp}{mst.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,706 @@
+\hypertarget{classGraph}{}\doxysection{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+\mbox{\hyperlink{classGraph}{Graph}} class.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph_a6fa98efdd48a99675cbd94166f6ca57c}{Graph}} (SDL\+\_\+\+Renderer $\ast$r, std\+::mutex \&m, TTF\+\_\+\+Font $\ast$f, SDL\+\_\+\+Rect v, int capacity)
+\item 
+\mbox{\hyperlink{classGraph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph}} ()
+\item 
+void \mbox{\hyperlink{classGraph_a6cda990ef450c5fdbbdfdfcd3fa67de0}{Dijkstra}} (int start, int end)
+\item 
+void \mbox{\hyperlink{classGraph_a27cc542ccfc908de00cf0135978dfdd3}{MST}} ()
+\item 
+void \mbox{\hyperlink{classGraph_abe3333274cfababa4abd2e820af95238}{SCC}} ()
+\item 
+void \mbox{\hyperlink{classGraph_ab7973cc96927296785f04be124667924}{init}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ value)
+\item 
+bool \mbox{\hyperlink{classGraph_a3d474b1c86668c5f68ea9b71e88d5540}{is\+Receive\+Event}} (SDL\+\_\+\+Event \&e)
+\item 
+\mbox{\hyperlink{classButton}{Button}} $\ast$ \mbox{\hyperlink{classGraph_a291016bf2181acabb13b0be3f9241f97}{react}} (SDL\+\_\+\+Event \&e)
+\item 
+void \mbox{\hyperlink{classGraph_a1b733a595e435d2b9b02b7c88a372c2c}{rendering}} ()
+\item 
+void \mbox{\hyperlink{classGraph_a3fa967ede13bc835a3a3a343d0d507a3}{setting}} (SDL\+\_\+\+Color c1, SDL\+\_\+\+Color c2, SDL\+\_\+\+Color c3, SDL\+\_\+\+Color c4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGraph_af2f1a34928c3e5119d8a170a81167a5d}{union\+Edges}} ()
+\item 
+void \mbox{\hyperlink{classGraph_a3da55e654847ba8a3151e27c149d80b7}{Tarjan}} (Node $\ast$u)
+\item 
+void \mbox{\hyperlink{classGraph_aef96f70c574ff42ec00fa042c57e1658}{repair}} ()
+\item 
+void \mbox{\hyperlink{classGraph_a338cf4fe96aeedef6d097a31ce604c9e}{render\+Edge}} (Edge $\ast$edge)
+\item 
+void \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{wait\+For\+Step}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{classGraph_aa8f53200c4ef1f7ba35ebcf40dfd4051}{distance\+Heap}}
+\item 
+struct \mbox{\hyperlink{classGraph_ac53047959fbe5c58d4d05e1aca54163a}{DSU}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classGraph}{Graph}} class. 
+
+Drawable graph. 
+
+Definition at line 23 of file graph.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraph_a6fa98efdd48a99675cbd94166f6ca57c}\label{classGraph_a6fa98efdd48a99675cbd94166f6ca57c}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{r,  }\item[{std\+::mutex \&}]{m,  }\item[{TTF\+\_\+\+Font $\ast$}]{f,  }\item[{SDL\+\_\+\+Rect}]{v,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                                                                                 : ds\_mutex(m)}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     render = r;}
+\DoxyCodeLine{36     font = f;}
+\DoxyCodeLine{37     viewport = v;}
+\DoxyCodeLine{38     capacity = capacity;}
+\DoxyCodeLine{39     edgesColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{40     shiftX = 20;}
+\DoxyCodeLine{41     shiftY = 20;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     nodirect = \textcolor{keyword}{false};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     nodeColor = \{20, 75, 185, 255\};}
+\DoxyCodeLine{46     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     stepWait = 600;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{51     chosenNode = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52     lastMousePressed = \{0, 0\};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a902c5b3eacb66d60752525ab23297a95}\label{classGraph_a902c5b3eacb66d60752525ab23297a95}} 
+\index{Graph@{Graph}!````~Graph@{$\sim$Graph}}
+\index{````~Graph@{$\sim$Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{$\sim$Graph()}{~Graph()}}
+{\footnotesize\ttfamily Graph\+::$\sim$\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : nodes)}
+\DoxyCodeLine{22         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{23     nodes.clear();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i : edges)}
+\DoxyCodeLine{26         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{27     edges.clear();}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraph_a6cda990ef450c5fdbbdfdfcd3fa67de0}\label{classGraph_a6cda990ef450c5fdbbdfdfcd3fa67de0}} 
+\index{Graph@{Graph}!Dijkstra@{Dijkstra}}
+\index{Dijkstra@{Dijkstra}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Dijkstra()}{Dijkstra()}}
+{\footnotesize\ttfamily void Graph\+::\+Dijkstra (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file dijkstra.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{classGraph_aef96f70c574ff42ec00fa042c57e1658}{repair}}();}
+\DoxyCodeLine{77     distance.clear();}
+\DoxyCodeLine{78     distance.resize(nodes.size() + 1, -\/1);}
+\DoxyCodeLine{79     \mbox{\hyperlink{structdistanceHeap}{distanceHeap}} heap(\textcolor{keyword}{this});}
+\DoxyCodeLine{80     distance[start] = 0;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     heap.insert(start);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes) i-\/>sprite-\/>coloring(SDL\_Color\{50, 50, 50, 255\});}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordflow}{while}(!heap.empty())}
+\DoxyCodeLine{87     \{}
+\DoxyCodeLine{88         \textcolor{keywordtype}{int} u = heap.pop();}
+\DoxyCodeLine{89         nodes[u]-\/>sprite-\/>coloring(SDL\_Color\{0, 125, 0, 255\});}
+\DoxyCodeLine{90         \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{91         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} e : nodes[u]-\/>edges)}
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             \textcolor{keywordtype}{int} v = e-\/>v-\/>value;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96             \textcolor{keywordflow}{if}(distance[v] == -\/1 || distance[v] > distance[u] + e-\/>weight)}
+\DoxyCodeLine{97             \{}
+\DoxyCodeLine{98                 nodes[v]-\/>sprite-\/>coloring(SDL\_Color\{255, 255, 0, 255\});}
+\DoxyCodeLine{99                 \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{100                 nodes[v]-\/>sprite-\/>coloring(SDL\_Color\{0, 255, 255, 255\});}
+\DoxyCodeLine{101                 \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{102                 distance[v] = distance[u] + e-\/>weight;}
+\DoxyCodeLine{103                 heap.insert(v);}
+\DoxyCodeLine{104             \}}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{106         nodes[u]-\/>sprite-\/>coloring(SDL\_Color\{0, 255, 0, 255\});}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_ab7973cc96927296785f04be124667924}\label{classGraph_ab7973cc96927296785f04be124667924}} 
+\index{Graph@{Graph}!init@{init}}
+\index{init@{init}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Graph\+::init (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file init.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     capacity = g.size();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{61         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{62     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : edges)}
+\DoxyCodeLine{63         \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{64     nodes.clear();}
+\DoxyCodeLine{65     edges.clear();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < capacity; i++)}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69         \textcolor{keywordtype}{int} x = 10;}
+\DoxyCodeLine{70         \textcolor{keywordtype}{int} y = 10;}
+\DoxyCodeLine{71         \textcolor{keywordtype}{int} rep = 20;}
+\DoxyCodeLine{72         \textcolor{keywordflow}{do} }
+\DoxyCodeLine{73         \{}
+\DoxyCodeLine{74             x = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(10, 720);}
+\DoxyCodeLine{75             y = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(10, 520);}
+\DoxyCodeLine{76             rep-\/-\/;}
+\DoxyCodeLine{77         \}\textcolor{keywordflow}{while}(rep != 0 \&\& isCollision(x, y));}
+\DoxyCodeLine{78         \mbox{\hyperlink{classSprite}{Sprite}}* spr = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{79         spr-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{80         spr-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}AVL/node"{}});}
+\DoxyCodeLine{81         spr-\/>\mbox{\hyperlink{classSprite_a093ab4b0f6c0125aba23988d5d7478b6}{locatingX}}(x);}
+\DoxyCodeLine{82         spr-\/>\mbox{\hyperlink{classSprite_a86549ecafaa33bbd43eba9f7175dafb7}{locatingY}}(y);}
+\DoxyCodeLine{83         spr-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(i));}
+\DoxyCodeLine{84         spr-\/>\mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{setFontColor}}(fontColor);}
+\DoxyCodeLine{85         spr-\/>\mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(nodeColor);}
+\DoxyCodeLine{86         spr-\/>\mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         Node* node = \textcolor{keyword}{new} Node(i, spr);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         nodes.push\_back(node);}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < capacity; i++)}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < capacity \&\& j < g[i].size(); j++)}
+\DoxyCodeLine{96         \{}
+\DoxyCodeLine{97             \textcolor{keywordflow}{if}(g[i][j] != 0)}
+\DoxyCodeLine{98             \{}
+\DoxyCodeLine{99                 \mbox{\hyperlink{classSprite}{Sprite}}* spr = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{100                 spr-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{101                 spr-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}graph/weight"{}});}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103                 spr-\/>\mbox{\hyperlink{classSprite_a093ab4b0f6c0125aba23988d5d7478b6}{locatingX}}((nodes[i]-\/>sprite-\/>getX() + nodes[j]-\/>sprite-\/>getX()) / 2);}
+\DoxyCodeLine{104                 spr-\/>\mbox{\hyperlink{classSprite_a86549ecafaa33bbd43eba9f7175dafb7}{locatingY}}((nodes[i]-\/>sprite-\/>getY() + nodes[j]-\/>sprite-\/>getY()) / 2);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106                 spr-\/>\mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{setText}}(\mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(g[i][j]));}
+\DoxyCodeLine{107                 spr-\/>\mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{108                 Edge* edge = \textcolor{keyword}{new} Edge(nodes[i], nodes[j], g[i][j], spr);}
+\DoxyCodeLine{109                 edges.push\_back(edge);}
+\DoxyCodeLine{110                 nodes[i]-\/>addEdge(edge);}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a3d474b1c86668c5f68ea9b71e88d5540}\label{classGraph_a3d474b1c86668c5f68ea9b71e88d5540}} 
+\index{Graph@{Graph}!isReceiveEvent@{isReceiveEvent}}
+\index{isReceiveEvent@{isReceiveEvent}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{isReceiveEvent()}{isReceiveEvent()}}
+{\footnotesize\ttfamily bool Graph\+::is\+Receive\+Event (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{7     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{10             \textcolor{keywordflow}{if}(e.motion.x < viewport.x || viewport.x + viewport.w < e.motion.x) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{11             \textcolor{keywordflow}{if}(e.motion.y < viewport.y || viewport.y + viewport.h < e.motion.y) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{12             \textcolor{keywordflow}{if}(e.button.button == SDL\_BUTTON\_LEFT) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{13             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{14                 \textcolor{keywordflow}{if}(i-\/>sprite-\/>isLieInside(e.motion.x, e.motion.y))}
+\DoxyCodeLine{15                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{16             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{17             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION:}
+\DoxyCodeLine{19             \textcolor{keywordflow}{if}(isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{20             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{21             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{22         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{23             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{24             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a27cc542ccfc908de00cf0135978dfdd3}\label{classGraph_a27cc542ccfc908de00cf0135978dfdd3}} 
+\index{Graph@{Graph}!MST@{MST}}
+\index{MST@{MST}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{MST()}{MST()}}
+{\footnotesize\ttfamily void Graph\+::\+MST (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     sortedEdges.clear();}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : edges)}
+\DoxyCodeLine{67         sortedEdges.push\_back(i);}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     std::sort(}
+\DoxyCodeLine{70             sortedEdges.begin(), }
+\DoxyCodeLine{71             sortedEdges.end(),}
+\DoxyCodeLine{72             [\&](Edge* u, Edge* v)\{}
+\DoxyCodeLine{73                 if(u == nullptr) return false;}
+\DoxyCodeLine{74                 if(v == nullptr) return true;}
+\DoxyCodeLine{75                 return u-\/>weight < v-\/>weight;}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77     );}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \mbox{\hyperlink{classGraph_af2f1a34928c3e5119d8a170a81167a5d}{unionEdges}}();}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a291016bf2181acabb13b0be3f9241f97}\label{classGraph_a291016bf2181acabb13b0be3f9241f97}} 
+\index{Graph@{Graph}!react@{react}}
+\index{react@{react}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{react()}{react()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classButton}{Button}} $\ast$ Graph\+::react (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     std::lock\_guard<std::mutex> lk(animate\_mutex);}
+\DoxyCodeLine{32     \textcolor{keywordflow}{switch}(e.type)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{case} SDL\_MOUSEBUTTONDOWN:}
+\DoxyCodeLine{35             \textcolor{keywordflow}{if}(isMoving)}
+\DoxyCodeLine{36             \{}
+\DoxyCodeLine{37                 isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{38                 chosenNode = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{39             \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{40             \{}
+\DoxyCodeLine{41                 isMoving = \textcolor{keyword}{true};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{44                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{46                     \textcolor{keywordflow}{if}(i-\/>sprite-\/>isLieInside(e.motion.x, e.motion.y))}
+\DoxyCodeLine{47                     \{}
+\DoxyCodeLine{48                         chosenNode = i;}
+\DoxyCodeLine{49                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{50                     \}}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{53             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54         \textcolor{keywordflow}{case} SDL\_MOUSEMOTION: }
+\DoxyCodeLine{55             \{}
+\DoxyCodeLine{56                 \textcolor{keywordflow}{if}(!isMoving) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{57                 \textcolor{keywordtype}{int} dx = e.motion.x -\/ lastMousePressed.x;}
+\DoxyCodeLine{58                 \textcolor{keywordtype}{int} dy = e.motion.y -\/ lastMousePressed.y;}
+\DoxyCodeLine{59                 lastMousePressed.x = e.motion.x;}
+\DoxyCodeLine{60                 lastMousePressed.y = e.motion.y;}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{if}(chosenNode == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{62                 chosenNode-\/>sprite-\/>moveX(dx);}
+\DoxyCodeLine{63                 chosenNode-\/>sprite-\/>moveY(dy);}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66             \}}
+\DoxyCodeLine{67 defaut:}
+\DoxyCodeLine{68             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{69             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a338cf4fe96aeedef6d097a31ce604c9e}\label{classGraph_a338cf4fe96aeedef6d097a31ce604c9e}} 
+\index{Graph@{Graph}!renderEdge@{renderEdge}}
+\index{renderEdge@{renderEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{renderEdge()}{renderEdge()}}
+{\footnotesize\ttfamily void Graph\+::render\+Edge (\begin{DoxyParamCaption}\item[{Edge $\ast$}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 8 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(e-\/>mark == 3)}
+\DoxyCodeLine{11         SDL\_SetRenderDrawColor(render, 50, 50, 50, 255);}
+\DoxyCodeLine{12     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(e-\/>mark == 2)}
+\DoxyCodeLine{13         SDL\_SetRenderDrawColor(render, 255, 0, 0, 255);}
+\DoxyCodeLine{14     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(e-\/>mark == 1)}
+\DoxyCodeLine{15         SDL\_SetRenderDrawColor(render, 0, 255, 0, 255);}
+\DoxyCodeLine{16     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{17         SDL\_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);}
+\DoxyCodeLine{18     \textcolor{keyword}{const} SDL\_Rect* srcloc = (e-\/>u-\/>sprite-\/>getLocation());}
+\DoxyCodeLine{19     \textcolor{keyword}{const} SDL\_Rect* dstloc = (e-\/>v-\/>sprite-\/>getLocation());}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     SDL\_Point src;}
+\DoxyCodeLine{22     src.x = srcloc-\/>x + srcloc-\/>w/2;}
+\DoxyCodeLine{23     src.y = srcloc-\/>y + srcloc-\/>h/2;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     SDL\_Point dst;}
+\DoxyCodeLine{27     dst.x = dstloc-\/>x + dstloc-\/>w/2;}
+\DoxyCodeLine{28     dst.y = dstloc-\/>y + dstloc-\/>h/2;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} sign = 1;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if}(dst.x < src.x)}
+\DoxyCodeLine{32         sign = -\/1;}
+\DoxyCodeLine{33     e-\/>sprite-\/>locatingX((src.x + dst.x) / 2 + sign * 10);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     sign = 1;}
+\DoxyCodeLine{36     \textcolor{keywordflow}{if}(dst.y < src.y)}
+\DoxyCodeLine{37         sign = -\/1;}
+\DoxyCodeLine{38     e-\/>sprite-\/>locatingY((src.y + dst.y) / 2 + sign * 10);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = -\/1; i <= 1; i++)}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = -\/1; j <= 1; j++)}
+\DoxyCodeLine{43         \{}
+\DoxyCodeLine{44             SDL\_RenderDrawLine(render, src.x + i, src.y + j, dst.x + i, dst.y + j);}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(nodirect) return ;}
+\DoxyCodeLine{48     \mbox{\hyperlink{structPoint}{Point}} v;}
+\DoxyCodeLine{49     v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} = dst.x -\/ src.x;}
+\DoxyCodeLine{50     v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} = dst.y -\/ src.y;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{double} len = sqrt(v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} + v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}});}
+\DoxyCodeLine{52     v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} /= len;}
+\DoxyCodeLine{53     v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} /= len;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56     \mbox{\hyperlink{structPoint}{Point}} u = \{v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}}, -\/v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}}\};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     SDL\_Point p1;}
+\DoxyCodeLine{59     p1.x = dst.x -\/ v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * 40 + u.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * 10;}
+\DoxyCodeLine{60     p1.y = dst.y -\/ v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * 40 + u.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * 10;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     SDL\_Point p2;}
+\DoxyCodeLine{63     p2.x = dst.x -\/ v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * 40 -\/ u.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * 10;}
+\DoxyCodeLine{64     p2.y = dst.y -\/ v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * 40 -\/ u.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * 10;}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     SDL\_Point p3;}
+\DoxyCodeLine{67     p3.x = dst.x -\/ v.\mbox{\hyperlink{structPoint_ab99c56589bc8ad5fa5071387110a5bc7}{x}} * 28;}
+\DoxyCodeLine{68     p3.y = dst.y -\/ v.\mbox{\hyperlink{structPoint_afa38be143ae800e6ad69ce8ed4df62d8}{y}} * 28;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = -\/1; i <= 1; i++)}
+\DoxyCodeLine{71         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = -\/1; j <= 1; j++)}
+\DoxyCodeLine{72         \{}
+\DoxyCodeLine{73             SDL\_RenderDrawLine(render, p1.x + i, p1.y + j, p3.x + i, p3.y + j);}
+\DoxyCodeLine{74             SDL\_RenderDrawLine(render, p2.x + i, p2.y + j, p3.x + i, p3.y + j);}
+\DoxyCodeLine{75         \}}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a1b733a595e435d2b9b02b7c88a372c2c}\label{classGraph_a1b733a595e435d2b9b02b7c88a372c2c}} 
+\index{Graph@{Graph}!rendering@{rendering}}
+\index{rendering@{rendering}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void Graph\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : edges)}
+\DoxyCodeLine{81     \{}
+\DoxyCodeLine{82         \mbox{\hyperlink{classGraph_a338cf4fe96aeedef6d097a31ce604c9e}{renderEdge}}(i);}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if}(i-\/>sprite != \textcolor{keyword}{nullptr}) i-\/>sprite-\/>rendering();}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{86     \{}
+\DoxyCodeLine{87         i-\/>sprite-\/>rendering();}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_aef96f70c574ff42ec00fa042c57e1658}\label{classGraph_aef96f70c574ff42ec00fa042c57e1658}} 
+\index{Graph@{Graph}!repair@{repair}}
+\index{repair@{repair}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{repair()}{repair()}}
+{\footnotesize\ttfamily void Graph\+::repair (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 3 of file repair.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : edges)}
+\DoxyCodeLine{6     \{}
+\DoxyCodeLine{7         i-\/>mark = 0;}
+\DoxyCodeLine{8     \}}
+\DoxyCodeLine{9     \mbox{\hyperlink{classGraph_a3fa967ede13bc835a3a3a343d0d507a3}{setting}}(bgColor, nodeColor, fontColor, edgesColor);}
+\DoxyCodeLine{10     nodirect = \textcolor{keyword}{false};}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_abe3333274cfababa4abd2e820af95238}\label{classGraph_abe3333274cfababa4abd2e820af95238}} 
+\index{Graph@{Graph}!SCC@{SCC}}
+\index{SCC@{SCC}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{SCC()}{SCC()}}
+{\footnotesize\ttfamily void Graph\+::\+SCC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file scc.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     low.clear();}
+\DoxyCodeLine{40     order.clear();}
+\DoxyCodeLine{41     components.clear();}
+\DoxyCodeLine{42     \mbox{\hyperlink{classGraph_aef96f70c574ff42ec00fa042c57e1658}{repair}}();}
+\DoxyCodeLine{43     state = 0;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     low.resize(nodes.size() + 1);}
+\DoxyCodeLine{46     order.resize(nodes.size() + 1);}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordflow}{if}(order[i-\/>value] == 0)}
+\DoxyCodeLine{51             \mbox{\hyperlink{classGraph_a3da55e654847ba8a3151e27c149d80b7}{Tarjan}}(i);}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : components)}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         SDL\_Color c;}
+\DoxyCodeLine{57         c.r = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, 255);}
+\DoxyCodeLine{58         c.g = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, 255);}
+\DoxyCodeLine{59         c.b = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, 255);}
+\DoxyCodeLine{60         c.a = 255;}
+\DoxyCodeLine{61         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} j : i)}
+\DoxyCodeLine{62         \{}
+\DoxyCodeLine{63             j-\/>sprite-\/>coloring(c);}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a3fa967ede13bc835a3a3a343d0d507a3}\label{classGraph_a3fa967ede13bc835a3a3a343d0d507a3}} 
+\index{Graph@{Graph}!setting@{setting}}
+\index{setting@{setting}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{setting()}{setting()}}
+{\footnotesize\ttfamily void Graph\+::setting (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c1,  }\item[{SDL\+\_\+\+Color}]{c2,  }\item[{SDL\+\_\+\+Color}]{c3,  }\item[{SDL\+\_\+\+Color}]{c4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     bgColor = c1;}
+\DoxyCodeLine{60     nodeColor = c2;}
+\DoxyCodeLine{61     fontColor = c3;}
+\DoxyCodeLine{62     edgesColor = c4;}
+\DoxyCodeLine{63     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : nodes)}
+\DoxyCodeLine{64     \{}
+\DoxyCodeLine{65         i-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{66         i-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a3da55e654847ba8a3151e27c149d80b7}\label{classGraph_a3da55e654847ba8a3151e27c149d80b7}} 
+\index{Graph@{Graph}!Tarjan@{Tarjan}}
+\index{Tarjan@{Tarjan}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Tarjan()}{Tarjan()}}
+{\footnotesize\ttfamily void Graph\+::\+Tarjan (\begin{DoxyParamCaption}\item[{Node $\ast$}]{u }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file scc.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     order[u-\/>value] = low[u-\/>value] = ++state;}
+\DoxyCodeLine{7     buffer.push(u);}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : u-\/>edges)}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keywordflow}{if}(order[i-\/>v-\/>value] == 0)}
+\DoxyCodeLine{12         \{}
+\DoxyCodeLine{13             \mbox{\hyperlink{classGraph_a3da55e654847ba8a3151e27c149d80b7}{Tarjan}}(i-\/>v);}
+\DoxyCodeLine{14             low[u-\/>value] = std::min(low[u-\/>value], low[i-\/>v-\/>value]);}
+\DoxyCodeLine{15         \}}
+\DoxyCodeLine{16         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(order[i-\/>v-\/>value] != 0 \&\& low[i-\/>v-\/>value] != 0)}
+\DoxyCodeLine{17         \{}
+\DoxyCodeLine{18             low[u-\/>value] = std::min(low[u-\/>value], order[i-\/>v-\/>value]);}
+\DoxyCodeLine{19         \}}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(low[u-\/>value] == order[u-\/>value])}
+\DoxyCodeLine{23     \{}
+\DoxyCodeLine{24         std::vector<Node*> component;}
+\DoxyCodeLine{25         Node* v;}
+\DoxyCodeLine{26         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             v = buffer.top();}
+\DoxyCodeLine{29             buffer.pop();}
+\DoxyCodeLine{30             component.push\_back(v);}
+\DoxyCodeLine{31             low[v-\/>value] = 0;}
+\DoxyCodeLine{32         \} \textcolor{keywordflow}{while}(v != u);}
+\DoxyCodeLine{33         components.push\_back(component);}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_af2f1a34928c3e5119d8a170a81167a5d}\label{classGraph_af2f1a34928c3e5119d8a170a81167a5d}} 
+\index{Graph@{Graph}!unionEdges@{unionEdges}}
+\index{unionEdges@{unionEdges}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{unionEdges()}{unionEdges()}}
+{\footnotesize\ttfamily void Graph\+::union\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 82 of file mst.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84     \mbox{\hyperlink{classGraph_aef96f70c574ff42ec00fa042c57e1658}{repair}}();}
+\DoxyCodeLine{85     \mbox{\hyperlink{structDSU}{DSU}} dsu(nodes.size());}
+\DoxyCodeLine{86     nodirect = \textcolor{keyword}{true};}
+\DoxyCodeLine{87     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i : sortedEdges)}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89         i-\/>mark = 3;}
+\DoxyCodeLine{90         \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if}(!dsu.isUnionized(i))}
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             i-\/>mark = 1;}
+\DoxyCodeLine{94             \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{95             dsu.unionEdge(i);}
+\DoxyCodeLine{96         \}\textcolor{keywordflow}{else} }
+\DoxyCodeLine{97         \{}
+\DoxyCodeLine{98             i-\/>mark = 2;}
+\DoxyCodeLine{99             \mbox{\hyperlink{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}{waitForStep}}();}
+\DoxyCodeLine{100         \}}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}\label{classGraph_a21adbc00f3f1bcba062fb124d8273f0c}} 
+\index{Graph@{Graph}!waitForStep@{waitForStep}}
+\index{waitForStep@{waitForStep}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{waitForStep()}{waitForStep()}}
+{\footnotesize\ttfamily void Graph\+::wait\+For\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 75 of file event.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77     ds\_mutex.unlock();}
+\DoxyCodeLine{78     std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
+\DoxyCodeLine{79     ds\_mutex.lock();}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classGraph_aa8f53200c4ef1f7ba35ebcf40dfd4051}\label{classGraph_aa8f53200c4ef1f7ba35ebcf40dfd4051}} 
+\index{Graph@{Graph}!distanceHeap@{distanceHeap}}
+\index{distanceHeap@{distanceHeap}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{distanceHeap}{distanceHeap}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{structdistanceHeap}{distance\+Heap}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 78 of file graph.\+hpp.
+
+\mbox{\Hypertarget{classGraph_ac53047959fbe5c58d4d05e1aca54163a}\label{classGraph_ac53047959fbe5c58d4d05e1aca54163a}} 
+\index{Graph@{Graph}!DSU@{DSU}}
+\index{DSU@{DSU}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{DSU}{DSU}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{structDSU}{DSU}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 86 of file graph.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/data\+\_\+structures/\mbox{\hyperlink{graph_8hpp}{graph.\+hpp}}\item 
+src/graph/\mbox{\hyperlink{graph_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/graph/\mbox{\hyperlink{graph_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/graph/\mbox{\hyperlink{graph_2event_8cpp}{event.\+cpp}}\item 
+src/graph/operator/\mbox{\hyperlink{graph_2operator_2dijkstra_8cpp}{dijkstra.\+cpp}}\item 
+src/graph/operator/\mbox{\hyperlink{graph_2operator_2init_8cpp}{init.\+cpp}}\item 
+src/graph/operator/\mbox{\hyperlink{graph_2operator_2mst_8cpp}{mst.\+cpp}}\item 
+src/graph/operator/\mbox{\hyperlink{repair_8cpp}{repair.\+cpp}}\item 
+src/graph/operator/\mbox{\hyperlink{graph_2operator_2scc_8cpp}{scc.\+cpp}}\item 
+src/graph/\mbox{\hyperlink{graph_2rendering_8cpp}{rendering.\+cpp}}\end{DoxyCompactItemize}

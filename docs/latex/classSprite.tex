@@ -1,0 +1,1896 @@
+\hypertarget{classSprite}{}\doxysection{Sprite Class Reference}
+\label{classSprite}\index{Sprite@{Sprite}}
+
+
+\mbox{\hyperlink{classObject}{Object}} container Drawable.  
+
+
+
+
+{\ttfamily \#include $<$sprite.\+hpp$>$}
+
+Inheritance diagram for Sprite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classSprite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSprite_ab9b5522ece6d6b026bdd77b30e889102}{Sprite}} (SDL\+\_\+\+Renderer $\ast$r)
+\item 
+\mbox{\hyperlink{classSprite_a8accab430f9d90ae5117b57d67e32b84}{$\sim$\+Sprite}} ()
+\item 
+void \mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}} (std\+::string n)
+\item 
+void \mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{set\+Font}} (TTF\+\_\+\+Font $\ast$f)
+\item 
+void \mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{set\+Font\+Color}} (SDL\+\_\+\+Color c)
+\item 
+void \mbox{\hyperlink{classSprite_ad3af15bd4598583551113593bf2bb464}{set\+Text\+Box}} (TTF\+\_\+\+Font $\ast$f)
+\item 
+void \mbox{\hyperlink{classSprite_ac958b3bcb3a159c5fef5fdaa1f5b4440}{set\+Text\+Box\+Transparent}} (int a)
+\item 
+void \mbox{\hyperlink{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}{set\+Text}} (std\+::string s)
+\item 
+void \mbox{\hyperlink{classSprite_ac3313ff23cc870dbd3a0368a3fbb3d60}{typing}} (char c)
+\item 
+void \mbox{\hyperlink{classSprite_aa81dc72b9e234d8a4ca549585f669d24}{typing}} (std\+::string s)
+\item 
+void \mbox{\hyperlink{classSprite_a373a5a2edcf86c6bde23c33e455e3852}{backspace}} ()
+\item 
+void \mbox{\hyperlink{classSprite_a2c2dcf5fe5adc73a813e2e523bf52dd8}{backspace}} (int n)
+\item 
+std\+::string \mbox{\hyperlink{classSprite_a162c62baff8f054a38947708bc91e4b6}{get\+Text}} ()
+\item 
+void \mbox{\hyperlink{classSprite_a7b6b4693415cbb0bdec4be32ab5d8b83}{locating}} (int x, int y, int w, int h) override
+\item 
+void \mbox{\hyperlink{classSprite_a26db6e9bcb8cae63d21ba9f49717abe7}{locating}} (SDL\+\_\+\+Rect r) override
+\item 
+void \mbox{\hyperlink{classSprite_a093ab4b0f6c0125aba23988d5d7478b6}{locatingX}} (int x) override
+\item 
+void \mbox{\hyperlink{classSprite_a86549ecafaa33bbd43eba9f7175dafb7}{locatingY}} (int y) override
+\item 
+void \mbox{\hyperlink{classSprite_afab6accedbaec7a8073e19877fc57a13}{moveX}} (int x) override
+\item 
+void \mbox{\hyperlink{classSprite_a8c7de143aab3a31cde3776500a77cf66}{moveY}} (int y) override
+\item 
+void \mbox{\hyperlink{classSprite_ac3b80e5b37740e02a2c4e88f31261a79}{aligning}} (\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906}{HORIZONTAL\+\_\+\+ALIGN}} h, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2}{VERTICAL\+\_\+\+ALIGN}} v)
+\item 
+void \mbox{\hyperlink{classSprite_a5c38ded5877a9ec5fad4cc40ac046d9a}{aligning}} (\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906}{HORIZONTAL\+\_\+\+ALIGN}} h)
+\item 
+void \mbox{\hyperlink{classSprite_a7934db6d78f609a7221d9497b05f48a4}{aligning}} (\mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2}{VERTICAL\+\_\+\+ALIGN}} v)
+\item 
+void \mbox{\hyperlink{classSprite_ac6421c3beb50d849ea8a111cdc7b0a01}{rendering}} () override
+\item 
+void \mbox{\hyperlink{classSprite_ad94897cc70c3e33413a507feb5f3f0fb}{highlight}} ()
+\item 
+void \mbox{\hyperlink{classSprite_a4d9d8d38ad90cab69a2c9d2a2f0513f5}{unhighlight}} ()
+\item 
+const SDL\+\_\+\+Rect $\ast$ \mbox{\hyperlink{classObject_a49b5e0362b8939c00acb0ff00f245faf}{get\+Crop}} ()
+\item 
+void \mbox{\hyperlink{classObject_acf4196d2fb81df80589b58eb66d03b70}{cropping}} (int x, int y, int w, int h)
+\item 
+void \mbox{\hyperlink{classObject_ada6bf6b720cbc19dc9531ec6c9aa6f24}{cropping}} (SDL\+\_\+\+Rect c)
+\item 
+void \mbox{\hyperlink{classObject_a8cd7da58a281336729f6fba8483bd61f}{cropping}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classObject_a254bad43d255a060b7a604f1db92f364}{no\+Cropping}} ()
+\item 
+const SDL\+\_\+\+Rect $\ast$ \mbox{\hyperlink{classObject_a2a19498a042d2dd5c9617478d9c6108a}{get\+Location}} ()
+\item 
+int \mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}} ()
+\item 
+int \mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}} ()
+\item 
+int \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}} ()
+\item 
+int \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}} ()
+\item 
+virtual void \mbox{\hyperlink{classObject_a0c9db7d01b0a5fc34e9d0b7fabe3fdd5}{locating}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+virtual void \mbox{\hyperlink{classObject_ab61e725bd05e1196e2008d12897a7db4}{locatingW}} (int w)
+\item 
+virtual void \mbox{\hyperlink{classObject_a8ff358b9df49d59d79707150555b5ea7}{locatingH}} (int h)
+\item 
+virtual void \mbox{\hyperlink{classObject_ad46d3d90c2735b8fb8e4446f6a6c9ab4}{zoomW}} (int delta)
+\item 
+virtual void \mbox{\hyperlink{classObject_a089032b75342c96aa82eb8923b877499}{zoomH}} (int delta)
+\item 
+virtual void \mbox{\hyperlink{classObject_a38fd393e976571f858fcecbb9d4fa5dc}{zoom}} (double delta)
+\item 
+virtual void \mbox{\hyperlink{classObject_a6c7b79d620f091fd39bcdf6b3d6691f2}{zoom\+In\+Middle}} (double delta)
+\item 
+void \mbox{\hyperlink{classObject_abc48f39121bf0552168fbbad2b1edc72}{fit\+The\+Texture}} ()
+\item 
+const SDL\+\_\+\+Color $\ast$ \mbox{\hyperlink{classObject_a168572a1b789af1a15e613fc695a1c48}{get\+Color}} ()
+\item 
+void \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}} (int r, int g, int b, int a)
+\item 
+void \mbox{\hyperlink{classObject_a58ef9b7b66c5c46f87cae00f810b0a4a}{coloring}} (SDL\+\_\+\+Color c)
+\item 
+void \mbox{\hyperlink{classObject_a6dd1b5dd9a505cb720ba393ed499f4e7}{coloring}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classObject_aee9b979b77c97d7c73b812cd3121aa06}{texture\+From\+File}} (std\+::string dir)
+\item 
+void \mbox{\hyperlink{classObject_ac8818633d6b77e0185a57390534dcbf5}{change\+To\+Circle}} ()
+\item 
+void \mbox{\hyperlink{classObject_ab78e065c1bf8d0e5ca13be0ecfef76f1}{change\+To\+Circle}} (SDL\+\_\+\+Point c)
+\item 
+void \mbox{\hyperlink{classObject_a916f89a16f3797a50a6ada6fea3114ca}{change\+To\+Circle}} (int x, int y)
+\item 
+void \mbox{\hyperlink{classObject_ad337bd37c7a9a6c7d0908e1ab418120b}{change\+To\+Circle}} (SDL\+\_\+\+Point c, int r)
+\item 
+void \mbox{\hyperlink{classObject_a168d779cd78db810975318bf0f74dcfd}{change\+To\+Circle}} (int x, int y, int r)
+\item 
+void \mbox{\hyperlink{classObject_ac8fb7e96f91812ed9b64e3c773b21df7}{change\+To\+Rectangle}} ()
+\item 
+void \mbox{\hyperlink{classObject_ab2406455f926d7a957f92da64f99c096}{set\+Shape}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+bool \mbox{\hyperlink{classObject_a57211e035b27dade09eff5181e6344ec}{is\+Lie\+Inside}} (int x, int y)
+\item 
+bool \mbox{\hyperlink{classObject_ab0e86d8381fd6a75d0345815cf1719a1}{is\+Lie\+Inside}} (SDL\+\_\+\+Point p)
+\item 
+bool \mbox{\hyperlink{classObject_a7682b312620d0eb8755b0a71058c7ac8}{is\+Lie\+Inside}} (SDL\+\_\+\+Rect r)
+\item 
+bool \mbox{\hyperlink{classObject_abb82a6e42cf8ead134336ed7215eb96a}{is\+Lie\+Inside}} (int x, int y, int w, int h)
+\item 
+void \mbox{\hyperlink{classObject_ab6d0594ca9021e45807970c88710b759}{show}} ()
+\item 
+void \mbox{\hyperlink{classObject_adc8b1304393aa4624d90b354547e4417}{hide}} ()
+\item 
+bool \mbox{\hyperlink{classObject_a273d5a6a9a37f5a367c8f7e24148111f}{is\+Visible}} ()
+\item 
+void \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{import\+From\+Json}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classObject_a63419c492e6cacfb39844fd6e0e468ce}{add\+Text}} (std\+::string t)
+\item 
+void \mbox{\hyperlink{classObject_a779e4ef33d34fc2ac0e643a21bab458f}{add\+Character}} (char c)
+\item 
+void \mbox{\hyperlink{classObject_a3001a23e18684ebbfa546dd1660b3be5}{remove\+Character}} ()
+\item 
+void \mbox{\hyperlink{classObject_a71f96360a1cc94c651d2c4a30154622f}{remove\+Character}} (int n)
+\item 
+int \mbox{\hyperlink{classObject_a76942a904503102af3e2d16d774e63a9}{get\+Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSprite_ae511f29abbb7376304104672ca96e183}{init\+Background}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classSprite_aabc74d89c9e88c3587330b5b47edc443}{init\+Objects}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classSprite_a79fd736c414862ec289909eb7b8e86ee}{init\+Text\+Box}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classSprite_af548b839ba2a2eb154ad2f2a79533102}{init\+Input}} (const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&mem)
+\item 
+void \mbox{\hyperlink{classSprite_ab497b35737ddf8948ca146a20de59657}{import\+From\+Json}} ()
+\item 
+void \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}} ()
+\item 
+void \mbox{\hyperlink{classObject_a5f2e22fc463755bac7667d151fb4e0fa}{fill\+With\+Color}} ()
+\item 
+void \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fill\+Circle\+By\+Color}} ()
+\item 
+void \mbox{\hyperlink{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}{fill\+Rectangle\+By\+Color}} ()
+\item 
+void \mbox{\hyperlink{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}{text\+To\+Texture}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classObject}{Object}} container Drawable. 
+
+Definition at line 20 of file sprite.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSprite_ab9b5522ece6d6b026bdd77b30e889102}\label{classSprite_ab9b5522ece6d6b026bdd77b30e889102}} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                               : \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(r) }
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     render = r;}
+\DoxyCodeLine{12     textBox = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{13     alignH = \mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}};}
+\DoxyCodeLine{14     alignV = \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}};}
+\DoxyCodeLine{15     receiveDigit = \textcolor{keyword}{true};}
+\DoxyCodeLine{16     receiveLetter = \textcolor{keyword}{true};}
+\DoxyCodeLine{17     receiveSymbol = \textcolor{keyword}{true};}
+\DoxyCodeLine{18     maxSize = 50;}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a8accab430f9d90ae5117b57d67e32b84}\label{classSprite_a8accab430f9d90ae5117b57d67e32b84}} 
+\index{Sprite@{Sprite}!````~Sprite@{$\sim$Sprite}}
+\index{````~Sprite@{$\sim$Sprite}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sprite()}{~Sprite()}}
+{\footnotesize\ttfamily Sprite\+::$\sim$\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file destructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& \textcolor{keywordtype}{object} : objects)}
+\DoxyCodeLine{6     \{}
+\DoxyCodeLine{7         \textcolor{keyword}{delete} object;}
+\DoxyCodeLine{8     \}}
+\DoxyCodeLine{9 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObject_a779e4ef33d34fc2ac0e643a21bab458f}\label{classObject_a779e4ef33d34fc2ac0e643a21bab458f}} 
+\index{Sprite@{Sprite}!addCharacter@{addCharacter}}
+\index{addCharacter@{addCharacter}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{addCharacter()}{addCharacter()}}
+{\footnotesize\ttfamily void Object\+::add\+Character (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 22 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     text += c;}
+\DoxyCodeLine{25     \mbox{\hyperlink{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}{textToTexture}}();}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a63419c492e6cacfb39844fd6e0e468ce}\label{classObject_a63419c492e6cacfb39844fd6e0e468ce}} 
+\index{Sprite@{Sprite}!addText@{addText}}
+\index{addText@{addText}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{addText()}{addText()}}
+{\footnotesize\ttfamily void Object\+::add\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 16 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     text += t;}
+\DoxyCodeLine{19     \mbox{\hyperlink{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}{textToTexture}}();}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a8a10417340db2a3ed99b6c1c66e66573}\label{classSprite_a8a10417340db2a3ed99b6c1c66e66573}} 
+\index{Sprite@{Sprite}!aligning@{aligning}}
+\index{aligning@{aligning}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{aligning()}{aligning()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Sprite\+::aligning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 4 of file aligning.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} w = std::min(textBox-\/>\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}());}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} h = std::min(textBox-\/>\mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}());}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     textBox-\/>\mbox{\hyperlink{classObject_acf4196d2fb81df80589b58eb66d03b70}{cropping}}(textBox-\/>\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() -\/ w, textBox-\/>\mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() -\/ h, w, h);}
+\DoxyCodeLine{11     textBox-\/>\mbox{\hyperlink{classObject_ab61e725bd05e1196e2008d12897a7db4}{locatingW}}(w);}
+\DoxyCodeLine{12     textBox-\/>\mbox{\hyperlink{classObject_a8ff358b9df49d59d79707150555b5ea7}{locatingH}}(h);}
+\DoxyCodeLine{13     \textcolor{keywordflow}{switch}(alignH)}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906a684d325a7303f52e64011467ff5c5758}{HORIZONTAL\_ALIGN::LEFT}}:}
+\DoxyCodeLine{16             textBox-\/>\mbox{\hyperlink{classObject_a5551ae17bc0be016242c2d09d4c65ee3}{locatingX}}(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}());}
+\DoxyCodeLine{17             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}:}
+\DoxyCodeLine{19             textBox-\/>\mbox{\hyperlink{classObject_a5551ae17bc0be016242c2d09d4c65ee3}{locatingX}}(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}() + (\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() -\/ w) / 2);}
+\DoxyCodeLine{20             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{21         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906a21507b40c80068eda19865706fdc2403}{HORIZONTAL\_ALIGN::RIGHT}}:}
+\DoxyCodeLine{22             textBox-\/>\mbox{\hyperlink{classObject_a5551ae17bc0be016242c2d09d4c65ee3}{locatingX}}(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}() + \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() -\/ w);}
+\DoxyCodeLine{23             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     \textcolor{keywordflow}{switch}(alignV)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2a6705777b712ee811e76fb07162081d63}{VERTICAL\_ALIGN::TOP}}:}
+\DoxyCodeLine{28             textBox-\/>\mbox{\hyperlink{classObject_aa705b4e7e1b594404ae337484b3879e7}{locatingY}}(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}());}
+\DoxyCodeLine{29             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}}:}
+\DoxyCodeLine{31             textBox-\/>\mbox{\hyperlink{classObject_aa705b4e7e1b594404ae337484b3879e7}{locatingY}}(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}() + (\mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() -\/ h) / 2);}
+\DoxyCodeLine{32             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2a1fabf63de5c96c78e2a40805bcdeb73b}{VERTICAL\_ALIGN::BOTTOM}}:}
+\DoxyCodeLine{34             textBox-\/>\mbox{\hyperlink{classObject_aa705b4e7e1b594404ae337484b3879e7}{locatingY}}(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}() + \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() -\/ h);}
+\DoxyCodeLine{35             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a5c38ded5877a9ec5fad4cc40ac046d9a}\label{classSprite_a5c38ded5877a9ec5fad4cc40ac046d9a}} 
+\index{Sprite@{Sprite}!aligning@{aligning}}
+\index{aligning@{aligning}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{aligning()}{aligning()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Sprite\+::aligning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906}{HORIZONTAL\+\_\+\+ALIGN}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file aligning.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     alignH = h;}
+\DoxyCodeLine{49     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ac3b80e5b37740e02a2c4e88f31261a79}\label{classSprite_ac3b80e5b37740e02a2c4e88f31261a79}} 
+\index{Sprite@{Sprite}!aligning@{aligning}}
+\index{aligning@{aligning}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{aligning()}{aligning()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Sprite\+::aligning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906}{HORIZONTAL\+\_\+\+ALIGN}}}]{h,  }\item[{\mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2}{VERTICAL\+\_\+\+ALIGN}}}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file aligning.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     alignH = h;}
+\DoxyCodeLine{42     alignV = v;}
+\DoxyCodeLine{43     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a7934db6d78f609a7221d9497b05f48a4}\label{classSprite_a7934db6d78f609a7221d9497b05f48a4}} 
+\index{Sprite@{Sprite}!aligning@{aligning}}
+\index{aligning@{aligning}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{aligning()}{aligning()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Sprite\+::aligning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2}{VERTICAL\+\_\+\+ALIGN}}}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file aligning.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     alignV = v;}
+\DoxyCodeLine{55     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a373a5a2edcf86c6bde23c33e455e3852}\label{classSprite_a373a5a2edcf86c6bde23c33e455e3852}} 
+\index{Sprite@{Sprite}!backspace@{backspace}}
+\index{backspace@{backspace}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{backspace()}{backspace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::backspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{55     textBox-\/>\mbox{\hyperlink{classObject_a3001a23e18684ebbfa546dd1660b3be5}{removeCharacter}}();}
+\DoxyCodeLine{56     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a2c2dcf5fe5adc73a813e2e523bf52dd8}\label{classSprite_a2c2dcf5fe5adc73a813e2e523bf52dd8}} 
+\index{Sprite@{Sprite}!backspace@{backspace}}
+\index{backspace@{backspace}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{backspace()}{backspace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::backspace (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{62     textBox-\/>\mbox{\hyperlink{classObject_a3001a23e18684ebbfa546dd1660b3be5}{removeCharacter}}(n);}
+\DoxyCodeLine{63     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ac8818633d6b77e0185a57390534dcbf5}\label{classObject_ac8818633d6b77e0185a57390534dcbf5}} 
+\index{Sprite@{Sprite}!changeToCircle@{changeToCircle}}
+\index{changeToCircle@{changeToCircle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToCircle()}{changeToCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 5 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7     shapeType = \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a0af50777920c1401ab975cab64c4d491}{SHAPE::CIRCLE}};}
+\DoxyCodeLine{8     \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = std::min(\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()) / 2;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.x = \mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}() + \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() / 2;}
+\DoxyCodeLine{11     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.y = \mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}() + \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() / 2;}
+\DoxyCodeLine{12     \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fillCircleByColor}}();}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a916f89a16f3797a50a6ada6fea3114ca}\label{classObject_a916f89a16f3797a50a6ada6fea3114ca}} 
+\index{Sprite@{Sprite}!changeToCircle@{changeToCircle}}
+\index{changeToCircle@{changeToCircle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToCircle()}{changeToCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Circle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 24 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \mbox{\hyperlink{classObject_ac8818633d6b77e0185a57390534dcbf5}{changeToCircle}}(\{x, y\});}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a168d779cd78db810975318bf0f74dcfd}\label{classObject_a168d779cd78db810975318bf0f74dcfd}} 
+\index{Sprite@{Sprite}!changeToCircle@{changeToCircle}}
+\index{changeToCircle@{changeToCircle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToCircle()}{changeToCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Circle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     shapeType = \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a0af50777920c1401ab975cab64c4d491}{SHAPE::CIRCLE}};}
+\DoxyCodeLine{40     \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = r;}
+\DoxyCodeLine{41     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.x = x;}
+\DoxyCodeLine{42     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.y = y;}
+\DoxyCodeLine{43     \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fillCircleByColor}}();}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ab78e065c1bf8d0e5ca13be0ecfef76f1}\label{classObject_ab78e065c1bf8d0e5ca13be0ecfef76f1}} 
+\index{Sprite@{Sprite}!changeToCircle@{changeToCircle}}
+\index{changeToCircle@{changeToCircle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToCircle()}{changeToCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Circle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Point}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 15 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     shapeType = \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a0af50777920c1401ab975cab64c4d491}{SHAPE::CIRCLE}};}
+\DoxyCodeLine{18     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}} = c;}
+\DoxyCodeLine{19     \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = std::min(\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() -\/ c.x, c.x -\/ \mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}());}
+\DoxyCodeLine{20     \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = std::min(\mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}}, std::min(\mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() -\/ c.y, c.y -\/ \mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}()));}
+\DoxyCodeLine{21     \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fillCircleByColor}}();}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ad337bd37c7a9a6c7d0908e1ab418120b}\label{classObject_ad337bd37c7a9a6c7d0908e1ab418120b}} 
+\index{Sprite@{Sprite}!changeToCircle@{changeToCircle}}
+\index{changeToCircle@{changeToCircle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToCircle()}{changeToCircle()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Circle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Point}]{c,  }\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 29 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     shapeType = \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a0af50777920c1401ab975cab64c4d491}{SHAPE::CIRCLE}};}
+\DoxyCodeLine{32     \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = r;}
+\DoxyCodeLine{33     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}} = c;}
+\DoxyCodeLine{34     \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fillCircleByColor}}();}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ac8fb7e96f91812ed9b64e3c773b21df7}\label{classObject_ac8fb7e96f91812ed9b64e3c773b21df7}} 
+\index{Sprite@{Sprite}!changeToRectangle@{changeToRectangle}}
+\index{changeToRectangle@{changeToRectangle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{changeToRectangle()}{changeToRectangle()}}
+{\footnotesize\ttfamily void Object\+::change\+To\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 46 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     shapeType = \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a8e8e58fe94ab307a826e087028a7c01a}{SHAPE::RECTANGLE}};}
+\DoxyCodeLine{49     \mbox{\hyperlink{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}{fillRectangleByColor}}();}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a6dd1b5dd9a505cb720ba393ed499f4e7}\label{classObject_a6dd1b5dd9a505cb720ba393ed499f4e7}} 
+\index{Sprite@{Sprite}!coloring@{coloring}}
+\index{coloring@{coloring}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{coloring()}{coloring()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Object\+::coloring (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 30 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}r"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}g"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}b"{}}))}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}a"{}})) \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(mem[\textcolor{stringliteral}{"{}r"{}}], mem[\textcolor{stringliteral}{"{}g"{}}], mem[\textcolor{stringliteral}{"{}b"{}}], mem[\textcolor{stringliteral}{"{}a"{}}]);}
+\DoxyCodeLine{35         \textcolor{keywordflow}{else} \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(mem[\textcolor{stringliteral}{"{}r"{}}], mem[\textcolor{stringliteral}{"{}g"{}}], mem[\textcolor{stringliteral}{"{}b"{}}], 255);}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_abcbfe2519db39ced8bdf097e8b981dda}\label{classObject_abcbfe2519db39ced8bdf097e8b981dda}} 
+\index{Sprite@{Sprite}!coloring@{coloring}}
+\index{coloring@{coloring}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{coloring()}{coloring()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Object\+::coloring (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 8 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(color == \textcolor{keyword}{nullptr}) color = \textcolor{keyword}{new} SDL\_Color;}
+\DoxyCodeLine{11     color-\/>r = r;}
+\DoxyCodeLine{12     color-\/>g = g;}
+\DoxyCodeLine{13     color-\/>b = b;}
+\DoxyCodeLine{14     color-\/>a = a;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \mbox{\hyperlink{classObject_a5f2e22fc463755bac7667d151fb4e0fa}{fillWithColor}}();}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a58ef9b7b66c5c46f87cae00f810b0a4a}\label{classObject_a58ef9b7b66c5c46f87cae00f810b0a4a}} 
+\index{Sprite@{Sprite}!coloring@{coloring}}
+\index{coloring@{coloring}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{coloring()}{coloring()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Object\+::coloring (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 19 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if}(color == \textcolor{keyword}{nullptr}) color = \textcolor{keyword}{new} SDL\_Color;}
+\DoxyCodeLine{22     color-\/>r = c.r;}
+\DoxyCodeLine{23     color-\/>g = c.g;}
+\DoxyCodeLine{24     color-\/>b = c.b;}
+\DoxyCodeLine{25     color-\/>a = c.a;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{classObject_a5f2e22fc463755bac7667d151fb4e0fa}{fillWithColor}}();}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a8cd7da58a281336729f6fba8483bd61f}\label{classObject_a8cd7da58a281336729f6fba8483bd61f}} 
+\index{Sprite@{Sprite}!cropping@{cropping}}
+\index{cropping@{cropping}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{cropping()}{cropping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Object\+::cropping (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 26 of file cropping.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}x"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}y"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}w"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}h"{}}))}
+\DoxyCodeLine{29         \mbox{\hyperlink{classObject_acf4196d2fb81df80589b58eb66d03b70}{cropping}}(mem[\textcolor{stringliteral}{"{}x"{}}], mem[\textcolor{stringliteral}{"{}y"{}}], mem[\textcolor{stringliteral}{"{}w"{}}], mem[\textcolor{stringliteral}{"{}h"{}}]);}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_acf4196d2fb81df80589b58eb66d03b70}\label{classObject_acf4196d2fb81df80589b58eb66d03b70}} 
+\index{Sprite@{Sprite}!cropping@{cropping}}
+\index{cropping@{cropping}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{cropping()}{cropping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Object\+::cropping (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 8 of file cropping.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} = \textcolor{keyword}{new} SDL\_Rect;}
+\DoxyCodeLine{11     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>x = x;}
+\DoxyCodeLine{12     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>y = y;}
+\DoxyCodeLine{13     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>w = w;}
+\DoxyCodeLine{14     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>h = h;}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ada6bf6b720cbc19dc9531ec6c9aa6f24}\label{classObject_ada6bf6b720cbc19dc9531ec6c9aa6f24}} 
+\index{Sprite@{Sprite}!cropping@{cropping}}
+\index{cropping@{cropping}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{cropping()}{cropping()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Object\+::cropping (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 17 of file cropping.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} = \textcolor{keyword}{new} SDL\_Rect;}
+\DoxyCodeLine{20     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>x = c.x;}
+\DoxyCodeLine{21     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>y = c.y;}
+\DoxyCodeLine{22     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>w = c.w;}
+\DoxyCodeLine{23     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}}-\/>h = c.h;}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}\label{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}} 
+\index{Sprite@{Sprite}!fillCircleByColor@{fillCircleByColor}}
+\index{fillCircleByColor@{fillCircleByColor}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{fillCircleByColor()}{fillCircleByColor()}}
+{\footnotesize\ttfamily void Object\+::fill\+Circle\+By\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 91 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{locating}}(0, 0, 0, 0);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keywordflow}{if}(texture != \textcolor{keyword}{nullptr}) SDL\_DestroyTexture(texture);}
+\DoxyCodeLine{96     texture = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     Uint32 rmask, gmask, bmask, amask;}
+\DoxyCodeLine{99     Uint32 pixelColor;}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#if SDL\_BYTEORDER == SDL\_BIG\_ENDIAN}}
+\DoxyCodeLine{101     rmask = 0xff000000;}
+\DoxyCodeLine{102     gmask = 0x00ff0000;}
+\DoxyCodeLine{103     bmask = 0x0000ff00;}
+\DoxyCodeLine{104     amask = 0x000000ff;}
+\DoxyCodeLine{105     pixelColor = (color-\/>r << 24) | (color-\/>g << 16) | (color-\/>b << 8) | color-\/>a;}
+\DoxyCodeLine{106 \#\textcolor{keywordflow}{else} }
+\DoxyCodeLine{107     rmask = 0x000000ff;}
+\DoxyCodeLine{108     gmask = 0x0000ff00;}
+\DoxyCodeLine{109     bmask = 0x00ff0000;}
+\DoxyCodeLine{110     amask = 0xff000000;}
+\DoxyCodeLine{111     pixelColor = (color-\/>a << 24) | (color-\/>b << 16) | (color-\/>g << 8) | color-\/>r;}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     SDL\_Surface *surf = SDL\_CreateRGBSurface(0, \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}(), 32, rmask, gmask, bmask, amask);}
+\DoxyCodeLine{115     SDL\_SetSurfaceBlendMode(surf, SDL\_BLENDMODE\_BLEND);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     texture = SDL\_CreateTextureFromSurface(render, surf);}
+\DoxyCodeLine{118     SDL\_FreeSurface(surf);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     Uint32 *pixels = \textcolor{keyword}{new} Uint32[\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() * \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()];}
+\DoxyCodeLine{121     memset(pixels, 0, \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() * \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() * \textcolor{keyword}{sizeof}(Uint32));}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     SDL\_Point p = \{\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() / 2, \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}() / 2\};}
+\DoxyCodeLine{124     \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}} = p;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} > std::min(\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()) / 2) \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} = std::min(\mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()) / 2;}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{128     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = p.x -\/ \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}}; i <= p.x + \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}}; i++)}
+\DoxyCodeLine{129         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = p.y -\/ \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}}; j <= p.y + \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}}; j++)}
+\DoxyCodeLine{130             \textcolor{keywordflow}{if}((i -\/ p.x) * (i -\/ p.x) + (j -\/ p.y) * (j -\/ p.y) <= \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}} * \mbox{\hyperlink{structPosition_aed129fa33ed524be9ce00955e1b4c648}{radius}})}
+\DoxyCodeLine{131             \{}
+\DoxyCodeLine{132                 \textcolor{keywordtype}{int} index = i * \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() + j;}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{if}(index < 0 || index >= \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() * \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}()) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{134                 pixels[index] = pixelColor;}
+\DoxyCodeLine{135             \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     SDL\_UpdateTexture(texture, \textcolor{keyword}{nullptr}, pixels, \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}() * \textcolor{keyword}{sizeof}(Uint32));}
+\DoxyCodeLine{138     \textcolor{keyword}{delete}[] pixels;}
+\DoxyCodeLine{139 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}\label{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}} 
+\index{Sprite@{Sprite}!fillRectangleByColor@{fillRectangleByColor}}
+\index{fillRectangleByColor@{fillRectangleByColor}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{fillRectangleByColor()}{fillRectangleByColor()}}
+{\footnotesize\ttfamily void Object\+::fill\+Rectangle\+By\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 74 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{locating}}(0, 0, 0, 0);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{if}(texture != \textcolor{keyword}{nullptr}) SDL\_DestroyTexture(texture);}
+\DoxyCodeLine{79     texture = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     SDL\_Surface* surf = SDL\_CreateRGBSurfaceWithFormat(0, \mbox{\hyperlink{classObject_a05b97be8fece8d6a7b1af0579edef1a0}{getW}}(), \mbox{\hyperlink{classObject_a40ec7f9e4d261a23fa28c68674235420}{getH}}(), 32, SDL\_PIXELFORMAT\_RGBA32);                       }
+\DoxyCodeLine{82     SDL\_SetSurfaceBlendMode(surf, SDL\_BLENDMODE\_BLEND);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     SDL\_FillRect(surf, \textcolor{keyword}{nullptr}, SDL\_MapRGBA(surf-\/>format, color-\/>r, color-\/>g, color-\/>b, color-\/>a));}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     texture = SDL\_CreateTextureFromSurface(render, surf);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     SDL\_FreeSurface(surf);}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a5f2e22fc463755bac7667d151fb4e0fa}\label{classObject_a5f2e22fc463755bac7667d151fb4e0fa}} 
+\index{Sprite@{Sprite}!fillWithColor@{fillWithColor}}
+\index{fillWithColor@{fillWithColor}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{fillWithColor()}{fillWithColor()}}
+{\footnotesize\ttfamily void Object\+::fill\+With\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 39 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(shapeType == \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98ab50339a10e1de285ac99d4c3990b8693}{SHAPE::NONE}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}{fillRectangleByColor}}();}
+\DoxyCodeLine{42     \textcolor{keywordflow}{if}(shapeType == \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a8e8e58fe94ab307a826e087028a7c01a}{SHAPE::RECTANGLE}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_acaa7a13c36b3bdf1b3a6650252e592b1}{fillRectangleByColor}}();}
+\DoxyCodeLine{43     \textcolor{keywordflow}{if}(shapeType == \mbox{\hyperlink{GLOBAL_8hpp_adfc3130d2cbf4c70775905766b20db98a0af50777920c1401ab975cab64c4d491}{SHAPE::CIRCLE}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_af2dfb87786a3c58e1a2c12dd98c239ec}{fillCircleByColor}}();}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_abc48f39121bf0552168fbbad2b1edc72}\label{classObject_abc48f39121bf0552168fbbad2b1edc72}} 
+\index{Sprite@{Sprite}!fitTheTexture@{fitTheTexture}}
+\index{fitTheTexture@{fitTheTexture}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{fitTheTexture()}{fitTheTexture()}}
+{\footnotesize\ttfamily void Object\+::fit\+The\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 140 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141 \{}
+\DoxyCodeLine{142     \textcolor{keywordflow}{if}(texture == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{143     SDL\_QueryTexture(texture, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}, \&\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w, \&\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h);}
+\DoxyCodeLine{144 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a168572a1b789af1a15e613fc695a1c48}\label{classObject_a168572a1b789af1a15e613fc695a1c48}} 
+\index{Sprite@{Sprite}!getColor@{getColor}}
+\index{getColor@{getColor}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color $\ast$ Object\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 3 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} color;}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a49b5e0362b8939c00acb0ff00f245faf}\label{classObject_a49b5e0362b8939c00acb0ff00f245faf}} 
+\index{Sprite@{Sprite}!getCrop@{getCrop}}
+\index{getCrop@{getCrop}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getCrop()}{getCrop()}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect $\ast$ Object\+::get\+Crop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 3 of file cropping.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}};}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a40ec7f9e4d261a23fa28c68674235420}\label{classObject_a40ec7f9e4d261a23fa28c68674235420}} 
+\index{Sprite@{Sprite}!getH@{getH}}
+\index{getH@{getH}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getH()}{getH()}}
+{\footnotesize\ttfamily int Object\+::getH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 47 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h;}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a2a19498a042d2dd5c9617478d9c6108a}\label{classObject_a2a19498a042d2dd5c9617478d9c6108a}} 
+\index{Sprite@{Sprite}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Rect $\ast$ Object\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 27 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}};}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a76942a904503102af3e2d16d774e63a9}\label{classObject_a76942a904503102af3e2d16d774e63a9}} 
+\index{Sprite@{Sprite}!getSize@{getSize}}
+\index{getSize@{getSize}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Object\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 68 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     \textcolor{keywordflow}{return} text.size();}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a162c62baff8f054a38947708bc91e4b6}\label{classSprite_a162c62baff8f054a38947708bc91e4b6}} 
+\index{Sprite@{Sprite}!getText@{getText}}
+\index{getText@{getText}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily std\+::string Sprite\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} textBox-\/>\mbox{\hyperlink{classObject_a761e2136fc7a5f7f45dcab91f5f7f700}{getText}}();}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a05b97be8fece8d6a7b1af0579edef1a0}\label{classObject_a05b97be8fece8d6a7b1af0579edef1a0}} 
+\index{Sprite@{Sprite}!getW@{getW}}
+\index{getW@{getW}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getW()}{getW()}}
+{\footnotesize\ttfamily int Object\+::getW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 42 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w;}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}\label{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}} 
+\index{Sprite@{Sprite}!getX@{getX}}
+\index{getX@{getX}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Object\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 32 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x;}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a662ce951c630caf9f70a4309e5415ff7}\label{classObject_a662ce951c630caf9f70a4309e5415ff7}} 
+\index{Sprite@{Sprite}!getY@{getY}}
+\index{getY@{getY}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Object\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 37 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y;}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_adc8b1304393aa4624d90b354547e4417}\label{classObject_adc8b1304393aa4624d90b354547e4417}} 
+\index{Sprite@{Sprite}!hide@{hide}}
+\index{hide@{hide}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{hide()}{hide()}}
+{\footnotesize\ttfamily void Object\+::hide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 8 of file visible.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{structPosition_a4e31ecec3c913e5ffc113fd0ad03558a}{visible}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ad94897cc70c3e33413a507feb5f3f0fb}\label{classSprite_ad94897cc70c3e33413a507feb5f3f0fb}} 
+\index{Sprite@{Sprite}!highlight@{highlight}}
+\index{highlight@{highlight}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{highlight()}{highlight()}}
+{\footnotesize\ttfamily void Sprite\+::highlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{const} SDL\_Color* c = \mbox{\hyperlink{classObject_a168572a1b789af1a15e613fc695a1c48}{Object::getColor}}();}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     \textcolor{keywordflow}{if}(c == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     cacheColor = \{c-\/>r, c-\/>g, c-\/>b, c-\/>a\};}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} maxChannel = std::max(std::max(c-\/>r, c-\/>g), c-\/>b);}
+\DoxyCodeLine{12     \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{Object::coloring}}(maxChannel * 0.4, maxChannel * 0.4, maxChannel * 0.4, c-\/>a);}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ab497b35737ddf8948ca146a20de59657}\label{classSprite_ab497b35737ddf8948ca146a20de59657}} 
+\index{Sprite@{Sprite}!importFromJson@{importFromJson}}
+\index{importFromJson@{importFromJson}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{importFromJson()}{importFromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::import\+From\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 105 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106 \{}
+\DoxyCodeLine{107     \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}}* mem = \mbox{\hyperlink{namespaceJSON_a7faff1ac8e4e291c83813e1fc85964cd}{JSON::readFile}}(\mbox{\hyperlink{namespacePATH_1_1ATB_a8fa4a26230b20eacea4d11dff3990bfa}{PATH::ATB::SPRITE\_}} + name + \textcolor{stringliteral}{"{}.json"{}});}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \mbox{\hyperlink{classSprite_ae511f29abbb7376304104672ca96e183}{initBackground}}((*mem)[\textcolor{stringliteral}{"{}background"{}}]);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}objects"{}})) \mbox{\hyperlink{classSprite_aabc74d89c9e88c3587330b5b47edc443}{initObjects}}((*mem)[\textcolor{stringliteral}{"{}objects"{}}]);}
+\DoxyCodeLine{112     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}text-\/box"{}})) \mbox{\hyperlink{classSprite_a79fd736c414862ec289909eb7b8e86ee}{initTextBox}}((*mem)[\textcolor{stringliteral}{"{}text-\/box"{}}]);}
+\DoxyCodeLine{113     \textcolor{keywordflow}{if}(mem-\/>contains(\textcolor{stringliteral}{"{}input"{}})) \mbox{\hyperlink{classSprite_af548b839ba2a2eb154ad2f2a79533102}{initInput}}((*mem)[\textcolor{stringliteral}{"{}input"{}}]);}
+\DoxyCodeLine{114     \textcolor{keyword}{delete} mem;}
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a1940f14ab0a96bc1ae0f44207df99272}\label{classObject_a1940f14ab0a96bc1ae0f44207df99272}} 
+\index{Sprite@{Sprite}!importFromJson@{importFromJson}}
+\index{importFromJson@{importFromJson}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{importFromJson()}{importFromJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Object\+::import\+From\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 21 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}location"{}}))}
+\DoxyCodeLine{24         \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{locating}}(mem[\textcolor{stringliteral}{"{}location"{}}]);}
+\DoxyCodeLine{25     }
+\DoxyCodeLine{26     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}crop"{}}))}
+\DoxyCodeLine{27         \mbox{\hyperlink{classObject_acf4196d2fb81df80589b58eb66d03b70}{cropping}}(mem[\textcolor{stringliteral}{"{}crop"{}}]);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}color"{}}))}
+\DoxyCodeLine{30         \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(mem[\textcolor{stringliteral}{"{}color"{}}]);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}shape"{}}))}
+\DoxyCodeLine{33         \mbox{\hyperlink{classObject_ab2406455f926d7a957f92da64f99c096}{setShape}}(mem[\textcolor{stringliteral}{"{}shape"{}}]);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}visible"{}}))}
+\DoxyCodeLine{36         \mbox{\hyperlink{structPosition_a4e31ecec3c913e5ffc113fd0ad03558a}{visible}} = mem[\textcolor{stringliteral}{"{}visible"{}}];}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}image"{}}))}
+\DoxyCodeLine{39         \mbox{\hyperlink{classObject_aee9b979b77c97d7c73b812cd3121aa06}{textureFromFile}}(\mbox{\hyperlink{namespacePATH_1_1ASSETS_aa8f3c87a85831704b7bf2469824ed246}{PATH::ASSETS::GRAPHICS\_}} + mem[\textcolor{stringliteral}{"{}image"{}}].get<std::string>());}
+\DoxyCodeLine{40     return ;}
+\DoxyCodeLine{41 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ae511f29abbb7376304104672ca96e183}\label{classSprite_ae511f29abbb7376304104672ca96e183}} 
+\index{Sprite@{Sprite}!initBackground@{initBackground}}
+\index{initBackground@{initBackground}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{initBackground()}{initBackground()}}
+{\footnotesize\ttfamily void Sprite\+::init\+Background (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 55 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56 \{}
+\DoxyCodeLine{57     \mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{Object::importFromJson}}(mem);}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(\mbox{\hyperlink{classObject_a168572a1b789af1a15e613fc695a1c48}{Object::getColor}}() == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{59     cacheColor = *\mbox{\hyperlink{classObject_a168572a1b789af1a15e613fc695a1c48}{Object::getColor}}();}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_af548b839ba2a2eb154ad2f2a79533102}\label{classSprite_af548b839ba2a2eb154ad2f2a79533102}} 
+\index{Sprite@{Sprite}!initInput@{initInput}}
+\index{initInput@{initInput}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{initInput()}{initInput()}}
+{\footnotesize\ttfamily void Sprite\+::init\+Input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 94 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95 \{}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}digit"{}})) receiveDigit = mem[\textcolor{stringliteral}{"{}digit"{}}].get<\textcolor{keywordtype}{bool}>();}
+\DoxyCodeLine{98     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}letter"{}})) receiveLetter = mem[\textcolor{stringliteral}{"{}letter"{}}].get<bool>();}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}symbol"{}})) receiveSymbol = mem[\textcolor{stringliteral}{"{}symbol"{}}].get<bool>();}
+\DoxyCodeLine{100     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}lower"{}})) numberLower = mem[\textcolor{stringliteral}{"{}lower"{}}].get<std::string>();}
+\DoxyCodeLine{101     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}upper"{}})) numberUpper = mem[\textcolor{stringliteral}{"{}upper"{}}].get<std::string>();}
+\DoxyCodeLine{102     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}maxsize"{}})) maxSize = mem[\textcolor{stringliteral}{"{}maxsize"{}}].get<int>();}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_aabc74d89c9e88c3587330b5b47edc443}\label{classSprite_aabc74d89c9e88c3587330b5b47edc443}} 
+\index{Sprite@{Sprite}!initObjects@{initObjects}}
+\index{initObjects@{initObjects}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{initObjects()}{initObjects()}}
+{\footnotesize\ttfamily void Sprite\+::init\+Objects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 62 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     objects.clear();}
+\DoxyCodeLine{65     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& i : mem)}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         \mbox{\hyperlink{classObject}{Object}}* obj = \textcolor{keyword}{new} \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(render);}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if}(i.contains(\textcolor{stringliteral}{"{}name"{}})) obj-\/>\mbox{\hyperlink{classObject_a4c595f126184d29a13007c2f88ed77cd}{linking}}(i[\textcolor{stringliteral}{"{}name"{}}]);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         obj-\/>\mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{importFromJson}}(i);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         obj-\/>\mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{moveX}}(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}());}
+\DoxyCodeLine{73         obj-\/>\mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{moveY}}(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}());}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         objects.push\_back(obj);}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a79fd736c414862ec289909eb7b8e86ee}\label{classSprite_a79fd736c414862ec289909eb7b8e86ee}} 
+\index{Sprite@{Sprite}!initTextBox@{initTextBox}}
+\index{initTextBox@{initTextBox}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{initTextBox()}{initTextBox()}}
+{\footnotesize\ttfamily void Sprite\+::init\+Text\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 79 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83         objects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(render));}
+\DoxyCodeLine{84         textBox = objects.back();}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86     textBox-\/>\mbox{\hyperlink{classObject_a1940f14ab0a96bc1ae0f44207df99272}{importFromJson}}(mem);}
+\DoxyCodeLine{87     textBox-\/>\mbox{\hyperlink{classObject_a669b89f420d194802002854d7759dd38}{setFont}}(this-\/>font);}
+\DoxyCodeLine{88     textBox-\/>\mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{moveX}}(\mbox{\hyperlink{classObject_a2273ca5711d16a3c1a2f82b66efe8aae}{getX}}());}
+\DoxyCodeLine{89     textBox-\/>\mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{moveY}}(\mbox{\hyperlink{classObject_a662ce951c630caf9f70a4309e5415ff7}{getY}}());}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}text"{}})) textBox-\/>\mbox{\hyperlink{classObject_a4c0ae8dae2bd28704eeee2e0518bb32f}{setText}}(mem[\textcolor{stringliteral}{"{}text"{}}].get<std::string>());}
+\DoxyCodeLine{91     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a57211e035b27dade09eff5181e6344ec}\label{classObject_a57211e035b27dade09eff5181e6344ec}} 
+\index{Sprite@{Sprite}!isLieInside@{isLieInside}}
+\index{isLieInside@{isLieInside}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isLieInside()}{isLieInside()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Object\+::is\+Lie\+Inside (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 3 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{6     \textcolor{keywordflow}{return} (x >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x \&\& x < location-\/>x + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w \&\& y >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y \&\& y < location-\/>y + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h);}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_abb82a6e42cf8ead134336ed7215eb96a}\label{classObject_abb82a6e42cf8ead134336ed7215eb96a}} 
+\index{Sprite@{Sprite}!isLieInside@{isLieInside}}
+\index{isLieInside@{isLieInside}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isLieInside()}{isLieInside()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Object\+::is\+Lie\+Inside (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 21 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{24     \textcolor{keywordflow}{return} (x >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x \&\& x + w <= location-\/>x + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w \&\& y >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y \&\& y + h <= location-\/>y + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h);}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ab0e86d8381fd6a75d0345815cf1719a1}\label{classObject_ab0e86d8381fd6a75d0345815cf1719a1}} 
+\index{Sprite@{Sprite}!isLieInside@{isLieInside}}
+\index{isLieInside@{isLieInside}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isLieInside()}{isLieInside()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Object\+::is\+Lie\+Inside (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Point}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 9 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} (p.x >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x \&\& p.x < \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w \&\& p.y >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y \&\& p.y < \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h);}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a7682b312620d0eb8755b0a71058c7ac8}\label{classObject_a7682b312620d0eb8755b0a71058c7ac8}} 
+\index{Sprite@{Sprite}!isLieInside@{isLieInside}}
+\index{isLieInside@{isLieInside}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isLieInside()}{isLieInside()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Object\+::is\+Lie\+Inside (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 15 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{18     \textcolor{keywordflow}{return} (r.x >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x \&\& r.x + r.w <= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w \&\& r.y >= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y \&\& r.y + r.h <= \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h);}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a273d5a6a9a37f5a367c8f7e24148111f}\label{classObject_a273d5a6a9a37f5a367c8f7e24148111f}} 
+\index{Sprite@{Sprite}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily bool Object\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 13 of file visible.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keywordflow}{return} \mbox{\hyperlink{structPosition_a4e31ecec3c913e5ffc113fd0ad03558a}{visible}};}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a820001b0f013a1dc4891de8134f6ca0d}\label{classSprite_a820001b0f013a1dc4891de8134f6ca0d}} 
+\index{Sprite@{Sprite}!linking@{linking}}
+\index{linking@{linking}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{linking()}{linking()}}
+{\footnotesize\ttfamily void Sprite\+::linking (\begin{DoxyParamCaption}\item[{std\+::string}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     name = n;}
+\DoxyCodeLine{24     \mbox{\hyperlink{classSprite_ab497b35737ddf8948ca146a20de59657}{importFromJson}}();}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a0c9db7d01b0a5fc34e9d0b7fabe3fdd5}\label{classObject_a0c9db7d01b0a5fc34e9d0b7fabe3fdd5}} 
+\index{Sprite@{Sprite}!locating@{locating}}
+\index{locating@{locating}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locating()}{locating()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Object\+::locating (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 70 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}x"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}y"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}w"{}}) \&\& mem.contains(\textcolor{stringliteral}{"{}h"{}}))}
+\DoxyCodeLine{73         \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{locating}}(mem[\textcolor{stringliteral}{"{}x"{}}], mem[\textcolor{stringliteral}{"{}y"{}}], mem[\textcolor{stringliteral}{"{}w"{}}], mem[\textcolor{stringliteral}{"{}h"{}}]);}
+\DoxyCodeLine{74 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a7b6b4693415cbb0bdec4be32ab5d8b83}\label{classSprite_a7b6b4693415cbb0bdec4be32ab5d8b83}} 
+\index{Sprite@{Sprite}!locating@{locating}}
+\index{locating@{locating}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locating()}{locating()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Sprite\+::locating (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{Object}}.
+
+
+
+Definition at line 3 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{Object::locating}}(x, y, w, h);}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         i-\/>locating(x, y, w, h);}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a26db6e9bcb8cae63d21ba9f49717abe7}\label{classSprite_a26db6e9bcb8cae63d21ba9f49717abe7}} 
+\index{Sprite@{Sprite}!locating@{locating}}
+\index{locating@{locating}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locating()}{locating()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Sprite\+::locating (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Rect}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a5b4078c0830a63b0408786372c792c17}{Object}}.
+
+
+
+Definition at line 12 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \mbox{\hyperlink{classObject_ad9ed62dc42e94b629bf1552c99b18684}{Object::locating}}(r);}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         i-\/>locating(r);}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a8ff358b9df49d59d79707150555b5ea7}\label{classObject_a8ff358b9df49d59d79707150555b5ea7}} 
+\index{Sprite@{Sprite}!locatingH@{locatingH}}
+\index{locatingH@{locatingH}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locatingH()}{locatingH()}}
+{\footnotesize\ttfamily void Object\+::locatingH (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 94 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95 \{}
+\DoxyCodeLine{96     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{97     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h = h;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ab61e725bd05e1196e2008d12897a7db4}\label{classObject_ab61e725bd05e1196e2008d12897a7db4}} 
+\index{Sprite@{Sprite}!locatingW@{locatingW}}
+\index{locatingW@{locatingW}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locatingW()}{locatingW()}}
+{\footnotesize\ttfamily void Object\+::locatingW (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 88 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89 \{}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{91     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w = w;}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a093ab4b0f6c0125aba23988d5d7478b6}\label{classSprite_a093ab4b0f6c0125aba23988d5d7478b6}} 
+\index{Sprite@{Sprite}!locatingX@{locatingX}}
+\index{locatingX@{locatingX}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locatingX()}{locatingX()}}
+{\footnotesize\ttfamily void Sprite\+::locatingX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a5551ae17bc0be016242c2d09d4c65ee3}{Object}}.
+
+
+
+Definition at line 20 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{classObject_a5551ae17bc0be016242c2d09d4c65ee3}{Object::locatingX}}(x);}
+\DoxyCodeLine{23     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         i-\/>locatingX(x);}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a86549ecafaa33bbd43eba9f7175dafb7}\label{classSprite_a86549ecafaa33bbd43eba9f7175dafb7}} 
+\index{Sprite@{Sprite}!locatingY@{locatingY}}
+\index{locatingY@{locatingY}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{locatingY()}{locatingY()}}
+{\footnotesize\ttfamily void Sprite\+::locatingY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_aa705b4e7e1b594404ae337484b3879e7}{Object}}.
+
+
+
+Definition at line 29 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \mbox{\hyperlink{classObject_aa705b4e7e1b594404ae337484b3879e7}{Object::locatingY}}(y);}
+\DoxyCodeLine{32     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         i-\/>locatingY(y);}
+\DoxyCodeLine{35     \}}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_afab6accedbaec7a8073e19877fc57a13}\label{classSprite_afab6accedbaec7a8073e19877fc57a13}} 
+\index{Sprite@{Sprite}!moveX@{moveX}}
+\index{moveX@{moveX}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{moveX()}{moveX()}}
+{\footnotesize\ttfamily void Sprite\+::moveX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{Object}}.
+
+
+
+Definition at line 38 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \mbox{\hyperlink{classObject_a23f5caec380bd7665325d00d3bdddd43}{Object::moveX}}(x);}
+\DoxyCodeLine{41     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         i-\/>moveX(x);}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a8c7de143aab3a31cde3776500a77cf66}\label{classSprite_a8c7de143aab3a31cde3776500a77cf66}} 
+\index{Sprite@{Sprite}!moveY@{moveY}}
+\index{moveY@{moveY}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{moveY()}{moveY()}}
+{\footnotesize\ttfamily void Sprite\+::moveY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{Object}}.
+
+
+
+Definition at line 47 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     \mbox{\hyperlink{classObject_a6994f8032b912ec5a81b4c25a5627547}{Object::moveY}}(y);}
+\DoxyCodeLine{50     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \&i : objects)}
+\DoxyCodeLine{51     \{}
+\DoxyCodeLine{52         i-\/>moveY(y);}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a254bad43d255a060b7a604f1db92f364}\label{classObject_a254bad43d255a060b7a604f1db92f364}} 
+\index{Sprite@{Sprite}!noCropping@{noCropping}}
+\index{noCropping@{noCropping}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{noCropping()}{noCropping()}}
+{\footnotesize\ttfamily void Object\+::no\+Cropping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 32 of file cropping.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} != \textcolor{keyword}{nullptr}) \textcolor{keyword}{delete} \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}};}
+\DoxyCodeLine{35     \mbox{\hyperlink{structPosition_a4b6b143ee8c654ad3c811536fb1dc109}{crop}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a3001a23e18684ebbfa546dd1660b3be5}\label{classObject_a3001a23e18684ebbfa546dd1660b3be5}} 
+\index{Sprite@{Sprite}!removeCharacter@{removeCharacter}}
+\index{removeCharacter@{removeCharacter}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{removeCharacter()}{removeCharacter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Object\+::remove\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 28 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (text.size() > 0)}
+\DoxyCodeLine{31         text.pop\_back();}
+\DoxyCodeLine{32     \mbox{\hyperlink{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}{textToTexture}}();}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a71f96360a1cc94c651d2c4a30154622f}\label{classObject_a71f96360a1cc94c651d2c4a30154622f}} 
+\index{Sprite@{Sprite}!removeCharacter@{removeCharacter}}
+\index{removeCharacter@{removeCharacter}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{removeCharacter()}{removeCharacter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Object\+::remove\+Character (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 35 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if}(n == 0) return ;}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(text.size() <= n) text.clear();}
+\DoxyCodeLine{39     \textcolor{keywordflow}{else} text.erase(text.end() -\/ n, text.end());}
+\DoxyCodeLine{40     \mbox{\hyperlink{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}{textToTexture}}();}
+\DoxyCodeLine{41 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ac6421c3beb50d849ea8a111cdc7b0a01}\label{classSprite_ac6421c3beb50d849ea8a111cdc7b0a01}} 
+\index{Sprite@{Sprite}!rendering@{rendering}}
+\index{rendering@{rendering}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{rendering()}{rendering()}}
+{\footnotesize\ttfamily void Sprite\+::rendering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object}}.
+
+
+
+Definition at line 3 of file rendering.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classObject_ac036007b9bad93dc2eb74214b916ae93}{Object::rendering}}();}
+\DoxyCodeLine{6     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& obj : objects)}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         obj-\/>rendering();}
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a9b07ea905747cb444aacb6c93380c1c1}\label{classSprite_a9b07ea905747cb444aacb6c93380c1c1}} 
+\index{Sprite@{Sprite}!setFont@{setFont}}
+\index{setFont@{setFont}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Font (\begin{DoxyParamCaption}\item[{TTF\+\_\+\+Font $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     font = f;}
+\DoxyCodeLine{29     \mbox{\hyperlink{classObject_a669b89f420d194802002854d7759dd38}{Object::setFont}}(f);}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}\label{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}} 
+\index{Sprite@{Sprite}!setFontColor@{setFontColor}}
+\index{setFontColor@{setFontColor}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setFontColor()}{setFontColor()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Font\+Color (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Color}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     \textcolor{keywordflow}{if}(textBox != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{34     \{}
+\DoxyCodeLine{35         textBox-\/>\mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(c);}
+\DoxyCodeLine{36         textBox-\/>\mbox{\hyperlink{classObject_a4c0ae8dae2bd28704eeee2e0518bb32f}{setText}}(textBox-\/>\mbox{\hyperlink{classObject_a761e2136fc7a5f7f45dcab91f5f7f700}{getText}}());}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ab2406455f926d7a957f92da64f99c096}\label{classObject_ab2406455f926d7a957f92da64f99c096}} 
+\index{Sprite@{Sprite}!setShape@{setShape}}
+\index{setShape@{setShape}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setShape()}{setShape()}}
+{\footnotesize\ttfamily void Object\+::set\+Shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{GLOBAL_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 52 of file shape.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if}(mem[\textcolor{stringliteral}{"{}type"{}}].get<std::string>() == \textcolor{stringliteral}{"{}CIRCLE"{}})}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}center"{}}))}
+\DoxyCodeLine{57         \{}
+\DoxyCodeLine{58             \textcolor{keywordflow}{if}(mem.contains(\textcolor{stringliteral}{"{}radius"{}}))}
+\DoxyCodeLine{59                 \mbox{\hyperlink{classObject_ac8818633d6b77e0185a57390534dcbf5}{changeToCircle}}(mem[\textcolor{stringliteral}{"{}center"{}}][\textcolor{stringliteral}{"{}x"{}}], mem[\textcolor{stringliteral}{"{}center"{}}][\textcolor{stringliteral}{"{}y"{}}], mem[\textcolor{stringliteral}{"{}radius"{}}]);}
+\DoxyCodeLine{60             \textcolor{keywordflow}{else} \mbox{\hyperlink{classObject_ac8818633d6b77e0185a57390534dcbf5}{changeToCircle}}(mem[\textcolor{stringliteral}{"{}center"{}}][\textcolor{stringliteral}{"{}x"{}}], mem[\textcolor{stringliteral}{"{}center"{}}][\textcolor{stringliteral}{"{}y"{}}]);}
+\DoxyCodeLine{61         \}\textcolor{keywordflow}{else} \mbox{\hyperlink{classObject_ac8818633d6b77e0185a57390534dcbf5}{changeToCircle}}();}
+\DoxyCodeLine{62         }
+\DoxyCodeLine{63         return ;}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     \textcolor{keywordflow}{if}(mem[\textcolor{stringliteral}{"{}type"{}}].get<std::string>() == \textcolor{stringliteral}{"{}NONE"{}} || mem[\textcolor{stringliteral}{"{}type"{}}].get<std::string>() == \textcolor{stringliteral}{"{}RECTANGLE"{}})}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         \mbox{\hyperlink{classObject_ac8fb7e96f91812ed9b64e3c773b21df7}{changeToRectangle}}();}
+\DoxyCodeLine{69         return ;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}\label{classSprite_ae0d7f1b2cc370843719cc37b31b0adf2}} 
+\index{Sprite@{Sprite}!setText@{setText}}
+\index{setText@{setText}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{char} c : s) }
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{if}(!receiveDigit \&\& \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(c)) return ;}
+\DoxyCodeLine{18         \textcolor{keywordflow}{if}(!receiveLetter \&\& \mbox{\hyperlink{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}{NUMBER::isLetter}}(c)) return ;}
+\DoxyCodeLine{19         \textcolor{keywordflow}{if}(!receiveSymbol \&\& \mbox{\hyperlink{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}{NUMBER::isSymbol}}(c)) return ;}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if}(s.size() > maxSize) s = s.substr(0, maxSize);}
+\DoxyCodeLine{22     textBox-\/>\mbox{\hyperlink{classObject_a4c0ae8dae2bd28704eeee2e0518bb32f}{setText}}(s);}
+\DoxyCodeLine{23     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ad3af15bd4598583551113593bf2bb464}\label{classSprite_ad3af15bd4598583551113593bf2bb464}} 
+\index{Sprite@{Sprite}!setTextBox@{setTextBox}}
+\index{setTextBox@{setTextBox}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setTextBox()}{setTextBox()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Text\+Box (\begin{DoxyParamCaption}\item[{TTF\+\_\+\+Font $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file constructor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         objects.push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classObject_a5bb45f5c671eee26f07cbdc0bdfc018e}{Object}}(render));}
+\DoxyCodeLine{44         textBox = objects.back();}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46     textBox-\/>\mbox{\hyperlink{classObject_a669b89f420d194802002854d7759dd38}{setFont}}(f);}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ac958b3bcb3a159c5fef5fdaa1f5b4440}\label{classSprite_ac958b3bcb3a159c5fef5fdaa1f5b4440}} 
+\index{Sprite@{Sprite}!setTextBoxTransparent@{setTextBoxTransparent}}
+\index{setTextBoxTransparent@{setTextBoxTransparent}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{setTextBoxTransparent()}{setTextBoxTransparent()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Text\+Box\+Transparent (\begin{DoxyParamCaption}\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{7     SDL\_Color c = *\mbox{\hyperlink{classObject_a168572a1b789af1a15e613fc695a1c48}{getColor}}();}
+\DoxyCodeLine{8     c.a = a;}
+\DoxyCodeLine{9     \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(c);}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ab6d0594ca9021e45807970c88710b759}\label{classObject_ab6d0594ca9021e45807970c88710b759}} 
+\index{Sprite@{Sprite}!show@{show}}
+\index{show@{show}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Object\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 3 of file visible.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{structPosition_a4e31ecec3c913e5ffc113fd0ad03558a}{visible}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{6 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}\label{classObject_a7fc49e01b0ec100f852ef0579a8fa7dd}} 
+\index{Sprite@{Sprite}!textToTexture@{textToTexture}}
+\index{textToTexture@{textToTexture}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{textToTexture()}{textToTexture()}}
+{\footnotesize\ttfamily void Object\+::text\+To\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 43 of file font.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if}(font == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if}(color == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(render == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if}(texture != \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{49     \{ }
+\DoxyCodeLine{50         SDL\_DestroyTexture(texture);}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     texture = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     SDL\_Surface* surface = TTF\_RenderText\_Blended(font, text.c\_str(), *color);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{if}(surface == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     texture = SDL\_CreateTextureFromSurface(render, surface);}
+\DoxyCodeLine{59     SDL\_FreeSurface(surface);}
+\DoxyCodeLine{60     \mbox{\hyperlink{classObject_abc48f39121bf0552168fbbad2b1edc72}{fitTheTexture}}();}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_aee9b979b77c97d7c73b812cd3121aa06}\label{classObject_aee9b979b77c97d7c73b812cd3121aa06}} 
+\index{Sprite@{Sprite}!textureFromFile@{textureFromFile}}
+\index{textureFromFile@{textureFromFile}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{textureFromFile()}{textureFromFile()}}
+{\footnotesize\ttfamily void Object\+::texture\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 4 of file external\+\_\+storage.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     SDL\_Surface *surface = IMG\_Load(dir.c\_str());}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     texture = SDL\_CreateTextureFromSurface(render, surface);}
+\DoxyCodeLine{9     SDL\_FreeSurface(surface);}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_ac3313ff23cc870dbd3a0368a3fbb3d60}\label{classSprite_ac3313ff23cc870dbd3a0368a3fbb3d60}} 
+\index{Sprite@{Sprite}!typing@{typing}}
+\index{typing@{typing}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{typing()}{typing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::typing (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{29     \textcolor{keywordflow}{if}(!receiveDigit \&\& \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(c)) return ;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{if}(!receiveLetter \&\& \mbox{\hyperlink{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}{NUMBER::isLetter}}(c)) return ;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if}(!receiveSymbol \&\& \mbox{\hyperlink{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}{NUMBER::isSymbol}}(c)) return ;}
+\DoxyCodeLine{32     \textcolor{keywordflow}{if}(textBox-\/>\mbox{\hyperlink{classObject_a76942a904503102af3e2d16d774e63a9}{getSize}}() >= maxSize) return ;}
+\DoxyCodeLine{33     textBox-\/>\mbox{\hyperlink{classObject_a779e4ef33d34fc2ac0e643a21bab458f}{addCharacter}}(c);}
+\DoxyCodeLine{34     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_aa81dc72b9e234d8a4ca549585f669d24}\label{classSprite_aa81dc72b9e234d8a4ca549585f669d24}} 
+\index{Sprite@{Sprite}!typing@{typing}}
+\index{typing@{typing}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{typing()}{typing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::typing (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file textbox.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if}(textBox == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(textBox-\/>\mbox{\hyperlink{classObject_a761e2136fc7a5f7f45dcab91f5f7f700}{getText}}().size() + s.size() >= maxSize) return ;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{char} c : s) }
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{if}(!receiveDigit \&\& \mbox{\hyperlink{namespaceNUMBER_a100f1d4ca5cb2173b18b8ff3d0ec9e93}{NUMBER::isDigit}}(c)) return ;}
+\DoxyCodeLine{44         \textcolor{keywordflow}{if}(!receiveLetter \&\& \mbox{\hyperlink{namespaceNUMBER_a5ac584369cfcd90d38b63a2abe8ffa66}{NUMBER::isLetter}}(c)) return ;}
+\DoxyCodeLine{45         \textcolor{keywordflow}{if}(!receiveSymbol \&\& \mbox{\hyperlink{namespaceNUMBER_af88e5b790d5615c702664e7b23bb66c9}{NUMBER::isSymbol}}(c)) return ;}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(textBox-\/>\mbox{\hyperlink{classObject_a76942a904503102af3e2d16d774e63a9}{getSize}}() + s.size() > maxSize) s = s.substr(0, maxSize);}
+\DoxyCodeLine{48     textBox-\/>\mbox{\hyperlink{classObject_a63419c492e6cacfb39844fd6e0e468ce}{addText}}(s);}
+\DoxyCodeLine{49     \mbox{\hyperlink{classSprite_a8a10417340db2a3ed99b6c1c66e66573}{aligning}}();}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSprite_a4d9d8d38ad90cab69a2c9d2a2f0513f5}\label{classSprite_a4d9d8d38ad90cab69a2c9d2a2f0513f5}} 
+\index{Sprite@{Sprite}!unhighlight@{unhighlight}}
+\index{unhighlight@{unhighlight}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{unhighlight()}{unhighlight()}}
+{\footnotesize\ttfamily void Sprite\+::unhighlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file coloring.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{Object::coloring}}(cacheColor);}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a38fd393e976571f858fcecbb9d4fa5dc}\label{classObject_a38fd393e976571f858fcecbb9d4fa5dc}} 
+\index{Sprite@{Sprite}!zoom@{zoom}}
+\index{zoom@{zoom}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void Object\+::zoom (\begin{DoxyParamCaption}\item[{double}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 123 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{126     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w *= delta;}
+\DoxyCodeLine{127     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h *= delta;}
+\DoxyCodeLine{128 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a089032b75342c96aa82eb8923b877499}\label{classObject_a089032b75342c96aa82eb8923b877499}} 
+\index{Sprite@{Sprite}!zoomH@{zoomH}}
+\index{zoomH@{zoomH}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{zoomH()}{zoomH()}}
+{\footnotesize\ttfamily void Object\+::zoomH (\begin{DoxyParamCaption}\item[{int}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 118 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119 \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{121     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h += delta;}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a6c7b79d620f091fd39bcdf6b3d6691f2}\label{classObject_a6c7b79d620f091fd39bcdf6b3d6691f2}} 
+\index{Sprite@{Sprite}!zoomInMiddle@{zoomInMiddle}}
+\index{zoomInMiddle@{zoomInMiddle}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{zoomInMiddle()}{zoomInMiddle()}}
+{\footnotesize\ttfamily void Object\+::zoom\+In\+Middle (\begin{DoxyParamCaption}\item[{double}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 130 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131 \{}
+\DoxyCodeLine{132     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{133     SDL\_Point \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}} = \{\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w / 2, \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y + \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h / 2\};}
+\DoxyCodeLine{134     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w *= delta;}
+\DoxyCodeLine{135     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h *= delta;}
+\DoxyCodeLine{136     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>x = \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.x -\/ \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w / 2;}
+\DoxyCodeLine{137     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>y = \mbox{\hyperlink{structPosition_afc0fa6920ce4f36140300faf18d56d8f}{center}}.y -\/ \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>h / 2;}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ad46d3d90c2735b8fb8e4446f6a6c9ab4}\label{classObject_ad46d3d90c2735b8fb8e4446f6a6c9ab4}} 
+\index{Sprite@{Sprite}!zoomW@{zoomW}}
+\index{zoomW@{zoomW}!Sprite@{Sprite}}
+\doxysubsubsection{\texorpdfstring{zoomW()}{zoomW()}}
+{\footnotesize\ttfamily void Object\+::zoomW (\begin{DoxyParamCaption}\item[{int}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line 112 of file locating.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113 \{}
+\DoxyCodeLine{114     \textcolor{keywordflow}{if}(\mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} == \textcolor{keyword}{nullptr}) \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}} = \textcolor{keyword}{new} SDL\_Rect(\{0, 0, 0, 0\});}
+\DoxyCodeLine{115     \mbox{\hyperlink{structPosition_a1687ac21f593e0a94d65a932d7bd4a65}{location}}-\/>w += delta;}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{sprite_8hpp}{sprite.\+hpp}}\item 
+src/sprite/\mbox{\hyperlink{aligning_8cpp}{aligning.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{sprite_2coloring_8cpp}{coloring.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{sprite_2constructor_8cpp}{constructor.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{sprite_2destructor_8cpp}{destructor.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{sprite_2locating_8cpp}{locating.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{sprite_2rendering_8cpp}{rendering.\+cpp}}\item 
+src/sprite/\mbox{\hyperlink{textbox_8cpp}{textbox.\+cpp}}\end{DoxyCompactItemize}

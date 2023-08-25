@@ -1,0 +1,1884 @@
+\begin{theindex}
+
+  \item {$\sim$AVL}
+    \subitem {AVL}, \hyperpage{31}
+  \item {$\sim$BTree4th}
+    \subitem {BTree4th}, \hyperpage{46}
+  \item {$\sim$Button}
+    \subitem {Button}, \hyperpage{53}
+  \item {$\sim$DSU}
+    \subitem {DSU}, \hyperpage{131}
+  \item {$\sim$DataStructures}
+    \subitem {DataStructures}, \hyperpage{76}
+  \item {$\sim$Display}
+    \subitem {Display}, \hyperpage{110}
+  \item {$\sim$Graph}
+    \subitem {Graph}, \hyperpage{135}
+  \item {$\sim$HashTable}
+    \subitem {HashTable}, \hyperpage{144}
+  \item {$\sim$InputBox}
+    \subitem {InputBox}, \hyperpage{156}
+  \item {$\sim$MyWindow}
+    \subitem {MyWindow}, \hyperpage{178}
+  \item {$\sim$Object}
+    \subitem {Object}, \hyperpage{190}
+  \item {$\sim$Script}
+    \subitem {Script}, \hyperpage{209}
+  \item {$\sim$Sprite}
+    \subitem {Sprite}, \hyperpage{215}
+  \item {$\sim$Trie}
+    \subitem {Trie}, \hyperpage{237}
+  \item {$\sim$distanceHeap}
+    \subitem {distanceHeap}, \hyperpage{128}
+  \item {$\sim$maxHeap}
+    \subitem {maxHeap}, \hyperpage{163}
+  \item {$\sim$minHeap}
+    \subitem {minHeap}, \hyperpage{168}
+
+  \indexspace
+
+  \item {addCharacter}
+    \subitem {Button}, \hyperpage{53}
+    \subitem {DataStructures}, \hyperpage{76}
+    \subitem {Display}, \hyperpage{111}
+    \subitem {Object}, \hyperpage{191}
+    \subitem {Sprite}, \hyperpage{216}
+  \item {addRecordToLeaf}
+    \subitem {BTree4th}, \hyperpage{46}
+  \item {addText}
+    \subitem {Button}, \hyperpage{53}
+    \subitem {DataStructures}, \hyperpage{76}
+    \subitem {Display}, \hyperpage{111}
+    \subitem {Object}, \hyperpage{191}
+    \subitem {Sprite}, \hyperpage{216}
+  \item {aligning}
+    \subitem {Sprite}, \hyperpage{216, 217}
+  \item {ARRAY}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {ASSETS\_}
+    \subitem {PATH}, \hyperpage{20}
+  \item {ATTRIBUTE\_}
+    \subitem {PATH}, \hyperpage{20}
+  \item {AVL}, \hyperpage{29}
+    \subitem {$\sim$AVL}, \hyperpage{31}
+    \subitem {AVL}, \hyperpage{30}
+    \subitem {balanceFactor}, \hyperpage{31}
+    \subitem {balancing}, \hyperpage{31}
+    \subitem {closeScript}, \hyperpage{32}
+    \subitem {getHigh}, \hyperpage{32}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+    \subitem {goBack}, \hyperpage{32}
+    \subitem {goNext}, \hyperpage{33}
+    \subitem {goOff}, \hyperpage{33}
+    \subitem {goOn}, \hyperpage{33}
+    \subitem {highlight}, \hyperpage{33}
+    \subitem {init}, \hyperpage{34}
+    \subitem {insert}, \hyperpage{34, 35}
+    \subitem {isReceiveEvent}, \hyperpage{36}
+    \subitem {locating}, \hyperpage{36}
+    \subitem {maxDepth}, \hyperpage{36, 37}
+    \subitem {react}, \hyperpage{37}
+    \subitem {remove}, \hyperpage{38}
+    \subitem {rendering}, \hyperpage{40}
+    \subitem {renderLine}, \hyperpage{40}
+    \subitem {rotateLeft}, \hyperpage{40}
+    \subitem {rotateRight}, \hyperpage{41}
+    \subitem {search}, \hyperpage{41, 42}
+    \subitem {setEdgesColor}, \hyperpage{43}
+    \subitem {setNodeColor}, \hyperpage{43}
+    \subitem {setting}, \hyperpage{43}
+    \subitem {slowDown}, \hyperpage{43}
+    \subitem {speedUp}, \hyperpage{44}
+    \subitem {unhighlight}, \hyperpage{44}
+    \subitem {unplugSmallest}, \hyperpage{44}
+    \subitem {waitForStep}, \hyperpage{44}
+  \item {AVL\_}
+    \subitem {PATH::SAVING}, \hyperpage{23}
+
+  \indexspace
+
+  \item {backspace}
+    \subitem {Sprite}, \hyperpage{217}
+  \item {balanceFactor}
+    \subitem {AVL}, \hyperpage{31}
+  \item {balancing}
+    \subitem {AVL}, \hyperpage{31}
+  \item {BOTTOM}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {BTree4th}, \hyperpage{45}
+    \subitem {$\sim$BTree4th}, \hyperpage{46}
+    \subitem {addRecordToLeaf}, \hyperpage{46}
+    \subitem {BTree4th}, \hyperpage{46}
+    \subitem {init}, \hyperpage{47}
+    \subitem {insert}, \hyperpage{47, 48}
+    \subitem {leftMost}, \hyperpage{48}
+    \subitem {mergeChild}, \hyperpage{48}
+    \subitem {remove}, \hyperpage{49}
+    \subitem {rightMost}, \hyperpage{49}
+    \subitem {search}, \hyperpage{49}
+    \subitem {split}, \hyperpage{50}
+  \item {BTREE\_4TH}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {BTREE\_4TH\_}
+    \subitem {PATH::SAVING}, \hyperpage{23}
+  \item {Button}, \hyperpage{51}
+    \subitem {$\sim$Button}, \hyperpage{53}
+    \subitem {addCharacter}, \hyperpage{53}
+    \subitem {addText}, \hyperpage{53}
+    \subitem {Button}, \hyperpage{53}
+    \subitem {changeToCircle}, \hyperpage{54, 55}
+    \subitem {changeToRectangle}, \hyperpage{55}
+    \subitem {coloring}, \hyperpage{55, 56}
+    \subitem {cropping}, \hyperpage{56}
+    \subitem {fillCircleByColor}, \hyperpage{57}
+    \subitem {fillRectangleByColor}, \hyperpage{57}
+    \subitem {fillWithColor}, \hyperpage{58}
+    \subitem {fitTheTexture}, \hyperpage{58}
+    \subitem {getAction}, \hyperpage{58}
+    \subitem {getColor}, \hyperpage{58}
+    \subitem {getCrop}, \hyperpage{59}
+    \subitem {getDataType}, \hyperpage{59}
+    \subitem {getH}, \hyperpage{59}
+    \subitem {getInputType}, \hyperpage{59}
+    \subitem {getLocation}, \hyperpage{60}
+    \subitem {getNextScreen}, \hyperpage{60}
+    \subitem {getSize}, \hyperpage{60}
+    \subitem {getText}, \hyperpage{60}
+    \subitem {getW}, \hyperpage{60}
+    \subitem {getX}, \hyperpage{61}
+    \subitem {getY}, \hyperpage{61}
+    \subitem {hide}, \hyperpage{61}
+    \subitem {importFromJson}, \hyperpage{61}
+    \subitem {initAction}, \hyperpage{62}
+    \subitem {initBackground}, \hyperpage{63}
+    \subitem {initSprites}, \hyperpage{63}
+    \subitem {isChoosed}, \hyperpage{63}
+    \subitem {isClicked}, \hyperpage{64}
+    \subitem {isHover}, \hyperpage{64}
+    \subitem {isLieInside}, \hyperpage{64, 65}
+    \subitem {isReceiveEvent}, \hyperpage{65}
+    \subitem {isVisible}, \hyperpage{66}
+    \subitem {linking}, \hyperpage{66}
+    \subitem {locating}, \hyperpage{66, 67}
+    \subitem {locatingH}, \hyperpage{67}
+    \subitem {locatingW}, \hyperpage{67}
+    \subitem {locatingX}, \hyperpage{67}
+    \subitem {locatingY}, \hyperpage{68}
+    \subitem {move}, \hyperpage{68}
+    \subitem {moveX}, \hyperpage{68}
+    \subitem {moveY}, \hyperpage{68}
+    \subitem {noCropping}, \hyperpage{69}
+    \subitem {removeCharacter}, \hyperpage{69}
+    \subitem {rendering}, \hyperpage{69}
+    \subitem {setFont}, \hyperpage{70}
+    \subitem {setShape}, \hyperpage{70}
+    \subitem {setText}, \hyperpage{70}
+    \subitem {show}, \hyperpage{71}
+    \subitem {textToTexture}, \hyperpage{71}
+    \subitem {textureFromFile}, \hyperpage{71}
+    \subitem {zoom}, \hyperpage{71}
+    \subitem {zoomH}, \hyperpage{72}
+    \subitem {zoomInMiddle}, \hyperpage{72}
+    \subitem {zoomW}, \hyperpage{72}
+  \item {BUTTON\_}
+    \subitem {PATH::ATB}, \hyperpage{21}
+  \item {BUTTON\_ACTION}
+    \subitem {GLOBAL.hpp}, \hyperpage{252}
+  \item {BUTTON\_STATUS}
+    \subitem {GLOBAL.hpp}, \hyperpage{254}
+
+  \indexspace
+
+  \item {capacity}
+    \subitem {DataStructures}, \hyperpage{108}
+  \item {CENTER}
+    \subitem {GLOBAL.hpp}, \hyperpage{257, 258}
+  \item {center}
+    \subitem {Position}, \hyperpage{207}
+  \item {CHANGE\_SCREEN}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {changeToCircle}
+    \subitem {Button}, \hyperpage{54, 55}
+    \subitem {DataStructures}, \hyperpage{77, 78}
+    \subitem {Display}, \hyperpage{111, 112}
+    \subitem {Object}, \hyperpage{191, 192}
+    \subitem {Sprite}, \hyperpage{218, 219}
+  \item {changeToRectangle}
+    \subitem {Button}, \hyperpage{55}
+    \subitem {DataStructures}, \hyperpage{78}
+    \subitem {Display}, \hyperpage{112}
+    \subitem {Object}, \hyperpage{192}
+    \subitem {Sprite}, \hyperpage{219}
+  \item {CIRCLE}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {CLICKED}
+    \subitem {GLOBAL.hpp}, \hyperpage{254}
+  \item {CLOSE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {closeScript}
+    \subitem {AVL}, \hyperpage{32}
+    \subitem {DataStructures}, \hyperpage{78}
+    \subitem {HashTable}, \hyperpage{144}
+    \subitem {minHeap}, \hyperpage{168}
+    \subitem {Trie}, \hyperpage{237}
+  \item {coloring}
+    \subitem {Button}, \hyperpage{55, 56}
+    \subitem {DataStructures}, \hyperpage{79}
+    \subitem {Display}, \hyperpage{112, 113}
+    \subitem {Object}, \hyperpage{192, 193}
+    \subitem {Sprite}, \hyperpage{219, 220}
+  \item {CONNECTED\_COMPONENTS}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {crop}
+    \subitem {Position}, \hyperpage{207}
+  \item {cropping}
+    \subitem {Button}, \hyperpage{56}
+    \subitem {DataStructures}, \hyperpage{79, 80}
+    \subitem {Display}, \hyperpage{113, 114}
+    \subitem {Object}, \hyperpage{193, 194}
+    \subitem {Sprite}, \hyperpage{220}
+
+  \indexspace
+
+  \item {DATA\_STRUCTURES\_}
+    \subitem {PATH::ATB}, \hyperpage{21}
+  \item {DATA\_STRUCTURES\_OPERATOR}
+    \subitem {GLOBAL.hpp}, \hyperpage{254}
+  \item {DATA\_STRUCTURES\_TYPE}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {DataStructures}, \hyperpage{73}
+    \subitem {$\sim$DataStructures}, \hyperpage{76}
+    \subitem {addCharacter}, \hyperpage{76}
+    \subitem {addText}, \hyperpage{76}
+    \subitem {capacity}, \hyperpage{108}
+    \subitem {changeToCircle}, \hyperpage{77, 78}
+    \subitem {changeToRectangle}, \hyperpage{78}
+    \subitem {closeScript}, \hyperpage{78}
+    \subitem {coloring}, \hyperpage{79}
+    \subitem {cropping}, \hyperpage{79, 80}
+    \subitem {DataStructures}, \hyperpage{75}
+    \subitem {Dijkstra}, \hyperpage{80}
+    \subitem {dijkstra}, \hyperpage{80}
+    \subitem {fillCircleByColor}, \hyperpage{81}
+    \subitem {fillRectangleByColor}, \hyperpage{81}
+    \subitem {fillWithColor}, \hyperpage{82}
+    \subitem {fitTheTexture}, \hyperpage{82}
+    \subitem {getColor}, \hyperpage{82}
+    \subitem {getCrop}, \hyperpage{82}
+    \subitem {getDataType}, \hyperpage{83}
+    \subitem {getH}, \hyperpage{83}
+    \subitem {getLocation}, \hyperpage{83}
+    \subitem {getName}, \hyperpage{83}
+    \subitem {getSize}, \hyperpage{83}
+    \subitem {getText}, \hyperpage{84}
+    \subitem {getW}, \hyperpage{84}
+    \subitem {getX}, \hyperpage{84}
+    \subitem {getY}, \hyperpage{84}
+    \subitem {goBack}, \hyperpage{84}
+    \subitem {goNext}, \hyperpage{85}
+    \subitem {goOff}, \hyperpage{85}
+    \subitem {goOn}, \hyperpage{85}
+    \subitem {hide}, \hyperpage{85}
+    \subitem {importFromJson}, \hyperpage{86}
+    \subitem {init}, \hyperpage{86}
+    \subitem {initAVL}, \hyperpage{87}
+    \subitem {initBackground}, \hyperpage{87}
+    \subitem {initDisplay}, \hyperpage{87}
+    \subitem {initGraph}, \hyperpage{88}
+    \subitem {initHashTable}, \hyperpage{88}
+    \subitem {initLinker}, \hyperpage{88}
+    \subitem {initMinHeap}, \hyperpage{89}
+    \subitem {initTrie}, \hyperpage{89}
+    \subitem {insert}, \hyperpage{89}
+    \subitem {insertAVL}, \hyperpage{89}
+    \subitem {insertHashTable}, \hyperpage{90}
+    \subitem {insertMinHeap}, \hyperpage{90}
+    \subitem {insertTrie}, \hyperpage{90}
+    \subitem {isLieInside}, \hyperpage{90, 91}
+    \subitem {isReceiveEvent}, \hyperpage{91}
+    \subitem {isVisible}, \hyperpage{92}
+    \subitem {linking}, \hyperpage{92}
+    \subitem {locating}, \hyperpage{92, 93}
+    \subitem {locatingH}, \hyperpage{93}
+    \subitem {locatingW}, \hyperpage{93}
+    \subitem {locatingX}, \hyperpage{93}
+    \subitem {locatingY}, \hyperpage{94}
+    \subitem {moveX}, \hyperpage{94}
+    \subitem {moveY}, \hyperpage{94}
+    \subitem {MST}, \hyperpage{94}
+    \subitem {mst}, \hyperpage{95}
+    \subitem {noCropping}, \hyperpage{95}
+    \subitem {react}, \hyperpage{95}
+    \subitem {remove}, \hyperpage{95}
+    \subitem {removeAVL}, \hyperpage{96}
+    \subitem {removeCharacter}, \hyperpage{96}
+    \subitem {removeHashTable}, \hyperpage{97}
+    \subitem {removeMinHeap}, \hyperpage{97}
+    \subitem {removeTrie}, \hyperpage{97}
+    \subitem {rendering}, \hyperpage{97}
+    \subitem {SCC}, \hyperpage{98}
+    \subitem {scc}, \hyperpage{98}
+    \subitem {search}, \hyperpage{98}
+    \subitem {searchAVL}, \hyperpage{98}
+    \subitem {searchHashTable}, \hyperpage{99}
+    \subitem {searchMinHeap}, \hyperpage{99}
+    \subitem {searchTrie}, \hyperpage{99}
+    \subitem {setDataType}, \hyperpage{99}
+    \subitem {setFont}, \hyperpage{100}
+    \subitem {setShape}, \hyperpage{100}
+    \subitem {setText}, \hyperpage{101}
+    \subitem {setting}, \hyperpage{101}
+    \subitem {settingAVL}, \hyperpage{101}
+    \subitem {settingGraph}, \hyperpage{102}
+    \subitem {settingHashTable}, \hyperpage{103}
+    \subitem {settingMinHeap}, \hyperpage{103}
+    \subitem {settingTrie}, \hyperpage{104}
+    \subitem {show}, \hyperpage{105}
+    \subitem {size}, \hyperpage{105}
+    \subitem {slowDown}, \hyperpage{105}
+    \subitem {speedUp}, \hyperpage{105}
+    \subitem {textToTexture}, \hyperpage{106}
+    \subitem {textureFromFile}, \hyperpage{106}
+    \subitem {top}, \hyperpage{106}
+    \subitem {zoom}, \hyperpage{107}
+    \subitem {zoomH}, \hyperpage{107}
+    \subitem {zoomInMiddle}, \hyperpage{107}
+    \subitem {zoomW}, \hyperpage{107}
+  \item {defaultSetting}
+    \subitem {HashTable}, \hyperpage{144}
+  \item {DELETE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {DIJKSTRA}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {Dijkstra}
+    \subitem {DataStructures}, \hyperpage{80}
+    \subitem {Graph}, \hyperpage{135}
+  \item {dijkstra}
+    \subitem {DataStructures}, \hyperpage{80}
+  \item {DISPLAY}, \hyperpage{13}
+    \subitem {HOME\_}, \hyperpage{13}
+    \subitem {WORKING\_}, \hyperpage{13}
+  \item {Display}, \hyperpage{108}
+    \subitem {$\sim$Display}, \hyperpage{110}
+    \subitem {addCharacter}, \hyperpage{111}
+    \subitem {addText}, \hyperpage{111}
+    \subitem {changeToCircle}, \hyperpage{111, 112}
+    \subitem {changeToRectangle}, \hyperpage{112}
+    \subitem {coloring}, \hyperpage{112, 113}
+    \subitem {cropping}, \hyperpage{113, 114}
+    \subitem {Display}, \hyperpage{110}
+    \subitem {fillCircleByColor}, \hyperpage{114}
+    \subitem {fillRectangleByColor}, \hyperpage{115}
+    \subitem {fillWithColor}, \hyperpage{115}
+    \subitem {fitTheTexture}, \hyperpage{115}
+    \subitem {getColor}, \hyperpage{115}
+    \subitem {getCrop}, \hyperpage{116}
+    \subitem {getH}, \hyperpage{116}
+    \subitem {getLocation}, \hyperpage{116}
+    \subitem {getSize}, \hyperpage{116}
+    \subitem {getText}, \hyperpage{116}
+    \subitem {getW}, \hyperpage{117}
+    \subitem {getX}, \hyperpage{117}
+    \subitem {getY}, \hyperpage{117}
+    \subitem {hide}, \hyperpage{117}
+    \subitem {importFromJson}, \hyperpage{117, 118}
+    \subitem {initBackground}, \hyperpage{118}
+    \subitem {initButtons}, \hyperpage{118}
+    \subitem {isButtonReceiveEvent}, \hyperpage{119}
+    \subitem {isLieInside}, \hyperpage{119, 120}
+    \subitem {isReceiveEvent}, \hyperpage{120}
+    \subitem {isVisible}, \hyperpage{120}
+    \subitem {linking}, \hyperpage{120}
+    \subitem {locating}, \hyperpage{121}
+    \subitem {locatingH}, \hyperpage{121}
+    \subitem {locatingW}, \hyperpage{122}
+    \subitem {locatingX}, \hyperpage{122}
+    \subitem {locatingY}, \hyperpage{122}
+    \subitem {moveX}, \hyperpage{122}
+    \subitem {moveY}, \hyperpage{123}
+    \subitem {noCropping}, \hyperpage{123}
+    \subitem {react}, \hyperpage{123}
+    \subitem {removeCharacter}, \hyperpage{123, 124}
+    \subitem {rendering}, \hyperpage{124}
+    \subitem {setFont}, \hyperpage{124}
+    \subitem {setShape}, \hyperpage{124}
+    \subitem {setText}, \hyperpage{125}
+    \subitem {show}, \hyperpage{125}
+    \subitem {textToTexture}, \hyperpage{125}
+    \subitem {textureFromFile}, \hyperpage{126}
+    \subitem {zoom}, \hyperpage{126}
+    \subitem {zoomH}, \hyperpage{126}
+    \subitem {zoomInMiddle}, \hyperpage{126}
+    \subitem {zoomW}, \hyperpage{127}
+  \item {DISPLAY\_}
+    \subitem {PATH::ATB}, \hyperpage{22}
+  \item {distanceHeap}, \hyperpage{127}
+    \subitem {$\sim$distanceHeap}, \hyperpage{128}
+    \subitem {distanceHeap}, \hyperpage{128}
+    \subitem {empty}, \hyperpage{128}
+    \subitem {g}, \hyperpage{130}
+    \subitem {Graph}, \hyperpage{142}
+    \subitem {insert}, \hyperpage{128}
+    \subitem {pop}, \hyperpage{129}
+    \subitem {swap}, \hyperpage{129}
+    \subitem {swapable}, \hyperpage{129}
+    \subitem {value}, \hyperpage{130}
+  \item {DONE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {drawEdge}
+    \subitem {HashTable}, \hyperpage{145}
+  \item {drawEgdes}
+    \subitem {Trie}, \hyperpage{238}
+  \item {DSU}, \hyperpage{130}
+    \subitem {$\sim$DSU}, \hyperpage{131}
+    \subitem {DSU}, \hyperpage{131}
+    \subitem {find}, \hyperpage{131}
+    \subitem {Graph}, \hyperpage{142}
+    \subitem {isUnionized}, \hyperpage{132}
+    \subitem {parent}, \hyperpage{133}
+    \subitem {unionEdge}, \hyperpage{132, 133}
+
+  \indexspace
+
+  \item {EDGES}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {empty}
+    \subitem {distanceHeap}, \hyperpage{128}
+
+  \indexspace
+
+  \item {FILE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {FILEE}, \hyperpage{14}
+    \subitem {readFile}, \hyperpage{14}
+  \item {fillCircleByColor}
+    \subitem {Button}, \hyperpage{57}
+    \subitem {DataStructures}, \hyperpage{81}
+    \subitem {Display}, \hyperpage{114}
+    \subitem {Object}, \hyperpage{194}
+    \subitem {Sprite}, \hyperpage{221}
+  \item {fillRectangleByColor}
+    \subitem {Button}, \hyperpage{57}
+    \subitem {DataStructures}, \hyperpage{81}
+    \subitem {Display}, \hyperpage{115}
+    \subitem {Object}, \hyperpage{195}
+    \subitem {Sprite}, \hyperpage{221}
+  \item {fillWithColor}
+    \subitem {Button}, \hyperpage{58}
+    \subitem {DataStructures}, \hyperpage{82}
+    \subitem {Display}, \hyperpage{115}
+    \subitem {Object}, \hyperpage{195}
+    \subitem {Sprite}, \hyperpage{222}
+  \item {find}
+    \subitem {DSU}, \hyperpage{131}
+  \item {fitTheTexture}
+    \subitem {Button}, \hyperpage{58}
+    \subitem {DataStructures}, \hyperpage{82}
+    \subitem {Display}, \hyperpage{115}
+    \subitem {Object}, \hyperpage{195}
+    \subitem {Sprite}, \hyperpage{222}
+  \item {flipCoin}
+    \subitem {RANDOM}, \hyperpage{25}
+  \item {FONTS\_}
+    \subitem {PATH::ASSETS}, \hyperpage{20}
+
+  \indexspace
+
+  \item {g}
+    \subitem {distanceHeap}, \hyperpage{130}
+  \item {getAction}
+    \subitem {Button}, \hyperpage{58}
+  \item {getChar}
+    \subitem {RANDOM}, \hyperpage{25}
+  \item {getColor}
+    \subitem {Button}, \hyperpage{58}
+    \subitem {DataStructures}, \hyperpage{82}
+    \subitem {Display}, \hyperpage{115}
+    \subitem {Object}, \hyperpage{195}
+    \subitem {Sprite}, \hyperpage{222}
+  \item {getCrop}
+    \subitem {Button}, \hyperpage{59}
+    \subitem {DataStructures}, \hyperpage{82}
+    \subitem {Display}, \hyperpage{116}
+    \subitem {Object}, \hyperpage{196}
+    \subitem {Sprite}, \hyperpage{222}
+  \item {getDataFromFile}
+    \subitem {MyWindow}, \hyperpage{179}
+  \item {getDataFromRandom}
+    \subitem {MyWindow}, \hyperpage{180}
+  \item {getDataType}
+    \subitem {Button}, \hyperpage{59}
+    \subitem {DataStructures}, \hyperpage{83}
+  \item {getDouble}
+    \subitem {RANDOM}, \hyperpage{25}
+  \item {getEvent}
+    \subitem {MyWindow}, \hyperpage{180}
+  \item {getFloat}
+    \subitem {RANDOM}, \hyperpage{25}
+  \item {getH}
+    \subitem {Button}, \hyperpage{59}
+    \subitem {DataStructures}, \hyperpage{83}
+    \subitem {Display}, \hyperpage{116}
+    \subitem {Object}, \hyperpage{196}
+    \subitem {Sprite}, \hyperpage{223}
+  \item {getHigh}
+    \subitem {AVL}, \hyperpage{32}
+  \item {getInputType}
+    \subitem {Button}, \hyperpage{59}
+  \item {getInt}
+    \subitem {RANDOM}, \hyperpage{26}
+  \item {getLocation}
+    \subitem {Button}, \hyperpage{60}
+    \subitem {DataStructures}, \hyperpage{83}
+    \subitem {Display}, \hyperpage{116}
+    \subitem {Object}, \hyperpage{196}
+    \subitem {Sprite}, \hyperpage{223}
+  \item {getLongLong}
+    \subitem {RANDOM}, \hyperpage{26}
+  \item {getName}
+    \subitem {DataStructures}, \hyperpage{83}
+  \item {getNextScreen}
+    \subitem {Button}, \hyperpage{60}
+  \item {getOperator}
+    \subitem {InputBox}, \hyperpage{157}
+  \item {getSize}
+    \subitem {Button}, \hyperpage{60}
+    \subitem {DataStructures}, \hyperpage{83}
+    \subitem {Display}, \hyperpage{116}
+    \subitem {Object}, \hyperpage{196}
+    \subitem {Sprite}, \hyperpage{223}
+  \item {getString}
+    \subitem {RANDOM}, \hyperpage{26, 27}
+  \item {getText}
+    \subitem {Button}, \hyperpage{60}
+    \subitem {DataStructures}, \hyperpage{84}
+    \subitem {Display}, \hyperpage{116}
+    \subitem {InputBox}, \hyperpage{157}
+    \subitem {Object}, \hyperpage{196}
+    \subitem {Sprite}, \hyperpage{223}
+  \item {getW}
+    \subitem {Button}, \hyperpage{60}
+    \subitem {DataStructures}, \hyperpage{84}
+    \subitem {Display}, \hyperpage{117}
+    \subitem {Object}, \hyperpage{197}
+    \subitem {Sprite}, \hyperpage{223}
+  \item {getX}
+    \subitem {Button}, \hyperpage{61}
+    \subitem {DataStructures}, \hyperpage{84}
+    \subitem {Display}, \hyperpage{117}
+    \subitem {Object}, \hyperpage{197}
+    \subitem {Sprite}, \hyperpage{224}
+  \item {getY}
+    \subitem {Button}, \hyperpage{61}
+    \subitem {DataStructures}, \hyperpage{84}
+    \subitem {Display}, \hyperpage{117}
+    \subitem {Object}, \hyperpage{197}
+    \subitem {Sprite}, \hyperpage{224}
+  \item {GLOBAL.hpp}
+    \subitem {ARRAY}, \hyperpage{257}
+    \subitem {AVL}, \hyperpage{256}
+    \subitem {BOTTOM}, \hyperpage{258}
+    \subitem {BTREE\_4TH}, \hyperpage{256}
+    \subitem {BUTTON\_ACTION}, \hyperpage{252}
+    \subitem {BUTTON\_STATUS}, \hyperpage{254}
+    \subitem {CENTER}, \hyperpage{257, 258}
+    \subitem {CHANGE\_SCREEN}, \hyperpage{253}
+    \subitem {CIRCLE}, \hyperpage{258}
+    \subitem {CLICKED}, \hyperpage{254}
+    \subitem {CLOSE}, \hyperpage{253}
+    \subitem {CONNECTED\_COMPONENTS}, \hyperpage{253}
+    \subitem {DATA\_STRUCTURES\_OPERATOR}, \hyperpage{254}
+    \subitem {DATA\_STRUCTURES\_TYPE}, \hyperpage{256}
+    \subitem {DELETE}, \hyperpage{253}, \hyperpage{256}
+    \subitem {DIJKSTRA}, \hyperpage{253}, \hyperpage{256}
+    \subitem {DONE}, \hyperpage{253}
+    \subitem {EDGES}, \hyperpage{253}
+    \subitem {FILE}, \hyperpage{253}
+    \subitem {GO\_BACK}, \hyperpage{253}
+    \subitem {GO\_NEXT}, \hyperpage{253}
+    \subitem {GO\_OFF}, \hyperpage{253}
+    \subitem {GO\_ON}, \hyperpage{253}
+    \subitem {GRAPH}, \hyperpage{256}
+    \subitem {HASH\_TABLE}, \hyperpage{256}
+    \subitem {HORIZONTAL\_ALIGN}, \hyperpage{256}
+    \subitem {HOVER}, \hyperpage{254}
+    \subitem {INIT}, \hyperpage{253}, \hyperpage{256}
+    \subitem {INPUT\_TYPE}, \hyperpage{257}
+    \subitem {INSERT}, \hyperpage{253}, \hyperpage{256}
+    \subitem {INT}, \hyperpage{257}
+    \subitem {IS\_CLOSED}, \hyperpage{258}
+    \subitem {IS\_OPEN}, \hyperpage{258}
+    \subitem {json}, \hyperpage{252}
+    \subitem {LEFT}, \hyperpage{257}
+    \subitem {LINE}, \hyperpage{258}
+    \subitem {MAX\_HEAP}, \hyperpage{256}
+    \subitem {MIN\_HEAP}, \hyperpage{256}
+    \subitem {MST}, \hyperpage{253}, \hyperpage{256}
+    \subitem {NONE}, \hyperpage{253, 254}, \hyperpage{256, 257}
+    \subitem {POLYGON}, \hyperpage{258}
+    \subitem {RANDOM}, \hyperpage{253}
+    \subitem {RANDOM10}, \hyperpage{253}
+    \subitem {RANDOM11}, \hyperpage{253}
+    \subitem {RANDOM12}, \hyperpage{253}
+    \subitem {RANDOM13}, \hyperpage{253}
+    \subitem {RANDOM14}, \hyperpage{253}
+    \subitem {RANDOM15}, \hyperpage{253}
+    \subitem {RANDOM16}, \hyperpage{253}
+    \subitem {RANDOM2}, \hyperpage{253}
+    \subitem {RANDOM3}, \hyperpage{253}
+    \subitem {RANDOM4}, \hyperpage{253}
+    \subitem {RANDOM5}, \hyperpage{253}
+    \subitem {RANDOM6}, \hyperpage{253}
+    \subitem {RANDOM7}, \hyperpage{253}
+    \subitem {RANDOM8}, \hyperpage{253}
+    \subitem {RANDOM9}, \hyperpage{253}
+    \subitem {RECTANGLE}, \hyperpage{258}
+    \subitem {RELEASED}, \hyperpage{254}
+    \subitem {RIGHT}, \hyperpage{257}
+    \subitem {SCC}, \hyperpage{256}
+    \subitem {SEARCH}, \hyperpage{253}, \hyperpage{256}
+    \subitem {SETTING}, \hyperpage{253}, \hyperpage{256}
+    \subitem {SHAPE}, \hyperpage{257}
+    \subitem {SIZE}, \hyperpage{253}, \hyperpage{256}
+    \subitem {SLOW\_DOWN}, \hyperpage{253}
+    \subitem {SPEED\_UP}, \hyperpage{253}
+    \subitem {STRING}, \hyperpage{257}
+    \subitem {STRINGS}, \hyperpage{257}
+    \subitem {TOP}, \hyperpage{253}, \hyperpage{256}, \hyperpage{258}
+    \subitem {TRIANGLE}, \hyperpage{258}
+    \subitem {TRIE}, \hyperpage{256}
+    \subitem {VERTICAL\_ALIGN}, \hyperpage{258}
+    \subitem {WINDOW\_STATUS}, \hyperpage{258}
+  \item {GO\_BACK}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {GO\_NEXT}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {GO\_OFF}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {GO\_ON}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {goBack}
+    \subitem {AVL}, \hyperpage{32}
+    \subitem {DataStructures}, \hyperpage{84}
+    \subitem {HashTable}, \hyperpage{145}
+  \item {goNext}
+    \subitem {AVL}, \hyperpage{33}
+    \subitem {DataStructures}, \hyperpage{85}
+    \subitem {HashTable}, \hyperpage{145}
+  \item {goOff}
+    \subitem {AVL}, \hyperpage{33}
+    \subitem {DataStructures}, \hyperpage{85}
+    \subitem {HashTable}, \hyperpage{145}
+  \item {goOn}
+    \subitem {AVL}, \hyperpage{33}
+    \subitem {DataStructures}, \hyperpage{85}
+    \subitem {HashTable}, \hyperpage{146}
+  \item {GRAPH}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {Graph}, \hyperpage{134}
+    \subitem {$\sim$Graph}, \hyperpage{135}
+    \subitem {Dijkstra}, \hyperpage{135}
+    \subitem {distanceHeap}, \hyperpage{142}
+    \subitem {DSU}, \hyperpage{142}
+    \subitem {Graph}, \hyperpage{134}
+    \subitem {init}, \hyperpage{136}
+    \subitem {isReceiveEvent}, \hyperpage{137}
+    \subitem {MST}, \hyperpage{137}
+    \subitem {react}, \hyperpage{137}
+    \subitem {renderEdge}, \hyperpage{138}
+    \subitem {rendering}, \hyperpage{139}
+    \subitem {repair}, \hyperpage{139}
+    \subitem {SCC}, \hyperpage{140}
+    \subitem {setting}, \hyperpage{140}
+    \subitem {Tarjan}, \hyperpage{140}
+    \subitem {unionEdges}, \hyperpage{141}
+    \subitem {waitForStep}, \hyperpage{141}
+  \item {GRAPH\_}
+    \subitem {PATH::SAVING}, \hyperpage{23}
+  \item {GRAPHICS\_}
+    \subitem {PATH::ASSETS}, \hyperpage{21}
+
+  \indexspace
+
+  \item {HASH\_TABLE}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {HASH\_TABLE\_}
+    \subitem {PATH::SAVING}, \hyperpage{23}
+  \item {HashTable}, \hyperpage{142}
+    \subitem {$\sim$HashTable}, \hyperpage{144}
+    \subitem {closeScript}, \hyperpage{144}
+    \subitem {defaultSetting}, \hyperpage{144}
+    \subitem {drawEdge}, \hyperpage{145}
+    \subitem {goBack}, \hyperpage{145}
+    \subitem {goNext}, \hyperpage{145}
+    \subitem {goOff}, \hyperpage{145}
+    \subitem {goOn}, \hyperpage{146}
+    \subitem {HashTable}, \hyperpage{143}
+    \subitem {highlight}, \hyperpage{146}
+    \subitem {init}, \hyperpage{146}
+    \subitem {insert}, \hyperpage{146, 147}
+    \subitem {isReceiveEvent}, \hyperpage{148}
+    \subitem {locating}, \hyperpage{148, 149}
+    \subitem {react}, \hyperpage{149}
+    \subitem {remove}, \hyperpage{150, 151}
+    \subitem {renderEdges}, \hyperpage{151}
+    \subitem {rendering}, \hyperpage{151}
+    \subitem {search}, \hyperpage{152}
+    \subitem {setEdgesColor}, \hyperpage{153}
+    \subitem {setNodeColor}, \hyperpage{153}
+    \subitem {setting}, \hyperpage{153}
+    \subitem {slowDown}, \hyperpage{154}
+    \subitem {speedUp}, \hyperpage{154}
+    \subitem {unhighlight}, \hyperpage{154}
+    \subitem {waitForStep}, \hyperpage{154}
+  \item {heapify}
+    \subitem {maxHeap}, \hyperpage{164}
+    \subitem {minHeap}, \hyperpage{168}
+  \item {hide}
+    \subitem {Button}, \hyperpage{61}
+    \subitem {DataStructures}, \hyperpage{85}
+    \subitem {Display}, \hyperpage{117}
+    \subitem {Object}, \hyperpage{197}
+    \subitem {Sprite}, \hyperpage{224}
+  \item {highlight}
+    \subitem {AVL}, \hyperpage{33}
+    \subitem {HashTable}, \hyperpage{146}
+    \subitem {minHeap}, \hyperpage{169}
+    \subitem {Script}, \hyperpage{209}
+    \subitem {Sprite}, \hyperpage{224}
+    \subitem {Trie}, \hyperpage{238}
+  \item {HOME\_}
+    \subitem {DISPLAY}, \hyperpage{13}
+  \item {HORIZONTAL\_ALIGN}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {HOVER}
+    \subitem {GLOBAL.hpp}, \hyperpage{254}
+
+  \indexspace
+
+  \item {importFromJson}
+    \subitem {Button}, \hyperpage{61}
+    \subitem {DataStructures}, \hyperpage{86}
+    \subitem {Display}, \hyperpage{117, 118}
+    \subitem {InputBox}, \hyperpage{157}
+    \subitem {Object}, \hyperpage{197}
+    \subitem {Script}, \hyperpage{209}
+    \subitem {Sprite}, \hyperpage{224, 225}
+  \item {include/button.hpp}, \hyperpage{247}
+  \item {include/data\_structures.hpp}, \hyperpage{247}
+  \item {include/data\_structures/AVL.hpp}, \hyperpage{248}
+  \item {include/data\_structures/btree4th.hpp}, \hyperpage{248}
+  \item {include/data\_structures/graph.hpp}, \hyperpage{248}
+  \item {include/data\_structures/hash\_table.hpp}, \hyperpage{249}
+  \item {include/data\_structures/maxheap.hpp}, \hyperpage{249}
+  \item {include/data\_structures/minheap.hpp}, \hyperpage{249}
+  \item {include/data\_structures/trie.hpp}, \hyperpage{250}
+  \item {include/display.hpp}, \hyperpage{250}
+  \item {include/GLOBAL.hpp}, \hyperpage{250}
+  \item {include/inputbox.hpp}, \hyperpage{259}
+  \item {include/object.hpp}, \hyperpage{259}
+  \item {include/script.hpp}, \hyperpage{260}
+  \item {include/services.hpp}, \hyperpage{260}
+  \item {include/sprite.hpp}, \hyperpage{262}
+  \item {include/window.hpp}, \hyperpage{262}
+  \item {INF}
+    \subitem {NUMBER}, \hyperpage{19}
+  \item {INIT}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {init}
+    \subitem {AVL}, \hyperpage{34}
+    \subitem {BTree4th}, \hyperpage{47}
+    \subitem {DataStructures}, \hyperpage{86}
+    \subitem {Graph}, \hyperpage{136}
+    \subitem {HashTable}, \hyperpage{146}
+    \subitem {maxHeap}, \hyperpage{164}
+    \subitem {minHeap}, \hyperpage{169}
+    \subitem {Trie}, \hyperpage{238}
+  \item {init.cpp}
+    \subitem {sqr}, \hyperpage{270}
+  \item {initAction}
+    \subitem {Button}, \hyperpage{62}
+  \item {initAVL}
+    \subitem {DataStructures}, \hyperpage{87}
+  \item {initBackground}
+    \subitem {Button}, \hyperpage{63}
+    \subitem {DataStructures}, \hyperpage{87}
+    \subitem {Display}, \hyperpage{118}
+    \subitem {InputBox}, \hyperpage{157}
+    \subitem {Script}, \hyperpage{210}
+    \subitem {Sprite}, \hyperpage{225}
+  \item {initButtons}
+    \subitem {Display}, \hyperpage{118}
+    \subitem {InputBox}, \hyperpage{158}
+    \subitem {Script}, \hyperpage{210}
+  \item {initDisplay}
+    \subitem {DataStructures}, \hyperpage{87}
+  \item {initGraph}
+    \subitem {DataStructures}, \hyperpage{88}
+  \item {initHashTable}
+    \subitem {DataStructures}, \hyperpage{88}
+  \item {initInput}
+    \subitem {Sprite}, \hyperpage{225}
+  \item {initLinker}
+    \subitem {DataStructures}, \hyperpage{88}
+  \item {initMinHeap}
+    \subitem {DataStructures}, \hyperpage{89}
+  \item {initObjects}
+    \subitem {Sprite}, \hyperpage{226}
+  \item {initOperator}
+    \subitem {InputBox}, \hyperpage{158}
+  \item {initSDL2}
+    \subitem {MyWindow}, \hyperpage{181}
+  \item {initSprites}
+    \subitem {Button}, \hyperpage{63}
+    \subitem {InputBox}, \hyperpage{158}
+  \item {initTextBox}
+    \subitem {Sprite}, \hyperpage{226}
+  \item {initTrie}
+    \subitem {DataStructures}, \hyperpage{89}
+  \item {INPUT\_TYPE}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {InputBox}, \hyperpage{155}
+    \subitem {$\sim$InputBox}, \hyperpage{156}
+    \subitem {getOperator}, \hyperpage{157}
+    \subitem {getText}, \hyperpage{157}
+    \subitem {importFromJson}, \hyperpage{157}
+    \subitem {initBackground}, \hyperpage{157}
+    \subitem {initButtons}, \hyperpage{158}
+    \subitem {initOperator}, \hyperpage{158}
+    \subitem {initSprites}, \hyperpage{158}
+    \subitem {InputBox}, \hyperpage{156}
+    \subitem {isButtonReceiveEvent}, \hyperpage{159}
+    \subitem {isInputReceiveEvent}, \hyperpage{159}
+    \subitem {isReceiveEvent}, \hyperpage{160}
+    \subitem {linking}, \hyperpage{160}
+    \subitem {m}, \hyperpage{162}
+    \subitem {n}, \hyperpage{162}
+    \subitem {react}, \hyperpage{160}
+    \subitem {rendering}, \hyperpage{161}
+    \subitem {setDuplicate}, \hyperpage{161}
+    \subitem {setText}, \hyperpage{161, 162}
+  \item {INPUTBOX\_}
+    \subitem {PATH::ATB}, \hyperpage{22}
+  \item {INSERT}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {insert}
+    \subitem {AVL}, \hyperpage{34, 35}
+    \subitem {BTree4th}, \hyperpage{47, 48}
+    \subitem {DataStructures}, \hyperpage{89}
+    \subitem {distanceHeap}, \hyperpage{128}
+    \subitem {HashTable}, \hyperpage{146, 147}
+    \subitem {maxHeap}, \hyperpage{164}
+    \subitem {minHeap}, \hyperpage{170}
+    \subitem {Trie}, \hyperpage{238}, \hyperpage{240}
+  \item {insertAVL}
+    \subitem {DataStructures}, \hyperpage{89}
+  \item {insertHashTable}
+    \subitem {DataStructures}, \hyperpage{90}
+  \item {insertMinHeap}
+    \subitem {DataStructures}, \hyperpage{90}
+  \item {insertTrie}
+    \subitem {DataStructures}, \hyperpage{90}
+  \item {INT}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {interacting}
+    \subitem {MyWindow}, \hyperpage{182}
+  \item {intToString}
+    \subitem {NUMBER}, \hyperpage{16}
+  \item {IS\_CLOSED}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {IS\_OPEN}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {isButtonReceiveEvent}
+    \subitem {Display}, \hyperpage{119}
+    \subitem {InputBox}, \hyperpage{159}
+  \item {isChoosed}
+    \subitem {Button}, \hyperpage{63}
+  \item {isClicked}
+    \subitem {Button}, \hyperpage{64}
+  \item {isClosed}
+    \subitem {MyWindow}, \hyperpage{182}
+  \item {isDigit}
+    \subitem {NUMBER}, \hyperpage{16}
+  \item {isHover}
+    \subitem {Button}, \hyperpage{64}
+  \item {isInInterval}
+    \subitem {NUMBER}, \hyperpage{16}
+  \item {isInputReceiveEvent}
+    \subitem {InputBox}, \hyperpage{159}
+  \item {isLetter}
+    \subitem {NUMBER}, \hyperpage{17}
+  \item {isLieInside}
+    \subitem {Button}, \hyperpage{64, 65}
+    \subitem {DataStructures}, \hyperpage{90, 91}
+    \subitem {Display}, \hyperpage{119, 120}
+    \subitem {Object}, \hyperpage{198, 199}
+    \subitem {Sprite}, \hyperpage{226, 227}
+  \item {isNumber}
+    \subitem {NUMBER}, \hyperpage{17}
+  \item {isOpen}
+    \subitem {MyWindow}, \hyperpage{182}
+  \item {isOperator}
+    \subitem {NUMBER}, \hyperpage{17}
+  \item {isReceiveEvent}
+    \subitem {AVL}, \hyperpage{36}
+    \subitem {Button}, \hyperpage{65}
+    \subitem {DataStructures}, \hyperpage{91}
+    \subitem {Display}, \hyperpage{120}
+    \subitem {Graph}, \hyperpage{137}
+    \subitem {HashTable}, \hyperpage{148}
+    \subitem {InputBox}, \hyperpage{160}
+    \subitem {minHeap}, \hyperpage{170}
+    \subitem {Script}, \hyperpage{210}
+    \subitem {Trie}, \hyperpage{240}
+  \item {isSeparator}
+    \subitem {SIUSTRING}, \hyperpage{28}
+  \item {isSign}
+    \subitem {NUMBER}, \hyperpage{17}
+  \item {isSymbol}
+    \subitem {NUMBER}, \hyperpage{18}
+  \item {isUnionized}
+    \subitem {DSU}, \hyperpage{132}
+  \item {isVisible}
+    \subitem {Button}, \hyperpage{66}
+    \subitem {DataStructures}, \hyperpage{92}
+    \subitem {Display}, \hyperpage{120}
+    \subitem {Object}, \hyperpage{199}
+    \subitem {Sprite}, \hyperpage{227}
+
+  \indexspace
+
+  \item {JSON}, \hyperpage{14}
+    \subitem {readFile}, \hyperpage{15}
+    \subitem {saveFile}, \hyperpage{15}
+  \item {json}
+    \subitem {GLOBAL.hpp}, \hyperpage{252}
+    \subitem {object.hpp}, \hyperpage{259}
+    \subitem {services.hpp}, \hyperpage{261}
+    \subitem {sprite.hpp}, \hyperpage{262}
+
+  \indexspace
+
+  \item {LEFT}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {leftMost}
+    \subitem {BTree4th}, \hyperpage{48}
+  \item {LINE}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {linking}
+    \subitem {Button}, \hyperpage{66}
+    \subitem {DataStructures}, \hyperpage{92}
+    \subitem {Display}, \hyperpage{120}
+    \subitem {InputBox}, \hyperpage{160}
+    \subitem {Object}, \hyperpage{199}
+    \subitem {Script}, \hyperpage{211}
+    \subitem {Sprite}, \hyperpage{228}
+  \item {locating}
+    \subitem {AVL}, \hyperpage{36}
+    \subitem {Button}, \hyperpage{66, 67}
+    \subitem {DataStructures}, \hyperpage{92, 93}
+    \subitem {Display}, \hyperpage{121}
+    \subitem {HashTable}, \hyperpage{148, 149}
+    \subitem {minHeap}, \hyperpage{170}
+    \subitem {Object}, \hyperpage{199, 200}
+    \subitem {Sprite}, \hyperpage{228}
+    \subitem {Trie}, \hyperpage{240}
+  \item {locatingH}
+    \subitem {Button}, \hyperpage{67}
+    \subitem {DataStructures}, \hyperpage{93}
+    \subitem {Display}, \hyperpage{121}
+    \subitem {Object}, \hyperpage{200}
+    \subitem {Sprite}, \hyperpage{229}
+  \item {locatingW}
+    \subitem {Button}, \hyperpage{67}
+    \subitem {DataStructures}, \hyperpage{93}
+    \subitem {Display}, \hyperpage{122}
+    \subitem {Object}, \hyperpage{200}
+    \subitem {Sprite}, \hyperpage{229}
+  \item {locatingX}
+    \subitem {Button}, \hyperpage{67}
+    \subitem {DataStructures}, \hyperpage{93}
+    \subitem {Display}, \hyperpage{122}
+    \subitem {Object}, \hyperpage{201}
+    \subitem {Sprite}, \hyperpage{229}
+  \item {locatingY}
+    \subitem {Button}, \hyperpage{68}
+    \subitem {DataStructures}, \hyperpage{94}
+    \subitem {Display}, \hyperpage{122}
+    \subitem {Object}, \hyperpage{201}
+    \subitem {Sprite}, \hyperpage{229}
+  \item {location}
+    \subitem {Position}, \hyperpage{207}
+
+  \indexspace
+
+  \item {m}
+    \subitem {InputBox}, \hyperpage{162}
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{281}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{281}
+  \item {MAX\_HEAP}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {MAX\_HEAP\_}
+    \subitem {PATH::SAVING}, \hyperpage{23}
+  \item {maxDepth}
+    \subitem {AVL}, \hyperpage{36, 37}
+  \item {maxHeap}, \hyperpage{163}
+    \subitem {$\sim$maxHeap}, \hyperpage{163}
+    \subitem {heapify}, \hyperpage{164}
+    \subitem {init}, \hyperpage{164}
+    \subitem {insert}, \hyperpage{164}
+    \subitem {maxHeap}, \hyperpage{163}
+    \subitem {pop}, \hyperpage{165}
+    \subitem {size}, \hyperpage{165}
+    \subitem {swap}, \hyperpage{165}
+    \subitem {swapable}, \hyperpage{165}
+    \subitem {top}, \hyperpage{166}
+  \item {mergeChild}
+    \subitem {BTree4th}, \hyperpage{48}
+  \item {MIN\_HEAP}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {MIN\_HEAP\_}
+    \subitem {PATH::SAVING}, \hyperpage{24}
+  \item {minHeap}, \hyperpage{166}
+    \subitem {$\sim$minHeap}, \hyperpage{168}
+    \subitem {closeScript}, \hyperpage{168}
+    \subitem {heapify}, \hyperpage{168}
+    \subitem {highlight}, \hyperpage{169}
+    \subitem {init}, \hyperpage{169}
+    \subitem {insert}, \hyperpage{170}
+    \subitem {isReceiveEvent}, \hyperpage{170}
+    \subitem {locating}, \hyperpage{170}
+    \subitem {minHeap}, \hyperpage{167}
+    \subitem {pop}, \hyperpage{171}
+    \subitem {react}, \hyperpage{172}
+    \subitem {realInsert}, \hyperpage{172}
+    \subitem {rendering}, \hyperpage{173}
+    \subitem {renderLine}, \hyperpage{174}
+    \subitem {setmax}, \hyperpage{174}
+    \subitem {setmin}, \hyperpage{174}
+    \subitem {setting}, \hyperpage{174}
+    \subitem {size}, \hyperpage{175}
+    \subitem {swap}, \hyperpage{175}
+    \subitem {swapable}, \hyperpage{175}
+    \subitem {top}, \hyperpage{175}
+    \subitem {unhighlight}, \hyperpage{176}
+    \subitem {waitForStep}, \hyperpage{176}
+  \item {move}
+    \subitem {Button}, \hyperpage{68}
+  \item {moveX}
+    \subitem {Button}, \hyperpage{68}
+    \subitem {DataStructures}, \hyperpage{94}
+    \subitem {Display}, \hyperpage{122}
+    \subitem {Object}, \hyperpage{201}
+    \subitem {Sprite}, \hyperpage{230}
+  \item {moveY}
+    \subitem {Button}, \hyperpage{68}
+    \subitem {DataStructures}, \hyperpage{94}
+    \subitem {Display}, \hyperpage{123}
+    \subitem {Object}, \hyperpage{201}
+    \subitem {Sprite}, \hyperpage{230}
+  \item {MST}
+    \subitem {DataStructures}, \hyperpage{94}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+    \subitem {Graph}, \hyperpage{137}
+  \item {mst}
+    \subitem {DataStructures}, \hyperpage{95}
+  \item {MyWindow}, \hyperpage{177}
+    \subitem {$\sim$MyWindow}, \hyperpage{178}
+    \subitem {getDataFromFile}, \hyperpage{179}
+    \subitem {getDataFromRandom}, \hyperpage{180}
+    \subitem {getEvent}, \hyperpage{180}
+    \subitem {initSDL2}, \hyperpage{181}
+    \subitem {interacting}, \hyperpage{182}
+    \subitem {isClosed}, \hyperpage{182}
+    \subitem {isOpen}, \hyperpage{182}
+    \subitem {MyWindow}, \hyperpage{178}
+    \subitem {react}, \hyperpage{183}
+    \subitem {rendering}, \hyperpage{185}
+    \subitem {run}, \hyperpage{186}
+    \subitem {runOperator}, \hyperpage{186}
+    \subitem {setDataType}, \hyperpage{187}
+    \subitem {setDisplay}, \hyperpage{187}
+    \subitem {setInputBox}, \hyperpage{187}
+
+  \indexspace
+
+  \item {n}
+    \subitem {InputBox}, \hyperpage{162}
+  \item {noCropping}
+    \subitem {Button}, \hyperpage{69}
+    \subitem {DataStructures}, \hyperpage{95}
+    \subitem {Display}, \hyperpage{123}
+    \subitem {Object}, \hyperpage{202}
+    \subitem {Sprite}, \hyperpage{230}
+  \item {NONE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253, 254}, \hyperpage{256, 257}
+  \item {NUMBER}, \hyperpage{15}
+    \subitem {INF}, \hyperpage{19}
+    \subitem {intToString}, \hyperpage{16}
+    \subitem {isDigit}, \hyperpage{16}
+    \subitem {isInInterval}, \hyperpage{16}
+    \subitem {isLetter}, \hyperpage{17}
+    \subitem {isNumber}, \hyperpage{17}
+    \subitem {isOperator}, \hyperpage{17}
+    \subitem {isSign}, \hyperpage{17}
+    \subitem {isSymbol}, \hyperpage{18}
+    \subitem {removeLeadingZero}, \hyperpage{18}
+    \subitem {stringToArray}, \hyperpage{18}
+    \subitem {stringToInt}, \hyperpage{18}
+  \item {number.cpp}
+    \subitem {removeLeadingZero}, \hyperpage{284}
+
+  \indexspace
+
+  \item {Object}, \hyperpage{188}
+    \subitem {$\sim$Object}, \hyperpage{190}
+    \subitem {addCharacter}, \hyperpage{191}
+    \subitem {addText}, \hyperpage{191}
+    \subitem {changeToCircle}, \hyperpage{191, 192}
+    \subitem {changeToRectangle}, \hyperpage{192}
+    \subitem {coloring}, \hyperpage{192, 193}
+    \subitem {cropping}, \hyperpage{193, 194}
+    \subitem {fillCircleByColor}, \hyperpage{194}
+    \subitem {fillRectangleByColor}, \hyperpage{195}
+    \subitem {fillWithColor}, \hyperpage{195}
+    \subitem {fitTheTexture}, \hyperpage{195}
+    \subitem {getColor}, \hyperpage{195}
+    \subitem {getCrop}, \hyperpage{196}
+    \subitem {getH}, \hyperpage{196}
+    \subitem {getLocation}, \hyperpage{196}
+    \subitem {getSize}, \hyperpage{196}
+    \subitem {getText}, \hyperpage{196}
+    \subitem {getW}, \hyperpage{197}
+    \subitem {getX}, \hyperpage{197}
+    \subitem {getY}, \hyperpage{197}
+    \subitem {hide}, \hyperpage{197}
+    \subitem {importFromJson}, \hyperpage{197}
+    \subitem {isLieInside}, \hyperpage{198, 199}
+    \subitem {isVisible}, \hyperpage{199}
+    \subitem {linking}, \hyperpage{199}
+    \subitem {locating}, \hyperpage{199, 200}
+    \subitem {locatingH}, \hyperpage{200}
+    \subitem {locatingW}, \hyperpage{200}
+    \subitem {locatingX}, \hyperpage{201}
+    \subitem {locatingY}, \hyperpage{201}
+    \subitem {moveX}, \hyperpage{201}
+    \subitem {moveY}, \hyperpage{201}
+    \subitem {noCropping}, \hyperpage{202}
+    \subitem {Object}, \hyperpage{190}
+    \subitem {removeCharacter}, \hyperpage{202}
+    \subitem {rendering}, \hyperpage{202}
+    \subitem {setFont}, \hyperpage{203}
+    \subitem {setShape}, \hyperpage{203}
+    \subitem {setText}, \hyperpage{203}
+    \subitem {show}, \hyperpage{203}
+    \subitem {textToTexture}, \hyperpage{204}
+    \subitem {textureFromFile}, \hyperpage{204}
+    \subitem {zoom}, \hyperpage{204}
+    \subitem {zoomH}, \hyperpage{204}
+    \subitem {zoomInMiddle}, \hyperpage{205}
+    \subitem {zoomW}, \hyperpage{205}
+  \item {object.hpp}
+    \subitem {json}, \hyperpage{259}
+  \item {OBJECT\_}
+    \subitem {PATH::ATB}, \hyperpage{22}
+
+  \indexspace
+
+  \item {parent}
+    \subitem {DSU}, \hyperpage{133}
+  \item {PATH}, \hyperpage{19}
+    \subitem {ASSETS\_}, \hyperpage{20}
+    \subitem {ATTRIBUTE\_}, \hyperpage{20}
+    \subitem {SAVING\_}, \hyperpage{20}
+  \item {PATH::ASSETS}, \hyperpage{20}
+    \subitem {FONTS\_}, \hyperpage{20}
+    \subitem {GRAPHICS\_}, \hyperpage{21}
+    \subitem {SCRIPT\_}, \hyperpage{21}
+  \item {PATH::ATB}, \hyperpage{21}
+    \subitem {BUTTON\_}, \hyperpage{21}
+    \subitem {DATA\_STRUCTURES\_}, \hyperpage{21}
+    \subitem {DISPLAY\_}, \hyperpage{22}
+    \subitem {INPUTBOX\_}, \hyperpage{22}
+    \subitem {OBJECT\_}, \hyperpage{22}
+    \subitem {SCRIPT\_}, \hyperpage{22}
+    \subitem {SPRITE\_}, \hyperpage{22}
+  \item {PATH::SAVING}, \hyperpage{23}
+    \subitem {AVL\_}, \hyperpage{23}
+    \subitem {BTREE\_4TH\_}, \hyperpage{23}
+    \subitem {GRAPH\_}, \hyperpage{23}
+    \subitem {HASH\_TABLE\_}, \hyperpage{23}
+    \subitem {MAX\_HEAP\_}, \hyperpage{23}
+    \subitem {MIN\_HEAP\_}, \hyperpage{24}
+    \subitem {TRIE\_}, \hyperpage{24}
+  \item {Point}, \hyperpage{206}
+    \subitem {x}, \hyperpage{206}
+    \subitem {y}, \hyperpage{206}
+  \item {POLYGON}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {pop}
+    \subitem {distanceHeap}, \hyperpage{129}
+    \subitem {maxHeap}, \hyperpage{165}
+    \subitem {minHeap}, \hyperpage{171}
+  \item {Position}, \hyperpage{206}
+    \subitem {center}, \hyperpage{207}
+    \subitem {crop}, \hyperpage{207}
+    \subitem {location}, \hyperpage{207}
+    \subitem {radius}, \hyperpage{207}
+    \subitem {visible}, \hyperpage{207}
+
+  \indexspace
+
+  \item {radius}
+    \subitem {Position}, \hyperpage{207}
+  \item {RANDOM}, \hyperpage{24}
+    \subitem {flipCoin}, \hyperpage{25}
+    \subitem {getChar}, \hyperpage{25}
+    \subitem {getDouble}, \hyperpage{25}
+    \subitem {getFloat}, \hyperpage{25}
+    \subitem {getInt}, \hyperpage{26}
+    \subitem {getLongLong}, \hyperpage{26}
+    \subitem {getString}, \hyperpage{26, 27}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+    \subitem {rng}, \hyperpage{27}
+  \item {RANDOM10}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM11}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM12}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM13}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM14}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM15}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM16}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM2}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM3}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM4}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM5}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM6}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM7}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM8}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {RANDOM9}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {react}
+    \subitem {AVL}, \hyperpage{37}
+    \subitem {DataStructures}, \hyperpage{95}
+    \subitem {Display}, \hyperpage{123}
+    \subitem {Graph}, \hyperpage{137}
+    \subitem {HashTable}, \hyperpage{149}
+    \subitem {InputBox}, \hyperpage{160}
+    \subitem {minHeap}, \hyperpage{172}
+    \subitem {MyWindow}, \hyperpage{183}
+    \subitem {Script}, \hyperpage{211}
+    \subitem {Trie}, \hyperpage{241}
+  \item {readFile}
+    \subitem {FILEE}, \hyperpage{14}
+    \subitem {JSON}, \hyperpage{15}
+  \item {README.md}, \hyperpage{263}
+  \item {realInsert}
+    \subitem {minHeap}, \hyperpage{172}
+  \item {RECTANGLE}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {RELEASED}
+    \subitem {GLOBAL.hpp}, \hyperpage{254}
+  \item {remove}
+    \subitem {AVL}, \hyperpage{38}
+    \subitem {BTree4th}, \hyperpage{49}
+    \subitem {DataStructures}, \hyperpage{95}
+    \subitem {HashTable}, \hyperpage{150, 151}
+    \subitem {Trie}, \hyperpage{242, 243}
+  \item {remove.cpp}
+    \subitem {valuesReachedZero}, \hyperpage{278}
+  \item {removeAVL}
+    \subitem {DataStructures}, \hyperpage{96}
+  \item {removeCharacter}
+    \subitem {Button}, \hyperpage{69}
+    \subitem {DataStructures}, \hyperpage{96}
+    \subitem {Display}, \hyperpage{123, 124}
+    \subitem {Object}, \hyperpage{202}
+    \subitem {Sprite}, \hyperpage{230, 231}
+  \item {removeHashTable}
+    \subitem {DataStructures}, \hyperpage{97}
+  \item {removeLeadingZero}
+    \subitem {NUMBER}, \hyperpage{18}
+    \subitem {number.cpp}, \hyperpage{284}
+  \item {removeMinHeap}
+    \subitem {DataStructures}, \hyperpage{97}
+  \item {removeTrie}
+    \subitem {DataStructures}, \hyperpage{97}
+  \item {renderEdge}
+    \subitem {Graph}, \hyperpage{138}
+  \item {renderEdges}
+    \subitem {HashTable}, \hyperpage{151}
+  \item {rendering}
+    \subitem {AVL}, \hyperpage{40}
+    \subitem {Button}, \hyperpage{69}
+    \subitem {DataStructures}, \hyperpage{97}
+    \subitem {Display}, \hyperpage{124}
+    \subitem {Graph}, \hyperpage{139}
+    \subitem {HashTable}, \hyperpage{151}
+    \subitem {InputBox}, \hyperpage{161}
+    \subitem {minHeap}, \hyperpage{173}
+    \subitem {MyWindow}, \hyperpage{185}
+    \subitem {Object}, \hyperpage{202}
+    \subitem {Script}, \hyperpage{212}
+    \subitem {Sprite}, \hyperpage{231}
+    \subitem {Trie}, \hyperpage{243}
+  \item {renderLine}
+    \subitem {AVL}, \hyperpage{40}
+    \subitem {minHeap}, \hyperpage{174}
+  \item {repair}
+    \subitem {Graph}, \hyperpage{139}
+  \item {RIGHT}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {rightMost}
+    \subitem {BTree4th}, \hyperpage{49}
+  \item {rng}
+    \subitem {RANDOM}, \hyperpage{27}
+  \item {rotateLeft}
+    \subitem {AVL}, \hyperpage{40}
+  \item {rotateRight}
+    \subitem {AVL}, \hyperpage{41}
+  \item {run}
+    \subitem {MyWindow}, \hyperpage{186}
+  \item {runOperator}
+    \subitem {MyWindow}, \hyperpage{186}
+
+  \indexspace
+
+  \item {saveFile}
+    \subitem {JSON}, \hyperpage{15}
+  \item {SAVING\_}
+    \subitem {PATH}, \hyperpage{20}
+  \item {SCC}
+    \subitem {DataStructures}, \hyperpage{98}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+    \subitem {Graph}, \hyperpage{140}
+  \item {scc}
+    \subitem {DataStructures}, \hyperpage{98}
+  \item {Script}, \hyperpage{208}
+    \subitem {$\sim$Script}, \hyperpage{209}
+    \subitem {highlight}, \hyperpage{209}
+    \subitem {importFromJson}, \hyperpage{209}
+    \subitem {initBackground}, \hyperpage{210}
+    \subitem {initButtons}, \hyperpage{210}
+    \subitem {isReceiveEvent}, \hyperpage{210}
+    \subitem {linking}, \hyperpage{211}
+    \subitem {react}, \hyperpage{211}
+    \subitem {rendering}, \hyperpage{212}
+    \subitem {Script}, \hyperpage{209}
+    \subitem {unhighlight}, \hyperpage{212}
+  \item {SCRIPT\_}
+    \subitem {PATH::ASSETS}, \hyperpage{21}
+    \subitem {PATH::ATB}, \hyperpage{22}
+  \item {SEARCH}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {search}
+    \subitem {AVL}, \hyperpage{41, 42}
+    \subitem {BTree4th}, \hyperpage{49}
+    \subitem {DataStructures}, \hyperpage{98}
+    \subitem {HashTable}, \hyperpage{152}
+    \subitem {Trie}, \hyperpage{244}
+  \item {searchAVL}
+    \subitem {DataStructures}, \hyperpage{98}
+  \item {searchHashTable}
+    \subitem {DataStructures}, \hyperpage{99}
+  \item {searchMinHeap}
+    \subitem {DataStructures}, \hyperpage{99}
+  \item {searchTrie}
+    \subitem {DataStructures}, \hyperpage{99}
+  \item {services.hpp}
+    \subitem {json}, \hyperpage{261}
+  \item {setDataType}
+    \subitem {DataStructures}, \hyperpage{99}
+    \subitem {MyWindow}, \hyperpage{187}
+  \item {setDisplay}
+    \subitem {MyWindow}, \hyperpage{187}
+  \item {setDuplicate}
+    \subitem {InputBox}, \hyperpage{161}
+  \item {setEdgesColor}
+    \subitem {AVL}, \hyperpage{43}
+    \subitem {HashTable}, \hyperpage{153}
+    \subitem {Trie}, \hyperpage{245}
+  \item {setFont}
+    \subitem {Button}, \hyperpage{70}
+    \subitem {DataStructures}, \hyperpage{100}
+    \subitem {Display}, \hyperpage{124}
+    \subitem {Object}, \hyperpage{203}
+    \subitem {Sprite}, \hyperpage{231}
+  \item {setFontColor}
+    \subitem {Sprite}, \hyperpage{231}
+  \item {setInputBox}
+    \subitem {MyWindow}, \hyperpage{187}
+  \item {setmax}
+    \subitem {minHeap}, \hyperpage{174}
+  \item {setmin}
+    \subitem {minHeap}, \hyperpage{174}
+  \item {setNodeColor}
+    \subitem {AVL}, \hyperpage{43}
+    \subitem {HashTable}, \hyperpage{153}
+    \subitem {Trie}, \hyperpage{245}
+  \item {setShape}
+    \subitem {Button}, \hyperpage{70}
+    \subitem {DataStructures}, \hyperpage{100}
+    \subitem {Display}, \hyperpage{124}
+    \subitem {Object}, \hyperpage{203}
+    \subitem {Sprite}, \hyperpage{232}
+  \item {setText}
+    \subitem {Button}, \hyperpage{70}
+    \subitem {DataStructures}, \hyperpage{101}
+    \subitem {Display}, \hyperpage{125}
+    \subitem {InputBox}, \hyperpage{161, 162}
+    \subitem {Object}, \hyperpage{203}
+    \subitem {Sprite}, \hyperpage{232}
+  \item {setTextBox}
+    \subitem {Sprite}, \hyperpage{232}
+  \item {setTextBoxTransparent}
+    \subitem {Sprite}, \hyperpage{233}
+  \item {SETTING}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {setting}
+    \subitem {AVL}, \hyperpage{43}
+    \subitem {DataStructures}, \hyperpage{101}
+    \subitem {Graph}, \hyperpage{140}
+    \subitem {HashTable}, \hyperpage{153}
+    \subitem {minHeap}, \hyperpage{174}
+    \subitem {Trie}, \hyperpage{245}
+  \item {settingAVL}
+    \subitem {DataStructures}, \hyperpage{101}
+  \item {settingGraph}
+    \subitem {DataStructures}, \hyperpage{102}
+  \item {settingHashTable}
+    \subitem {DataStructures}, \hyperpage{103}
+  \item {settingMinHeap}
+    \subitem {DataStructures}, \hyperpage{103}
+  \item {settingTrie}
+    \subitem {DataStructures}, \hyperpage{104}
+  \item {SHAPE}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {show}
+    \subitem {Button}, \hyperpage{71}
+    \subitem {DataStructures}, \hyperpage{105}
+    \subitem {Display}, \hyperpage{125}
+    \subitem {Object}, \hyperpage{203}
+    \subitem {Sprite}, \hyperpage{233}
+  \item {SIUSTRING}, \hyperpage{27}
+    \subitem {isSeparator}, \hyperpage{28}
+    \subitem {split}, \hyperpage{28}
+  \item {SIZE}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}
+  \item {size}
+    \subitem {DataStructures}, \hyperpage{105}
+    \subitem {maxHeap}, \hyperpage{165}
+    \subitem {minHeap}, \hyperpage{175}
+  \item {SLOW\_DOWN}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {slowDown}
+    \subitem {AVL}, \hyperpage{43}
+    \subitem {DataStructures}, \hyperpage{105}
+    \subitem {HashTable}, \hyperpage{154}
+  \item {SPEED\_UP}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}
+  \item {speedUp}
+    \subitem {AVL}, \hyperpage{44}
+    \subitem {DataStructures}, \hyperpage{105}
+    \subitem {HashTable}, \hyperpage{154}
+  \item {split}
+    \subitem {BTree4th}, \hyperpage{50}
+    \subitem {SIUSTRING}, \hyperpage{28}
+  \item {Sprite}, \hyperpage{213}
+    \subitem {$\sim$Sprite}, \hyperpage{215}
+    \subitem {addCharacter}, \hyperpage{216}
+    \subitem {addText}, \hyperpage{216}
+    \subitem {aligning}, \hyperpage{216, 217}
+    \subitem {backspace}, \hyperpage{217}
+    \subitem {changeToCircle}, \hyperpage{218, 219}
+    \subitem {changeToRectangle}, \hyperpage{219}
+    \subitem {coloring}, \hyperpage{219, 220}
+    \subitem {cropping}, \hyperpage{220}
+    \subitem {fillCircleByColor}, \hyperpage{221}
+    \subitem {fillRectangleByColor}, \hyperpage{221}
+    \subitem {fillWithColor}, \hyperpage{222}
+    \subitem {fitTheTexture}, \hyperpage{222}
+    \subitem {getColor}, \hyperpage{222}
+    \subitem {getCrop}, \hyperpage{222}
+    \subitem {getH}, \hyperpage{223}
+    \subitem {getLocation}, \hyperpage{223}
+    \subitem {getSize}, \hyperpage{223}
+    \subitem {getText}, \hyperpage{223}
+    \subitem {getW}, \hyperpage{223}
+    \subitem {getX}, \hyperpage{224}
+    \subitem {getY}, \hyperpage{224}
+    \subitem {hide}, \hyperpage{224}
+    \subitem {highlight}, \hyperpage{224}
+    \subitem {importFromJson}, \hyperpage{224, 225}
+    \subitem {initBackground}, \hyperpage{225}
+    \subitem {initInput}, \hyperpage{225}
+    \subitem {initObjects}, \hyperpage{226}
+    \subitem {initTextBox}, \hyperpage{226}
+    \subitem {isLieInside}, \hyperpage{226, 227}
+    \subitem {isVisible}, \hyperpage{227}
+    \subitem {linking}, \hyperpage{228}
+    \subitem {locating}, \hyperpage{228}
+    \subitem {locatingH}, \hyperpage{229}
+    \subitem {locatingW}, \hyperpage{229}
+    \subitem {locatingX}, \hyperpage{229}
+    \subitem {locatingY}, \hyperpage{229}
+    \subitem {moveX}, \hyperpage{230}
+    \subitem {moveY}, \hyperpage{230}
+    \subitem {noCropping}, \hyperpage{230}
+    \subitem {removeCharacter}, \hyperpage{230, 231}
+    \subitem {rendering}, \hyperpage{231}
+    \subitem {setFont}, \hyperpage{231}
+    \subitem {setFontColor}, \hyperpage{231}
+    \subitem {setShape}, \hyperpage{232}
+    \subitem {setText}, \hyperpage{232}
+    \subitem {setTextBox}, \hyperpage{232}
+    \subitem {setTextBoxTransparent}, \hyperpage{233}
+    \subitem {show}, \hyperpage{233}
+    \subitem {Sprite}, \hyperpage{215}
+    \subitem {textToTexture}, \hyperpage{233}
+    \subitem {textureFromFile}, \hyperpage{233}
+    \subitem {typing}, \hyperpage{234}
+    \subitem {unhighlight}, \hyperpage{234}
+    \subitem {zoom}, \hyperpage{234}
+    \subitem {zoomH}, \hyperpage{235}
+    \subitem {zoomInMiddle}, \hyperpage{235}
+    \subitem {zoomW}, \hyperpage{235}
+  \item {sprite.hpp}
+    \subitem {json}, \hyperpage{262}
+  \item {SPRITE\_}
+    \subitem {PATH::ATB}, \hyperpage{22}
+  \item {sqr}
+    \subitem {init.cpp}, \hyperpage{270}
+  \item {src/AVL/constructor.cpp}, \hyperpage{263}
+  \item {src/AVL/destructor.cpp}, \hyperpage{265}
+  \item {src/AVL/event.cpp}, \hyperpage{267}
+  \item {src/AVL/operator/delete.cpp}, \hyperpage{269}
+  \item {src/AVL/operator/init.cpp}, \hyperpage{269}
+  \item {src/AVL/operator/insert.cpp}, \hyperpage{271}
+  \item {src/AVL/operator/search.cpp}, \hyperpage{272}
+  \item {src/AVL/rendering.cpp}, \hyperpage{273}
+  \item {src/AVL/rotate.cpp}, \hyperpage{275}
+  \item {src/AVL/step.cpp}, \hyperpage{275}
+  \item {src/btree4th/constructor.cpp}, \hyperpage{263}
+  \item {src/btree4th/destructor.cpp}, \hyperpage{265}
+  \item {src/btree4th/node.cpp}, \hyperpage{275}
+  \item {src/btree4th/operator/addRecord.cpp}, \hyperpage{276}
+  \item {src/btree4th/operator/init.cpp}, \hyperpage{269}
+  \item {src/btree4th/operator/insert.cpp}, \hyperpage{271}
+  \item {src/btree4th/operator/search.cpp}, \hyperpage{272}
+  \item {src/btree4th/operator/split.cpp}, \hyperpage{276}
+  \item {src/button/action.cpp}, \hyperpage{276}
+  \item {src/button/constructor.cpp}, \hyperpage{263}
+  \item {src/button/destructor.cpp}, \hyperpage{265}
+  \item {src/button/event.cpp}, \hyperpage{267}
+  \item {src/button/mouse\_action.cpp}, \hyperpage{276}
+  \item {src/button/rendering.cpp}, \hyperpage{273}
+  \item {src/data\_structures/AVL.cpp}, \hyperpage{276}
+  \item {src/data\_structures/btree4th.cpp}, \hyperpage{276}
+  \item {src/data\_structures/constructor.cpp}, \hyperpage{263}
+  \item {src/data\_structures/destructor.cpp}, \hyperpage{265}
+  \item {src/data\_structures/event.cpp}, \hyperpage{267}
+  \item {src/data\_structures/graph.cpp}, \hyperpage{276}
+  \item {src/data\_structures/hash\_table.cpp}, \hyperpage{276}
+  \item {src/data\_structures/heap.cpp}, \hyperpage{276}
+  \item {src/data\_structures/operator.cpp}, \hyperpage{276}
+  \item {src/data\_structures/operator/AVL/init.cpp}, \hyperpage{269}
+  \item {src/data\_structures/operator/AVL/insert.cpp}, \hyperpage{271}
+  \item {src/data\_structures/operator/AVL/remove.cpp}, \hyperpage{277}
+  \item {src/data\_structures/operator/AVL/search.cpp}, \hyperpage{272}
+  \item {src/data\_structures/operator/AVL/setting.cpp}, 
+		\hyperpage{278}
+  \item {src/data\_structures/operator/graph/dijkstra.cpp}, 
+		\hyperpage{279}
+  \item {src/data\_structures/operator/graph/init.cpp}, \hyperpage{269}
+  \item {src/data\_structures/operator/graph/mst.cpp}, \hyperpage{279}
+  \item {src/data\_structures/operator/graph/scc.cpp}, \hyperpage{279}
+  \item {src/data\_structures/operator/graph/setting.cpp}, 
+		\hyperpage{278}
+  \item {src/data\_structures/operator/hash\_table/init.cpp}, 
+		\hyperpage{269}
+  \item {src/data\_structures/operator/hash\_table/insert.cpp}, 
+		\hyperpage{271}
+  \item {src/data\_structures/operator/hash\_table/remove.cpp}, 
+		\hyperpage{277}
+  \item {src/data\_structures/operator/hash\_table/search.cpp}, 
+		\hyperpage{272}
+  \item {src/data\_structures/operator/hash\_table/setting.cpp}, 
+		\hyperpage{278}
+  \item {src/data\_structures/operator/minheap/init.cpp}, 
+		\hyperpage{269}
+  \item {src/data\_structures/operator/minheap/insert.cpp}, 
+		\hyperpage{271}
+  \item {src/data\_structures/operator/minheap/pop.cpp}, 
+		\hyperpage{280}
+  \item {src/data\_structures/operator/minheap/setting.cpp}, 
+		\hyperpage{278}
+  \item {src/data\_structures/operator/minheap/size.cpp}, 
+		\hyperpage{280}
+  \item {src/data\_structures/operator/minheap/top.cpp}, 
+		\hyperpage{280}
+  \item {src/data\_structures/operator/trie/init.cpp}, \hyperpage{269}
+  \item {src/data\_structures/operator/trie/insert.cpp}, 
+		\hyperpage{271}
+  \item {src/data\_structures/operator/trie/remove.cpp}, 
+		\hyperpage{277}
+  \item {src/data\_structures/operator/trie/search.cpp}, 
+		\hyperpage{272}
+  \item {src/data\_structures/operator/trie/setting.cpp}, 
+		\hyperpage{279}
+  \item {src/data\_structures/rendering.cpp}, \hyperpage{273}
+  \item {src/data\_structures/step.cpp}, \hyperpage{275}
+  \item {src/data\_structures/trie.cpp}, \hyperpage{280}
+  \item {src/display/constructor.cpp}, \hyperpage{263}
+  \item {src/display/destructor.cpp}, \hyperpage{266}
+  \item {src/display/event.cpp}, \hyperpage{267}
+  \item {src/display/rendering.cpp}, \hyperpage{273}
+  \item {src/graph/constructor.cpp}, \hyperpage{263}
+  \item {src/graph/destructor.cpp}, \hyperpage{266}
+  \item {src/graph/event.cpp}, \hyperpage{268}
+  \item {src/graph/operator/dijkstra.cpp}, \hyperpage{279}
+  \item {src/graph/operator/init.cpp}, \hyperpage{270}
+  \item {src/graph/operator/mst.cpp}, \hyperpage{279}
+  \item {src/graph/operator/repair.cpp}, \hyperpage{280}
+  \item {src/graph/operator/scc.cpp}, \hyperpage{280}
+  \item {src/graph/rendering.cpp}, \hyperpage{273}
+  \item {src/hash\_table/constructor.cpp}, \hyperpage{264}
+  \item {src/hash\_table/destructor.cpp}, \hyperpage{266}
+  \item {src/hash\_table/event.cpp}, \hyperpage{268}
+  \item {src/hash\_table/operator/init.cpp}, \hyperpage{270}
+  \item {src/hash\_table/operator/insert.cpp}, \hyperpage{271}
+  \item {src/hash\_table/operator/remove.cpp}, \hyperpage{277}
+  \item {src/hash\_table/operator/search.cpp}, \hyperpage{272}
+  \item {src/hash\_table/rendering.cpp}, \hyperpage{273}
+  \item {src/hash\_table/step.cpp}, \hyperpage{275}
+  \item {src/inputbox/constructor.cpp}, \hyperpage{264}
+  \item {src/inputbox/destructor.cpp}, \hyperpage{266}
+  \item {src/inputbox/event.cpp}, \hyperpage{268}
+  \item {src/inputbox/operator.cpp}, \hyperpage{277}
+  \item {src/inputbox/rendering.cpp}, \hyperpage{274}
+  \item {src/inputbox/typing.cpp}, \hyperpage{280}
+  \item {src/main.cpp}, \hyperpage{281}
+  \item {src/maxheap/constructor.cpp}, \hyperpage{264}
+  \item {src/maxheap/destructor.cpp}, \hyperpage{266}
+  \item {src/maxheap/operator/getmax.cpp}, \hyperpage{281}
+  \item {src/maxheap/operator/heapify.cpp}, \hyperpage{281}
+  \item {src/maxheap/operator/init.cpp}, \hyperpage{270}
+  \item {src/maxheap/operator/insert.cpp}, \hyperpage{271}
+  \item {src/maxheap/operator/remove.cpp}, \hyperpage{277}
+  \item {src/maxheap/operator/size.cpp}, \hyperpage{280}
+  \item {src/maxheap/rendering.cpp}, \hyperpage{274}
+  \item {src/minheap/constructor.cpp}, \hyperpage{264}
+  \item {src/minheap/destructor.cpp}, \hyperpage{266}
+  \item {src/minheap/event.cpp}, \hyperpage{268}
+  \item {src/minheap/operator/getmin.cpp}, \hyperpage{281}
+  \item {src/minheap/operator/heapify.cpp}, \hyperpage{281}
+  \item {src/minheap/operator/init.cpp}, \hyperpage{270}
+  \item {src/minheap/operator/insert.cpp}, \hyperpage{272}
+  \item {src/minheap/operator/remove.cpp}, \hyperpage{277}
+  \item {src/minheap/operator/size.cpp}, \hyperpage{280}
+  \item {src/minheap/rendering.cpp}, \hyperpage{274}
+  \item {src/minheap/step.cpp}, \hyperpage{275}
+  \item {src/object/coloring.cpp}, \hyperpage{282}
+  \item {src/object/constructor.cpp}, \hyperpage{264}
+  \item {src/object/cropping.cpp}, \hyperpage{282}
+  \item {src/object/destructor.cpp}, \hyperpage{266}
+  \item {src/object/external\_storage.cpp}, \hyperpage{282}
+  \item {src/object/font.cpp}, \hyperpage{282}
+  \item {src/object/locating.cpp}, \hyperpage{282}
+  \item {src/object/rendering.cpp}, \hyperpage{274}
+  \item {src/object/shape.cpp}, \hyperpage{283}
+  \item {src/object/visible.cpp}, \hyperpage{283}
+  \item {src/script/constructor.cpp}, \hyperpage{264}
+  \item {src/script/destructor.cpp}, \hyperpage{266}
+  \item {src/script/event.cpp}, \hyperpage{268}
+  \item {src/script/highlight.cpp}, \hyperpage{283}
+  \item {src/script/rendering.cpp}, \hyperpage{274}
+  \item {src/services/file.cpp}, \hyperpage{283}
+  \item {src/services/json.cpp}, \hyperpage{283}
+  \item {src/services/number.cpp}, \hyperpage{283}
+  \item {src/services/random.cpp}, \hyperpage{284}
+  \item {src/services/string.cpp}, \hyperpage{284}
+  \item {src/sprite/aligning.cpp}, \hyperpage{284}
+  \item {src/sprite/coloring.cpp}, \hyperpage{282}
+  \item {src/sprite/constructor.cpp}, \hyperpage{265}
+  \item {src/sprite/destructor.cpp}, \hyperpage{267}
+  \item {src/sprite/locating.cpp}, \hyperpage{282}
+  \item {src/sprite/rendering.cpp}, \hyperpage{274}
+  \item {src/sprite/textbox.cpp}, \hyperpage{284}
+  \item {src/trie/constructor.cpp}, \hyperpage{265}
+  \item {src/trie/destructor.cpp}, \hyperpage{267}
+  \item {src/trie/event.cpp}, \hyperpage{268}
+  \item {src/trie/operator/init.cpp}, \hyperpage{270}
+  \item {src/trie/operator/insert.cpp}, \hyperpage{272}
+  \item {src/trie/operator/remove.cpp}, \hyperpage{278}
+  \item {src/trie/operator/search.cpp}, \hyperpage{273}
+  \item {src/trie/rendering.cpp}, \hyperpage{274}
+  \item {src/trie/step.cpp}, \hyperpage{275}
+  \item {src/window/constructor.cpp}, \hyperpage{265}
+  \item {src/window/destructor.cpp}, \hyperpage{267}
+  \item {src/window/event.cpp}, \hyperpage{268}
+  \item {src/window/rendering.cpp}, \hyperpage{274}
+  \item {src/window/running.cpp}, \hyperpage{285}
+  \item {src/window/status.cpp}, \hyperpage{285}
+  \item {src/window/updating.cpp}, \hyperpage{285}
+  \item {STRING}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {STRINGS}
+    \subitem {GLOBAL.hpp}, \hyperpage{257}
+  \item {stringToArray}
+    \subitem {NUMBER}, \hyperpage{18}
+  \item {stringToInt}
+    \subitem {NUMBER}, \hyperpage{18}
+  \item {swap}
+    \subitem {distanceHeap}, \hyperpage{129}
+    \subitem {maxHeap}, \hyperpage{165}
+    \subitem {minHeap}, \hyperpage{175}
+  \item {swapable}
+    \subitem {distanceHeap}, \hyperpage{129}
+    \subitem {maxHeap}, \hyperpage{165}
+    \subitem {minHeap}, \hyperpage{175}
+
+  \indexspace
+
+  \item {Tarjan}
+    \subitem {Graph}, \hyperpage{140}
+  \item {textToTexture}
+    \subitem {Button}, \hyperpage{71}
+    \subitem {DataStructures}, \hyperpage{106}
+    \subitem {Display}, \hyperpage{125}
+    \subitem {Object}, \hyperpage{204}
+    \subitem {Sprite}, \hyperpage{233}
+  \item {textureFromFile}
+    \subitem {Button}, \hyperpage{71}
+    \subitem {DataStructures}, \hyperpage{106}
+    \subitem {Display}, \hyperpage{126}
+    \subitem {Object}, \hyperpage{204}
+    \subitem {Sprite}, \hyperpage{233}
+  \item {TOP}
+    \subitem {GLOBAL.hpp}, \hyperpage{253}, \hyperpage{256}, 
+		\hyperpage{258}
+  \item {top}
+    \subitem {DataStructures}, \hyperpage{106}
+    \subitem {maxHeap}, \hyperpage{166}
+    \subitem {minHeap}, \hyperpage{175}
+  \item {TRIANGLE}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {TRIE}
+    \subitem {GLOBAL.hpp}, \hyperpage{256}
+  \item {Trie}, \hyperpage{236}
+    \subitem {$\sim$Trie}, \hyperpage{237}
+    \subitem {closeScript}, \hyperpage{237}
+    \subitem {drawEgdes}, \hyperpage{238}
+    \subitem {highlight}, \hyperpage{238}
+    \subitem {init}, \hyperpage{238}
+    \subitem {insert}, \hyperpage{238}, \hyperpage{240}
+    \subitem {isReceiveEvent}, \hyperpage{240}
+    \subitem {locating}, \hyperpage{240}
+    \subitem {react}, \hyperpage{241}
+    \subitem {remove}, \hyperpage{242, 243}
+    \subitem {rendering}, \hyperpage{243}
+    \subitem {search}, \hyperpage{244}
+    \subitem {setEdgesColor}, \hyperpage{245}
+    \subitem {setNodeColor}, \hyperpage{245}
+    \subitem {setting}, \hyperpage{245}
+    \subitem {Trie}, \hyperpage{236}
+    \subitem {unhighlight}, \hyperpage{245}
+    \subitem {waitForStep}, \hyperpage{246}
+  \item {TRIE\_}
+    \subitem {PATH::SAVING}, \hyperpage{24}
+  \item {typing}
+    \subitem {Sprite}, \hyperpage{234}
+
+  \indexspace
+
+  \item {unhighlight}
+    \subitem {AVL}, \hyperpage{44}
+    \subitem {HashTable}, \hyperpage{154}
+    \subitem {minHeap}, \hyperpage{176}
+    \subitem {Script}, \hyperpage{212}
+    \subitem {Sprite}, \hyperpage{234}
+    \subitem {Trie}, \hyperpage{245}
+  \item {unionEdge}
+    \subitem {DSU}, \hyperpage{132, 133}
+  \item {unionEdges}
+    \subitem {Graph}, \hyperpage{141}
+  \item {unplugSmallest}
+    \subitem {AVL}, \hyperpage{44}
+
+  \indexspace
+
+  \item {value}
+    \subitem {distanceHeap}, \hyperpage{130}
+  \item {valuesReachedZero}
+    \subitem {remove.cpp}, \hyperpage{278}
+  \item {VERTICAL\_ALIGN}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {visible}
+    \subitem {Position}, \hyperpage{207}
+
+  \indexspace
+
+  \item {waitForStep}
+    \subitem {AVL}, \hyperpage{44}
+    \subitem {Graph}, \hyperpage{141}
+    \subitem {HashTable}, \hyperpage{154}
+    \subitem {minHeap}, \hyperpage{176}
+    \subitem {Trie}, \hyperpage{246}
+  \item {WINDOW\_STATUS}
+    \subitem {GLOBAL.hpp}, \hyperpage{258}
+  \item {WORKING\_}
+    \subitem {DISPLAY}, \hyperpage{13}
+
+  \indexspace
+
+  \item {x}
+    \subitem {Point}, \hyperpage{206}
+
+  \indexspace
+
+  \item {y}
+    \subitem {Point}, \hyperpage{206}
+
+  \indexspace
+
+  \item {zoom}
+    \subitem {Button}, \hyperpage{71}
+    \subitem {DataStructures}, \hyperpage{107}
+    \subitem {Display}, \hyperpage{126}
+    \subitem {Object}, \hyperpage{204}
+    \subitem {Sprite}, \hyperpage{234}
+  \item {zoomH}
+    \subitem {Button}, \hyperpage{72}
+    \subitem {DataStructures}, \hyperpage{107}
+    \subitem {Display}, \hyperpage{126}
+    \subitem {Object}, \hyperpage{204}
+    \subitem {Sprite}, \hyperpage{235}
+  \item {zoomInMiddle}
+    \subitem {Button}, \hyperpage{72}
+    \subitem {DataStructures}, \hyperpage{107}
+    \subitem {Display}, \hyperpage{126}
+    \subitem {Object}, \hyperpage{205}
+    \subitem {Sprite}, \hyperpage{235}
+  \item {zoomW}
+    \subitem {Button}, \hyperpage{72}
+    \subitem {DataStructures}, \hyperpage{107}
+    \subitem {Display}, \hyperpage{127}
+    \subitem {Object}, \hyperpage{205}
+    \subitem {Sprite}, \hyperpage{235}
+
+\end{theindex}

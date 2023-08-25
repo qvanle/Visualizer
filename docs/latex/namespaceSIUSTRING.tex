@@ -1,0 +1,65 @@
+\hypertarget{namespaceSIUSTRING}{}\doxysection{SIUSTRING Namespace Reference}
+\label{namespaceSIUSTRING}\index{SIUSTRING@{SIUSTRING}}
+
+
+Features for std\+::string.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}{is\+Separator}} (char c)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{namespaceSIUSTRING_ad92654904f9a3ed6eb214ccd2c92c5e0}{split}} (std\+::string s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Features for std\+::string. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}\label{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}} 
+\index{SIUSTRING@{SIUSTRING}!isSeparator@{isSeparator}}
+\index{isSeparator@{isSeparator}!SIUSTRING@{SIUSTRING}}
+\doxysubsubsection{\texorpdfstring{isSeparator()}{isSeparator()}}
+{\footnotesize\ttfamily bool SIUSTRING\+::is\+Separator (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file string.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                   \{}
+\DoxyCodeLine{4     \textcolor{keywordflow}{return} (c == \textcolor{charliteral}{' '} || c == \textcolor{charliteral}{'\(\backslash\)t'} || c == \textcolor{charliteral}{'\(\backslash\)n'} || c == \textcolor{charliteral}{'\(\backslash\)r'} || c == \textcolor{charliteral}{','});}
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceSIUSTRING_ad92654904f9a3ed6eb214ccd2c92c5e0}\label{namespaceSIUSTRING_ad92654904f9a3ed6eb214ccd2c92c5e0}} 
+\index{SIUSTRING@{SIUSTRING}!split@{split}}
+\index{split@{split}!SIUSTRING@{SIUSTRING}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ SIUSTRING\+::split (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file string.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     std::vector<std::string> result;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{12     \textcolor{keywordflow}{while} (i < s.length()) }
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keywordflow}{while}(i < s.length() \&\& \mbox{\hyperlink{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}{isSeparator}}(s[i])) i++;}
+\DoxyCodeLine{15         \textcolor{keywordflow}{if} (i >= s.length()) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{16         result.push\_back(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{17         \textcolor{keywordflow}{while}(i < s.length() \&\& !\mbox{\hyperlink{namespaceSIUSTRING_a62d87bd2b21bdabf3fc77d6a1a8b9c0f}{isSeparator}}(s[i])) result.back() += s[i++];}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
