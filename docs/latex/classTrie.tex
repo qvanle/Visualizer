@@ -37,6 +37,18 @@ bool \mbox{\hyperlink{classTrie_aa6d00cee0f41dba0dc58447856f26686}{is\+Receive\+
 void \mbox{\hyperlink{classTrie_a849c13fcfac831e9013dc12790016bc8}{close\+Script}} ()
 \item 
 void \mbox{\hyperlink{classTrie_a4a5d56a0e3c77f8baf1efcb350bd8a95}{setting}} (SDL\+\_\+\+Color c1, SDL\+\_\+\+Color c2, SDL\+\_\+\+Color c3, SDL\+\_\+\+Color c4)
+\item 
+void \mbox{\hyperlink{classTrie_aa9baf1c141bd1b2262b556ef95054127}{go\+Off}} ()
+\item 
+void \mbox{\hyperlink{classTrie_a95a71943d5b1848da1f9108f215d011f}{go\+On}} ()
+\item 
+void \mbox{\hyperlink{classTrie_a45388d458be3ad78ab2509ace3f77a13}{speed\+Up}} ()
+\item 
+void \mbox{\hyperlink{classTrie_af904edfe971695f9e62cc90154b28c2d}{slow\+Down}} ()
+\item 
+void \mbox{\hyperlink{classTrie_a69b1642a8873688324c511bd68b7624b}{go\+Next}} ()
+\item 
+void \mbox{\hyperlink{classTrie_aaef2c180632252b4d66469012d761b39}{go\+Back}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -96,31 +108,30 @@ Definition at line 14 of file constructor.\+cpp.
 \DoxyCodeLine{28     distanceY = 80;}
 \DoxyCodeLine{29     isMoving = \textcolor{keyword}{false};}
 \DoxyCodeLine{30 }
-\DoxyCodeLine{31     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{32     isPause = \textcolor{keyword}{false};}
-\DoxyCodeLine{33     stepWait = 600;}
-\DoxyCodeLine{34     isAnimate = \textcolor{keyword}{false};}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
-\DoxyCodeLine{37     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39     currentScript = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{40     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{41     \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}}-\/>linking(\textcolor{stringliteral}{"{}trie/insert"{}});}
-\DoxyCodeLine{42     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}};}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{45     \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}}-\/>linking(\textcolor{stringliteral}{"{}trie/remove"{}});}
-\DoxyCodeLine{46     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}};}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{49     \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}}-\/>linking(\textcolor{stringliteral}{"{}trie/search"{}});}
-\DoxyCodeLine{50     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{53     \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}}-\/>linking(\textcolor{stringliteral}{"{}trie/init"{}});}
-\DoxyCodeLine{54     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}};}
-\DoxyCodeLine{55 \}}
+\DoxyCodeLine{31     pause = \textcolor{keyword}{false};}
+\DoxyCodeLine{32     stepWait = 600;}
+\DoxyCodeLine{33     isAnimate = \textcolor{keyword}{false};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{36     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{39     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{40     \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}}-\/>linking(\textcolor{stringliteral}{"{}trie/insert"{}});}
+\DoxyCodeLine{41     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classTrie_a12a4d1a4c233552b3789f46283b20545}{insert}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{44     \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}}-\/>linking(\textcolor{stringliteral}{"{}trie/remove"{}});}
+\DoxyCodeLine{45     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classTrie_addf2c79ab18b290872b7e8287b3b5751}{remove}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{48     \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}}-\/>linking(\textcolor{stringliteral}{"{}trie/search"{}});}
+\DoxyCodeLine{49     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classTrie_a953450931a7c1862c92cf3aaa10efa7d}{search}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{52     \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}}-\/>linking(\textcolor{stringliteral}{"{}trie/init"{}});}
+\DoxyCodeLine{53     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}{init}};}
+\DoxyCodeLine{54 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTrie_abf9d6f48d556e09d1b292412df153a4b}\label{classTrie_abf9d6f48d556e09d1b292412df153a4b}} 
@@ -189,6 +200,82 @@ Definition at line 4 of file rendering.\+cpp.
 \DoxyCodeLine{15 \}}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{classTrie_aaef2c180632252b4d66469012d761b39}\label{classTrie_aaef2c180632252b4d66469012d761b39}} 
+\index{Trie@{Trie}!goBack@{goBack}}
+\index{goBack@{goBack}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{goBack()}{goBack()}}
+{\footnotesize\ttfamily void Trie\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTrie_a69b1642a8873688324c511bd68b7624b}\label{classTrie_a69b1642a8873688324c511bd68b7624b}} 
+\index{Trie@{Trie}!goNext@{goNext}}
+\index{goNext@{goNext}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{goNext()}{goNext()}}
+{\footnotesize\ttfamily void Trie\+::go\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classTrie_aa9baf1c141bd1b2262b556ef95054127}{goOff}}();}
+\DoxyCodeLine{34     std::this\_thread::sleep\_for(std::chrono::milliseconds(10));}
+\DoxyCodeLine{35     \mbox{\hyperlink{classTrie_aa9baf1c141bd1b2262b556ef95054127}{goOff}}();}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTrie_aa9baf1c141bd1b2262b556ef95054127}\label{classTrie_aa9baf1c141bd1b2262b556ef95054127}} 
+\index{Trie@{Trie}!goOff@{goOff}}
+\index{goOff@{goOff}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{goOff()}{goOff()}}
+{\footnotesize\ttfamily void Trie\+::go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{46         pause \string^= \textcolor{keyword}{true};}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48     queue\_cv.notify\_one();}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTrie_a95a71943d5b1848da1f9108f215d011f}\label{classTrie_a95a71943d5b1848da1f9108f215d011f}} 
+\index{Trie@{Trie}!goOn@{goOn}}
+\index{goOn@{goOn}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{goOn()}{goOn()}}
+{\footnotesize\ttfamily void Trie\+::go\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classTrie_a8d8ba8a3824d1b8072ff318cf5df42df}\label{classTrie_a8d8ba8a3824d1b8072ff318cf5df42df}} 
 \index{Trie@{Trie}!highlight@{highlight}}
 \index{highlight@{highlight}!Trie@{Trie}}
@@ -197,21 +284,21 @@ Definition at line 4 of file rendering.\+cpp.
 
 
 
-Definition at line 26 of file step.\+cpp.
+Definition at line 63 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27 \{}
-\DoxyCodeLine{28     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{29     \{}
-\DoxyCodeLine{30         animate\_mutex.lock();}
-\DoxyCodeLine{31         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{32         \{}
-\DoxyCodeLine{33             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
-\DoxyCodeLine{34         \}}
-\DoxyCodeLine{35         animate\_mutex.unlock();}
-\DoxyCodeLine{36     \}}
-\DoxyCodeLine{37 \}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67         animate\_mutex.lock();}
+\DoxyCodeLine{68         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{69         \{}
+\DoxyCodeLine{70             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72         animate\_mutex.unlock();}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}\label{classTrie_ac30e4ca5b9ae9fef263dcec24014da22}} 
@@ -407,43 +494,43 @@ Definition at line 3 of file event.\+cpp.
 
 
 
-Definition at line 57 of file constructor.\+cpp.
+Definition at line 56 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{58 \{}
-\DoxyCodeLine{59     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61     \textcolor{keywordtype}{int} j = 0;}
-\DoxyCodeLine{62     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 26; i++) }
-\DoxyCodeLine{63         \textcolor{keywordflow}{if}(node-\/>childs[i] != \textcolor{keyword}{nullptr}) j++;}
-\DoxyCodeLine{64     j /= 2;}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68     \textcolor{keywordflow}{for}(; j > 0; i++)}
-\DoxyCodeLine{69     \{}
-\DoxyCodeLine{70         \textcolor{keywordflow}{if}(node-\/>childs[i] == \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{71             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{72         j-\/-\/;}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74         shiftRight = \mbox{\hyperlink{classTrie_a34c09393358e41af66c91d3cadc855b3}{locating}}(node-\/>childs[i], shiftDown + 1, shiftRight);}
-\DoxyCodeLine{75     \}}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77     node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
-\DoxyCodeLine{78     node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
-\DoxyCodeLine{79     node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
-\DoxyCodeLine{80     shiftRight++;}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{keywordflow}{for}(; i < 26; i++)}
-\DoxyCodeLine{83     \{}
-\DoxyCodeLine{84         \textcolor{keywordflow}{if}(node-\/>childs[i] == \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{85             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{86         shiftRight = \mbox{\hyperlink{classTrie_a34c09393358e41af66c91d3cadc855b3}{locating}}(node-\/>childs[i], shiftDown + 1, shiftRight);}
-\DoxyCodeLine{87     \}}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89     \textcolor{keywordflow}{return} shiftRight;}
-\DoxyCodeLine{90 \}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{61     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 26; i++) }
+\DoxyCodeLine{62         \textcolor{keywordflow}{if}(node-\/>childs[i] != \textcolor{keyword}{nullptr}) j++;}
+\DoxyCodeLine{63     j /= 2;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keywordflow}{for}(; j > 0; i++)}
+\DoxyCodeLine{68     \{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{if}(node-\/>childs[i] == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{70             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{71         j-\/-\/;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         shiftRight = \mbox{\hyperlink{classTrie_a34c09393358e41af66c91d3cadc855b3}{locating}}(node-\/>childs[i], shiftDown + 1, shiftRight);}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
+\DoxyCodeLine{77     node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
+\DoxyCodeLine{78     node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{79     shiftRight++;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keywordflow}{for}(; i < 26; i++)}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if}(node-\/>childs[i] == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{84             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{85         shiftRight = \mbox{\hyperlink{classTrie_a34c09393358e41af66c91d3cadc855b3}{locating}}(node-\/>childs[i], shiftDown + 1, shiftRight);}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} shiftRight;}
+\DoxyCodeLine{89 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTrie_a9b59d8e42ba6b45b6d3a51c9639ddd88}\label{classTrie_a9b59d8e42ba6b45b6d3a51c9639ddd88}} 
@@ -763,34 +850,68 @@ Definition at line 49 of file search.\+cpp.
 
 
 
-Definition at line 92 of file constructor.\+cpp.
+Definition at line 91 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93 \{}
-\DoxyCodeLine{94     bgColor = c1;   }
-\DoxyCodeLine{95     nodeColor = c2;}
-\DoxyCodeLine{96     fontColor = c3;}
-\DoxyCodeLine{97     edgesColor = c4;}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99     std::queue<Node*> q;}
-\DoxyCodeLine{100     \textcolor{keywordflow}{if}(root != \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{101         q.push(root);}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103     \textcolor{keywordflow}{while}(!q.empty())}
-\DoxyCodeLine{104     \{}
-\DoxyCodeLine{105         Node* node = q.front();}
-\DoxyCodeLine{106         q.pop();}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         node-\/>sprite-\/>coloring(nodeColor);}
-\DoxyCodeLine{109         node-\/>sprite-\/>setFontColor(fontColor);}
-\DoxyCodeLine{110         node-\/>sprite-\/>coloring(nodeColor);}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 26; i++)}
-\DoxyCodeLine{113             \textcolor{keywordflow}{if}(node-\/>childs[i] != \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{114                 q.push(node-\/>childs[i]);}
-\DoxyCodeLine{115     \}}
-\DoxyCodeLine{116 \}}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     bgColor = c1;   }
+\DoxyCodeLine{94     nodeColor = c2;}
+\DoxyCodeLine{95     fontColor = c3;}
+\DoxyCodeLine{96     edgesColor = c4;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     std::queue<Node*> q;}
+\DoxyCodeLine{99     \textcolor{keywordflow}{if}(root != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{100         q.push(root);}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \textcolor{keywordflow}{while}(!q.empty())}
+\DoxyCodeLine{103     \{}
+\DoxyCodeLine{104         Node* node = q.front();}
+\DoxyCodeLine{105         q.pop();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{108         node-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{109         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 26; i++)}
+\DoxyCodeLine{112             \textcolor{keywordflow}{if}(node-\/>childs[i] != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{113                 q.push(node-\/>childs[i]);}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTrie_af904edfe971695f9e62cc90154b28c2d}\label{classTrie_af904edfe971695f9e62cc90154b28c2d}} 
+\index{Trie@{Trie}!slowDown@{slowDown}}
+\index{slowDown@{slowDown}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
+{\footnotesize\ttfamily void Trie\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classTrie_a45388d458be3ad78ab2509ace3f77a13}\label{classTrie_a45388d458be3ad78ab2509ace3f77a13}} 
+\index{Trie@{Trie}!speedUp@{speedUp}}
+\index{speedUp@{speedUp}!Trie@{Trie}}
+\doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
+{\footnotesize\ttfamily void Trie\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
+\DoxyCodeLine{54 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTrie_abd02b64b6a7ca27c8f0a47c225126daa}\label{classTrie_abd02b64b6a7ca27c8f0a47c225126daa}} 
@@ -801,21 +922,21 @@ Definition at line 92 of file constructor.\+cpp.
 
 
 
-Definition at line 39 of file step.\+cpp.
+Definition at line 76 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{40 \{}
-\DoxyCodeLine{41     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{42     \{}
-\DoxyCodeLine{43         animate\_mutex.lock();}
-\DoxyCodeLine{44         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{45         \{}
-\DoxyCodeLine{46             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
-\DoxyCodeLine{47         \}}
-\DoxyCodeLine{48         animate\_mutex.unlock();}
-\DoxyCodeLine{49     \}}
-\DoxyCodeLine{50 \}}
+\DoxyCodeLine{77 \{}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{79     \{}
+\DoxyCodeLine{80         animate\_mutex.lock();}
+\DoxyCodeLine{81         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{82         \{}
+\DoxyCodeLine{83             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         animate\_mutex.unlock();}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classTrie_aef87b01517edc98fde43e3d095ac91e7}\label{classTrie_aef87b01517edc98fde43e3d095ac91e7}} 
@@ -836,19 +957,16 @@ Definition at line 5 of file step.\+cpp.
 \DoxyCodeLine{9         ds\_mutex.unlock();}
 \DoxyCodeLine{10         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
 \DoxyCodeLine{11         ds\_mutex.lock();}
-\DoxyCodeLine{12     \}}
-\DoxyCodeLine{13     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
-\DoxyCodeLine{14     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
-\DoxyCodeLine{15     \{}
-\DoxyCodeLine{16         return ;}
-\DoxyCodeLine{17     \}}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{19     ds\_mutex.unlock();}
-\DoxyCodeLine{20     std::unique\_lock<std::mutex> lk(step\_mutex);}
-\DoxyCodeLine{21     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
-\DoxyCodeLine{22     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{23     ds\_mutex.lock();}
-\DoxyCodeLine{24 \}}
+\DoxyCodeLine{12         \{}
+\DoxyCodeLine{13             std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{14             \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{15         \}}
+\DoxyCodeLine{16         ds\_mutex.unlock();}
+\DoxyCodeLine{17         std::unique\_lock<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{18         queue\_cv.wait(lk, [\textcolor{keyword}{this}]\{\textcolor{keywordflow}{return} !pause;\});}
+\DoxyCodeLine{19         ds\_mutex.lock();}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21 \}}
 
 \end{DoxyCode}
 

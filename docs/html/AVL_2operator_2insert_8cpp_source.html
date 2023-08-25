@@ -168,30 +168,29 @@ $(document).ready(function(){initNavTree('AVL_2operator_2insert_8cpp_source.html
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    cache = <span class="keyword">new</span> Node(key, sprite);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    isPause = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    isQueue = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    isAnimate = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classAVL.html#a7e0909e0c2b0f170f4b397d0aa046bed">highlight</a>({0});</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classAVL.html#a6f008a067c2278bd867ac1399ce88512">waitForStep</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classAVL.html#a876f46963afd1c9e2d4a87ff0e1c17e0">unhighlight</a>({0});</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    root = <a class="code" href="classAVL.html#a3f63460de79580ca19e2ebdcc2b8b0e0">insert</a>(root, cache);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    maxHigh = <a class="code" href="classAVL.html#a3febcdaf7eb15615b4ff7ee4b9ff9ac4">maxDepth</a>(root);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    isAnimate = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    pause = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classAVL.html#a7e0909e0c2b0f170f4b397d0aa046bed">highlight</a>({0});</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classAVL.html#a6f008a067c2278bd867ac1399ce88512">waitForStep</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classAVL.html#a876f46963afd1c9e2d4a87ff0e1c17e0">unhighlight</a>({0});</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    root = <a class="code" href="classAVL.html#a3f63460de79580ca19e2ebdcc2b8b0e0">insert</a>(root, cache);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    maxHigh = <a class="code" href="classAVL.html#a3febcdaf7eb15615b4ff7ee4b9ff9ac4">maxDepth</a>(root);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    cache = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    cache = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b">DATA_STRUCTURES_OPERATOR::INSERT</a></div><div class="ttdeci">@ INSERT</div></div>
 <div class="ttc" id="aclassAVL_html_a3b2f4abf659dd22f81cbc003cb7664ad"><div class="ttname"><a href="classAVL.html#a3b2f4abf659dd22f81cbc003cb7664ad">AVL::balancing</a></div><div class="ttdeci">Node * balancing(Node *node)</div><div class="ttdef"><b>Definition:</b> <a href="rotate_8cpp_source.html#l00079">rotate.cpp:79</a></div></div>
 <div class="ttc" id="aclassAVL_html_a3f63460de79580ca19e2ebdcc2b8b0e0"><div class="ttname"><a href="classAVL.html#a3f63460de79580ca19e2ebdcc2b8b0e0">AVL::insert</a></div><div class="ttdeci">Node * insert(Node *node, Node *newNode)</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2operator_2insert_8cpp_source.html#l00005">insert.cpp:5</a></div></div>
-<div class="ttc" id="aclassAVL_html_a3febcdaf7eb15615b4ff7ee4b9ff9ac4"><div class="ttname"><a href="classAVL.html#a3febcdaf7eb15615b4ff7ee4b9ff9ac4">AVL::maxDepth</a></div><div class="ttdeci">int maxDepth()</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2constructor_8cpp_source.html#l00070">constructor.cpp:70</a></div></div>
-<div class="ttc" id="aclassAVL_html_a6f008a067c2278bd867ac1399ce88512"><div class="ttname"><a href="classAVL.html#a6f008a067c2278bd867ac1399ce88512">AVL::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00031">step.cpp:31</a></div></div>
-<div class="ttc" id="aclassAVL_html_a7e0909e0c2b0f170f4b397d0aa046bed"><div class="ttname"><a href="classAVL.html#a7e0909e0c2b0f170f4b397d0aa046bed">AVL::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00005">step.cpp:5</a></div></div>
-<div class="ttc" id="aclassAVL_html_a876f46963afd1c9e2d4a87ff0e1c17e0"><div class="ttname"><a href="classAVL.html#a876f46963afd1c9e2d4a87ff0e1c17e0">AVL::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00018">step.cpp:18</a></div></div>
+<div class="ttc" id="aclassAVL_html_a3febcdaf7eb15615b4ff7ee4b9ff9ac4"><div class="ttname"><a href="classAVL.html#a3febcdaf7eb15615b4ff7ee4b9ff9ac4">AVL::maxDepth</a></div><div class="ttdeci">int maxDepth()</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2constructor_8cpp_source.html#l00069">constructor.cpp:69</a></div></div>
+<div class="ttc" id="aclassAVL_html_a6f008a067c2278bd867ac1399ce88512"><div class="ttname"><a href="classAVL.html#a6f008a067c2278bd867ac1399ce88512">AVL::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00032">step.cpp:32</a></div></div>
+<div class="ttc" id="aclassAVL_html_a7e0909e0c2b0f170f4b397d0aa046bed"><div class="ttname"><a href="classAVL.html#a7e0909e0c2b0f170f4b397d0aa046bed">AVL::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00006">step.cpp:6</a></div></div>
+<div class="ttc" id="aclassAVL_html_a876f46963afd1c9e2d4a87ff0e1c17e0"><div class="ttname"><a href="classAVL.html#a876f46963afd1c9e2d4a87ff0e1c17e0">AVL::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="AVL_2step_8cpp_source.html#l00019">step.cpp:19</a></div></div>
 <div class="ttc" id="aclassSprite_html"><div class="ttname"><a href="classSprite.html">Sprite</a></div><div class="ttdoc">Object container Drawable.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8hpp_source.html#l00020">sprite.hpp:21</a></div></div>
 <div class="ttc" id="aclassSprite_html_a6c2311fb35a048c91f9691cd8e20ffe0"><div class="ttname"><a href="classSprite.html#a6c2311fb35a048c91f9691cd8e20ffe0">Sprite::setFontColor</a></div><div class="ttdeci">void setFontColor(SDL_Color c)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_2constructor_8cpp_source.html#l00031">constructor.cpp:31</a></div></div>
 <div class="ttc" id="aclassSprite_html_a820001b0f013a1dc4891de8134f6ca0d"><div class="ttname"><a href="classSprite.html#a820001b0f013a1dc4891de8134f6ca0d">Sprite::linking</a></div><div class="ttdeci">void linking(std::string n)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_2constructor_8cpp_source.html#l00021">constructor.cpp:21</a></div></div>

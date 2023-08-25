@@ -96,81 +96,120 @@ $(document).ready(function(){initNavTree('graph_2event_8cpp_source.html',''); in
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">if</span>(e.motion.x &lt; viewport.x || viewport.x + viewport.w &lt; e.motion.x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">if</span>(e.motion.y &lt; viewport.y || viewport.y + viewport.h &lt; e.motion.y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">if</span>(e.button.button == SDL_BUTTON_LEFT) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span>(isMoving) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">if</span>(e.motion.x &lt; viewport.x || viewport.x + viewport.w &lt; e.motion.x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">if</span>(e.motion.y &lt; viewport.y || viewport.y + viewport.h &lt; e.motion.y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span>(e.button.button == SDL_BUTTON_LEFT) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span>(isMoving) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(currentScript == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span>(currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">   29</a></span>&#160;<a class="code" href="classButton.html">Button</a>* <a class="code" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a>(SDL_Event&amp; e)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span>(isMoving)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                isMoving = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                chosenNode = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }<span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                isMoving = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                lastMousePressed.x = e.motion.x;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                lastMousePressed.y = e.motion.y;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        chosenNode = i;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION: </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">if</span>(!isMoving) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">int</span> dx = e.motion.x - lastMousePressed.x;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">int</span> dy = e.motion.y - lastMousePressed.y;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                lastMousePressed.x = e.motion.x;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                lastMousePressed.y = e.motion.y;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span>(chosenNode == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                chosenNode-&gt;sprite-&gt;moveX(dx);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                chosenNode-&gt;sprite-&gt;moveY(dy);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;defaut:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a>()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ds_mutex.unlock();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ds_mutex.lock();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">   32</a></span>&#160;<a class="code" href="classButton.html">Button</a>* <a class="code" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a>(SDL_Event&amp; e)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> currentScript-&gt;<a class="code" href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">react</a>(e);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(isMoving)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                isMoving = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                chosenNode = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }<span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                isMoving = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                lastMousePressed.x = e.motion.x;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                lastMousePressed.y = e.motion.y;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        chosenNode = i;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION: </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">return</span> currentScript-&gt;<a class="code" href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">react</a>(e);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span>(!isMoving) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">int</span> dx = e.motion.x - lastMousePressed.x;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">int</span> dy = e.motion.y - lastMousePressed.y;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                lastMousePressed.x = e.motion.x;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                lastMousePressed.y = e.motion.y;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span>(chosenNode == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                chosenNode-&gt;sprite-&gt;moveX(dx);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                chosenNode-&gt;sprite-&gt;moveY(dy);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;defaut:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ds_mutex.unlock();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ds_mutex.lock();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">Graph::closeScript</a>()</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    currentScript = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">Graph::highlight</a>(std::vector&lt;int&gt; l)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">Graph::unhighlight</a>(std::vector&lt;int&gt; l)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdoc">Button class that interact with user input.</div><div class="ttdef"><b>Definition:</b> <a href="button_8hpp_source.html#l00015">button.hpp:16</a></div></div>
-<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00075">event.cpp:75</a></div></div>
-<div class="ttc" id="aclassGraph_html_a291016bf2181acabb13b0be3f9241f97"><div class="ttname"><a href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00029">event.cpp:29</a></div></div>
+<div class="ttc" id="aclassGraph_html_a121fc9cf8d69028abb318d8922865c72"><div class="ttname"><a href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">Graph::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00096">event.cpp:96</a></div></div>
+<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00084">event.cpp:84</a></div></div>
+<div class="ttc" id="aclassGraph_html_a291016bf2181acabb13b0be3f9241f97"><div class="ttname"><a href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00032">event.cpp:32</a></div></div>
 <div class="ttc" id="aclassGraph_html_a3d474b1c86668c5f68ea9b71e88d5540"><div class="ttname"><a href="classGraph.html#a3d474b1c86668c5f68ea9b71e88d5540">Graph::isReceiveEvent</a></div><div class="ttdeci">bool isReceiveEvent(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00004">event.cpp:4</a></div></div>
+<div class="ttc" id="aclassGraph_html_a88f4ed964c4b521a8c30c11e4f8a433d"><div class="ttname"><a href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">Graph::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00105">event.cpp:105</a></div></div>
+<div class="ttc" id="aclassGraph_html_aafed25794b4b92c6a4cf69ced932766c"><div class="ttname"><a href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">Graph::closeScript</a></div><div class="ttdeci">void closeScript()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00091">event.cpp:91</a></div></div>
+<div class="ttc" id="aclassScript_html_a52c574264ef13f176fbaf74821f3f3e8"><div class="ttname"><a href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">Script::isReceiveEvent</a></div><div class="ttdeci">bool isReceiveEvent(SDL_Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="script_2event_8cpp_source.html#l00004">event.cpp:4</a></div></div>
+<div class="ttc" id="aclassScript_html_aa8486e367a767589984c2a2a078898ae"><div class="ttname"><a href="classScript.html#aa8486e367a767589984c2a2a078898ae">Script::unhighlight</a></div><div class="ttdeci">void unhighlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00009">highlight.cpp:9</a></div></div>
+<div class="ttc" id="aclassScript_html_ad060d7d1676e4b49ac87c00593023eb6"><div class="ttname"><a href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">Script::highlight</a></div><div class="ttdeci">void highlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00003">highlight.cpp:3</a></div></div>
+<div class="ttc" id="aclassScript_html_af7bd060b4589e5e17e0dd32124b90232"><div class="ttname"><a href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">Script::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="script_2event_8cpp_source.html#l00043">event.cpp:43</a></div></div>
 <div class="ttc" id="agraph_8hpp_html"><div class="ttname"><a href="graph_8hpp.html">graph.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

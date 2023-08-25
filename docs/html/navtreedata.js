@@ -68,10 +68,10 @@ var NAVTREEINDEX =
 [
 "AVL_2constructor_8cpp.html",
 "classButton.html#a7682b312620d0eb8755b0a71058c7ac8",
-"classHashTable.html#a5154ad1d725143eb7532cfd80aa01a89",
-"classminHeap.html#a723759bc11aa6b1e2b630ed9a76d92f0",
-"inputbox_2event_8cpp_source.html",
-"trie_2destructor_8cpp_source.html"
+"classHashTable.html#a32a4ba488b3de2220183982c55b9d841",
+"classmaxHeap.html#ab6401bf9d6e3c7a05b980ec4c37dadd9",
+"index.html#autotoc_md10",
+"structdistanceHeap.html#a47d9d9ffba2a4f40903313d46d23cb6a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

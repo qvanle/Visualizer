@@ -171,26 +171,44 @@ $(document).ready(function(){initNavTree('graph_2operator_2mst_8cpp_source.html'
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">Graph::unionEdges</a>()</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structDSU.html">DSU</a> dsu(nodes.size());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    nodirect = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : sortedEdges)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        i-&gt;mark = 3;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span>(!dsu.<a class="code" href="structDSU.html#ac81f87d687af174ef35c985716aa3e7a">isUnionized</a>(i))</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            i-&gt;mark = 1;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            dsu.<a class="code" href="structDSU.html#a0b4aeb02a4c7d69c833ea13cf5de35a4">unionEdge</a>(i);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }<span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            i-&gt;mark = 2;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00075">event.cpp:75</a></div></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    currentScript = script[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe">DATA_STRUCTURES_OPERATOR::MST</a>];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="structDSU.html">DSU</a> dsu(nodes.size());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    nodirect = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({0});</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({0});</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({1});</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({1});</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({2, 3, 4, 5, 6});</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : sortedEdges)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span>(nodirect &amp;&amp; i-&gt;u-&gt;value &gt; i-&gt;v-&gt;value)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        i-&gt;mark = 3;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span>(!dsu.<a class="code" href="structDSU.html#ac81f87d687af174ef35c985716aa3e7a">isUnionized</a>(i))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            i-&gt;mark = 1;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            dsu.<a class="code" href="structDSU.html#a0b4aeb02a4c7d69c833ea13cf5de35a4">unionEdge</a>(i);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }<span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            i-&gt;mark = 2;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({2, 3, 4, 5, 6});</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe">DATA_STRUCTURES_OPERATOR::MST</a></div><div class="ttdeci">@ MST</div></div>
+<div class="ttc" id="aclassGraph_html_a121fc9cf8d69028abb318d8922865c72"><div class="ttname"><a href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">Graph::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00096">event.cpp:96</a></div></div>
+<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00084">event.cpp:84</a></div></div>
 <div class="ttc" id="aclassGraph_html_a27cc542ccfc908de00cf0135978dfdd3"><div class="ttname"><a href="classGraph.html#a27cc542ccfc908de00cf0135978dfdd3">Graph::MST</a></div><div class="ttdeci">void MST()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00062">mst.cpp:62</a></div></div>
+<div class="ttc" id="aclassGraph_html_a88f4ed964c4b521a8c30c11e4f8a433d"><div class="ttname"><a href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">Graph::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00105">event.cpp:105</a></div></div>
 <div class="ttc" id="aclassGraph_html_aef96f70c574ff42ec00fa042c57e1658"><div class="ttname"><a href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">Graph::repair</a></div><div class="ttdeci">void repair()</div><div class="ttdef"><b>Definition:</b> <a href="repair_8cpp_source.html#l00003">repair.cpp:3</a></div></div>
 <div class="ttc" id="aclassGraph_html_af2f1a34928c3e5119d8a170a81167a5d"><div class="ttname"><a href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">Graph::unionEdges</a></div><div class="ttdeci">void unionEdges()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00082">mst.cpp:82</a></div></div>
 <div class="ttc" id="agraph_8hpp_html"><div class="ttname"><a href="graph_8hpp.html">graph.hpp</a></div></div>

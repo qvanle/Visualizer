@@ -124,25 +124,68 @@ $(document).ready(function(){initNavTree('minheap_2step_8cpp_source.html',''); i
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ds_mutex.unlock();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ds_mutex.lock();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::lock_guard&lt;std::mutex&gt; pause_lock(pause_mutex);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(isPause == <span class="keyword">false</span>) </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        return ;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ds_mutex.unlock();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::unique_lock&lt;std::mutex&gt; lk(step_mutex);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    step_cv.wait(lk, [&amp;]{<span class="keywordflow">return</span> isQueue == <span class="keyword">true</span>;});</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    isQueue = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ds_mutex.lock();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        ds_mutex.unlock();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::unique_lock&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        queue_cv.wait(lk, [<span class="keyword">this</span>]{<span class="keywordflow">return</span> !pause;});</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        ds_mutex.lock();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classminHeap.html#ad31cac4ec6b2bd0c582c6daf428a86ed">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#ad31cac4ec6b2bd0c582c6daf428a86ed">minHeap::goBack</a>()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classminHeap.html#ace58920621eb0e827cfc0268d01316ab">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#ace58920621eb0e827cfc0268d01316ab">minHeap::goNext</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classminHeap.html#a246d887f1502d086c8a8d09f647c7917">goOff</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(5));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classminHeap.html#a246d887f1502d086c8a8d09f647c7917">goOff</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classminHeap.html#a942f0682cc3a4bfedffa18a0bcbf162e">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#a942f0682cc3a4bfedffa18a0bcbf162e">minHeap::goOn</a>()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classminHeap.html#a246d887f1502d086c8a8d09f647c7917">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#a246d887f1502d086c8a8d09f647c7917">minHeap::goOff</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        pause ^= <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    queue_cv.notify_one();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classminHeap.html#a6dbc5aa02fa9f165e5309b813e88b62a">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#a6dbc5aa02fa9f165e5309b813e88b62a">minHeap::speedUp</a>()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span>(stepWait &gt;= 100) stepWait = stepWait / 2;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classminHeap.html#a84ee838b753dc86583b2804f387501ca">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classminHeap.html#a84ee838b753dc86583b2804f387501ca">minHeap::slowDown</a>()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span>(stepWait &lt;= 2000) stepWait = stepWait * 2;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="ttc" id="aclassScript_html_aa8486e367a767589984c2a2a078898ae"><div class="ttname"><a href="classScript.html#aa8486e367a767589984c2a2a078898ae">Script::unhighlight</a></div><div class="ttdeci">void unhighlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00009">highlight.cpp:9</a></div></div>
 <div class="ttc" id="aclassScript_html_ad060d7d1676e4b49ac87c00593023eb6"><div class="ttname"><a href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">Script::highlight</a></div><div class="ttdeci">void highlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00003">highlight.cpp:3</a></div></div>
+<div class="ttc" id="aclassminHeap_html_a246d887f1502d086c8a8d09f647c7917"><div class="ttname"><a href="classminHeap.html#a246d887f1502d086c8a8d09f647c7917">minHeap::goOff</a></div><div class="ttdeci">void goOff()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00068">step.cpp:68</a></div></div>
+<div class="ttc" id="aclassminHeap_html_a6dbc5aa02fa9f165e5309b813e88b62a"><div class="ttname"><a href="classminHeap.html#a6dbc5aa02fa9f165e5309b813e88b62a">minHeap::speedUp</a></div><div class="ttdeci">void speedUp()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00077">step.cpp:77</a></div></div>
+<div class="ttc" id="aclassminHeap_html_a84ee838b753dc86583b2804f387501ca"><div class="ttname"><a href="classminHeap.html#a84ee838b753dc86583b2804f387501ca">minHeap::slowDown</a></div><div class="ttdeci">void slowDown()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00082">step.cpp:82</a></div></div>
 <div class="ttc" id="aclassminHeap_html_a903b3d14e43685176264e8de8abbde68"><div class="ttname"><a href="classminHeap.html#a903b3d14e43685176264e8de8abbde68">minHeap::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00005">step.cpp:5</a></div></div>
+<div class="ttc" id="aclassminHeap_html_a942f0682cc3a4bfedffa18a0bcbf162e"><div class="ttname"><a href="classminHeap.html#a942f0682cc3a4bfedffa18a0bcbf162e">minHeap::goOn</a></div><div class="ttdeci">void goOn()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00064">step.cpp:64</a></div></div>
 <div class="ttc" id="aclassminHeap_html_aaef86e46de8878f16c8b7bd0f51f3549"><div class="ttname"><a href="classminHeap.html#aaef86e46de8878f16c8b7bd0f51f3549">minHeap::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00018">step.cpp:18</a></div></div>
 <div class="ttc" id="aclassminHeap_html_ac83f6817478b96472998e2dd117769b0"><div class="ttname"><a href="classminHeap.html#ac83f6817478b96472998e2dd117769b0">minHeap::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00031">step.cpp:31</a></div></div>
+<div class="ttc" id="aclassminHeap_html_ace58920621eb0e827cfc0268d01316ab"><div class="ttname"><a href="classminHeap.html#ace58920621eb0e827cfc0268d01316ab">minHeap::goNext</a></div><div class="ttdeci">void goNext()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00053">step.cpp:53</a></div></div>
+<div class="ttc" id="aclassminHeap_html_ad31cac4ec6b2bd0c582c6daf428a86ed"><div class="ttname"><a href="classminHeap.html#ad31cac4ec6b2bd0c582c6daf428a86ed">minHeap::goBack</a></div><div class="ttdeci">void goBack()</div><div class="ttdef"><b>Definition:</b> <a href="minheap_2step_8cpp_source.html#l00049">step.cpp:49</a></div></div>
 <div class="ttc" id="aminheap_8hpp_html"><div class="ttname"><a href="minheap_8hpp.html">minheap.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

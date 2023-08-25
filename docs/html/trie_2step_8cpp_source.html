@@ -98,50 +98,93 @@ $(document).ready(function(){initNavTree('trie_2step_8cpp_source.html',''); init
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        ds_mutex.unlock();</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        ds_mutex.lock();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::lock_guard&lt;std::mutex&gt; pause_lock(pause_mutex);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(isPause == <span class="keyword">false</span>) </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        return ;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ds_mutex.unlock();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::unique_lock&lt;std::mutex&gt; lk(step_mutex);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    step_cv.wait(lk, [&amp;]{<span class="keywordflow">return</span> isQueue == <span class="keyword">true</span>;});</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    isQueue = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ds_mutex.lock();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a>(std::vector&lt;int&gt; l)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        ds_mutex.unlock();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::unique_lock&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        queue_cv.wait(lk, [<span class="keyword">this</span>]{<span class="keywordflow">return</span> !pause;});</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        ds_mutex.lock();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classTrie.html#aaef2c180632252b4d66469012d761b39">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#aaef2c180632252b4d66469012d761b39">Trie::goBack</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classTrie.html#a69b1642a8873688324c511bd68b7624b">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#a69b1642a8873688324c511bd68b7624b">Trie::goNext</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        animate_mutex.lock();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        animate_mutex.unlock();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a>(std::vector&lt;int&gt; l)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        animate_mutex.lock();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        animate_mutex.unlock();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">goOff</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">goOff</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classTrie.html#a95a71943d5b1848da1f9108f215d011f">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#a95a71943d5b1848da1f9108f215d011f">Trie::goOn</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">Trie::goOff</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pause ^= <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    queue_cv.notify_one();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classTrie.html#a45388d458be3ad78ab2509ace3f77a13">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#a45388d458be3ad78ab2509ace3f77a13">Trie::speedUp</a>()</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(stepWait &gt;= 100) stepWait = stepWait / 2;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classTrie.html#af904edfe971695f9e62cc90154b28c2d">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#af904edfe971695f9e62cc90154b28c2d">Trie::slowDown</a>()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(stepWait &lt;= 2000) stepWait = stepWait * 2;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a>(std::vector&lt;int&gt; l)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        animate_mutex.lock();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        animate_mutex.unlock();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a>(std::vector&lt;int&gt; l)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        animate_mutex.lock();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        animate_mutex.unlock();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="ttc" id="aclassScript_html_aa8486e367a767589984c2a2a078898ae"><div class="ttname"><a href="classScript.html#aa8486e367a767589984c2a2a078898ae">Script::unhighlight</a></div><div class="ttdeci">void unhighlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00009">highlight.cpp:9</a></div></div>
 <div class="ttc" id="aclassScript_html_ad060d7d1676e4b49ac87c00593023eb6"><div class="ttname"><a href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">Script::highlight</a></div><div class="ttdeci">void highlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00003">highlight.cpp:3</a></div></div>
-<div class="ttc" id="aclassTrie_html_a8d8ba8a3824d1b8072ff318cf5df42df"><div class="ttname"><a href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00026">step.cpp:26</a></div></div>
-<div class="ttc" id="aclassTrie_html_abd02b64b6a7ca27c8f0a47c225126daa"><div class="ttname"><a href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00039">step.cpp:39</a></div></div>
+<div class="ttc" id="aclassTrie_html_a45388d458be3ad78ab2509ace3f77a13"><div class="ttname"><a href="classTrie.html#a45388d458be3ad78ab2509ace3f77a13">Trie::speedUp</a></div><div class="ttdeci">void speedUp()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00051">step.cpp:51</a></div></div>
+<div class="ttc" id="aclassTrie_html_a69b1642a8873688324c511bd68b7624b"><div class="ttname"><a href="classTrie.html#a69b1642a8873688324c511bd68b7624b">Trie::goNext</a></div><div class="ttdeci">void goNext()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00027">step.cpp:27</a></div></div>
+<div class="ttc" id="aclassTrie_html_a8d8ba8a3824d1b8072ff318cf5df42df"><div class="ttname"><a href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00063">step.cpp:63</a></div></div>
+<div class="ttc" id="aclassTrie_html_a95a71943d5b1848da1f9108f215d011f"><div class="ttname"><a href="classTrie.html#a95a71943d5b1848da1f9108f215d011f">Trie::goOn</a></div><div class="ttdeci">void goOn()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00038">step.cpp:38</a></div></div>
+<div class="ttc" id="aclassTrie_html_aa9baf1c141bd1b2262b556ef95054127"><div class="ttname"><a href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">Trie::goOff</a></div><div class="ttdeci">void goOff()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00042">step.cpp:42</a></div></div>
+<div class="ttc" id="aclassTrie_html_aaef2c180632252b4d66469012d761b39"><div class="ttname"><a href="classTrie.html#aaef2c180632252b4d66469012d761b39">Trie::goBack</a></div><div class="ttdeci">void goBack()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00023">step.cpp:23</a></div></div>
+<div class="ttc" id="aclassTrie_html_abd02b64b6a7ca27c8f0a47c225126daa"><div class="ttname"><a href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00076">step.cpp:76</a></div></div>
 <div class="ttc" id="aclassTrie_html_aef87b01517edc98fde43e3d095ac91e7"><div class="ttname"><a href="classTrie.html#aef87b01517edc98fde43e3d095ac91e7">Trie::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00005">step.cpp:5</a></div></div>
+<div class="ttc" id="aclassTrie_html_af904edfe971695f9e62cc90154b28c2d"><div class="ttname"><a href="classTrie.html#af904edfe971695f9e62cc90154b28c2d">Trie::slowDown</a></div><div class="ttdeci">void slowDown()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00056">step.cpp:56</a></div></div>
 <div class="ttc" id="atrie_8hpp_html"><div class="ttname"><a href="trie_8hpp.html">trie.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

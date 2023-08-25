@@ -104,116 +104,130 @@ $(document).ready(function(){initNavTree('graph_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="sprite_8hpp.html">sprite.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="button_8hpp.html">button.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classGraph.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGraph.html">Graph</a> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">struct </span>Edge;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">struct </span>Node </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordtype">int</span> value;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classSprite.html">Sprite</a>* sprite;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            std::vector&lt;Edge*&gt; edges;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Node(<span class="keywordtype">int</span> value, <a class="code" href="classSprite.html">Sprite</a>* spr);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ~Node();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">void</span> addEdge(Edge* e);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">struct </span>Edge</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Node* u;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Node* v;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classSprite.html">Sprite</a>* sprite;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">int</span> weight;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">bool</span> isWeight;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">int</span> mark;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Edge(Node* u, Node* v);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Edge(Node* u, Node* v, <span class="keywordtype">int</span> weight, <a class="code" href="classSprite.html">Sprite</a>* spr);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            ~Edge();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span> isCollisionToNode(Node* node, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span> isCollisionToEdge(Edge* edge, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> isCollision(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::vector&lt;Node*&gt; nodes;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::vector&lt;Edge*&gt; edges;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> capacity;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        SDL_Rect viewport;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        SDL_Renderer* render;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        TTF_Font* font;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        SDL_Point lastMousePressed;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        Node* chosenNode;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">bool</span> isMoving;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> shiftX;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">int</span> shiftY;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        SDL_Color edgesColor;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        SDL_Color nodeColor;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        SDL_Color fontColor;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        SDL_Color bgColor;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classGraph.html#aa8f53200c4ef1f7ba35ebcf40dfd4051">   78</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="structdistanceHeap.html">distanceHeap</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::vector&lt;int&gt; distance;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::vector&lt;int&gt; low, order;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::vector&lt; std::vector&lt;Node*&gt; &gt; components;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::stack&lt;Node*&gt; buffer;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> state;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classGraph.html#ac53047959fbe5c58d4d05e1aca54163a">   86</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="structDSU.html">DSU</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::vector&lt;Edge*&gt; sortedEdges;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        std::mutex animate_mutex;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::mutex&amp; ds_mutex;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">int</span> stepWait;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">bool</span> nodirect;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">unionEdges</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a3da55e654847ba8a3151e27c149d80b7">Tarjan</a>(Node* u);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">renderEdge</a>(Edge* edge);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classGraph.html#a6fa98efdd48a99675cbd94166f6ca57c">Graph</a>(SDL_Renderer * r, std::mutex&amp; m, TTF_Font* f, SDL_Rect v, <span class="keywordtype">int</span> capacity);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a>();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a6cda990ef450c5fdbbdfdfcd3fa67de0">Dijkstra</a>(<span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a27cc542ccfc908de00cf0135978dfdd3">MST</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#abe3333274cfababa4abd2e820af95238">SCC</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#ab7973cc96927296785f04be124667924">init</a>(std::vector&lt; std::vector&lt;int&gt; &gt; value);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGraph.html#a3d474b1c86668c5f68ea9b71e88d5540">isReceiveEvent</a>(SDL_Event&amp; e);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classButton.html">Button</a>* <a class="code" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">react</a>(SDL_Event&amp; e);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a1b733a595e435d2b9b02b7c88a372c2c">rendering</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">setting</a>(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="script_8hpp.html">script.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classGraph.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGraph.html">Graph</a> </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">struct </span>Edge;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">struct </span>Node </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">int</span> value;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classSprite.html">Sprite</a>* sprite;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::vector&lt;Edge*&gt; edges;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Node(<span class="keywordtype">int</span> value, <a class="code" href="classSprite.html">Sprite</a>* spr);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            ~Node();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">void</span> addEdge(Edge* e);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">struct </span>Edge</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Node* u;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Node* v;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classSprite.html">Sprite</a>* sprite;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">int</span> weight;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">bool</span> isWeight;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">int</span> mark;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Edge(Node* u, Node* v);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            Edge(Node* u, Node* v, <span class="keywordtype">int</span> weight, <a class="code" href="classSprite.html">Sprite</a>* spr);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            ~Edge();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">bool</span> isCollisionToNode(Node* node, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">bool</span> isCollisionToEdge(Edge* edge, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> isCollision(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::vector&lt;Node*&gt; nodes;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::vector&lt;Edge*&gt; edges;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">int</span> capacity;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        SDL_Rect viewport;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        SDL_Renderer* render;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        TTF_Font* font;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        SDL_Point lastMousePressed;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Node* chosenNode;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">bool</span> isMoving;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">int</span> shiftX;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">int</span> shiftY;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        SDL_Color edgesColor;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        SDL_Color nodeColor;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        SDL_Color fontColor;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        SDL_Color bgColor;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classGraph.html#aa8f53200c4ef1f7ba35ebcf40dfd4051">   80</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="structdistanceHeap.html">distanceHeap</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::vector&lt;int&gt; distance;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::vector&lt;int&gt; low, order;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::vector&lt; std::vector&lt;Node*&gt; &gt; components;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::stack&lt;Node*&gt; buffer;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">int</span> state;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classGraph.html#ac53047959fbe5c58d4d05e1aca54163a">   88</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="structDSU.html">DSU</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        std::vector&lt;Edge*&gt; sortedEdges;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        std::mutex animate_mutex;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        std::mutex&amp; ds_mutex;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> stepWait;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">bool</span> nodirect;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        TTF_Font* scriptFont;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::map&lt;DATA_STRUCTURES_OPERATOR, Script*&gt; script;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classScript.html">Script</a>* currentScript;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">unionEdges</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a3da55e654847ba8a3151e27c149d80b7">Tarjan</a>(Node* u);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">renderEdge</a>(Edge* edge);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classGraph.html#a6fa98efdd48a99675cbd94166f6ca57c">Graph</a>(SDL_Renderer * r, std::mutex&amp; m, TTF_Font* f, SDL_Rect v, <span class="keywordtype">int</span> capacity);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">~Graph</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a6cda990ef450c5fdbbdfdfcd3fa67de0">Dijkstra</a>(<span class="keywordtype">int</span> start, <span class="keywordtype">int</span> end);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a27cc542ccfc908de00cf0135978dfdd3">MST</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#abe3333274cfababa4abd2e820af95238">SCC</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#ab7973cc96927296785f04be124667924">init</a>(std::vector&lt; std::vector&lt;int&gt; &gt; value);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classGraph.html#a3d474b1c86668c5f68ea9b71e88d5540">isReceiveEvent</a>(SDL_Event&amp; e);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classButton.html">Button</a>* <a class="code" href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">react</a>(SDL_Event&amp; e);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a1b733a595e435d2b9b02b7c88a372c2c">rendering</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">setting</a>(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">closeScript</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>(std::vector&lt;int&gt; v);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>(std::vector&lt;int&gt; v);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="abutton_8hpp_html"><div class="ttname"><a href="button_8hpp.html">button.hpp</a></div></div>
 <div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdoc">Button class that interact with user input.</div><div class="ttdef"><b>Definition:</b> <a href="button_8hpp_source.html#l00015">button.hpp:16</a></div></div>
-<div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">Graph class.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8hpp_source.html#l00023">graph.hpp:24</a></div></div>
-<div class="ttc" id="aclassGraph_html_a1b733a595e435d2b9b02b7c88a372c2c"><div class="ttname"><a href="classGraph.html#a1b733a595e435d2b9b02b7c88a372c2c">Graph::rendering</a></div><div class="ttdeci">void rendering()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00078">rendering.cpp:78</a></div></div>
-<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00075">event.cpp:75</a></div></div>
+<div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">Graph class.</div><div class="ttdef"><b>Definition:</b> <a href="graph_8hpp_source.html#l00025">graph.hpp:26</a></div></div>
+<div class="ttc" id="aclassGraph_html_a121fc9cf8d69028abb318d8922865c72"><div class="ttname"><a href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">Graph::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00096">event.cpp:96</a></div></div>
+<div class="ttc" id="aclassGraph_html_a1b733a595e435d2b9b02b7c88a372c2c"><div class="ttname"><a href="classGraph.html#a1b733a595e435d2b9b02b7c88a372c2c">Graph::rendering</a></div><div class="ttdeci">void rendering()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00080">rendering.cpp:80</a></div></div>
+<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00084">event.cpp:84</a></div></div>
 <div class="ttc" id="aclassGraph_html_a27cc542ccfc908de00cf0135978dfdd3"><div class="ttname"><a href="classGraph.html#a27cc542ccfc908de00cf0135978dfdd3">Graph::MST</a></div><div class="ttdeci">void MST()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00062">mst.cpp:62</a></div></div>
-<div class="ttc" id="aclassGraph_html_a291016bf2181acabb13b0be3f9241f97"><div class="ttname"><a href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00029">event.cpp:29</a></div></div>
+<div class="ttc" id="aclassGraph_html_a291016bf2181acabb13b0be3f9241f97"><div class="ttname"><a href="classGraph.html#a291016bf2181acabb13b0be3f9241f97">Graph::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00032">event.cpp:32</a></div></div>
 <div class="ttc" id="aclassGraph_html_a338cf4fe96aeedef6d097a31ce604c9e"><div class="ttname"><a href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">Graph::renderEdge</a></div><div class="ttdeci">void renderEdge(Edge *edge)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00008">rendering.cpp:8</a></div></div>
 <div class="ttc" id="aclassGraph_html_a3d474b1c86668c5f68ea9b71e88d5540"><div class="ttname"><a href="classGraph.html#a3d474b1c86668c5f68ea9b71e88d5540">Graph::isReceiveEvent</a></div><div class="ttdeci">bool isReceiveEvent(SDL_Event &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00004">event.cpp:4</a></div></div>
 <div class="ttc" id="aclassGraph_html_a3da55e654847ba8a3151e27c149d80b7"><div class="ttname"><a href="classGraph.html#a3da55e654847ba8a3151e27c149d80b7">Graph::Tarjan</a></div><div class="ttdeci">void Tarjan(Node *u)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2scc_8cpp_source.html#l00004">scc.cpp:4</a></div></div>
-<div class="ttc" id="aclassGraph_html_a3fa967ede13bc835a3a3a343d0d507a3"><div class="ttname"><a href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">Graph::setting</a></div><div class="ttdeci">void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2constructor_8cpp_source.html#l00057">constructor.cpp:57</a></div></div>
-<div class="ttc" id="aclassGraph_html_a6cda990ef450c5fdbbdfdfcd3fa67de0"><div class="ttname"><a href="classGraph.html#a6cda990ef450c5fdbbdfdfcd3fa67de0">Graph::Dijkstra</a></div><div class="ttdeci">void Dijkstra(int start, int end)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00074">dijkstra.cpp:74</a></div></div>
+<div class="ttc" id="aclassGraph_html_a3fa967ede13bc835a3a3a343d0d507a3"><div class="ttname"><a href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">Graph::setting</a></div><div class="ttdeci">void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2constructor_8cpp_source.html#l00067">constructor.cpp:67</a></div></div>
+<div class="ttc" id="aclassGraph_html_a6cda990ef450c5fdbbdfdfcd3fa67de0"><div class="ttname"><a href="classGraph.html#a6cda990ef450c5fdbbdfdfcd3fa67de0">Graph::Dijkstra</a></div><div class="ttdeci">void Dijkstra(int start, int end)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00075">dijkstra.cpp:75</a></div></div>
 <div class="ttc" id="aclassGraph_html_a6fa98efdd48a99675cbd94166f6ca57c"><div class="ttname"><a href="classGraph.html#a6fa98efdd48a99675cbd94166f6ca57c">Graph::Graph</a></div><div class="ttdeci">Graph(SDL_Renderer *r, std::mutex &amp;m, TTF_Font *f, SDL_Rect v, int capacity)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2constructor_8cpp_source.html#l00033">constructor.cpp:33</a></div></div>
+<div class="ttc" id="aclassGraph_html_a88f4ed964c4b521a8c30c11e4f8a433d"><div class="ttname"><a href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">Graph::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00105">event.cpp:105</a></div></div>
 <div class="ttc" id="aclassGraph_html_a902c5b3eacb66d60752525ab23297a95"><div class="ttname"><a href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">Graph::~Graph</a></div><div class="ttdeci">~Graph()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2destructor_8cpp_source.html#l00019">destructor.cpp:19</a></div></div>
+<div class="ttc" id="aclassGraph_html_aafed25794b4b92c6a4cf69ced932766c"><div class="ttname"><a href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">Graph::closeScript</a></div><div class="ttdeci">void closeScript()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00091">event.cpp:91</a></div></div>
 <div class="ttc" id="aclassGraph_html_ab7973cc96927296785f04be124667924"><div class="ttname"><a href="classGraph.html#ab7973cc96927296785f04be124667924">Graph::init</a></div><div class="ttdeci">void init(std::vector&lt; std::vector&lt; int &gt; &gt; value)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2init_8cpp_source.html#l00056">init.cpp:56</a></div></div>
 <div class="ttc" id="aclassGraph_html_abe3333274cfababa4abd2e820af95238"><div class="ttname"><a href="classGraph.html#abe3333274cfababa4abd2e820af95238">Graph::SCC</a></div><div class="ttdeci">void SCC()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2scc_8cpp_source.html#l00037">scc.cpp:37</a></div></div>
 <div class="ttc" id="aclassGraph_html_aef96f70c574ff42ec00fa042c57e1658"><div class="ttname"><a href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">Graph::repair</a></div><div class="ttdeci">void repair()</div><div class="ttdef"><b>Definition:</b> <a href="repair_8cpp_source.html#l00003">repair.cpp:3</a></div></div>
 <div class="ttc" id="aclassGraph_html_af2f1a34928c3e5119d8a170a81167a5d"><div class="ttname"><a href="classGraph.html#af2f1a34928c3e5119d8a170a81167a5d">Graph::unionEdges</a></div><div class="ttdeci">void unionEdges()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00082">mst.cpp:82</a></div></div>
+<div class="ttc" id="aclassScript_html"><div class="ttname"><a href="classScript.html">Script</a></div><div class="ttdoc">Container that contains a pseudo-code.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00021">script.hpp:22</a></div></div>
 <div class="ttc" id="aclassSprite_html"><div class="ttname"><a href="classSprite.html">Sprite</a></div><div class="ttdoc">Object container Drawable.</div><div class="ttdef"><b>Definition:</b> <a href="sprite_8hpp_source.html#l00020">sprite.hpp:21</a></div></div>
+<div class="ttc" id="ascript_8hpp_html"><div class="ttname"><a href="script_8hpp.html">script.hpp</a></div></div>
 <div class="ttc" id="asprite_8hpp_html"><div class="ttname"><a href="sprite_8hpp.html">sprite.hpp</a></div></div>
 <div class="ttc" id="astructDSU_html"><div class="ttname"><a href="structDSU.html">DSU</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00004">mst.cpp:5</a></div></div>
-<div class="ttc" id="astructdistanceHeap_html"><div class="ttname"><a href="structdistanceHeap.html">distanceHeap</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00003">dijkstra.cpp:4</a></div></div>
+<div class="ttc" id="astructdistanceHeap_html"><div class="ttname"><a href="structdistanceHeap.html">distanceHeap</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00004">dijkstra.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

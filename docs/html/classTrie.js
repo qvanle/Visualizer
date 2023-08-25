@@ -4,6 +4,10 @@ var classTrie =
     [ "~Trie", "classTrie.html#abf9d6f48d556e09d1b292412df153a4b", null ],
     [ "closeScript", "classTrie.html#a849c13fcfac831e9013dc12790016bc8", null ],
     [ "drawEgdes", "classTrie.html#a6a1ec2f4cc0d4a292f04e2b63aad68ba", null ],
+    [ "goBack", "classTrie.html#aaef2c180632252b4d66469012d761b39", null ],
+    [ "goNext", "classTrie.html#a69b1642a8873688324c511bd68b7624b", null ],
+    [ "goOff", "classTrie.html#aa9baf1c141bd1b2262b556ef95054127", null ],
+    [ "goOn", "classTrie.html#a95a71943d5b1848da1f9108f215d011f", null ],
     [ "highlight", "classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df", null ],
     [ "init", "classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22", null ],
     [ "insert", "classTrie.html#a12a4d1a4c233552b3789f46283b20545", null ],
@@ -19,6 +23,8 @@ var classTrie =
     [ "setEdgesColor", "classTrie.html#a1c65872427b3d7b8dc2c9438b250bded", null ],
     [ "setNodeColor", "classTrie.html#a366c93109231faf1aca2dfa8501b8d02", null ],
     [ "setting", "classTrie.html#a4a5d56a0e3c77f8baf1efcb350bd8a95", null ],
+    [ "slowDown", "classTrie.html#af904edfe971695f9e62cc90154b28c2d", null ],
+    [ "speedUp", "classTrie.html#a45388d458be3ad78ab2509ace3f77a13", null ],
     [ "unhighlight", "classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa", null ],
     [ "waitForStep", "classTrie.html#aef87b01517edc98fde43e3d095ac91e7", null ]
 ];

@@ -101,51 +101,52 @@ Definition at line 18 of file constructor.\+cpp.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{18                                                                                    : ds\_mutex(m)}
 \DoxyCodeLine{19 \{}
-\DoxyCodeLine{20     render = r;}
-\DoxyCodeLine{21     font = f;}
-\DoxyCodeLine{22     viewport = v;}
-\DoxyCodeLine{23     capacity = cap;}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25     table = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{26     }
-\DoxyCodeLine{27     currentSize = 0;}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{30     isPause = \textcolor{keyword}{false};}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     edgesColor = \{255, 255, 255, 255\};}
-\DoxyCodeLine{33     nodeColor = \{20, 85, 185, 255\};}
-\DoxyCodeLine{34     fontColor = \{255, 255, 255, 255\};}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     shiftX = 20;}
-\DoxyCodeLine{37     shiftY = 20;}
-\DoxyCodeLine{38     distanceX = 100;}
-\DoxyCodeLine{39     distanceY = 70;}
-\DoxyCodeLine{40     isMoving = \textcolor{keyword}{false};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     stepWait = 600;}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
-\DoxyCodeLine{45     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     currentScript = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{48     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{49     \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/insert"{}});}
-\DoxyCodeLine{50     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{53     \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/remove"{}});}
-\DoxyCodeLine{54     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}};}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{57     \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/search"{}});}
-\DoxyCodeLine{58     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}};}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{61     \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/init"{}});}
-\DoxyCodeLine{62     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}};}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64 \}}
+\DoxyCodeLine{20     pause = \textcolor{keyword}{false};}
+\DoxyCodeLine{21     render = r;}
+\DoxyCodeLine{22     font = f;}
+\DoxyCodeLine{23     viewport = v;}
+\DoxyCodeLine{24     capacity = cap;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     table = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{27     }
+\DoxyCodeLine{28     currentSize = 0;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     isQueue = \textcolor{keyword}{false};}
+\DoxyCodeLine{31     isPause = \textcolor{keyword}{false};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     edgesColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{34     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{35     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     shiftX = 20;}
+\DoxyCodeLine{38     shiftY = 20;}
+\DoxyCodeLine{39     distanceX = 100;}
+\DoxyCodeLine{40     distanceY = 70;}
+\DoxyCodeLine{41     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     stepWait = 600;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{46     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{49     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{50     \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/insert"{}});}
+\DoxyCodeLine{51     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classHashTable_a0daefba1277a4873cbc5033b04117237}{insert}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{54     \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/remove"{}});}
+\DoxyCodeLine{55     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classHashTable_ad7bcb52365f37169e8ae6392b3da3e20}{remove}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{58     \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/search"{}});}
+\DoxyCodeLine{59     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classHashTable_a248f0979cca34264946411e3933abd9d}{search}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{62     \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}}-\/>linking(\textcolor{stringliteral}{"{}hash\_table/init"{}});}
+\DoxyCodeLine{63     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}{init}};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a9ce5569bb945880cacb29aaba6f3e3f9}\label{classHashTable_a9ce5569bb945880cacb29aaba6f3e3f9}} 
@@ -203,24 +204,24 @@ Definition at line 53 of file event.\+cpp.
 
 
 
-Definition at line 100 of file constructor.\+cpp.
+Definition at line 101 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{101 \{}
-\DoxyCodeLine{102     HASH\_KEY = 19;}
-\DoxyCodeLine{103     table = \textcolor{keyword}{new} Head*[HASH\_KEY];}
-\DoxyCodeLine{104     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
-\DoxyCodeLine{105     \{}
-\DoxyCodeLine{106         \mbox{\hyperlink{classSprite}{Sprite}}* spr = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
-\DoxyCodeLine{107         spr-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
-\DoxyCodeLine{108         spr-\/>\mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{setFontColor}}(fontColor);}
-\DoxyCodeLine{109         spr-\/>\mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(nodeColor);}
-\DoxyCodeLine{110         spr-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}hash-\/table/head"{}});}
-\DoxyCodeLine{111         table[i] = \textcolor{keyword}{new} Head(spr);}
-\DoxyCodeLine{112     \}}
-\DoxyCodeLine{113     \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(table, 0, 0);}
-\DoxyCodeLine{114 \}}
+\DoxyCodeLine{102 \{}
+\DoxyCodeLine{103     HASH\_KEY = 19;}
+\DoxyCodeLine{104     table = \textcolor{keyword}{new} Head*[HASH\_KEY];}
+\DoxyCodeLine{105     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
+\DoxyCodeLine{106     \{}
+\DoxyCodeLine{107         \mbox{\hyperlink{classSprite}{Sprite}}* spr = \textcolor{keyword}{new} \mbox{\hyperlink{classSprite}{Sprite}}(render);}
+\DoxyCodeLine{108         spr-\/>\mbox{\hyperlink{classSprite_a9b07ea905747cb444aacb6c93380c1c1}{setFont}}(font);}
+\DoxyCodeLine{109         spr-\/>\mbox{\hyperlink{classSprite_a6c2311fb35a048c91f9691cd8e20ffe0}{setFontColor}}(fontColor);}
+\DoxyCodeLine{110         spr-\/>\mbox{\hyperlink{classObject_abcbfe2519db39ced8bdf097e8b981dda}{coloring}}(nodeColor);}
+\DoxyCodeLine{111         spr-\/>\mbox{\hyperlink{classSprite_a820001b0f013a1dc4891de8134f6ca0d}{linking}}(\textcolor{stringliteral}{"{}hash-\/table/head"{}});}
+\DoxyCodeLine{112         table[i] = \textcolor{keyword}{new} Head(spr);}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114     \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(table, 0, 0);}
+\DoxyCodeLine{115 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a32a4ba488b3de2220183982c55b9d841}\label{classHashTable_a32a4ba488b3de2220183982c55b9d841}} 
@@ -260,24 +261,76 @@ Definition at line 3 of file rendering.\+cpp.
 \doxysubsubsection{\texorpdfstring{goBack()}{goBack()}}
 {\footnotesize\ttfamily void Hash\+Table\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 20 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_abe57d9045d7df4effec9f1940bb91f96}\label{classHashTable_abe57d9045d7df4effec9f1940bb91f96}} 
 \index{HashTable@{HashTable}!goNext@{goNext}}
 \index{goNext@{goNext}!HashTable@{HashTable}}
 \doxysubsubsection{\texorpdfstring{goNext()}{goNext()}}
 {\footnotesize\ttfamily void Hash\+Table\+::go\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 24 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{28         \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     \mbox{\hyperlink{classHashTable_a6a4006496300c2fae42c30cb8a7b8609}{goOff}}();}
+\DoxyCodeLine{31     std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{32     \mbox{\hyperlink{classHashTable_a6a4006496300c2fae42c30cb8a7b8609}{goOff}}();}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a6a4006496300c2fae42c30cb8a7b8609}\label{classHashTable_a6a4006496300c2fae42c30cb8a7b8609}} 
 \index{HashTable@{HashTable}!goOff@{goOff}}
 \index{goOff@{goOff}!HashTable@{HashTable}}
 \doxysubsubsection{\texorpdfstring{goOff()}{goOff()}}
 {\footnotesize\ttfamily void Hash\+Table\+::go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 39 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{43         pause \string^= \textcolor{keyword}{true};}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45     queue\_cv.notify\_one();}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_aeb9895f0daad8e78918c6a09c12ff3c4}\label{classHashTable_aeb9895f0daad8e78918c6a09c12ff3c4}} 
 \index{HashTable@{HashTable}!goOn@{goOn}}
 \index{goOn@{goOn}!HashTable@{HashTable}}
 \doxysubsubsection{\texorpdfstring{goOn()}{goOn()}}
 {\footnotesize\ttfamily void Hash\+Table\+::go\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 35 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_ae8a3182ac4aeb2cd4310ec01fdc6d88f}\label{classHashTable_ae8a3182ac4aeb2cd4310ec01fdc6d88f}} 
 \index{HashTable@{HashTable}!highlight@{highlight}}
 \index{highlight@{highlight}!HashTable@{HashTable}}
@@ -286,21 +339,21 @@ Definition at line 3 of file rendering.\+cpp.
 
 
 
-Definition at line 23 of file step.\+cpp.
+Definition at line 60 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{24 \{}
-\DoxyCodeLine{25     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{26     \{}
-\DoxyCodeLine{27         animate\_mutex.lock();}
-\DoxyCodeLine{28         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{29         \{}
-\DoxyCodeLine{30             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
-\DoxyCodeLine{31         \}}
-\DoxyCodeLine{32         animate\_mutex.unlock();}
-\DoxyCodeLine{33     \}}
-\DoxyCodeLine{34 \}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{63     \{}
+\DoxyCodeLine{64         animate\_mutex.lock();}
+\DoxyCodeLine{65         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
+\DoxyCodeLine{68         \}}
+\DoxyCodeLine{69         animate\_mutex.unlock();}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}\label{classHashTable_a59cd08ce945922ac61ac8f8c81e90e39}} 
@@ -520,30 +573,30 @@ Definition at line 3 of file event.\+cpp.
 
 
 
-Definition at line 78 of file constructor.\+cpp.
+Definition at line 79 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{79 \{}
-\DoxyCodeLine{80     \textcolor{keywordflow}{if}(table == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
-\DoxyCodeLine{83     \{}
-\DoxyCodeLine{84         \textcolor{keywordflow}{if}(table[i] == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86         table[i]-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
-\DoxyCodeLine{87         table[i]-\/>sprite-\/>locatingY(shiftY + (i + shiftDown) * distanceY);}
-\DoxyCodeLine{88         table[i]-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
-\DoxyCodeLine{89         \textcolor{keywordflow}{if}(table[i]-\/>root == \textcolor{keyword}{nullptr}) table[i]-\/>sprite-\/>show();}
-\DoxyCodeLine{90         \textcolor{keywordflow}{else} }
-\DoxyCodeLine{91         \{}
-\DoxyCodeLine{92             table[i]-\/>sprite-\/>hide();}
-\DoxyCodeLine{93             \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(table[i]-\/>root, i + shiftDown, shiftRight);}
-\DoxyCodeLine{94         \}}
-\DoxyCodeLine{95     \}}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{98 \}}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if}(table == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         \textcolor{keywordflow}{if}(table[i] == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         table[i]-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
+\DoxyCodeLine{88         table[i]-\/>sprite-\/>locatingY(shiftY + (i + shiftDown) * distanceY);}
+\DoxyCodeLine{89         table[i]-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{90         \textcolor{keywordflow}{if}(table[i]-\/>root == \textcolor{keyword}{nullptr}) table[i]-\/>sprite-\/>show();}
+\DoxyCodeLine{91         \textcolor{keywordflow}{else} }
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             table[i]-\/>sprite-\/>hide();}
+\DoxyCodeLine{94             \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(table[i]-\/>root, i + shiftDown, shiftRight);}
+\DoxyCodeLine{95         \}}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{99 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}\label{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}} 
@@ -554,20 +607,20 @@ Definition at line 78 of file constructor.\+cpp.
 
 
 
-Definition at line 66 of file constructor.\+cpp.
+Definition at line 67 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{67 \{}
-\DoxyCodeLine{68     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70     node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
-\DoxyCodeLine{71     node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
-\DoxyCodeLine{72     node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74     \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(node-\/>pnext, shiftDown, shiftRight + 1);}
-\DoxyCodeLine{75     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{76 \}}
+\DoxyCodeLine{68 \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX);}
+\DoxyCodeLine{72     node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
+\DoxyCodeLine{73     node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \mbox{\hyperlink{classHashTable_a5ff9b1dbe7ae81b8e869cbc049522237}{locating}}(node-\/>pnext, shiftDown, shiftRight + 1);}
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{77 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a836340e3a03f58284f5837cfeecdedc8}\label{classHashTable_a836340e3a03f58284f5837cfeecdedc8}} 
@@ -893,34 +946,34 @@ Definition at line 4 of file search.\+cpp.
 
 
 
-Definition at line 116 of file constructor.\+cpp.
+Definition at line 117 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{117 \{}
-\DoxyCodeLine{118     nodeColor = c2;}
-\DoxyCodeLine{119     fontColor = c3;}
-\DoxyCodeLine{120     edgesColor = c4;}
-\DoxyCodeLine{121     bgColor.r = nodeColor.r * 0.5;}
-\DoxyCodeLine{122     bgColor.g = nodeColor.g * 0.5;}
-\DoxyCodeLine{123     bgColor.b = nodeColor.b * 0.5;}
-\DoxyCodeLine{124     bgColor.a = 255;}
-\DoxyCodeLine{125 }
-\DoxyCodeLine{126     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
-\DoxyCodeLine{127     \{}
-\DoxyCodeLine{128         table[i]-\/>sprite-\/>coloring(bgColor);}
-\DoxyCodeLine{129         table[i]-\/>sprite-\/>setFontColor(fontColor);}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131         Node* current = table[i]-\/>root;}
-\DoxyCodeLine{132 }
-\DoxyCodeLine{133         \textcolor{keywordflow}{while}(current != \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{134         \{}
-\DoxyCodeLine{135             current-\/>sprite-\/>coloring(nodeColor);}
-\DoxyCodeLine{136             current-\/>sprite-\/>setFontColor(fontColor);}
-\DoxyCodeLine{137             current = current-\/>pnext;}
-\DoxyCodeLine{138         \}}
-\DoxyCodeLine{139     \}}
-\DoxyCodeLine{140 \}}
+\DoxyCodeLine{118 \{}
+\DoxyCodeLine{119     nodeColor = c2;}
+\DoxyCodeLine{120     fontColor = c3;}
+\DoxyCodeLine{121     edgesColor = c4;}
+\DoxyCodeLine{122     bgColor.r = nodeColor.r * 0.5;}
+\DoxyCodeLine{123     bgColor.g = nodeColor.g * 0.5;}
+\DoxyCodeLine{124     bgColor.b = nodeColor.b * 0.5;}
+\DoxyCodeLine{125     bgColor.a = 255;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < HASH\_KEY; i++)}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129         table[i]-\/>sprite-\/>coloring(bgColor);}
+\DoxyCodeLine{130         table[i]-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         Node* current = table[i]-\/>root;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         \textcolor{keywordflow}{while}(current != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{135         \{}
+\DoxyCodeLine{136             current-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{137             current-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{138             current = current-\/>pnext;}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a45b609ea641189e600edf8ecebd6e3e0}\label{classHashTable_a45b609ea641189e600edf8ecebd6e3e0}} 
@@ -929,12 +982,34 @@ Definition at line 116 of file constructor.\+cpp.
 \doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
 {\footnotesize\ttfamily void Hash\+Table\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 53 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a16baa1c22aa09e2af6b4cf7ab9f4a4ab}\label{classHashTable_a16baa1c22aa09e2af6b4cf7ab9f4a4ab}} 
 \index{HashTable@{HashTable}!speedUp@{speedUp}}
 \index{speedUp@{speedUp}!HashTable@{HashTable}}
 \doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
 {\footnotesize\ttfamily void Hash\+Table\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Definition at line 48 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a6aa5f4ec317105ad7e191a5d811ddb61}\label{classHashTable_a6aa5f4ec317105ad7e191a5d811ddb61}} 
 \index{HashTable@{HashTable}!unhighlight@{unhighlight}}
 \index{unhighlight@{unhighlight}!HashTable@{HashTable}}
@@ -943,21 +1018,21 @@ Definition at line 116 of file constructor.\+cpp.
 
 
 
-Definition at line 36 of file step.\+cpp.
+Definition at line 73 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{37 \{}
-\DoxyCodeLine{38     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{39     \{}
-\DoxyCodeLine{40         animate\_mutex.lock();}
-\DoxyCodeLine{41         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{42         \{}
-\DoxyCodeLine{43             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
-\DoxyCodeLine{44         \}}
-\DoxyCodeLine{45         animate\_mutex.unlock();}
-\DoxyCodeLine{46     \}}
-\DoxyCodeLine{47 \}}
+\DoxyCodeLine{74 \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         animate\_mutex.lock();}
+\DoxyCodeLine{78         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{79         \{}
+\DoxyCodeLine{80             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82         animate\_mutex.unlock();}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classHashTable_a871864e499d34f24121a1b1c71583cb3}\label{classHashTable_a871864e499d34f24121a1b1c71583cb3}} 
@@ -978,19 +1053,16 @@ Definition at line 2 of file step.\+cpp.
 \DoxyCodeLine{6         ds\_mutex.unlock();}
 \DoxyCodeLine{7         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
 \DoxyCodeLine{8         ds\_mutex.lock();}
-\DoxyCodeLine{9     \}}
-\DoxyCodeLine{10     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
-\DoxyCodeLine{11     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
-\DoxyCodeLine{12     \{}
-\DoxyCodeLine{13         return ;}
-\DoxyCodeLine{14     \}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16     ds\_mutex.unlock();}
-\DoxyCodeLine{17     std::unique\_lock<std::mutex> lk(step\_mutex);}
-\DoxyCodeLine{18     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
-\DoxyCodeLine{19     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{20     ds\_mutex.lock();}
-\DoxyCodeLine{21 \}}
+\DoxyCodeLine{9         \{}
+\DoxyCodeLine{10             std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{11             \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{12         \}}
+\DoxyCodeLine{13         ds\_mutex.unlock();}
+\DoxyCodeLine{14         std::unique\_lock<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{15         queue\_cv.wait(lk, [\textcolor{keyword}{this}]\{\textcolor{keywordflow}{return} !pause;\});}
+\DoxyCodeLine{16         ds\_mutex.lock();}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18 \}}
 
 \end{DoxyCode}
 

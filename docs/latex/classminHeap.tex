@@ -39,6 +39,18 @@ bool \mbox{\hyperlink{classminHeap_a723759bc11aa6b1e2b630ed9a76d92f0}{is\+Receiv
 void \mbox{\hyperlink{classminHeap_a9a170c5e0676c4c4177208569817d222}{rendering}} ()
 \item 
 void \mbox{\hyperlink{classminHeap_ad633fe1c4691034c6c57af856669de55}{setting}} (SDL\+\_\+\+Color c1, SDL\+\_\+\+Color c2, SDL\+\_\+\+Color c3, SDL\+\_\+\+Color c4)
+\item 
+void \mbox{\hyperlink{classminHeap_a246d887f1502d086c8a8d09f647c7917}{go\+Off}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a942f0682cc3a4bfedffa18a0bcbf162e}{go\+On}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a6dbc5aa02fa9f165e5309b813e88b62a}{speed\+Up}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_a84ee838b753dc86583b2804f387501ca}{slow\+Down}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_ace58920621eb0e827cfc0268d01316ab}{go\+Next}} ()
+\item 
+void \mbox{\hyperlink{classminHeap_ad31cac4ec6b2bd0c582c6daf428a86ed}{go\+Back}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -175,6 +187,82 @@ Definition at line 74 of file event.\+cpp.
 \DoxyCodeLine{75 \{}
 \DoxyCodeLine{76     currentScript = \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ad31cac4ec6b2bd0c582c6daf428a86ed}\label{classminHeap_ad31cac4ec6b2bd0c582c6daf428a86ed}} 
+\index{minHeap@{minHeap}!goBack@{goBack}}
+\index{goBack@{goBack}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{goBack()}{goBack()}}
+{\footnotesize\ttfamily void min\+Heap\+::go\+Back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_ace58920621eb0e827cfc0268d01316ab}\label{classminHeap_ace58920621eb0e827cfc0268d01316ab}} 
+\index{minHeap@{minHeap}!goNext@{goNext}}
+\index{goNext@{goNext}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{goNext()}{goNext()}}
+{\footnotesize\ttfamily void min\+Heap\+::go\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{57         \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \mbox{\hyperlink{classminHeap_a246d887f1502d086c8a8d09f647c7917}{goOff}}();}
+\DoxyCodeLine{60     std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{61     \mbox{\hyperlink{classminHeap_a246d887f1502d086c8a8d09f647c7917}{goOff}}();}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a246d887f1502d086c8a8d09f647c7917}\label{classminHeap_a246d887f1502d086c8a8d09f647c7917}} 
+\index{minHeap@{minHeap}!goOff@{goOff}}
+\index{goOff@{goOff}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{goOff()}{goOff()}}
+{\footnotesize\ttfamily void min\+Heap\+::go\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     \{}
+\DoxyCodeLine{71         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{72         pause \string^= \textcolor{keyword}{true};}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     queue\_cv.notify\_one();}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a942f0682cc3a4bfedffa18a0bcbf162e}\label{classminHeap_a942f0682cc3a4bfedffa18a0bcbf162e}} 
+\index{minHeap@{minHeap}!goOn@{goOn}}
+\index{goOn@{goOn}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{goOn()}{goOn()}}
+{\footnotesize\ttfamily void min\+Heap\+::go\+On (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65 \{}
+\DoxyCodeLine{66 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classminHeap_a89e333e1f56754d79fd852bee825d18f}\label{classminHeap_a89e333e1f56754d79fd852bee825d18f}} 
@@ -704,6 +792,40 @@ Definition at line 4 of file size.\+cpp.
 \DoxyCodeLine{8 \}}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a84ee838b753dc86583b2804f387501ca}\label{classminHeap_a84ee838b753dc86583b2804f387501ca}} 
+\index{minHeap@{minHeap}!slowDown@{slowDown}}
+\index{slowDown@{slowDown}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{slowDown()}{slowDown()}}
+{\footnotesize\ttfamily void min\+Heap\+::slow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 82 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classminHeap_a6dbc5aa02fa9f165e5309b813e88b62a}\label{classminHeap_a6dbc5aa02fa9f165e5309b813e88b62a}} 
+\index{minHeap@{minHeap}!speedUp@{speedUp}}
+\index{speedUp@{speedUp}!minHeap@{minHeap}}
+\doxysubsubsection{\texorpdfstring{speedUp()}{speedUp()}}
+{\footnotesize\ttfamily void min\+Heap\+::speed\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file step.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}\label{classminHeap_a45243b7aa33eee3c7fc6f2ef4562d9f8}} 
 \index{minHeap@{minHeap}!swap@{swap}}
 \index{swap@{swap}!minHeap@{minHeap}}
@@ -806,19 +928,16 @@ Definition at line 31 of file step.\+cpp.
 \DoxyCodeLine{35         ds\_mutex.unlock();}
 \DoxyCodeLine{36         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
 \DoxyCodeLine{37         ds\_mutex.lock();}
-\DoxyCodeLine{38     \}}
-\DoxyCodeLine{39     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
-\DoxyCodeLine{40     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
-\DoxyCodeLine{41     \{}
-\DoxyCodeLine{42         return ;}
-\DoxyCodeLine{43     \}}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45     ds\_mutex.unlock();}
-\DoxyCodeLine{46     std::unique\_lock<std::mutex> lk(step\_mutex);}
-\DoxyCodeLine{47     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
-\DoxyCodeLine{48     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{49     ds\_mutex.lock();}
-\DoxyCodeLine{50 \}}
+\DoxyCodeLine{38         \{}
+\DoxyCodeLine{39             std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{40             \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         ds\_mutex.unlock();}
+\DoxyCodeLine{43         std::unique\_lock<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{44         queue\_cv.wait(lk, [\textcolor{keyword}{this}]\{\textcolor{keywordflow}{return} !pause;\});}
+\DoxyCodeLine{45         ds\_mutex.lock();}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47 \}}
 
 \end{DoxyCode}
 

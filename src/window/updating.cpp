@@ -104,8 +104,10 @@ void MyWindow::runOperator()
                 break;
             case DATA_STRUCTURES_OPERATOR::SIZE:
                 ds->size();
+                break;
             case DATA_STRUCTURES_OPERATOR::SETTING:
                 ds->setting(temp);
+                break;
             case DATA_STRUCTURES_OPERATOR::DIJKSTRA:
                 ds->dijkstra(temp);
                 break;

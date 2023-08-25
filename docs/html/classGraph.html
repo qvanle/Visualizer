@@ -121,6 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b733a595e435d2b9b02b7c88a372c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa967ede13bc835a3a3a343d0d507a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">setting</a> (SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</td></tr>
 <tr class="separator:a3fa967ede13bc835a3a3a343d0d507a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafed25794b4b92c6a4cf69ced932766c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#aafed25794b4b92c6a4cf69ced932766c">closeScript</a> ()</td></tr>
+<tr class="separator:aafed25794b4b92c6a4cf69ced932766c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121fc9cf8d69028abb318d8922865c72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a> (std::vector&lt; int &gt; v)</td></tr>
+<tr class="separator:a121fc9cf8d69028abb318d8922865c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f4ed964c4b521a8c30c11e4f8a433d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a> (std::vector&lt; int &gt; v)</td></tr>
+<tr class="separator:a88f4ed964c4b521a8c30c11e4f8a433d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -146,7 +152,7 @@ Friends</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classGraph.html" title="Graph class.">Graph</a> class. </p>
 <p>Drawable graph. </p>
 
-<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00023">23</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00025">25</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6fa98efdd48a99675cbd94166f6ca57c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fa98efdd48a99675cbd94166f6ca57c">&#9670;&nbsp;</a></span>Graph()</h2>
@@ -214,8 +220,23 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    chosenNode = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    lastMousePressed = {0, 0};</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string fontpath = <a class="code" href="namespacePATH_1_1ASSETS.html#ad4e7087fa880f271eefea9f1619ebcf7">PATH::ASSETS::FONTS_</a> + <span class="stringliteral">&quot;nimbus-sans-l/regular.otf&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    currentScript = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classScript.html">Script</a>* dij = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    dij-&gt;<a class="code" href="classScript.html#a8b9fefd83a73b635509d263cde80b762">linking</a>(<span class="stringliteral">&quot;graph/dijkstra&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classScript.html">Script</a>* mst = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    mst-&gt;<a class="code" href="classScript.html#a8b9fefd83a73b635509d263cde80b762">linking</a>(<span class="stringliteral">&quot;graph/mst&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    script[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481">DATA_STRUCTURES_OPERATOR::DIJKSTRA</a>] = dij;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    script[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe">DATA_STRUCTURES_OPERATOR::MST</a>] = mst;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481">DATA_STRUCTURES_OPERATOR::DIJKSTRA</a></div><div class="ttdeci">@ DIJKSTRA</div></div>
+<div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe">DATA_STRUCTURES_OPERATOR::MST</a></div><div class="ttdeci">@ MST</div></div>
+<div class="ttc" id="aclassScript_html"><div class="ttname"><a href="classScript.html">Script</a></div><div class="ttdoc">Container that contains a pseudo-code.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00021">script.hpp:22</a></div></div>
+<div class="ttc" id="aclassScript_html_a8b9fefd83a73b635509d263cde80b762"><div class="ttname"><a href="classScript.html#a8b9fefd83a73b635509d263cde80b762">Script::linking</a></div><div class="ttdeci">void linking(std::string name)</div><div class="ttdef"><b>Definition:</b> <a href="script_2constructor_8cpp_source.html#l00011">constructor.cpp:11</a></div></div>
+<div class="ttc" id="anamespacePATH_1_1ASSETS_html_ad4e7087fa880f271eefea9f1619ebcf7"><div class="ttname"><a href="namespacePATH_1_1ASSETS.html#ad4e7087fa880f271eefea9f1619ebcf7">PATH::ASSETS::FONTS_</a></div><div class="ttdeci">const std::string FONTS_</div><div class="ttdef"><b>Definition:</b> <a href="GLOBAL_8hpp_source.html#l00165">GLOBAL.hpp:165</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -243,11 +264,38 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;i : edges)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">delete</span> i;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    edges.clear();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    TTF_CloseFont(scriptFont);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : script)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">delete</span> i.second;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    script.clear();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aafed25794b4b92c6a4cf69ced932766c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafed25794b4b92c6a4cf69ced932766c">&#9670;&nbsp;</a></span>closeScript()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::closeScript </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00091">91</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    currentScript = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a6cda990ef450c5fdbbdfdfcd3fa67de0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cda990ef450c5fdbbdfdfcd3fa67de0">&#9670;&nbsp;</a></span>Dijkstra()</h2>
 
@@ -274,44 +322,91 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_2operator_2dijkstra_8cpp_source.html#l00074">74</a> of file <a class="el" href="graph_2operator_2dijkstra_8cpp_source.html">dijkstra.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    distance.clear();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    distance.resize(nodes.size() + 1, -1);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="structdistanceHeap.html">distanceHeap</a> heap(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    distance[start] = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    heap.insert(start);</div>
+<p class="definition">Definition at line <a class="el" href="graph_2operator_2dijkstra_8cpp_source.html#l00075">75</a> of file <a class="el" href="graph_2operator_2dijkstra_8cpp_source.html">dijkstra.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    currentScript = script[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481">DATA_STRUCTURES_OPERATOR::DIJKSTRA</a>];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    distance.clear();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    distance.resize(nodes.size() + 1, -1);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="structdistanceHeap.html">distanceHeap</a> heap(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    distance[start] = 0;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes) i-&gt;sprite-&gt;coloring(SDL_Color{50, 50, 50, 255});</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">while</span>(!heap.empty())</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span> u = heap.pop();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        nodes[u]-&gt;sprite-&gt;coloring(SDL_Color{0, 125, 0, 255});</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : nodes[u]-&gt;edges)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">int</span> v = e-&gt;v-&gt;value;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    heap.insert(start);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({0});</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({0});</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({1, 2, 3, 5});</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({1, 2, 3, 5});</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes) i-&gt;sprite-&gt;coloring(SDL_Color{50, 50, 50, 255});</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span>(distance[v] == -1 || distance[v] &gt; distance[u] + e-&gt;weight)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                nodes[v]-&gt;sprite-&gt;coloring(SDL_Color{255, 255, 0, 255});</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                nodes[v]-&gt;sprite-&gt;coloring(SDL_Color{0, 255, 255, 255});</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                distance[v] = distance[u] + e-&gt;weight;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                heap.insert(v);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        nodes[u]-&gt;sprite-&gt;coloring(SDL_Color{0, 255, 0, 255});</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00075">event.cpp:75</a></div></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">while</span>(!heap.empty())</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">int</span> u = heap.pop();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        nodes[u]-&gt;sprite-&gt;coloring(SDL_Color{0, 125, 0, 255});</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({8, 9});</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({8, 9});</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({11});</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : nodes[u]-&gt;edges)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">int</span> v = e-&gt;v-&gt;value;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span>(distance[v] == -1 || distance[v] &gt; distance[u] + e-&gt;weight)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                nodes[v]-&gt;sprite-&gt;coloring(SDL_Color{255, 255, 0, 255});</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({11, 12, 13, 14, 15});</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                nodes[v]-&gt;sprite-&gt;coloring(SDL_Color{0, 255, 255, 255});</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({11, 12, 13, 14, 15});</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                distance[v] = distance[u] + e-&gt;weight;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                heap.insert(v);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({11});</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        nodes[u]-&gt;sprite-&gt;coloring(SDL_Color{0, 255, 0, 255});</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="ttc" id="aclassGraph_html_a121fc9cf8d69028abb318d8922865c72"><div class="ttname"><a href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">Graph::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00096">event.cpp:96</a></div></div>
+<div class="ttc" id="aclassGraph_html_a21adbc00f3f1bcba062fb124d8273f0c"><div class="ttname"><a href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">Graph::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00084">event.cpp:84</a></div></div>
+<div class="ttc" id="aclassGraph_html_a88f4ed964c4b521a8c30c11e4f8a433d"><div class="ttname"><a href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">Graph::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; v)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2event_8cpp_source.html#l00105">event.cpp:105</a></div></div>
 <div class="ttc" id="aclassGraph_html_aef96f70c574ff42ec00fa042c57e1658"><div class="ttname"><a href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">Graph::repair</a></div><div class="ttdeci">void repair()</div><div class="ttdef"><b>Definition:</b> <a href="repair_8cpp_source.html#l00003">repair.cpp:3</a></div></div>
-<div class="ttc" id="astructdistanceHeap_html"><div class="ttname"><a href="structdistanceHeap.html">distanceHeap</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00003">dijkstra.cpp:4</a></div></div>
+<div class="ttc" id="astructdistanceHeap_html"><div class="ttname"><a href="structdistanceHeap.html">distanceHeap</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2dijkstra_8cpp_source.html#l00004">dijkstra.cpp:5</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a121fc9cf8d69028abb318d8922865c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121fc9cf8d69028abb318d8922865c72">&#9670;&nbsp;</a></span>highlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::highlight </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00096">96</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="ttc" id="aclassScript_html_ad060d7d1676e4b49ac87c00593023eb6"><div class="ttname"><a href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">Script::highlight</a></div><div class="ttdeci">void highlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00003">highlight.cpp:3</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -428,23 +523,27 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">if</span>(e.motion.x &lt; viewport.x || viewport.x + viewport.w &lt; e.motion.x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">if</span>(e.motion.y &lt; viewport.y || viewport.y + viewport.h &lt; e.motion.y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">if</span>(e.button.button == SDL_BUTTON_LEFT) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span>(isMoving) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">if</span>(e.motion.x &lt; viewport.x || viewport.x + viewport.w &lt; e.motion.x) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">if</span>(e.motion.y &lt; viewport.y || viewport.y + viewport.h &lt; e.motion.y) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span>(e.button.button == SDL_BUTTON_LEFT) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span>(isMoving) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(currentScript == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span>(currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="aclassScript_html_a52c574264ef13f176fbaf74821f3f3e8"><div class="ttname"><a href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">Script::isReceiveEvent</a></div><div class="ttdeci">bool isReceiveEvent(SDL_Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="script_2event_8cpp_source.html#l00004">event.cpp:4</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,50 +601,57 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00029">29</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span>(isMoving)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                isMoving = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                chosenNode = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }<span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                isMoving = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                lastMousePressed.x = e.motion.x;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                lastMousePressed.y = e.motion.y;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        chosenNode = i;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION: </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">if</span>(!isMoving) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">int</span> dx = e.motion.x - lastMousePressed.x;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">int</span> dy = e.motion.y - lastMousePressed.y;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                lastMousePressed.x = e.motion.x;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                lastMousePressed.y = e.motion.y;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span>(chosenNode == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                chosenNode-&gt;sprite-&gt;moveX(dx);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                chosenNode-&gt;sprite-&gt;moveY(dy);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;defaut:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00032">32</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">switch</span>(e.type)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEBUTTONDOWN:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">return</span> currentScript-&gt;<a class="code" href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">react</a>(e);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(isMoving)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                isMoving = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                chosenNode = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }<span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                isMoving = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                lastMousePressed.x = e.motion.x;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                lastMousePressed.y = e.motion.y;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">if</span>(i-&gt;sprite-&gt;isLieInside(e.motion.x, e.motion.y))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        chosenNode = i;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">case</span> SDL_MOUSEMOTION: </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span> &amp;&amp; currentScript-&gt;<a class="code" href="classScript.html#a52c574264ef13f176fbaf74821f3f3e8">isReceiveEvent</a>(e)) </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">return</span> currentScript-&gt;<a class="code" href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">react</a>(e);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span>(!isMoving) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">int</span> dx = e.motion.x - lastMousePressed.x;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">int</span> dy = e.motion.y - lastMousePressed.y;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                lastMousePressed.x = e.motion.x;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                lastMousePressed.y = e.motion.y;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span>(chosenNode == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                chosenNode-&gt;sprite-&gt;moveX(dx);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                chosenNode-&gt;sprite-&gt;moveY(dy);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;defaut:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="ttc" id="aclassScript_html_af7bd060b4589e5e17e0dd32124b90232"><div class="ttname"><a href="classScript.html#af7bd060b4589e5e17e0dd32124b90232">Script::react</a></div><div class="ttdeci">Button * react(SDL_Event &amp;event)</div><div class="ttdef"><b>Definition:</b> <a href="script_2event_8cpp_source.html#l00043">event.cpp:43</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -575,73 +681,75 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="graph_2rendering_8cpp_source.html#l00008">8</a> of file <a class="el" href="graph_2rendering_8cpp_source.html">rendering.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span>(e-&gt;mark == 3)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        SDL_SetRenderDrawColor(render, 50, 50, 50, 255);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(e-&gt;mark == 2)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        SDL_SetRenderDrawColor(render, 255, 0, 0, 255);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(e-&gt;mark == 1)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        SDL_SetRenderDrawColor(render, 0, 255, 0, 255);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        SDL_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> SDL_Rect* srcloc = (e-&gt;u-&gt;sprite-&gt;getLocation());</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> SDL_Rect* dstloc = (e-&gt;v-&gt;sprite-&gt;getLocation());</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    SDL_Point src;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    src.x = srcloc-&gt;x + srcloc-&gt;w/2;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    src.y = srcloc-&gt;y + srcloc-&gt;h/2;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    SDL_Point dst;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    dst.x = dstloc-&gt;x + dstloc-&gt;w/2;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    dst.y = dstloc-&gt;y + dstloc-&gt;h/2;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> sign = 1;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(dst.x &lt; src.x)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        sign = -1;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    e-&gt;sprite-&gt;locatingX((src.x + dst.x) / 2 + sign * 10);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    sign = 1;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(dst.y &lt; src.y)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        sign = -1;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    e-&gt;sprite-&gt;locatingY((src.y + dst.y) / 2 + sign * 10);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = -1; i &lt;= 1; i++)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = -1; j &lt;= 1; j++)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            SDL_RenderDrawLine(render, src.x + i, src.y + j, dst.x + i, dst.y + j);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(nodirect) return ;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structPoint.html">Point</a> v;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> = dst.x - src.x;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> = dst.y - src.y;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">double</span> len = sqrt(v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> + v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> /= len;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> /= len;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="structPoint.html">Point</a> u = {v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a>, -v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a>};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    SDL_Point p1;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    p1.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 40 + u.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 10;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    p1.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 40 + u.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 10;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    SDL_Point p2;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    p2.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 40 - u.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 10;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    p2.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 40 - u.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 10;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    SDL_Point p3;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    p3.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 28;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    p3.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 28;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = -1; i &lt;= 1; i++)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = -1; j &lt;= 1; j++)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            SDL_RenderDrawLine(render, p1.x + i, p1.y + j, p3.x + i, p3.y + j);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            SDL_RenderDrawLine(render, p2.x + i, p2.y + j, p3.x + i, p3.y + j);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span>(nodirect &amp;&amp; e-&gt;u-&gt;value &gt; e-&gt;v-&gt;value)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        return ;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span>(e-&gt;mark == 3)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        SDL_SetRenderDrawColor(render, 50, 50, 50, 255);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(e-&gt;mark == 2)</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        SDL_SetRenderDrawColor(render, 255, 0, 0, 255);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(e-&gt;mark == 1)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        SDL_SetRenderDrawColor(render, 0, 255, 0, 255);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        SDL_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> SDL_Rect* srcloc = (e-&gt;u-&gt;sprite-&gt;getLocation());</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> SDL_Rect* dstloc = (e-&gt;v-&gt;sprite-&gt;getLocation());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    SDL_Point src;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    src.x = srcloc-&gt;x + srcloc-&gt;w/2;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    src.y = srcloc-&gt;y + srcloc-&gt;h/2;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    SDL_Point dst;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    dst.x = dstloc-&gt;x + dstloc-&gt;w/2;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    dst.y = dstloc-&gt;y + dstloc-&gt;h/2;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> sign = 1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>(dst.x &lt; src.x)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        sign = -1;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    e-&gt;sprite-&gt;locatingX((src.x + dst.x) / 2 + sign * 10);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    sign = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span>(dst.y &lt; src.y)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        sign = -1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    e-&gt;sprite-&gt;locatingY((src.y + dst.y) / 2 + sign * 10);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = -1; i &lt;= 1; i++)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = -1; j &lt;= 1; j++)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            SDL_RenderDrawLine(render, src.x + i, src.y + j, dst.x + i, dst.y + j);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(nodirect) return ;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="structPoint.html">Point</a> v;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> = dst.x - src.x;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> = dst.y - src.y;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> len = sqrt(v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> + v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> /= len;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> /= len;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structPoint.html">Point</a> u = {v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a>, -v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a>};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    SDL_Point p1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    p1.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 40 + u.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 10;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    p1.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 40 + u.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 10;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    SDL_Point p2;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    p2.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 40 - u.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 10;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    p2.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 40 - u.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 10;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    SDL_Point p3;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    p3.x = dst.x - v.<a class="code" href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">x</a> * 28;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    p3.y = dst.y - v.<a class="code" href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">y</a> * 28;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = -1; i &lt;= 1; i++)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = -1; j &lt;= 1; j++)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            SDL_RenderDrawLine(render, p1.x + i, p1.y + j, p3.x + i, p3.y + j);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            SDL_RenderDrawLine(render, p2.x + i, p2.y + j, p3.x + i, p3.y + j);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00003">rendering.cpp:4</a></div></div>
 <div class="ttc" id="astructPoint_html_ab99c56589bc8ad5fa5071387110a5bc7"><div class="ttname"><a href="structPoint.html#ab99c56589bc8ad5fa5071387110a5bc7">Point::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00005">rendering.cpp:5</a></div></div>
 <div class="ttc" id="astructPoint_html_afa38be143ae800e6ad69ce8ed4df62d8"><div class="ttname"><a href="structPoint.html#afa38be143ae800e6ad69ce8ed4df62d8">Point::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00005">rendering.cpp:5</a></div></div>
@@ -663,19 +771,26 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_2rendering_8cpp_source.html#l00078">78</a> of file <a class="el" href="graph_2rendering_8cpp_source.html">rendering.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : edges)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">renderEdge</a>(i);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span>(i-&gt;sprite != <span class="keyword">nullptr</span>) i-&gt;sprite-&gt;rendering();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        i-&gt;sprite-&gt;rendering();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_2rendering_8cpp_source.html#l00080">80</a> of file <a class="el" href="graph_2rendering_8cpp_source.html">rendering.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::lock_guard&lt;std::mutex&gt; lock(animate_mutex);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : edges)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">renderEdge</a>(i);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span>(i-&gt;sprite != <span class="keyword">nullptr</span>) i-&gt;sprite-&gt;rendering();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        i-&gt;sprite-&gt;rendering();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span>(currentScript != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        currentScript-&gt;<a class="code" href="classScript.html#afabe6d8f50598c591160b181f77c14a4">rendering</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="ttc" id="aclassGraph_html_a338cf4fe96aeedef6d097a31ce604c9e"><div class="ttname"><a href="classGraph.html#a338cf4fe96aeedef6d097a31ce604c9e">Graph::renderEdge</a></div><div class="ttdeci">void renderEdge(Edge *edge)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2rendering_8cpp_source.html#l00008">rendering.cpp:8</a></div></div>
+<div class="ttc" id="aclassScript_html_afabe6d8f50598c591160b181f77c14a4"><div class="ttname"><a href="classScript.html#afabe6d8f50598c591160b181f77c14a4">Script::rendering</a></div><div class="ttdeci">void rendering()</div><div class="ttdef"><b>Definition:</b> <a href="script_2rendering_8cpp_source.html#l00003">rendering.cpp:3</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -711,7 +826,7 @@ Friends</h2></td></tr>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">setting</a>(bgColor, nodeColor, fontColor, edgesColor);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    nodirect = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="ttc" id="aclassGraph_html_a3fa967ede13bc835a3a3a343d0d507a3"><div class="ttname"><a href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">Graph::setting</a></div><div class="ttdeci">void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2constructor_8cpp_source.html#l00057">constructor.cpp:57</a></div></div>
+<div class="ttc" id="aclassGraph_html_a3fa967ede13bc835a3a3a343d0d507a3"><div class="ttname"><a href="classGraph.html#a3fa967ede13bc835a3a3a343d0d507a3">Graph::setting</a></div><div class="ttdeci">void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</div><div class="ttdef"><b>Definition:</b> <a href="graph_2constructor_8cpp_source.html#l00067">constructor.cpp:67</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -802,18 +917,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_2constructor_8cpp_source.html#l00057">57</a> of file <a class="el" href="graph_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    bgColor = c1;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    nodeColor = c2;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    fontColor = c3;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    edgesColor = c4;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        i-&gt;sprite-&gt;setFontColor(fontColor);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        i-&gt;sprite-&gt;coloring(nodeColor);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_2constructor_8cpp_source.html#l00067">67</a> of file <a class="el" href="graph_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    bgColor = c1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    nodeColor = c2;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    fontColor = c3;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    edgesColor = c4;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : nodes)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        i-&gt;sprite-&gt;setFontColor(fontColor);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        i-&gt;sprite-&gt;coloring(nodeColor);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -876,6 +991,34 @@ Friends</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a88f4ed964c4b521a8c30c11e4f8a433d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f4ed964c4b521a8c30c11e4f8a433d">&#9670;&nbsp;</a></span>unhighlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Graph::unhighlight </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00105">105</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::lock_guard&lt;std::mutex&gt; lk(animate_mutex);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="aclassScript_html_aa8486e367a767589984c2a2a078898ae"><div class="ttname"><a href="classScript.html#aa8486e367a767589984c2a2a078898ae">Script::unhighlight</a></div><div class="ttdeci">void unhighlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00009">highlight.cpp:9</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af2f1a34928c3e5119d8a170a81167a5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2f1a34928c3e5119d8a170a81167a5d">&#9670;&nbsp;</a></span>unionEdges()</h2>
 
@@ -902,24 +1045,39 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="graph_2operator_2mst_8cpp_source.html#l00082">82</a> of file <a class="el" href="graph_2operator_2mst_8cpp_source.html">mst.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classGraph.html#aef96f70c574ff42ec00fa042c57e1658">repair</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structDSU.html">DSU</a> dsu(nodes.size());</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    nodirect = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : sortedEdges)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        i-&gt;mark = 3;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span>(!dsu.isUnionized(i))</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            i-&gt;mark = 1;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            dsu.unionEdge(i);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }<span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            i-&gt;mark = 2;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    currentScript = script[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe">DATA_STRUCTURES_OPERATOR::MST</a>];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="structDSU.html">DSU</a> dsu(nodes.size());</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    nodirect = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({0});</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({0});</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({1});</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({1});</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="classGraph.html#a121fc9cf8d69028abb318d8922865c72">highlight</a>({2, 3, 4, 5, 6});</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : sortedEdges)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span>(nodirect &amp;&amp; i-&gt;u-&gt;value &gt; i-&gt;v-&gt;value)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        i-&gt;mark = 3;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span>(!dsu.isUnionized(i))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            i-&gt;mark = 1;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            dsu.unionEdge(i);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }<span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            i-&gt;mark = 2;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="classGraph.html#a21adbc00f3f1bcba062fb124d8273f0c">waitForStep</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classGraph.html#a88f4ed964c4b521a8c30c11e4f8a433d">unhighlight</a>({2, 3, 4, 5, 6});</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="ttc" id="astructDSU_html"><div class="ttname"><a href="structDSU.html">DSU</a></div><div class="ttdef"><b>Definition:</b> <a href="graph_2operator_2mst_8cpp_source.html#l00004">mst.cpp:5</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -947,12 +1105,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00075">75</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ds_mutex.unlock();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ds_mutex.lock();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graph_2event_8cpp_source.html#l00084">84</a> of file <a class="el" href="graph_2event_8cpp_source.html">event.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ds_mutex.unlock();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ds_mutex.lock();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -977,7 +1135,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00078">78</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00080">80</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1001,7 +1159,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00086">86</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="graph_8hpp_source.html#l00088">88</a> of file <a class="el" href="graph_8hpp_source.html">graph.hpp</a>.</p>
 
 </div>
 </div>

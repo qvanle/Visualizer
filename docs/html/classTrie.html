@@ -126,6 +126,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a849c13fcfac831e9013dc12790016bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a5d56a0e3c77f8baf1efcb350bd8a95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#a4a5d56a0e3c77f8baf1efcb350bd8a95">setting</a> (SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4)</td></tr>
 <tr class="separator:a4a5d56a0e3c77f8baf1efcb350bd8a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9baf1c141bd1b2262b556ef95054127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">goOff</a> ()</td></tr>
+<tr class="separator:aa9baf1c141bd1b2262b556ef95054127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a71943d5b1848da1f9108f215d011f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#a95a71943d5b1848da1f9108f215d011f">goOn</a> ()</td></tr>
+<tr class="separator:a95a71943d5b1848da1f9108f215d011f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45388d458be3ad78ab2509ace3f77a13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#a45388d458be3ad78ab2509ace3f77a13">speedUp</a> ()</td></tr>
+<tr class="separator:a45388d458be3ad78ab2509ace3f77a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af904edfe971695f9e62cc90154b28c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#af904edfe971695f9e62cc90154b28c2d">slowDown</a> ()</td></tr>
+<tr class="separator:af904edfe971695f9e62cc90154b28c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b1642a8873688324c511bd68b7624b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#a69b1642a8873688324c511bd68b7624b">goNext</a> ()</td></tr>
+<tr class="separator:a69b1642a8873688324c511bd68b7624b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaef2c180632252b4d66469012d761b39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTrie.html#aaef2c180632252b4d66469012d761b39">goBack</a> ()</td></tr>
+<tr class="separator:aaef2c180632252b4d66469012d761b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -213,31 +225,30 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    distanceY = 80;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    isMoving = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    isQueue = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    isPause = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    stepWait = 600;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    isAnimate = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string fontpath = <a class="code" href="namespacePATH_1_1ASSETS.html#ad4e7087fa880f271eefea9f1619ebcf7">PATH::ASSETS::FONTS_</a> + <span class="stringliteral">&quot;nimbus-sans-l/regular.otf&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    currentScript = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a>-&gt;linking(<span class="stringliteral">&quot;trie/insert&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b">DATA_STRUCTURES_OPERATOR::INSERT</a>] = <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a>-&gt;linking(<span class="stringliteral">&quot;trie/remove&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e">DATA_STRUCTURES_OPERATOR::DELETE</a>] = <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a>-&gt;linking(<span class="stringliteral">&quot;trie/search&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5">DATA_STRUCTURES_OPERATOR::SEARCH</a>] = <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a>-&gt;linking(<span class="stringliteral">&quot;trie/init&quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498">DATA_STRUCTURES_OPERATOR::INIT</a>] = <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    pause = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    stepWait = 600;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    isAnimate = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string fontpath = <a class="code" href="namespacePATH_1_1ASSETS.html#ad4e7087fa880f271eefea9f1619ebcf7">PATH::ASSETS::FONTS_</a> + <span class="stringliteral">&quot;nimbus-sans-l/regular.otf&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    scriptFont = TTF_OpenFont(fontpath.c_str(), 18);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    currentScript = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a>-&gt;linking(<span class="stringliteral">&quot;trie/insert&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b">DATA_STRUCTURES_OPERATOR::INSERT</a>] = <a class="code" href="classTrie.html#a12a4d1a4c233552b3789f46283b20545">insert</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a>-&gt;linking(<span class="stringliteral">&quot;trie/remove&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e">DATA_STRUCTURES_OPERATOR::DELETE</a>] = <a class="code" href="classTrie.html#addf2c79ab18b290872b7e8287b3b5751">remove</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a>-&gt;linking(<span class="stringliteral">&quot;trie/search&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5">DATA_STRUCTURES_OPERATOR::SEARCH</a>] = <a class="code" href="classTrie.html#a953450931a7c1862c92cf3aaa10efa7d">search</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classScript.html">Script</a>* <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a> = <span class="keyword">new</span> <a class="code" href="classScript.html">Script</a>(render, scriptFont);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a>-&gt;linking(<span class="stringliteral">&quot;trie/init&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    scripts[<a class="code" href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498">DATA_STRUCTURES_OPERATOR::INIT</a>] = <a class="code" href="classTrie.html#ac30e4ca5b9ae9fef263dcec24014da22">init</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5">DATA_STRUCTURES_OPERATOR::SEARCH</a></div><div class="ttdeci">@ SEARCH</div></div>
 <div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e">DATA_STRUCTURES_OPERATOR::DELETE</a></div><div class="ttdeci">@ DELETE</div></div>
 <div class="ttc" id="aGLOBAL_8hpp_html_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b"><div class="ttname"><a href="GLOBAL_8hpp.html#ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b">DATA_STRUCTURES_OPERATOR::INSERT</a></div><div class="ttdeci">@ INSERT</div></div>
@@ -349,6 +360,103 @@ Protected Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aaef2c180632252b4d66469012d761b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaef2c180632252b4d66469012d761b39">&#9670;&nbsp;</a></span>goBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::goBack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00023">23</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a69b1642a8873688324c511bd68b7624b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b1642a8873688324c511bd68b7624b">&#9670;&nbsp;</a></span>goNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::goNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00027">27</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">goOff</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">goOff</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="ttc" id="aclassTrie_html_aa9baf1c141bd1b2262b556ef95054127"><div class="ttname"><a href="classTrie.html#aa9baf1c141bd1b2262b556ef95054127">Trie::goOff</a></div><div class="ttdeci">void goOff()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00042">step.cpp:42</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa9baf1c141bd1b2262b556ef95054127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9baf1c141bd1b2262b556ef95054127">&#9670;&nbsp;</a></span>goOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::goOff </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00042">42</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pause ^= <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    queue_cv.notify_one();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a95a71943d5b1848da1f9108f215d011f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a71943d5b1848da1f9108f215d011f">&#9670;&nbsp;</a></span>goOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::goOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00038">38</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8d8ba8a3824d1b8072ff318cf5df42df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d8ba8a3824d1b8072ff318cf5df42df">&#9670;&nbsp;</a></span>highlight()</h2>
 
@@ -373,18 +481,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00026">26</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        animate_mutex.lock();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        animate_mutex.unlock();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00063">63</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        animate_mutex.lock();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">highlight</a>(l[i]);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        animate_mutex.unlock();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="ttc" id="aclassScript_html_ad060d7d1676e4b49ac87c00593023eb6"><div class="ttname"><a href="classScript.html#ad060d7d1676e4b49ac87c00593023eb6">Script::highlight</a></div><div class="ttdeci">void highlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00003">highlight.cpp:3</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -550,8 +658,8 @@ Protected Member Functions</h2></td></tr>
 <div class="ttc" id="aclassSprite_html_a820001b0f013a1dc4891de8134f6ca0d"><div class="ttname"><a href="classSprite.html#a820001b0f013a1dc4891de8134f6ca0d">Sprite::linking</a></div><div class="ttdeci">void linking(std::string n)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_2constructor_8cpp_source.html#l00021">constructor.cpp:21</a></div></div>
 <div class="ttc" id="aclassSprite_html_a9b07ea905747cb444aacb6c93380c1c1"><div class="ttname"><a href="classSprite.html#a9b07ea905747cb444aacb6c93380c1c1">Sprite::setFont</a></div><div class="ttdeci">void setFont(TTF_Font *f)</div><div class="ttdef"><b>Definition:</b> <a href="sprite_2constructor_8cpp_source.html#l00026">constructor.cpp:26</a></div></div>
 <div class="ttc" id="aclassSprite_html_ac3313ff23cc870dbd3a0368a3fbb3d60"><div class="ttname"><a href="classSprite.html#ac3313ff23cc870dbd3a0368a3fbb3d60">Sprite::typing</a></div><div class="ttdeci">void typing(char c)</div><div class="ttdef"><b>Definition:</b> <a href="textbox_8cpp_source.html#l00026">textbox.cpp:26</a></div></div>
-<div class="ttc" id="aclassTrie_html_a8d8ba8a3824d1b8072ff318cf5df42df"><div class="ttname"><a href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00026">step.cpp:26</a></div></div>
-<div class="ttc" id="aclassTrie_html_abd02b64b6a7ca27c8f0a47c225126daa"><div class="ttname"><a href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00039">step.cpp:39</a></div></div>
+<div class="ttc" id="aclassTrie_html_a8d8ba8a3824d1b8072ff318cf5df42df"><div class="ttname"><a href="classTrie.html#a8d8ba8a3824d1b8072ff318cf5df42df">Trie::highlight</a></div><div class="ttdeci">void highlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00063">step.cpp:63</a></div></div>
+<div class="ttc" id="aclassTrie_html_abd02b64b6a7ca27c8f0a47c225126daa"><div class="ttname"><a href="classTrie.html#abd02b64b6a7ca27c8f0a47c225126daa">Trie::unhighlight</a></div><div class="ttdeci">void unhighlight(std::vector&lt; int &gt; l)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00076">step.cpp:76</a></div></div>
 <div class="ttc" id="aclassTrie_html_aef87b01517edc98fde43e3d095ac91e7"><div class="ttname"><a href="classTrie.html#aef87b01517edc98fde43e3d095ac91e7">Trie::waitForStep</a></div><div class="ttdeci">void waitForStep()</div><div class="ttdef"><b>Definition:</b> <a href="trie_2step_8cpp_source.html#l00005">step.cpp:5</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -672,43 +780,43 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trie_2constructor_8cpp_source.html#l00057">57</a> of file <a class="el" href="trie_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span>(node == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 26; i++) </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] != <span class="keyword">nullptr</span>) j++;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    j /= 2;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span>(; j &gt; 0; i++)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        j--;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        shiftRight = <a class="code" href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">locating</a>(node-&gt;childs[i], shiftDown + 1, shiftRight);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    node-&gt;sprite-&gt;locatingX(shiftX + shiftRight * distanceX);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    node-&gt;sprite-&gt;locatingY(shiftY + shiftDown * distanceY);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    node-&gt;sprite-&gt;aligning(<a class="code" href="GLOBAL_8hpp.html#a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e">HORIZONTAL_ALIGN::CENTER</a>, <a class="code" href="GLOBAL_8hpp.html#af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e">VERTICAL_ALIGN::CENTER</a>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    shiftRight++;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span>(; i &lt; 26; i++)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        shiftRight = <a class="code" href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">locating</a>(node-&gt;childs[i], shiftDown + 1, shiftRight);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> shiftRight;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="trie_2constructor_8cpp_source.html#l00056">56</a> of file <a class="el" href="trie_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(node == <span class="keyword">nullptr</span>) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 26; i++) </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] != <span class="keyword">nullptr</span>) j++;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    j /= 2;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span>(; j &gt; 0; i++)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        j--;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        shiftRight = <a class="code" href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">locating</a>(node-&gt;childs[i], shiftDown + 1, shiftRight);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    node-&gt;sprite-&gt;locatingX(shiftX + shiftRight * distanceX);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    node-&gt;sprite-&gt;locatingY(shiftY + shiftDown * distanceY);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    node-&gt;sprite-&gt;aligning(<a class="code" href="GLOBAL_8hpp.html#a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e">HORIZONTAL_ALIGN::CENTER</a>, <a class="code" href="GLOBAL_8hpp.html#af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e">VERTICAL_ALIGN::CENTER</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    shiftRight++;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span>(; i &lt; 26; i++)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span>(node-&gt;childs[i] == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        shiftRight = <a class="code" href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">locating</a>(node-&gt;childs[i], shiftDown + 1, shiftRight);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> shiftRight;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="ttc" id="aGLOBAL_8hpp_html_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e"><div class="ttname"><a href="GLOBAL_8hpp.html#a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e">HORIZONTAL_ALIGN::CENTER</a></div><div class="ttdeci">@ CENTER</div></div>
 <div class="ttc" id="aGLOBAL_8hpp_html_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e"><div class="ttname"><a href="GLOBAL_8hpp.html#af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e">VERTICAL_ALIGN::CENTER</a></div><div class="ttdeci">@ CENTER</div></div>
-<div class="ttc" id="aclassTrie_html_a34c09393358e41af66c91d3cadc855b3"><div class="ttname"><a href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">Trie::locating</a></div><div class="ttdeci">int locating(Node *node, int shiftDown, int shiftRight)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2constructor_8cpp_source.html#l00057">constructor.cpp:57</a></div></div>
+<div class="ttc" id="aclassTrie_html_a34c09393358e41af66c91d3cadc855b3"><div class="ttname"><a href="classTrie.html#a34c09393358e41af66c91d3cadc855b3">Trie::locating</a></div><div class="ttdeci">int locating(Node *node, int shiftDown, int shiftRight)</div><div class="ttdef"><b>Definition:</b> <a href="trie_2constructor_8cpp_source.html#l00056">constructor.cpp:56</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1179,31 +1287,75 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trie_2constructor_8cpp_source.html#l00092">92</a> of file <a class="el" href="trie_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    bgColor = c1;   </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    nodeColor = c2;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    fontColor = c3;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    edgesColor = c4;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::queue&lt;Node*&gt; q;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>(root != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        q.push(root);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">while</span>(!q.empty())</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        Node* node = q.front();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        q.pop();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        node-&gt;sprite-&gt;coloring(nodeColor);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        node-&gt;sprite-&gt;setFontColor(fontColor);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        node-&gt;sprite-&gt;coloring(nodeColor);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 26; i++)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span>(node-&gt;childs[i] != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                q.push(node-&gt;childs[i]);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="trie_2constructor_8cpp_source.html#l00091">91</a> of file <a class="el" href="trie_2constructor_8cpp_source.html">constructor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    bgColor = c1;   </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    nodeColor = c2;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    fontColor = c3;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    edgesColor = c4;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::queue&lt;Node*&gt; q;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(root != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        q.push(root);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">while</span>(!q.empty())</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Node* node = q.front();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        q.pop();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        node-&gt;sprite-&gt;coloring(nodeColor);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        node-&gt;sprite-&gt;setFontColor(fontColor);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        node-&gt;sprite-&gt;coloring(nodeColor);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 26; i++)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span>(node-&gt;childs[i] != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                q.push(node-&gt;childs[i]);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af904edfe971695f9e62cc90154b28c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af904edfe971695f9e62cc90154b28c2d">&#9670;&nbsp;</a></span>slowDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::slowDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00056">56</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(stepWait &lt;= 2000) stepWait = stepWait * 2;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a45388d458be3ad78ab2509ace3f77a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45388d458be3ad78ab2509ace3f77a13">&#9670;&nbsp;</a></span>speedUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Trie::speedUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00051">51</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(stepWait &gt;= 100) stepWait = stepWait / 2;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1231,18 +1383,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00039">39</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        animate_mutex.lock();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        animate_mutex.unlock();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="trie_2step_8cpp_source.html#l00076">76</a> of file <a class="el" href="trie_2step_8cpp_source.html">step.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span>(isAnimate)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        animate_mutex.lock();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; l.size(); i++)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            currentScript-&gt;<a class="code" href="classScript.html#aa8486e367a767589984c2a2a078898ae">unhighlight</a>(l[i]);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        animate_mutex.unlock();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="ttc" id="aclassScript_html_aa8486e367a767589984c2a2a078898ae"><div class="ttname"><a href="classScript.html#aa8486e367a767589984c2a2a078898ae">Script::unhighlight</a></div><div class="ttdeci">void unhighlight(int index)</div><div class="ttdef"><b>Definition:</b> <a href="highlight_8cpp_source.html#l00009">highlight.cpp:9</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1277,19 +1429,16 @@ Protected Member Functions</h2></td></tr>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        ds_mutex.unlock();</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        ds_mutex.lock();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::lock_guard&lt;std::mutex&gt; pause_lock(pause_mutex);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(isPause == <span class="keyword">false</span>) </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        return ;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ds_mutex.unlock();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::unique_lock&lt;std::mutex&gt; lk(step_mutex);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    step_cv.wait(lk, [&amp;]{<span class="keywordflow">return</span> isQueue == <span class="keyword">true</span>;});</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    isQueue = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ds_mutex.lock();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            std::lock_guard&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">if</span>(!pause) return ;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        ds_mutex.unlock();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::unique_lock&lt;std::mutex&gt; lk(pause_mutex);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        queue_cv.wait(lk, [<span class="keyword">this</span>]{<span class="keywordflow">return</span> !pause;});</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        ds_mutex.lock();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

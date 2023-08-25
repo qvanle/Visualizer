@@ -37,6 +37,8 @@
 - [x] Main menu
 - [x] Option menu 
 - [x] Settings
+- [x] Init from file (in saving folder)
+- [x] Step by step 
 - [ ] Code highlight
     - [x] Hash table 
     - [x] AVL

@@ -114,7 +114,12 @@ $(document).ready(function(){initNavTree('graph_2destructor_8cpp_source.html',''
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;i : edges)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">delete</span> i;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    edges.clear();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    TTF_CloseFont(scriptFont);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : script)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">delete</span> i.second;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    script.clear();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="aclassGraph_html_a902c5b3eacb66d60752525ab23297a95"><div class="ttname"><a href="classGraph.html#a902c5b3eacb66d60752525ab23297a95">Graph::~Graph</a></div><div class="ttdeci">~Graph()</div><div class="ttdef"><b>Definition:</b> <a href="graph_2destructor_8cpp_source.html#l00019">destructor.cpp:19</a></div></div>
 <div class="ttc" id="agraph_8hpp_html"><div class="ttname"><a href="graph_8hpp.html">graph.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

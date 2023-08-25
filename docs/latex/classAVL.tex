@@ -117,45 +117,44 @@ Definition at line 23 of file constructor.\+cpp.
 \DoxyCodeLine{28     viewport = vp;}
 \DoxyCodeLine{29     capacity = cap;}
 \DoxyCodeLine{30     sizeOfTree = 0;}
-\DoxyCodeLine{31     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{32     isPause = \textcolor{keyword}{false};}
-\DoxyCodeLine{33     edgesColor = \{255, 255, 255, 255\};}
-\DoxyCodeLine{34     fontColor = \{255, 255, 255, 255\};}
-\DoxyCodeLine{35     nodeColor = \{20, 85, 185, 255\};}
-\DoxyCodeLine{36     shiftX = 20;}
-\DoxyCodeLine{37     shiftY = 20;}
-\DoxyCodeLine{38     distanceX = 40;}
-\DoxyCodeLine{39     distanceY = 100;}
-\DoxyCodeLine{40     isMoving = \textcolor{keyword}{false};}
-\DoxyCodeLine{41     stepWait = 600;}
-\DoxyCodeLine{42     isAnimate = \textcolor{keyword}{false};}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     nodeColor = \{20, 85, 185, 255\};}
-\DoxyCodeLine{45     fontColor = \{255, 255, 255, 255\};}
-\DoxyCodeLine{46     bgColor = \{0, 0, 0, 255\};}
-\DoxyCodeLine{47     }
-\DoxyCodeLine{48     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
-\DoxyCodeLine{49     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51     currentScript = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{52     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{53     \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}-\/>linking(\textcolor{stringliteral}{"{}AVL/insert"{}});}
-\DoxyCodeLine{54     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{57     \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}-\/>linking(\textcolor{stringliteral}{"{}AVL/remove"{}});}
-\DoxyCodeLine{58     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}};}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{61     \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}-\/>linking(\textcolor{stringliteral}{"{}AVL/search"{}});}
-\DoxyCodeLine{62     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}};}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
-\DoxyCodeLine{65     \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}}-\/>linking(\textcolor{stringliteral}{"{}AVL/init"{}});}
-\DoxyCodeLine{66     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}};}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68     currentScript = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
-\DoxyCodeLine{69 \}}
+\DoxyCodeLine{31     pause = \textcolor{keyword}{false};}
+\DoxyCodeLine{32     edgesColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{33     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{34     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{35     shiftX = 20;}
+\DoxyCodeLine{36     shiftY = 20;}
+\DoxyCodeLine{37     distanceX = 40;}
+\DoxyCodeLine{38     distanceY = 100;}
+\DoxyCodeLine{39     isMoving = \textcolor{keyword}{false};}
+\DoxyCodeLine{40     stepWait = 600;}
+\DoxyCodeLine{41     isAnimate = \textcolor{keyword}{false};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     nodeColor = \{20, 85, 185, 255\};}
+\DoxyCodeLine{44     fontColor = \{255, 255, 255, 255\};}
+\DoxyCodeLine{45     bgColor = \{0, 0, 0, 255\};}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47     std::string fontpath = \mbox{\hyperlink{namespacePATH_1_1ASSETS_ad4e7087fa880f271eefea9f1619ebcf7}{PATH::ASSETS::FONTS\_}} + \textcolor{stringliteral}{"{}nimbus-\/sans-\/l/regular.otf"{}};}
+\DoxyCodeLine{48     scriptFont = TTF\_OpenFont(fontpath.c\_str(), 18);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     currentScript = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{51     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{52     \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}-\/>linking(\textcolor{stringliteral}{"{}AVL/insert"{}});}
+\DoxyCodeLine{53     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a61ee777e7f71dc466c3b2c685d8d313b}{DATA\_STRUCTURES\_OPERATOR::INSERT}}] = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{56     \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}}-\/>linking(\textcolor{stringliteral}{"{}AVL/remove"{}});}
+\DoxyCodeLine{57     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a32f68a60cef40faedbc6af20298c1a1e}{DATA\_STRUCTURES\_OPERATOR::DELETE}}] = \mbox{\hyperlink{classAVL_a3d935287d07601b9a08e5fc58a576d5f}{remove}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{60     \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}}-\/>linking(\textcolor{stringliteral}{"{}AVL/search"{}});}
+\DoxyCodeLine{61     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a0f544d682c3a664870f025f48c4b04b5}{DATA\_STRUCTURES\_OPERATOR::SEARCH}}] = \mbox{\hyperlink{classAVL_af9dfc3659ad76850aeaabf30dd8987cc}{search}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \mbox{\hyperlink{classScript}{Script}}* \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}} = \textcolor{keyword}{new} \mbox{\hyperlink{classScript}{Script}}(render, scriptFont);}
+\DoxyCodeLine{64     \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}}-\/>linking(\textcolor{stringliteral}{"{}AVL/init"{}});}
+\DoxyCodeLine{65     scripts[\mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4afaee4ca3c30ee18148ce3ada37466498}{DATA\_STRUCTURES\_OPERATOR::INIT}}] = \mbox{\hyperlink{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}{init}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     currentScript = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}};}
+\DoxyCodeLine{68 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_ac119f7c61c6d7dd159a71ae08561596b}\label{classAVL_ac119f7c61c6d7dd159a71ae08561596b}} 
@@ -292,12 +291,12 @@ Definition at line 3 of file rotate.\+cpp.
 
 
 
-Definition at line 52 of file step.\+cpp.
+Definition at line 50 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{53 \{}
-\DoxyCodeLine{54 \}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a891d6851b767ec15cc5c685f21205efb}\label{classAVL_a891d6851b767ec15cc5c685f21205efb}} 
@@ -308,16 +307,19 @@ Definition at line 52 of file step.\+cpp.
 
 
 
-Definition at line 56 of file step.\+cpp.
+Definition at line 54 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{57 \{}
-\DoxyCodeLine{58     pause\_mutex.lock();}
-\DoxyCodeLine{59     isQueue = \textcolor{keyword}{true};}
-\DoxyCodeLine{60     pause\_mutex.unlock();}
-\DoxyCodeLine{61     step\_cv.notify\_one();}
-\DoxyCodeLine{62 \}}
+\DoxyCodeLine{55 \{}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{58         \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60     \mbox{\hyperlink{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}{goOff}}();}
+\DoxyCodeLine{61     std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{62     \mbox{\hyperlink{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}{goOff}}();}
+\DoxyCodeLine{63 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}\label{classAVL_a23c96bedccaab74ef9c10cee2c0aecaf}} 
@@ -328,15 +330,17 @@ Definition at line 56 of file step.\+cpp.
 
 
 
-Definition at line 72 of file step.\+cpp.
+Definition at line 69 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{73 \{}
-\DoxyCodeLine{74     pause\_mutex.lock();}
-\DoxyCodeLine{75     isPause = \textcolor{keyword}{true};}
-\DoxyCodeLine{76     pause\_mutex.unlock();}
-\DoxyCodeLine{77 \}}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{73         pause \string^= \textcolor{keyword}{true};}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     queue\_cv.notify\_one();}
+\DoxyCodeLine{76 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a9e5e602f2c339f29af917258ce88fa2d}\label{classAVL_a9e5e602f2c339f29af917258ce88fa2d}} 
@@ -347,16 +351,12 @@ Definition at line 72 of file step.\+cpp.
 
 
 
-Definition at line 64 of file step.\+cpp.
+Definition at line 65 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{65 \{}
-\DoxyCodeLine{66     pause\_mutex.lock();}
-\DoxyCodeLine{67     isPause = \textcolor{keyword}{false};}
-\DoxyCodeLine{68     pause\_mutex.unlock();}
-\DoxyCodeLine{69     step\_cv.notify\_one();}
-\DoxyCodeLine{70 \}}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}\label{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}} 
@@ -367,21 +367,21 @@ Definition at line 64 of file step.\+cpp.
 
 
 
-Definition at line 5 of file step.\+cpp.
+Definition at line 6 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{6 \{}
-\DoxyCodeLine{7     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{8     \{}
-\DoxyCodeLine{9         animate\_mutex.lock();}
-\DoxyCodeLine{10         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{11         \{}
-\DoxyCodeLine{12             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
-\DoxyCodeLine{13         \}}
-\DoxyCodeLine{14         animate\_mutex.unlock();}
-\DoxyCodeLine{15     \}}
-\DoxyCodeLine{16 \}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{9     \{}
+\DoxyCodeLine{10         animate\_mutex.lock();}
+\DoxyCodeLine{11         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{12         \{}
+\DoxyCodeLine{13             currentScript-\/>\mbox{\hyperlink{classScript_ad060d7d1676e4b49ac87c00593023eb6}{highlight}}(l[i]);}
+\DoxyCodeLine{14         \}}
+\DoxyCodeLine{15         animate\_mutex.unlock();}
+\DoxyCodeLine{16     \}}
+\DoxyCodeLine{17 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}\label{classAVL_aa902be83a81a53e5d1f269ef1a24a0e7}} 
@@ -450,23 +450,22 @@ Definition at line 62 of file insert.\+cpp.
 \DoxyCodeLine{79 }
 \DoxyCodeLine{80     cache = \textcolor{keyword}{new} Node(key, sprite);}
 \DoxyCodeLine{81 }
-\DoxyCodeLine{82     isPause = \textcolor{keyword}{false};}
-\DoxyCodeLine{83     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{84     isAnimate = \textcolor{keyword}{true};}
-\DoxyCodeLine{85     }
-\DoxyCodeLine{86     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{0\});}
-\DoxyCodeLine{87     \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
-\DoxyCodeLine{88     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{0\});}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90     root = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(root, cache);}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     maxHigh = \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{82     isAnimate = \textcolor{keyword}{true};}
+\DoxyCodeLine{83     pause = \textcolor{keyword}{false};}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85     \mbox{\hyperlink{classAVL_a7e0909e0c2b0f170f4b397d0aa046bed}{highlight}}(\{0\});}
+\DoxyCodeLine{86     \mbox{\hyperlink{classAVL_a6f008a067c2278bd867ac1399ce88512}{waitForStep}}();}
+\DoxyCodeLine{87     \mbox{\hyperlink{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}{unhighlight}}(\{0\});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     root = \mbox{\hyperlink{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}{insert}}(root, cache);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     maxHigh = \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{92 }
 \DoxyCodeLine{93 }
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95     cache = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{98 \}}
+\DoxyCodeLine{94     cache = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{97 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}\label{classAVL_a3f63460de79580ca19e2ebdcc2b8b0e0}} 
@@ -583,28 +582,28 @@ Definition at line 3 of file event.\+cpp.
 
 
 
-Definition at line 83 of file constructor.\+cpp.
+Definition at line 82 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{84 \{}
-\DoxyCodeLine{85     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
-\DoxyCodeLine{86     \{}
-\DoxyCodeLine{87         \textcolor{keywordtype}{int} shift = maxHigh -\/ shiftDown;}
-\DoxyCodeLine{88         \textcolor{keywordflow}{return} (1 << shift) -\/ 1;}
-\DoxyCodeLine{89     \}}
-\DoxyCodeLine{90     \textcolor{keywordtype}{int} left = \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>lson, shiftDown + 1, shiftRight);}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     \textcolor{keywordflow}{if}(node-\/>sprite != \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{93     \{}
-\DoxyCodeLine{94         node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX + left * distanceX);}
-\DoxyCodeLine{95         node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
-\DoxyCodeLine{96         node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
-\DoxyCodeLine{97     \}}
-\DoxyCodeLine{98     \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>rson, shiftDown + 1, shiftRight + left + 1);}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100     \textcolor{keywordflow}{return} (1 << (maxHigh -\/ shiftDown)) -\/ 1;}
-\DoxyCodeLine{101 \}}
+\DoxyCodeLine{83 \{}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86         \textcolor{keywordtype}{int} shift = maxHigh -\/ shiftDown;}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} (1 << shift) -\/ 1;}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} left = \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>lson, shiftDown + 1, shiftRight);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordflow}{if}(node-\/>sprite != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{92     \{}
+\DoxyCodeLine{93         node-\/>sprite-\/>locatingX(shiftX + shiftRight * distanceX + left * distanceX);}
+\DoxyCodeLine{94         node-\/>sprite-\/>locatingY(shiftY + shiftDown * distanceY);}
+\DoxyCodeLine{95         node-\/>sprite-\/>aligning(\mbox{\hyperlink{GLOBAL_8hpp_a8d838cb2a1ef7163b2f1aa12366a3906ac397289ee45877be0cd49811fe245b4e}{HORIZONTAL\_ALIGN::CENTER}}, \mbox{\hyperlink{GLOBAL_8hpp_af2239f885a06fd0820044e7adcbce0e2ac397289ee45877be0cd49811fe245b4e}{VERTICAL\_ALIGN::CENTER}});}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97     \mbox{\hyperlink{classAVL_ae6f9e866cb1497d4e0216b9be3a5c948}{locating}}(node-\/>rson, shiftDown + 1, shiftRight + left + 1);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordflow}{return} (1 << (maxHigh -\/ shiftDown)) -\/ 1;}
+\DoxyCodeLine{100 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}\label{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}} 
@@ -615,13 +614,13 @@ Definition at line 83 of file constructor.\+cpp.
 
 
 
-Definition at line 70 of file constructor.\+cpp.
+Definition at line 69 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71 \{}
-\DoxyCodeLine{72     \textcolor{keywordflow}{return} \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
-\DoxyCodeLine{73 \}}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71     \textcolor{keywordflow}{return} \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(root);}
+\DoxyCodeLine{72 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a68b0ea2de62d0499e1120713603e34ad}\label{classAVL_a68b0ea2de62d0499e1120713603e34ad}} 
@@ -632,15 +631,15 @@ Definition at line 70 of file constructor.\+cpp.
 
 
 
-Definition at line 75 of file constructor.\+cpp.
+Definition at line 74 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{76 \{}
-\DoxyCodeLine{77     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79     \textcolor{keywordflow}{return} 1 + std::max(\mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>lson), \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>rson));}
-\DoxyCodeLine{80 \}}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr}) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} 1 + std::max(\mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>lson), \mbox{\hyperlink{classAVL_a3febcdaf7eb15615b4ff7ee4b9ff9ac4}{maxDepth}}(node-\/>rson));}
+\DoxyCodeLine{79 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a56b564df68059084a26f6643f17b09fb}\label{classAVL_a56b564df68059084a26f6643f17b09fb}} 
@@ -1149,32 +1148,32 @@ Definition at line 5 of file search.\+cpp.
 
 
 
-Definition at line 103 of file constructor.\+cpp.
+Definition at line 102 of file constructor.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{104 \{}
-\DoxyCodeLine{105     bgColor = c1;}
-\DoxyCodeLine{106     nodeColor = c2;}
-\DoxyCodeLine{107     fontColor = c3;}
-\DoxyCodeLine{108     edgesColor = c4;}
-\DoxyCodeLine{109 }
-\DoxyCodeLine{110     std::queue<Node*> q;}
-\DoxyCodeLine{111     q.push(root);}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{113     \textcolor{keywordflow}{while}(!q.empty())}
-\DoxyCodeLine{114     \{}
-\DoxyCodeLine{115         Node* node = q.front();}
-\DoxyCodeLine{116         q.pop();}
-\DoxyCodeLine{117         \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{118             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{119         node-\/>sprite-\/>coloring(nodeColor);}
-\DoxyCodeLine{120         node-\/>sprite-\/>setFontColor(fontColor);}
-\DoxyCodeLine{121         node-\/>sprite-\/>coloring(nodeColor);}
-\DoxyCodeLine{122         q.push(node-\/>lson);}
-\DoxyCodeLine{123         q.push(node-\/>rson);}
-\DoxyCodeLine{124     \}}
-\DoxyCodeLine{125 \}}
+\DoxyCodeLine{103 \{}
+\DoxyCodeLine{104     bgColor = c1;}
+\DoxyCodeLine{105     nodeColor = c2;}
+\DoxyCodeLine{106     fontColor = c3;}
+\DoxyCodeLine{107     edgesColor = c4;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     std::queue<Node*> q;}
+\DoxyCodeLine{110     q.push(root);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{keywordflow}{while}(!q.empty())}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114         Node* node = q.front();}
+\DoxyCodeLine{115         q.pop();}
+\DoxyCodeLine{116         \textcolor{keywordflow}{if}(node == \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{117             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{118         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{119         node-\/>sprite-\/>setFontColor(fontColor);}
+\DoxyCodeLine{120         node-\/>sprite-\/>coloring(nodeColor);}
+\DoxyCodeLine{121         q.push(node-\/>lson);}
+\DoxyCodeLine{122         q.push(node-\/>rson);}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a175b78181e516b7052c384f4384fe04b}\label{classAVL_a175b78181e516b7052c384f4384fe04b}} 
@@ -1185,13 +1184,13 @@ Definition at line 103 of file constructor.\+cpp.
 
 
 
-Definition at line 84 of file step.\+cpp.
+Definition at line 83 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{85 \{}
-\DoxyCodeLine{86     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
-\DoxyCodeLine{87 \}}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if}(stepWait <= 2000) stepWait = stepWait * 2;}
+\DoxyCodeLine{86 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_aeb6f36800868272fd8b95fbc48e6bddf}\label{classAVL_aeb6f36800868272fd8b95fbc48e6bddf}} 
@@ -1202,13 +1201,13 @@ Definition at line 84 of file step.\+cpp.
 
 
 
-Definition at line 79 of file step.\+cpp.
+Definition at line 78 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80 \{}
-\DoxyCodeLine{81     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
-\DoxyCodeLine{82 \}}
+\DoxyCodeLine{79 \{}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if}(stepWait >= 100) stepWait = stepWait / 2;}
+\DoxyCodeLine{81 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}\label{classAVL_a876f46963afd1c9e2d4a87ff0e1c17e0}} 
@@ -1219,21 +1218,21 @@ Definition at line 79 of file step.\+cpp.
 
 
 
-Definition at line 18 of file step.\+cpp.
+Definition at line 19 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{19 \{}
-\DoxyCodeLine{20     \textcolor{keywordflow}{if}(isAnimate)}
-\DoxyCodeLine{21     \{}
-\DoxyCodeLine{22         animate\_mutex.lock();}
-\DoxyCodeLine{23         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
-\DoxyCodeLine{24         \{}
-\DoxyCodeLine{25             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
-\DoxyCodeLine{26         \}}
-\DoxyCodeLine{27         animate\_mutex.unlock();}
-\DoxyCodeLine{28     \}}
-\DoxyCodeLine{29 \}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordflow}{if}(isAnimate)}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         animate\_mutex.lock();}
+\DoxyCodeLine{24         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < l.size(); i++)}
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26             currentScript-\/>\mbox{\hyperlink{classScript_aa8486e367a767589984c2a2a078898ae}{unhighlight}}(l[i]);}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28         animate\_mutex.unlock();}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classAVL_ae114c60732778843acaf13a052a66c10}\label{classAVL_ae114c60732778843acaf13a052a66c10}} 
@@ -1268,29 +1267,26 @@ Definition at line 4 of file delete.\+cpp.
 
 
 
-Definition at line 31 of file step.\+cpp.
+Definition at line 32 of file step.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{32 \{}
-\DoxyCodeLine{33     \textcolor{keywordflow}{if}(isAnimate) }
-\DoxyCodeLine{34     \{}
-\DoxyCodeLine{35         ds\_mutex.unlock();}
-\DoxyCodeLine{36         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
-\DoxyCodeLine{37         ds\_mutex.lock();}
-\DoxyCodeLine{38     \}}
-\DoxyCodeLine{39     std::lock\_guard<std::mutex> pause\_lock(pause\_mutex);}
-\DoxyCodeLine{40     \textcolor{keywordflow}{if}(isPause == \textcolor{keyword}{false}) }
-\DoxyCodeLine{41     \{}
-\DoxyCodeLine{42         return ;}
-\DoxyCodeLine{43     \}}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45     ds\_mutex.unlock();}
-\DoxyCodeLine{46     std::unique\_lock<std::mutex> lk(step\_mutex);}
-\DoxyCodeLine{47     step\_cv.wait(lk, [\&]\{\textcolor{keywordflow}{return} isQueue == \textcolor{keyword}{true};\});}
-\DoxyCodeLine{48     isQueue = \textcolor{keyword}{false};}
-\DoxyCodeLine{49     ds\_mutex.lock();}
-\DoxyCodeLine{50 \}}
+\DoxyCodeLine{33 \{}
+\DoxyCodeLine{34     \textcolor{keywordflow}{if}(isAnimate) }
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         ds\_mutex.unlock();}
+\DoxyCodeLine{37         std::this\_thread::sleep\_for(std::chrono::milliseconds(stepWait));}
+\DoxyCodeLine{38         ds\_mutex.lock();}
+\DoxyCodeLine{39         \{}
+\DoxyCodeLine{40             std::lock\_guard<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{41             \textcolor{keywordflow}{if}(!pause) return ;}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         ds\_mutex.unlock();}
+\DoxyCodeLine{44         std::unique\_lock<std::mutex> lk(pause\_mutex);}
+\DoxyCodeLine{45         queue\_cv.wait(lk, [\textcolor{keyword}{this}]\{\textcolor{keywordflow}{return} !pause;\});}
+\DoxyCodeLine{46         ds\_mutex.lock();}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48 \}}
 
 \end{DoxyCode}
 
