@@ -20,9 +20,15 @@
 
 #### Press done to run
 ![run](./sharing/image/init.png)
+- To move the script, right click on that script and move (right click again will lock it).
+- The same when you want to move the data_structures.
 
 #### Press the gear in the bottom right of window
 ![setting](./sharing/image/inputcustom.png)
+- The First is the background color 
+- The second is the node background color
+- the third is the font color 
+- the fourth is the edges color
 
 ![custom](./sharing/image/custom.png)
 ## Features
