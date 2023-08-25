@@ -163,92 +163,92 @@ Definition at line 5 of file destructor.\+cpp.
 
 
 
-Definition at line 123 of file updating.\+cpp.
+Definition at line 125 of file updating.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{124 \{}
-\DoxyCodeLine{125     \textcolor{keywordflow}{switch}(type)}
-\DoxyCodeLine{126     \{}
-\DoxyCodeLine{127         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
-\DoxyCodeLine{128                                            std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a256e17ee4bfb67abbdafa5ac565d0d55}{PATH::SAVING::AVL\_}});}
-\DoxyCodeLine{129                                            \textcolor{keywordflow}{if}(mem.empty()) return ;}
-\DoxyCodeLine{130                                            renderMutex.lock();}
-\DoxyCodeLine{131                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
-\DoxyCodeLine{132                                            renderMutex.unlock();}
-\DoxyCodeLine{133                                            \textcolor{keywordflow}{break};}
-\DoxyCodeLine{134                                        \}}
-\DoxyCodeLine{135         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
-\DoxyCodeLine{136                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
-\DoxyCodeLine{137                                             \textcolor{keywordflow}{if}(mem.empty()) return ;}
-\DoxyCodeLine{138                                             std::string total = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{139                                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < mem.size(); i++)}
-\DoxyCodeLine{140                                             \{}
-\DoxyCodeLine{141                                                 total += mem[i];}
-\DoxyCodeLine{142                                                 \textcolor{keywordflow}{if}(i != mem.size() -\/ 1) total += \textcolor{stringliteral}{"{} "{}};}
-\DoxyCodeLine{143                                             \}}
-\DoxyCodeLine{144                                             renderMutex.lock();}
-\DoxyCodeLine{145                                             inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, total);}
-\DoxyCodeLine{146                                             renderMutex.unlock();}
-\DoxyCodeLine{147                                             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{148                                         \}}
-\DoxyCodeLine{149         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
-\DoxyCodeLine{150                                              std::ifstream fin(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
-\DoxyCodeLine{151 }
-\DoxyCodeLine{152                                              renderMutex.lock();}
-\DoxyCodeLine{153                                             }
-\DoxyCodeLine{154                                              fin >> ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}};}
-\DoxyCodeLine{155                                              }
-\DoxyCodeLine{156                                              renderMutex.unlock();}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{158                                              \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{126 \{}
+\DoxyCodeLine{127     \textcolor{keywordflow}{switch}(type)}
+\DoxyCodeLine{128     \{}
+\DoxyCodeLine{129         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
+\DoxyCodeLine{130                                            std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a256e17ee4bfb67abbdafa5ac565d0d55}{PATH::SAVING::AVL\_}});}
+\DoxyCodeLine{131                                            \textcolor{keywordflow}{if}(mem.empty()) return ;}
+\DoxyCodeLine{132                                            renderMutex.lock();}
+\DoxyCodeLine{133                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{134                                            renderMutex.unlock();}
+\DoxyCodeLine{135                                            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136                                        \}}
+\DoxyCodeLine{137         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
+\DoxyCodeLine{138                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
+\DoxyCodeLine{139                                             \textcolor{keywordflow}{if}(mem.empty()) return ;}
+\DoxyCodeLine{140                                             std::string total = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{141                                             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < mem.size(); i++)}
+\DoxyCodeLine{142                                             \{}
+\DoxyCodeLine{143                                                 total += mem[i];}
+\DoxyCodeLine{144                                                 \textcolor{keywordflow}{if}(i != mem.size() -\/ 1) total += \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{145                                             \}}
+\DoxyCodeLine{146                                             renderMutex.lock();}
+\DoxyCodeLine{147                                             inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, total);}
+\DoxyCodeLine{148                                             renderMutex.unlock();}
+\DoxyCodeLine{149                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{150                                         \}}
+\DoxyCodeLine{151         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
+\DoxyCodeLine{152                                              std::ifstream fin(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154                                              renderMutex.lock();}
+\DoxyCodeLine{155                                             }
+\DoxyCodeLine{156                                              fin >> ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}};}
+\DoxyCodeLine{157                                              }
+\DoxyCodeLine{158                                              renderMutex.unlock();}
 \DoxyCodeLine{159 }
-\DoxyCodeLine{160                                              renderMutex.lock();}
+\DoxyCodeLine{160                                              \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
 \DoxyCodeLine{161 }
-\DoxyCodeLine{162                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
-\DoxyCodeLine{163                                                  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
-\DoxyCodeLine{164                                                  \{}
-\DoxyCodeLine{165                                                      \textcolor{keywordtype}{int} x;}
-\DoxyCodeLine{166                                                      fin >> x;}
-\DoxyCodeLine{167                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(x));}
-\DoxyCodeLine{168                                                  \}}
-\DoxyCodeLine{169 }
-\DoxyCodeLine{170                                              renderMutex.unlock();}
-\DoxyCodeLine{171                                              fin.close();}
-\DoxyCodeLine{172                                              \textcolor{keywordflow}{break};}
-\DoxyCodeLine{173                                          \}}
-\DoxyCodeLine{174         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
-\DoxyCodeLine{175                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
-\DoxyCodeLine{176                                                  \textcolor{keywordflow}{break};}
-\DoxyCodeLine{177                                              \}}
-\DoxyCodeLine{178         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
-\DoxyCodeLine{179                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
-\DoxyCodeLine{180                                                 renderMutex.lock();}
-\DoxyCodeLine{181                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
-\DoxyCodeLine{182                                                 renderMutex.unlock();}
-\DoxyCodeLine{183                                                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{184                                             \}}
-\DoxyCodeLine{185         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
-\DoxyCodeLine{186                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
-\DoxyCodeLine{187                                                 renderMutex.lock();}
-\DoxyCodeLine{188                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
-\DoxyCodeLine{189                                                 renderMutex.unlock();}
-\DoxyCodeLine{190                                                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{191                                             \}}
-\DoxyCodeLine{192         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
-\DoxyCodeLine{193                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
-\DoxyCodeLine{194                                                   renderMutex.lock();}
-\DoxyCodeLine{195                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
-\DoxyCodeLine{196                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem[1]);}
-\DoxyCodeLine{197                                                   renderMutex.unlock();}
-\DoxyCodeLine{198                                                   \textcolor{keywordflow}{break};}
-\DoxyCodeLine{199                                               \}}
-\DoxyCodeLine{200         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
-\DoxyCodeLine{201                                             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{202                                         \}}
-\DoxyCodeLine{203     \}}
-\DoxyCodeLine{204 }
-\DoxyCodeLine{205 \}}
+\DoxyCodeLine{162                                              renderMutex.lock();}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
+\DoxyCodeLine{165                                                  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
+\DoxyCodeLine{166                                                  \{}
+\DoxyCodeLine{167                                                      \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{168                                                      fin >> x;}
+\DoxyCodeLine{169                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(x));}
+\DoxyCodeLine{170                                                  \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172                                              renderMutex.unlock();}
+\DoxyCodeLine{173                                              fin.close();}
+\DoxyCodeLine{174                                              \textcolor{keywordflow}{break};}
+\DoxyCodeLine{175                                          \}}
+\DoxyCodeLine{176         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
+\DoxyCodeLine{177                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
+\DoxyCodeLine{178                                                  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{179                                              \}}
+\DoxyCodeLine{180         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
+\DoxyCodeLine{181                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
+\DoxyCodeLine{182                                                 renderMutex.lock();}
+\DoxyCodeLine{183                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{184                                                 renderMutex.unlock();}
+\DoxyCodeLine{185                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{186                                             \}}
+\DoxyCodeLine{187         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
+\DoxyCodeLine{188                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
+\DoxyCodeLine{189                                                 renderMutex.lock();}
+\DoxyCodeLine{190                                                 inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{191                                                 renderMutex.unlock();}
+\DoxyCodeLine{192                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{193                                             \}}
+\DoxyCodeLine{194         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
+\DoxyCodeLine{195                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
+\DoxyCodeLine{196                                                   renderMutex.lock();}
+\DoxyCodeLine{197                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem[0]);}
+\DoxyCodeLine{198                                                   inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem[1]);}
+\DoxyCodeLine{199                                                   renderMutex.unlock();}
+\DoxyCodeLine{200                                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{201                                               \}}
+\DoxyCodeLine{202         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
+\DoxyCodeLine{203                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{204                                         \}}
+\DoxyCodeLine{205     \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMyWindow_aded8a2026b8e5e5cb955ae2deb90203e}\label{classMyWindow_aded8a2026b8e5e5cb955ae2deb90203e}} 
@@ -259,50 +259,50 @@ Definition at line 123 of file updating.\+cpp.
 
 
 
-Definition at line 207 of file updating.\+cpp.
+Definition at line 209 of file updating.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{208 \{}
-\DoxyCodeLine{209     \textcolor{keywordflow}{switch}(type)}
-\DoxyCodeLine{210     \{}
-\DoxyCodeLine{211         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
-\DoxyCodeLine{212                                            \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
-\DoxyCodeLine{213                                            std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
-\DoxyCodeLine{214                                            renderMutex.lock();}
-\DoxyCodeLine{215                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
-\DoxyCodeLine{216                                            renderMutex.unlock();}
-\DoxyCodeLine{217                                            \textcolor{keywordflow}{break};}
-\DoxyCodeLine{218                                        \}}
-\DoxyCodeLine{219         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
-\DoxyCodeLine{220                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
-\DoxyCodeLine{221                                             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{222                                         \}}
-\DoxyCodeLine{223         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
-\DoxyCodeLine{224                                              std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
-\DoxyCodeLine{225                                              \textcolor{keywordflow}{break};}
-\DoxyCodeLine{226                                          \}}
-\DoxyCodeLine{227         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
-\DoxyCodeLine{228                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
-\DoxyCodeLine{229                                                  \textcolor{keywordflow}{break};}
-\DoxyCodeLine{230                                              \}}
-\DoxyCodeLine{231         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
-\DoxyCodeLine{232                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
-\DoxyCodeLine{233                                                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{234                                             \}}
-\DoxyCodeLine{235         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
-\DoxyCodeLine{236                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
-\DoxyCodeLine{237                                                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{238                                             \}}
-\DoxyCodeLine{239         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
-\DoxyCodeLine{240                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
-\DoxyCodeLine{241                                                   \textcolor{keywordflow}{break};}
-\DoxyCodeLine{242                                               \}}
-\DoxyCodeLine{243         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
-\DoxyCodeLine{244                                             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{245                                         \}}
-\DoxyCodeLine{246     \}}
-\DoxyCodeLine{247 \}}
+\DoxyCodeLine{210 \{}
+\DoxyCodeLine{211     \textcolor{keywordflow}{switch}(type)}
+\DoxyCodeLine{212     \{}
+\DoxyCodeLine{213         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada0e3587fa9e11b2dd8d6bcb78b4bb6887}{DATA\_STRUCTURES\_TYPE::AVL}}:\{}
+\DoxyCodeLine{214                                            \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
+\DoxyCodeLine{215                                            std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{216                                            renderMutex.lock();}
+\DoxyCodeLine{217                                            inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{218                                            renderMutex.unlock();}
+\DoxyCodeLine{219                                            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{220                                        \}}
+\DoxyCodeLine{221         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada2b3b34f8e3cdbd5d18f05a10c2550493}{DATA\_STRUCTURES\_TYPE::TRIE}}:\{}
+\DoxyCodeLine{222                                             std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_adcc1e3f38dd988106fbe28dfc7879ae8}{PATH::SAVING::TRIE\_}});}
+\DoxyCodeLine{223                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{224                                         \}}
+\DoxyCodeLine{225         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadae27e2917b6444fcd3452d2d87046a487}{DATA\_STRUCTURES\_TYPE::GRAPH}}:\{}
+\DoxyCodeLine{226                                              std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_ac21342a63fbbc6bc64b9959f4337b164}{PATH::SAVING::GRAPH\_}});}
+\DoxyCodeLine{227                                              \textcolor{keywordflow}{break};}
+\DoxyCodeLine{228                                          \}}
+\DoxyCodeLine{229         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada5ec0b20a28b30e6273ff8e4ba93b6e94}{DATA\_STRUCTURES\_TYPE::BTREE\_4TH}}:\{}
+\DoxyCodeLine{230                                                  std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a86afdc9df7ef72ecf3d722d74cc12cdb}{PATH::SAVING::BTREE\_4TH\_}});}
+\DoxyCodeLine{231                                                  \textcolor{keywordflow}{break};}
+\DoxyCodeLine{232                                              \}}
+\DoxyCodeLine{233         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadace6d34b8693bcad41236303152c3bd44}{DATA\_STRUCTURES\_TYPE::MIN\_HEAP}}:\{}
+\DoxyCodeLine{234                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_addef62d228d1b70ea9864cd42db5dc45}{PATH::SAVING::MIN\_HEAP\_}});}
+\DoxyCodeLine{235                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{236                                             \}}
+\DoxyCodeLine{237         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deada04db5770db3253fb0dfb991d553cb453}{DATA\_STRUCTURES\_TYPE::MAX\_HEAP}}:\{}
+\DoxyCodeLine{238                                                 std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a6d673a66c7ef42f4fff4861cf3bf2ae9}{PATH::SAVING::MAX\_HEAP\_}});}
+\DoxyCodeLine{239                                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{240                                             \}}
+\DoxyCodeLine{241         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadaefa3127068d043d7559e777f553a204c}{DATA\_STRUCTURES\_TYPE::HASH\_TABLE}}:\{}
+\DoxyCodeLine{242                                                   std::vector<std::string> mem = \mbox{\hyperlink{namespaceFILEE_ac61407bb6eb5fc675a3e808742eae8a8}{FILEE::readFile}}(\mbox{\hyperlink{namespacePATH_1_1SAVING_a83143b925cfc0dfe76034917f2a6186b}{PATH::SAVING::HASH\_TABLE\_}});}
+\DoxyCodeLine{243                                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{244                                               \}}
+\DoxyCodeLine{245         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}:\{}
+\DoxyCodeLine{246                                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{247                                         \}}
+\DoxyCodeLine{248     \}}
+\DoxyCodeLine{249 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}\label{classMyWindow_abe3f3f3695cdc7d5fb8eefcf05347cd8}} 
@@ -502,205 +502,205 @@ Definition at line 9 of file status.\+cpp.
 
 
 
-Definition at line 249 of file updating.\+cpp.
+Definition at line 251 of file updating.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{250 \{}
-\DoxyCodeLine{251     \textcolor{keywordflow}{if}(but == \textcolor{keyword}{nullptr}) return ;}
-\DoxyCodeLine{252     \textcolor{keywordflow}{switch} (but-\/>\mbox{\hyperlink{classButton_ab45b795d6dd84be05c6fd001d097f472}{getAction}}())}
-\DoxyCodeLine{253     \{}
-\DoxyCodeLine{254         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafe442ee7003aba31673205887dbdf204}{BUTTON\_ACTION::CHANGE\_SCREEN}}:}
-\DoxyCodeLine{255             \mbox{\hyperlink{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}{setDisplay}}(but-\/>\mbox{\hyperlink{classButton_ac5a005a31136c7c76de35c2dc4b85c6f}{getNextScreen}}());}
-\DoxyCodeLine{256             \textcolor{keywordflow}{if}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}() != \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}) }
-\DoxyCodeLine{257                 \mbox{\hyperlink{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}{setDataType}}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}());}
-\DoxyCodeLine{258             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{259 }
-\DoxyCodeLine{260         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafaee4ca3c30ee18148ce3ada37466498}{BUTTON\_ACTION::INIT}}: }
-\DoxyCodeLine{261             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/init"{}});}
-\DoxyCodeLine{262             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{263         }
-\DoxyCodeLine{264         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9a4ad0490c7f7c16aa78af29e73ac1bf}{BUTTON\_ACTION::SETTING}}: }
-\DoxyCodeLine{265             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}setting"{}});}
-\DoxyCodeLine{266             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{268         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa61ee777e7f71dc466c3b2c685d8d313b}{BUTTON\_ACTION::INSERT}}:}
-\DoxyCodeLine{269             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/insert"{}});}
-\DoxyCodeLine{270             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa32f68a60cef40faedbc6af20298c1a1e}{BUTTON\_ACTION::DELETE}}:}
-\DoxyCodeLine{273             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/remove"{}});}
-\DoxyCodeLine{274             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa0f544d682c3a664870f025f48c4b04b5}{BUTTON\_ACTION::SEARCH}}:}
-\DoxyCodeLine{277             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/search"{}});}
-\DoxyCodeLine{278             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{279 }
-\DoxyCodeLine{280         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa62e5cef85d46f1a5a2144d9fd463b79e}{BUTTON\_ACTION::SIZE}}:}
-\DoxyCodeLine{281             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/size"{}});}
-\DoxyCodeLine{282             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{283 }
-\DoxyCodeLine{284         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6705777b712ee811e76fb07162081d63}{BUTTON\_ACTION::TOP}}:}
-\DoxyCodeLine{285             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/top"{}});}
-\DoxyCodeLine{286             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{287 }
-\DoxyCodeLine{288         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aac17a361da4703fb6387402833d0be532}{BUTTON\_ACTION::CONNECTED\_COMPONENTS}}:}
-\DoxyCodeLine{289             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/scc"{}});}
-\DoxyCodeLine{290             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{291 }
-\DoxyCodeLine{292         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa79f676ad8a477dbf2582d8c7133ce481}{BUTTON\_ACTION::DIJKSTRA}}: }
-\DoxyCodeLine{293             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/dijkstra"{}});}
-\DoxyCodeLine{294             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{295 }
-\DoxyCodeLine{296         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9b64696be05602589dfa9ea20da1e5fe}{BUTTON\_ACTION::MST}}: }
-\DoxyCodeLine{297             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/mst"{}});}
-\DoxyCodeLine{298             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{299 }
-\DoxyCodeLine{300         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa978c7029f00a61638448e134ffd3d354}{BUTTON\_ACTION::GO\_BACK}}: }
+\DoxyCodeLine{252 \{}
+\DoxyCodeLine{253     \textcolor{keywordflow}{if}(but == \textcolor{keyword}{nullptr}) return ;}
+\DoxyCodeLine{254     \textcolor{keywordflow}{switch} (but-\/>\mbox{\hyperlink{classButton_ab45b795d6dd84be05c6fd001d097f472}{getAction}}())}
+\DoxyCodeLine{255     \{}
+\DoxyCodeLine{256         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafe442ee7003aba31673205887dbdf204}{BUTTON\_ACTION::CHANGE\_SCREEN}}:}
+\DoxyCodeLine{257             \mbox{\hyperlink{classMyWindow_a52e0a379cbc9da8cf5df329c4f9953cb}{setDisplay}}(but-\/>\mbox{\hyperlink{classButton_ac5a005a31136c7c76de35c2dc4b85c6f}{getNextScreen}}());}
+\DoxyCodeLine{258             \textcolor{keywordflow}{if}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}() != \mbox{\hyperlink{GLOBAL_8hpp_ada7b9d7c08699d8849ad6ec38735deadab50339a10e1de285ac99d4c3990b8693}{DATA\_STRUCTURES\_TYPE::NONE}}) }
+\DoxyCodeLine{259                 \mbox{\hyperlink{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}{setDataType}}(but-\/>\mbox{\hyperlink{classButton_ac081d0ffae2663f5ed8a077dba77f98b}{getDataType}}());}
+\DoxyCodeLine{260             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aafaee4ca3c30ee18148ce3ada37466498}{BUTTON\_ACTION::INIT}}: }
+\DoxyCodeLine{263             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/init"{}});}
+\DoxyCodeLine{264             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{265         }
+\DoxyCodeLine{266         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9a4ad0490c7f7c16aa78af29e73ac1bf}{BUTTON\_ACTION::SETTING}}: }
+\DoxyCodeLine{267             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}setting"{}});}
+\DoxyCodeLine{268             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa61ee777e7f71dc466c3b2c685d8d313b}{BUTTON\_ACTION::INSERT}}:}
+\DoxyCodeLine{271             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/insert"{}});}
+\DoxyCodeLine{272             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa32f68a60cef40faedbc6af20298c1a1e}{BUTTON\_ACTION::DELETE}}:}
+\DoxyCodeLine{275             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/remove"{}});}
+\DoxyCodeLine{276             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa0f544d682c3a664870f025f48c4b04b5}{BUTTON\_ACTION::SEARCH}}:}
+\DoxyCodeLine{279             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/search"{}});}
+\DoxyCodeLine{280             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa62e5cef85d46f1a5a2144d9fd463b79e}{BUTTON\_ACTION::SIZE}}:}
+\DoxyCodeLine{283             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/size"{}});}
+\DoxyCodeLine{284             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6705777b712ee811e76fb07162081d63}{BUTTON\_ACTION::TOP}}:}
+\DoxyCodeLine{287             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/top"{}});}
+\DoxyCodeLine{288             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aac17a361da4703fb6387402833d0be532}{BUTTON\_ACTION::CONNECTED\_COMPONENTS}}:}
+\DoxyCodeLine{291             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/scc"{}});}
+\DoxyCodeLine{292             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa79f676ad8a477dbf2582d8c7133ce481}{BUTTON\_ACTION::DIJKSTRA}}: }
+\DoxyCodeLine{295             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/dijkstra"{}});}
+\DoxyCodeLine{296             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9b64696be05602589dfa9ea20da1e5fe}{BUTTON\_ACTION::MST}}: }
+\DoxyCodeLine{299             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(ds-\/>\mbox{\hyperlink{classDataStructures_afa4a1a2b86c2453b0393c71d4083b6a9}{getName}}() + \textcolor{stringliteral}{"{}/mst"{}});}
+\DoxyCodeLine{300             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{301 }
-\DoxyCodeLine{302             \textcolor{comment}{//ds-\/>goBack();}}
-\DoxyCodeLine{303             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{304 }
-\DoxyCodeLine{305         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aae566f1112c70f7be35c572f463f889d0}{BUTTON\_ACTION::GO\_NEXT}}: }
+\DoxyCodeLine{302         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa978c7029f00a61638448e134ffd3d354}{BUTTON\_ACTION::GO\_BACK}}: }
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304             \textcolor{comment}{//ds-\/>goBack();}}
+\DoxyCodeLine{305             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{306 }
-\DoxyCodeLine{307             ds-\/>\mbox{\hyperlink{classDataStructures_a56673f6aae39f3898161c70a9a8822f7}{goNext}}();}
-\DoxyCodeLine{308             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{309 }
-\DoxyCodeLine{310         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f8ce139a3b8502afc17891bad3168d1}{BUTTON\_ACTION::GO\_ON}}: }
+\DoxyCodeLine{307         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aae566f1112c70f7be35c572f463f889d0}{BUTTON\_ACTION::GO\_NEXT}}: }
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309             ds-\/>\mbox{\hyperlink{classDataStructures_a56673f6aae39f3898161c70a9a8822f7}{goNext}}();}
+\DoxyCodeLine{310             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{311 }
-\DoxyCodeLine{312             \textcolor{comment}{//ds-\/>goOn();}}
-\DoxyCodeLine{313             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{314 }
-\DoxyCodeLine{315         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa71db17a7478017814bbe13f448454bf7}{BUTTON\_ACTION::GO\_OFF}}: }
+\DoxyCodeLine{312         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f8ce139a3b8502afc17891bad3168d1}{BUTTON\_ACTION::GO\_ON}}: }
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314             \textcolor{comment}{//ds-\/>goOn();}}
+\DoxyCodeLine{315             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{316 }
-\DoxyCodeLine{317             ds-\/>\mbox{\hyperlink{classDataStructures_a5885930e7fd0dc5adaea5620e906d3d4}{goOff}}();}
-\DoxyCodeLine{318             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{319 }
-\DoxyCodeLine{320         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa18fc989e412ad64bd82a0cbc9a6a93c8}{BUTTON\_ACTION::SPEED\_UP}}: }
+\DoxyCodeLine{317         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa71db17a7478017814bbe13f448454bf7}{BUTTON\_ACTION::GO\_OFF}}: }
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319             ds-\/>\mbox{\hyperlink{classDataStructures_a5885930e7fd0dc5adaea5620e906d3d4}{goOff}}();}
+\DoxyCodeLine{320             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{321 }
-\DoxyCodeLine{322             ds-\/>\mbox{\hyperlink{classDataStructures_aa4df96b5bd6c847fd58aa8a8eef3a8aa}{speedUp}}();}
-\DoxyCodeLine{323             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{324 }
-\DoxyCodeLine{325         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa4a0a2ddc7446f94d38bcdd71e9bd4ee6}{BUTTON\_ACTION::SLOW\_DOWN}}: }
+\DoxyCodeLine{322         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa18fc989e412ad64bd82a0cbc9a6a93c8}{BUTTON\_ACTION::SPEED\_UP}}: }
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324             ds-\/>\mbox{\hyperlink{classDataStructures_aa4df96b5bd6c847fd58aa8a8eef3a8aa}{speedUp}}();}
+\DoxyCodeLine{325             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{326 }
-\DoxyCodeLine{327             ds-\/>\mbox{\hyperlink{classDataStructures_a2944fd9c6e21b8f551293c035b2cf6d0}{slowDown}}();}
-\DoxyCodeLine{328             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{329 }
-\DoxyCodeLine{330         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2ba22e58ca17bb728d522bba36cf8350}{BUTTON\_ACTION::DONE}}:}
+\DoxyCodeLine{327         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa4a0a2ddc7446f94d38bcdd71e9bd4ee6}{BUTTON\_ACTION::SLOW\_DOWN}}: }
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329             ds-\/>\mbox{\hyperlink{classDataStructures_a2944fd9c6e21b8f551293c035b2cf6d0}{slowDown}}();}
+\DoxyCodeLine{330             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{331 }
-\DoxyCodeLine{332             step\_mutex.lock();}
-\DoxyCodeLine{333             isQueuingStep = \textcolor{keyword}{true};}
-\DoxyCodeLine{334             step\_mutex.unlock();}
-\DoxyCodeLine{335             step\_cond.notify\_one();}
-\DoxyCodeLine{336 }
-\DoxyCodeLine{337             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{332         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2ba22e58ca17bb728d522bba36cf8350}{BUTTON\_ACTION::DONE}}:}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334             step\_mutex.lock();}
+\DoxyCodeLine{335             isQueuingStep = \textcolor{keyword}{true};}
+\DoxyCodeLine{336             step\_mutex.unlock();}
+\DoxyCodeLine{337             step\_cond.notify\_one();}
 \DoxyCodeLine{338 }
-\DoxyCodeLine{339         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa42861b39fff0a83ef415a81d1bafa380}{BUTTON\_ACTION::EDGES}}: }
+\DoxyCodeLine{339             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{340 }
-\DoxyCodeLine{341             \textcolor{keywordtype}{int} n;}
-\DoxyCodeLine{342             renderMutex.lock();}
-\DoxyCodeLine{343 }
-\DoxyCodeLine{344             n = \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{NUMBER::stringToInt}}(inputbox-\/>\mbox{\hyperlink{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}{getText}}(1));}
-\DoxyCodeLine{345             n = std::min(n, 9);}
-\DoxyCodeLine{346             n = std::max(n, 2);}
-\DoxyCodeLine{347             \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr}) ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} = n;}
-\DoxyCodeLine{348 }
-\DoxyCodeLine{349             renderMutex.unlock();}
-\DoxyCodeLine{350             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
-\DoxyCodeLine{351             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{352 }
-\DoxyCodeLine{353         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa7286293c9125ac7d7bace94c190bc16d}{BUTTON\_ACTION::CLOSE}}: }
+\DoxyCodeLine{341         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa42861b39fff0a83ef415a81d1bafa380}{BUTTON\_ACTION::EDGES}}: }
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343             \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{344             renderMutex.lock();}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346             n = \mbox{\hyperlink{namespaceNUMBER_a70d8fe3e5521f6ec32d8947ac279e703}{NUMBER::stringToInt}}(inputbox-\/>\mbox{\hyperlink{classInputBox_a34df8ab2629c62d762ced3c6b239ab3c}{getText}}(1));}
+\DoxyCodeLine{347             n = std::min(n, 9);}
+\DoxyCodeLine{348             n = std::max(n, 2);}
+\DoxyCodeLine{349             \textcolor{keywordflow}{if}(ds != \textcolor{keyword}{nullptr}) ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} = n;}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351             renderMutex.unlock();}
+\DoxyCodeLine{352             \mbox{\hyperlink{classMyWindow_a1da36075e78b547cffd44d562bc5897f}{setInputBox}}(\textcolor{stringliteral}{"{}graph/edges"{}});}
+\DoxyCodeLine{353             \textcolor{keywordflow}{break};}
 \DoxyCodeLine{354 }
-\DoxyCodeLine{355             renderMutex.lock();}
-\DoxyCodeLine{356             ds-\/>\mbox{\hyperlink{classDataStructures_aae70dcd4032de67b16ecca00b4909a16}{closeScript}}();}
-\DoxyCodeLine{357             renderMutex.unlock();}
-\DoxyCodeLine{358             \textcolor{keywordflow}{break};}
-\DoxyCodeLine{359 }
-\DoxyCodeLine{360         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa170e02e86972c2be8559884cc3c12254}{BUTTON\_ACTION::RANDOM}}:\{}
-\DoxyCodeLine{361                                        \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
-\DoxyCodeLine{362                                        std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
-\DoxyCodeLine{363 }
-\DoxyCodeLine{364                                        renderMutex.lock();}
-\DoxyCodeLine{365                                        inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
-\DoxyCodeLine{366 }
-\DoxyCodeLine{367                                        renderMutex.unlock();}
-\DoxyCodeLine{368                                        \textcolor{keywordflow}{break};}
-\DoxyCodeLine{369                                    \}}
-\DoxyCodeLine{370         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aab08a80192c9e705beef657f6ab27ad2f}{BUTTON\_ACTION::RANDOM2}}: \{}
-\DoxyCodeLine{371 }
-\DoxyCodeLine{372                                          renderMutex.lock();}
-\DoxyCodeLine{373                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 999));}
-\DoxyCodeLine{374                                          renderMutex.unlock();}
-\DoxyCodeLine{375                                          \textcolor{keywordflow}{break};}
-\DoxyCodeLine{376                                      \}}
-\DoxyCodeLine{377         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f24439fa48b96472eb150b9fd386c92}{BUTTON\_ACTION::RANDOM3}}:\{}
-\DoxyCodeLine{378                                         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
-\DoxyCodeLine{379                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
-\DoxyCodeLine{380                                         \textcolor{keywordtype}{char} upperbound = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(97 + 5, 97 + 25);}
-\DoxyCodeLine{381                                         std::string mem;}
-\DoxyCodeLine{382                                         mem = \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
-\DoxyCodeLine{383 }
-\DoxyCodeLine{384                                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < n; i++)}
-\DoxyCodeLine{385                                             mem += \textcolor{stringliteral}{"{} "{}} + \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
-\DoxyCodeLine{386 }
-\DoxyCodeLine{387                                         renderMutex.lock();}
-\DoxyCodeLine{388                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
-\DoxyCodeLine{389                                         renderMutex.unlock();}
-\DoxyCodeLine{390                                         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{391                                     \}}
-\DoxyCodeLine{392         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa5ad9642cab4518d6507a18514851e4ac}{BUTTON\_ACTION::RANDOM4}}: }
-\DoxyCodeLine{393                                     \{}
-\DoxyCodeLine{394                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
-\DoxyCodeLine{395                                         renderMutex.lock();}
-\DoxyCodeLine{396                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'z'}));}
-\DoxyCodeLine{397                                         renderMutex.unlock();}
-\DoxyCodeLine{398                                         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{399                                     \}}
-\DoxyCodeLine{400         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaeccffff442640478b9deb8eadf9efa9b}{BUTTON\_ACTION::RANDOM5}}: \{}
-\DoxyCodeLine{401                                          \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 64);}
-\DoxyCodeLine{402                                          std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
-\DoxyCodeLine{403 }
-\DoxyCodeLine{404                                          renderMutex.lock();}
-\DoxyCodeLine{405                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem);}
-\DoxyCodeLine{406                                          renderMutex.unlock();}
-\DoxyCodeLine{407                                          \textcolor{keywordflow}{break};}
-\DoxyCodeLine{408                                      \}}
-\DoxyCodeLine{409         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa333a796370473a11042e908ef60c7977}{BUTTON\_ACTION::RANDOM6}}: \{}
-\DoxyCodeLine{410                                          renderMutex.lock();}
-\DoxyCodeLine{411                                          \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
-\DoxyCodeLine{412                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
-\DoxyCodeLine{413                                              \{}
-\DoxyCodeLine{414                                                  \textcolor{keywordflow}{if}(i == j) \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{415                                                  \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 100) <= 30) }
-\DoxyCodeLine{416                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 99));}
-\DoxyCodeLine{417                                                  \textcolor{keywordflow}{else} }
-\DoxyCodeLine{418                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \textcolor{stringliteral}{"{}0"{}});}
-\DoxyCodeLine{419                                              \}}
-\DoxyCodeLine{420                                          renderMutex.unlock();}
-\DoxyCodeLine{421                                          \textcolor{keywordflow}{break};}
-\DoxyCodeLine{422                                      \}}
-\DoxyCodeLine{423         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaf1f0d1bd5f26566e0f02ac94b452ab90}{BUTTON\_ACTION::RANDOM7}}: \{ }
-\DoxyCodeLine{424                                          renderMutex.lock();}
-\DoxyCodeLine{425                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
-\DoxyCodeLine{426                                          renderMutex.unlock();}
-\DoxyCodeLine{427                                          \textcolor{keywordflow}{break};}
-\DoxyCodeLine{428                                      \}}
-\DoxyCodeLine{429         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2bf848abc2187f052536cc07819b7609}{BUTTON\_ACTION::RANDOM8}}: \{ }
-\DoxyCodeLine{430                                          renderMutex.lock();}
-\DoxyCodeLine{431                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
-\DoxyCodeLine{432                                          renderMutex.unlock();}
-\DoxyCodeLine{433                                          \textcolor{keywordflow}{break};}
-\DoxyCodeLine{434                                      \}}
-\DoxyCodeLine{435 }
-\DoxyCodeLine{436         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9fc5887c030f7a3e19821ebec457e719}{BUTTON\_ACTION::FILE}} :\{}
-\DoxyCodeLine{437                                       \mbox{\hyperlink{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}{getDataFromFile}}(ds-\/>\mbox{\hyperlink{classDataStructures_a7ff660d9f1ceb6735f2ed544137e21db}{getDataType}}());}
-\DoxyCodeLine{438                                       \textcolor{keywordflow}{break};}
-\DoxyCodeLine{439                                   \}}
-\DoxyCodeLine{440 }
-\DoxyCodeLine{441         \textcolor{keywordflow}{default}: }
-\DoxyCodeLine{442                                   \textcolor{keywordflow}{break};}
-\DoxyCodeLine{443     \}}
-\DoxyCodeLine{444 \}}
+\DoxyCodeLine{355         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa7286293c9125ac7d7bace94c190bc16d}{BUTTON\_ACTION::CLOSE}}: }
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357             renderMutex.lock();}
+\DoxyCodeLine{358             ds-\/>\mbox{\hyperlink{classDataStructures_aae70dcd4032de67b16ecca00b4909a16}{closeScript}}();}
+\DoxyCodeLine{359             renderMutex.unlock();}
+\DoxyCodeLine{360             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa170e02e86972c2be8559884cc3c12254}{BUTTON\_ACTION::RANDOM}}:\{}
+\DoxyCodeLine{363                                        \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 32);}
+\DoxyCodeLine{364                                        std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366                                        renderMutex.lock();}
+\DoxyCodeLine{367                                        inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369                                        renderMutex.unlock();}
+\DoxyCodeLine{370                                        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{371                                    \}}
+\DoxyCodeLine{372         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aab08a80192c9e705beef657f6ab27ad2f}{BUTTON\_ACTION::RANDOM2}}: \{}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374                                          renderMutex.lock();}
+\DoxyCodeLine{375                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 999));}
+\DoxyCodeLine{376                                          renderMutex.unlock();}
+\DoxyCodeLine{377                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{378                                      \}}
+\DoxyCodeLine{379         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa6f24439fa48b96472eb150b9fd386c92}{BUTTON\_ACTION::RANDOM3}}:\{}
+\DoxyCodeLine{380                                         \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{381                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{382                                         \textcolor{keywordtype}{char} upperbound = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(97 + 5, 97 + 25);}
+\DoxyCodeLine{383                                         std::string mem;}
+\DoxyCodeLine{384                                         mem = \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
+\DoxyCodeLine{385 }
+\DoxyCodeLine{386                                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < n; i++)}
+\DoxyCodeLine{387                                             mem += \textcolor{stringliteral}{"{} "{}} + \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, upperbound);}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389                                         renderMutex.lock();}
+\DoxyCodeLine{390                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, mem);}
+\DoxyCodeLine{391                                         renderMutex.unlock();}
+\DoxyCodeLine{392                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{393                                     \}}
+\DoxyCodeLine{394         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa5ad9642cab4518d6507a18514851e4ac}{BUTTON\_ACTION::RANDOM4}}: }
+\DoxyCodeLine{395                                     \{}
+\DoxyCodeLine{396                                         \textcolor{keywordtype}{int} m = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 16);}
+\DoxyCodeLine{397                                         renderMutex.lock();}
+\DoxyCodeLine{398                                         inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceRANDOM_ab98049edee5f761818fbd0e37d164673}{RANDOM::getString}}(m, \textcolor{charliteral}{'a'}, \textcolor{charliteral}{'z'}));}
+\DoxyCodeLine{399                                         renderMutex.unlock();}
+\DoxyCodeLine{400                                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{401                                     \}}
+\DoxyCodeLine{402         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaeccffff442640478b9deb8eadf9efa9b}{BUTTON\_ACTION::RANDOM5}}: \{}
+\DoxyCodeLine{403                                          \textcolor{keywordtype}{int} n = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 64);}
+\DoxyCodeLine{404                                          std::string mem = \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(n, 1, 999);}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406                                          renderMutex.lock();}
+\DoxyCodeLine{407                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, mem);}
+\DoxyCodeLine{408                                          renderMutex.unlock();}
+\DoxyCodeLine{409                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{410                                      \}}
+\DoxyCodeLine{411         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa333a796370473a11042e908ef60c7977}{BUTTON\_ACTION::RANDOM6}}: \{}
+\DoxyCodeLine{412                                          renderMutex.lock();}
+\DoxyCodeLine{413                                          \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; i++)}
+\DoxyCodeLine{414                                              \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}}; j++)}
+\DoxyCodeLine{415                                              \{}
+\DoxyCodeLine{416                                                  \textcolor{keywordflow}{if}(i == j) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{417                                                  \textcolor{keywordflow}{if}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 100) <= 30) }
+\DoxyCodeLine{418                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(1, 1, 99));}
+\DoxyCodeLine{419                                                  \textcolor{keywordflow}{else} }
+\DoxyCodeLine{420                                                      inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(i * ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} + j + 1, \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{421                                              \}}
+\DoxyCodeLine{422                                          renderMutex.unlock();}
+\DoxyCodeLine{423                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{424                                      \}}
+\DoxyCodeLine{425         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aaf1f0d1bd5f26566e0f02ac94b452ab90}{BUTTON\_ACTION::RANDOM7}}: \{ }
+\DoxyCodeLine{426                                          renderMutex.lock();}
+\DoxyCodeLine{427                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(1, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
+\DoxyCodeLine{428                                          renderMutex.unlock();}
+\DoxyCodeLine{429                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{430                                      \}}
+\DoxyCodeLine{431         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa2bf848abc2187f052536cc07819b7609}{BUTTON\_ACTION::RANDOM8}}: \{ }
+\DoxyCodeLine{432                                          renderMutex.lock();}
+\DoxyCodeLine{433                                          inputbox-\/>\mbox{\hyperlink{classInputBox_a94c7852ad9649f34aa0d45899b183460}{setText}}(2, \mbox{\hyperlink{namespaceNUMBER_a3da08411bc9a3fc445459cb3a4fce6fc}{NUMBER::intToString}}(\mbox{\hyperlink{namespaceRANDOM_a75ec579d7a837d6115c2a2ecd4b80a70}{RANDOM::getInt}}(0, ds-\/>\mbox{\hyperlink{classDataStructures_a027f35023ec932087855e11c66003c3b}{capacity}} -\/ 1)));}
+\DoxyCodeLine{434                                          renderMutex.unlock();}
+\DoxyCodeLine{435                                          \textcolor{keywordflow}{break};}
+\DoxyCodeLine{436                                      \}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438         \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_a6133bf30cc1acd86496bb7a5cd16796aa9fc5887c030f7a3e19821ebec457e719}{BUTTON\_ACTION::FILE}} :\{}
+\DoxyCodeLine{439                                       \mbox{\hyperlink{classMyWindow_a23203e6241f94738acd2f8c44ca1c587}{getDataFromFile}}(ds-\/>\mbox{\hyperlink{classDataStructures_a7ff660d9f1ceb6735f2ed544137e21db}{getDataType}}());}
+\DoxyCodeLine{440                                       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{441                                   \}}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443         \textcolor{keywordflow}{default}: }
+\DoxyCodeLine{444                                   \textcolor{keywordflow}{break};}
+\DoxyCodeLine{445     \}}
+\DoxyCodeLine{446 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}\label{classMyWindow_a7278ed4e1926fc88783bdba7487f7780}} 
@@ -827,21 +827,23 @@ Definition at line 60 of file updating.\+cpp.
 \DoxyCodeLine{104                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{105             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a62e5cef85d46f1a5a2144d9fd463b79e}{DATA\_STRUCTURES\_OPERATOR::SIZE}}:}
 \DoxyCodeLine{106                 ds-\/>\mbox{\hyperlink{classDataStructures_a34f062c7ec1ed90d91f44e28e4e054a9}{size}}();}
-\DoxyCodeLine{107             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9a4ad0490c7f7c16aa78af29e73ac1bf}{DATA\_STRUCTURES\_OPERATOR::SETTING}}:}
-\DoxyCodeLine{108                 ds-\/>\mbox{\hyperlink{classDataStructures_a3864cecae63179069a5f71b8e828a772}{setting}}(temp);}
-\DoxyCodeLine{109             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481}{DATA\_STRUCTURES\_OPERATOR::DIJKSTRA}}:}
-\DoxyCodeLine{110                 ds-\/>\mbox{\hyperlink{classDataStructures_a78ef7e52750de838abe1852a98ae97cc}{dijkstra}}(temp);}
-\DoxyCodeLine{111                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{112             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe}{DATA\_STRUCTURES\_OPERATOR::MST}}:}
-\DoxyCodeLine{113                 ds-\/>\mbox{\hyperlink{classDataStructures_acd516bffee6de9604742c41564d30730}{mst}}();}
-\DoxyCodeLine{114                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{115             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a506e80ad4373b52e7d03a714c23c696c}{DATA\_STRUCTURES\_OPERATOR::SCC}}:}
-\DoxyCodeLine{116                 ds-\/>\mbox{\hyperlink{classDataStructures_ad020e582a3c9c966c67d078a6505174a}{scc}}();}
-\DoxyCodeLine{117                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{118         \}}
-\DoxyCodeLine{119         renderMutex.unlock();}
-\DoxyCodeLine{120     \}}
-\DoxyCodeLine{121 \}}
+\DoxyCodeLine{107                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9a4ad0490c7f7c16aa78af29e73ac1bf}{DATA\_STRUCTURES\_OPERATOR::SETTING}}:}
+\DoxyCodeLine{109                 ds-\/>\mbox{\hyperlink{classDataStructures_a3864cecae63179069a5f71b8e828a772}{setting}}(temp);}
+\DoxyCodeLine{110                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{111             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a79f676ad8a477dbf2582d8c7133ce481}{DATA\_STRUCTURES\_OPERATOR::DIJKSTRA}}:}
+\DoxyCodeLine{112                 ds-\/>\mbox{\hyperlink{classDataStructures_a78ef7e52750de838abe1852a98ae97cc}{dijkstra}}(temp);}
+\DoxyCodeLine{113                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a9b64696be05602589dfa9ea20da1e5fe}{DATA\_STRUCTURES\_OPERATOR::MST}}:}
+\DoxyCodeLine{115                 ds-\/>\mbox{\hyperlink{classDataStructures_acd516bffee6de9604742c41564d30730}{mst}}();}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{117             \textcolor{keywordflow}{case} \mbox{\hyperlink{GLOBAL_8hpp_ae8f152fc5326aeb98bf582f6ab5526a4a506e80ad4373b52e7d03a714c23c696c}{DATA\_STRUCTURES\_OPERATOR::SCC}}:}
+\DoxyCodeLine{118                 ds-\/>\mbox{\hyperlink{classDataStructures_ad020e582a3c9c966c67d078a6505174a}{scc}}();}
+\DoxyCodeLine{119                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121         renderMutex.unlock();}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}\label{classMyWindow_a88d413b0e9127faff443c1f2fbdf9096}} 

@@ -160,8 +160,10 @@ void DataStructures::setting(InputBox* inp)
             settingTrie(inp);
             break;
         case DATA_STRUCTURES_TYPE::GRAPH:
+        {
             settingGraph(inp);
             break;
+        }
         case DATA_STRUCTURES_TYPE::MAX_HEAP:
             settingMinHeap(inp);
             break;

@@ -81,4 +81,4 @@
 ## Documentation
 - [Report](./docs/latex/refman.pdf) 
 - [Grading scheme](./docs/CS163-22APCS1-2-Solo Project-Grading Scheme.xlsx)
-- [Demonstrate video](https://youtube.com)
+- [Demonstrate video](https://youtu.be/xdw5IfRh6OQ)

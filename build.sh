@@ -27,7 +27,7 @@ clear
 if [ "$cmake_status" = "Y" ] || [ "$cmake_status" = "y" ];
 then 
     printf "${LightPurple}running cmake${NC}\n}"
-    cmake -B build/ -DCMAKE_BUILD_TYPE=Debug
+    cmake -B build/ -DCMAKE_BUILD_TYPE=Released
 
     printf "${Yellow}Press any key to continue${NC}"
     read -n 1 -s -r 
