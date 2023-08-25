@@ -71,3 +71,10 @@ defaut:
     return nullptr;
 }
 
+
+void Graph::waitForStep()
+{
+    ds_mutex.unlock();
+    std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));
+    ds_mutex.lock();
+}

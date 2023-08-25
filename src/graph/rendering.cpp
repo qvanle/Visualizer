@@ -7,6 +7,14 @@ struct Point
 
 void Graph::renderEdge(Edge* e)
 {
+    if(e->mark == 3)
+        SDL_SetRenderDrawColor(render, 50, 50, 50, 255);
+    else if(e->mark == 2)
+        SDL_SetRenderDrawColor(render, 255, 0, 0, 255);
+    else if(e->mark == 1)
+        SDL_SetRenderDrawColor(render, 0, 255, 0, 255);
+    else 
+        SDL_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);
     const SDL_Rect* srcloc = (e->u->sprite->getLocation());
     const SDL_Rect* dstloc = (e->v->sprite->getLocation());
 
@@ -36,6 +44,7 @@ void Graph::renderEdge(Edge* e)
             SDL_RenderDrawLine(render, src.x + i, src.y + j, dst.x + i, dst.y + j);
         }
     }
+    if(nodirect) return ;
     Point v;
     v.x = dst.x - src.x;
     v.y = dst.y - src.y;
@@ -68,7 +77,6 @@ void Graph::renderEdge(Edge* e)
 
 void Graph::rendering()
 {
-    SDL_SetRenderDrawColor(render, edgesColor.r, edgesColor.g, edgesColor.b, edgesColor.a);
     for(auto i : edges)
     {
         renderEdge(i);

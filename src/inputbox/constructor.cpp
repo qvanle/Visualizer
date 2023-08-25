@@ -30,9 +30,9 @@ void InputBox::initOperator(const json& mem)
     else if (type == "SEARCH") op = DATA_STRUCTURES_OPERATOR::SEARCH;
     else if (type == "TOP") op = DATA_STRUCTURES_OPERATOR::TOP;
     else if (type == "SIZE") op = DATA_STRUCTURES_OPERATOR::SIZE;
-    else if (type == "FIND_COMPONENTS") op = DATA_STRUCTURES_OPERATOR::FIND_COMPONENTS;
-    else if (type == "DIJKSTRA") op = DATA_STRUCTURES_OPERATOR::DIJKSTRA_SHORTEST_PATH;
-    else if (type == "MINIMUM_SPANNING_TREE") op = DATA_STRUCTURES_OPERATOR::FIND_MINIMUM_SPANNING_TREE;
+    else if (type == "SCC") op = DATA_STRUCTURES_OPERATOR::SCC;
+    else if (type == "DIJKSTRA") op = DATA_STRUCTURES_OPERATOR::DIJKSTRA;
+    else if (type == "MST") op = DATA_STRUCTURES_OPERATOR::MST;
     else if (type == "SETTING") op = DATA_STRUCTURES_OPERATOR::SETTING;
 }
 

@@ -2,8 +2,9 @@
 
 Graph::Node::Node(int value, Sprite* spr)
 {
-    value = value;
-    sprite = spr;
+    this->value = value;
+    this->sprite = spr;
+    edges.clear();
 }
 void Graph::Node::addEdge(Edge* e)
 {
@@ -29,7 +30,7 @@ Graph::Edge::Edge(Node* u, Node* v, int weight, Sprite* spr)
     mark = 0;
 }
 
-Graph::Graph(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int capacity)
+Graph::Graph(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int capacity) : ds_mutex(m)
 {
     render = r;
     font = f;
@@ -39,9 +40,12 @@ Graph::Graph(SDL_Renderer* r, TTF_Font* f, SDL_Rect v, int capacity)
     shiftX = 20;
     shiftY = 20;
 
+    nodirect = false;
+
     nodeColor = {20, 75, 185, 255};
     fontColor = {255, 255, 255, 255};
 
+    stepWait = 600;
 
     isMoving = false;
     chosenNode = nullptr;

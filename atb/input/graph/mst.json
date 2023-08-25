@@ -24,25 +24,16 @@
     "buttons":
     [
         {
-            "name": "file"
-        },
-        {
-            "name": "random"
-        },
-        {
             "name": "done"
         }
     ],
     "sprites": 
     [
         {
-            "name": "AVL/init/title"
-        },
-        {
-            "name": "AVL/init/array"
-        }
+            "name": "graph/mst/title"
+        }    
     ],
-    "operator": "INIT"
+    "operator": "MST"
 }
 
 

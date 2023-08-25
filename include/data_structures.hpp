@@ -97,8 +97,8 @@ public:
     void setting(InputBox* inp);
     void top();
     void size();
-    void components();
-    void MST(InputBox* inp);
+    void scc();
+    void mst();
     void dijkstra(InputBox* inp);
     
     void goBack();

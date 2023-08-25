@@ -23,12 +23,14 @@
     },
     "buttons":
     [
+        
         {
-            "name": "file"
+            "name": "random7"
         },
         {
-            "name": "random"
+            "name": "random8"
         },
+
         {
             "name": "done"
         }
@@ -36,13 +38,17 @@
     "sprites": 
     [
         {
-            "name": "AVL/init/title"
+            "name": "graph/dijkstra/title"
         },
         {
-            "name": "AVL/init/array"
+            "name": "graph/dijkstra/start"
+        },
+        {
+            "name": "graph/dijkstra/end"
         }
+
     ],
-    "operator": "INIT"
+    "operator": "DIJKSTRA"
 }
 
 

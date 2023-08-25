@@ -1,4 +1,5 @@
 #include <data_structures/graph.hpp>
+#include <services.hpp>
 
 void Graph::Tarjan(Node* u)
 {
@@ -38,7 +39,7 @@ void Graph::SCC()
     low.clear();
     order.clear();
     components.clear();
-
+    repair();
     state = 0;
 
     low.resize(nodes.size() + 1);
@@ -48,5 +49,18 @@ void Graph::SCC()
     {
         if(order[i->value] == 0)
             Tarjan(i);
+    }
+
+    for(auto i : components)
+    {
+        SDL_Color c;
+        c.r = RANDOM::getInt(0, 255);
+        c.g = RANDOM::getInt(0, 255);
+        c.b = RANDOM::getInt(0, 255);
+        c.a = 255;
+        for(auto j : i)
+        {
+            j->sprite->coloring(c);
+        }
     }
 }

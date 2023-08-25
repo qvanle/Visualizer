@@ -81,13 +81,22 @@ void Graph::MST()
 
 void Graph::unionEdges()
 {
+    repair();
     DSU dsu(nodes.size());
+    nodirect = true;
     for(auto i : sortedEdges)
     {
+        i->mark = 3;
+        waitForStep();
         if(!dsu.isUnionized(i))
         {
             i->mark = 1;
+            waitForStep();
             dsu.unionEdge(i);
+        }else 
+        {
+            i->mark = 2;
+            waitForStep();
         }
     }
 }

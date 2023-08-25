@@ -43,7 +43,7 @@ struct distanceHeap
     {
         if(value.size() == 0) return 2e9;
         int result = value[0];
-    
+
         value[0] = value[value.size() - 1];
         value.pop_back();
 
@@ -73,25 +73,36 @@ struct distanceHeap
 
 void Graph::Dijkstra(int start, int end)
 {
+    repair();
     distance.clear();
-    distance.resize(nodes.size(), -1);
+    distance.resize(nodes.size() + 1, -1);
     distanceHeap heap(this);
-
     distance[start] = 0;
+
     heap.insert(start);
+
+    for(auto i : nodes) i->sprite->coloring(SDL_Color{50, 50, 50, 255});
 
     while(!heap.empty())
     {
         int u = heap.pop();
-
+        nodes[u]->sprite->coloring(SDL_Color{0, 125, 0, 255});
+        waitForStep();
         for(auto e : nodes[u]->edges)
         {
             int v = e->v->value;
+
+
             if(distance[v] == -1 || distance[v] > distance[u] + e->weight)
             {
+                nodes[v]->sprite->coloring(SDL_Color{255, 255, 0, 255});
+                waitForStep();
+                nodes[v]->sprite->coloring(SDL_Color{0, 255, 255, 255});
+                waitForStep();
                 distance[v] = distance[u] + e->weight;
                 heap.insert(v);
             }
         }
+        nodes[u]->sprite->coloring(SDL_Color{0, 255, 0, 255});
     }
 }

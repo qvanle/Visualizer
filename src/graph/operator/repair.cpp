@@ -6,4 +6,6 @@ void Graph::repair()
     {
         i->mark = 0;
     }
+    setting(bgColor, nodeColor, fontColor, edgesColor);
+    nodirect = false;
 }

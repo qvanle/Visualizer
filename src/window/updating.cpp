@@ -106,7 +106,14 @@ void MyWindow::runOperator()
                 ds->size();
             case DATA_STRUCTURES_OPERATOR::SETTING:
                 ds->setting(temp);
-            default :
+            case DATA_STRUCTURES_OPERATOR::DIJKSTRA:
+                ds->dijkstra(temp);
+                break;
+            case DATA_STRUCTURES_OPERATOR::MST:
+                ds->mst();
+                break;
+            case DATA_STRUCTURES_OPERATOR::SCC:
+                ds->scc();
                 break;
         }
         renderMutex.unlock();
@@ -413,6 +420,19 @@ void MyWindow::react(Button* but)
                                          renderMutex.unlock();
                                          break;
                                      }
+        case BUTTON_ACTION::RANDOM7: { 
+                                         renderMutex.lock();
+                                         inputbox->setText(1, NUMBER::intToString(RANDOM::getInt(0, ds->capacity - 1)));
+                                         renderMutex.unlock();
+                                         break;
+                                     }
+        case BUTTON_ACTION::RANDOM8: { 
+                                         renderMutex.lock();
+                                         inputbox->setText(2, NUMBER::intToString(RANDOM::getInt(0, ds->capacity - 1)));
+                                         renderMutex.unlock();
+                                         break;
+                                     }
+
         case BUTTON_ACTION::FILE :{
                                       getDataFromFile(ds->getDataType());
                                       break;

@@ -77,14 +77,18 @@ class Graph
         std::vector<Edge*> sortedEdges;
 
         std::mutex animate_mutex;
+        std::mutex& ds_mutex;
+        int stepWait;
+        bool nodirect;
     protected:
         void unionEdges();
         void Tarjan(Node* u);
         void repair();
         void renderEdge(Edge* edge);
+        void waitForStep();
     public:
 
-    Graph(SDL_Renderer * r, TTF_Font* f, SDL_Rect v, int capacity);
+    Graph(SDL_Renderer * r, std::mutex& m, TTF_Font* f, SDL_Rect v, int capacity);
     ~Graph();
 
     void Dijkstra(int start, int end);

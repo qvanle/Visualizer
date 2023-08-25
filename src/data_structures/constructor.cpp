@@ -79,7 +79,7 @@ void DataStructures::setDataType(DATA_STRUCTURES_TYPE t)
             break;
         case DATA_STRUCTURES_TYPE::GRAPH: 
             linking("graph");
-            graph = new Graph(render, font, {10, 10, 800, 600}, 128);
+            graph = new Graph(render, ds_mutex, font, {10, 10, 800, 600}, 128);
             break;
         case DATA_STRUCTURES_TYPE::BTREE_4TH:
             linking("btree4th");
