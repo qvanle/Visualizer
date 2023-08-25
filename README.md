@@ -9,6 +9,22 @@
 - Makefile
 ## Demonstrate
 
+- Open the application 
+![started](./sharing/image/start.png)
+
+- Choose one of those data structures, let example with AVL
+![avl](./sharing/image/chooseAVL.png)
+
+- Init values 
+![init][./sharing/image/inputinit.png]
+
+- Press done to run
+![run][./sharing/image/init.png]
+
+- Press the gear in the bottom right of window
+![setting](./sharing/image/inputcustom.png)
+
+![custom](./sharing/image/custom.png)
 ## Features
 
 ### Main features
