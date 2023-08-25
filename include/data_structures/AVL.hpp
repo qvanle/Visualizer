@@ -65,12 +65,12 @@ class AVL
 
         bool isAnimate;
         std::mutex animate_mutex;
-        bool isQueue;
-        bool isPause;
+
+        bool pause;
         std::mutex pause_mutex;
+        std::condition_variable queue_cv;
+
         int stepWait;
-        std::condition_variable step_cv;
-        std::mutex step_mutex;
         Node* cache;
         
         std::mutex& ds_mutex;

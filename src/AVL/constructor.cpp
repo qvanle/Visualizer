@@ -28,8 +28,7 @@ AVL::AVL(SDL_Renderer* rend, std::mutex& m, TTF_Font* f, SDL_Rect vp, int cap) :
     viewport = vp;
     capacity = cap;
     sizeOfTree = 0;
-    isQueue = false;
-    isPause = false;
+    pause = false;
     edgesColor = {255, 255, 255, 255};
     fontColor = {255, 255, 255, 255};
     nodeColor = {20, 85, 185, 255};

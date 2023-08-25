@@ -304,7 +304,7 @@ void MyWindow::react(Button* but)
 
         case BUTTON_ACTION::GO_NEXT: 
 
-            //ds->goNext();
+            ds->goNext();
             break;
 
         case BUTTON_ACTION::GO_ON: 
@@ -314,17 +314,17 @@ void MyWindow::react(Button* but)
 
         case BUTTON_ACTION::GO_OFF: 
 
-            //ds->goOff();
+            ds->goOff();
             break;
 
         case BUTTON_ACTION::SPEED_UP: 
 
-            //ds->speedUp();
+            ds->speedUp();
             break;
 
         case BUTTON_ACTION::SLOW_DOWN: 
 
-            //ds->slowDown();
+            ds->slowDown();
             break;
 
         case BUTTON_ACTION::DONE:

@@ -79,9 +79,8 @@ bool AVL::insert(int key)
 
     cache = new Node(key, sprite);
 
-    isPause = false;
-    isQueue = false;
     isAnimate = true;
+    pause = false;
     
     highlight({0});
     waitForStep();

@@ -1,5 +1,6 @@
 #include <data_structures/AVL.hpp>
 #include <chrono>
+#include <mutex>
 #include <thread>
 
 void AVL::highlight(std::vector<int> l)
@@ -35,18 +36,15 @@ void AVL::waitForStep()
         ds_mutex.unlock();
         std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));
         ds_mutex.lock();
+        {
+            std::lock_guard<std::mutex> lk(pause_mutex);
+            if(!pause) return ;
+        }
+        ds_mutex.unlock();
+        std::unique_lock<std::mutex> lk(pause_mutex);
+        queue_cv.wait(lk, [this]{return !pause;});
+        ds_mutex.lock();
     }
-    std::lock_guard<std::mutex> pause_lock(pause_mutex);
-    if(isPause == false) 
-    {
-        return ;
-    }
-
-    ds_mutex.unlock();
-    std::unique_lock<std::mutex> lk(step_mutex);
-    step_cv.wait(lk, [&]{return isQueue == true;});
-    isQueue = false;
-    ds_mutex.lock();
 }
 
 void AVL::goBack()
@@ -55,25 +53,26 @@ void AVL::goBack()
 
 void AVL::goNext()
 {
-    pause_mutex.lock();
-    isQueue = true;
-    pause_mutex.unlock();
-    step_cv.notify_one();
+    {
+        std::lock_guard<std::mutex> lk(pause_mutex);
+        if(!pause) return ;
+    }
+    goOff();
+    std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    goOff();
 }
 
 void AVL::goOn()
 {
-    pause_mutex.lock();
-    isPause = false;
-    pause_mutex.unlock();
-    step_cv.notify_one();
 }
 
 void AVL::goOff()
 {
-    pause_mutex.lock();
-    isPause = true;
-    pause_mutex.unlock();
+    {
+        std::lock_guard<std::mutex> lk(pause_mutex);
+        pause ^= true;
+    }
+    queue_cv.notify_one();
 }
 
 void AVL::speedUp()
