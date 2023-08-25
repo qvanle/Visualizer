@@ -28,8 +28,7 @@ Trie::Trie(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap) : d
     distanceY = 80;
     isMoving = false;
 
-    isQueue = false;
-    isPause = false;
+    pause = false;
     stepWait = 600;
     isAnimate = false;
 

@@ -57,11 +57,10 @@ private:
 
     bool isAnimate;
     std::mutex animate_mutex;
-    bool isQueue;
-    bool isPause;
-    std::mutex pause_mutex;
     int stepWait;
-    std::condition_variable step_cv;
+    bool pause;
+    std::mutex pause_mutex;
+    std::condition_variable queue_cv;
 
     std::map<DATA_STRUCTURES_OPERATOR, Script*> scripts;
     Script* currentScript;
@@ -100,6 +99,13 @@ public:
     Button* react(SDL_Event& e);
     void closeScript();
     void setting(SDL_Color c1, SDL_Color c2, SDL_Color c3, SDL_Color c4);
+
+    void goOff();
+    void goOn();
+    void speedUp();
+    void slowDown();
+    void goNext();
+    void goBack();
 };
 
 #endif 

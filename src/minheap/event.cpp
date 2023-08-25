@@ -76,3 +76,4 @@ void minHeap::closeScript()
     currentScript = nullptr;
 }
 
+

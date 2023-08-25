@@ -6,19 +6,56 @@ void HashTable::waitForStep()
         ds_mutex.unlock();
         std::this_thread::sleep_for(std::chrono::milliseconds(stepWait));
         ds_mutex.lock();
+        {
+            std::lock_guard<std::mutex> lk(pause_mutex);
+            if(!pause) return ;
+        }
+        ds_mutex.unlock();
+        std::unique_lock<std::mutex> lk(pause_mutex);
+        queue_cv.wait(lk, [this]{return !pause;});
+        ds_mutex.lock();
     }
-    std::lock_guard<std::mutex> pause_lock(pause_mutex);
-    if(isPause == false) 
-    {
-        return ;
-    }
-
-    ds_mutex.unlock();
-    std::unique_lock<std::mutex> lk(step_mutex);
-    step_cv.wait(lk, [&]{return isQueue == true;});
-    isQueue = false;
-    ds_mutex.lock();
 }
+
+void HashTable::goBack()
+{
+}
+
+void HashTable::goNext()
+{
+    {
+        std::lock_guard<std::mutex> lk(pause_mutex);
+        if(!pause) return ;
+    }
+    goOff();
+    std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    goOff();
+}
+
+void HashTable::goOn()
+{
+}
+
+void HashTable::goOff()
+{
+    {
+        std::lock_guard<std::mutex> lk(pause_mutex);
+        pause ^= true;
+    }
+    queue_cv.notify_one();
+}
+
+void HashTable::speedUp()
+{
+    if(stepWait >= 100) stepWait = stepWait / 2;
+}
+
+void HashTable::slowDown()
+{
+    if(stepWait <= 2000) stepWait = stepWait * 2;
+}
+
+
 
 void HashTable::highlight(std::vector<int> l)
 {
@@ -45,4 +82,5 @@ void HashTable::unhighlight(std::vector<int> l)
         animate_mutex.unlock();
     }
 }
+
 

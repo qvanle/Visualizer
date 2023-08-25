@@ -79,9 +79,10 @@ class HashTable
 
         bool isAnimate;
         std::mutex animate_mutex;
+        bool pause;
         std::mutex pause_mutex;
         int stepWait;
-        std::condition_variable step_cv;
+        std::condition_variable queue_cv;
 
         std::mutex step_mutex;
         std::mutex &ds_mutex;

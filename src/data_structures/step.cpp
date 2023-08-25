@@ -14,6 +14,18 @@ void DataStructures::goNext()
             if(avl == nullptr) return ;
             avl->goNext();
             break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            if(trie == nullptr) return ;
+            trie->goNext();
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->goNext();
+            break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->goNext();
+            break;
         default:
             break;
     }
@@ -27,6 +39,18 @@ void DataStructures::goOn()
         case DATA_STRUCTURES_TYPE::AVL:
             if(avl == nullptr) return ;
             avl->goOn();
+            break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            if(trie == nullptr) return ;
+            trie->goOn();
+            break; 
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->goOn();
+            break; 
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->goOn();
             break;
         default:
             break;
@@ -42,6 +66,18 @@ void DataStructures::goOff()
             if(avl == nullptr) return ;
             avl->goOff();
             break;
+        case DATA_STRUCTURES_TYPE::TRIE: 
+            if(trie == nullptr) return ;
+            trie->goOff();
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->goOff();
+            break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->goOff();
+            break;
         default:
             break;
     }
@@ -56,6 +92,18 @@ void DataStructures::speedUp()
             if(avl == nullptr) return ;
             avl->speedUp();
             break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            if(trie == nullptr) return ;
+            trie->speedUp();
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->speedUp();
+            break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->speedUp();
+            break;
         default:
             break;
     }
@@ -69,6 +117,18 @@ void DataStructures::slowDown()
         case DATA_STRUCTURES_TYPE::AVL:
             if(avl == nullptr) return ;
             avl->slowDown();
+            break;
+        case DATA_STRUCTURES_TYPE::TRIE:
+            if(trie == nullptr) return ;
+            trie->slowDown();
+            break;
+        case DATA_STRUCTURES_TYPE::HASH_TABLE:
+            if(hashTable == nullptr) return ;
+            hashTable->slowDown();
+            break;
+        case DATA_STRUCTURES_TYPE::MIN_HEAP:
+            if(minheap == nullptr) return ;
+            minheap->slowDown();
             break;
         default:
             break;

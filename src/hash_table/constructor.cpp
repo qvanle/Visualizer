@@ -17,6 +17,7 @@ HashTable::Head::Head(Sprite* spr)
 
 HashTable::HashTable(SDL_Renderer* r, std::mutex& m, TTF_Font* f, SDL_Rect v, int cap) : ds_mutex(m)
 {
+    pause = false;
     render = r;
     font = f;
     viewport = v;
