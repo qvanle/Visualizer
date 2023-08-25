@@ -43,7 +43,7 @@
     - [ ] 234 tree
     - [x] Heap 
     - [x] Trie
-    - [ ] graph
+    - [x] graph
 ### Data structures 
 - [x] AVL 
     - [x] Initial, init from file
